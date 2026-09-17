@@ -1,27 +1,65 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { supabase } from './supabaseClient'
 
 function App() {
-  // Criando um "Estado" (uma variável que o React monitora para atualizar a tela automaticamente)
-  const [contador, setContador] = useState(0)
+  const [tarefas, setTarefas] = useState([])
+  const [novaTarefa, setNovaTarefa] = useState('')
+
+  // Buscar tarefas salvas no banco assim que abre o app
+  useEffect(() => {
+    buscarTarefas()
+  }, [])
+
+  async function buscarTarefas() {
+    const { data, error } = await supabase
+      .from('tarefas')
+      .select('*')
+      .order('created_at', { ascending: false })
+
+    if (error) console.log('Erro ao buscar:', error)
+    else setTarefas(data)
+  }
+
+  async function adicionarTarefa(e) {
+    e.preventDefault()
+    if (!novaTarefa.trim()) return
+
+    const { error } = await supabase
+      .from('tarefas')
+      .insert([{ texto: novaTarefa }])
+
+    if (error) {
+      console.log('Erro ao salvar:', error)
+    } else {
+      setNovaTarefa('')
+      buscarTarefas() // Recarrega a lista
+    }
+  }
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px', fontFamily: 'sans-serif' }}>
-      <h1>🚀 Meu Primeiro App em React</h1>
-      <p>Você clicou no botão <strong>{contador}</strong> vezes.</p>
+    <div style={{ maxWidth: '500px', margin: '50px auto', fontFamily: 'sans-serif', padding: '0 20px' }}>
+      <h1>📝 Lista de Tarefas (Full-Stack)</h1>
+      
+      <form onSubmit={adicionarTarefa} style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+        <input
+          type="text"
+          placeholder="Digite algo para salvar no banco..."
+          value={novaTarefa}
+          onChange={(e) => setNovaTarefa(e.target.value)}
+          style={{ flex: 1, padding: '10px', fontSize: '16px' }}
+        />
+        <button type="submit" style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}>
+          Salvar
+        </button>
+      </form>
 
-      <button 
-        onClick={() => setContador(contador + 1)}
-        style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}
-      >
-        Aumentar
-      </button>
-
-      <button 
-        onClick={() => setContador(0)}
-        style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer', marginLeft: '10px' }}
-      >
-        Zerar
-      </button>
+      <ul>
+        {tarefas.map((item) => (
+          <li key={item.id} style={{ marginBottom: '8px', fontSize: '18px' }}>
+            {item.texto}
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
