@@ -4,8 +4,9 @@ import { supabase } from './supabaseClient'
 function App() {
   const [tarefas, setTarefas] = useState([])
   const [novaTarefa, setNovaTarefa] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  // Buscar tarefas salvas no banco assim que abre o app
+  // Buscar tarefas no Supabase assim que abre a página
   useEffect(() => {
     buscarTarefas()
   }, [])
@@ -24,6 +25,7 @@ function App() {
     e.preventDefault()
     if (!novaTarefa.trim()) return
 
+    setLoading(true)
     const { error } = await supabase
       .from('tarefas')
       .insert([{ texto: novaTarefa }])
@@ -32,34 +34,51 @@ function App() {
       console.log('Erro ao salvar:', error)
     } else {
       setNovaTarefa('')
-      buscarTarefas() // Recarrega a lista
+      await buscarTarefas()
     }
+    setLoading(false)
   }
 
   return (
-    <div style={{ maxWidth: '500px', margin: '50px auto', fontFamily: 'sans-serif', padding: '0 20px' }}>
-      <h1>📝 Lista de Tarefas (Full-Stack)</h1>
-      
-      <form onSubmit={adicionarTarefa} style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
-        <input
-          type="text"
-          placeholder="Digite algo para salvar no banco..."
-          value={novaTarefa}
-          onChange={(e) => setNovaTarefa(e.target.value)}
-          style={{ flex: 1, padding: '10px', fontSize: '16px' }}
-        />
-        <button type="submit" style={{ padding: '10px 20px', fontSize: '16px', cursor: 'pointer' }}>
-          Salvar
-        </button>
-      </form>
+    <div className="min-h-screen bg-slate-900 text-slate-100 flex items-center justify-center p-4">
+      <div className="w-full max-w-md bg-slate-800 border border-slate-700 rounded-2xl shadow-xl p-6">
+        <header className="mb-6 text-center">
+          <h1 className="text-2xl font-bold text-indigo-400">⚡ Minhas Tarefas</h1>
+          <p className="text-sm text-slate-400 mt-1">Conectado ao Supabase em tempo real</p>
+        </header>
 
-      <ul>
-        {tarefas.map((item) => (
-          <li key={item.id} style={{ marginBottom: '8px', fontSize: '18px' }}>
-            {item.texto}
-          </li>
-        ))}
-      </ul>
+        <form onSubmit={adicionarTarefa} className="flex gap-2 mb-6">
+          <input
+            type="text"
+            placeholder="Digite uma nova tarefa..."
+            value={novaTarefa}
+            onChange={(e) => setNovaTarefa(e.target.value)}
+            className="flex-1 bg-slate-900 border border-slate-700 text-slate-100 px-4 py-2.5 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm placeholder-slate-500 transition-all"
+          />
+          <button
+            type="submit"
+            disabled={loading}
+            className="bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-4 py-2.5 rounded-xl text-sm transition-all disabled:opacity-50 cursor-pointer"
+          >
+            {loading ? 'Salvando...' : 'Adicionar'}
+          </button>
+        </form>
+
+        <div className="space-y-2">
+          {tarefas.length === 0 ? (
+            <p className="text-center text-slate-500 text-sm py-4">Nenhuma tarefa encontrada.</p>
+          ) : (
+            tarefas.map((item) => (
+              <div
+                key={item.id}
+                className="flex items-center justify-between p-3.5 bg-slate-900/60 border border-slate-700/50 rounded-xl text-sm text-slate-200"
+              >
+                <span>{item.texto}</span>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
     </div>
   )
 }
