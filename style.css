@@ -1,0 +1,6 @@
+const btn = document.getElementById('btnClick');
+const mensagem = document.getElementById('mensagem');
+
+btn.addEventListener('click', () => {
+    mensagem.innerText = '✨ O código JavaScript executou com sucesso!';
+});

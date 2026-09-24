@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --color-tactical-bg: #0b0d10;         /* Grafite escuro fosco de fundo */
+  --color-tactical-card: #151821;       /* Cinza-chumbo sólido */
+  --color-tactical-border: #232733;     /* Bordas discretas */
+  --color-tactical-primary: #36451f;    /* Verde-oliva militar fechado */
+  --color-tactical-hover: #425526;      /* Tom sutil para interação */
+  --color-tactical-accent: #c69214;     /* Âmbar fosco */
+}
+
+/* Fundo geral e tipografia */
+html, body, #root {
+  background-color: var(--color-tactical-bg) !important;
+  color: #d1d5db !important;
+  font-family: 'Rajdhani', sans-serif, system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* CORREÇÃO DA SOMBRA QUADRADA: Remove fundo/box-shadow indesejado e aplica sombra apenas nas letras */
+h1, h2, .titulo-banco-questoes, [class*="titulo"] {
+  background: transparent !important;
+  box-shadow: none !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Cabeçalho e barras de navegação superiores no padrão militar tático */
+header, nav, [class*="header"] {
+  background-color: var(--color-tactical-card) !important;
+  border-left: 4px solid var(--color-tactical-primary) !important; /* Detalhe tático lateral */
+  border-top: 1px solid var(--color-tactical-border) !important;
+  border-right: 1px solid var(--color-tactical-border) !important;
+  border-bottom: 1px solid var(--color-tactical-border) !important;
+}
+
+/* Trava o cabeçalho no hover para não clarear */
+header:hover, nav:hover, [class*="header"]:hover {
+  background-color: var(--color-tactical-card) !important;
+}
+
+/* Força a remoção de qualquer tom roxo/índigo em botões e elementos */
+button, 
+[class*="bg-indigo-"], [class*="bg-purple-"], [class*="bg-violet-"], [class*="bg-blue-"], [class*="bg-fuchsia-"] {
+  background-color: #1b1f2b !important;
+  border: 1px solid #2d3242 !important;
+  color: #e5e7eb !important;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+button:hover, 
+[class*="bg-indigo-"]:hover, [class*="bg-purple-"]:hover, [class*="bg-violet-"]:hover {
+  background-color: #242938 !important;
+  border-color: #404860 !important;
+}
+
+/* Botões de destaque e navegação ativa no topo em verde-oliva fosco */
+header button, nav button, .bg-indigo-600, .bg-purple-600 {
+  background-color: var(--color-tactical-primary) !important;
+  border: 1px solid var(--color-tactical-hover) !important;
+  color: #ffffff !important;
+}
+
+header button:hover, nav button:hover, .bg-indigo-600:hover, .bg-purple-600:hover {
+  background-color: var(--color-tactical-hover) !important;
+}
+
+/* Cartões de questões e painéis */
+.questao-card, 
+div[class*="bg-slate-"], div[class*="bg-zinc-"], div[class*="bg-gray-"], div[class*="bg-neutral-"] {
+  background-color: var(--color-tactical-card) !important;
+  border: 1px solid var(--color-tactical-border) !important;
+  border-radius: 6px;
+}
+
+/* TRAVA O FUNDO DOS CARTÕES NO HOVER (Impede que fiquem claros ao passar o mouse) */
+.questao-card:hover, 
+div[class*="bg-slate-"]:hover, 
+div[class*="bg-zinc-"]:hover, 
+div[class*="bg-gray-"]:hover, 
+div[class*="bg-neutral-"]:hover {
+  background-color: var(--color-tactical-card) !important;
+  border-color: var(--color-tactical-border) !important;
+}
+
+/* Campos de seleção de filtros */
+select, input {
+  background-color: #111318 !important;
+  border: 1px solid var(--color-tactical-border) !important;
+  color: #d1d5db !important;
+  border-radius: 4px;
+}
+
+select:focus, input:focus {
+  border-color: var(--color-tactical-primary) !important;
+  outline: none;
+}
