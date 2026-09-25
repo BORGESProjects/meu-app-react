@@ -1,3 +1,5 @@
+import { acervo, anoDaQuestao, unirQuestoes, podeCorrigir } from './acervo'
+import EnunciadoQuestao from './components/EnunciadoQuestao'
 import { API_URL } from './api'
 import { useState, useEffect } from 'react'
 import { supabase } from './supabaseClient'
@@ -6,11 +8,12 @@ export default function App() {
   const [abaAtiva, setAbaAtiva] = useState('questoes') // 'questoes' | 'cadastrar' | 'edital' | 'redacao' | 'tarefas' | 'simulados' | 'desempenho'
 
   // Estados das Questões
-  const [questoes, setQuestoes] = useState([])
+  const [questoes, setQuestoes] = useState(acervo)
   const [respostasSelecionadas, setRespostasSelecionadas] = useState({})
   const [feedbacks, setFeedbacks] = useState({})
 
   // Filtros de Questões
+  const [filtroAno, setFiltroAno] = useState('Todos')
   const [filtroMateria, setFiltroMateria] = useState('Todas')
   const [filtroConteudo, setFiltroConteudo] = useState('Todos')
   const [filtroBanca, setFiltroBanca] = useState('Todas')
@@ -90,7 +93,7 @@ export default function App() {
 
   async function buscarQuestoes() {
     const { data, error } = await supabase.from('questoes').select('*').order('id', { ascending: false })
-    if (!error) setQuestoes(data || [])
+    if (!error) setQuestoes(unirQuestoes(data || []))
   }
 
   async function buscarTarefas() {
@@ -163,7 +166,7 @@ export default function App() {
     }
 
     // 2. Sugerir questões com base na matéria e conteúdo estudados
-    let filtradas = questoes.filter(q => q.materia.toLowerCase() === materiaEstudo.toLowerCase())
+    let filtradas = questoes.filter(q => podeCorrigir(q) && q.materia.toLowerCase() === materiaEstudo.toLowerCase())
     if (conteudoEstudo.trim()) {
       const exatas = filtradas.filter(q => q.conteudo && q.conteudo.toLowerCase().includes(conteudoEstudo.toLowerCase()))
       if (exatas.length > 0) filtradas = exatas
@@ -279,6 +282,7 @@ export default function App() {
   }
 
   function validarResposta(questaoId, respostaCorretaDoBanco, isSimulado = false) {
+    if (!podeCorrigir(questoes.find(q => q.id === questaoId) || {})) return
     const indiceSelecionado = isSimulado ? respostasSimulado[questaoId] : respostasSelecionadas[questaoId]
     if (indiceSelecionado === undefined) return
 
@@ -307,7 +311,7 @@ export default function App() {
 
   function finalizarSimulado() {
     if (!simuladoAtivo) return
-    const questoesSimulado = questoes.filter(q => q.concurso === simuladoAtivo.concurso && q.banca === simuladoAtivo.banca)
+    const questoesSimulado = questoes.filter(q => podeCorrigir(q) && q.concurso === simuladoAtivo.concurso && q.banca === simuladoAtivo.banca)
     let acertos = 0
     let erros = 0
     const detalhes = []
@@ -339,14 +343,14 @@ export default function App() {
     const bateConteudo = filtroConteudo === 'Todos' || q.conteudo === filtroConteudo
     const bateBanca = filtroBanca === 'Todas' || q.banca === filtroBanca
     const bateDificuldade = filtroDificuldade === 'Todas' || q.dificuldade === filtroDificuldade
-    return bateMateria && bateConteudo && bateBanca && bateDificuldade
+    return bateMateria && bateConteudo && bateBanca && bateDificuldade && (filtroAno === 'Todos' || anoDaQuestao(q) === filtroAno)
   })
 
   const simuladosDisponiveis = []
   const mapaSimulados = {}
   
   questoes.forEach(q => {
-    if (!q.concurso) return
+    if (!q.concurso || !podeCorrigir(q)) return
     const chave = `${q.concurso}-${q.banca || 'Geral'}`
     if (!mapaSimulados[chave]) {
       mapaSimulados[chave] = {
@@ -419,11 +423,22 @@ export default function App() {
           <div>
             <header className="mb-6">
               <h1 className="text-3xl font-extrabold text-slate-100 tracking-tight">Banco de Questões</h1>
-              <p className="text-slate-400 text-sm mt-1">{questoesFiltradas.length} questão(ões) disponível(is) para praticar.</p>
+              <p className="text-slate-400 text-sm mt-1">{questoesFiltradas.length} questão(ões) encontrada(s). {questoesFiltradas.filter(q => q.anulada).length} anulada(s), disponíveis apenas para consulta.</p>
+              <div className="flex flex-wrap gap-4 mt-3 text-sm text-indigo-300">
+                <a href="/acervo/esa-2025/prova-original.pdf" target="_blank" rel="noreferrer">ESA 2025: prova completa e proposta de redação ↗</a>
+                <a href="/acervo/esa-2025/gabarito-definitivo.pdf" target="_blank" rel="noreferrer">Gabarito definitivo ↗</a>
+              </div>
             </header>
 
             {/* Filtros */}
-            <div className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-6 mb-8 grid grid-cols-1 md:grid-cols-4 gap-4 backdrop-blur-md shadow-xl">
+            <div className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-6 mb-8 grid grid-cols-1 md:grid-cols-5 gap-4 backdrop-blur-md shadow-xl">
+              <div>
+                <label htmlFor="filtro-ano" className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Ano</label>
+                <select id="filtro-ano" value={filtroAno} onChange={e => setFiltroAno(e.target.value)} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-200">
+                  <option value="Todos">Todos os anos</option>
+                  {[...new Set(questoes.map(anoDaQuestao))].sort((a,b) => b.localeCompare(a)).map(ano => <option key={ano} value={ano}>{ano}</option>)}
+                </select>
+              </div>
               <div>
                 <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Matéria</label>
                 <select value={filtroMateria} onChange={(e) => { setFiltroMateria(e.target.value); setFiltroConteudo('Todos'); }} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner">
@@ -471,13 +486,13 @@ export default function App() {
                       {q.banca && <span className="bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 px-3.5 py-1 rounded-full text-xs font-medium">{q.banca}</span>}
                       {q.concurso && <span className="bg-slate-800 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium">{q.concurso}</span>}
                     </div>
-                    <p className="text-slate-100 text-base font-medium mb-6 leading-relaxed">{q.enunciado}</p>
+                    <EnunciadoQuestao questao={q} />
                     <div className="space-y-3 mb-6">
                       {Array.isArray(q.opcoes) && q.opcoes.map((opcao, idx) => {
                         const letra = String.fromCharCode(65 + idx)
                         const selecionada = respostasSelecionadas[q.id] === idx
                         return (
-                          <button key={idx} onClick={() => setRespostasSelecionadas({ ...respostasSelecionadas, [q.id]: idx })} className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 flex items-center gap-4 ${selecionada ? 'bg-indigo-600/20 border-indigo-500 text-indigo-100 shadow-lg shadow-indigo-500/10' : 'bg-slate-950/40 border-slate-800 text-slate-300 hover:bg-slate-950/80 hover:border-slate-700'}`}>
+                          <button key={idx} disabled={!podeCorrigir(q)} onClick={() => setRespostasSelecionadas({ ...respostasSelecionadas, [q.id]: idx })} className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 flex items-center gap-4 ${selecionada ? 'bg-indigo-600/20 border-indigo-500 text-indigo-100 shadow-lg shadow-indigo-500/10' : 'bg-slate-950/40 border-slate-800 text-slate-300 hover:bg-slate-950/80 hover:border-slate-700'}`}>
                             <span className={`w-8 h-8 rounded-xl border flex items-center justify-center text-xs font-bold transition-all ${selecionada ? 'border-indigo-400 bg-indigo-600 text-white shadow-md' : 'border-slate-700 text-slate-400 bg-slate-900'}`}>{letra}</span>
                             <span className="text-sm">{opcao}</span>
                           </button>
@@ -485,7 +500,7 @@ export default function App() {
                       })}
                     </div>
                     <div className="flex items-center gap-4">
-                      <button onClick={() => validarResposta(q.id, q.resposta_correta)} className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-medium px-6 py-2.5 rounded-2xl text-sm transition-all shadow-md shadow-indigo-600/20">Responder</button>
+                      <button disabled={!podeCorrigir(q)} onClick={() => validarResposta(q.id, q.resposta_correta)} className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-medium px-6 py-2.5 rounded-2xl text-sm transition-all shadow-md shadow-indigo-600/20">Responder</button>
                       {feedbacks[q.id] && <span className={`text-sm font-semibold ${feedbacks[q.id].status === 'correto' ? 'text-emerald-400' : 'text-red-400'}`}>{feedbacks[q.id].msg}</span>}
                     </div>
                   </div>
@@ -503,7 +518,7 @@ export default function App() {
                 <header className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
                     <h1 className="text-3xl font-extrabold text-slate-100 tracking-tight">📝 Provas e Simulados</h1>
-                    <p className="text-slate-400 text-sm mt-1">Filtre por curso e origem das questões para iniciar sua simulação.</p>
+                    <p className="text-slate-400 text-sm mt-1">Filtre por curso e origem das questões para iniciar sua simulação. Questões anuladas não entram no simulado.</p>
                   </div>
                 </header>
 
@@ -580,13 +595,13 @@ export default function App() {
                   <button onClick={() => setSimuladoAtivo(null)} className="text-slate-400 hover:text-slate-100 text-xs font-medium bg-slate-800 px-4 py-2 rounded-2xl transition-all">Sair da Prova</button>
                 </div>
 
-                {questoes.filter(q => q.concurso === simuladoAtivo.concurso && q.banca === simuladoAtivo.banca).map((q, index) => (
+                {questoes.filter(q => podeCorrigir(q) && q.concurso === simuladoAtivo.concurso && q.banca === simuladoAtivo.banca).map((q, index) => (
                   <div key={q.id} className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-7 shadow-xl backdrop-blur-md">
                     <div className="flex gap-2.5 mb-5">
                       <span className="bg-indigo-600 text-white px-3.5 py-1 rounded-full text-xs font-bold shadow-md shadow-indigo-600/20">Questão {index + 1}</span>
                       {q.materia && <span className="bg-slate-800 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium">{q.materia}</span>}
                     </div>
-                    <p className="text-slate-100 text-base font-medium mb-6 leading-relaxed">{q.enunciado}</p>
+                    <EnunciadoQuestao questao={q} />
                     <div className="space-y-3">
                       {Array.isArray(q.opcoes) && q.opcoes.map((opcao, idx) => {
                         const letra = String.fromCharCode(65 + idx)
@@ -725,13 +740,13 @@ export default function App() {
                         {q.materia && <span className="bg-slate-800 text-slate-300 px-3 py-0.5 rounded-full text-xs font-medium">{q.materia}</span>}
                         {q.conteudo && <span className="bg-slate-800 text-slate-300 px-3 py-0.5 rounded-full text-xs font-medium">{q.conteudo}</span>}
                       </div>
-                      <p className="text-slate-100 text-sm font-medium mb-4 leading-relaxed">{q.enunciado}</p>
+                      <EnunciadoQuestao questao={q} />
                       <div className="space-y-2.5 mb-4">
                         {Array.isArray(q.opcoes) && q.opcoes.map((opcao, idx) => {
                           const letra = String.fromCharCode(65 + idx)
                           const selecionada = respostasSelecionadas[q.id] === idx
                           return (
-                            <button key={idx} onClick={() => setRespostasSelecionadas({ ...respostasSelecionadas, [q.id]: idx })} className={`w-full text-left p-3 rounded-xl border transition-all flex items-center gap-3 ${selecionada ? 'bg-indigo-600/20 border-indigo-500 text-indigo-100' : 'bg-slate-900/40 border-slate-800 text-slate-300 hover:bg-slate-900'}`}>
+                            <button key={idx} disabled={!podeCorrigir(q)} onClick={() => setRespostasSelecionadas({ ...respostasSelecionadas, [q.id]: idx })} className={`w-full text-left p-3 rounded-xl border transition-all flex items-center gap-3 ${selecionada ? 'bg-indigo-600/20 border-indigo-500 text-indigo-100' : 'bg-slate-900/40 border-slate-800 text-slate-300 hover:bg-slate-900'}`}>
                               <span className={`w-6 h-6 rounded-lg border flex items-center justify-center text-xs font-bold ${selecionada ? 'border-indigo-400 bg-indigo-600 text-white' : 'border-slate-700 text-slate-400 bg-slate-950'}`}>{letra}</span>
                               <span className="text-xs">{opcao}</span>
                             </button>
@@ -739,7 +754,7 @@ export default function App() {
                         })}
                       </div>
                       <div className="flex items-center gap-4">
-                        <button onClick={() => validarResposta(q.id, q.resposta_correta)} className="bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-5 py-2 rounded-xl text-xs transition-all shadow-md">Responder</button>
+                        <button disabled={!podeCorrigir(q)} onClick={() => validarResposta(q.id, q.resposta_correta)} className="bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-5 py-2 rounded-xl text-xs transition-all shadow-md">Responder</button>
                         {feedbacks[q.id] && <span className={`text-xs font-semibold ${feedbacks[q.id].status === 'correto' ? 'text-emerald-400' : 'text-red-400'}`}>{feedbacks[q.id].msg}</span>}
                       </div>
                     </div>
