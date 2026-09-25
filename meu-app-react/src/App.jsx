@@ -1,5 +1,6 @@
 import { acervo, anoDaQuestao, unirQuestoes, podeCorrigir } from './acervo'
 import EnunciadoQuestao from './components/EnunciadoQuestao'
+import ImportarPdf from './components/ImportarPdf'
 import { API_URL } from './api'
 import { useState, useEffect } from 'react'
 import { supabase } from './supabaseClient'
@@ -92,8 +93,12 @@ export default function App() {
   }, [cronometroAtivo])
 
   async function buscarQuestoes() {
-    const { data, error } = await supabase.from('questoes').select('*').order('id', { ascending: false })
-    if (!error) setQuestoes(unirQuestoes(data || []))
+    const banco = supabase.from('questoes').select('*').order('id', { ascending: false })
+      .then(({data,error}) => { if (!error) setQuestoes(prev => unirQuestoes([...prev, ...(data || [])])) })
+    const importadas = fetch(`${API_URL}/api/acervo`, {signal:AbortSignal.timeout(90000)})
+      .then(r => { if(!r.ok) throw new Error('Acervo indisponível'); return r.json() })
+      .then(data => { if(Array.isArray(data)) setQuestoes(prev => unirQuestoes([...prev,...data])) })
+    await Promise.allSettled([banco,importadas])
   }
 
   async function buscarTarefas() {
@@ -402,6 +407,7 @@ export default function App() {
             { id: 'simulados', label: '📝 Simulados' },
             { id: 'desempenho', label: '📈 Desempenho' },
             { id: 'cadastrar', label: '➕ Cadastrar' },
+            { id: 'importar', label: '📄 Importar PDF' },
             { id: 'edital', label: '📋 Edital' },
             { id: 'redacao', label: '✍️ Redação' },
             { id: 'tarefas', label: '⚡ Tarefas' }
@@ -418,6 +424,7 @@ export default function App() {
       </nav>
 
       <main className="max-w-5xl mx-auto p-6 md:p-8">
+        <div hidden={abaAtiva !== 'importar'}><ImportarPdf onPublicado={buscarQuestoes} /></div>
         {/* ABA: BANCO DE QUESTÕES */}
         {abaAtiva === 'questoes' && (
           <div>

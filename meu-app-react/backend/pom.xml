@@ -17,6 +17,14 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>3.0.8</version>
+            <exclusions>
+                <exclusion><groupId>commons-logging</groupId><artifactId>commons-logging</artifactId></exclusion>
+            </exclusions>
+        </dependency>
         <!-- Web MVC para criar os endpoints REST -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

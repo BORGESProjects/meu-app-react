@@ -1,4 +1,5 @@
 import { anoDaQuestao } from '../acervo'
+import { API_URL } from '../api'
 
 export default function EnunciadoQuestao({ questao: q }) {
   return <div className="mb-6 space-y-3">
@@ -8,6 +9,9 @@ export default function EnunciadoQuestao({ questao: q }) {
       {q.dificuldade_estimada && <span>Dificuldade estimada</span>}
     </div>
     {q.anulada && <p role="status" className="text-amber-300 font-semibold">Anulada no gabarito definitivo — disponível para consulta e excluída dos simulados.</p>}
+    {q.texto_apoio && <section aria-label="Texto de apoio" className="border-l-2 border-indigo-500 pl-4"><h3 className="font-semibold mb-2">Texto de apoio</h3><p className="whitespace-pre-wrap leading-relaxed">{q.texto_apoio}</p></section>}
+    {q.pagina_imagem && <a href={`${API_URL}${q.pdf_original}#page=${q.pagina}`} target="_blank" rel="noreferrer" className="block"><p className="text-xs text-indigo-300 mb-2">Página original com figuras — clique para ampliar no PDF</p><img src={`${API_URL}${q.pagina_imagem}`} alt={`Página ${q.pagina} da prova, com as figuras da questão ${q.numero_original}`} loading="lazy" className="w-full rounded-lg bg-white" /></a>}
+    {q.pdf_original && <a href={`${API_URL}${q.pdf_original}#page=${q.pagina}`} target="_blank" rel="noreferrer" className="block text-xs text-indigo-300">Conferir questão no PDF original · página {q.pagina} ↗</a>}
     {q.apoio?.length > 0 && <section aria-label="Texto de apoio" className="space-y-3">
       <h3 className="text-sm font-semibold">Texto de apoio</h3>
       {q.apoio.map((apoio, i) => <a key={apoio.imagem} href={apoio.imagem} target="_blank" rel="noreferrer" className="block">
