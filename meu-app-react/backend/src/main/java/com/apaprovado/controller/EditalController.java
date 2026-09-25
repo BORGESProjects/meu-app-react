@@ -9,7 +9,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/editais")
-@CrossOrigin(origins = "*")
 public class EditalController {
 
     @Autowired

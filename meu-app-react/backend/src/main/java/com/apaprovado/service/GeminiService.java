@@ -48,7 +48,7 @@ public class GeminiService {
             if (responseBody != null && responseBody.containsKey("candidates")) {
                 List<Map<String, Object>> candidates = (List<Map<String, Object>>) responseBody.get("candidates");
                 if (!candidates.isEmpty()) {
-                    Map<String, Object> candidateContent = (Map<String, Object>>) candidates.get(0).get("content");
+                    Map<String, Object> candidateContent = (Map<String, Object>) candidates.get(0).get("content");
                     List<Map<String, Object>> parts = (List<Map<String, Object>>) candidateContent.get("parts");
                     if (!parts.isEmpty()) {
                         return (String) parts.get(0).get("text");

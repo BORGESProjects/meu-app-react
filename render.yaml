@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: aprovado-api
+    runtime: docker
+    plan: free
+    rootDir: meu-app-react/backend
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeployTrigger: commit
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: FRONTEND_URL
+        value: https://apaprovado-fi0fnf7r8-borges-projects2.vercel.app
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_USERNAME
+        sync: false
+      - key: DATABASE_PASSWORD
+        sync: false
