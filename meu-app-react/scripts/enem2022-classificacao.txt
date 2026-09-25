@@ -1,0 +1,176 @@
+# Número | Matéria | Conteúdo | Dificuldade estimada (F/M/D)
+6|Português|Variação linguística e informalidade|F
+7|Português|Comparação de textos e argumentação|M
+8|Português|Finalidade do texto e representatividade|F
+9|Português|Publicidade e persuasão|F
+10|Artes|Arte digital e autoria|M
+11|Português|Tecnologia e práticas de leitura|M
+12|Português|Norma-padrão e adequação linguística|F
+13|Português|Inclusão digital e interpretação de texto|M
+14|Português|Léxico, cultura e variação linguística|M
+15|Português|Gêneros digitais e função social|F
+16|Português|Gênero discursivo — resenha|F
+17|Literatura|Linguagem poética e metalinguagem|M
+18|Literatura|Narrativa e fluxo de consciência|M
+19|Educação Física|Esporte e violência|F
+20|Educação Física|Atividade física e saúde coletiva|F
+21|Literatura|Romantismo e abolicionismo|M
+22|Português|Tecnologia e acessibilidade|F
+23|Literatura|Descrição e recursos expressivos|M
+24|Português|Adequação linguística ao contexto|F
+25|Educação Física|Gênero e representatividade no esporte|F
+26|Português|Funções da linguagem|M
+27|Português|Linguagem verbal e não verbal|M
+28|Português|Línguas indígenas e identidade cultural|M
+29|Literatura|Machado de Assis — ironia|M
+30|Literatura|Naturalismo e determinismo|M
+31|Literatura|Modernismo — romance de 1930|M
+32|Português|Gêneros instrucionais e tecnologia|F
+33|Português|Enumeração e construção textual|M
+34|Educação Física|Esportes de aventura|F
+35|Literatura|Características da crônica|M
+36|Português|Notícia e finalidade comunicativa|F
+37|Português|Redes sociais e interpretação de texto|M
+38|Artes|Maneirismo|M
+39|Artes|Minimalismo|M
+40|Literatura|Regionalismo e expressividade lírica|M
+41|Literatura|Narrativa e representação social|M
+42|Literatura|Literatura e crítica social|M
+43|Literatura|Intertextualidade e construção da personagem|M
+44|Artes|Arte contemporânea — instalação e ready-made|D
+45|Artes|Música brasileira — manguebeat|M
+46|Geografia|Paisagem e religiosidade sertaneja|M
+47|Filosofia|Hannah Arendt — linguagem e política|M
+48|Sociologia|Racismo e desigualdade social|F
+49|Geografia|Urbanização e ciclo da água|F
+50|História|Ocupação da Amazônia e modernização|M
+51|Geografia|Globalização e economia em rede|M
+52|Geografia|Relações entre campo e cidade|F
+53|História|Segundo Reinado — mulheres e cultura letrada|M
+54|História|Movimento operário no Brasil Imperial|M
+55|Geografia|Solos — salinização e irrigação|M
+56|Sociologia|Desigualdade e exclusão digital|F
+57|Filosofia|Michel Foucault — disciplina e controle|D
+58|Sociologia|Religiosidade e práticas culturais|M
+59|Geografia|Agricultura familiar e políticas públicas|M
+60|Sociologia|Tecnologia e sociabilidade|F
+61|Sociologia|Automação e transformação do trabalho|F
+62|Geografia|Blocos econômicos — Mercosul|M
+63|História|Idade Média — poder e abastecimento|D
+64|Geografia|Relevo — agentes internos e externos|M
+65|Sociologia|Violência de gênero e feminicídio|F
+66|História|Brasil Imperial — educação e gênero|M
+67|Sociologia|Movimentos sociais e direito à moradia|M
+68|Geografia|Geopolítica — hegemonia dos Estados Unidos|M
+69|Geografia|Geopolítica — Rússia e Crimeia|M
+70|Sociologia|Interseccionalidade e desigualdade|F
+71|Filosofia|Estado de direito e cidadania|M
+72|Geografia|Mobilidade urbana — migração pendular|F
+73|História|Movimento operário e Primeiro de Maio|M
+74|Geografia|Clima e potencial de energia solar|M
+75|Geografia|Povos indígenas e territorialidade|M
+76|História|Trabalho e obras públicas no Nordeste|M
+77|História|Escravidão e medicina colonial|M
+78|Geografia|Cartografia — escala|M
+79|História|Patrimônio, memória e escravidão|M
+80|Filosofia|Filosofia grega — pólis e sofistas|D
+81|História|Era Vargas — Estado Novo e propaganda|F
+82|Geografia|Geologia e recursos minerais|M
+83|Sociologia|Nacionalidade e apatridia|M
+84|Filosofia|Estética e conhecimento sensível|D
+85|História|Inquisição e poder religioso|M
+86|Filosofia|Pré-socráticos — Empédocles e arché|M
+87|Geografia|Urbanização — macrocefalia urbana|M
+88|Filosofia|Estoicismo — Sêneca e a morte|M
+89|História|Civilizações pré-colombianas|M
+90|Sociologia|Cultura e saberes tradicionais|F
+91|Química|Oxirredução e remediação ambiental|M
+92|Biologia|Parasitologia — prevenção de doenças|F
+93|Física|Potência e eficiência de painéis solares|M
+94|Química|Reatividade e segurança química|M
+95|Física|Eletromagnetismo — campo de fio retilíneo|D
+96|Física|Circuitos elétricos e associação de geradores|M
+97|Química|Separação de isótopos|M
+98|Biologia|Biotecnologia — terapia gênica|M
+99|Biologia|Ecologia — espécies exóticas|F
+100|Física|Cinemática — lançamento vertical|M
+101|Biologia|Fermentação e produção de etanol|M
+102|Biologia|Biotecnologia — PCR e transcrição reversa|D
+103|Física|Estática — forças e atrito|D
+104|Biologia|Fisiologia — transporte de oxigênio|F
+105|Física|Impulso e energia em colisões|M
+106|Química|Equilíbrio ácido-base e ionização|D
+107|Química|Cinética química — catálise|M
+108|Química|Soluções — titulação ácido-base|D
+109|Química|Radioatividade — meia-vida|M
+110|Biologia|Evolução — seleção natural|M
+111|Física|Astronomia — estações e insolação|M
+112|Física|Dinâmica e conservação da energia|D
+113|Química|Corrosão e proteção de metais|M
+114|Biologia|Citologia — osmose e plasmólise|M
+115|Física|Calorimetria — capacidade térmica|M
+116|Física|Potência elétrica e aquecimento|D
+117|Química|Reações de ácidos com carbonatos|F
+118|Biologia|Fisiologia — hormônios sexuais|M
+119|Física|Circuitos — geradores e resistência interna|D
+120|Biologia|Bioquímica — atividade enzimática|M
+121|Biologia|Microbiologia — antimicrobianos|M
+122|Biologia|Fisiologia — coagulação sanguínea|M
+123|Física|Gravitação universal|M
+124|Química|Oxirredução — ozônio|M
+125|Biologia|Genética — inativação do cromossomo X|D
+126|Química|Tratamento de água — decantação|F
+127|Biologia|Respiração celular — fosforilação oxidativa|D
+128|Física|Resistência elétrica e modelos físicos|M
+129|Química|Equilíbrio químico e ciclo do nitrogênio|M
+130|Biologia|Fisiologia — visão e fotorreceptores|M
+131|Química|Química orgânica — compostos aromáticos|F
+132|Biologia|Ecologia — controle biológico|M
+133|Biologia|Imunologia e biotecnologia|D
+134|Física|Ondulatória — velocidade do som|M
+135|Física|Óptica — refração|F
+136|Matemática|Funções — interpretação de gráficos|M
+137|Matemática|Probabilidade — eventos sucessivos|D
+138|Matemática|Estatística — mediana|M
+139|Matemática|Razão e proporção — escala|F
+140|Matemática|Contagem e organização de torneios|D
+141|Matemática|Probabilidade — bingo|D
+142|Matemática|Análise combinatória — princípio multiplicativo|M
+143|Matemática|Geometria espacial — planificação do cubo|M
+144|Matemática|Divisão euclidiana e algoritmos|F
+145|Matemática|Razão e proporção|F
+146|Matemática|Divisibilidade — máximo divisor comum|M
+147|Matemática|Porcentagem e taxas sucessivas|M
+148|Matemática|Potências e proporcionalidade|M
+149|Matemática|Estatística — mediana em tabela|M
+150|Matemática|Função quadrática — valor máximo|M
+151|Matemática|Proporcionalidade e conversão de unidades|M
+152|Matemática|Geometria plana — distâncias e proporção|D
+153|Matemática|Geometria espacial — volume do cone|M
+154|Matemática|Porcentagem — variação relativa|M
+155|Matemática|Análise combinatória — combinações|D
+156|Matemática|Geometria plana — simetria e dobraduras|M
+157|Matemática|Função definida por partes|M
+158|Matemática|Função quadrática — vértice|M
+159|Matemática|Sequências periódicas|M
+160|Matemática|Geometria espacial — projeção ortogonal|M
+161|Matemática|Geometria plana — área e escala|M
+162|Matemática|Função afim — projeção de vendas|M
+163|Matemática|Porcentagem e média ponderada|M
+164|Matemática|Proporcionalidade e unidades de tempo|M
+165|Matemática|Razão e proporção — períodos|M
+166|Matemática|Interpretação de gráficos — posições|M
+167|Matemática|Matemática financeira — porcentagens sucessivas|M
+168|Matemática|Orientação espacial e trajetórias|F
+169|Matemática|Geometria espacial — volume do cilindro|M
+170|Matemática|Razão e interpretação de gráficos|M
+171|Matemática|Estatística — média aritmética|F
+172|Matemática|Geometria espacial — volume do paralelepípedo|M
+173|Matemática|Aritmética e leitura de tabelas|F
+174|Matemática|Geometria espacial — cilindro e esfera|M
+175|Matemática|Sistema decimal — ordem de grandeza|F
+176|Matemática|Geometria plana — menor percurso|M
+177|Matemática|Aritmética — comparação de custos|F
+178|Matemática|Geometria espacial — volume de esferas|M
+179|Matemática|Função afim — extrapolação de dados|F
+180|Matemática|Geometria espacial — projeção ortogonal|M

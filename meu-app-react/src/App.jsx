@@ -435,6 +435,16 @@ export default function App() {
                 <a href="/acervo/esa-2025/prova-original.pdf" target="_blank" rel="noreferrer">ESA 2025: prova completa e proposta de redação ↗</a>
                 <a href="/acervo/esa-2025/gabarito-definitivo.pdf" target="_blank" rel="noreferrer">Gabarito definitivo ↗</a>
               </div>
+              <details className="mt-3 text-sm text-indigo-300">
+                <summary className="cursor-pointer">ENEM 2022 · cadernos e gabaritos oficiais</summary>
+                <p className="text-slate-400 mt-2">185 questões com inglês e espanhol separados. A questão 157 está anulada. Filtre por ano 2022 e banca ENEM.</p>
+                <div className="flex flex-wrap gap-4 mt-2">
+                  {[1, 2].map(dia => <span key={dia} className="flex gap-3">
+                    <a href={`/acervo/enem-2022/prova-dia${dia}.pdf`} target="_blank" rel="noreferrer">Prova do {dia}º dia ↗</a>
+                    <a href={`/acervo/enem-2022/gabarito-dia${dia}.pdf`} target="_blank" rel="noreferrer">Gabarito do {dia}º dia ↗</a>
+                  </span>)}
+                </div>
+              </details>
             </header>
 
             {/* Filtros */}

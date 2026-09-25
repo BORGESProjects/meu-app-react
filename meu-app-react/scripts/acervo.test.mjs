@@ -1,7 +1,8 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { existsSync } from 'node:fs'
-import { acervo, anoDaQuestao, unirQuestoes, podeCorrigir } from '../src/acervo.js'
+import { acervo as completo, anoDaQuestao, unirQuestoes, podeCorrigir } from '../src/acervo.js'
+const acervo = completo.filter(q => q.banca === 'ESA')
 
 test('a prova A tem 50 questões únicas e 47 corrigíveis', () => {
   assert.equal(acervo.length, 50)
@@ -38,7 +39,30 @@ test('anos desconhecidos continuam visíveis e registros existentes são preserv
   assert.equal(anoDaQuestao({concurso:'ESA 2024'}), '2024')
   assert.equal(anoDaQuestao({ano:2023,concurso:'ESA 2024'}), '2023')
   const antiga = { id:123, enunciado:'Questão existente', resposta_correta:0 }
-  assert.equal(unirQuestoes([antiga]).length, 51)
+  assert.equal(unirQuestoes([antiga]).length, completo.length + 1)
   assert.deepEqual(unirQuestoes([antiga]).find(q => q.id === 123), antiga)
-  assert.equal(unirQuestoes([acervo[0]]).length, 50)
+  assert.equal(unirQuestoes([acervo[0]]).length, completo.length)
+})
+
+test('ENEM 2022 contém ambos os idiomas, 185 questões e os dois gabaritos oficiais', () => {
+  const enem = completo.filter(q => q.banca === 'ENEM' && q.ano === 2022)
+  assert.equal(enem.length, 185)
+  assert.equal(new Set(enem.map(q => q.id)).size, 185)
+  assert.equal(enem.filter(q => q.dia === 1).length, 95)
+  assert.equal(enem.filter(q => q.dia === 2).length, 90)
+  for (const idioma of ['Inglês', 'Espanhol']) {
+    const idiomaQuestoes = enem.filter(q => q.idioma === idioma)
+    assert.deepEqual(idiomaQuestoes.map(q => q.numero_original), [1,2,3,4,5])
+    assert.equal(idiomaQuestoes.map(q => 'ABCDE'[q.resposta_correta]).join(''), idioma === 'Inglês' ? 'DCBDE' : 'EDCAA')
+  }
+  assert.deepEqual(enem.filter(q => !podeCorrigir(q)).map(q => q.numero_original), [157])
+  assert.deepEqual(enem.filter(q => !q.idioma).map(q => q.numero_original), Array.from({length:175},(_,i)=>i+6))
+  for (const q of enem) {
+    assert.ok(q.enunciado.length > 30)
+    assert.equal(q.opcoes.length, 5)
+    assert.ok(q.opcoes.every(Boolean))
+    assert.ok(q.anulada || Number.isInteger(q.resposta_correta) && q.resposta_correta >= 0 && q.resposta_correta <= 4)
+    for (const file of [q.imagem_original, q.fonte_pdf, q.fonte_gabarito]) assert.ok(existsSync(new URL('../public' + file, import.meta.url)))
+  }
+  assert.equal(unirQuestoes(enem).length, completo.length)
 })
