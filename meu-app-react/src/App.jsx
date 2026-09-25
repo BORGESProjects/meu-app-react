@@ -1,3 +1,4 @@
+import { API_URL } from './api'
 import { useState, useEffect } from 'react'
 import { supabase } from './supabaseClient'
 
@@ -99,7 +100,7 @@ export default function App() {
 
   async function buscarEditais() {
     try {
-      const response = await fetch('http://localhost:8080/api/editais')
+      const response = await fetch(`${API_URL}/api/editais`)
       if (response.ok) {
         const data = await response.json()
         setEditais(data)
@@ -217,7 +218,7 @@ export default function App() {
   async function adicionarEditalItem(e) {
     e.preventDefault()
     try {
-      const response = await fetch('http://localhost:8080/api/editais', {
+      const response = await fetch(`${API_URL}/api/editais`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(novoItemEdital)
@@ -237,7 +238,7 @@ export default function App() {
     setEditais(editais.map(e => e.id === item.id ? { ...e, concluido: novoEstado } : e))
 
     try {
-      await fetch(`http://localhost:8080/api/editais/${item.id}/toggle`, { method: 'PATCH' })
+      await fetch(`${API_URL}/api/editais/${item.id}/toggle`, { method: 'PATCH' })
     } catch (err) {
       setEditais(editais.map(e => e.id === item.id ? { ...e, concluido: item.concluido } : e))
     }
@@ -245,7 +246,7 @@ export default function App() {
 
   async function deletarEditalItem(id) {
     try {
-      await fetch(`http://localhost:8080/api/editais/${id}`, { method: 'DELETE' })
+      await fetch(`${API_URL}/api/editais/${id}`, { method: 'DELETE' })
       buscarEditais()
     } catch (err) {
       console.log('Erro ao apagar item:', err)
@@ -259,7 +260,7 @@ export default function App() {
     setErroRedacao(null)
 
     try {
-      const response = await fetch('http://localhost:8080/api/ia/corrigir-redacao', {
+      const response = await fetch(`${API_URL}/api/ia/corrigir-redacao`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ tema: temaRedacao, texto: textoRedacao }),

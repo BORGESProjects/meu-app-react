@@ -1,3 +1,4 @@
+import { API_URL } from '../api'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -5,14 +6,14 @@ export default function EditalVerticalizado({ concursoSelecionado }) {
     const [itens, setItens] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/edital?concurso=${concursoSelecionado}`)
+        axios.get(`${API_URL}/api/editais?concurso=${concursoSelecionado}`)
             .then(response => setItens(response.data))
             .catch(error => console.error("Erro ao carregar edital:", error));
     }, [concursoSelecionado]);
 
     const alternarItem = async (id) => {
         try {
-            const response = await axios.patch(`http://localhost:8080/api/edital/${id}/toggle`);
+            const response = await axios.patch(`${API_URL}/api/editais/${id}/toggle`);
             setItens(itens.map(item => item.id === id ? response.data : item));
         } catch (error) {
             console.error("Erro ao atualizar item:", error);
