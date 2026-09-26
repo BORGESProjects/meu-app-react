@@ -108,7 +108,7 @@ for pi in range(1,22):
             enunciado=enunciado,opcoes=[opts[l] for l in letters],
             resposta_correta=letters.index(chr(ord('Ⓐ')+ord(answers[n-1])-65)) if answers[n-1] else None,
             anulada=answers[n-1] is None,pagina=pi+1,
-            imagem_original=picture(pi+1,top,end,f'questao-{n:02}.webp'),
+            imagem_original=picture(pi+1,top,first-3,f'questao-{n:02}-enunciado.webp'), imagem_sem_alternativas=True,
             apoio=supports.get(supportkey,[]),origem='ESA — prova e gabarito definitivo enviados pelo usuário'))
 
 # Frações e expressões que perdem a disposição bidimensional na extração de texto.

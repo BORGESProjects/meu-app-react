@@ -138,3 +138,5 @@ assert sum(q['anulada'] for q in all_questions)==1
 (ROOT/'src/data/enem2022.json').write_text(json.dumps(all_questions, ensure_ascii=False, indent=2)+'\n',encoding='utf-8')
 (ROOT/'tmp/enem2022/audit.json').write_text(json.dumps(audit, ensure_ascii=False, indent=2),encoding='utf-8')
 print('185 questões extraídas; 184 corrigíveis; 1 anulada.')
+from separar_imagens_enem2022 import separar
+separar()

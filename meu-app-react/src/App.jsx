@@ -1,5 +1,6 @@
 import { acervo, anoDaQuestao, unirQuestoes, podeCorrigir } from './acervo'
 import EnunciadoQuestao from './components/EnunciadoQuestao'
+import AlternativaQuestao from './components/AlternativaQuestao'
 import ImportarPdf from './components/ImportarPdf'
 import { API_URL } from './api'
 import { useState, useEffect } from 'react'
@@ -511,7 +512,7 @@ export default function App() {
                         return (
                           <button key={idx} disabled={!podeCorrigir(q)} onClick={() => setRespostasSelecionadas({ ...respostasSelecionadas, [q.id]: idx })} className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 flex items-center gap-4 ${selecionada ? 'bg-indigo-600/20 border-indigo-500 text-indigo-100 shadow-lg shadow-indigo-500/10' : 'bg-slate-950/40 border-slate-800 text-slate-300 hover:bg-slate-950/80 hover:border-slate-700'}`}>
                             <span className={`w-8 h-8 rounded-xl border flex items-center justify-center text-xs font-bold transition-all ${selecionada ? 'border-indigo-400 bg-indigo-600 text-white shadow-md' : 'border-slate-700 text-slate-400 bg-slate-900'}`}>{letra}</span>
-                            <span className="text-sm">{opcao}</span>
+                            <span className="text-sm min-w-0"><AlternativaQuestao questao={q} indice={idx} texto={opcao} /></span>
                           </button>
                         )
                       })}
@@ -626,7 +627,7 @@ export default function App() {
                         return (
                           <button key={idx} onClick={() => setRespostasSimulado({ ...respostasSimulado, [q.id]: idx })} className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 flex items-center gap-4 ${selecionada ? 'bg-indigo-600/20 border-indigo-500 text-indigo-100 shadow-lg shadow-indigo-500/10' : 'bg-slate-950/40 border-slate-800 text-slate-300 hover:bg-slate-950/80 hover:border-slate-700'}`}>
                             <span className={`w-8 h-8 rounded-xl border flex items-center justify-center text-xs font-bold transition-all ${selecionada ? 'border-indigo-400 bg-indigo-600 text-white shadow-md' : 'border-slate-700 text-slate-400 bg-slate-900'}`}>{letra}</span>
-                            <span className="text-sm">{opcao}</span>
+                            <span className="text-sm min-w-0"><AlternativaQuestao questao={q} indice={idx} texto={opcao} /></span>
                           </button>
                         )
                       })}
@@ -765,7 +766,7 @@ export default function App() {
                           return (
                             <button key={idx} disabled={!podeCorrigir(q)} onClick={() => setRespostasSelecionadas({ ...respostasSelecionadas, [q.id]: idx })} className={`w-full text-left p-3 rounded-xl border transition-all flex items-center gap-3 ${selecionada ? 'bg-indigo-600/20 border-indigo-500 text-indigo-100' : 'bg-slate-900/40 border-slate-800 text-slate-300 hover:bg-slate-900'}`}>
                               <span className={`w-6 h-6 rounded-lg border flex items-center justify-center text-xs font-bold ${selecionada ? 'border-indigo-400 bg-indigo-600 text-white' : 'border-slate-700 text-slate-400 bg-slate-950'}`}>{letra}</span>
-                              <span className="text-xs">{opcao}</span>
+                              <span className="text-xs min-w-0"><AlternativaQuestao questao={q} indice={idx} texto={opcao} /></span>
                             </button>
                           )
                         })}

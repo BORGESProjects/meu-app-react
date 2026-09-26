@@ -4,6 +4,21 @@ import { existsSync } from 'node:fs'
 import { acervo as completo, anoDaQuestao, unirQuestoes, podeCorrigir } from '../src/acervo.js'
 const acervo = completo.filter(q => q.banca === 'ESA')
 
+test('imagens de enunciado não repetem alternativas e figuras de resposta ficam separadas', () => {
+  for (const q of completo) {
+    assert.equal(q.imagem_sem_alternativas, true)
+    assert.match(q.imagem_original, /-enunciado\.webp$/)
+    if (q.opcoes_imagens) {
+      assert.equal(q.opcoes_imagens.length, q.opcoes.length)
+      for (const imagem of q.opcoes_imagens) {
+        assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)))
+        assert.notEqual(imagem, q.imagem_original)
+      }
+    }
+    assert.ok(q.opcoes.every(o => !o.includes('conforme a imagem')))
+  }
+})
+
 test('a prova A tem 50 questões únicas e 47 corrigíveis', () => {
   assert.equal(acervo.length, 50)
   assert.equal(new Set(acervo.map(q => q.id)).size, 50)

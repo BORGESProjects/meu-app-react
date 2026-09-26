@@ -23,11 +23,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 2,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-001-en.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-001-en-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-002-en",
@@ -53,11 +54,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 2,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-002-en.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-002-en-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-003-en",
@@ -83,11 +85,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 2,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-003-en.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-003-en-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-004-en",
@@ -113,11 +116,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 3,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-004-en.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-004-en-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-005-en",
@@ -143,11 +147,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 3,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-005-en.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-005-en-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-001-es",
@@ -173,11 +178,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 3,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-001-es.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-001-es-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-002-es",
@@ -203,11 +209,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 4,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-002-es.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-002-es-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-003-es",
@@ -233,11 +240,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 4,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-003-es.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-003-es-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-004-es",
@@ -263,11 +271,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 4,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-004-es.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-004-es-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-005-es",
@@ -293,11 +302,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 5,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-005-es.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-005-es-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-006",
@@ -323,11 +333,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 5,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-006.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-006-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-007",
@@ -353,11 +364,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 6,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-007.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-007-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-008",
@@ -383,11 +395,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 6,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-008.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-008-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-009",
@@ -402,7 +415,7 @@
     "concurso": "ENEM 2022 — 1º dia — Caderno 1 Azul",
     "dificuldade": "Fácil",
     "dificuldade_estimada": true,
-    "enunciado": "CCaauussaarr uumm aacciiddeennttee\néé aallggoo qquuee vvooccêê lleevvaa\nAArrrreeppeennddiimmeennttoo\npprroo rreessttoo ddaa vviiddaa..\nNNããoo bbeebbaa ssee ffoorr ddiirriiggiirr..\nDDEETTRRAANN EESS\nDisponível em: www.portaldapropaganda.com.br. Acesso em: 29 out. 2013 (adaptado).\nPara convencer o público-alvo sobre a necessidade de\num trânsito mais seguro, essa peça publicitária apela\npara o(a)",
+    "enunciado": "CCaauussaarr uumm aacciiddeennttee\néé aallggoo qquuee vvooccêê lleevvaa",
     "opcoes": [
       "sentimento de culpa provocado no condutor\ncausador de acidentes.",
       "dano psicológico causado nas vítimas da violência\nnas estradas.",
@@ -413,11 +426,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 6,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-009.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-009-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-010",
@@ -443,11 +457,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 7,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-010.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-010-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-011",
@@ -473,11 +488,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 7,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-011.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-011-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-012",
@@ -503,11 +519,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 7,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-012.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-012-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-013",
@@ -533,11 +550,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 8,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-013.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-013-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-014",
@@ -563,11 +581,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 8,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-014.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-014-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-015",
@@ -593,11 +612,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 8,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-015.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-015-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-016",
@@ -623,11 +643,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 9,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-016.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-016-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-017",
@@ -653,11 +674,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 9,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-017.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-017-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-018",
@@ -683,11 +705,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 9,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-018.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-018-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-019",
@@ -713,11 +736,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 10,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-019.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-019-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-020",
@@ -743,11 +767,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 10,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-020.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-020-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-021",
@@ -773,11 +798,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 11,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-021.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-021-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-022",
@@ -803,11 +829,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 11,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-022.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-022-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-023",
@@ -833,11 +860,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 11,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-023.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-023-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-024",
@@ -863,11 +891,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 12,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-024.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-024-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-025",
@@ -893,11 +922,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 12,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-025.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-025-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-026",
@@ -923,11 +953,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 13,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-026.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-026-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-027",
@@ -953,11 +984,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 13,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-027.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-027-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-028",
@@ -983,11 +1015,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 13,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-028.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-028-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-029",
@@ -1013,11 +1046,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 14,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-029.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-029-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-030",
@@ -1043,11 +1077,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 14,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-030.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-030-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-031",
@@ -1073,11 +1108,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 14,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-031.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-031-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-032",
@@ -1103,11 +1139,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 15,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-032.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-032-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-033",
@@ -1133,11 +1170,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 15,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-033.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-033-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-034",
@@ -1163,11 +1201,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 16,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-034.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-034-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-035",
@@ -1193,11 +1232,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 16,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-035.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-035-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-036",
@@ -1223,11 +1263,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 16,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-036.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-036-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-037",
@@ -1253,11 +1294,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 17,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-037.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-037-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-038",
@@ -1283,11 +1325,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 17,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-038.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-038-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-039",
@@ -1313,11 +1356,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 17,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-039.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-039-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-040",
@@ -1343,11 +1387,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 18,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-040.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-040-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-041",
@@ -1373,11 +1418,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 18,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-041.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-041-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-042",
@@ -1403,11 +1449,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 18,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-042.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-042-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-043",
@@ -1433,11 +1480,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 19,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-043.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-043-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-044",
@@ -1463,11 +1511,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 19,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-044.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-044-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-045",
@@ -1493,11 +1542,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 19,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-045.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-045-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-046",
@@ -1523,11 +1573,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 21,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-046.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-046-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-047",
@@ -1553,11 +1604,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 21,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-047.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-047-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-048",
@@ -1583,11 +1635,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 21,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-048.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-048-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-049",
@@ -1613,11 +1666,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 21,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-049.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-049-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-050",
@@ -1643,11 +1697,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 22,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-050.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-050-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-051",
@@ -1673,11 +1728,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 22,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-051.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-051-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-052",
@@ -1703,11 +1759,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 22,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-052.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-052-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-053",
@@ -1733,11 +1790,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 22,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-053.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-053-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-054",
@@ -1763,11 +1821,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 23,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-054.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-054-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-055",
@@ -1793,11 +1852,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 23,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-055.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-055-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-056",
@@ -1823,11 +1883,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 23,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-056.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-056-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-057",
@@ -1853,11 +1914,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 24,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-057.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-057-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-058",
@@ -1883,11 +1945,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 24,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-058.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-058-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-059",
@@ -1913,11 +1976,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 24,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-059.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-059-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-060",
@@ -1943,11 +2007,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 24,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-060.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-060-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-061",
@@ -1973,11 +2038,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 25,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-061.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-061-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-062",
@@ -2003,11 +2069,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 25,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-062.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-062-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-063",
@@ -2033,11 +2100,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 25,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-063.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-063-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-064",
@@ -2063,11 +2131,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 25,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-064.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-064-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-065",
@@ -2093,11 +2162,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 25,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-065.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-065-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-066",
@@ -2123,11 +2193,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 26,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-066.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-066-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-067",
@@ -2153,11 +2224,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 26,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-067.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-067-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-068",
@@ -2183,11 +2255,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 26,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-068.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-068-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-069",
@@ -2213,11 +2286,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 26,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-069.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-069-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-070",
@@ -2243,11 +2317,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 27,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-070.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-070-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-071",
@@ -2273,11 +2348,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 27,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-071.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-071-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-072",
@@ -2303,11 +2379,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 27,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-072.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-072-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-073",
@@ -2333,11 +2410,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 27,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-073.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-073-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-074",
@@ -2363,11 +2441,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 28,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-074.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-074-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-075",
@@ -2393,11 +2472,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 28,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-075.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-075-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-076",
@@ -2423,11 +2503,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 28,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-076.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-076-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-077",
@@ -2453,11 +2534,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 28,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-077.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-077-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-078",
@@ -2483,11 +2565,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 29,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-078.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-078-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-079",
@@ -2513,11 +2596,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 29,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-079.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-079-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-080",
@@ -2543,11 +2627,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 29,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-080.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-080-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-081",
@@ -2573,11 +2658,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 29,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-081.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-081-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-082",
@@ -2603,11 +2689,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 30,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-082.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-082-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-083",
@@ -2633,11 +2720,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 30,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-083.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-083-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-084",
@@ -2663,11 +2751,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 30,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-084.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-084-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-085",
@@ -2693,11 +2782,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 30,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-085.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-085-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-086",
@@ -2723,11 +2813,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 31,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-086.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-086-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-087",
@@ -2753,11 +2844,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 31,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-087.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-087-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-088",
@@ -2783,11 +2875,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 31,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-088.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-088-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-089",
@@ -2813,11 +2906,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 31,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-089.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-089-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d1-c1-090",
@@ -2843,11 +2937,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 31,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-090.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d1-c1-090-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia1.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia1.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-091",
@@ -2873,11 +2968,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 2,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-091.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-091-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-092",
@@ -2903,11 +2999,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 2,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-092.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-092-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-093",
@@ -2933,11 +3030,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 2,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-093.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-093-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-094",
@@ -2963,11 +3061,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 2,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-094.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-094-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-095",
@@ -2984,20 +3083,28 @@
     "dificuldade_estimada": true,
     "enunciado": "O físico Hans C. Oersted observou que um fio transportando corrente elétrica produz um campo magnético. A presença\ndo campo magnético foi verificada ao aproximar uma bússola de um fio conduzindo corrente elétrica.\nA figura ilustra um fio percorrido por uma corrente elétrica i, constante e com sentido para cima. Os pontos A, B e C\nestão num plano transversal e equidistantes do fio. Em cada ponto foi colocada uma bússola.\nN\ni\nA\nB C\nS\nBússola\nConsiderando apenas o campo magnético por causa da corrente i, as respectivas configurações das bússolas nos\npontos A, B e C serão\ni i\nA D\ni i\nB E\ni\nC",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "Alternativa A",
+      "Alternativa B",
+      "Alternativa C",
+      "Alternativa D",
+      "Alternativa E"
     ],
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 3,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-095.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-095-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true,
+    "opcoes_imagens": [
+      "/acervo/enem-2022/enem-2022-d2-c7-095-A.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-095-B.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-095-C.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-095-D.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-095-E.webp"
+    ]
   },
   {
     "id": "enem-2022-d2-c7-096",
@@ -3014,20 +3121,28 @@
     "dificuldade_estimada": true,
     "enunciado": "O quadro mostra valores de corrente elétrica e seus\nefeitos sobre o corpo humano.\nCorrente elétrica Dano físico\nAté 10 mA Dor e contração muscular\nAumento das contrações\nDe 10 mA até 20 mA\nmusculares\nDe 20 mA até 100 mA Parada respiratória\nDe 100 mA até 3 A Fibrilação ventricular\nAcima de 3 A Parada cardíaca e queimaduras\nA corrente elétrica que percorrerá o corpo de um\nindivíduo depende da tensão aplicada e da resistência\nelétrica média do corpo humano. Esse último fator está\nintimamente relacionado com a umidade da pele, que\nseca apresenta resistência elétrica da ordem de 500 kΩ,\nmas, se molhada, pode chegar a apenas 1 kΩ.\nApesar de incomum, é possível sofrer um acidente\nutilizando baterias de 12 V. Considere que um indivíduo\ncom a pele molhada sofreu uma parada respiratória\nao tocar simultaneamente nos pontos A e B de uma\nassociação de duas dessas baterias.\nDURAN, J. E. R. Biofísica: fundamentos e aplicações.\nSão Paulo: Pearson Prentice Hall, 2003 (adaptado).\nQual associação de baterias foi responsável pelo acidente?\n+ - + -\nA\nA B\n+ - - +\nB\nA B\n- + - +\nC\nA B\n- + + -\nD\nA B\n+ -\nE A\nB\n- +",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "Alternativa A",
+      "Alternativa B",
+      "Alternativa C",
+      "Alternativa D",
+      "Alternativa E"
     ],
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 4,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-096.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-096-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true,
+    "opcoes_imagens": [
+      "/acervo/enem-2022/enem-2022-d2-c7-096-A.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-096-B.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-096-C.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-096-D.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-096-E.webp"
+    ]
   },
   {
     "id": "enem-2022-d2-c7-097",
@@ -3053,11 +3168,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 4,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-097.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-097-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-098",
@@ -3083,11 +3199,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 4,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-098.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-098-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-099",
@@ -3113,11 +3230,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 5,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-099.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-099-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-100",
@@ -3143,11 +3261,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 5,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-100.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-100-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-101",
@@ -3173,11 +3292,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 5,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-101.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-101-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-102",
@@ -3203,11 +3323,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 5,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-102.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-102-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-103",
@@ -3224,20 +3345,28 @@
     "dificuldade_estimada": true,
     "enunciado": "Tribologia é o estudo da interação entre duas\nsuperfícies em contato, como desgaste e atrito, sendo\nde extrema importância na avaliação de diferentes\nprodutos e de bens de consumo em geral. Para testar\na conformidade de uma muleta, realiza-se um ensaio\ntribológico, pressionando-a verticalmente contra o piso\n\ncom uma força F, conforme ilustra a imagem, em que CM\nrepresenta o centro de massa da muleta.\n\nF\nCM\n\nMantendo-se a força F paralela à muleta, varia-se\nlentamente o ângulo entre a muleta e a vertical, até o máximo\nângulo imediatamente anterior ao de escorregamento,\ndenominado ângulo crítico. Esse ângulo também pode ser\ncalculado a partir da identificação dos pontos de aplicação,\n \n(cid:31) (cid:30) (cid:31) (cid:30)\nda direção e do sentido das forças peso P , normal N e\n\n(cid:30) (cid:29)\nde atrito estático (cid:31) .\ne\nO esquema que representa corretamente todas as forças\nque atuam sobre a muleta quando ela atinge o ângulo\ncrítico é:\n\nF\nCM\nA\n\nN \nf\ne\n\nP\n\nF\n\nN\nB\nCM\n\nP\n\nf\ne\n\nF\nC CM\n\nN \nf\ne\n\nP\n\nF\n\nN\nD\nCM\n\nP\n\nf\ne\n\nF\nE\nCM\n\nP\n\nN \nf\ne",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "Alternativa A",
+      "Alternativa B",
+      "Alternativa C",
+      "Alternativa D",
+      "Alternativa E"
     ],
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 6,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-103.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-103-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true,
+    "opcoes_imagens": [
+      "/acervo/enem-2022/enem-2022-d2-c7-103-A.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-103-B.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-103-C.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-103-D.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-103-E.webp"
+    ]
   },
   {
     "id": "enem-2022-d2-c7-104",
@@ -3263,11 +3392,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 7,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-104.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-104-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-105",
@@ -3293,11 +3423,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 7,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-105.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-105-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-106",
@@ -3314,20 +3445,28 @@
     "dificuldade_estimada": true,
     "enunciado": "A penicilamina é um medicamento de uso oral\nutilizado no tratamento de várias doenças. Esse\ncomposto é excretado na urina, cujo pH se situa entre\n5 e 7. A penicilamina, cuja fórmula estrutural plana está\napresentada, possui três grupos funcionais que podem\nser ionizados:\n• carboxila: —COOH, cujo pK é igual a 1,8;\na\n• amino: —NH , que pode ser convertido em\n2\namínio (—NH +, cujo pK é igual a 7,9);\n3 a\n• tiol: —SH, cujo pK é igual a 10,5.\na\nSabe-se que pK = −log K .\na a\nCH H\n3\nHS C C COOH\nCH NH\n3 2\nPenicilamina\nQual estrutura derivada da penicilamina é\npredominantemente encontrada na urina?\nCH H\n3\nA − S C C COO −\nCH NH\n3 2\nCH H\n3\nB − S C C COOH\nCH NH\n3 2\nCH H\n3\nC HS C C COO −\n+\nCH NH\n3 3\nCH H\n3\nD − S C C COOH\nCH NH +\n3 3\nCH H\n3\nE HS C C COOH\n+\nCH NH\n3 3",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "Alternativa A",
+      "Alternativa B",
+      "Alternativa C",
+      "Alternativa D",
+      "Alternativa E"
     ],
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 7,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-106.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-106-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true,
+    "opcoes_imagens": [
+      "/acervo/enem-2022/enem-2022-d2-c7-106-A.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-106-B.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-106-C.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-106-D.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-106-E.webp"
+    ]
   },
   {
     "id": "enem-2022-d2-c7-107",
@@ -3353,11 +3492,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 8,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-107.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-107-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-108",
@@ -3372,22 +3512,23 @@
     "concurso": "ENEM 2022 — 2º dia — Caderno 7 Azul",
     "dificuldade": "Difícil",
     "dificuldade_estimada": true,
-    "enunciado": "O ácido tartárico é o principal ácido do vinho e está diretamente relacionado com sua qualidade. Na avaliação de\num vinho branco em produção, uma analista neutralizou uma alíquota de 25,0 mL do vinho com NaOH a 0,10 mol L−1,\nconsumindo um volume igual a 8,0 mL dessa base. A reação para esse processo de titulação é representada pela\nequação química:\nO OH O OH\nOH  2 NaOH ONa  2 H O\n2\nHO\nNaO\nOH O OH O\nÁcido tartárico\n1)\n(massa molar: 150 g mol\nA concentração de ácido tartárico no vinho analisado é mais próxima de:\nAA 1,8 g L−1\nBB 2,4 g L−1\nCC 3,6 g L−1\nDD 4,8 g L−1\nEE 9,6 g L−1",
+    "enunciado": "O ácido tartárico é o principal ácido do vinho e está diretamente relacionado com sua qualidade. Na avaliação de\num vinho branco em produção, uma analista neutralizou uma alíquota de 25,0 mL do vinho com NaOH a 0,10 mol L−1,\nconsumindo um volume igual a 8,0 mL dessa base. A reação para esse processo de titulação é representada pela\nequação química:\nO OH O OH\nOH  2 NaOH ONa  2 H O\n2\nHO\nNaO\nOH O OH O\nÁcido tartárico\n1)\n(massa molar: 150 g mol\nA concentração de ácido tartárico no vinho analisado é mais próxima de:",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "1,8 g L⁻¹",
+      "2,4 g L⁻¹",
+      "3,6 g L⁻¹",
+      "4,8 g L⁻¹",
+      "9,6 g L⁻¹"
     ],
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 8,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-108.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-108-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-109",
@@ -3413,11 +3554,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 9,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-109.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-109-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-110",
@@ -3443,11 +3585,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 9,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-110.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-110-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-111",
@@ -3473,11 +3616,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 9,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-111.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-111-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-112",
@@ -3503,11 +3647,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 10,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-112.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-112-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-113",
@@ -3533,11 +3678,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 10,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-113.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-113-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-114",
@@ -3563,11 +3709,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 10,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-114.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-114-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-115",
@@ -3593,11 +3740,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 10,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-115.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-115-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-116",
@@ -3623,11 +3771,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 11,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-116.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-116-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-117",
@@ -3642,22 +3791,23 @@
     "concurso": "ENEM 2022 — 2º dia — Caderno 7 Azul",
     "dificuldade": "Fácil",
     "dificuldade_estimada": true,
-    "enunciado": "Um grupo de alunos realizou um experimento para\nobservar algumas propriedades dos ácidos, adicionando\num pedaço de mármore (CaCO ) a uma solução aquosa\n3\nde ácido clorídrico (HCl), observando a liberação de um\ngás e o aumento da temperatura.\nGás\nÁcido\nMármore\nO gás obtido no experimento é o:\nAA H\n2\nBB O\n2\nCC CO\n2\nDD CO\nEE Cl\n2",
+    "enunciado": "Um grupo de alunos realizou um experimento para\nobservar algumas propriedades dos ácidos, adicionando\num pedaço de mármore (CaCO ) a uma solução aquosa\n3\nde ácido clorídrico (HCl), observando a liberação de um\ngás e o aumento da temperatura.\nGás\nÁcido\nMármore\nO gás obtido no experimento é o:",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "H₂",
+      "O₂",
+      "CO₂",
+      "CO",
+      "Cl₂"
     ],
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 11,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-117.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-117-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-118",
@@ -3683,11 +3833,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 11,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-118.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-118-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-119",
@@ -3713,11 +3864,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 12,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-119.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-119-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-120",
@@ -3743,11 +3895,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 12,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-120.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-120-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-121",
@@ -3773,11 +3926,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 12,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-121.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-121-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-122",
@@ -3803,11 +3957,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 13,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-122.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-122-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-123",
@@ -3833,11 +3988,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 13,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-123.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-123-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-124",
@@ -3863,11 +4019,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 13,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-124.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-124-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-125",
@@ -3893,11 +4050,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 13,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-125.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-125-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-126",
@@ -3923,11 +4081,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 14,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-126.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-126-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-127",
@@ -3953,11 +4112,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 14,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-127.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-127-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-128",
@@ -3983,11 +4143,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 14,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-128.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-128-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-129",
@@ -4002,22 +4163,23 @@
     "concurso": "ENEM 2022 — 2º dia — Caderno 7 Azul",
     "dificuldade": "Média",
     "dificuldade_estimada": true,
-    "enunciado": "O esquema representa o ciclo do nitrogênio:\nPlantas\nBactérias\nAssimilação desnitri-\nficantes\nBactérias fixa- Nitratos(NO −)\ndoras de N nos Decompositores 3\nnódulos de2 raízes (fungos e bactérias\nde leguminosas aeróbicas e anaeróbicas) Bactérias\nAmonificação Nitrificação nitrificantes\nBactérias fixadoras A ( m N ô H n 3 ) ia e A ( m NH ôn 4 + i ) o Nitritos (NO 2 −)\nde N no solo Bactérias nitrificantes\n2\nA chuva ácida interfere no ciclo do nitrogênio,\nprincipalmente, por proporcionar uma diminuição do pH\ndo solo e da atmosfera, alterando a concentração dos\ncompostos presentes nesse ciclo.\nDisponível em: http://scienceprojectideasforkids.com. Acesso em: 6 ago. 2012 (adaptado).\nEm um solo de menor pH, será favorecida a formação de:\nAA N\n2\nBB NH\n3\nCC NH +\n4\nDD NO −\n2\nEE NO −\n3",
+    "enunciado": "O esquema representa o ciclo do nitrogênio:\nPlantas\nBactérias\nAssimilação desnitri-\nficantes\nBactérias fixa- Nitratos(NO −)\ndoras de N nos Decompositores 3\nnódulos de2 raízes (fungos e bactérias\nde leguminosas aeróbicas e anaeróbicas) Bactérias\nAmonificação Nitrificação nitrificantes\nBactérias fixadoras A ( m N ô H n 3 ) ia e A ( m NH ôn 4 + i ) o Nitritos (NO 2 −)\nde N no solo Bactérias nitrificantes\n2\nA chuva ácida interfere no ciclo do nitrogênio,\nprincipalmente, por proporcionar uma diminuição do pH\ndo solo e da atmosfera, alterando a concentração dos\ncompostos presentes nesse ciclo.\nDisponível em: http://scienceprojectideasforkids.com. Acesso em: 6 ago. 2012 (adaptado).\nEm um solo de menor pH, será favorecida a formação de:",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "N₂",
+      "NH₃",
+      "NH₄⁺",
+      "NO₂⁻",
+      "NO₃⁻"
     ],
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 14,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-129.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-129-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-130",
@@ -4043,11 +4205,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 14,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-130.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-130-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-131",
@@ -4073,11 +4236,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 15,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-131.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-131-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-132",
@@ -4103,11 +4267,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 15,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-132.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-132-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-133",
@@ -4133,11 +4298,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 16,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-133.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-133-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-134",
@@ -4163,11 +4329,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 16,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-134.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-134-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-135",
@@ -4193,11 +4360,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 16,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-135.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-135-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-136",
@@ -4223,11 +4391,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 17,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-136.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-136-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-137",
@@ -4242,22 +4411,23 @@
     "concurso": "ENEM 2022 — 2º dia — Caderno 7 Azul",
     "dificuldade": "Difícil",
     "dificuldade_estimada": true,
-    "enunciado": "A World Series é a decisão do campeonato\nnorte-americano de beisebol. Os dois times que chegam\na essa fase jogam, entre si, até sete partidas. O primeiro\ndesses times que completar quatro vitórias é declarado\ncampeão.\nConsidere que, em todas as partidas, a probabilidade\n1\nde qualquer um dos dois times vencer é sempre .\n2\nQual é a probabilidade de o time campeão ser aquele que\nvenceu a primeira partida da World Series?\n35\nAA\n64\n40\nBB\n64\n42\nCC\n64\n44\nDD\n64\n52\nEE\n64",
+    "enunciado": "A World Series é a decisão do campeonato\nnorte-americano de beisebol. Os dois times que chegam\na essa fase jogam, entre si, até sete partidas. O primeiro\ndesses times que completar quatro vitórias é declarado\ncampeão.\nConsidere que, em todas as partidas, a probabilidade\n1\nde qualquer um dos dois times vencer é sempre .\n2\nQual é a probabilidade de o time campeão ser aquele que\nvenceu a primeira partida da World Series?\n35",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "35/64",
+      "40/64",
+      "42/64",
+      "44/64",
+      "52/64"
     ],
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 17,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-137.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-137-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-138",
@@ -4283,11 +4453,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 17,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-138.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-138-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-139",
@@ -4313,11 +4484,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 18,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-139.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-139-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-140",
@@ -4343,11 +4515,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 18,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-140.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-140-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-141",
@@ -4362,22 +4535,23 @@
     "concurso": "ENEM 2022 — 2º dia — Caderno 7 Azul",
     "dificuldade": "Difícil",
     "dificuldade_estimada": true,
-    "enunciado": "Em um jogo de bingo, as cartelas contêm\n16 quadrículas dispostas em linhas e colunas. Cada\nquadrícula tem impresso um número, dentre os inteiros\nde 1 a 50, sem repetição de número. Na primeira rodada,\num número é sorteado, aleatoriamente, dentre os 50\npossíveis. Em todas as rodadas, o número sorteado\né descartado e não participa dos sorteios das rodadas\nseguintes. Caso o jogador tenha em sua cartela o número\nsorteado, ele o assinala na cartela. Ganha o jogador que\nprimeiro conseguir preencher quatro quadrículas\nque formam uma linha, uma coluna ou uma diagonal,\nconforme os tipos de situações ilustradas na Figura 1.\nPreenchimento Preenchimento Preenchimento\nem linha em coluna em diagonal\nFigura 1\nO jogo inicia e, nas quatro primeiras rodadas, foram\nsorteados os seguintes números: 03, 27, 07 e 48. Ao\nfinal da quarta rodada, somente Pedro possuía uma\ncartela que continha esses quatro números sorteados,\nsendo que todos os demais jogadores conseguiram\nassinalar, no máximo, um desses números em suas\ncartelas. Observe na Figura 2 o cartão de Pedro após as\nquatro primeiras rodadas.\n03 48 12 27\n49 11 22 05\n29 50 19 45\n33 23 38 07\nFigura 2\nA probabilidade de Pedro ganhar o jogo em uma das duas\npróximas rodadas é\n1 1\nAA +\n46 45\n1 2\nBB (cid:31)\n46 46(cid:30)45\n1 8\nCC (cid:31)\n46 46(cid:30)45\n1 43\nDD (cid:31)\n46 46(cid:30)45\n1 49\nEE (cid:31)\n46 46(cid:30)45",
+    "enunciado": "Em um jogo de bingo, as cartelas contêm\n16 quadrículas dispostas em linhas e colunas. Cada\nquadrícula tem impresso um número, dentre os inteiros\nde 1 a 50, sem repetição de número. Na primeira rodada,\num número é sorteado, aleatoriamente, dentre os 50\npossíveis. Em todas as rodadas, o número sorteado\né descartado e não participa dos sorteios das rodadas\nseguintes. Caso o jogador tenha em sua cartela o número\nsorteado, ele o assinala na cartela. Ganha o jogador que\nprimeiro conseguir preencher quatro quadrículas\nque formam uma linha, uma coluna ou uma diagonal,\nconforme os tipos de situações ilustradas na Figura 1.\nPreenchimento Preenchimento Preenchimento\nem linha em coluna em diagonal\nFigura 1\nO jogo inicia e, nas quatro primeiras rodadas, foram\nsorteados os seguintes números: 03, 27, 07 e 48. Ao\nfinal da quarta rodada, somente Pedro possuía uma\ncartela que continha esses quatro números sorteados,\nsendo que todos os demais jogadores conseguiram\nassinalar, no máximo, um desses números em suas\ncartelas. Observe na Figura 2 o cartão de Pedro após as\nquatro primeiras rodadas.\n03 48 12 27\n49 11 22 05\n29 50 19 45\n33 23 38 07\nFigura 2\nA probabilidade de Pedro ganhar o jogo em uma das duas\npróximas rodadas é\n1 1",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "1/46 + 1/45",
+      "1/46 + 2/(46 × 45)",
+      "1/46 × 8/(46 × 45)",
+      "1/46 × 43/(46 × 45)",
+      "1/46 × 49/(46 × 45)"
     ],
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 18,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-141.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-141-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-142",
@@ -4403,11 +4577,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 19,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-142.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-142-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-143",
@@ -4422,22 +4597,30 @@
     "concurso": "ENEM 2022 — 2º dia — Caderno 7 Azul",
     "dificuldade": "Média",
     "dificuldade_estimada": true,
-    "enunciado": "Dentre as diversas planificações possíveis para o\ncubo, uma delas é a que se encontra apresentada na\nFigura 1.\nFigura 1\nEm um cubo, foram pintados, em três de suas faces,\nquadrados de cor cinza escura, que ocupam um quarto\ndessas faces, tendo esses três quadrados um vértice em\ncomum, conforme ilustrado na Figura 2.\nFigura 2\nA planificação do cubo da Figura 2, conforme o tipo de\nplanificação apresentada na Figura 1, é\nAA\nBB\nCC\nDD\nEE",
+    "enunciado": "Dentre as diversas planificações possíveis para o\ncubo, uma delas é a que se encontra apresentada na\nFigura 1.\nFigura 1\nEm um cubo, foram pintados, em três de suas faces,\nquadrados de cor cinza escura, que ocupam um quarto\ndessas faces, tendo esses três quadrados um vértice em\ncomum, conforme ilustrado na Figura 2.\nFigura 2\nA planificação do cubo da Figura 2, conforme o tipo de\nplanificação apresentada na Figura 1, é",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "Alternativa A",
+      "Alternativa B",
+      "Alternativa C",
+      "Alternativa D",
+      "Alternativa E"
     ],
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 19,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-143.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-143-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true,
+    "opcoes_imagens": [
+      "/acervo/enem-2022/enem-2022-d2-c7-143-A.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-143-B.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-143-C.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-143-D.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-143-E.webp"
+    ]
   },
   {
     "id": "enem-2022-d2-c7-144",
@@ -4463,11 +4646,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 19,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-144.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-144-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-145",
@@ -4493,11 +4677,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 20,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-145.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-145-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-146",
@@ -4523,11 +4708,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 20,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-146.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-146-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-147",
@@ -4553,11 +4739,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 20,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-147.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-147-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-148",
@@ -4572,22 +4759,23 @@
     "concurso": "ENEM 2022 — 2º dia — Caderno 7 Azul",
     "dificuldade": "Média",
     "dificuldade_estimada": true,
-    "enunciado": "A luminosidade L de uma estrela está relacionada com\no raio R e com a temperatura T dessa estrela segundo a\nLei de Stefan-Boltzmann: L = c ⋅ R 2 ⋅ T 4, em que c é uma\nconstante igual para todas as estrelas.\nDisponível em: http://ciencia.hsw.uol.com.br. Acesso em: 22 nov. 2013 (adaptado).\nConsidere duas estrelas E e F, sendo que a estrela E\ntem metade do raio da estrela F e o dobro da temperatura\nde F.\nIndique por L e L suas respectivas luminosidades.\nE F\nA relação entre as luminosidades dessas duas estrelas é\ndada por\nL\nAA L = F\nE 2\nL\nBB L = F\nE 4\nCC L = L\nE F\nDD L = 4L\nE F\nEE L = 8L\nE F",
+    "enunciado": "A luminosidade L de uma estrela está relacionada com\no raio R e com a temperatura T dessa estrela segundo a\nLei de Stefan-Boltzmann: L = c ⋅ R 2 ⋅ T 4, em que c é uma\nconstante igual para todas as estrelas.\nDisponível em: http://ciencia.hsw.uol.com.br. Acesso em: 22 nov. 2013 (adaptado).\nConsidere duas estrelas E e F, sendo que a estrela E\ntem metade do raio da estrela F e o dobro da temperatura\nde F.\nIndique por L e L suas respectivas luminosidades.\nE F\nA relação entre as luminosidades dessas duas estrelas é\ndada por\nL",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "Lₑ = L𝒻/2",
+      "Lₑ = L𝒻/4",
+      "Lₑ = L𝒻",
+      "Lₑ = 4L𝒻",
+      "Lₑ = 8L𝒻"
     ],
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 21,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-148.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-148-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-149",
@@ -4613,11 +4801,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 21,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-149.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-149-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-150",
@@ -4643,11 +4832,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 21,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-150.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-150-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-151",
@@ -4673,11 +4863,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 22,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-151.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-151-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-152",
@@ -4703,11 +4894,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 22,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-152.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-152-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-153",
@@ -4733,11 +4925,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 23,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-153.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-153-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-154",
@@ -4763,11 +4956,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 23,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-154.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-154-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-155",
@@ -4782,22 +4976,23 @@
     "concurso": "ENEM 2022 — 2º dia — Caderno 7 Azul",
     "dificuldade": "Difícil",
     "dificuldade_estimada": true,
-    "enunciado": "Um prédio, com 9 andares e 8 apartamentos de\n2 quartos por andar, está com todos os seus apartamentos\nà venda. Os apartamentos são identificados por números\nformados por dois algarismos, sendo que a dezena indica\no andar onde se encontra o apartamento, e a unidade,\num algarismo de 1 a 8, que diferencia os apartamentos\nde um mesmo andar. Quanto à incidência de sol\nnos quartos desses apartamentos, constatam-se as\nseguintes características, em função de seus números de\nidentificação:\n• naqueles que finalizam em 1 ou 2, ambos os quartos\nrecebem sol apenas na parte da manhã;\n• naqueles que finalizam em 3, 4, 5 ou 6, apenas um\ndos quartos recebe sol na parte da manhã;\n• naqueles que finalizam em 7 ou 8, ambos os quartos\nrecebem sol apenas na parte da tarde.\nUma pessoa pretende comprar 2 desses\napartamentos em um mesmo andar, mas quer que, em\nambos, pelo menos um dos quartos receba sol na parte\nda manhã.\nDe quantas maneiras diferentes essa pessoa poderá\nescolher 2 desses apartamentos para compra nas\ncondições desejadas?\n6!\nAA 9(cid:31) (cid:29)6(cid:30)2(cid:28)!\n6!\nBB 9(cid:31)\n(cid:29)6(cid:30)2(cid:28)!(cid:31)2!\n4!\nCC 9(cid:31) (cid:29)4(cid:30)2(cid:28)!(cid:31)2!\n2!\nDD 9(cid:31)\n(cid:29)2(cid:30)2(cid:28)!(cid:31)2!\n(cid:27) 8! (cid:24)\nEE 9(cid:31)(cid:25) (cid:30)1(cid:22)\n(cid:25)(cid:29)8(cid:30)2(cid:28)!(cid:31)2! (cid:22)\n(cid:26) (cid:23)",
+    "enunciado": "Um prédio, com 9 andares e 8 apartamentos de\n2 quartos por andar, está com todos os seus apartamentos\nà venda. Os apartamentos são identificados por números\nformados por dois algarismos, sendo que a dezena indica\no andar onde se encontra o apartamento, e a unidade,\num algarismo de 1 a 8, que diferencia os apartamentos\nde um mesmo andar. Quanto à incidência de sol\nnos quartos desses apartamentos, constatam-se as\nseguintes características, em função de seus números de\nidentificação:\n• naqueles que finalizam em 1 ou 2, ambos os quartos\nrecebem sol apenas na parte da manhã;\n• naqueles que finalizam em 3, 4, 5 ou 6, apenas um\ndos quartos recebe sol na parte da manhã;\n• naqueles que finalizam em 7 ou 8, ambos os quartos\nrecebem sol apenas na parte da tarde.\nUma pessoa pretende comprar 2 desses\napartamentos em um mesmo andar, mas quer que, em\nambos, pelo menos um dos quartos receba sol na parte\nda manhã.\nDe quantas maneiras diferentes essa pessoa poderá\nescolher 2 desses apartamentos para compra nas\ncondições desejadas?\n6!",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "9 × 6!/(6 − 2)!",
+      "9 × 6!/[(6 − 2)! × 2!]",
+      "9 × 4!/[(4 − 2)! × 2!]",
+      "9 × 2!/[(2 − 2)! × 2!]",
+      "9 × {8!/[(8 − 2)! × 2!] − 1}"
     ],
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 23,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-155.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-155-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-156",
@@ -4812,22 +5007,30 @@
     "concurso": "ENEM 2022 — 2º dia — Caderno 7 Azul",
     "dificuldade": "Média",
     "dificuldade_estimada": true,
-    "enunciado": "O professor de artes orientou seus estudantes a realizarem a seguinte sequência de atividades:\n• Dobrar uma folha de papel em formato quadrado duas vezes, em sequência, ao longo das linhas tracejadas,\nconforme ilustrado nas figuras 1 e 2, para obter o papel dobrado, conforme Figura 3.\n  O\nO\nFigura 1 Figura 2 Figura 3\n• Em seguida, no papel dobrado da Figura 3, considerar o ponto R, sobre o segmento OM, sendo M o ponto\n1\nmédio do lado do quadrado original, de modo que OR = OM, traçar um arco de circunferência de raio\n4\n1\nmedindo OM com centro no ponto R, obtendo a Figura 4. Por último, recortar o papel ao longo do arco\n2\nde circunferência e excluir a parte que contém o setor circular, obtendo o papel dobrado, conforme Figura 5.\nO R M ⇒\nFigura 4 Figura 5\nApós desdobrado o papel que restou na Figura 5, a figura plana que os estudantes obterão será\nCC\nAA BB\nDD EE",
+    "enunciado": "O professor de artes orientou seus estudantes a realizarem a seguinte sequência de atividades:\n• Dobrar uma folha de papel em formato quadrado duas vezes, em sequência, ao longo das linhas tracejadas,\nconforme ilustrado nas figuras 1 e 2, para obter o papel dobrado, conforme Figura 3.\n  O\nO\nFigura 1 Figura 2 Figura 3\n• Em seguida, no papel dobrado da Figura 3, considerar o ponto R, sobre o segmento OM, sendo M o ponto\n1\nmédio do lado do quadrado original, de modo que OR = OM, traçar um arco de circunferência de raio\n4\n1\nmedindo OM com centro no ponto R, obtendo a Figura 4. Por último, recortar o papel ao longo do arco\n2\nde circunferência e excluir a parte que contém o setor circular, obtendo o papel dobrado, conforme Figura 5.\nO R M ⇒\nFigura 4 Figura 5\nApós desdobrado o papel que restou na Figura 5, a figura plana que os estudantes obterão será\nCC",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "Alternativa A",
+      "Alternativa B",
+      "Alternativa C",
+      "Alternativa D",
+      "Alternativa E"
     ],
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 24,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-156.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-156-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true,
+    "opcoes_imagens": [
+      "/acervo/enem-2022/enem-2022-d2-c7-156-A.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-156-B.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-156-C.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-156-D.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-156-E.webp"
+    ]
   },
   {
     "id": "enem-2022-d2-c7-157",
@@ -4842,22 +5045,23 @@
     "concurso": "ENEM 2022 — 2º dia — Caderno 7 Azul",
     "dificuldade": "Média",
     "dificuldade_estimada": true,
-    "enunciado": "O funcionário de uma loja tem seu salário mensal formado por uma parcela fixa de 675 reais mais uma comissão\nque depende da quantidade de peças vendidas por ele no mês. O cálculo do valor dessa comissão é feito de acordo\ncom estes critérios:\n• até a quinquagésima peça vendida, paga-se 5 reais por peça;\n• a partir da quinquagésima primeira peça vendida, o valor pago é de 7 reais por peça.\nRepresente por q a quantidade de peças vendidas no mês por esse funcionário, e por S(q) o seu salário mensal,\nem real, nesse mês.\nA expressão algébrica que descreve S(q) em função de q é\nAA S(q) = 675 + 12q\nBB S(q) = 325 + 12q\nCC S(q) = 675 + 7q\n(cid:27)625 (cid:30) 5q, se q (cid:28) 50\nDD S(q)(cid:31)(cid:26)\n(cid:25)925 (cid:30) 7q, se q (cid:29) 50\n(cid:27)625 (cid:30) 5q, se q (cid:28) 50\nEE S(q)(cid:31)(cid:26)\n(cid:25)575 (cid:30) 7q, se q (cid:29) 50",
+    "enunciado": "O funcionário de uma loja tem seu salário mensal formado por uma parcela fixa de 675 reais mais uma comissão\nque depende da quantidade de peças vendidas por ele no mês. O cálculo do valor dessa comissão é feito de acordo\ncom estes critérios:\n• até a quinquagésima peça vendida, paga-se 5 reais por peça;\n• a partir da quinquagésima primeira peça vendida, o valor pago é de 7 reais por peça.\nRepresente por q a quantidade de peças vendidas no mês por esse funcionário, e por S(q) o seu salário mensal,\nem real, nesse mês.\nA expressão algébrica que descreve S(q) em função de q é",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "S(q) = 675 + 12q",
+      "S(q) = 325 + 12q",
+      "S(q) = 675 + 7q",
+      "S(q) = 625 + 5q, se q ≤ 50; 925 + 7q, se q > 50",
+      "S(q) = 625 + 5q, se q ≤ 50; 575 + 7q, se q > 50"
     ],
     "resposta_correta": null,
     "anulada": true,
     "pagina": 25,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-157.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-157-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-158",
@@ -4883,11 +5087,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 25,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-158.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-158-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-159",
@@ -4902,22 +5107,23 @@
     "concurso": "ENEM 2022 — 2º dia — Caderno 7 Azul",
     "dificuldade": "Média",
     "dificuldade_estimada": true,
-    "enunciado": "Um atleta iniciou seu treinamento visando as competições de fim de ano. Seu treinamento consiste em cinco tipos\ndiferentes de treinos: treino T , treino T , treino T , treino T e treino T . A sequência dos treinamentos deve seguir esta ordem:\n1 2 3 4 5\nA letra R significa repouso. Após completar a sequência de treinamentos, o atleta começa novamente a sequência a\npartir do treino T e segue a ordem descrita. Após 24 semanas completas de treinamento, se dará o início das competições.\n1\nA sequência de treinamentos que o atleta realizará na 24ª semana de treinos é\nAA T R T R R T R.\n3 4 5\nBB R T R T R R T .\n3 4 5\nCC R T R R T R T .\n4 5 1\nDD R R T R T R R.\n5 1\nEE R T R T R R T .\n5 1 2",
+    "enunciado": "Um atleta iniciou seu treinamento visando as competições de fim de ano. Seu treinamento consiste em cinco tipos\ndiferentes de treinos: treino T , treino T , treino T , treino T e treino T . A sequência dos treinamentos deve seguir esta ordem:\n1 2 3 4 5\nA letra R significa repouso. Após completar a sequência de treinamentos, o atleta começa novamente a sequência a\npartir do treino T e segue a ordem descrita. Após 24 semanas completas de treinamento, se dará o início das competições.\n1\nA sequência de treinamentos que o atleta realizará na 24ª semana de treinos é",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "T₃ R T₄ R R T₅ R.",
+      "R T₃ R T₄ R R T₅.",
+      "R T₄ R R T₅ R T₁.",
+      "R R T₅ R T₁ R R.",
+      "R T₅ R T₁ R R T₂."
     ],
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 25,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-159.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-159-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-160",
@@ -4932,22 +5138,30 @@
     "concurso": "ENEM 2022 — 2º dia — Caderno 7 Azul",
     "dificuldade": "Média",
     "dificuldade_estimada": true,
-    "enunciado": "Um robô, que tem um ímã em sua base, se desloca\nsobre a superfície externa de um cubo metálico, ao longo de\nsegmentos de reta cujas extremidades são pontos médios de\narestas e centros de faces. Ele inicia seu deslocamento no\nponto P, centro da face superior do cubo, segue para o centro\nda próxima face, converte à esquerda e segue para o centro da\nface seguinte, converte à direita e continua sua movimentação,\nsempre alternando entre conversões à esquerda e à direita\nquando alcança o centro de uma face. O robô só termina sua\nmovimentação quando retorna ao ponto P. A figura apresenta\nos deslocamentos iniciais desse robô.\nP\nA projeção ortogonal do trajeto descrito por esse robô\nsobre o plano da base, após terminada sua movimentação,\nvisualizada da posição em que se está enxergando esse\ncubo, é\nAA\nBB\nCC\nDD\nEE",
+    "enunciado": "Um robô, que tem um ímã em sua base, se desloca\nsobre a superfície externa de um cubo metálico, ao longo de\nsegmentos de reta cujas extremidades são pontos médios de\narestas e centros de faces. Ele inicia seu deslocamento no\nponto P, centro da face superior do cubo, segue para o centro\nda próxima face, converte à esquerda e segue para o centro da\nface seguinte, converte à direita e continua sua movimentação,\nsempre alternando entre conversões à esquerda e à direita\nquando alcança o centro de uma face. O robô só termina sua\nmovimentação quando retorna ao ponto P. A figura apresenta\nos deslocamentos iniciais desse robô.\nP\nA projeção ortogonal do trajeto descrito por esse robô\nsobre o plano da base, após terminada sua movimentação,\nvisualizada da posição em que se está enxergando esse\ncubo, é",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "Alternativa A",
+      "Alternativa B",
+      "Alternativa C",
+      "Alternativa D",
+      "Alternativa E"
     ],
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 26,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-160.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-160-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true,
+    "opcoes_imagens": [
+      "/acervo/enem-2022/enem-2022-d2-c7-160-A.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-160-B.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-160-C.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-160-D.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-160-E.webp"
+    ]
   },
   {
     "id": "enem-2022-d2-c7-161",
@@ -4973,11 +5187,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 26,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-161.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-161-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-162",
@@ -5003,11 +5218,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 26,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-162.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-162-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-163",
@@ -5033,11 +5249,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 27,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-163.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-163-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-164",
@@ -5063,11 +5280,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 27,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-164.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-164-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-165",
@@ -5093,11 +5311,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 27,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-165.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-165-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-166",
@@ -5123,11 +5342,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 27,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-166.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-166-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-167",
@@ -5153,11 +5373,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 27,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-167.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-167-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-168",
@@ -5183,11 +5404,12 @@
     "resposta_correta": 2,
     "anulada": false,
     "pagina": 28,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-168.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-168-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-169",
@@ -5213,11 +5435,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 28,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-169.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-169-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-170",
@@ -5243,11 +5466,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 28,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-170.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-170-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-171",
@@ -5273,11 +5497,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 29,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-171.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-171-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-172",
@@ -5303,11 +5528,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 29,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-172.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-172-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-173",
@@ -5333,11 +5559,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 29,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-173.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-173-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-174",
@@ -5363,11 +5590,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 29,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-174.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-174-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-175",
@@ -5393,11 +5621,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 30,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-175.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-175-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-176",
@@ -5423,11 +5652,12 @@
     "resposta_correta": 3,
     "anulada": false,
     "pagina": 30,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-176.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-176-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-177",
@@ -5453,11 +5683,12 @@
     "resposta_correta": 0,
     "anulada": false,
     "pagina": 30,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-177.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-177-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-178",
@@ -5483,11 +5714,12 @@
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 30,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-178.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-178-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-179",
@@ -5513,11 +5745,12 @@
     "resposta_correta": 1,
     "anulada": false,
     "pagina": 31,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-179.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-179-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true
   },
   {
     "id": "enem-2022-d2-c7-180",
@@ -5532,21 +5765,29 @@
     "concurso": "ENEM 2022 — 2º dia — Caderno 7 Azul",
     "dificuldade": "Média",
     "dificuldade_estimada": true,
-    "enunciado": "Na figura estão destacadas duas trajetórias sobre a\nsuperfície do globo terrestre, descritas ao se percorrer\nparte dos meridianos 1, 2 e da Linha do Equador, sendo\nque os meridianos 1 e 2 estão contidos em planos\nperpendiculares entre si. O plano α é paralelo ao que\ncontém a Linha do Equador.\nMeridiano 2 N\nMeridiano 1\nLinha do Equador\nS\nα\nA vista superior da projeção ortogonal sobre o plano α\ndessas duas trajetórias é\nAA\nBB\nCC\nDD\nEE",
+    "enunciado": "Na figura estão destacadas duas trajetórias sobre a\nsuperfície do globo terrestre, descritas ao se percorrer\nparte dos meridianos 1, 2 e da Linha do Equador, sendo\nque os meridianos 1 e 2 estão contidos em planos\nperpendiculares entre si. O plano α é paralelo ao que\ncontém a Linha do Equador.\nMeridiano 2 N\nMeridiano 1\nLinha do Equador\nS\nα\nA vista superior da projeção ortogonal sobre o plano α\ndessas duas trajetórias é",
     "opcoes": [
-      "Alternativa A — conforme a imagem",
-      "Alternativa B — conforme a imagem",
-      "Alternativa C — conforme a imagem",
-      "Alternativa D — conforme a imagem",
-      "Alternativa E — conforme a imagem"
+      "Alternativa A",
+      "Alternativa B",
+      "Alternativa C",
+      "Alternativa D",
+      "Alternativa E"
     ],
     "resposta_correta": 4,
     "anulada": false,
     "pagina": 31,
-    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-180.webp",
+    "imagem_original": "/acervo/enem-2022/enem-2022-d2-c7-180-enunciado.webp",
     "apoio": [],
     "fonte_pdf": "/acervo/enem-2022/prova-dia2.pdf",
     "fonte_gabarito": "/acervo/enem-2022/gabarito-dia2.pdf",
-    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial"
+    "origem": "Inep — ENEM 2022, aplicação regular, prova impressa e gabarito oficial",
+    "imagem_sem_alternativas": true,
+    "opcoes_imagens": [
+      "/acervo/enem-2022/enem-2022-d2-c7-180-A.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-180-B.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-180-C.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-180-D.webp",
+      "/acervo/enem-2022/enem-2022-d2-c7-180-E.webp"
+    ]
   }
 ]
