@@ -13,6 +13,9 @@ async function api(path, options = {}) {
     ...options,
     headers: { Authorization: `Bearer ${data.session.access_token}`, 'X-Supabase-Key': import.meta.env.VITE_SUPABASE_ANON_KEY, ...options.headers },
     signal: AbortSignal.timeout(90000),
+  }).catch(error => {
+    if (error.name === 'TimeoutError') throw new Error('O servidor demorou para responder. Ele pode estar iniciando; aguarde um pouco e tente novamente. Seu rascunho continua salvo.')
+    throw error
   })
   if (!response.ok) {
     const error = await response.json().catch(() => ({}))
@@ -24,6 +27,8 @@ async function api(path, options = {}) {
 export default function ImportarPdf({ onPublicado }) {
   const [session, setSession] = useState(null)
   const [adminId, setAdminId] = useState(null)
+  const [accessAttempt, setAccessAttempt] = useState(0)
+  const [checkingAccess, setCheckingAccess] = useState(false)
   const userId = session?.user?.id
   const autorizado = Boolean(userId && adminId === userId)
   const [email, setEmail] = useState('')
@@ -52,12 +57,15 @@ export default function ImportarPdf({ onPublicado }) {
   useEffect(() => {
     let cancelled = false
     if (userId) {
+      setCheckingAccess(true)
+      setErro('')
       api('/acesso').then(() => api('')).then(items => {
         if (!cancelled) { setAdminId(userId); setLista(items); setErro('') }
       }).catch(e => { if (!cancelled) setErro(e.message) })
+        .finally(() => { if (!cancelled) setCheckingAccess(false) })
     }
     return () => { cancelled = true }
-  }, [userId])
+  }, [userId, accessAttempt])
   useEffect(() => {
     if (job?.status !== 'PROCESSANDO') return
     let stopped = false
@@ -147,7 +155,7 @@ export default function ImportarPdf({ onPublicado }) {
       <label className="block">Senha<input className={field} type="password" required autoComplete="current-password" value={senha} onChange={e=>setSenha(e.target.value)} /></label>
       <button className={button} disabled={busy}>{busy?'Aguarde…':'Entrar'}</button>
       <button type="button" className="block text-sm text-indigo-300" disabled={busy} onClick={criarAcesso}>Primeiro acesso: criar minha conta</button>
-    </form> : <div className="flex flex-wrap items-center gap-4 text-sm"><span>{session.user.email}</span><button onClick={()=>run(()=>supabase.auth.signOut())} disabled={busy} className="text-indigo-300">Sair da conta</button>{!autorizado && <span className="text-slate-400">Validando acesso de administrador…</span>}</div>}
+    </form> : <div className="flex flex-wrap items-center gap-4 text-sm"><span>{session.user.email}</span><button onClick={()=>run(()=>supabase.auth.signOut())} disabled={busy} className="text-indigo-300">Sair da conta</button>{!autorizado && (checkingAccess ? <span className="text-slate-400">Validando acesso de administrador…</span> : <button className={button} onClick={()=>setAccessAttempt(value=>value+1)}>Tentar conectar novamente</button>)}</div>}
     {autorizado && <>
       {!job && <form onSubmit={upload} className="space-y-4 rounded-2xl bg-slate-900 border border-slate-800 p-6">
         <h2 className="text-xl font-bold">1. Enviar documentos</h2>
