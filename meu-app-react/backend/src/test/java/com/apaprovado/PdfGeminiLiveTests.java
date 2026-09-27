@@ -15,17 +15,11 @@ import static org.junit.jupiter.api.Assertions.*;
 @EnabledIfSystemProperty(named="test.gemini.live",matches="true")
 class PdfGeminiLiveTests {
     @Autowired PdfGemini gemini;
-    @Test void readsOfficialPdfAndVisualAnswerKey() throws Exception {
-        ImportacaoPdf job=new ImportacaoPdf();
-        job.prova=Files.readAllBytes(Path.of("../public/acervo/esa-2025/prova-original.pdf"));
-        job.gabarito=Files.readAllBytes(Path.of("../public/acervo/esa-2025/gabarito-definitivo.pdf"));
-        job.concurso="ESA 2025 CFGS 2026/27 Geral";job.banca="ESA";job.modelo="A";job.ano=2025;
-        var result=gemini.extract(job,1,2);
-        assertEquals(2,result.size());
-        assertEquals(1,result.get(0).path("numero_original").asInt());
-        assertTrue(result.get(0).path("anulada").asBoolean());
-        assertEquals(2,result.get(1).path("numero_original").asInt());
-        assertEquals(2,result.get(1).path("resposta_correta").asInt());
-        assertEquals(5,result.get(1).path("opcoes").size());
+    @Test void suggestsOnlyMetadata() throws Exception {
+        var question=new com.fasterxml.jackson.databind.ObjectMapper().readTree("{\"enunciado\":\"Quanto é 2 + 2?\",\"opcoes\":[\"3\",\"4\"]}");
+        var result=gemini.classify(question);
+        assertEquals(3,result.size());
+        assertFalse(result.path("materia").asText().isBlank());
+        assertFalse(result.has("resposta_correta"));
     }
 }

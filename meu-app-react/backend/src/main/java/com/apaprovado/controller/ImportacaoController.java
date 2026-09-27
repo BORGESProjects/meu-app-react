@@ -40,6 +40,12 @@ public class ImportacaoController {
     @PostMapping("/{id}/continuar") public Object retry(@PathVariable String id,@RequestHeader(value="Authorization",required=false) String token,@RequestHeader(value="X-Supabase-Key",required=false) String key) throws Exception {
         return jobs.detail(jobs.retry(id,auth.require(token,key)));
     }
+    @PostMapping("/{id}/classificar") public Object classify(@PathVariable String id,@RequestHeader(value="Authorization",required=false) String token,@RequestHeader(value="X-Supabase-Key",required=false) String key,@RequestBody JsonNode body) throws Exception {
+        return jobs.classify(id,auth.require(token,key),body);
+    }
+    @ExceptionHandler(IllegalStateException.class) public ResponseEntity<?> unavailable(IllegalStateException e) {
+        return ResponseEntity.status(503).body(Map.of("message",e.getMessage()));
+    }
     @GetMapping("/{id}/arquivo/{tipo}") public ResponseEntity<byte[]> file(@PathVariable String id,@PathVariable String tipo,@RequestHeader(value="Authorization",required=false) String token,@RequestHeader(value="X-Supabase-Key",required=false) String key) {
         var job=jobs.owned(id,auth.require(token,key));
         if(!tipo.equals("prova")&&!tipo.equals("gabarito")) throw new ResponseStatusException(HttpStatus.NOT_FOUND);

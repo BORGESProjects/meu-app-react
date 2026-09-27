@@ -22,10 +22,11 @@ public class Importacoes {
     private final ObjectMapper mapper;
     private final QuestionDrafts drafts;
     private final PdfGemini gemini;
+    private final PdfLocal local;
     private final PdfFiles files;
     private final ThreadPoolExecutor worker = new ThreadPoolExecutor(1,1,0,TimeUnit.SECONDS,new ArrayBlockingQueue<>(2));
-    public Importacoes(ImportacaoRepository repo, ObjectMapper mapper, QuestionDrafts drafts, PdfGemini gemini, PdfFiles files) {
-        this.repo=repo; this.mapper=mapper; this.drafts=drafts; this.gemini=gemini; this.files=files;
+    public Importacoes(ImportacaoRepository repo, ObjectMapper mapper, QuestionDrafts drafts, PdfGemini gemini, PdfFiles files, PdfLocal local) {
+        this.repo=repo; this.mapper=mapper; this.drafts=drafts; this.gemini=gemini; this.files=files; this.local=local;
     }
     @PreDestroy public void stop() { worker.shutdownNow(); }
     @EventListener(ApplicationReadyEvent.class)
@@ -98,20 +99,12 @@ public class Importacoes {
         try {
             ImportacaoPdf job=repo.findById(id).orElseThrow();
             ArrayNode all=(ArrayNode)mapper.readTree(job.questoes);
-            for (int start=job.progresso+1; start<=job.esperadas; start+=5) {
-                if (Thread.currentThread().isInterrupted()) throw new InterruptedException();
-                int end=Math.min(start+4,job.esperadas);
-                ArrayNode batch=gemini.extract(job,start,end);
-                for (JsonNode q:batch) {
-                    int n=q.path("numero_original").asInt();
-                    if(n<start || n>end) throw new IllegalStateException("A IA retornou questões fora da sequência. Confira o modelo e os PDFs.");
-                    ((ObjectNode)q).put("revisada",false);
-                    all.add(q);
-                }
-                all=drafts.normalize(all,job,false);
-                if(all.size()!=end) throw new IllegalStateException("A IA não extraiu todas as questões do lote. Confira o rascunho ou continue a extração.");
-                job.questoes=all.toString(); job.progresso=end; job.atualizado=Instant.now(); job=repo.saveAndFlush(job);
-            }
+            ArrayNode extracted=local.extract(job);
+            Set<Integer> existing=new HashSet<>();
+            all.forEach(q -> existing.add(q.path("numero_original").asInt()));
+            for(JsonNode q:extracted) if(existing.add(q.path("numero_original").asInt())) { ((ObjectNode)q).put("revisada",false); all.add(q); }
+            all=drafts.normalize(all,job,false);
+            job.questoes=all.toString(); job.progresso=all.size(); job.atualizado=Instant.now();
             job.status="REVISAO"; job.erro=null; repo.save(job);
         } catch (Exception e) {
             ImportacaoPdf job=repo.findById(id).orElse(null);
@@ -122,6 +115,13 @@ public class Importacoes {
             }
             if(e instanceof InterruptedException) Thread.currentThread().interrupt();
         }
+    }
+    public ObjectNode classify(String id,String owner,JsonNode body) throws Exception {
+        ImportacaoPdf job=owned(id,owner);
+        if(!List.of("REVISAO","ERRO").contains(job.status)) throw bad("Abra um rascunho para sugerir a classificação.");
+        JsonNode q=body.path("questao");
+        ArrayNode one=mapper.createArrayNode().add(q);
+        return gemini.classify(drafts.normalize(one,job,false).get(0));
     }
     public ObjectNode detail(ImportacaoPdf j) throws Exception {
         ObjectNode o=mapper.createObjectNode();

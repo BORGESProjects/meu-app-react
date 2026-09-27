@@ -140,6 +140,14 @@ export default function ImportarPdf({ onPublicado }) {
       setPdfs(current => ({...current,[tipo]:url}))
     })
   }
+  async function sugerirClassificacao() {
+    await run(async () => {
+      const sugestao = await api(`/${job.id}/classificar`, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({questao:q})})
+      setJob(current => ({...current, questoes:current.questoes.map((item,i)=>i===indice ? {...item, materia:sugestao.materia, conteudo:sugestao.conteudo, dificuldade:sugestao.dificuldade, revisada:false} : item)}))
+      setDirty(true)
+      setAviso('Sugestão aplicada. Confira a classificação e salve o rascunho.')
+    })
+  }
   const q = job?.questoes[indice]
   const editavel = job && ['REVISAO','ERRO'].includes(job.status)
   const revisadas = job?.questoes.filter(item => item.revisada).length || 0
@@ -164,12 +172,13 @@ export default function ImportarPdf({ onPublicado }) {
           <label>Gabarito definitivo (PDF)<input className={field} type="file" accept="application/pdf,.pdf" required onChange={e=>setGabarito(e.target.files[0])} /></label>
           {[['ano','Ano da aplicação'],['banca','Banca / instituição'],['concurso','Nome da prova / concurso'],['modelo','Modelo do caderno'],['esperadas','Quantidade de questões objetivas']].map(([key,label])=><label key={key}>{label}<input className={field} required maxLength={160} type={['ano','esperadas'].includes(key)?'number':'text'} min={key==='ano'?1900:1} max={key==='ano'?2100:150} value={meta[key]} onChange={e=>setMeta({...meta,[key]:e.target.value})} /></label>)}
         </div>
-        <p className="text-sm text-slate-400">Até 6 MB e 100 páginas por PDF; até 150 questões numeradas a partir de 1. Os documentos serão enviados ao Gemini para leitura. A dificuldade será estimada. A publicação exige sua revisão.</p>
+        <p className="text-sm text-slate-400">Até 6 MB e 100 páginas por PDF; até 150 questões numeradas a partir de 1. A leitura é feita no servidor, sem Gemini, com OCR para páginas digitalizadas. Confira fórmulas, figuras e gabarito antes de publicar. A IA é opcional, apenas para sugerir a classificação depois.</p>
         <button className={button} disabled={busy}>{busy?'Enviando…':'Extrair questões'}</button>
       </form>}
       {job && <div className="space-y-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
         <div className="flex flex-wrap gap-4 items-center justify-between"><h2 className="text-xl font-bold">{job.concurso} · {job.ano} · Modelo {job.modelo}</h2><button disabled={busy||dirty} className="text-sm text-indigo-300 disabled:opacity-40" onClick={()=>replaceJob(null)}>Voltar às importações</button></div>
         <p role="status">{labels[job.status]} — {job.progresso}/{job.esperadas} questões processadas</p>
+        {job.status==='REVISAO' && job.questoes.length<job.esperadas && <p className="text-amber-200">A leitura identificou {job.questoes.length} de {job.esperadas} questões. Confira a numeração e adicione as ausentes antes de publicar.</p>}
         {job.status==='PROCESSANDO' && <><progress className="w-full" value={job.progresso} max={job.esperadas} /><p className="text-sm text-slate-400">A leitura pode levar alguns minutos. Você pode sair desta aba e voltar depois.</p></>}
         {job.erro && <p className="text-amber-200">{job.erro}</p>}
         {job.status==='ERRO' && <button disabled={busy||dirty} className={button} onClick={()=>run(async()=>setJob(await api(`/${job.id}/continuar`,{method:'POST'})))}>Continuar extração</button>}
@@ -183,6 +192,8 @@ export default function ImportarPdf({ onPublicado }) {
           <div className="flex flex-wrap gap-2">{job.questoes.map((item,i)=><button key={i} aria-label={`Revisar questão ${item.numero_original}`} className={`px-3 py-2 rounded-lg border ${i===indice?'border-indigo-400 bg-indigo-700':'border-slate-700'} ${item.revisada?'text-emerald-300':''}`} onClick={()=>setIndice(i)}>{item.numero_original}{item.revisada?' ✓':''}</button>)}</div>
           {q && <div className="space-y-4 border border-slate-700 rounded-xl p-4">
             <h4 className="font-bold">Questão {q.numero_original}</h4>
+            <p className="text-sm text-slate-400">Você pode preencher a classificação manualmente. A opção abaixo envia somente o texto desta questão ao Gemini; os PDFs e o gabarito não são enviados.</p>
+            <button className={button} disabled={busy} onClick={sugerirClassificacao}>{busy?'Aguarde…':'Sugerir matéria, conteúdo e dificuldade com IA (opcional)'}</button>
             {q.observacao && <p className="text-amber-200 text-sm">Conferência sugerida: {q.observacao}</p>}
             <div className="grid md:grid-cols-3 gap-3">{[['numero_original','Número original'],['pagina','Página no PDF'],['materia','Matéria'],['conteudo','Conteúdo']].map(([key,label])=><label key={key}>{label}<input className={field} type={['numero_original','pagina'].includes(key)?'number':'text'} value={q[key]} onChange={e=>edit(key,['numero_original','pagina'].includes(key)?Number(e.target.value):e.target.value)} /></label>)}
               <label>Dificuldade estimada<select className={field} value={q.dificuldade} onChange={e=>edit('dificuldade',e.target.value)}>{['Fácil','Média','Difícil'].map(v=><option key={v}>{v}</option>)}</select></label>

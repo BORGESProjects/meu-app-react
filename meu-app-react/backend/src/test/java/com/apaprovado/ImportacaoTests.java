@@ -32,6 +32,7 @@ class ImportacaoTests {
     @Autowired ObjectMapper mapper;
     @Autowired MockMvc mvc;
     @MockBean PdfGemini gemini;
+    @MockBean PdfLocal local;
 
     ArrayNode fixture() throws Exception {
         return (ArrayNode)mapper.readTree("""
@@ -50,10 +51,10 @@ class ImportacaoTests {
         mvc.perform(get("/api/importacoes/acesso")).andExpect(status().isUnauthorized());
         mvc.perform(post("/api/importacoes/anything/publicar").contentType("application/json").content("{}"))
             .andExpect(status().isUnauthorized());
-        verifyNoInteractions(gemini);
+        verifyNoInteractions(gemini,local);
     }
     @Test void durableDraftPublicationIsAtomicPrivateAndIdempotent() throws Exception {
-        when(gemini.extract(any(),anyInt(),anyInt())).thenAnswer(i -> fixture());
+        when(local.extract(any())).thenAnswer(i -> fixture());
         byte[] original=pdf();
         ImportacaoPdf created=jobs.create("admin-one",original,original,2025,"TESTE","Prova de teste","T",1);
         await().atMost(Duration.ofSeconds(10)).until(()->repo.findById(created.id).orElseThrow().status.equals("REVISAO"));
@@ -67,6 +68,7 @@ class ImportacaoTests {
         body.set("questoes",fixture());
         ImportacaoPdf published=jobs.save(draft.id,"admin-one",body,true);
         assertEquals("PUBLICADO",published.status);
+        verifyNoInteractions(gemini);
         assertTrue(jobs.publicQuestions().toString().contains(draft.id));
         assertFalse(jobs.publicQuestions().toString().contains("ownerId"));
         assertEquals(published.version,jobs.save(draft.id,"admin-one",body,true).version);
@@ -86,17 +88,15 @@ class ImportacaoTests {
         assertThrows(ResponseStatusException.class,()->pdfs.validate("not a PDF".getBytes()));
     }
     @Test void interruptedExtractionPreservesCompletedBatches() throws Exception {
-        doAnswer(call -> {
-            if ((int)call.getArgument(1)>1) throw new IllegalStateException("IA temporariamente indisponível");
-            ArrayNode batch=mapper.createArrayNode();
-            for(int n=1;n<=5;n++) batch.add(((ObjectNode)fixture().get(0)).put("numero_original",n));
-            return batch;
-        }).when(gemini).extract(any(),anyInt(),anyInt());
+        when(local.extract(any())).thenThrow(new IllegalStateException("PDF ilegível"));
         byte[] original=pdf();
         var created=jobs.create("admin-retry",original,original,2025,"TESTE","Prova retomada","R",6);
         await().atMost(Duration.ofSeconds(10)).until(()->repo.findById(created.id).orElseThrow().status.equals("ERRO"));
-        assertEquals(5,jobs.owned(created.id,"admin-retry").progresso);
-        doAnswer(call -> { ArrayNode one=fixture();((ObjectNode)one.get(0)).put("numero_original",6);return one; }).when(gemini).extract(any(),eq(6),eq(6));
+        var saved=jobs.owned(created.id,"admin-retry");
+        ArrayNode batch=mapper.createArrayNode();
+        for(int n=1;n<=5;n++) batch.add(((ObjectNode)fixture().get(0)).put("numero_original",n));
+        saved.questoes=batch.toString();saved.progresso=5;repo.saveAndFlush(saved);
+        doAnswer(call -> { ArrayNode one=fixture();((ObjectNode)one.get(0)).put("numero_original",6);return one; }).when(local).extract(any());
         jobs.retry(created.id,"admin-retry");
         await().atMost(Duration.ofSeconds(10)).until(()->repo.findById(created.id).orElseThrow().status.equals("REVISAO"));
         assertEquals(6,jobs.owned(created.id,"admin-retry").progresso);
