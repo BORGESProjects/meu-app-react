@@ -63,10 +63,9 @@ public class PdfGemini {
                 return (ArrayNode) questions;
             } catch (HttpStatusCodeException e) {
                 int code = e.getStatusCode().value();
-                if ((code == 429 || code >= 500) && attempt < 2) { Thread.sleep((attempt+1)*5000L); continue; }
-                throw new IllegalStateException(code == 429 || code >= 500
-                    ? "A IA está indisponível ou sem cota. O rascunho foi preservado; tente novamente mais tarde."
-                    : "A IA recusou a leitura. Confira o modelo e a chave Gemini configurados no servidor.");
+                GeminiFailure failure = GeminiFailure.from(code,e.getResponseBodyAsString(),attempt);
+                if (failure.retryable() && attempt < 2) { Thread.sleep(failure.delayMillis()); continue; }
+                throw new IllegalStateException(failure.message());
             } catch (ResourceAccessException e) {
                 throw new IllegalStateException("A leitura excedeu o tempo de resposta. Tente novamente mais tarde.");
             }
