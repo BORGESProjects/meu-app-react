@@ -5,12 +5,15 @@ import ImportarPdf from './components/ImportarPdf'
 import { API_URL } from './api'
 import { useState, useEffect } from 'react'
 import { supabase } from './supabaseClient'
+import { tentarLeitura } from './carregarAcervo'
 
 export default function App() {
   const [abaAtiva, setAbaAtiva] = useState('questoes') // 'questoes' | 'cadastrar' | 'edital' | 'redacao' | 'tarefas' | 'simulados' | 'desempenho'
 
   // Estados das Questões
   const [questoes, setQuestoes] = useState(acervo)
+  const [carregandoAcervo, setCarregandoAcervo] = useState(true)
+  const [falhasAcervo, setFalhasAcervo] = useState([])
   const [respostasSelecionadas, setRespostasSelecionadas] = useState({})
   const [feedbacks, setFeedbacks] = useState({})
 
@@ -94,12 +97,30 @@ export default function App() {
   }, [cronometroAtivo])
 
   async function buscarQuestoes() {
-    const banco = supabase.from('questoes').select('*').order('id', { ascending: false })
-      .then(({data,error}) => { if (!error) setQuestoes(prev => unirQuestoes([...prev, ...(data || [])])) })
-    const importadas = fetch(`${API_URL}/api/acervo`, {signal:AbortSignal.timeout(90000)})
-      .then(r => { if(!r.ok) throw new Error('Acervo indisponível'); return r.json() })
+    setCarregandoAcervo(true)
+    setFalhasAcervo([])
+    const banco = tentarLeitura(async () => {
+      const todas = []
+      for (let inicio = 0; ; inicio += 500) {
+        const {data,error} = await supabase.from('questoes').select('*')
+          .order('id', { ascending: false }).range(inicio, inicio + 499)
+          .abortSignal(AbortSignal.timeout(30000))
+        if (error) throw error
+        todas.push(...(data || []))
+        if (!data || data.length < 500) return todas
+      }
+    }).then(data => setQuestoes(prev => unirQuestoes([...prev,...data])))
+    const importadas = tentarLeitura(async () => {
+      const r = await fetch(`${API_URL}/api/acervo`, {signal:AbortSignal.timeout(90000)})
+      if (!r.ok) throw new Error('Acervo indisponível')
+      const data = await r.json()
+      if (!Array.isArray(data)) throw new Error('Resposta inválida do acervo')
+      return data
+    })
       .then(data => { if(Array.isArray(data)) setQuestoes(prev => unirQuestoes([...prev,...data])) })
-    await Promise.allSettled([banco,importadas])
+    const resultados = await Promise.allSettled([banco,importadas])
+    setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [i === 0 ? 'banco de questões' : 'questões importadas'] : []))
+    setCarregandoAcervo(false)
   }
 
   async function buscarTarefas() {
@@ -432,6 +453,8 @@ export default function App() {
             <header className="mb-6">
               <h1 className="text-3xl font-extrabold text-slate-100 tracking-tight">Banco de Questões</h1>
               <p className="text-slate-400 text-sm mt-1">{questoesFiltradas.length} questão(ões) encontrada(s). {questoesFiltradas.filter(q => q.anulada).length} anulada(s), disponíveis apenas para consulta.</p>
+              {carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Carregando o restante do acervo… A quantidade acima ainda é parcial.</p>}
+              {falhasAcervo.length > 0 && <div role="alert" className="text-amber-300 text-sm mt-2">Não foi possível carregar: {falhasAcervo.join(' e ')}. A lista pode estar incompleta. <button className="underline font-semibold" onClick={buscarQuestoes} disabled={carregandoAcervo}>Tentar carregar novamente</button></div>}
               <div className="flex flex-wrap gap-4 mt-3 text-sm text-indigo-300">
                 <a href="/acervo/esa-2025/prova-original.pdf" target="_blank" rel="noreferrer">ESA 2025: prova completa e proposta de redação ↗</a>
                 <a href="/acervo/esa-2025/gabarito-definitivo.pdf" target="_blank" rel="noreferrer">Gabarito definitivo ↗</a>
