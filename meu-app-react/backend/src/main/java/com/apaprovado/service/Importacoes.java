@@ -102,9 +102,19 @@ public class Importacoes {
             ImportacaoPdf job=repo.findById(id).orElseThrow();
             ArrayNode all=(ArrayNode)mapper.readTree(job.questoes);
             ArrayNode extracted=local.extract(job);
-            Set<Integer> existing=new HashSet<>();
-            all.forEach(q -> existing.add(q.path("numero_original").asInt()));
-            for(JsonNode q:extracted) if(existing.add(q.path("numero_original").asInt())) { ((ObjectNode)q).put("revisada",false); all.add(q); }
+            Map<Integer,Integer> existing=new HashMap<>();
+            for(int i=0;i<all.size();i++) existing.put(all.get(i).path("numero_original").asInt(),i);
+            for(JsonNode q:extracted) {
+                int number=q.path("numero_original").asInt();
+                Integer index=existing.get(number);
+                ((ObjectNode)q).put("revisada",false);
+                if(index==null) { existing.put(number,all.size());all.add(q);continue; }
+                JsonNode old=all.get(index);
+                boolean untouched=!old.path("revisada").asBoolean() && old.path("conteudo").asText("").isBlank();
+                if(untouched) all.set(index,q);
+                else if(old.path("resposta_correta").isNull() && !q.path("resposta_correta").isNull())
+                    ((ObjectNode)old).set("resposta_correta",q.path("resposta_correta"));
+            }
             all=drafts.normalize(all,job,false);
             job.questoes=all.toString(); job.progresso=all.size(); job.atualizado=Instant.now();
             job.status="REVISAO"; job.erro=null; repo.save(job);
