@@ -75,7 +75,9 @@ public class Importacoes {
     }
     public synchronized ImportacaoPdf retry(String id, String owner) {
         ImportacaoPdf job=owned(id,owner);
-        if (!job.status.equals("ERRO")) throw bad("Somente extrações interrompidas podem ser retomadas.");
+        boolean incompleteReview=job.status.equals("REVISAO") && job.progresso<job.esperadas;
+        if (!job.status.equals("ERRO") && !incompleteReview)
+            throw bad("Somente extrações interrompidas ou incompletas podem ser retomadas.");
         job.status="PROCESSANDO"; job.erro=null; job.atualizado=Instant.now(); job=repo.saveAndFlush(job); enqueue(id); return job;
     }
     public synchronized ImportacaoPdf save(String id, String owner, JsonNode body, boolean publish) {

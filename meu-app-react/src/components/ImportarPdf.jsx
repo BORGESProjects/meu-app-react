@@ -181,7 +181,7 @@ export default function ImportarPdf({ onPublicado }) {
         {job.status==='REVISAO' && job.questoes.length<job.esperadas && <p className="text-amber-200">A leitura identificou {job.questoes.length} de {job.esperadas} questões. Confira a numeração e adicione as ausentes antes de publicar.</p>}
         {job.status==='PROCESSANDO' && <><progress className="w-full" value={job.progresso} max={job.esperadas} /><p className="text-sm text-slate-400">A leitura pode levar alguns minutos. Você pode sair desta aba e voltar depois.</p></>}
         {job.erro && <p className="text-amber-200">{job.erro}</p>}
-        {job.status==='ERRO' && <button disabled={busy||dirty} className={button} onClick={()=>run(async()=>setJob(await api(`/${job.id}/continuar`,{method:'POST'})))}>Continuar extração</button>}
+        {(job.status==='ERRO' || (job.status==='REVISAO' && job.questoes.length<job.esperadas)) && <button disabled={busy||dirty} className={button} onClick={()=>run(async()=>setJob(await api(`/${job.id}/continuar`,{method:'POST'})))}>Continuar extração</button>}
         {job.status==='PUBLICADO' && <p className="text-emerald-300">Esta prova está publicada no acervo.</p>}
         {editavel && <>
           <h3 className="font-bold text-lg">2. Conferir e corrigir</h3>

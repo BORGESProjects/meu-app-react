@@ -102,4 +102,16 @@ class ImportacaoTests {
         assertEquals(6,jobs.owned(created.id,"admin-retry").progresso);
         assertEquals(6,mapper.readTree(jobs.owned(created.id,"admin-retry").questoes).size());
     }
+    @Test void incompleteReviewCanBeReprocessed() throws Exception {
+        when(local.extract(any())).thenReturn(fixture());
+        byte[] original=pdf();
+        var created=jobs.create("admin-incomplete",original,original,2025,"TESTE","Prova incompleta","D",2);
+        await().atMost(Duration.ofSeconds(10)).until(()->repo.findById(created.id).orElseThrow().status.equals("REVISAO"));
+        assertEquals(1,jobs.owned(created.id,"admin-incomplete").progresso);
+        ArrayNode complete=fixture();complete.add(((ObjectNode)fixture().get(0)).put("numero_original",2));
+        when(local.extract(any())).thenReturn(complete);
+        jobs.retry(created.id,"admin-incomplete");
+        await().atMost(Duration.ofSeconds(10)).until(()->repo.findById(created.id).orElseThrow().progresso==2);
+        assertEquals(2,mapper.readTree(jobs.owned(created.id,"admin-incomplete").questoes).size());
+    }
 }
