@@ -47,6 +47,27 @@ class PdfLocalTests {
         var answers=extractor.answers(List.of(new PdfTextReader.Page(1,"1 Ⓐ Ⓑ Ⓒ Ⓓ Ⓔ\n2 A\n2 B",false)),"A");
         assertTrue(answers.isEmpty());
     }
+    @Test void readsInlineOptionsAndGeneralAnswerSection() {
+        var job=new ImportacaoPdf();job.esperadas=2;job.modelo="A";
+        var questions=extractor.parse(List.of(new PdfTextReader.Page(2,"""
+            MATEMÁTICA
+            01. Quanto é dois mais dois?
+            A) Três B) Quatro C) Cinco D) Seis E) Sete
+            02.
+            Quanto é três mais três?
+            A) Quatro B) Cinco C) Seis D) Sete E) Oito
+            """,false)),List.of(new PdfTextReader.Page(1,"""
+            GERAL - A GERAL - B GERAL - C
+            Matéria Questão Gabarito
+            Matemática
+            1 B 1 A 1 E
+            2 C 2 A 2 D
+            """,false)),job);
+        assertEquals(2,questions.size());
+        assertEquals("Quatro",questions.get(0).path("opcoes").get(1).asText());
+        assertEquals(1,questions.get(0).path("resposta_correta").asInt());
+        assertEquals(2,questions.get(1).path("resposta_correta").asInt());
+    }
     @Test void keepsSharedTextAndUnknownAnswer() {
         var job=new ImportacaoPdf();job.esperadas=1;job.modelo="A";
         String support="Texto de apoio: "+"Um trecho importante da leitura. ".repeat(5);

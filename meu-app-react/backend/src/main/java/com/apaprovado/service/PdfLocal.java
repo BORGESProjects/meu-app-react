@@ -12,8 +12,8 @@ import java.util.regex.*;
 public class PdfLocal {
     private final PdfTextReader reader;
     private final ObjectMapper mapper;
-    private static final Pattern NUMBER=Pattern.compile("(?iu)^\\s*(?:QUEST[ÃA]O\\s+)?(\\d{1,3})(?:\\s*[.)–-]\\s+|\\s+|$)(.*)");
-    private static final Pattern OPTION=Pattern.compile("(?m)(?:[Ⓐ-Ⓔ]|\\[([A-Ea-e])\\]|\\(([A-Ea-e])\\)|^\\s*([A-Ea-e])[.)]\\s+)");
+    private static final Pattern NUMBER=Pattern.compile("(?iu)^\\s*(?:QUEST[ÃA]O\\s+)?(\\d{1,3})(?:\\s*[.)–-](?:\\s+|$)|\\s+|$)(.*)");
+    private static final Pattern OPTION=Pattern.compile("(?:[Ⓐ-Ⓔ]|\\[([A-Ea-e])\\]|\\(([A-Ea-e])\\)|(?<![\\p{L}\\p{N}])([A-E])[.)]\\s+)");
     private static final Pattern ANSWER=Pattern.compile("(?iu)(?<!\\d)(\\d{1,3})\\s*[-.:)]?\\s+(ANULADA|ANULADO|[A-E])(?=\\s|$)");
     public PdfLocal(PdfTextReader reader,ObjectMapper mapper) { this.reader=reader;this.mapper=mapper; }
     public ArrayNode extract(ImportacaoPdf job) throws Exception {
@@ -43,6 +43,7 @@ public class PdfLocal {
                 if(line.matches("(?iu)^\\d+\\s*[–-]\\s*Quest[õo]es.*")) continue;
                 if(line.matches("(?iu).*(?:Pág(?:ina)?\\.?\\s*:?\\s*\\d+|Concurso de Admissão 20\\d\\d).*")) continue;
                 if(line.matches("^TEXTO\\s+[IVX]+\\s*$")) {
+                    if(current>0 && !OPTION.matcher(block).find()) { block.append(line).append('\n');continue; }
                     if(current>0) add(found,current,pageNumber,block.toString(),support,subject,usedOcr,answers);
                     current=0;block.setLength(0);prefix.setLength(0);support="";
                 }
@@ -111,6 +112,15 @@ public class PdfLocal {
         int selected=-1,columns=0;
         for(var page:pages) for(String raw:page.text().split("\\R")) {
             String line=raw.strip();
+            Matcher sections=Pattern.compile("(?iu)(GERAL|SA[ÚU]DE|M[ÚU]SICO)\\s*[-–]\\s*([A-Z])").matcher(line);
+            List<String> areas=new ArrayList<>(),areaModels=new ArrayList<>();
+            while(sections.find()) { areas.add(sections.group(1));areaModels.add(sections.group(2)); }
+            if(!areas.isEmpty()) {
+                columns=areas.size();selected=-1;
+                for(int i=0;i<areas.size();i++)
+                    if(areas.get(i).equalsIgnoreCase("GERAL") && areaModels.get(i).equalsIgnoreCase(model)) selected=i;
+                continue;
+            }
             Matcher models=Pattern.compile("(?iu)(?:MODELO|TIPO(?: DE PROVA)?)\\s*:?\\s*([A-Z0-9]+)").matcher(line);
             List<String> names=new ArrayList<>();while(models.find()) names.add(models.group(1));
             if(!names.isEmpty()) { columns=names.size();selected=-1;for(int i=0;i<names.size();i++) if(names.get(i).equalsIgnoreCase(model)) selected=i;continue; }
