@@ -56,7 +56,10 @@ public class PdfLocal {
                 int n=number.matches()?Integer.parseInt(number.group(1)):0;
                 boolean hasOptions=OPTION.matcher(block).find();
                 if(current==job.esperadas && n==job.esperadas+1 && hasOptions) break pageLoop;
-                if(n>0 && n<=job.esperadas && !found.containsKey(n) && (current==0 || (n>current && hasOptions))) {
+                // Inside a question, only the immediately following number can start
+                // another one. This prevents isolated values in formulas (for example
+                // "25") from being mistaken for a later question number.
+                if(n>0 && n<=job.esperadas && !found.containsKey(n) && (current==0 || (n==current+1 && hasOptions))) {
                     if(current>0) add(found,current,pageNumber,block.toString(),support,subject,usedOcr,answers);
                     if(current==0 && prefix.length()>100) support=prefix.toString().strip();
                     current=n;pageNumber=page.number();usedOcr=page.ocr();block.setLength(0);

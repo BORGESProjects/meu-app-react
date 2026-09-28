@@ -58,7 +58,7 @@ class PdfLocalTests {
     @Test void realExamWhenProvided() throws Exception {
         String exam=System.getProperty("test.exam");
         if(exam==null) return;
-        var job=new ImportacaoPdf();job.esperadas=Integer.getInteger("test.count",44);job.modelo="A";
+        var job=new ImportacaoPdf();job.esperadas=Integer.getInteger("test.count",44);job.modelo=System.getProperty("test.model","A");
         job.prova=Files.readAllBytes(Path.of(exam));job.gabarito=Files.readAllBytes(Path.of(System.getProperty("test.key")));
         Files.writeString(Path.of("target/local-text.txt"),new PdfTextReader().read(job.prova).toString());
         var result=extractor.extract(job);
