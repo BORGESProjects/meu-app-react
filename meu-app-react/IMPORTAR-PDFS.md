@@ -1,26 +1,35 @@
-# Importar provas pelo site
+# Importador local de provas
 
-Na aba **Importar PDF**, entre com a conta autorizada (`nickbr613@gmail.com`). No primeiro acesso, crie sua conta nessa aba, confirme o e-mail recebido e volte para entrar com a senha. O projeto Supabase deve manter a confirmação de e-mail habilitada. A senha pertence ao Supabase Auth; ela não é enviada à API Java nem guardada no código.
+O importador processa os PDFs no computador do administrador. O PDFBox extrai o texto e separa as questões; o Ollama executa o modelo `qwen3:4b-instruct` localmente para sugerir matéria, conteúdo e dificuldade. Nenhum PDF ou texto de questão é enviado ao Gemini ou a outro provedor de IA.
 
-1. Selecione prova e gabarito definitivo, ambos em PDF sem senha, até 6 MB e 100 páginas cada.
-2. Informe ano da aplicação, banca, nome da prova, modelo do caderno e quantidade de questões objetivas (1–150, numeradas de 1 em diante).
-3. Clique em **Extrair questões**. Os PDFs são enviados ao Gemini pelo servidor em lotes de cinco questões. O processamento pode levar vários minutos e consumir a cota da conta Gemini.
-4. Reabra a importação para acompanhar. Em caso de indisponibilidade da IA ou reinício do servidor, **Continuar extração** retoma os lotes concluídos.
-5. Confira e corrija as questões usando os PDFs originais. Textos compartilhados devem estar completos. Marque a opção de imagem quando figuras ou tabelas forem necessárias; o site exibirá a página original inteira. A leitura automática não substitui a conferência de fórmulas e gabaritos.
-6. Confirme a revisão de cada questão e **Salve o rascunho**. Só é possível publicar com todas as questões, alternativas, páginas e respostas válidas. Anuladas ficam disponíveis para consulta e fora dos simulados.
-7. Clique em **Publicar questões**. Elas aparecem no site sem novo deploy. A publicação é idempotente, e PDFs idênticos do mesmo modelo reabrem a importação existente.
+## Primeira configuração no Windows
 
-## Operação
+1. Clique com o botão direito em `configurar-importador-local.ps1` e escolha **Executar com PowerShell**.
+2. O assistente instala o Ollama e baixa o modelo local de aproximadamente 2,5 GB.
+3. Informe a conexão PostgreSQL usada pelo site. Esses dados são gravados somente em `backend/application-local.properties`, arquivo ignorado pelo Git.
+4. Execute `iniciar-importador-local.ps1`. O importador abre em `http://127.0.0.1:5173`.
+5. Entre com a conta administrativa `nickbr613@gmail.com`.
 
-- API: `/api/importacoes/**` exige token de usuário validado pelo Supabase Auth, e-mail confirmado e e-mail igual a `ADMIN_EMAIL`. O header `X-Supabase-Key` contém somente a chave pública já utilizada pelo frontend; o servidor consulta exclusivamente o projeto definido em `SUPABASE_URL`.
-- Persistência: tabela `acervo_privado.importacoes_pdf`, com documentos originais, rascunho, progresso e metadados. O esquema privado não deve ser incluído nos esquemas expostos pelo PostgREST. O usuário do banco deve poder criar esse esquema. Nenhuma tabela existente é removida.
-- Leitura pública: `/api/acervo`, PDFs e imagens exclusivamente de importações publicadas. Rascunhos e arquivos de importações não publicadas não são acessíveis por essas rotas.
-- Limites: uma extração ativa e duas na fila por instância. O serviço foi preparado para a instância única atual do Render; múltiplas réplicas precisam de uma fila compartilhada antes de escalar.
-- Configuração existente: `GEMINI_API_KEY` e conexão PostgreSQL. Valores opcionais: `ADMIN_EMAIL`, `SUPABASE_URL` e `GEMINI_IMPORT_MODEL` (mesmo modelo atualmente usado na redação por padrão). A chave Gemini permanece exclusivamente no backend.
-- O conjunto ESA já publicado continua no frontend. O novo acervo é agregado aos registros anteriores sem apagá-los.
-- A conta autorizada precisa ser criada/confirmada pelo próprio administrador; o deploy não cria uma senha nem uma conta automaticamente.
+Para encerrar os processos locais, execute `parar-importador-local.ps1`.
 
-## Validação
+## Fluxo de trabalho
 
-`npm run build`, `npm run lint`, `node --test scripts/acervo.test.mjs` e `mvn verify` no backend.
-Os testes da API cobrem acesso não autenticado, e-mails não autorizados/não confirmados, arquivos inválidos, rascunho privado, publicação idempotente, duplicação de documentos, revisão obrigatória, anuladas e retomada após falha da IA. As chamadas de IA nesses testes são simuladas para não consumir cota nem depender da disponibilidade do provedor.
+1. Envie a prova e o gabarito, informe ano, banca, concurso, modelo e quantidade.
+2. Aguarde a extração local. O rascunho é salvo automaticamente no banco do site.
+3. Use **Classificar pendentes com IA**. O programa envia lotes de até dez questões ao Ollama local e valida a ordem antes de aplicar as sugestões.
+4. Confira fórmulas, figuras, alternativas, gabarito e classificações. Questões de baixa confiança precisam de atenção especial.
+5. Salve o rascunho e marque cada questão como revisada.
+6. Publique. As questões aparecem no acervo sem novo deploy.
+
+Os botões **Exportar JSON** e **Exportar SQL** criam cópias portáteis do lote. A publicação direta é a opção normal; use os arquivos para backup ou recuperação.
+
+## Limites e segurança
+
+- PDF sem senha, até 6 MB e 100 páginas; prova com até 150 questões.
+- Somente o usuário confirmado cujo e-mail coincide com `ADMIN_EMAIL` pode importar e publicar.
+- O modelo local apenas classifica. A extração estrutural e o gabarito usam regras determinísticas, e a publicação exige revisão humana.
+- A correção de redação continua separada e pode usar o Gemini. O importador de questões não depende dele.
+
+## Validação do projeto
+
+Execute `npm run build`, `npm run lint` e `mvn test` dentro de `backend`.

@@ -21,12 +21,12 @@ public class Importacoes {
     private final ImportacaoRepository repo;
     private final ObjectMapper mapper;
     private final QuestionDrafts drafts;
-    private final PdfGemini gemini;
+    private final LocalQuestionAi classifier;
     private final PdfLocal local;
     private final PdfFiles files;
     private final ThreadPoolExecutor worker = new ThreadPoolExecutor(1,1,0,TimeUnit.SECONDS,new ArrayBlockingQueue<>(2));
-    public Importacoes(ImportacaoRepository repo, ObjectMapper mapper, QuestionDrafts drafts, PdfGemini gemini, PdfFiles files, PdfLocal local) {
-        this.repo=repo; this.mapper=mapper; this.drafts=drafts; this.gemini=gemini; this.files=files; this.local=local;
+    public Importacoes(ImportacaoRepository repo, ObjectMapper mapper, QuestionDrafts drafts, LocalQuestionAi classifier, PdfFiles files, PdfLocal local) {
+        this.repo=repo; this.mapper=mapper; this.drafts=drafts; this.classifier=classifier; this.files=files; this.local=local;
     }
     @PreDestroy public void stop() { worker.shutdownNow(); }
     @EventListener(ApplicationReadyEvent.class)
@@ -133,7 +133,22 @@ public class Importacoes {
         if(!List.of("REVISAO","ERRO").contains(job.status)) throw bad("Abra um rascunho para sugerir a classificação.");
         JsonNode q=body.path("questao");
         ArrayNode one=mapper.createArrayNode().add(q);
-        return gemini.classify(drafts.normalize(one,job,false).get(0));
+        return classifier.classify(drafts.normalize(one,job,false).get(0));
+    }
+    public ArrayNode classifyBatch(String id,String owner,JsonNode body) throws Exception {
+        ImportacaoPdf job=owned(id,owner);
+        if(!List.of("REVISAO","ERRO").contains(job.status)) throw bad("Abra um rascunho para sugerir a classificação.");
+        JsonNode input=body.path("questoes");
+        if(!input.isArray() || input.isEmpty() || input.size()>10) throw bad("Selecione de 1 a 10 questões por lote.");
+        Map<Integer,JsonNode> originals=new HashMap<>();
+        for(JsonNode q:mapper.readTree(job.questoes)) originals.put(q.path("numero_original").asInt(),q);
+        ArrayNode safe=mapper.createArrayNode(); Set<Integer> seen=new HashSet<>();
+        for(JsonNode requested:input) {
+            int number=requested.path("numero_original").asInt(); JsonNode original=originals.get(number);
+            if(original==null || !seen.add(number)) throw bad("O lote contém uma questão inválida ou repetida.");
+            safe.add(original);
+        }
+        return classifier.classifyBatch(safe);
     }
     public ObjectNode detail(ImportacaoPdf j) throws Exception {
         ObjectNode o=mapper.createObjectNode();

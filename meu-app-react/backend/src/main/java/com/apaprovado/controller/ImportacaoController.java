@@ -43,6 +43,9 @@ public class ImportacaoController {
     @PostMapping("/{id}/classificar") public Object classify(@PathVariable String id,@RequestHeader(value="Authorization",required=false) String token,@RequestHeader(value="X-Supabase-Key",required=false) String key,@RequestBody JsonNode body) throws Exception {
         return jobs.classify(id,auth.require(token,key),body);
     }
+    @PostMapping("/{id}/classificar-lote") public Object classifyBatch(@PathVariable String id,@RequestHeader(value="Authorization",required=false) String token,@RequestHeader(value="X-Supabase-Key",required=false) String key,@RequestBody JsonNode body) throws Exception {
+        return jobs.classifyBatch(id,auth.require(token,key),body);
+    }
     @ExceptionHandler(IllegalStateException.class) public ResponseEntity<?> unavailable(IllegalStateException e) {
         return ResponseEntity.status(503).body(Map.of("message",e.getMessage()));
     }

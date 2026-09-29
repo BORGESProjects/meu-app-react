@@ -6,6 +6,22 @@ const field = 'w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 
 const button = 'rounded-xl bg-indigo-600 px-4 py-2 font-semibold text-sm text-white disabled:opacity-40 disabled:cursor-not-allowed'
 const labels = { PROCESSANDO: 'Extraindo questões', REVISAO: 'Pronto para revisar', ERRO: 'Precisa de atenção', PUBLICADO: 'Publicado' }
 
+function baixar(nome, conteudo, tipo) {
+  const url = URL.createObjectURL(new Blob([conteudo], { type: tipo }))
+  const link = document.createElement('a'); link.href = url; link.download = nome; link.click()
+  setTimeout(() => URL.revokeObjectURL(url), 1000)
+}
+const sqlTexto = value => value == null ? 'null' : `'${String(value).replaceAll("'", "''")}'`
+function gerarSql(job) {
+  const header = `-- Gerado pelo AP Aprovado. Revise antes de executar no Supabase.\nbegin;\n\ncreate unique index if not exists questoes_identidade_unica\non public.questoes (banca, concurso, ano, modelo, numero_original);\n\n`
+  const rows = job.questoes.map(q => `(${[
+    sqlTexto(job.banca), sqlTexto(job.concurso), job.ano, sqlTexto(job.modelo), q.numero_original,
+    sqlTexto(q.materia), sqlTexto(q.conteudo), sqlTexto(q.dificuldade), sqlTexto(q.enunciado),
+    sqlTexto(q.texto_apoio), `${sqlTexto(JSON.stringify(q.opcoes))}::jsonb`, q.resposta_correta ?? 'null', Boolean(q.anulada)
+  ].join(', ')})`).join(',\n')
+  return `${header}insert into public.questoes (banca, concurso, ano, modelo, numero_original, materia, conteudo, dificuldade, enunciado, texto_apoio, opcoes, resposta_correta, anulada)\nvalues\n${rows}\non conflict (banca, concurso, ano, modelo, numero_original) do update set\nmateria=excluded.materia, conteudo=excluded.conteudo, dificuldade=excluded.dificuldade, enunciado=excluded.enunciado, texto_apoio=excluded.texto_apoio, opcoes=excluded.opcoes, resposta_correta=excluded.resposta_correta, anulada=excluded.anulada;\n\ncommit;\n`
+}
+
 async function api(path, options = {}) {
   const { data } = await supabase.auth.getSession()
   if (!data.session) throw new Error('Entre com sua conta de administrador.')
@@ -25,6 +41,7 @@ async function api(path, options = {}) {
 }
 
 export default function ImportarPdf({ onPublicado }) {
+  const modoLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname)
   const [session, setSession] = useState(null)
   const [adminId, setAdminId] = useState(null)
   const [accessAttempt, setAccessAttempt] = useState(0)
@@ -45,6 +62,7 @@ export default function ImportarPdf({ onPublicado }) {
   const [meta, setMeta] = useState({ ano: new Date().getFullYear(), banca: '', concurso: '', modelo: 'A', esperadas: 50 })
   const [prova, setProva] = useState(null)
   const [gabarito, setGabarito] = useState(null)
+  const [classificacao, setClassificacao] = useState({ feitos: 0, total: 0 })
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => setSession(data.session))
@@ -148,9 +166,43 @@ export default function ImportarPdf({ onPublicado }) {
       setAviso('Sugestão aplicada. Confira a classificação e salve o rascunho.')
     })
   }
+  async function classificarPendentes() {
+    setBusy(true); setErro(''); setAviso('')
+    let current = structuredClone(job)
+    const pendentes = current.questoes.filter(item => !item.conteudo?.trim())
+    setClassificacao({ feitos: 0, total: pendentes.length })
+    try {
+      for (let start=0; start<pendentes.length; start+=10) {
+        const lote = pendentes.slice(start,start+10).map(item => ({ numero_original:item.numero_original }))
+        const sugestoes = await api(`/${job.id}/classificar-lote`, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({questoes:lote})})
+        const porNumero = new Map(sugestoes.map(item => [item.numero_original,item]))
+        current.questoes = current.questoes.map(item => {
+          const sugestao=porNumero.get(item.numero_original)
+          return sugestao ? {...item,materia:sugestao.materia,conteudo:sugestao.conteudo,dificuldade:sugestao.dificuldade,confianca_classificacao:sugestao.confianca,revisada:false} : item
+        })
+        setJob(structuredClone(current)); setDirty(true)
+        setClassificacao({ feitos: Math.min(start+lote.length,pendentes.length), total:pendentes.length })
+      }
+      setAviso(`${pendentes.length} questões classificadas. Confira as sugestões e salve o rascunho.`)
+    } catch (e) {
+      setErro(`${e.message} As classificações já concluídas continuam nesta tela; salve o rascunho antes de tentar novamente.`)
+    } finally { setBusy(false) }
+  }
+  function exportarJson() {
+    baixar(`${job.banca}-${job.ano}-${job.modelo}.json`, JSON.stringify({formato:'ap-aprovado/v1',exportado_em:new Date().toISOString(),...job},null,2), 'application/json')
+  }
+  function exportarSql() {
+    baixar(`${job.banca}-${job.ano}-${job.modelo}.sql`, gerarSql(job), 'text/sql;charset=utf-8')
+  }
   const q = job?.questoes[indice]
   const editavel = job && ['REVISAO','ERRO'].includes(job.status)
   const revisadas = job?.questoes.filter(item => item.revisada).length || 0
+  const pendencias = job ? {
+    classificacao: job.questoes.filter(item=>!item.materia?.trim()||!item.conteudo?.trim()).length,
+    alternativas: job.questoes.filter(item=>!item.opcoes?.length||item.opcoes.some(op=>!op.trim())).length,
+    gabarito: job.questoes.filter(item=>!item.anulada&&item.resposta_correta==null).length,
+    revisao: job.questoes.filter(item=>!item.revisada).length,
+  } : null
 
   return <section className="space-y-6">
     <header><h1 className="text-3xl font-extrabold">Importar provas em PDF</h1><p className="text-slate-400 mt-2">Envie a prova e o gabarito, confira as questões e publique no acervo.</p></header>
@@ -172,7 +224,7 @@ export default function ImportarPdf({ onPublicado }) {
           <label>Gabarito definitivo (PDF)<input className={field} type="file" accept="application/pdf,.pdf" required onChange={e=>setGabarito(e.target.files[0])} /></label>
           {[['ano','Ano da aplicação'],['banca','Banca / instituição'],['concurso','Nome da prova / concurso'],['modelo','Modelo do caderno'],['esperadas','Quantidade de questões objetivas']].map(([key,label])=><label key={key}>{label}<input className={field} required maxLength={160} type={['ano','esperadas'].includes(key)?'number':'text'} min={key==='ano'?1900:1} max={key==='ano'?2100:150} value={meta[key]} onChange={e=>setMeta({...meta,[key]:e.target.value})} /></label>)}
         </div>
-        <p className="text-sm text-slate-400">Até 6 MB e 100 páginas por PDF; até 150 questões numeradas a partir de 1. A leitura é feita no servidor, sem Gemini, com OCR para páginas digitalizadas. Confira fórmulas, figuras e gabarito antes de publicar. A IA é opcional, apenas para sugerir a classificação depois.</p>
+        <p className="text-sm text-slate-400">Até 6 MB e 100 páginas por PDF; até 150 questões numeradas a partir de 1. No modo local, o PDF e a classificação permanecem no seu computador. Confira fórmulas, figuras e gabarito antes de publicar.</p>
         <button className={button} disabled={busy}>{busy?'Enviando…':'Extrair questões'}</button>
       </form>}
       {job && <div className="space-y-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
@@ -187,13 +239,22 @@ export default function ImportarPdf({ onPublicado }) {
           <h3 className="font-bold text-lg">2. Conferir e corrigir</h3>
           <details><summary className="text-indigo-300 cursor-pointer">Corrigir dados da prova</summary><div className="grid md:grid-cols-2 gap-3 mt-3">{[['ano','Ano'],['banca','Banca'],['concurso','Concurso'],['esperadas','Quantidade de questões']].map(([key,label])=><label key={key}>{label}<input className={field} type={['ano','esperadas'].includes(key)?'number':'text'} value={job[key]} onChange={e=>{setJob({...job,[key]:['ano','esperadas'].includes(key)?Number(e.target.value):e.target.value});setDirty(true)}} /></label>)}</div></details>
           <p className="text-sm text-slate-400">Confira o enunciado, os textos de apoio e o gabarito de cada questão. Marque “Conferi esta questão” ao terminar. Alterações ficam pendentes até salvar.</p>
+          <div className="rounded-xl border border-slate-700 bg-slate-950/50 p-4 space-y-3">
+            <h4 className="font-semibold">Automação em lote</h4>
+            <div className="flex flex-wrap gap-3 text-sm"><span>Classificação pendente: {pendencias.classificacao}</span><span>Alternativas incompletas: {pendencias.alternativas}</span><span>Gabarito pendente: {pendencias.gabarito}</span><span>Revisão pendente: {pendencias.revisao}</span></div>
+            {classificacao.total>0 && <progress className="w-full" value={classificacao.feitos} max={classificacao.total} />}
+            <div className="flex flex-wrap gap-3"><button className={button} disabled={!modoLocal||busy||dirty||pendencias.classificacao===0} onClick={classificarPendentes}>{busy&&classificacao.total?'Classificando…':`Classificar ${pendencias.classificacao} pendentes com IA local`}</button><button className={button} disabled={busy} onClick={exportarJson}>Exportar JSON</button><button className={button} disabled={busy} onClick={exportarSql}>Exportar SQL</button></div>
+            {!modoLocal&&<p className="text-amber-200 text-sm">Para usar a IA sem enviar as questões à nuvem, abra o Importador Local no seu computador.</p>}
+            {dirty&&pendencias.classificacao>0&&<p className="text-amber-200 text-sm">Salve o rascunho antes de iniciar outro lote de classificação.</p>}
+            <p className="text-xs text-slate-400">A IA local classifica até dez questões por vez. Nenhum texto é enviado a provedores de IA. JSON e SQL funcionam como cópia portátil antes da publicação.</p>
+          </div>
           <div className="flex flex-wrap gap-3"><button className={button} disabled={busy} onClick={()=>verPdf('prova')}>Abrir prova para conferir</button><button className={button} disabled={busy} onClick={()=>verPdf('gabarito')}>Abrir gabarito para conferir</button></div>
           {Object.entries(pdfs).map(([tipo,url])=><details key={tipo} open><summary className="text-indigo-300">{tipo==='prova'?'Prova original':'Gabarito original'}</summary><a href={url} target="_blank" rel="noreferrer" className="text-sm underline">Abrir PDF em outra aba</a><iframe title={`${tipo} para conferência`} src={`${url}#page=${tipo==='prova'?(q?.pagina||1):1}`} className="w-full h-96 bg-white rounded-lg" /></details>)}
           <div className="flex flex-wrap gap-2">{job.questoes.map((item,i)=><button key={i} aria-label={`Revisar questão ${item.numero_original}`} className={`px-3 py-2 rounded-lg border ${i===indice?'border-indigo-400 bg-indigo-700':'border-slate-700'} ${item.revisada?'text-emerald-300':''}`} onClick={()=>setIndice(i)}>{item.numero_original}{item.revisada?' ✓':''}</button>)}</div>
           {q && <div className="space-y-4 border border-slate-700 rounded-xl p-4">
             <h4 className="font-bold">Questão {q.numero_original}</h4>
-            <p className="text-sm text-slate-400">Você pode preencher a classificação manualmente. A opção abaixo envia somente o texto desta questão ao Gemini; os PDFs e o gabarito não são enviados.</p>
-            <button className={button} disabled={busy} onClick={sugerirClassificacao}>{busy?'Aguarde…':'Sugerir matéria, conteúdo e dificuldade com IA (opcional)'}</button>
+            <p className="text-sm text-slate-400">Você pode preencher a classificação manualmente ou usar o modelo instalado no seu computador.</p>
+            <button className={button} disabled={!modoLocal||busy} onClick={sugerirClassificacao}>{busy?'Aguarde…':'Sugerir matéria, conteúdo e dificuldade com IA local'}</button>
             {q.observacao && <p className="text-amber-200 text-sm">Conferência sugerida: {q.observacao}</p>}
             <div className="grid md:grid-cols-3 gap-3">{[['numero_original','Número original'],['pagina','Página no PDF'],['materia','Matéria'],['conteudo','Conteúdo']].map(([key,label])=><label key={key}>{label}<input className={field} type={['numero_original','pagina'].includes(key)?'number':'text'} value={q[key]} onChange={e=>edit(key,['numero_original','pagina'].includes(key)?Number(e.target.value):e.target.value)} /></label>)}
               <label>Dificuldade estimada<select className={field} value={q.dificuldade} onChange={e=>edit('dificuldade',e.target.value)}>{['Fácil','Média','Difícil'].map(v=><option key={v}>{v}</option>)}</select></label>

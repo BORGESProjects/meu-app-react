@@ -31,7 +31,7 @@ class ImportacaoTests {
     @Autowired PdfFiles pdfs;
     @Autowired ObjectMapper mapper;
     @Autowired MockMvc mvc;
-    @MockBean PdfGemini gemini;
+    @MockBean LocalQuestionAi classifier;
     @MockBean PdfLocal local;
 
     ArrayNode fixture() throws Exception {
@@ -51,7 +51,7 @@ class ImportacaoTests {
         mvc.perform(get("/api/importacoes/acesso")).andExpect(status().isUnauthorized());
         mvc.perform(post("/api/importacoes/anything/publicar").contentType("application/json").content("{}"))
             .andExpect(status().isUnauthorized());
-        verifyNoInteractions(gemini,local);
+        verifyNoInteractions(classifier,local);
     }
     @Test void durableDraftPublicationIsAtomicPrivateAndIdempotent() throws Exception {
         when(local.extract(any())).thenAnswer(i -> fixture());
@@ -68,7 +68,7 @@ class ImportacaoTests {
         body.set("questoes",fixture());
         ImportacaoPdf published=jobs.save(draft.id,"admin-one",body,true);
         assertEquals("PUBLICADO",published.status);
-        verifyNoInteractions(gemini);
+        verifyNoInteractions(classifier);
         assertTrue(jobs.publicQuestions().toString().contains(draft.id));
         assertFalse(jobs.publicQuestions().toString().contains("ownerId"));
         assertEquals(published.version,jobs.save(draft.id,"admin-one",body,true).version);
