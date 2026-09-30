@@ -3,6 +3,7 @@ package com.apaprovado;
 import com.apaprovado.model.ImportacaoPdf;
 import com.apaprovado.repository.ImportacaoRepository;
 import com.apaprovado.service.*;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.*;
 import org.apache.pdfbox.pdmodel.*;
@@ -113,5 +114,20 @@ class ImportacaoTests {
         jobs.retry(created.id,"admin-incomplete");
         await().atMost(Duration.ofSeconds(10)).until(()->repo.findById(created.id).orElseThrow().progresso==2);
         assertEquals(2,mapper.readTree(jobs.owned(created.id,"admin-incomplete").questoes).size());
+    }
+    @Test void extractionAutomaticallyClassifiesMissingMetadata() throws Exception {
+        ArrayNode extracted=fixture(); ObjectNode question=(ObjectNode)extracted.get(0);
+        question.put("materia","");question.put("conteudo","");question.put("revisada",false);
+        when(local.extract(any())).thenReturn(extracted);
+        ArrayNode suggestions=mapper.createArrayNode().add(mapper.createObjectNode()
+            .put("numero_original",1).put("materia","Matemática").put("conteudo","Operações fundamentais")
+            .put("dificuldade","Fácil").put("confianca",0.94));
+        when(classifier.classifyBatch(any())).thenReturn(suggestions);
+        var created=jobs.create("admin-auto",pdf(),pdf(),2025,"TESTE","Classificação automática","AUTO",1);
+        await().atMost(Duration.ofSeconds(10)).until(()->repo.findById(created.id).orElseThrow().status.equals("REVISAO"));
+        JsonNode saved=mapper.readTree(jobs.owned(created.id,"admin-auto").questoes).get(0);
+        assertEquals("Operações fundamentais",saved.path("conteudo").asText());
+        assertEquals(0.94,saved.path("confianca_classificacao").asDouble());
+        verify(classifier).classifyBatch(any());
     }
 }

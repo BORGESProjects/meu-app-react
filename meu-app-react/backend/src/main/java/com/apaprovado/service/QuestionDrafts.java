@@ -47,6 +47,8 @@ public class QuestionDrafts {
             clean.put("pagina", page);
             clean.put("tem_imagem", q.path("tem_imagem").asBoolean(false));
             clean.put("revisada", q.path("revisada").asBoolean(false));
+            if(q.path("confianca_classificacao").isNumber())
+                clean.put("confianca_classificacao",Math.max(0,Math.min(1,q.path("confianca_classificacao").asDouble())));
             if (publishing) {
                 if (!clean.path("revisada").asBoolean()) throw bad("Revise e confirme a questão " + n + ".");
                 for (String field : List.of("enunciado", "materia", "conteudo"))

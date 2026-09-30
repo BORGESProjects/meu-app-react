@@ -116,8 +116,14 @@ public class Importacoes {
                     ((ObjectNode)old).set("resposta_correta",q.path("resposta_correta"));
             }
             all=drafts.normalize(all,job,false);
+            job.questoes=all.toString(); job.progresso=all.size(); job.atualizado=Instant.now(); job=repo.saveAndFlush(job);
+            String classificationWarning=null;
+            try { classifyMissing(job,all); }
+            catch(IllegalStateException e) { classificationWarning=e.getMessage()+" Use ‘Classificar pendentes’ para tentar novamente."; }
+            job=repo.findById(id).orElseThrow();
+            all=drafts.normalize(all,job,false);
             job.questoes=all.toString(); job.progresso=all.size(); job.atualizado=Instant.now();
-            job.status="REVISAO"; job.erro=null; repo.save(job);
+            job.status="REVISAO"; job.erro=classificationWarning; repo.save(job);
         } catch (Exception e) {
             ImportacaoPdf job=repo.findById(id).orElse(null);
             if(job!=null) {
@@ -134,6 +140,27 @@ public class Importacoes {
         JsonNode q=body.path("questao");
         ArrayNode one=mapper.createArrayNode().add(q);
         return classifier.classify(drafts.normalize(one,job,false).get(0));
+    }
+    private void classifyMissing(ImportacaoPdf job,ArrayNode all) throws Exception {
+        List<ObjectNode> pending=new ArrayList<>();
+        for(JsonNode q:all) if(q.path("materia").asText("").isBlank() || q.path("conteudo").asText("").isBlank()) pending.add((ObjectNode)q);
+        for(int start=0;start<pending.size();start+=10) {
+            List<ObjectNode> batch=pending.subList(start,Math.min(start+10,pending.size()));
+            ArrayNode input=mapper.createArrayNode(); batch.forEach(input::add);
+            ArrayNode suggestions=classifier.classifyBatch(input);
+            Map<Integer,JsonNode> byNumber=new HashMap<>();
+            for(JsonNode suggestion:suggestions) byNumber.put(suggestion.path("numero_original").asInt(),suggestion);
+            for(ObjectNode question:batch) {
+                JsonNode suggestion=byNumber.get(question.path("numero_original").asInt());
+                if(suggestion==null) throw new IllegalStateException("A IA local não classificou todas as questões.");
+                question.put("materia",suggestion.path("materia").asText());
+                question.put("conteudo",suggestion.path("conteudo").asText());
+                question.put("dificuldade",suggestion.path("dificuldade").asText());
+                question.put("confianca_classificacao",suggestion.path("confianca").asDouble(0.5));
+                question.put("revisada",false);
+            }
+            job.questoes=all.toString(); job.atualizado=Instant.now(); job=repo.saveAndFlush(job);
+        }
     }
     public ArrayNode classifyBatch(String id,String owner,JsonNode body) throws Exception {
         ImportacaoPdf job=owned(id,owner);

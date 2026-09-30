@@ -15,10 +15,10 @@ Para encerrar os processos locais, execute `parar-importador-local.ps1`.
 ## Fluxo de trabalho
 
 1. Envie a prova e o gabarito, informe ano, banca, concurso, modelo e quantidade.
-2. Aguarde a extração local. O rascunho é salvo automaticamente no banco do site.
-3. Use **Classificar pendentes com IA**. O programa envia lotes de até dez questões ao Ollama local e valida a ordem antes de aplicar as sugestões.
-4. Confira fórmulas, figuras, alternativas, gabarito e classificações. Questões de baixa confiança precisam de atenção especial.
-5. Salve o rascunho e marque cada questão como revisada.
+2. Aguarde a extração local. Em seguida, o programa classifica automaticamente todas as questões em lotes de até dez e salva o rascunho no banco do site.
+3. A tela destaca classificações de baixa confiança, alternativas incompletas e respostas sem gabarito. O botão **Classificar pendentes** serve apenas para repetir lotes que tenham falhado.
+4. Confira os itens sinalizados. Use **Aprovar questões completas em lote** para confirmar de uma só vez os demais itens.
+5. Salve o rascunho.
 6. Publique. As questões aparecem no acervo sem novo deploy.
 
 Os botões **Exportar JSON** e **Exportar SQL** criam cópias portáteis do lote. A publicação direta é a opção normal; use os arquivos para backup ou recuperação.

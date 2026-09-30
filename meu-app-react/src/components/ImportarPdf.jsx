@@ -194,6 +194,16 @@ export default function ImportarPdf({ onPublicado }) {
   function exportarSql() {
     baixar(`${job.banca}-${job.ano}-${job.modelo}.sql`, gerarSql(job), 'text/sql;charset=utf-8')
   }
+  function aprovarCompletas() {
+    const completa = item => item.materia?.trim() && item.conteudo?.trim() && item.enunciado?.trim() && item.opcoes?.length && item.opcoes.every(op=>op.trim()) && (item.anulada || item.resposta_correta != null)
+    const aprovadas = job.questoes.filter(item=>completa(item)&&!item.revisada).length
+    setJob(current => ({...current,questoes:current.questoes.map(item => {
+      if (!completa(item) || item.revisada) return item
+      return {...item,revisada:true}
+    })}))
+    setDirty(true)
+    setAviso(`${aprovadas} questões completas foram aprovadas em lote. Revise somente os itens sinalizados antes de publicar.`)
+  }
   const q = job?.questoes[indice]
   const editavel = job && ['REVISAO','ERRO'].includes(job.status)
   const revisadas = job?.questoes.filter(item => item.revisada).length || 0
@@ -202,6 +212,7 @@ export default function ImportarPdf({ onPublicado }) {
     alternativas: job.questoes.filter(item=>!item.opcoes?.length||item.opcoes.some(op=>!op.trim())).length,
     gabarito: job.questoes.filter(item=>!item.anulada&&item.resposta_correta==null).length,
     revisao: job.questoes.filter(item=>!item.revisada).length,
+    baixaConfianca: job.questoes.filter(item=>item.confianca_classificacao!=null&&item.confianca_classificacao<0.7).length,
   } : null
 
   return <section className="space-y-6">
@@ -241,12 +252,12 @@ export default function ImportarPdf({ onPublicado }) {
           <p className="text-sm text-slate-400">Confira o enunciado, os textos de apoio e o gabarito de cada questão. Marque “Conferi esta questão” ao terminar. Alterações ficam pendentes até salvar.</p>
           <div className="rounded-xl border border-slate-700 bg-slate-950/50 p-4 space-y-3">
             <h4 className="font-semibold">Automação em lote</h4>
-            <div className="flex flex-wrap gap-3 text-sm"><span>Classificação pendente: {pendencias.classificacao}</span><span>Alternativas incompletas: {pendencias.alternativas}</span><span>Gabarito pendente: {pendencias.gabarito}</span><span>Revisão pendente: {pendencias.revisao}</span></div>
+            <div className="flex flex-wrap gap-3 text-sm"><span>Classificação pendente: {pendencias.classificacao}</span><span>Baixa confiança: {pendencias.baixaConfianca}</span><span>Alternativas incompletas: {pendencias.alternativas}</span><span>Gabarito pendente: {pendencias.gabarito}</span><span>Revisão pendente: {pendencias.revisao}</span></div>
             {classificacao.total>0 && <progress className="w-full" value={classificacao.feitos} max={classificacao.total} />}
-            <div className="flex flex-wrap gap-3"><button className={button} disabled={!modoLocal||busy||dirty||pendencias.classificacao===0} onClick={classificarPendentes}>{busy&&classificacao.total?'Classificando…':`Classificar ${pendencias.classificacao} pendentes com IA local`}</button><button className={button} disabled={busy} onClick={exportarJson}>Exportar JSON</button><button className={button} disabled={busy} onClick={exportarSql}>Exportar SQL</button></div>
+            <div className="flex flex-wrap gap-3"><button className={button} disabled={!modoLocal||busy||dirty||pendencias.classificacao===0} onClick={classificarPendentes}>{busy&&classificacao.total?'Classificando…':`Classificar ${pendencias.classificacao} pendentes com IA local`}</button><button className={button} disabled={busy||pendencias.revisao===0} onClick={aprovarCompletas}>Aprovar questões completas em lote</button><button className={button} disabled={busy} onClick={exportarJson}>Exportar JSON</button><button className={button} disabled={busy} onClick={exportarSql}>Exportar SQL</button></div>
             {!modoLocal&&<p className="text-amber-200 text-sm">Para usar a IA sem enviar as questões à nuvem, abra o Importador Local no seu computador.</p>}
             {dirty&&pendencias.classificacao>0&&<p className="text-amber-200 text-sm">Salve o rascunho antes de iniciar outro lote de classificação.</p>}
-            <p className="text-xs text-slate-400">A IA local classifica até dez questões por vez. Nenhum texto é enviado a provedores de IA. JSON e SQL funcionam como cópia portátil antes da publicação.</p>
+            <p className="text-xs text-slate-400">Após extrair o PDF, a IA local preenche automaticamente matéria, conteúdo e dificuldade em lotes de dez. Revise apenas baixa confiança, alternativas ou gabaritos pendentes. Nenhum texto é enviado a provedores de IA.</p>
           </div>
           <div className="flex flex-wrap gap-3"><button className={button} disabled={busy} onClick={()=>verPdf('prova')}>Abrir prova para conferir</button><button className={button} disabled={busy} onClick={()=>verPdf('gabarito')}>Abrir gabarito para conferir</button></div>
           {Object.entries(pdfs).map(([tipo,url])=><details key={tipo} open><summary className="text-indigo-300">{tipo==='prova'?'Prova original':'Gabarito original'}</summary><a href={url} target="_blank" rel="noreferrer" className="text-sm underline">Abrir PDF em outra aba</a><iframe title={`${tipo} para conferência`} src={`${url}#page=${tipo==='prova'?(q?.pagina||1):1}`} className="w-full h-96 bg-white rounded-lg" /></details>)}
