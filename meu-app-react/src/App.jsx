@@ -8,7 +8,8 @@ import { supabase } from './supabaseClient'
 import { tentarLeitura } from './carregarAcervo'
 
 export default function App() {
-  const [abaAtiva, setAbaAtiva] = useState('questoes') // 'questoes' | 'cadastrar' | 'edital' | 'redacao' | 'tarefas' | 'simulados' | 'desempenho'
+  const execucaoLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname)
+  const [abaAtiva, setAbaAtiva] = useState(execucaoLocal ? 'importar' : 'questoes') // 'questoes' | 'cadastrar' | 'edital' | 'redacao' | 'tarefas' | 'simulados' | 'desempenho'
 
   // Estados das Questões
   const [questoes, setQuestoes] = useState(acervo)

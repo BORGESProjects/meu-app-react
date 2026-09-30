@@ -7,7 +7,7 @@ O importador processa os PDFs no computador do administrador. O PDFBox extrai o 
 1. Clique com o botão direito em `configurar-importador-local.ps1` e escolha **Executar com PowerShell**.
 2. O assistente instala o Ollama e baixa o modelo local de aproximadamente 2,5 GB.
 3. Informe a conexão PostgreSQL usada pelo site. Esses dados são gravados somente em `backend/application-local.properties`, arquivo ignorado pelo Git.
-4. Execute `iniciar-importador-local.ps1`. O importador abre em `http://127.0.0.1:5173`.
+4. Execute `iniciar-importador-local.ps1`. O importador abre em `http://127.0.0.1:41731`, diretamente na aba de importação.
 5. Entre com a conta administrativa `nickbr613@gmail.com`.
 
 Para encerrar os processos locais, execute `parar-importador-local.ps1`.

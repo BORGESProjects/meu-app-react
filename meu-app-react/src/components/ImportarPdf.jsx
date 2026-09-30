@@ -205,7 +205,7 @@ export default function ImportarPdf({ onPublicado }) {
   } : null
 
   return <section className="space-y-6">
-    <header><h1 className="text-3xl font-extrabold">Importar provas em PDF</h1><p className="text-slate-400 mt-2">Envie a prova e o gabarito, confira as questões e publique no acervo.</p></header>
+    <header><div className="flex flex-wrap items-center gap-3"><h1 className="text-3xl font-extrabold">Importar provas em PDF</h1>{modoLocal&&<span className="rounded-full bg-emerald-900 px-3 py-1 text-xs font-bold text-emerald-200">IA LOCAL ATIVA</span>}</div><p className="text-slate-400 mt-2">Envie a prova e o gabarito, confira as questões e publique no acervo.</p></header>
     {erro && <p role="alert" className="rounded-xl border border-red-500/40 bg-red-950/40 p-4 text-red-200">{erro}</p>}
     {aviso && <p role="status" className="rounded-xl bg-emerald-950/50 p-4 text-emerald-200">{aviso}</p>}
     {!session ? <form onSubmit={login} className="max-w-md space-y-4 rounded-2xl bg-slate-900 border border-slate-800 p-6">

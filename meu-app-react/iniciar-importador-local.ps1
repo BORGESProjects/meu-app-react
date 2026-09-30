@@ -18,10 +18,13 @@ if ($modelos -notmatch [regex]::Escape($modelo)) {
 }
 
 $backend = Join-Path $raiz 'backend'
+$portaWeb = 41731
+$enderecoWeb = "http://127.0.0.1:$portaWeb"
+$env:FRONTEND_URL = $enderecoWeb
 $frontendLog = Join-Path $env:TEMP 'aprovado-frontend.log'
 $backendLog = Join-Path $env:TEMP 'aprovado-backend.log'
 $api = Start-Process -FilePath (Join-Path $backend 'mvnw.cmd') -ArgumentList 'spring-boot:run' -WorkingDirectory $backend -WindowStyle Hidden -RedirectStandardOutput $backendLog -RedirectStandardError "$backendLog.err" -PassThru
-$web = Start-Process -FilePath 'cmd.exe' -ArgumentList '/c','npm run dev -- --host 127.0.0.1' -WorkingDirectory $raiz -WindowStyle Hidden -RedirectStandardOutput $frontendLog -RedirectStandardError "$frontendLog.err" -PassThru
+$web = Start-Process -FilePath 'cmd.exe' -ArgumentList '/c',"npm run dev -- --host 127.0.0.1 --port $portaWeb --strictPort" -WorkingDirectory $raiz -WindowStyle Hidden -RedirectStandardOutput $frontendLog -RedirectStandardError "$frontendLog.err" -PassThru
 
 $estado = @{ backend = $api.Id; frontend = $web.Id } | ConvertTo-Json
 $estado | Set-Content (Join-Path $env:TEMP 'aprovado-importador-processos.json')
@@ -33,5 +36,6 @@ if ($api.HasExited) {
     }
     throw "O servidor local não iniciou. Consulte o registro em $backendLog"
 }
-Start-Process 'http://127.0.0.1:5173'
+if ($web.HasExited) { throw "A interface local não iniciou. Consulte o registro em $frontendLog" }
+Start-Process $enderecoWeb
 Write-Host 'Importador aberto. Para encerrá-lo, execute parar-importador-local.ps1.' -ForegroundColor Green
