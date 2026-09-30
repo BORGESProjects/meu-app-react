@@ -23,12 +23,15 @@ public class QuestionDrafts {
             if (n < 1 || n > job.esperadas || !numbers.add(n)) throw bad("Confira a numeração: há números inválidos ou repetidos.");
             ObjectNode clean = mapper.createObjectNode();
             clean.put("numero_original", n);
-            for (String field : List.of("enunciado", "texto_apoio", "materia", "conteudo", "dificuldade", "observacao")) {
+            if (q.path("numero_fonte").canConvertToInt()) clean.put("numero_fonte", q.path("numero_fonte").asInt());
+            for (String field : List.of("enunciado", "texto_apoio", "materia", "conteudo", "dificuldade", "observacao", "banca", "concurso", "fonte", "modelo")) {
                 String value = q.path(field).asText("").trim();
                 if (value.length() > (field.equals("texto_apoio") ? 30000 : field.equals("enunciado") ? 15000 : 600))
                     throw bad("Um campo da questão " + n + " é longo demais.");
                 clean.put(field, value);
             }
+            int sourceYear=q.path("ano").asInt(0);
+            if(sourceYear>=1900 && sourceYear<=2100) clean.put("ano",sourceYear);
             if (clean.path("dificuldade").asText().isBlank()) clean.put("dificuldade", "Média");
             JsonNode options = q.path("opcoes");
             if (!options.isArray() || options.size() < 2 || options.size() > 5) throw bad("Questão " + n + ": informe de 2 a 5 alternativas.");

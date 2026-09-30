@@ -194,9 +194,12 @@ public class Importacoes {
                 ObjectNode out=((ObjectNode)q).deepCopy();
                 out.remove(List.of("revisada","observacao"));
                 out.put("id","pdf-"+j.getId()+"-"+q.path("numero_original").asInt());
-                out.put("ano",j.getAno()).put("banca",j.getBanca()).put("concurso",j.getConcurso()).put("modelo",j.getModelo());
+                out.put("ano",q.path("ano").asInt(j.getAno()));
+                if(q.path("banca").asText("").isBlank()) out.put("banca",j.getBanca());
+                if(q.path("concurso").asText("").isBlank()) out.put("concurso",j.getConcurso());
+                if(q.path("modelo").asText("").isBlank()) out.put("modelo",j.getModelo());
                 out.put("dificuldade_estimada",true);
-                out.put("pdf_original","/api/acervo/"+j.getId()+"/prova.pdf");
+                if(!"CURSO".equals(j.getModelo())) out.put("pdf_original","/api/acervo/"+j.getId()+"/prova.pdf");
                 if(q.path("tem_imagem").asBoolean()) out.put("pagina_imagem","/api/acervo/"+j.getId()+"/paginas/"+q.path("pagina").asInt());
                 all.add(out);
             }

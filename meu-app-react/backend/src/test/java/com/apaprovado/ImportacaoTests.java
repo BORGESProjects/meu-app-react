@@ -39,7 +39,8 @@ class ImportacaoTests {
         return (ArrayNode)mapper.readTree("""
           [{"numero_original":1,"enunciado":"Qual é a soma de 2 e 2?","texto_apoio":"",
           "opcoes":["3","4","5","6","7"],"resposta_correta":1,"anulada":false,
-          "materia":"Matemática","conteudo":"Aritmética","dificuldade":"Fácil","pagina":1,"tem_imagem":false,"revisada":true}]
+          "materia":"Matemática","conteudo":"Aritmética","dificuldade":"Fácil","pagina":1,"tem_imagem":false,"revisada":true,
+          "numero_fonte":17,"ano":2019,"banca":"ESA","concurso":"ESA 2019","fonte":"ESA - 2019"}]
           """);
     }
     byte[] pdf() throws Exception {
@@ -72,6 +73,12 @@ class ImportacaoTests {
         verifyNoInteractions(classifier);
         assertTrue(jobs.publicQuestions().toString().contains(draft.id));
         assertFalse(jobs.publicQuestions().toString().contains("ownerId"));
+        JsonNode publicQuestion=null;
+        for(JsonNode candidate:jobs.publicQuestions()) if(candidate.path("id").asText().contains(draft.id)) publicQuestion=candidate;
+        assertNotNull(publicQuestion);
+        assertEquals(2019,publicQuestion.path("ano").asInt());
+        assertEquals("ESA",publicQuestion.path("banca").asText());
+        assertEquals(17,publicQuestion.path("numero_fonte").asInt());
         assertEquals(published.version,jobs.save(draft.id,"admin-one",body,true).version);
         assertEquals(draft.id,jobs.create("admin-one",original,original,2025,"TESTE","Prova de teste","T",1).id);
         mvc.perform(get("/api/acervo/"+draft.id+"/prova.pdf")).andExpect(status().isOk()).andExpect(content().contentType("application/pdf"));
