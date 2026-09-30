@@ -223,6 +223,7 @@ export default function ImportarPdf({ onPublicado }) {
   } : null
   const elegiveisLote = job?.questoes.filter(item=>!item.revisada&&item.materia?.trim()&&item.conteudo?.trim()&&item.enunciado?.trim()&&item.opcoes?.length&&item.opcoes.every(op=>op.trim())&&(item.anulada||item.resposta_correta!=null)).length || 0
   const bloqueiosPublicacao = job ? [
+    dirty && 'Há alterações não salvas. Clique em Salvar rascunho.',
     job.questoes.length!==job.esperadas && `Quantidade: foram extraídas ${job.questoes.length}, mas o lote está configurado para ${job.esperadas}.`,
     pendencias.classificacao>0 && `${pendencias.classificacao} questão(ões) sem matéria ou conteúdo.`,
     pendencias.alternativas>0 && `${pendencias.alternativas} questão(ões) com alternativas incompletas.`,
