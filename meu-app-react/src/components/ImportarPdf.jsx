@@ -194,15 +194,22 @@ export default function ImportarPdf({ onPublicado }) {
   function exportarSql() {
     baixar(`${job.banca}-${job.ano}-${job.modelo}.sql`, gerarSql(job), 'text/sql;charset=utf-8')
   }
-  function aprovarCompletas() {
+  async function aprovarCompletas() {
     const completa = item => item.materia?.trim() && item.conteudo?.trim() && item.enunciado?.trim() && item.opcoes?.length && item.opcoes.every(op=>op.trim()) && (item.anulada || item.resposta_correta != null)
     const aprovadas = job.questoes.filter(item=>completa(item)&&!item.revisada).length
-    setJob(current => ({...current,questoes:current.questoes.map(item => {
+    if (!aprovadas) {
+      setErro('Nenhuma questão está completa para aprovação. Confira os contadores de classificação, alternativas e gabarito pendentes.')
+      return
+    }
+    const questoes = job.questoes.map(item => {
       if (!completa(item) || item.revisada) return item
       return {...item,revisada:true}
-    })}))
-    setDirty(true)
-    setAviso(`${aprovadas} questões completas foram aprovadas em lote. Revise somente os itens sinalizados antes de publicar.`)
+    })
+    await run(async () => {
+      const next = await api(`/${job.id}`, {method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({version:job.version,questoes,ano:job.ano,banca:job.banca,concurso:job.concurso,esperadas:job.esperadas})})
+      setJob(next); setDirty(false); setLista(await api(''))
+      setAviso(`${aprovadas} questões completas foram aprovadas e o rascunho foi salvo. Revise somente os itens sinalizados antes de publicar.`)
+    })
   }
   const q = job?.questoes[indice]
   const editavel = job && ['REVISAO','ERRO'].includes(job.status)
@@ -214,6 +221,7 @@ export default function ImportarPdf({ onPublicado }) {
     revisao: job.questoes.filter(item=>!item.revisada).length,
     baixaConfianca: job.questoes.filter(item=>item.confianca_classificacao!=null&&item.confianca_classificacao<0.7).length,
   } : null
+  const elegiveisLote = job?.questoes.filter(item=>!item.revisada&&item.materia?.trim()&&item.conteudo?.trim()&&item.enunciado?.trim()&&item.opcoes?.length&&item.opcoes.every(op=>op.trim())&&(item.anulada||item.resposta_correta!=null)).length || 0
 
   return <section className="space-y-6">
     <header><div className="flex flex-wrap items-center gap-3"><h1 className="text-3xl font-extrabold">Importar provas em PDF</h1>{modoLocal&&<span className="rounded-full bg-emerald-900 px-3 py-1 text-xs font-bold text-emerald-200">IA LOCAL ATIVA</span>}</div><p className="text-slate-400 mt-2">Envie a prova e o gabarito, confira as questões e publique no acervo.</p></header>
@@ -254,7 +262,8 @@ export default function ImportarPdf({ onPublicado }) {
             <h4 className="font-semibold">Automação em lote</h4>
             <div className="flex flex-wrap gap-3 text-sm"><span>Classificação pendente: {pendencias.classificacao}</span><span>Baixa confiança: {pendencias.baixaConfianca}</span><span>Alternativas incompletas: {pendencias.alternativas}</span><span>Gabarito pendente: {pendencias.gabarito}</span><span>Revisão pendente: {pendencias.revisao}</span></div>
             {classificacao.total>0 && <progress className="w-full" value={classificacao.feitos} max={classificacao.total} />}
-            <div className="flex flex-wrap gap-3"><button className={button} disabled={!modoLocal||busy||dirty||pendencias.classificacao===0} onClick={classificarPendentes}>{busy&&classificacao.total?'Classificando…':`Classificar ${pendencias.classificacao} pendentes com IA local`}</button><button className={button} disabled={busy||pendencias.revisao===0} onClick={aprovarCompletas}>Aprovar questões completas em lote</button><button className={button} disabled={busy} onClick={exportarJson}>Exportar JSON</button><button className={button} disabled={busy} onClick={exportarSql}>Exportar SQL</button></div>
+            <div className="flex flex-wrap gap-3"><button className={button} disabled={!modoLocal||busy||dirty||pendencias.classificacao===0} onClick={classificarPendentes}>{busy&&classificacao.total?'Classificando…':`Classificar ${pendencias.classificacao} pendentes com IA local`}</button><button className={button} disabled={busy||elegiveisLote===0} onClick={aprovarCompletas}>Aprovar e salvar {elegiveisLote} completas</button><button className={button} disabled={busy} onClick={exportarJson}>Exportar JSON</button><button className={button} disabled={busy} onClick={exportarSql}>Exportar SQL</button></div>
+            {elegiveisLote===0&&pendencias.revisao>0&&<p className="text-amber-200 text-sm">Ainda não há questões completas para aprovação automática. Resolva as pendências indicadas acima.</p>}
             {!modoLocal&&<p className="text-amber-200 text-sm">Para usar a IA sem enviar as questões à nuvem, abra o Importador Local no seu computador.</p>}
             {dirty&&pendencias.classificacao>0&&<p className="text-amber-200 text-sm">Salve o rascunho antes de iniciar outro lote de classificação.</p>}
             <p className="text-xs text-slate-400">Após extrair o PDF, a IA local preenche automaticamente matéria, conteúdo e dificuldade em lotes de dez. Revise apenas baixa confiança, alternativas ou gabaritos pendentes. Nenhum texto é enviado a provedores de IA.</p>
