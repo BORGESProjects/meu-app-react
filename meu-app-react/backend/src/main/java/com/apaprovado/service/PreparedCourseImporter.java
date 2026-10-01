@@ -34,10 +34,14 @@ public class PreparedCourseImporter implements ApplicationRunner {
 
     @Override public void run(ApplicationArguments args) throws Exception {
         Path directory=Path.of(args.getOptionValues("course.import.dir").get(0)).toAbsolutePath().normalize();
+        List<Path> jsonPaths;
+        try(Stream<Path> paths=Files.list(directory)) {
+            jsonPaths=paths.filter(p -> p.getFileName().toString().startsWith("Aula") && p.toString().endsWith(".json")).sorted().toList();
+        }
+        if(args.containsOption("course.import.replace")) replaceExisting(jsonPaths);
         Set<String> existing=existingFingerprints();
         int published=0, skipped=0;
-        try(Stream<Path> paths=Files.list(directory)) {
-            for(Path jsonPath:paths.filter(p -> p.getFileName().toString().startsWith("Aula") && p.toString().endsWith(".json")).sorted().toList()) {
+        for(Path jsonPath:jsonPaths) {
                 ObjectNode root=(ObjectNode)mapper.readTree(Files.readString(jsonPath));
                 ArrayNode input=(ArrayNode)root.path("questions");
                 ArrayNode unique=mapper.createArrayNode();
@@ -63,7 +67,6 @@ public class PreparedCourseImporter implements ApplicationRunner {
                 job.criado=Instant.now(); job.atualizado=Instant.now();
                 repo.saveAndFlush(job); published+=unique.size();
                 System.out.println("PUBLICADO "+content+": "+unique.size());
-            }
         }
         System.out.println("IMPORTACAO_CONCLUIDA publicados="+published+" duplicados="+skipped);
         SpringApplication.exit(context,() -> 0);
@@ -74,6 +77,18 @@ public class PreparedCourseImporter implements ApplicationRunner {
         for(var job:repo.findAllProjectedByStatusOrderByCriadoDesc("PUBLICADO"))
             for(JsonNode question:mapper.readTree(job.getQuestoes())) values.add(contentKey(question));
         return values;
+    }
+
+    private void replaceExisting(List<Path> jsonPaths) throws Exception {
+        Set<String> titles=new HashSet<>();
+        for(Path jsonPath:jsonPaths) {
+            JsonNode questions=mapper.readTree(Files.readString(jsonPath)).path("questions");
+            if(!questions.isEmpty()) titles.add("Português — "+questions.get(0).path("conteudo").asText());
+        }
+        var jobs=repo.findByStatusOrderByCriadoDesc("PUBLICADO").stream()
+            .filter(job -> "CURSO".equals(job.modelo) && titles.contains(job.concurso)).toList();
+        repo.deleteAll(jobs); repo.flush();
+        System.out.println("LOTES_SUBSTITUIDOS="+jobs.size());
     }
 
     private String contentKey(JsonNode question) {

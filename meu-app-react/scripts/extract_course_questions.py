@@ -7,16 +7,22 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 QUESTION = re.compile(
     r"(?m)^\s*(\d{1,2})\.\s*(?:\(([^)\n]{2,220})\)\s*)?(?![A-E]\s*$)(?=\S)"
 )
-OPTION = re.compile(r"(?mi)^\s*(?:\(([A-E])\)|([A-Ea-e])[.)](?![.)]))\s*")
+OPTION = re.compile(
+    r"(?m)(?:^[ \t]*(?:\(([A-E])\)|\[?([A-E])\])|(?:^|(?<=[ \t]))[ \t]*(?:([a-e])\)|([A-E])[.)](?![.)])))[ \t]*"
+)
 COMMENT = re.compile(r"(?mi)^\s*Coment(?:ário|ários|ario|arios)\s*:?")
 ANSWER = re.compile(r"(?i)Gabarito\s*:?[ \t]*([A-E])\b")
 LEVEL = re.compile(r"(?i)Nível\s*0?([123])")
+SHARED_TEXT = re.compile(r"(?i)\n?Textos?\s+para\s+as\s+próximas\s+(?:\w+\s+){0,3}questões\s*:?\s*\n?")
 
 CONTENTS = {
     "Aula 00": "Fonética e Ortografia", "Aula 01": "Morfologia I",
     "Aula 02": "Morfologia II", "Aula 03": "Morfologia III",
     "Aula 04": "Morfologia IV", "Aula 05": "Teoria da Linguagem",
-    "Aula 06": "Semântica",
+    "Aula 06": "Semântica", "Aula 07": "Sintaxe I",
+    "Aula 08": "Sintaxe II", "Aula 09": "Concordância nominal e verbal",
+    "Aula 10": "Regência e crase", "Aula 11": "Pontuação e emprego das classes",
+    "Aula 12": "Figuras de linguagem", "Aula 13": "Interpretação de textos",
 }
 
 def clean_page(text: str) -> str:
@@ -55,29 +61,43 @@ def extract(path: Path) -> list[dict]:
     first_answer=next((m for m in answer_matches if int(m.group(1))==1),None)
     if first_answer is None: raise ValueError(f"Gabarito não encontrado: {path.name}")
     answer_start=first_answer.start()
-    headings=[full.lower().rfind(label,0,answer_start) for label in ("lista de exercícios","lista de exercicios","lista de questões","lista de questoes")]
-    list_start=max(headings)
-    if list_start<0: raise ValueError(f"Seção de exercícios não encontrada: {path.name}")
-    candidates=[m for m in matches if list_start<m.start()<answer_start]
-    best=[]; expected=1
-    for match in candidates:
-        if int(match.group(1))==expected:
-            best.append(match); expected+=1
-            if expected==61: break
+    answers={}; expected_answer=1
+    for match in answer_matches:
+        if match.start()<answer_start: continue
+        number=int(match.group(1))
+        if number==expected_answer:
+            answers[number]=match.group(2); expected_answer+=1
+        elif number==1 and expected_answer>1: break
+    expected_total=len(answers)
+    if expected_total<40: raise ValueError(f"Gabarito incompleto ({expected_total}): {path.name}")
+    candidates=[m for m in matches if m.start()<answer_start]
+    best=[]; best_score=(-1,-1)
+    for start,first in enumerate(candidates):
+        if int(first.group(1))!=1: continue
+        sequence=[]; expected=1
+        for match in candidates[start:]:
+            if int(match.group(1))==expected:
+                sequence.append(match); expected+=1
+                if expected>expected_total: break
+        score=(sum(1 for item in sequence if item.group(2)),first.start())
+        if len(sequence)==expected_total and score>best_score:
+            best=sequence; best_score=score
     if len(best)<40: raise ValueError(f"Sequência incompleta ({len(best)}): {path.name}")
     following=answer_start
-    answers={int(m.group(1)):m.group(2) for m in answer_matches if answer_start<=m.start() and int(m.group(1))<=len(best)}
     if len(answers)<len(best):
         raise ValueError(f"Gabarito incompleto ({len(answers)}/{len(best)}): {path.name}")
     content=next((value for key,value in CONTENTS.items() if key in path.name),path.stem)
     result=[]
+    prior=full[max(0,best[0].start()-10000):best[0].start()]
+    initial_markers=list(SHARED_TEXT.finditer(prior))
+    pending_support=prior[initial_markers[-1].end():].strip() if initial_markers else ""
     for i,match in enumerate(best):
         end=best[i+1].start() if i+1<len(best) else following
         block=full[match.end():end]
         cut_candidates=[m.start() for pattern in (COMMENT,ANSWER,re.compile(r"(?mi)^\s*\d+\.\s*[A-E]\s*$")) if (m:=pattern.search(block))]
         question_text=block[:min(cut_candidates) if cut_candidates else len(block)].strip(" _\n")
         raw_options=list(OPTION.finditer(question_text))
-        first_option=max((index for index,opt in enumerate(raw_options) if (opt.group(1) or opt.group(2)).upper()=="A"),default=-1)
+        first_option=max((index for index,opt in enumerate(raw_options) if next(v for v in opt.groups() if v).upper()=="A"),default=-1)
         options=raw_options[first_option:] if first_option>=0 else []
         if len(options)<2:
             raise ValueError(f"Questão {match.group(1)} sem alternativas/gabarito em {path.name}")
@@ -85,14 +105,21 @@ def extract(path: Path) -> list[dict]:
         values=[]
         letters=[]
         for n,opt in enumerate(options):
-            letters.append((opt.group(1) or opt.group(2)).upper())
+            letters.append(next(v for v in opt.groups() if v).upper())
             values.append(question_text[opt.end():options[n+1].start() if n+1<len(options) else len(question_text)].strip())
+        next_support=None
+        for index,value in enumerate(values):
+            marker=SHARED_TEXT.search(value)
+            if marker:
+                values[index]=value[:marker.start()].strip()
+                next_support=value[marker.end():].strip()
+                break
         expected_letters=list("ABCDE")[:len(letters)]
         if letters != expected_letters or len(set(letters))!=len(letters):
             # Alguns cadernos têm erro tipográfico no rótulo, embora as cinco
             # alternativas estejam completas e em ordem. Nesse caso, a posição
             # visual é a fonte confiável e o gabarito continua sendo A-E.
-            if len(letters)==5:
+            if letters==["A","B","C","D","D"]:
                 letters=expected_letters
             else:
                 raise ValueError(f"Questão {match.group(1)} com alternativas ambíguas em {path.name}: {letters}")
@@ -101,11 +128,12 @@ def extract(path: Path) -> list[dict]:
         levels=LEVEL.findall(prefix); difficulty={"1":"Fácil","2":"Média","3":"Difícil"}.get(levels[-1] if levels else "2")
         q={
             "numero_original":int(match.group(1)),"pagina":page,"materia":"Português","conteudo":content,
-            "dificuldade":difficulty,"texto_apoio":"","enunciado":stem,"opcoes":values,
+            "dificuldade":difficulty,"texto_apoio":pending_support,"enunciado":stem,"opcoes":values,
             "resposta_correta":ord(answers[int(match.group(1))])-65,"anulada":False,"tem_imagem":False,
             "revisada":True,"confianca_classificacao":1.0,
         }
         q.update(source_meta(match.group(2))); result.append(q)
+        if next_support is not None: pending_support=next_support
     return result
 
 def main():
