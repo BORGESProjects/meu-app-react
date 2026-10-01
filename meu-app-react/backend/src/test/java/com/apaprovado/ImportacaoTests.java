@@ -51,9 +51,25 @@ class ImportacaoTests {
     @Test void unauthenticatedRequestsNeverReachExtraction() throws Exception {
         mvc.perform(get("/api/importacoes")).andExpect(status().isUnauthorized());
         mvc.perform(get("/api/importacoes/acesso")).andExpect(status().isUnauthorized());
+        mvc.perform(post("/api/admin/questoes").contentType("application/json").content("{}"))
+            .andExpect(status().isUnauthorized());
         mvc.perform(post("/api/importacoes/anything/publicar").contentType("application/json").content("{}"))
             .andExpect(status().isUnauthorized());
         verifyNoInteractions(classifier,local);
+    }
+    @Test void manualQuestionIsValidatedAndPublishedInPublicCollection() throws Exception {
+        ObjectNode body=mapper.createObjectNode().put("ano",2026).put("banca","Professor")
+            .put("concurso","Questão avulsa").put("materia","Português").put("conteudo","Sintaxe")
+            .put("dificuldade","Média").put("enunciado","Assinale a alternativa correta.")
+            .put("resposta_correta",1);
+        body.set("opcoes",mapper.createArrayNode().add("A").add("B").add("C").add("D").add("E"));
+        JsonNode published=jobs.createManual("admin-one",body);
+        assertEquals("Professor",published.path("banca").asText());
+        assertEquals(2026,published.path("ano").asInt());
+        assertFalse(published.has("pdf_original"));
+        assertTrue(jobs.publicQuestions().toString().contains("Assinale a alternativa correta."));
+        body.put("dificuldade","Impossível");
+        assertThrows(ResponseStatusException.class,()->jobs.createManual("admin-one",body));
     }
     @Test void durableDraftPublicationIsAtomicPrivateAndIdempotent() throws Exception {
         when(local.extract(any())).thenAnswer(i -> fixture());

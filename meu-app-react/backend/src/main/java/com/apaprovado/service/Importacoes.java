@@ -187,22 +187,51 @@ public class Importacoes {
         return repo.findAllProjectedByOwnerIdOrderByCriadoDesc(owner).stream().map(j -> Map.<String,Object>of(
             "id",j.getId(),"status",j.getStatus(),"concurso",j.getConcurso(),"ano",j.getAno(),"modelo",j.getModelo(),"progresso",j.getProgresso(),"esperadas",j.getEsperadas())).toList();
     }
+    public synchronized ObjectNode createManual(String owner, JsonNode body) throws Exception {
+        int year=body.path("ano").asInt(0);
+        String board=body.path("banca").asText("").trim();
+        String title=body.path("concurso").asText("").trim();
+        if(year<1900||year>2100||board.isBlank()||board.length()>160||title.isBlank()||title.length()>160)
+            throw bad("Confira o ano, a banca e o concurso.");
+        ImportacaoPdf job=new ImportacaoPdf();
+        job.id=UUID.randomUUID().toString();job.ownerId=owner;job.fingerprint=UUID.randomUUID().toString();
+        job.status="PUBLICADO";job.concurso=title;job.banca=board;job.modelo="MANUAL";job.ano=year;
+        job.esperadas=1;job.paginas=1;job.progresso=1;job.prova=new byte[0];job.gabarito=new byte[0];
+        ObjectNode question=mapper.createObjectNode();
+        question.put("numero_original",1).put("pagina",1).put("tem_imagem",false).put("revisada",true)
+            .put("materia",body.path("materia").asText()).put("conteudo",body.path("conteudo").asText())
+            .put("dificuldade",body.path("dificuldade").asText()).put("enunciado",body.path("enunciado").asText())
+            .put("texto_apoio",body.path("texto_apoio").asText("")).put("anulada",false)
+            .put("banca",board).put("concurso",title).put("ano",year).put("modelo","MANUAL");
+        question.set("opcoes",body.path("opcoes"));
+        question.set("resposta_correta",body.path("resposta_correta"));
+        job.questoes=drafts.normalize(mapper.createArrayNode().add(question),job,true).toString();
+        job=repo.saveAndFlush(job);
+        return (ObjectNode)publicQuestionsFor(job).get(0);
+    }
+    private ArrayNode publicQuestionsFor(ImportacaoPdf j) throws Exception {
+        ArrayNode all=mapper.createArrayNode();
+        for(JsonNode q:mapper.readTree(j.questoes)) {
+            ObjectNode out=((ObjectNode)q).deepCopy();
+            out.remove(List.of("revisada","observacao"));
+            out.put("id","pdf-"+j.id+"-"+q.path("numero_original").asInt());
+            out.put("ano",q.path("ano").asInt(j.ano));
+            if(q.path("banca").asText("").isBlank()) out.put("banca",j.banca);
+            if(q.path("concurso").asText("").isBlank()) out.put("concurso",j.concurso);
+            if(q.path("modelo").asText("").isBlank()) out.put("modelo",j.modelo);
+            out.put("dificuldade_estimada",true);
+            if(!"CURSO".equals(j.modelo)&&!"MANUAL".equals(j.modelo)) out.put("pdf_original","/api/acervo/"+j.id+"/prova.pdf");
+            if(q.path("tem_imagem").asBoolean()) out.put("pagina_imagem","/api/acervo/"+j.id+"/paginas/"+q.path("pagina").asInt());
+            all.add(out);
+        }
+        return all;
+    }
     public ArrayNode publicQuestions() throws Exception {
         ArrayNode all=mapper.createArrayNode();
         for (var j:repo.findAllProjectedByStatusOrderByCriadoDesc("PUBLICADO")) {
-            for(JsonNode q:mapper.readTree(j.getQuestoes())) {
-                ObjectNode out=((ObjectNode)q).deepCopy();
-                out.remove(List.of("revisada","observacao"));
-                out.put("id","pdf-"+j.getId()+"-"+q.path("numero_original").asInt());
-                out.put("ano",q.path("ano").asInt(j.getAno()));
-                if(q.path("banca").asText("").isBlank()) out.put("banca",j.getBanca());
-                if(q.path("concurso").asText("").isBlank()) out.put("concurso",j.getConcurso());
-                if(q.path("modelo").asText("").isBlank()) out.put("modelo",j.getModelo());
-                out.put("dificuldade_estimada",true);
-                if(!"CURSO".equals(j.getModelo())) out.put("pdf_original","/api/acervo/"+j.getId()+"/prova.pdf");
-                if(q.path("tem_imagem").asBoolean()) out.put("pagina_imagem","/api/acervo/"+j.getId()+"/paginas/"+q.path("pagina").asInt());
-                all.add(out);
-            }
+            ImportacaoPdf value=new ImportacaoPdf();value.id=j.getId();value.questoes=j.getQuestoes();value.ano=j.getAno();
+            value.banca=j.getBanca();value.concurso=j.getConcurso();value.modelo=j.getModelo();
+            all.addAll(publicQuestionsFor(value));
         }
         return all;
     }

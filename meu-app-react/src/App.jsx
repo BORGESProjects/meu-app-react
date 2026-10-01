@@ -2,14 +2,18 @@ import { acervo, anoDaQuestao, unirQuestoes, podeCorrigir } from './acervo'
 import EnunciadoQuestao from './components/EnunciadoQuestao'
 import AlternativaQuestao from './components/AlternativaQuestao'
 import ImportarPdf from './components/ImportarPdf'
+import Conta from './components/Conta'
 import { API_URL } from './api'
 import { useState, useEffect } from 'react'
 import { supabase } from './supabaseClient'
 import { tentarLeitura } from './carregarAcervo'
 
 export default function App() {
-  const execucaoLocal = ['localhost', '127.0.0.1'].includes(window.location.hostname)
-  const [abaAtiva, setAbaAtiva] = useState(execucaoLocal ? 'importar' : 'questoes') // 'questoes' | 'cadastrar' | 'edital' | 'redacao' | 'tarefas' | 'simulados' | 'desempenho'
+  const [abaAtiva, setAbaAtiva] = useState('questoes')
+  const [session, setSession] = useState(null)
+  const [authReady, setAuthReady] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
+  const [checkingAdmin, setCheckingAdmin] = useState(false)
 
   // Estados das Questões
   const [questoes, setQuestoes] = useState(acervo)
@@ -31,6 +35,7 @@ export default function App() {
     conteudo: '',
     banca: '',
     concurso: '',
+    ano: new Date().getFullYear(),
     dificuldade: 'Fácil',
     enunciado: '',
     opcoes: ['', '', '', '', ''],
@@ -83,6 +88,33 @@ export default function App() {
     buscarEditais()
     buscarHorasEstudo()
   }, [])
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => { setSession(data.session); setAuthReady(true) })
+    const { data } = supabase.auth.onAuthStateChange((_event, current) => {
+      setSession(current); setAuthReady(true)
+      if (!current) setIsAdmin(false)
+    })
+    return () => data.subscription.unsubscribe()
+  }, [])
+
+  useEffect(() => {
+    let cancelled = false
+    if (!session) { setIsAdmin(false); setCheckingAdmin(false); return }
+    setCheckingAdmin(true)
+    fetch(`${API_URL}/api/importacoes/acesso`, {
+      headers: { Authorization: `Bearer ${session.access_token}`, 'X-Supabase-Key': import.meta.env.VITE_SUPABASE_ANON_KEY },
+      signal: AbortSignal.timeout(30000),
+    }).then(response => {
+      if (!cancelled) setIsAdmin(response.ok)
+    }).catch(() => { if (!cancelled) setIsAdmin(false) })
+      .finally(() => { if (!cancelled) setCheckingAdmin(false) })
+    return () => { cancelled = true }
+  }, [session])
+
+  useEffect(() => {
+    if (authReady && !checkingAdmin && !isAdmin && ['cadastrar', 'importar'].includes(abaAtiva)) setAbaAtiva('conta')
+  }, [authReady, checkingAdmin, isAdmin, abaAtiva])
 
   // Efeito do Cronómetro
   useEffect(() => {
@@ -215,20 +247,24 @@ export default function App() {
 
   async function salvarQuestao(e) {
     e.preventDefault()
+    if (!session || !isAdmin) { setAbaAtiva('conta'); return }
     const questaoParaEnviar = { ...novaQuestao, opcoes: [...novaQuestao.opcoes] }
-    const { error } = await supabase.from('questoes').insert([questaoParaEnviar])
-
-    if (error) {
-      alert('Erro ao salvar questão: ' + error.message)
-    } else {
+    try {
+      const response = await fetch(`${API_URL}/api/admin/questoes`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session.access_token}`, 'X-Supabase-Key': import.meta.env.VITE_SUPABASE_ANON_KEY },
+        body: JSON.stringify(questaoParaEnviar),
+      })
+      const data = await response.json().catch(() => ({}))
+      if (!response.ok) throw new Error(data.message || 'Não foi possível salvar a questão.')
       alert('Questão cadastrada com sucesso!')
       setNovaQuestao({
-        materia: '', conteudo: '', banca: '', concurso: '',
+        materia: '', conteudo: '', banca: '', concurso: '', ano: new Date().getFullYear(),
         dificuldade: 'Fácil', enunciado: '', opcoes: ['', '', '', '', ''], resposta_correta: 0
       })
       await buscarQuestoes()
       setAbaAtiva('questoes')
-    }
+    } catch (error) { alert('Erro ao salvar questão: ' + error.message) }
   }
 
   async function adicionarTarefa(e) {
@@ -429,11 +465,11 @@ export default function App() {
             { id: 'questoes', label: '📚 Questões' },
             { id: 'simulados', label: '📝 Simulados' },
             { id: 'desempenho', label: '📈 Desempenho' },
-            { id: 'cadastrar', label: '➕ Cadastrar' },
-            { id: 'importar', label: '📄 Importar PDF' },
+            ...(isAdmin ? [{ id: 'cadastrar', label: '➕ Cadastrar' }, { id: 'importar', label: '📄 Importar PDF' }] : []),
             { id: 'edital', label: '📋 Edital' },
             { id: 'redacao', label: '✍️ Redação' },
-            { id: 'tarefas', label: '⚡ Tarefas' }
+            { id: 'tarefas', label: '⚡ Tarefas' },
+            { id: 'conta', label: session ? '👤 Minha conta' : '🔐 Entrar' }
           ].map(tab => (
             <button 
               key={tab.id}
@@ -447,7 +483,8 @@ export default function App() {
       </nav>
 
       <main className="max-w-5xl mx-auto p-6 md:p-8">
-        <div hidden={abaAtiva !== 'importar'}><ImportarPdf onPublicado={buscarQuestoes} /></div>
+        {abaAtiva === 'conta' && <Conta session={session} isAdmin={isAdmin} checkingAdmin={checkingAdmin} />}
+        {abaAtiva === 'importar' && isAdmin && <ImportarPdf onPublicado={buscarQuestoes} />}
         {/* ABA: BANCO DE QUESTÕES */}
         {abaAtiva === 'questoes' && (
           <div>
@@ -850,7 +887,7 @@ export default function App() {
         )}
 
         {/* ABA: CADASTRAR QUESTÃO */}
-        {abaAtiva === 'cadastrar' && (
+        {abaAtiva === 'cadastrar' && isAdmin && (
           <div className="max-w-2xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-8 shadow-xl backdrop-blur-md">
             <h2 className="text-2xl font-extrabold text-slate-100 mb-6 tracking-tight">➕ Cadastrar Nova Questão</h2>
             <form onSubmit={salvarQuestao} className="space-y-5">
@@ -881,6 +918,10 @@ export default function App() {
                     <option value="Difícil">Difícil</option>
                   </select>
                 </div>
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Ano</label>
+                <input type="number" min="1900" max="2100" required value={novaQuestao.ano} onChange={(e) => setNovaQuestao({ ...novaQuestao, ano: Number(e.target.value) })} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40" />
               </div>
               <div>
                 <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Enunciado da Questão</label>
