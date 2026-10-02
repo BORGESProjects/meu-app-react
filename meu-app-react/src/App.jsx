@@ -1,6 +1,6 @@
 import { acervo, anoDaQuestao, unirQuestoes, podeCorrigir } from './acervo'
 import EnunciadoQuestao from './components/EnunciadoQuestao'
-import AlternativaQuestao from './components/AlternativaQuestao'
+import AlternativaComEliminacao from './components/AlternativaComEliminacao'
 import ImportarPdf from './components/ImportarPdf'
 import Conta from './components/Conta'
 import { API_URL } from './api'
@@ -27,6 +27,7 @@ export default function App() {
   const [limiteVisivel, setLimiteVisivel] = useState(40)
   const [respostasSelecionadas, setRespostasSelecionadas] = useState({})
   const [feedbacks, setFeedbacks] = useState({})
+  const [alternativasEliminadas, setAlternativasEliminadas] = useState({})
 
   // Filtros de Questões
   const [filtroAno, setFiltroAno] = useState('Todos')
@@ -304,6 +305,31 @@ export default function App() {
     const mins = Math.floor(segundos / 60)
     const segs = segundos % 60
     return `${String(mins).padStart(2, '0')}:${String(segs).padStart(2, '0')}`
+  }
+
+  function alternativaFoiEliminada(contexto, questaoId, indice) {
+    return alternativasEliminadas[`${contexto}:${questaoId}`]?.includes(indice) || false
+  }
+
+  function alternarEliminacao(contexto, questaoId, indice) {
+    const chave = `${contexto}:${questaoId}`
+    setAlternativasEliminadas(prev => {
+      const atuais = prev[chave] || []
+      const proximas = atuais.includes(indice) ? atuais.filter(item => item !== indice) : [...atuais, indice]
+      return { ...prev, [chave]: proximas }
+    })
+
+    const limparResposta = setter => setter(prev => {
+      if (prev[questaoId] !== indice) return prev
+      const proximo = { ...prev }
+      delete proximo[questaoId]
+      return proximo
+    })
+    limparResposta(contexto === 'simulado' ? setRespostasSimulado : setRespostasSelecionadas)
+  }
+
+  function limparEliminacoesDoSimulado() {
+    setAlternativasEliminadas(prev => Object.fromEntries(Object.entries(prev).filter(([chave]) => !chave.startsWith('simulado:'))))
   }
 
   async function salvarQuestao(e) {
@@ -665,16 +691,14 @@ export default function App() {
                     </div>
                     <EnunciadoQuestao questao={q} />
                     <div className="space-y-3 mb-6">
-                      {Array.isArray(q.opcoes) && q.opcoes.map((opcao, idx) => {
-                        const letra = String.fromCharCode(65 + idx)
-                        const selecionada = respostasSelecionadas[q.id] === idx
-                        return (
-                          <button key={idx} disabled={!podeCorrigir(q)} onClick={() => setRespostasSelecionadas({ ...respostasSelecionadas, [q.id]: idx })} className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 flex items-center gap-4 ${selecionada ? 'bg-indigo-600/20 border-indigo-500 text-indigo-100 shadow-lg shadow-indigo-500/10' : 'bg-slate-950/40 border-slate-800 text-slate-300 hover:bg-slate-950/80 hover:border-slate-700'}`}>
-                            <span className={`w-8 h-8 rounded-xl border flex items-center justify-center text-xs font-bold transition-all ${selecionada ? 'border-indigo-400 bg-indigo-600 text-white shadow-md' : 'border-slate-700 text-slate-400 bg-slate-900'}`}>{letra}</span>
-                            <span className="text-sm min-w-0"><AlternativaQuestao questao={q} indice={idx} texto={opcao} /></span>
-                          </button>
-                        )
-                      })}
+                      {Array.isArray(q.opcoes) && q.opcoes.map((opcao, idx) => <AlternativaComEliminacao
+                        key={idx} questao={q} indice={idx} texto={opcao}
+                        selecionada={respostasSelecionadas[q.id] === idx}
+                        eliminada={alternativaFoiEliminada('normal', q.id, idx)}
+                        desabilitada={!podeCorrigir(q)}
+                        onSelecionar={() => setRespostasSelecionadas(prev => ({ ...prev, [q.id]: idx }))}
+                        onEliminar={() => alternarEliminacao('normal', q.id, idx)}
+                      />)}
                     </div>
                     <div className="flex items-center gap-4">
                       <button disabled={!podeCorrigir(q)} onClick={() => validarResposta(q.id, q.resposta_correta)} className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-medium px-6 py-2.5 rounded-2xl text-sm transition-all shadow-md shadow-indigo-600/20">Responder</button>
@@ -748,7 +772,7 @@ export default function App() {
                         <p className="text-slate-400 text-sm mt-2">{simulado.questoesCount} questão(ões) nesta seleção.</p>
                       </div>
                       <button 
-                        onClick={() => { setSimuladoAtivo(simulado); setRespostasSimulado({}); setResultadoSimuladoFinal(null); }} 
+                        onClick={() => { setSimuladoAtivo(simulado); setRespostasSimulado({}); setResultadoSimuladoFinal(null); limparEliminacoesDoSimulado(); }}
                         className="mt-8 w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-medium py-3 rounded-2xl text-sm transition-all shadow-lg shadow-indigo-600/25"
                       >
                         Iniciar Simulado
@@ -781,16 +805,13 @@ export default function App() {
                     </div>
                     <EnunciadoQuestao questao={q} />
                     <div className="space-y-3">
-                      {Array.isArray(q.opcoes) && q.opcoes.map((opcao, idx) => {
-                        const letra = String.fromCharCode(65 + idx)
-                        const selecionada = respostasSimulado[q.id] === idx
-                        return (
-                          <button key={idx} onClick={() => setRespostasSimulado({ ...respostasSimulado, [q.id]: idx })} className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 flex items-center gap-4 ${selecionada ? 'bg-indigo-600/20 border-indigo-500 text-indigo-100 shadow-lg shadow-indigo-500/10' : 'bg-slate-950/40 border-slate-800 text-slate-300 hover:bg-slate-950/80 hover:border-slate-700'}`}>
-                            <span className={`w-8 h-8 rounded-xl border flex items-center justify-center text-xs font-bold transition-all ${selecionada ? 'border-indigo-400 bg-indigo-600 text-white shadow-md' : 'border-slate-700 text-slate-400 bg-slate-900'}`}>{letra}</span>
-                            <span className="text-sm min-w-0"><AlternativaQuestao questao={q} indice={idx} texto={opcao} /></span>
-                          </button>
-                        )
-                      })}
+                      {Array.isArray(q.opcoes) && q.opcoes.map((opcao, idx) => <AlternativaComEliminacao
+                        key={idx} questao={q} indice={idx} texto={opcao}
+                        selecionada={respostasSimulado[q.id] === idx}
+                        eliminada={alternativaFoiEliminada('simulado', q.id, idx)}
+                        onSelecionar={() => setRespostasSimulado(prev => ({ ...prev, [q.id]: idx }))}
+                        onEliminar={() => alternarEliminacao('simulado', q.id, idx)}
+                      />)}
                     </div>
                   </div>
                 ))}
@@ -920,16 +941,14 @@ export default function App() {
                       </div>
                       <EnunciadoQuestao questao={q} />
                       <div className="space-y-2.5 mb-4">
-                        {Array.isArray(q.opcoes) && q.opcoes.map((opcao, idx) => {
-                          const letra = String.fromCharCode(65 + idx)
-                          const selecionada = respostasSelecionadas[q.id] === idx
-                          return (
-                            <button key={idx} disabled={!podeCorrigir(q)} onClick={() => setRespostasSelecionadas({ ...respostasSelecionadas, [q.id]: idx })} className={`w-full text-left p-3 rounded-xl border transition-all flex items-center gap-3 ${selecionada ? 'bg-indigo-600/20 border-indigo-500 text-indigo-100' : 'bg-slate-900/40 border-slate-800 text-slate-300 hover:bg-slate-900'}`}>
-                              <span className={`w-6 h-6 rounded-lg border flex items-center justify-center text-xs font-bold ${selecionada ? 'border-indigo-400 bg-indigo-600 text-white' : 'border-slate-700 text-slate-400 bg-slate-950'}`}>{letra}</span>
-                              <span className="text-xs min-w-0"><AlternativaQuestao questao={q} indice={idx} texto={opcao} /></span>
-                            </button>
-                          )
-                        })}
+                        {Array.isArray(q.opcoes) && q.opcoes.map((opcao, idx) => <AlternativaComEliminacao
+                          key={idx} questao={q} indice={idx} texto={opcao} compacta
+                          selecionada={respostasSelecionadas[q.id] === idx}
+                          eliminada={alternativaFoiEliminada('normal', q.id, idx)}
+                          desabilitada={!podeCorrigir(q)}
+                          onSelecionar={() => setRespostasSelecionadas(prev => ({ ...prev, [q.id]: idx }))}
+                          onEliminar={() => alternarEliminacao('normal', q.id, idx)}
+                        />)}
                       </div>
                       <div className="flex items-center gap-4">
                         <button disabled={!podeCorrigir(q)} onClick={() => validarResposta(q.id, q.resposta_correta)} className="bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-5 py-2 rounded-xl text-xs transition-all shadow-md">Responder</button>
