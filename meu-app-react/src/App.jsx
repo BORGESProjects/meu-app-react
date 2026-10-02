@@ -413,11 +413,14 @@ export default function App() {
     setErroRedacao(null)
 
     try {
+      const temaComContexto = temaRedacaoEscolhido
+        ? `${temaRedacao}\n\nBanca e edição: ${temaRedacaoEscolhido.banca} ${temaRedacaoEscolhido.ano}. Critérios de correção: ${temaRedacaoEscolhido.criterios} ${temaRedacaoEscolhido.banca === 'FUVEST' ? 'Não exija proposta de intervenção, pois ela não integra os critérios da FUVEST.' : ''}`
+        : temaRedacao
       const response = await fetch(`${API_URL}/api/ia/corrigir-redacao`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          tema: temaRedacao,
+          tema: temaComContexto,
           texto: textoRedacao,
           banca: temaRedacaoEscolhido?.banca || 'Tema livre',
           ano: temaRedacaoEscolhido?.ano || null,
