@@ -1,6 +1,7 @@
 import { acervo, anoDaQuestao, unirQuestoes, podeCorrigir } from './acervo'
 import EnunciadoQuestao from './components/EnunciadoQuestao'
 import AlternativaComEliminacao from './components/AlternativaComEliminacao'
+import FiltroMultiplo from './components/FiltroMultiplo'
 import ImportarPdf from './components/ImportarPdf'
 import Conta from './components/Conta'
 import { API_URL } from './api'
@@ -31,10 +32,10 @@ export default function App() {
   const [alternativasEliminadas, setAlternativasEliminadas] = useState({})
 
   // Filtros de Questões
-  const [filtroAno, setFiltroAno] = useState('Todos')
+  const [filtrosAno, setFiltrosAno] = useState([])
   const [filtroMateria, setFiltroMateria] = useState(TODOS)
   const [filtroConteudo, setFiltroConteudo] = useState(TODOS)
-  const [filtroBanca, setFiltroBanca] = useState(TODOS)
+  const [filtrosBanca, setFiltrosBanca] = useState([])
   const [filtroDificuldade, setFiltroDificuldade] = useState(TODOS)
 
   // Estado do Formulário de Cadastro de Questão
@@ -513,9 +514,10 @@ export default function App() {
   const questoesFiltradas = questoes.filter(q => {
     const bateMateria = filtroMateria === TODOS || chaveCampoFiltro('materia', q.materia) === filtroMateria
     const bateConteudo = filtroConteudo === TODOS || chaveCampoFiltro('conteudo', q.conteudo) === filtroConteudo
-    const bateBanca = filtroBanca === TODOS || chaveCampoFiltro('banca', q.banca) === filtroBanca
+    const bateBanca = filtrosBanca.length === 0 || filtrosBanca.includes(chaveCampoFiltro('banca', q.banca))
     const bateDificuldade = filtroDificuldade === TODOS || chaveCampoFiltro('dificuldade', q.dificuldade) === filtroDificuldade
-    return bateMateria && bateConteudo && bateBanca && bateDificuldade && (filtroAno === 'Todos' || anoDaQuestao(q) === filtroAno)
+    const bateAno = filtrosAno.length === 0 || filtrosAno.includes(anoDaQuestao(q))
+    return bateMateria && bateConteudo && bateBanca && bateDificuldade && bateAno
   })
   const questoesVisiveis = questoesFiltradas.slice(0, limiteVisivel)
 
@@ -546,15 +548,16 @@ export default function App() {
 
   const materiasDisponiveis = opcoesFiltro(questoes, 'materia')
   const bancasDisponiveis = opcoesFiltro(questoes, 'banca')
+  const anosDisponiveis = [...new Set(questoes.map(anoDaQuestao))].sort((a,b) => b.localeCompare(a)).map(ano => ({ value: ano, label: ano }))
   const dificuldadesDisponiveis = opcoesFiltro(questoes, 'dificuldade')
   const baseConteudos = filtroMateria === TODOS ? questoes : questoes.filter(q => chaveCampoFiltro('materia', q.materia) === filtroMateria)
   const conteudosDisponiveis = opcoesFiltro(baseConteudos, 'conteudo')
-  const totalFiltrosAtivos = [filtroMateria, filtroConteudo, filtroBanca, filtroDificuldade].filter(valor => valor !== TODOS).length
-    + (filtroAno === 'Todos' ? 0 : 1)
+  const totalFiltrosAtivos = [filtroMateria, filtroConteudo, filtroDificuldade].filter(valor => valor !== TODOS).length
+    + (filtrosAno.length > 0 ? 1 : 0) + (filtrosBanca.length > 0 ? 1 : 0)
 
   function limparFiltros() {
-    setFiltroAno('Todos'); setFiltroMateria(TODOS); setFiltroConteudo(TODOS)
-    setFiltroBanca(TODOS); setFiltroDificuldade(TODOS); setLimiteVisivel(40)
+    setFiltrosAno([]); setFiltroMateria(TODOS); setFiltroConteudo(TODOS)
+    setFiltrosBanca([]); setFiltroDificuldade(TODOS); setLimiteVisivel(40)
   }
 
   const totalHorasEstudo = horasEstudo.reduce((acc, curr) => acc + (curr.horas || 0), 0)
@@ -659,13 +662,7 @@ export default function App() {
                 <div><h2 className="font-bold text-slate-100">Filtrar questões</h2><p className="text-xs text-slate-400 mt-1">As opções equivalentes são agrupadas automaticamente.</p></div>
                 {totalFiltrosAtivos > 0 && <button type="button" onClick={limparFiltros} className="rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:border-indigo-500 hover:text-indigo-200">Limpar {totalFiltrosAtivos} filtro(s)</button>}
               </div>
-              <div>
-                <label htmlFor="filtro-ano" className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Ano</label>
-                <select id="filtro-ano" value={filtroAno} onChange={e => { setFiltroAno(e.target.value); setLimiteVisivel(40) }} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-200">
-                  <option value="Todos">Todos os anos</option>
-                  {[...new Set(questoes.map(anoDaQuestao))].sort((a,b) => b.localeCompare(a)).map(ano => <option key={ano} value={ano}>{ano}</option>)}
-                </select>
-              </div>
+              <FiltroMultiplo titulo="Ano" opcoes={anosDisponiveis} selecionados={filtrosAno} aoAlterar={valores => { setFiltrosAno(valores); setLimiteVisivel(40) }} rotuloTodos="Todos os anos" />
               <div>
                 <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Matéria ({materiasDisponiveis.length})</label>
                 <select value={filtroMateria} onChange={(e) => { setFiltroMateria(e.target.value); setFiltroConteudo(TODOS); setLimiteVisivel(40) }} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner">
@@ -680,13 +677,7 @@ export default function App() {
                   {conteudosDisponiveis.map(opcao => <option key={opcao.value} value={opcao.value}>{opcao.label}</option>)}
                 </select>
               </div>
-              <div>
-                <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Banca ({bancasDisponiveis.length})</label>
-                <select value={filtroBanca} onChange={(e) => { setFiltroBanca(e.target.value); setLimiteVisivel(40) }} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner">
-                  <option value={TODOS}>Todas</option>
-                  {bancasDisponiveis.map(opcao => <option key={opcao.value} value={opcao.value}>{opcao.label}</option>)}
-                </select>
-              </div>
+              <FiltroMultiplo titulo={`Banca (${bancasDisponiveis.length})`} opcoes={bancasDisponiveis} selecionados={filtrosBanca} aoAlterar={valores => { setFiltrosBanca(valores); setLimiteVisivel(40) }} rotuloTodos="Todas as bancas" />
               <div>
                 <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Dificuldade</label>
                 <select value={filtroDificuldade} onChange={(e) => { setFiltroDificuldade(e.target.value); setLimiteVisivel(40) }} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner">
