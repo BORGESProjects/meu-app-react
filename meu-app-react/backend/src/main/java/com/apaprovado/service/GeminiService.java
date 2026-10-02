@@ -18,17 +18,31 @@ public class GeminiService {
     // Modelo obrigatório exigido pela tua chave de API
     private final String URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent";
 
-    public String corrigirRedacaoComIA(String tema, String texto) {
+    public String corrigirRedacaoComIA(String tema, String texto, String banca, Integer ano, String criterios) {
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.set("x-goog-api-key", apiKey);
 
-        String prompt = "Aja como um corretor rigoroso de redações (estilo ENEM e concursos públicos). " +
+        String nomeBanca = banca == null || banca.isBlank() ? "Tema livre" : banca;
+        String criteriosAplicados = criterios == null || criterios.isBlank()
+                ? "Avalie adequação ao tema, argumentação, estrutura, coesão e domínio da norma-padrão."
+                : criterios;
+        String escala = "ENEM".equalsIgnoreCase(nomeBanca)
+                ? "Atribua de 0 a 200 em cada uma das cinco competências e uma nota total de 0 a 1000."
+                : "FUVEST".equalsIgnoreCase(nomeBanca)
+                    ? "Atribua uma nota final de 10 a 50 segundo os três critérios da FUVEST. Não exija proposta de intervenção."
+                    : "Atribua uma nota de 0 a 100 e explique os critérios utilizados.";
+
+        String prompt = "Aja como um corretor rigoroso e construtivo de redações.\n" +
+                "Banca: " + nomeBanca + (ano == null ? "" : " " + ano) + "\n" +
                 "Tema da redação: " + tema + "\n" +
+                "Critérios obrigatórios: " + criteriosAplicados + "\n" +
+                "Escala: " + escala + "\n" +
                 "Texto enviado pelo aluno:\n" + texto + "\n\n" +
-                "Por favor, analise o texto detalhadamente, aponte pontos fortes, desvios gramaticais, coerência, coesão, proposta de intervenção e dê uma avaliação construtiva.";
+                "Apresente: nota geral; notas por critério; síntese da abordagem; pontos fortes; problemas de argumentação, coerência, coesão e gramática; trechos que precisam de revisão com sugestões; e prioridades práticas para melhorar. " +
+                "Só avalie proposta de intervenção quando ela fizer parte dos critérios da banca.";
 
         Map<String, Object> part = new HashMap<>();
         part.put("text", prompt);

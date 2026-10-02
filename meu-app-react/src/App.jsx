@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from './supabaseClient'
 import { tentarLeitura } from './carregarAcervo'
 import { chaveCampoFiltro, opcoesFiltro, TODOS } from './filtros'
+import { bancasRedacao, temasRedacao } from './data/temasRedacao'
 
 export default function App() {
   const [abaAtiva, setAbaAtiva] = useState('questoes')
@@ -59,6 +60,8 @@ export default function App() {
   const [loadingRedacao, setLoadingRedacao] = useState(false)
   const [resultadoRedacao, setResultadoRedacao] = useState(null)
   const [erroRedacao, setErroRedacao] = useState(null)
+  const [bancaRedacao, setBancaRedacao] = useState('Todas')
+  const [temaRedacaoId, setTemaRedacaoId] = useState('')
 
   // Estados do Edital Verticalizado (Spring Boot)
   const [editais, setEditais] = useState([])
@@ -413,7 +416,13 @@ export default function App() {
       const response = await fetch(`${API_URL}/api/ia/corrigir-redacao`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ tema: temaRedacao, texto: textoRedacao }),
+        body: JSON.stringify({
+          tema: temaRedacao,
+          texto: textoRedacao,
+          banca: temaRedacaoEscolhido?.banca || 'Tema livre',
+          ano: temaRedacaoEscolhido?.ano || null,
+          criterios: temaRedacaoEscolhido?.criterios || '',
+        }),
       })
 
       if (!response.ok) throw new Error('Erro ao comunicar com o servidor backend.')
@@ -557,6 +566,16 @@ export default function App() {
     }
   })
   const pontosAMelhorar = Object.entries(errosPorConteudo).sort((a, b) => b[1] - a[1]).slice(0, 5)
+  const temasRedacaoFiltrados = bancaRedacao === 'Todas' ? temasRedacao : temasRedacao.filter(item => item.banca === bancaRedacao)
+  const temaRedacaoEscolhido = temasRedacao.find(item => item.id === temaRedacaoId)
+
+  function selecionarTemaRedacao(id) {
+    const escolhido = temasRedacao.find(item => item.id === id)
+    setTemaRedacaoId(id)
+    setTemaRedacao(escolhido?.tema || '')
+    setResultadoRedacao(null)
+    setErroRedacao(null)
+  }
 
   if (!authReady) return <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center"><p className="text-sm text-indigo-300">Verificando sua sessão…</p></div>
 
@@ -1099,13 +1118,36 @@ export default function App() {
 
         {/* ABA: REDAÇÃO IA */}
         {abaAtiva === 'redacao' && (
-          <div className="max-w-2xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-8 shadow-xl backdrop-blur-md">
+          <div className="max-w-3xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-8 shadow-xl backdrop-blur-md">
             <h2 className="text-2xl font-extrabold text-slate-100 mb-2 tracking-tight">✍️ Auditoria de Redação por IA</h2>
-            <p className="text-slate-400 text-sm mb-6">Envie o tema e seu texto para avaliação integrada.</p>
+            <p className="text-slate-400 text-sm mb-6">Pratique com propostas de edições anteriores e receba uma correção adaptada aos critérios da banca.</p>
+            <div className="mb-7 rounded-3xl border border-indigo-500/25 bg-indigo-950/20 p-6">
+              <div className="flex flex-wrap items-end gap-4">
+                <label className="min-w-40 flex-1 text-xs font-semibold uppercase tracking-wider text-indigo-300">Vestibular
+                  <select value={bancaRedacao} onChange={event => { setBancaRedacao(event.target.value); selecionarTemaRedacao('') }} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-200">
+                    <option value="Todas">Todos</option>
+                    {bancasRedacao.map(banca => <option key={banca} value={banca}>{banca}</option>)}
+                  </select>
+                </label>
+                <label className="min-w-64 flex-[2] text-xs font-semibold uppercase tracking-wider text-indigo-300">Tema de edição anterior
+                  <select value={temaRedacaoId} onChange={event => selecionarTemaRedacao(event.target.value)} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-200">
+                    <option value="">Escolher um tema…</option>
+                    {temasRedacaoFiltrados.map(item => <option key={item.id} value={item.id}>{item.banca} {item.ano} — {item.tema}</option>)}
+                  </select>
+                </label>
+              </div>
+              {temaRedacaoEscolhido && <div className="mt-5 rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
+                <div className="flex flex-wrap gap-2"><span className="rounded-full bg-indigo-500/20 px-3 py-1 text-xs font-bold text-indigo-200">{temaRedacaoEscolhido.banca}</span><span className="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">{temaRedacaoEscolhido.ano}</span><span className="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">{temaRedacaoEscolhido.tipo}</span></div>
+                <h3 className="mt-4 font-bold text-slate-100">{temaRedacaoEscolhido.tema}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-400">{temaRedacaoEscolhido.instrucoes}</p>
+                <p className="mt-3 text-xs text-slate-500">A correção seguirá: {temaRedacaoEscolhido.criterios}</p>
+                <a className="mt-3 inline-block text-xs font-semibold text-indigo-300 hover:text-indigo-200" href={temaRedacaoEscolhido.fonte} target="_blank" rel="noreferrer">Consultar acervo oficial ↗</a>
+              </div>}
+            </div>
             <form onSubmit={enviarRedacao} className="space-y-5">
               <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Tema</label>
-                <input type="text" required placeholder="Tema da redação..." value={temaRedacao} onChange={(e) => setTemaRedacao(e.target.value)} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner" />
+                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Tema escolhido ou tema livre</label>
+                <input type="text" required placeholder="Escolha acima ou escreva um tema livre..." value={temaRedacao} onChange={(e) => { setTemaRedacao(e.target.value); if (temaRedacaoEscolhido && e.target.value !== temaRedacaoEscolhido.tema) setTemaRedacaoId('') }} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner" />
               </div>
               <div>
                 <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Texto</label>
@@ -1113,6 +1155,7 @@ export default function App() {
               </div>
               <button type="submit" disabled={loadingRedacao} className="w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-medium py-3.5 rounded-2xl text-sm transition-all shadow-lg shadow-indigo-600/25">{loadingRedacao ? 'A processar...' : 'Submeter Redação'}</button>
             </form>
+            {erroRedacao && <p role="alert" className="mt-5 rounded-2xl border border-red-500/30 bg-red-950/30 p-4 text-sm text-red-200">{erroRedacao}</p>}
             {resultadoRedacao && (
               <div className="mt-8 bg-slate-950/90 border border-indigo-500/30 rounded-3xl p-6 shadow-2xl space-y-5">
                 <div className="flex items-center justify-between border-b border-slate-800 pb-4">
