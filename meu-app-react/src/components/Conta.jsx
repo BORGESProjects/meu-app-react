@@ -4,7 +4,7 @@ import { supabase } from '../supabaseClient'
 const field = 'w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30'
 const button = 'rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-600/20 disabled:cursor-not-allowed disabled:opacity-50'
 
-export default function Conta({ session, isAdmin, checkingAdmin }) {
+export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, totais }) {
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [modo, setModo] = useState('entrar')
@@ -34,6 +34,14 @@ export default function Conta({ session, isAdmin, checkingAdmin }) {
     <h1 className="text-3xl font-extrabold">Minha conta</h1>
     <p className="mt-2 text-slate-400">Você está conectado como:</p>
     <p className="mt-4 break-all rounded-2xl bg-slate-950/70 p-4 font-semibold text-slate-100">{session.user.email}</p>
+    <div className="mt-5 grid grid-cols-3 gap-3">
+      <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-3 text-center"><p className="text-xl font-bold text-indigo-300">{(totais?.horas || 0).toFixed(1)}h</p><p className="mt-1 text-xs text-slate-500">Estudo</p></div>
+      <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-3 text-center"><p className="text-xl font-bold text-slate-100">{totais?.questoes || 0}</p><p className="mt-1 text-xs text-slate-500">Questões</p></div>
+      <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-3 text-center"><p className="text-xl font-bold text-emerald-400">{totais?.acertos || 0}</p><p className="mt-1 text-xs text-slate-500">Acertos</p></div>
+    </div>
+    <p className={`mt-4 text-xs ${sincronizacao === 'erro' ? 'text-red-300' : 'text-slate-400'}`}>
+      {sincronizacao === 'salvando' ? 'Salvando progresso…' : sincronizacao === 'erro' ? 'Falha ao salvar o progresso.' : '✓ Progresso sincronizado com sua conta'}
+    </p>
     <div className="mt-4 flex items-center gap-3">
       <span className={`rounded-full px-3 py-1 text-xs font-bold ${isAdmin ? 'bg-emerald-900 text-emerald-200' : 'bg-slate-800 text-slate-300'}`}>
         {checkingAdmin ? 'Verificando acesso…' : isAdmin ? 'Administrador' : 'Usuário'}

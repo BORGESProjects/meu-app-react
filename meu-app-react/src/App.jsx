@@ -15,6 +15,9 @@ export default function App() {
   const [authReady, setAuthReady] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
   const [checkingAdmin, setCheckingAdmin] = useState(false)
+  const [progressoCarregado, setProgressoCarregado] = useState(false)
+  const [sincronizacao, setSincronizacao] = useState('carregando')
+  const [erroProgresso, setErroProgresso] = useState('')
 
   // Estados das Questões
   const [questoes, setQuestoes] = useState(acervo)
@@ -86,13 +89,6 @@ export default function App() {
   const [questoesSugeridas, setQuestoesSugeridas] = useState([])
 
   useEffect(() => {
-    buscarQuestoes()
-    buscarTarefas()
-    buscarEditais()
-    buscarHorasEstudo()
-  }, [])
-
-  useEffect(() => {
     supabase.auth.getSession().then(({ data }) => { setSession(data.session); setAuthReady(true) })
     const { data } = supabase.auth.onAuthStateChange((_event, current) => {
       setSession(current); setAuthReady(true)
@@ -100,6 +96,72 @@ export default function App() {
     })
     return () => data.subscription.unsubscribe()
   }, [])
+
+  useEffect(() => {
+    if (!session?.user?.id) return
+    buscarQuestoes()
+    buscarEditais()
+  }, [session?.user?.id])
+
+  useEffect(() => {
+    let cancelled = false
+    async function carregarProgresso() {
+      if (!session?.user?.id) {
+        setTarefas([])
+        setHorasEstudo([])
+        setHistoricoRespostas([])
+        setProgressoCarregado(false)
+        setSincronizacao('carregando')
+        setErroProgresso('')
+        return
+      }
+
+      setProgressoCarregado(false)
+      setSincronizacao('carregando')
+      setErroProgresso('')
+      const { data, error } = await supabase.from('progresso_usuario')
+        .select('horas_estudo,historico_respostas,tarefas')
+        .eq('user_id', session.user.id)
+        .maybeSingle()
+
+      if (cancelled) return
+      if (error) {
+        setErroProgresso('Não foi possível carregar seu progresso. Tente entrar novamente.')
+        setSincronizacao('erro')
+        return
+      }
+
+      setHorasEstudo(Array.isArray(data?.horas_estudo) ? data.horas_estudo : [])
+      setHistoricoRespostas(Array.isArray(data?.historico_respostas) ? data.historico_respostas : [])
+      setTarefas(Array.isArray(data?.tarefas) ? data.tarefas : [])
+      setProgressoCarregado(true)
+      setSincronizacao('salvo')
+    }
+    carregarProgresso()
+    return () => { cancelled = true }
+  }, [session?.user?.id])
+
+  useEffect(() => {
+    if (!session?.user?.id || !progressoCarregado) return
+    setSincronizacao('salvando')
+    const timer = setTimeout(async () => {
+      const { error } = await supabase.from('progresso_usuario').upsert({
+        user_id: session.user.id,
+        horas_estudo: horasEstudo,
+        historico_respostas: historicoRespostas,
+        tarefas,
+        updated_at: new Date().toISOString(),
+      }, { onConflict: 'user_id' })
+      if (error) {
+        setErroProgresso('Seu progresso não pôde ser sincronizado. Verifique a conexão e tente novamente.')
+        setSincronizacao('erro')
+      } else {
+        setErroProgresso('')
+        setSincronizacao('salvo')
+      }
+    }, 500)
+    return () => clearTimeout(timer)
+  }, [session?.user?.id, progressoCarregado, horasEstudo, historicoRespostas, tarefas])
 
   useEffect(() => {
     let cancelled = false
@@ -168,11 +230,6 @@ export default function App() {
     setCarregandoAcervo(false)
   }
 
-  async function buscarTarefas() {
-    const { data, error } = await supabase.from('tarefas').select('*').order('created_at', { ascending: false })
-    if (!error) setTarefas(data || [])
-  }
-
   async function buscarEditais() {
     try {
       const response = await fetch(`${API_URL}/api/editais`)
@@ -185,26 +242,20 @@ export default function App() {
     }
   }
 
-  async function buscarHorasEstudo() {
-    const { data, error } = await supabase.from('horas_estudo').select('*').order('created_at', { ascending: false })
-    if (!error) setHorasEstudo(data || [])
-  }
-
-  async function registarHoras(e) {
+  function registarHoras(e) {
     e.preventDefault()
     if (!novaHora.materia || !novaHora.horas) return
 
-    const { error } = await supabase.from('horas_estudo').insert([{
+    const registo = {
+      id: crypto.randomUUID(),
       materia: novaHora.materia,
       horas: parseFloat(novaHora.horas),
-      data: novaHora.data || new Date().toISOString().split('T')[0]
-    }])
-
-    if (!error) {
-      setNovaHora({ materia: '', horas: '', data: '' })
-      buscarHorasEstudo()
-      alert('Horas de estudo registadas com sucesso!')
+      data: novaHora.data || new Date().toISOString().split('T')[0],
+      criado_em: new Date().toISOString(),
     }
+    setHorasEstudo(prev => [registo, ...prev])
+    setNovaHora({ materia: '', horas: '', data: '' })
+    alert('Horas de estudo registadas com sucesso!')
   }
 
   // --- FUNÇÕES DO CRONÓMETRO E RECOMENDAÇÃO ---
@@ -216,7 +267,7 @@ export default function App() {
     setCronometroAtivo(true)
   }
 
-  async function pausarOuFinalizarCronometro() {
+  function pausarOuFinalizarCronometro() {
     setCronometroAtivo(false)
     if (segundosDecorridos < 10) {
       alert('Sessão muito curta para registar.')
@@ -226,16 +277,14 @@ export default function App() {
     const horasEstudadas = parseFloat((segundosDecorridos / 3600).toFixed(2))
     const dataHoje = new Date().toISOString().split('T')[0]
 
-    // 1. Gravar automaticamente no Supabase as horas estudadas
-    const { error } = await supabase.from('horas_estudo').insert([{
+    // 1. Guardar automaticamente no progresso desta conta
+    setHorasEstudo(prev => [{
+      id: crypto.randomUUID(),
       materia: materiaEstudo,
       horas: horasEstudadas > 0 ? horasEstudadas : 0.1,
-      data: dataHoje
-    }])
-
-    if (!error) {
-      buscarHorasEstudo()
-    }
+      data: dataHoje,
+      criado_em: new Date().toISOString(),
+    }, ...prev])
 
     // 2. Sugerir questões com base na matéria e conteúdo estudados
     let filtradas = questoes.filter(q => podeCorrigir(q) && q.materia.toLowerCase() === materiaEstudo.toLowerCase())
@@ -279,19 +328,15 @@ export default function App() {
     } catch (error) { alert('Erro ao salvar questão: ' + error.message) }
   }
 
-  async function adicionarTarefa(e) {
+  function adicionarTarefa(e) {
     e.preventDefault()
     if (!novaTarefa.trim()) return
-    const { error } = await supabase.from('tarefas').insert([{ texto: novaTarefa }])
-    if (!error) {
-      setNovaTarefa('')
-      buscarTarefas()
-    }
+    setTarefas(prev => [{ id: crypto.randomUUID(), texto: novaTarefa.trim(), criada_em: new Date().toISOString() }, ...prev])
+    setNovaTarefa('')
   }
 
-  async function deletarTarefa(id) {
-    await supabase.from('tarefas').delete().eq('id', id)
-    buscarTarefas()
+  function deletarTarefa(id) {
+    setTarefas(prev => prev.filter(tarefa => tarefa.id !== id))
   }
 
   async function adicionarEditalItem(e) {
@@ -371,7 +416,12 @@ export default function App() {
     const questaoAtual = questoes.find(q => q.id === questaoId)
 
     if (questaoAtual && !isSimulado) {
-      setHistoricoRespostas(prev => [...prev, { questaoId, acertou, materia: questaoAtual.materia, conteudo: questaoAtual.conteudo }])
+      setHistoricoRespostas(prev => [...prev, {
+        id: crypto.randomUUID(), questaoId, acertou,
+        materia: questaoAtual.materia, conteudo: questaoAtual.conteudo,
+        respostaSelecionada: indiceSelecionado, respostaCorreta: indiceCorreto,
+        tipo: 'questao', respondidaEm: new Date().toISOString(),
+      }])
     }
 
     if (!isSimulado) {
@@ -391,6 +441,7 @@ export default function App() {
     let acertos = 0
     let erros = 0
     const detalhes = []
+    const novasRespostas = []
 
     questoesSimulado.forEach(q => {
       const selecionada = respostasSimulado[q.id]
@@ -404,13 +455,20 @@ export default function App() {
         else erros++
 
         detalhes.push({ ...q, acertou, escolhida: selecionada, correta: indiceCorreto })
-        setHistoricoRespostas(prev => [...prev, { questaoId: q.id, acertou, materia: q.materia, conteudo: q.conteudo }])
+        novasRespostas.push({
+          id: crypto.randomUUID(), questaoId: q.id, acertou,
+          materia: q.materia, conteudo: q.conteudo,
+          respostaSelecionada: selecionada, respostaCorreta: indiceCorreto,
+          tipo: 'simulado', concurso: simuladoAtivo.concurso,
+          respondidaEm: new Date().toISOString(),
+        })
       } else {
         erros++
         detalhes.push({ ...q, acertou: false, nãoRespondida: true })
       }
     })
 
+    if (novasRespostas.length > 0) setHistoricoRespostas(prev => [...prev, ...novasRespostas])
     setResultadoSimuladoFinal({ acertos, erros, total: questoesSimulado.length, detalhes })
   }
 
@@ -474,6 +532,21 @@ export default function App() {
   })
   const pontosAMelhorar = Object.entries(errosPorConteudo).sort((a, b) => b[1] - a[1]).slice(0, 5)
 
+  if (!authReady) return <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center"><p className="text-sm text-indigo-300">Verificando sua sessão…</p></div>
+
+  if (!session) return <div className="min-h-screen bg-slate-950 text-slate-100 px-6 py-12">
+    <div className="mx-auto mb-8 flex max-w-md items-center justify-center gap-3 text-2xl font-extrabold">
+      <span className="rounded-xl bg-gradient-to-tr from-indigo-500 to-violet-500 px-3 py-1.5 text-base shadow-lg shadow-indigo-500/20">AP</span>
+      <span>AP Aprovado</span>
+    </div>
+    <Conta session={null} isAdmin={false} checkingAdmin={false} />
+  </div>
+
+  if (!progressoCarregado) return <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center gap-4 px-6 text-center">
+    <p className="text-sm text-indigo-300">Carregando seu progresso…</p>
+    {erroProgresso && <><p className="max-w-md text-sm text-red-300">{erroProgresso}</p><button className="text-sm font-semibold text-indigo-300" onClick={() => supabase.auth.signOut()}>Voltar ao login</button></>}
+  </div>
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-indigo-500 selection:text-white">
       {/* Barra de Navegação Superior Refinada */}
@@ -491,7 +564,7 @@ export default function App() {
             { id: 'edital', label: '📋 Edital' },
             { id: 'redacao', label: '✍️ Redação' },
             { id: 'tarefas', label: '⚡ Tarefas' },
-            { id: 'conta', label: session ? '👤 Minha conta' : '🔐 Entrar' }
+            { id: 'conta', label: '👤 Minha conta' }
           ].map(tab => (
             <button 
               key={tab.id}
@@ -505,7 +578,7 @@ export default function App() {
       </nav>
 
       <main className="max-w-5xl mx-auto p-6 md:p-8">
-        {abaAtiva === 'conta' && <Conta session={session} isAdmin={isAdmin} checkingAdmin={checkingAdmin} />}
+        {abaAtiva === 'conta' && <Conta session={session} isAdmin={isAdmin} checkingAdmin={checkingAdmin} sincronizacao={sincronizacao} totais={{ horas: totalHorasEstudo, questoes: totalQuestoesResolvidas, acertos: totalAcertos }} />}
         {abaAtiva === 'importar' && isAdmin && <ImportarPdf onPublicado={buscarQuestoes} />}
         {/* ABA: BANCO DE QUESTÕES */}
         {abaAtiva === 'questoes' && (
