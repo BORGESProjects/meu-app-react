@@ -24,10 +24,20 @@ export default function FiltroMultiplo({ titulo, opcoes, selecionados, aoAlterar
           {selecionados.length > 0 && <button type="button" onClick={() => aoAlterar([])} className="rounded-lg px-2 py-1 text-xs font-semibold text-indigo-300 hover:bg-slate-800">Limpar</button>}
         </div>
         <div className="mt-1 space-y-1">
-          {opcoes.map(opcao => <label key={opcao.value} className="flex cursor-pointer items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-300 hover:bg-slate-900">
-            <input type="checkbox" checked={selecionados.includes(opcao.value)} onChange={() => alternar(opcao.value)} className="h-4 w-4 rounded border-slate-700 bg-slate-900 accent-indigo-500" />
-            <span>{opcao.label}</span>
-          </label>)}
+          {opcoes.map(opcao => {
+            const selecionada = selecionados.includes(opcao.value)
+            return <button
+              key={opcao.value}
+              type="button"
+              role="checkbox"
+              aria-checked={selecionada}
+              onClick={() => alternar(opcao.value)}
+              className="flex w-full cursor-pointer items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm text-slate-300 hover:bg-slate-900"
+            >
+              <span aria-hidden="true" className={`flex h-4 w-4 shrink-0 items-center justify-center rounded border text-[10px] font-bold ${selecionada ? 'border-indigo-500 bg-indigo-500 text-white' : 'border-slate-700 bg-slate-900 text-transparent'}`}>✓</span>
+              <span>{opcao.label}</span>
+            </button>
+          })}
         </div>
       </div>
     </details>
