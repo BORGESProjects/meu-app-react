@@ -12,7 +12,7 @@ services:
       - key: SPRING_PROFILES_ACTIVE
         value: prod
       - key: FRONTEND_URL
-        value: https://apaprovado-fi0fnf7r8-borges-projects2.vercel.app
+        value: https://apaprovado.vercel.app,https://apaprovado-fi0fnf7r8-borges-projects2.vercel.app
       - key: GEMINI_API_KEY
         sync: false
       - key: DATABASE_URL

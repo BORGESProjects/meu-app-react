@@ -19,6 +19,8 @@ export default function App() {
   const [questoes, setQuestoes] = useState(acervo)
   const [carregandoAcervo, setCarregandoAcervo] = useState(true)
   const [falhasAcervo, setFalhasAcervo] = useState([])
+  const [fontesAcervo, setFontesAcervo] = useState({ supabase: null, importadas: null })
+  const [limiteVisivel, setLimiteVisivel] = useState(40)
   const [respostasSelecionadas, setRespostasSelecionadas] = useState({})
   const [feedbacks, setFeedbacks] = useState({})
 
@@ -132,6 +134,7 @@ export default function App() {
   async function buscarQuestoes() {
     setCarregandoAcervo(true)
     setFalhasAcervo([])
+    setFontesAcervo({ supabase: null, importadas: null })
     const banco = tentarLeitura(async () => {
       const todas = []
       for (let inicio = 0; ; inicio += 500) {
@@ -142,7 +145,10 @@ export default function App() {
         todas.push(...(data || []))
         if (!data || data.length < 500) return todas
       }
-    }).then(data => setQuestoes(prev => unirQuestoes([...prev,...data])))
+    }).then(data => {
+      setFontesAcervo(prev => ({ ...prev, supabase: data.length }))
+      setQuestoes(prev => unirQuestoes([...prev,...data]))
+    })
     const importadas = tentarLeitura(async () => {
       const r = await fetch(`${API_URL}/api/acervo`, {signal:AbortSignal.timeout(90000)})
       if (!r.ok) throw new Error('Acervo indisponível')
@@ -150,7 +156,12 @@ export default function App() {
       if (!Array.isArray(data)) throw new Error('Resposta inválida do acervo')
       return data
     })
-      .then(data => { if(Array.isArray(data)) setQuestoes(prev => unirQuestoes([...prev,...data])) })
+      .then(data => {
+        if(Array.isArray(data)) {
+          setFontesAcervo(prev => ({ ...prev, importadas: data.length }))
+          setQuestoes(prev => unirQuestoes([...prev,...data]))
+        }
+      })
     const resultados = await Promise.allSettled([banco,importadas])
     setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [i === 0 ? 'banco de questões' : 'questões importadas'] : []))
     setCarregandoAcervo(false)
@@ -409,6 +420,11 @@ export default function App() {
     const bateDificuldade = filtroDificuldade === 'Todas' || q.dificuldade === filtroDificuldade
     return bateMateria && bateConteudo && bateBanca && bateDificuldade && (filtroAno === 'Todos' || anoDaQuestao(q) === filtroAno)
   })
+  const questoesVisiveis = questoesFiltradas.slice(0, limiteVisivel)
+
+  useEffect(() => {
+    setLimiteVisivel(40)
+  }, [filtroAno, filtroMateria, filtroConteudo, filtroBanca, filtroDificuldade])
 
   const simuladosDisponiveis = []
   const mapaSimulados = {}
@@ -492,6 +508,7 @@ export default function App() {
               <h1 className="text-3xl font-extrabold text-slate-100 tracking-tight">Banco de Questões</h1>
               <p className="text-slate-400 text-sm mt-1">{questoesFiltradas.length} questão(ões) encontrada(s). {questoesFiltradas.filter(q => q.anulada).length} anulada(s), disponíveis apenas para consulta.</p>
               {carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Carregando o restante do acervo… A quantidade acima ainda é parcial.</p>}
+              {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Acervo sincronizado: {fontesAcervo.supabase ?? 0} do Supabase e {fontesAcervo.importadas ?? 0} da central de importações.</p>}
               {falhasAcervo.length > 0 && <div role="alert" className="text-amber-300 text-sm mt-2">Não foi possível carregar: {falhasAcervo.join(' e ')}. A lista pode estar incompleta. <button className="underline font-semibold" onClick={buscarQuestoes} disabled={carregandoAcervo}>Tentar carregar novamente</button></div>}
               <div className="flex flex-wrap gap-4 mt-3 text-sm text-indigo-300">
                 <a href="/acervo/esa-2025/prova-original.pdf" target="_blank" rel="noreferrer">ESA 2025: prova completa e proposta de redação ↗</a>
@@ -556,7 +573,7 @@ export default function App() {
                   <p className="text-slate-400">Nenhuma questão encontrada com os filtros selecionados.</p>
                 </div>
               ) : (
-                questoesFiltradas.map((q) => (
+                questoesVisiveis.map((q) => (
                   <div key={q.id} className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-7 shadow-xl backdrop-blur-md transition-all hover:border-slate-700">
                     <div className="flex flex-wrap gap-2.5 mb-5">
                       {q.materia && <span className="bg-slate-800 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium">{q.materia}</span>}
@@ -585,6 +602,7 @@ export default function App() {
                   </div>
                 ))
               )}
+              {limiteVisivel < questoesFiltradas.length && <button className="mx-auto block rounded-2xl border border-indigo-500/40 bg-indigo-500/10 px-6 py-3 text-sm font-semibold text-indigo-200 hover:bg-indigo-500/20" onClick={() => setLimiteVisivel(value => value + 40)}>Mostrar mais 40 questões</button>}
             </div>
           </div>
         )}
