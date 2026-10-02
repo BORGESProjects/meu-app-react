@@ -695,13 +695,13 @@ export default function App() {
                         key={idx} questao={q} indice={idx} texto={opcao}
                         selecionada={respostasSelecionadas[q.id] === idx}
                         eliminada={alternativaFoiEliminada('normal', q.id, idx)}
-                        desabilitada={!podeCorrigir(q)}
                         onSelecionar={() => setRespostasSelecionadas(prev => ({ ...prev, [q.id]: idx }))}
                         onEliminar={() => alternarEliminacao('normal', q.id, idx)}
                       />)}
                     </div>
                     <div className="flex items-center gap-4">
                       <button disabled={!podeCorrigir(q)} onClick={() => validarResposta(q.id, q.resposta_correta)} className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-medium px-6 py-2.5 rounded-2xl text-sm transition-all shadow-md shadow-indigo-600/20">Responder</button>
+                      {!podeCorrigir(q) && <span className="text-xs font-medium text-amber-300">{q.anulada ? 'Questão anulada: disponível apenas para consulta.' : 'Gabarito ainda não disponível para correção.'}</span>}
                       {feedbacks[q.id] && <span className={`text-sm font-semibold ${feedbacks[q.id].status === 'correto' ? 'text-emerald-400' : 'text-red-400'}`}>{feedbacks[q.id].msg}</span>}
                     </div>
                   </div>
@@ -945,7 +945,6 @@ export default function App() {
                           key={idx} questao={q} indice={idx} texto={opcao} compacta
                           selecionada={respostasSelecionadas[q.id] === idx}
                           eliminada={alternativaFoiEliminada('normal', q.id, idx)}
-                          desabilitada={!podeCorrigir(q)}
                           onSelecionar={() => setRespostasSelecionadas(prev => ({ ...prev, [q.id]: idx }))}
                           onEliminar={() => alternarEliminacao('normal', q.id, idx)}
                         />)}

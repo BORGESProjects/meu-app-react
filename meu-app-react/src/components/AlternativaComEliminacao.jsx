@@ -1,6 +1,6 @@
 import AlternativaQuestao from './AlternativaQuestao'
 
-export default function AlternativaComEliminacao({ questao, indice, texto, selecionada, eliminada, desabilitada, compacta = false, onSelecionar, onEliminar }) {
+export default function AlternativaComEliminacao({ questao, indice, texto, selecionada, eliminada, compacta = false, onSelecionar, onEliminar }) {
   const letra = String.fromCharCode(65 + indice)
   const espacamento = compacta ? 'p-3 rounded-xl gap-3' : 'p-4 rounded-2xl gap-4'
   const tamanhoLetra = compacta ? 'w-6 h-6 rounded-lg' : 'w-8 h-8 rounded-xl'
@@ -8,7 +8,7 @@ export default function AlternativaComEliminacao({ questao, indice, texto, selec
   return <div className="flex items-stretch gap-2">
     <button
       type="button"
-      disabled={desabilitada || eliminada}
+      disabled={eliminada}
       onClick={onSelecionar}
       className={`min-w-0 flex-1 text-left border transition-all duration-200 flex items-center ${espacamento} disabled:cursor-not-allowed ${
         selecionada
@@ -23,12 +23,11 @@ export default function AlternativaComEliminacao({ questao, indice, texto, selec
     </button>
     <button
       type="button"
-      disabled={desabilitada}
       aria-label={eliminada ? `Restaurar alternativa ${letra}` : `Eliminar alternativa ${letra}`}
       aria-pressed={eliminada}
       title={eliminada ? 'Restaurar alternativa' : 'Eliminar alternativa'}
       onClick={onEliminar}
-      className={`w-12 shrink-0 rounded-2xl border text-lg transition-all disabled:cursor-not-allowed disabled:opacity-40 ${eliminada ? 'border-amber-500/60 bg-amber-500/15 text-amber-300' : 'border-slate-800 bg-slate-950/40 text-slate-500 hover:border-amber-500/50 hover:text-amber-300'}`}
+      className={`w-12 shrink-0 rounded-2xl border text-lg transition-all ${eliminada ? 'border-amber-500/60 bg-amber-500/15 text-amber-300' : 'border-slate-800 bg-slate-950/40 text-slate-500 hover:border-amber-500/50 hover:text-amber-300'}`}
     >
       ✂️
     </button>
