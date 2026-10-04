@@ -657,8 +657,8 @@ export default function App() {
             </header>
 
             {/* Filtros */}
-            <div className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-6 mb-8 grid grid-cols-1 md:grid-cols-5 gap-4 backdrop-blur-md shadow-xl">
-              <div className="md:col-span-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+            <div className="relative z-20 bg-slate-900/60 border border-slate-800/80 rounded-3xl p-6 mb-8 grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-5 gap-4 overflow-visible backdrop-blur-md shadow-xl">
+              <div className="sm:col-span-2 2xl:col-span-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
                 <div><h2 className="font-bold text-slate-100">Filtrar questões</h2><p className="text-xs text-slate-400 mt-1">As opções equivalentes são agrupadas automaticamente.</p></div>
                 {totalFiltrosAtivos > 0 && <button type="button" onClick={limparFiltros} className="rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:border-indigo-500 hover:text-indigo-200">Limpar {totalFiltrosAtivos} filtro(s)</button>}
               </div>
@@ -687,7 +687,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="space-y-6">
+            <div className="relative z-0 space-y-6">
               {questoesFiltradas.length === 0 ? (
                 <div className="text-center py-16 bg-slate-900/30 rounded-3xl border border-slate-800/80">
                   <p className="text-slate-400">Nenhuma questão encontrada com os filtros selecionados.</p>
