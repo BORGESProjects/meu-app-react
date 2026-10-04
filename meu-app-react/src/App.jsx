@@ -25,7 +25,7 @@ export default function App() {
   const [questoes, setQuestoes] = useState(acervo)
   const [carregandoAcervo, setCarregandoAcervo] = useState(true)
   const [falhasAcervo, setFalhasAcervo] = useState([])
-  const [fontesAcervo, setFontesAcervo] = useState({ supabase: null, importadas: null })
+  const [fontesAcervo, setFontesAcervo] = useState({ supabase: null, importadas: null, enemHistorico: null })
   const [limiteVisivel, setLimiteVisivel] = useState(40)
   const [respostasSelecionadas, setRespostasSelecionadas] = useState({})
   const [feedbacks, setFeedbacks] = useState({})
@@ -202,7 +202,7 @@ export default function App() {
   async function buscarQuestoes() {
     setCarregandoAcervo(true)
     setFalhasAcervo([])
-    setFontesAcervo({ supabase: null, importadas: null })
+    setFontesAcervo({ supabase: null, importadas: null, enemHistorico: null })
     const banco = tentarLeitura(async () => {
       const todas = []
       for (let inicio = 0; ; inicio += 500) {
@@ -230,8 +230,19 @@ export default function App() {
           setQuestoes(prev => unirQuestoes([...prev,...data]))
         }
       })
-    const resultados = await Promise.allSettled([banco,importadas])
-    setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [i === 0 ? 'banco de questões' : 'questões importadas'] : []))
+    const enemHistorico = tentarLeitura(async () => {
+      const r = await fetch('/acervo/enem-2017-2021/questoes.json', {signal:AbortSignal.timeout(30000)})
+      if (!r.ok) throw new Error('Edições históricas do ENEM indisponíveis')
+      const data = await r.json()
+      if (!Array.isArray(data) || data.length !== 925) throw new Error('Lote histórico do ENEM inválido')
+      return data
+    }).then(data => {
+      setFontesAcervo(prev => ({ ...prev, enemHistorico: data.length }))
+      setQuestoes(prev => unirQuestoes([...prev,...data]))
+    })
+    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021']
+    const resultados = await Promise.allSettled([banco,importadas,enemHistorico])
+    setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
     setCarregandoAcervo(false)
   }
 
@@ -641,7 +652,7 @@ export default function App() {
                 ? `${questoesFiltradas.length} questão(ões) encontrada(s). ${questoesFiltradas.filter(q => q.anulada).length} anulada(s), disponíveis apenas para consulta.`
                 : 'Escolha os filtros abaixo para exibir as questões que deseja estudar.'}</p>
               {carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Carregando o restante do acervo… A quantidade acima ainda é parcial.</p>}
-              {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Acervo sincronizado: {fontesAcervo.supabase ?? 0} do Supabase e {fontesAcervo.importadas ?? 0} da central de importações.</p>}
+              {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Acervo sincronizado: {fontesAcervo.supabase ?? 0} do Supabase, {fontesAcervo.importadas ?? 0} da central de importações e {fontesAcervo.enemHistorico ?? 0} do ENEM 2017–2021.</p>}
               {falhasAcervo.length > 0 && <div role="alert" className="text-amber-300 text-sm mt-2">Não foi possível carregar: {falhasAcervo.join(' e ')}. A lista pode estar incompleta. <button className="underline font-semibold" onClick={buscarQuestoes} disabled={carregandoAcervo}>Tentar carregar novamente</button></div>}
               <div className="flex flex-wrap gap-4 mt-3 text-sm text-indigo-300">
                 <a href="/acervo/esa-2025/prova-original.pdf" target="_blank" rel="noreferrer">ESA 2025: prova completa e proposta de redação ↗</a>
