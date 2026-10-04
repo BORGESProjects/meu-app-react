@@ -511,14 +511,18 @@ export default function App() {
     setResultadoSimuladoFinal({ acertos, erros, total: questoesSimulado.length, detalhes })
   }
 
-  const questoesFiltradas = questoes.filter(q => {
+  const totalFiltrosAtivos = [filtroMateria, filtroConteudo, filtroDificuldade].filter(valor => valor !== TODOS).length
+    + (filtrosAno.length > 0 ? 1 : 0) + (filtrosBanca.length > 0 ? 1 : 0)
+  const temFiltrosAtivos = totalFiltrosAtivos > 0
+
+  const questoesFiltradas = temFiltrosAtivos ? questoes.filter(q => {
     const bateMateria = filtroMateria === TODOS || chaveCampoFiltro('materia', q.materia) === filtroMateria
     const bateConteudo = filtroConteudo === TODOS || chaveCampoFiltro('conteudo', q.conteudo) === filtroConteudo
     const bateBanca = filtrosBanca.length === 0 || filtrosBanca.includes(chaveCampoFiltro('banca', q.banca))
     const bateDificuldade = filtroDificuldade === TODOS || chaveCampoFiltro('dificuldade', q.dificuldade) === filtroDificuldade
     const bateAno = filtrosAno.length === 0 || filtrosAno.includes(anoDaQuestao(q))
     return bateMateria && bateConteudo && bateBanca && bateDificuldade && bateAno
-  })
+  }) : []
   const questoesVisiveis = questoesFiltradas.slice(0, limiteVisivel)
 
   const simuladosDisponiveis = []
@@ -552,9 +556,6 @@ export default function App() {
   const dificuldadesDisponiveis = opcoesFiltro(questoes, 'dificuldade')
   const baseConteudos = filtroMateria === TODOS ? questoes : questoes.filter(q => chaveCampoFiltro('materia', q.materia) === filtroMateria)
   const conteudosDisponiveis = opcoesFiltro(baseConteudos, 'conteudo')
-  const totalFiltrosAtivos = [filtroMateria, filtroConteudo, filtroDificuldade].filter(valor => valor !== TODOS).length
-    + (filtrosAno.length > 0 ? 1 : 0) + (filtrosBanca.length > 0 ? 1 : 0)
-
   function limparFiltros() {
     setFiltrosAno([]); setFiltroMateria(TODOS); setFiltroConteudo(TODOS)
     setFiltrosBanca([]); setFiltroDificuldade(TODOS); setLimiteVisivel(40)
@@ -636,7 +637,9 @@ export default function App() {
           <div>
             <header className="mb-6">
               <h1 className="text-3xl font-extrabold text-slate-100 tracking-tight">Banco de Questões</h1>
-              <p className="text-slate-400 text-sm mt-1">{questoesFiltradas.length} questão(ões) encontrada(s). {questoesFiltradas.filter(q => q.anulada).length} anulada(s), disponíveis apenas para consulta.</p>
+              <p className="text-slate-400 text-sm mt-1">{temFiltrosAtivos
+                ? `${questoesFiltradas.length} questão(ões) encontrada(s). ${questoesFiltradas.filter(q => q.anulada).length} anulada(s), disponíveis apenas para consulta.`
+                : 'Escolha os filtros abaixo para exibir as questões que deseja estudar.'}</p>
               {carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Carregando o restante do acervo… A quantidade acima ainda é parcial.</p>}
               {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Acervo sincronizado: {fontesAcervo.supabase ?? 0} do Supabase e {fontesAcervo.importadas ?? 0} da central de importações.</p>}
               {falhasAcervo.length > 0 && <div role="alert" className="text-amber-300 text-sm mt-2">Não foi possível carregar: {falhasAcervo.join(' e ')}. A lista pode estar incompleta. <button className="underline font-semibold" onClick={buscarQuestoes} disabled={carregandoAcervo}>Tentar carregar novamente</button></div>}
@@ -688,7 +691,13 @@ export default function App() {
             </div>
 
             <div className="relative z-0 space-y-6">
-              {questoesFiltradas.length === 0 ? (
+              {!temFiltrosAtivos ? (
+                <div className="text-center py-16 bg-slate-900/30 rounded-3xl border border-dashed border-slate-700/80">
+                  <div className="mb-3 text-3xl" aria-hidden="true">⌕</div>
+                  <p className="font-semibold text-slate-300">Selecione pelo menos um filtro</p>
+                  <p className="mt-1 text-sm text-slate-500">Você pode combinar anos, matérias, conteúdos, bancas e dificuldades.</p>
+                </div>
+              ) : questoesFiltradas.length === 0 ? (
                 <div className="text-center py-16 bg-slate-900/30 rounded-3xl border border-slate-800/80">
                   <p className="text-slate-400">Nenhuma questão encontrada com os filtros selecionados.</p>
                 </div>
