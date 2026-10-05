@@ -25,7 +25,7 @@ export default function App() {
   const [questoes, setQuestoes] = useState(acervo)
   const [carregandoAcervo, setCarregandoAcervo] = useState(true)
   const [falhasAcervo, setFalhasAcervo] = useState([])
-  const [fontesAcervo, setFontesAcervo] = useState({ supabase: null, importadas: null, enemHistorico: null, cfnHistorico: null, ufrgs2025: null, ufrgs2023: null })
+  const [fontesAcervo, setFontesAcervo] = useState({ supabase: null, importadas: null, enemHistorico: null, cfnHistorico: null, ufrgs2025: null, ufrgs2023: null, ufrgs2022: null })
   const [limiteVisivel, setLimiteVisivel] = useState(40)
   const [respostasSelecionadas, setRespostasSelecionadas] = useState({})
   const [feedbacks, setFeedbacks] = useState({})
@@ -202,7 +202,7 @@ export default function App() {
   async function buscarQuestoes() {
     setCarregandoAcervo(true)
     setFalhasAcervo([])
-    setFontesAcervo({ supabase: null, importadas: null, enemHistorico: null, cfnHistorico: null, ufrgs2025: null, ufrgs2023: null })
+    setFontesAcervo({ supabase: null, importadas: null, enemHistorico: null, cfnHistorico: null, ufrgs2025: null, ufrgs2023: null, ufrgs2022: null })
     const banco = tentarLeitura(async () => {
       const todas = []
       for (let inicio = 0; ; inicio += 500) {
@@ -270,8 +270,18 @@ export default function App() {
       setFontesAcervo(prev => ({ ...prev, ufrgs2023: data.length }))
       setQuestoes(prev => unirQuestoes([...prev,...data]))
     })
-    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2023']
-    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2023])
+    const ufrgs2022 = tentarLeitura(async () => {
+      const r = await fetch('/acervo/ufrgs-2022/questoes.json', {signal:AbortSignal.timeout(30000)})
+      if (!r.ok) throw new Error('Vestibular UFRGS 2022 indisponível')
+      const data = await r.json()
+      if (!Array.isArray(data) || data.length !== 131) throw new Error('Lote UFRGS 2022 inválido')
+      return data
+    }).then(data => {
+      setFontesAcervo(prev => ({ ...prev, ufrgs2022: data.length }))
+      setQuestoes(prev => unirQuestoes([...prev,...data]))
+    })
+    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2023', 'UFRGS 2022']
+    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2023,ufrgs2022])
     setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
     setCarregandoAcervo(false)
   }
@@ -682,7 +692,7 @@ export default function App() {
                 ? `${questoesFiltradas.length} questão(ões) encontrada(s). ${questoesFiltradas.filter(q => q.anulada).length} anulada(s), disponíveis apenas para consulta.`
                 : 'Escolha os filtros abaixo para exibir as questões que deseja estudar.'}</p>
               {carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Carregando o restante do acervo… A quantidade acima ainda é parcial.</p>}
-              {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Acervo sincronizado: {fontesAcervo.supabase ?? 0} do Supabase, {fontesAcervo.importadas ?? 0} da central de importações, {fontesAcervo.enemHistorico ?? 0} do ENEM 2017–2021, {fontesAcervo.cfnHistorico ?? 0} do CFN 2020–2025, {fontesAcervo.ufrgs2025 ?? 0} da UFRGS 2025 e {fontesAcervo.ufrgs2023 ?? 0} da UFRGS 2023.</p>}
+              {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Acervo sincronizado: {fontesAcervo.supabase ?? 0} do Supabase, {fontesAcervo.importadas ?? 0} da central de importações, {fontesAcervo.enemHistorico ?? 0} do ENEM 2017–2021, {fontesAcervo.cfnHistorico ?? 0} do CFN 2020–2025, {fontesAcervo.ufrgs2025 ?? 0} da UFRGS 2025, {fontesAcervo.ufrgs2023 ?? 0} da UFRGS 2023 e {fontesAcervo.ufrgs2022 ?? 0} da UFRGS 2022.</p>}
               {falhasAcervo.length > 0 && <div role="alert" className="text-amber-300 text-sm mt-2">Não foi possível carregar: {falhasAcervo.join(' e ')}. A lista pode estar incompleta. <button className="underline font-semibold" onClick={buscarQuestoes} disabled={carregandoAcervo}>Tentar carregar novamente</button></div>}
               <div className="flex flex-wrap gap-4 mt-3 text-sm text-indigo-300">
                 <a href="/acervo/esa-2025/prova-original.pdf" target="_blank" rel="noreferrer">ESA 2025: prova completa e proposta de redação ↗</a>
