@@ -30,11 +30,11 @@ export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, 
     finally { setBusy(false) }
   }
 
-  if (session) return <section className="mx-auto max-w-xl rounded-3xl border border-slate-800/80 bg-slate-900/60 p-8 shadow-xl">
-    <h1 className="text-3xl font-extrabold">Minha conta</h1>
+  if (session) return <section className="mx-auto max-w-xl rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-xl sm:p-8">
+    <h1 className="text-2xl font-extrabold sm:text-3xl">Minha conta</h1>
     <p className="mt-2 text-slate-400">Você está conectado como:</p>
     <p className="mt-4 break-all rounded-2xl bg-slate-950/70 p-4 font-semibold text-slate-100">{session.user.email}</p>
-    <div className="mt-5 grid grid-cols-3 gap-3">
+    <div className="mt-5 grid grid-cols-1 gap-3 min-[380px]:grid-cols-3">
       <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-3 text-center"><p className="text-xl font-bold text-indigo-300">{(totais?.horas || 0).toFixed(1)}h</p><p className="mt-1 text-xs text-slate-500">Estudo</p></div>
       <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-3 text-center"><p className="text-xl font-bold text-slate-100">{totais?.questoes || 0}</p><p className="mt-1 text-xs text-slate-500">Questões</p></div>
       <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-3 text-center"><p className="text-xl font-bold text-emerald-400">{totais?.acertos || 0}</p><p className="mt-1 text-xs text-slate-500">Acertos</p></div>
@@ -42,7 +42,7 @@ export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, 
     <p className={`mt-4 text-xs ${sincronizacao === 'erro' ? 'text-red-300' : 'text-slate-400'}`}>
       {sincronizacao === 'salvando' ? 'Salvando progresso…' : sincronizacao === 'erro' ? 'Falha ao salvar o progresso.' : '✓ Progresso sincronizado com sua conta'}
     </p>
-    <div className="mt-4 flex items-center gap-3">
+    <div className="mt-4 flex flex-wrap items-center gap-3">
       <span className={`rounded-full px-3 py-1 text-xs font-bold ${isAdmin ? 'bg-emerald-900 text-emerald-200' : 'bg-slate-800 text-slate-300'}`}>
         {checkingAdmin ? 'Verificando acesso…' : isAdmin ? 'Administrador' : 'Usuário'}
       </span>
@@ -51,8 +51,8 @@ export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, 
     {isAdmin && <p className="mt-5 text-sm text-slate-400">As áreas Cadastrar e Importar PDF estão liberadas no menu para esta conta.</p>}
   </section>
 
-  return <section className="mx-auto max-w-md rounded-3xl border border-slate-800/80 bg-slate-900/60 p-8 shadow-xl">
-    <h1 className="text-3xl font-extrabold">{modo === 'entrar' ? 'Entrar' : 'Criar conta'}</h1>
+  return <section className="mx-auto max-w-md rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-xl sm:p-8">
+    <h1 className="text-2xl font-extrabold sm:text-3xl">{modo === 'entrar' ? 'Entrar' : 'Criar conta'}</h1>
     <p className="mt-2 text-sm text-slate-400">Acesse sua conta para usar o AP Aprovado.</p>
     {erro && <p role="alert" className="mt-5 rounded-xl border border-red-500/40 bg-red-950/40 p-3 text-sm text-red-200">{erro}</p>}
     {aviso && <p role="status" className="mt-5 rounded-xl bg-emerald-950/50 p-3 text-sm text-emerald-200">{aviso}</p>}

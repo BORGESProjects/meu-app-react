@@ -18,9 +18,9 @@ export default function FiltroMultiplo({ titulo, opcoes, selecionados, aoAlterar
         <span className="truncate">{resumo}</span>
         <span className="text-xs text-slate-500 transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <div className="absolute inset-x-0 top-full z-[80] mt-2 max-h-72 w-full overflow-y-auto overscroll-contain rounded-2xl border border-slate-700 bg-slate-950 p-2 shadow-2xl">
+      <div className="absolute inset-x-0 top-full z-[80] mt-2 max-h-64 w-full overflow-y-auto overscroll-contain rounded-2xl border border-slate-700 bg-slate-950 p-2 shadow-2xl sm:max-h-72">
         <div className="sticky top-0 z-10 flex items-center justify-between border-b border-slate-800 bg-slate-950 px-2 pb-2">
-          <span className="text-xs text-slate-500">Marque uma ou mais opções</span>
+          <span className="pr-2 text-[11px] text-slate-500 sm:text-xs">Marque uma ou mais opções</span>
           {selecionados.length > 0 && <button type="button" onClick={() => aoAlterar([])} className="rounded-lg px-2 py-1 text-xs font-semibold text-indigo-300 hover:bg-slate-800">Limpar</button>}
         </div>
         <div className="mt-1 space-y-1">

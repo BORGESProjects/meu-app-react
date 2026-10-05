@@ -681,7 +681,7 @@ export default function App() {
 
   if (!authReady) return <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center"><p className="text-sm text-indigo-300">Verificando sua sessão…</p></div>
 
-  if (!session) return <div className="min-h-screen bg-slate-950 text-slate-100 px-6 py-12">
+  if (!session) return <div className="min-h-screen bg-slate-950 text-slate-100 px-3 py-8 sm:px-6 sm:py-12">
     <div className="mx-auto mb-8 flex max-w-md items-center justify-center gap-3 text-2xl font-extrabold">
       <span className="rounded-xl bg-gradient-to-tr from-indigo-500 to-violet-500 px-3 py-1.5 text-base shadow-lg shadow-indigo-500/20">AP</span>
       <span>AP Aprovado</span>
@@ -695,14 +695,14 @@ export default function App() {
   </div>
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen overflow-x-hidden bg-slate-950 text-slate-100 font-sans selection:bg-indigo-500 selection:text-white">
       {/* Barra de Navegação Superior Refinada */}
-      <nav className="border-b border-slate-800/80 bg-slate-950/80 sticky top-0 z-50 backdrop-blur-xl px-6 py-3.5 flex items-center justify-between">
-        <div className="flex items-center gap-2.5 font-extrabold text-xl tracking-tight">
+      <nav className="sticky top-0 z-50 flex flex-col items-stretch gap-3 border-b border-slate-800/80 bg-slate-950/80 px-3 py-3 backdrop-blur-xl md:flex-row md:items-center md:justify-between md:px-6 md:py-3.5">
+        <div className="flex items-center gap-2.5 px-1 text-lg font-extrabold tracking-tight sm:text-xl">
           <span className="bg-gradient-to-tr from-indigo-500 to-violet-500 text-white px-2.5 py-1 rounded-xl shadow-lg shadow-indigo-500/20 text-sm">AP</span>
           <span className="text-slate-100">Aprovado</span>
         </div>
-        <div className="flex items-center gap-1.5 flex-wrap">
+        <div aria-label="Navegação principal" className="mobile-nav flex w-full items-center gap-1.5 overflow-x-auto pb-1 md:w-auto md:pb-0">
           {[
             { id: 'questoes', label: '📚 Questões' },
             { id: 'simulados', label: '📝 Simulados' },
@@ -716,7 +716,7 @@ export default function App() {
             <button 
               key={tab.id}
               onClick={() => setAbaAtiva(tab.id)} 
-              className={`px-3.5 py-2 rounded-2xl text-xs md:text-sm font-medium transition-all duration-200 ${abaAtiva === tab.id ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-600/25 scale-[1.02]' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/80'}`}
+              className={`shrink-0 whitespace-nowrap px-3 py-2 rounded-2xl text-xs md:text-sm font-medium transition-all duration-200 ${abaAtiva === tab.id ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-600/25 scale-[1.02]' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/80'}`}
             >
               {tab.label}
             </button>
@@ -724,14 +724,14 @@ export default function App() {
         </div>
       </nav>
 
-      <main className="max-w-5xl mx-auto p-6 md:p-8">
+      <main className="mx-auto min-w-0 max-w-5xl p-3 sm:p-6 md:p-8">
         {abaAtiva === 'conta' && <Conta session={session} isAdmin={isAdmin} checkingAdmin={checkingAdmin} sincronizacao={sincronizacao} totais={{ horas: totalHorasEstudo, questoes: totalQuestoesResolvidas, acertos: totalAcertos }} />}
         {abaAtiva === 'importar' && isAdmin && <ImportarPdf onPublicado={buscarQuestoes} />}
         {/* ABA: BANCO DE QUESTÕES */}
         {abaAtiva === 'questoes' && (
           <div>
             <header className="mb-6">
-              <h1 className="text-3xl font-extrabold text-slate-100 tracking-tight">Banco de Questões</h1>
+              <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">Banco de Questões</h1>
               <p className="text-slate-400 text-sm mt-1">{temFiltrosAtivos
                 ? `${questoesFiltradas.length} questão(ões) encontrada(s). ${questoesFiltradas.filter(q => q.anulada).length} anulada(s), disponíveis apenas para consulta.`
                 : 'Escolha os filtros abaixo para exibir as questões que deseja estudar.'}</p>
@@ -755,7 +755,7 @@ export default function App() {
             </header>
 
             {/* Filtros */}
-            <div className="relative z-20 bg-slate-900/60 border border-slate-800/80 rounded-3xl p-6 mb-8 grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-5 gap-4 overflow-visible backdrop-blur-md shadow-xl">
+            <div className="relative z-20 mb-6 grid grid-cols-1 gap-4 overflow-visible rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-xl backdrop-blur-md sm:mb-8 sm:grid-cols-2 sm:p-6 2xl:grid-cols-5">
               <div className="sm:col-span-2 2xl:col-span-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
                 <div><h2 className="font-bold text-slate-100">Filtrar questões</h2><p className="text-xs text-slate-400 mt-1">As opções equivalentes são agrupadas automaticamente.</p></div>
                 {totalFiltrosAtivos > 0 && <button type="button" onClick={limparFiltros} className="rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:border-indigo-500 hover:text-indigo-200">Limpar {totalFiltrosAtivos} filtro(s)</button>}
@@ -798,7 +798,7 @@ export default function App() {
                 </div>
               ) : (
                 questoesVisiveis.map((q) => (
-                  <div key={q.id} className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-7 shadow-xl backdrop-blur-md transition-all hover:border-slate-700">
+                  <div key={q.id} className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md transition-all hover:border-slate-700">
                     <div className="flex flex-wrap gap-2.5 mb-5">
                       {q.materia && <span className="bg-slate-800 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium">{q.materia}</span>}
                       {q.conteudo && <span className="bg-slate-800 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium">{q.conteudo}</span>}
@@ -816,7 +816,7 @@ export default function App() {
                         onEliminar={() => alternarEliminacao('normal', q.id, idx)}
                       />)}
                     </div>
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                       <button disabled={!podeCorrigir(q)} onClick={() => validarResposta(q.id, q.resposta_correta)} className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-medium px-6 py-2.5 rounded-2xl text-sm transition-all shadow-md shadow-indigo-600/20">Responder</button>
                       {!podeCorrigir(q) && <span className="text-xs font-medium text-amber-300">{q.anulada ? 'Questão anulada: disponível apenas para consulta.' : 'Gabarito ainda não disponível para correção.'}</span>}
                       {feedbacks[q.id] && <span className={`text-sm font-semibold ${feedbacks[q.id].status === 'correto' ? 'text-emerald-400' : 'text-red-400'}`}>{feedbacks[q.id].msg}</span>}
@@ -836,12 +836,12 @@ export default function App() {
               <div>
                 <header className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
-                    <h1 className="text-3xl font-extrabold text-slate-100 tracking-tight">📝 Provas e Simulados</h1>
+                    <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">📝 Provas e Simulados</h1>
                     <p className="text-slate-400 text-sm mt-1">Escolha o ano e a prova completa. Todas as matérias do caderno aparecem juntas e as questões anuladas ficam de fora.</p>
                   </div>
                 </header>
 
-                <div className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-6 mb-8 grid grid-cols-1 md:grid-cols-2 gap-4 backdrop-blur-md shadow-xl">
+                <div className="mb-6 grid grid-cols-1 gap-4 rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-xl backdrop-blur-md sm:mb-8 sm:p-6 md:grid-cols-2">
                   <div>
                     <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Ano</label>
                     <select 
@@ -869,7 +869,7 @@ export default function App() {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {simuladosFiltrados.map(simulado => (
-                    <div key={simulado.id} className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-7 shadow-xl backdrop-blur-md flex flex-col justify-between hover:border-indigo-500/40 transition-all group">
+                    <div key={simulado.id} className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-5 sm:p-7 shadow-xl backdrop-blur-md flex flex-col justify-between hover:border-indigo-500/40 transition-all group">
                       <div>
                         <div className="flex items-center gap-2 mb-2 flex-wrap">
                           <span className="bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full text-xs font-medium">
@@ -902,17 +902,17 @@ export default function App() {
               </div>
             ) : !resultadoSimuladoFinal ? (
               <div className="space-y-6">
-                <div className="flex items-center justify-between bg-slate-900/80 border border-slate-800 p-5 rounded-3xl backdrop-blur-md shadow-xl">
-                  <div>
+                <div className="flex flex-col items-stretch gap-4 rounded-3xl border border-slate-800 bg-slate-900/80 p-4 shadow-xl backdrop-blur-md sm:flex-row sm:items-center sm:justify-between sm:p-5">
+                  <div className="min-w-0">
                     <h2 className="text-xl font-bold text-slate-100">{simuladoAtivo.prova} · {simuladoAtivo.banca}</h2>
                     <p className="text-xs text-slate-400 mt-0.5">Responda todas as questões e finalize para auditar o seu resultado.</p>
                   </div>
-                  <button onClick={() => setSimuladoAtivo(null)} className="text-slate-400 hover:text-slate-100 text-xs font-medium bg-slate-800 px-4 py-2 rounded-2xl transition-all">Sair da Prova</button>
+                  <button onClick={() => setSimuladoAtivo(null)} className="w-full shrink-0 text-slate-400 hover:text-slate-100 text-xs font-medium bg-slate-800 px-4 py-2 rounded-2xl transition-all sm:w-auto">Sair da Prova</button>
                 </div>
 
                 {questoesDaProva(questoes, simuladoAtivo.id).map((q, index) => (
-                  <div key={q.id} className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-7 shadow-xl backdrop-blur-md">
-                    <div className="flex gap-2.5 mb-5">
+                  <div key={q.id} className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md">
+                    <div className="flex flex-wrap gap-2.5 mb-5">
                       <span className="bg-indigo-600 text-white px-3.5 py-1 rounded-full text-xs font-bold shadow-md shadow-indigo-600/20">Questão {index + 1}</span>
                       {q.materia && <span className="bg-slate-800 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium">{q.materia}</span>}
                     </div>
@@ -932,9 +932,9 @@ export default function App() {
                 <button onClick={finalizarSimulado} className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-4 rounded-3xl text-base shadow-xl shadow-emerald-600/20 transition-all">Finalizar e Entregar Prova</button>
               </div>
             ) : (
-              <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-8 shadow-2xl backdrop-blur-md space-y-6 text-center max-w-xl mx-auto">
-                <h2 className="text-3xl font-extrabold text-slate-100 tracking-tight">🏆 Resultado do Simulado</h2>
-                <div className="grid grid-cols-3 gap-4 my-6">
+              <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-4 sm:p-8 shadow-2xl backdrop-blur-md space-y-6 text-center max-w-xl mx-auto">
+                <h2 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">🏆 Resultado do Simulado</h2>
+                <div className="grid grid-cols-1 gap-3 my-6 min-[380px]:grid-cols-3 sm:gap-4">
                   <div className="bg-slate-950/80 p-4 rounded-2xl border border-slate-800">
                     <p className="text-xs text-slate-400 uppercase font-semibold">Total</p>
                     <p className="text-2xl font-bold text-slate-100 mt-1">{resultadoSimuladoFinal.total}</p>
@@ -958,7 +958,7 @@ export default function App() {
         {abaAtiva === 'desempenho' && (
           <div className="space-y-8">
             <header>
-              <h1 className="text-3xl font-extrabold text-slate-100 tracking-tight">📈 Painel de Desempenho</h1>
+              <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">📈 Painel de Desempenho</h1>
               <p className="text-slate-400 text-sm mt-1">Acompanhe métricas cruciais, use o cronómetro de estudos e pratique com base no que estudou.</p>
             </header>
 
@@ -977,7 +977,7 @@ export default function App() {
             </div>
 
             {/* SEÇÃO DO CRONÓMETRO DE ESTUDO */}
-            <div className="bg-gradient-to-br from-indigo-950/40 via-slate-900/60 to-slate-900/60 border border-indigo-500/30 rounded-3xl p-7 shadow-xl backdrop-blur-md">
+            <div className="bg-gradient-to-br from-indigo-950/40 via-slate-900/60 to-slate-900/60 border border-indigo-500/30 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md">
               <h3 className="text-lg font-bold text-slate-100 mb-4 flex items-center gap-2">
                 ⏱️ Cronómetro de Estudos & Sugestão Inteligente
               </h3>
@@ -1035,9 +1035,9 @@ export default function App() {
 
             {/* QUESTÕES SUGERIDAS APÓS O ESTUDO */}
             {questoesSugeridas.length > 0 && (
-              <div className="bg-slate-900/60 border border-emerald-500/30 rounded-3xl p-7 shadow-xl backdrop-blur-md">
-                <div className="flex items-center justify-between mb-6">
-                  <div>
+              <div className="bg-slate-900/60 border border-emerald-500/30 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md">
+                <div className="mb-6 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <div className="min-w-0">
                     <h3 className="text-lg font-bold text-slate-100">🎯 Questões Sugeridas para Praticar</h3>
                     <p className="text-xs text-slate-400 mt-0.5">Selecionadas com base na tua última sessão de estudo de <strong>{materiaEstudo}</strong>.</p>
                   </div>
@@ -1062,7 +1062,7 @@ export default function App() {
                           onEliminar={() => alternarEliminacao('normal', q.id, idx)}
                         />)}
                       </div>
-                      <div className="flex items-center gap-4">
+                      <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                         <button disabled={!podeCorrigir(q)} onClick={() => validarResposta(q.id, q.resposta_correta)} className="bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-5 py-2 rounded-xl text-xs transition-all shadow-md">Responder</button>
                         {feedbacks[q.id] && <span className={`text-xs font-semibold ${feedbacks[q.id].status === 'correto' ? 'text-emerald-400' : 'text-red-400'}`}>{feedbacks[q.id].msg}</span>}
                       </div>
@@ -1073,14 +1073,14 @@ export default function App() {
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-7 shadow-xl backdrop-blur-md">
+              <div className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md">
                 <h3 className="text-lg font-bold text-slate-100 mb-5">⏱️ Registar Bloco Manual</h3>
                 <form onSubmit={registarHoras} className="space-y-4">
                   <div>
                     <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Matéria</label>
                     <input type="text" required placeholder="Ex: Matemática" value={novaHora.materia} onChange={e => setNovaHora({ ...novaHora, materia: e.target.value })} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner" />
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                     <div>
                       <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Horas (ex: 1.5)</label>
                       <input type="number" step="0.1" required placeholder="1.5" value={novaHora.horas} onChange={e => setNovaHora({ ...novaHora, horas: e.target.value })} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner" />
@@ -1094,7 +1094,7 @@ export default function App() {
                 </form>
               </div>
 
-              <div className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-7 shadow-xl backdrop-blur-md flex flex-col justify-between">
+              <div className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md flex flex-col justify-between">
                 <div>
                   <h3 className="text-lg font-bold text-slate-100 mb-5">⚠️ Principais Pontos a Melhorar</h3>
                   {pontosAMelhorar.length === 0 ? (
@@ -1102,8 +1102,8 @@ export default function App() {
                   ) : (
                     <div className="space-y-3">
                       {pontosAMelhorar.map(([conteudo, qtdErros], idx) => (
-                        <div key={idx} className="flex items-center justify-between bg-slate-950/60 p-4 rounded-2xl border border-slate-800 text-sm">
-                          <span className="text-slate-200 font-medium">{conteudo}</span>
+                        <div key={idx} className="flex flex-wrap items-center justify-between gap-2 bg-slate-950/60 p-4 rounded-2xl border border-slate-800 text-sm">
+                          <span className="min-w-0 break-words text-slate-200 font-medium">{conteudo}</span>
                           <span className="bg-red-500/15 text-red-400 border border-red-500/30 px-3 py-1 rounded-full text-xs font-semibold">{qtdErros} erro(s)</span>
                         </div>
                       ))}
@@ -1118,10 +1118,10 @@ export default function App() {
 
         {/* ABA: CADASTRAR QUESTÃO */}
         {abaAtiva === 'cadastrar' && isAdmin && (
-          <div className="max-w-2xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-8 shadow-xl backdrop-blur-md">
+          <div className="max-w-2xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-8 shadow-xl backdrop-blur-md">
             <h2 className="text-2xl font-extrabold text-slate-100 mb-6 tracking-tight">➕ Cadastrar Nova Questão</h2>
             <form onSubmit={salvarQuestao} className="space-y-5">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div>
                   <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Matéria</label>
                   <input type="text" required placeholder="Ex: Português" value={novaQuestao.materia} onChange={(e) => setNovaQuestao({ ...novaQuestao, materia: e.target.value })} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner" />
@@ -1131,7 +1131,7 @@ export default function App() {
                   <input type="text" required placeholder="Ex: Concordância" value={novaQuestao.conteudo} onChange={(e) => setNovaQuestao({ ...novaQuestao, conteudo: e.target.value })} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner" />
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                 <div>
                   <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Banca</label>
                   <input type="text" required placeholder="Ex: FGV ou Professor" value={novaQuestao.banca} onChange={(e) => setNovaQuestao({ ...novaQuestao, banca: e.target.value })} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner" />
@@ -1161,7 +1161,7 @@ export default function App() {
                 <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Alternativas (A até E)</label>
                 <div className="space-y-3">
                   {novaQuestao.opcoes.map((opcao, idx) => (
-                    <div key={idx} className="flex items-center gap-3 bg-slate-950/40 p-2.5 rounded-2xl border border-slate-800">
+                    <div key={idx} className="flex min-w-0 items-center gap-2 bg-slate-950/40 p-2.5 rounded-2xl border border-slate-800 sm:gap-3">
                       <span className="w-7 text-center text-xs font-bold text-slate-400">{String.fromCharCode(65 + idx)}</span>
                       <input type="text" required placeholder={`Alternativa ${String.fromCharCode(65 + idx)}`} value={opcao} onChange={(e) => {
                         const novasOpcoes = [...novaQuestao.opcoes]
@@ -1180,7 +1180,7 @@ export default function App() {
 
         {/* ABA: EDITAL VERTICALIZADO */}
         {abaAtiva === 'edital' && (
-          <div className="max-w-3xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-8 shadow-xl backdrop-blur-md">
+          <div className="max-w-3xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-8 shadow-xl backdrop-blur-md">
             <h2 className="text-2xl font-extrabold text-slate-100 mb-2 tracking-tight">📋 Edital Verticalizado</h2>
             <p className="text-slate-400 text-sm mb-6">Acompanhe os tópicos sincronizados com o Spring Boot.</p>
             <form onSubmit={adicionarEditalItem} className="grid grid-cols-1 md:grid-cols-5 gap-3.5 mb-8 bg-slate-950/50 p-4 rounded-3xl border border-slate-800/80">
@@ -1196,8 +1196,8 @@ export default function App() {
             </form>
             <div className="space-y-3">
               {editais.map((item) => (
-                <div key={item.id} className={`flex items-center justify-between p-4 rounded-2xl text-sm border transition-all ${item.concluido ? 'bg-emerald-950/20 border-emerald-500/30' : 'bg-slate-950/40 border-slate-800 hover:border-slate-700'}`}>
-                  <div className="flex items-center gap-3.5 flex-wrap">
+                <div key={item.id} className={`flex items-start justify-between gap-2 p-4 rounded-2xl text-sm border transition-all ${item.concluido ? 'bg-emerald-950/20 border-emerald-500/30' : 'bg-slate-950/40 border-slate-800 hover:border-slate-700'}`}>
+                  <div className="flex min-w-0 items-center gap-3.5 flex-wrap">
                     <input type="checkbox" checked={item.concluido} onChange={() => alternarStatusEditalItem(item)} className="w-5 h-5 text-indigo-600 rounded-xl bg-slate-900 border-slate-700 cursor-pointer focus:ring-indigo-500" />
                     <span className="bg-slate-800 text-slate-300 px-3 py-1 rounded-full text-xs">{item.concurso}</span>
                     <span className="bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full text-xs">{item.materia}</span>
@@ -1212,18 +1212,18 @@ export default function App() {
 
         {/* ABA: REDAÇÃO IA */}
         {abaAtiva === 'redacao' && (
-          <div className="max-w-3xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-8 shadow-xl backdrop-blur-md">
+          <div className="max-w-3xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-8 shadow-xl backdrop-blur-md">
             <h2 className="text-2xl font-extrabold text-slate-100 mb-2 tracking-tight">✍️ Auditoria de Redação por IA</h2>
             <p className="text-slate-400 text-sm mb-6">Pratique com propostas de edições anteriores e receba uma correção adaptada aos critérios da banca.</p>
-            <div className="mb-7 rounded-3xl border border-indigo-500/25 bg-indigo-950/20 p-6">
+            <div className="mb-7 rounded-3xl border border-indigo-500/25 bg-indigo-950/20 p-4 sm:p-6">
               <div className="flex flex-wrap items-end gap-4">
-                <label className="min-w-40 flex-1 text-xs font-semibold uppercase tracking-wider text-indigo-300">Vestibular
+                <label className="w-full min-w-0 flex-1 text-xs font-semibold uppercase tracking-wider text-indigo-300 sm:min-w-40">Vestibular
                   <select value={bancaRedacao} onChange={event => { setBancaRedacao(event.target.value); selecionarTemaRedacao('') }} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-200">
                     <option value="Todas">Todos</option>
                     {bancasRedacao.map(banca => <option key={banca} value={banca}>{banca}</option>)}
                   </select>
                 </label>
-                <label className="min-w-64 flex-[2] text-xs font-semibold uppercase tracking-wider text-indigo-300">Tema de edição anterior
+                <label className="w-full min-w-0 flex-[2] text-xs font-semibold uppercase tracking-wider text-indigo-300 sm:min-w-64">Tema de edição anterior
                   <select value={temaRedacaoId} onChange={event => selecionarTemaRedacao(event.target.value)} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-200">
                     <option value="">Escolher um tema…</option>
                     {temasRedacaoFiltrados.map(item => <option key={item.id} value={item.id}>{item.banca} {item.ano} — {item.tema}</option>)}
@@ -1252,7 +1252,7 @@ export default function App() {
             {erroRedacao && <p role="alert" className="mt-5 rounded-2xl border border-red-500/30 bg-red-950/30 p-4 text-sm text-red-200">{erroRedacao}</p>}
             {resultadoRedacao && (
               <div className="mt-8 bg-slate-950/90 border border-indigo-500/30 rounded-3xl p-6 shadow-2xl space-y-5">
-                <div className="flex items-center justify-between border-b border-slate-800 pb-4">
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
                   <h3 className="text-lg font-bold text-slate-100">Relatório de Avaliação Tática</h3>
                   <span className="bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full text-xs font-semibold">Concluído</span>
                 </div>
@@ -1264,16 +1264,16 @@ export default function App() {
 
         {/* ABA: TAREFAS */}
         {abaAtiva === 'tarefas' && (
-          <div className="max-w-xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-8 shadow-xl backdrop-blur-md">
+          <div className="max-w-xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-8 shadow-xl backdrop-blur-md">
             <h2 className="text-2xl font-extrabold text-slate-100 mb-6 tracking-tight">⚡ Tarefas de Estudo</h2>
-            <form onSubmit={adicionarTarefa} className="flex gap-3 mb-6">
+            <form onSubmit={adicionarTarefa} className="mb-6 flex flex-col gap-3 sm:flex-row">
               <input type="text" placeholder="Nova tarefa..." value={novaTarefa} onChange={e => setNovaTarefa(e.target.value)} className="flex-1 bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 shadow-inner" />
               <button type="submit" className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white px-6 py-3 rounded-2xl text-sm font-medium shadow-md shadow-indigo-600/20">Adicionar</button>
             </form>
             <div className="space-y-3">
               {tarefas.map(t => (
-                <div key={t.id} className="flex items-center justify-between bg-slate-950/40 p-4 rounded-2xl border border-slate-800 text-sm">
-                  <span className="text-slate-200 font-medium">{t.texto}</span>
+                <div key={t.id} className="flex items-start justify-between gap-3 bg-slate-950/40 p-4 rounded-2xl border border-slate-800 text-sm">
+                  <span className="min-w-0 break-words text-slate-200 font-medium">{t.texto}</span>
                   <button onClick={() => deletarTarefa(t.id)} className="text-slate-500 hover:text-red-400 p-1.5 rounded-xl transition-colors">✕</button>
                 </div>
               ))}

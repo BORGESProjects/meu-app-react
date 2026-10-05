@@ -15,6 +15,51 @@ html, body, #root {
   color: #d1d5db !important;
   font-family: 'Rajdhani', sans-serif, system-ui, sans-serif;
   min-height: 100vh;
+  max-width: 100%;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, iframe, video, canvas {
+  max-width: 100%;
+}
+
+input, select, textarea, button {
+  min-width: 0;
+  max-width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.mobile-nav {
+  scrollbar-width: none;
+  overscroll-behavior-inline: contain;
+}
+
+.mobile-nav::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  h1, h2, h3, p, span, a, label, summary {
+    overflow-wrap: anywhere;
+  }
+
+  input, select, textarea {
+    font-size: 16px !important;
+  }
 }
 
 /* CORREÇÃO DA SOMBRA QUADRADA: Remove fundo/box-shadow indesejado e aplica sombra apenas nas letras */

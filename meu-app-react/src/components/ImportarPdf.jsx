@@ -233,10 +233,10 @@ export default function ImportarPdf({ onPublicado }) {
   ].filter(Boolean) : []
 
   return <section className="space-y-6">
-    <header><div className="flex flex-wrap items-center gap-3"><h1 className="text-3xl font-extrabold">Importar provas em PDF</h1>{modoLocal&&<span className="rounded-full bg-emerald-900 px-3 py-1 text-xs font-bold text-emerald-200">IA LOCAL ATIVA</span>}</div><p className="text-slate-400 mt-2">Envie a prova e o gabarito, confira as questões e publique no acervo.</p></header>
+    <header><div className="flex flex-wrap items-center gap-3"><h1 className="text-2xl font-extrabold sm:text-3xl">Importar provas em PDF</h1>{modoLocal&&<span className="rounded-full bg-emerald-900 px-3 py-1 text-xs font-bold text-emerald-200">IA LOCAL ATIVA</span>}</div><p className="text-slate-400 mt-2">Envie a prova e o gabarito, confira as questões e publique no acervo.</p></header>
     {erro && <p role="alert" className="rounded-xl border border-red-500/40 bg-red-950/40 p-4 text-red-200">{erro}</p>}
     {aviso && <p role="status" className="rounded-xl bg-emerald-950/50 p-4 text-emerald-200">{aviso}</p>}
-    {!session ? <form onSubmit={login} className="max-w-md space-y-4 rounded-2xl bg-slate-900 border border-slate-800 p-6">
+    {!session ? <form onSubmit={login} className="max-w-md space-y-4 rounded-2xl bg-slate-900 border border-slate-800 p-4 sm:p-6">
       <h2 className="font-bold text-xl">Acesso do administrador</h2>
       <p className="text-sm text-slate-400">Use o e-mail autorizado para gerenciar as importações. Os visitantes continuam acessando as questões normalmente.</p>
       <label className="block">E-mail<input className={field} type="email" required autoComplete="username" value={email} onChange={e=>setEmail(e.target.value)} /></label>
@@ -245,7 +245,7 @@ export default function ImportarPdf({ onPublicado }) {
       <button type="button" className="block text-sm text-indigo-300" disabled={busy} onClick={criarAcesso}>Primeiro acesso: criar minha conta</button>
     </form> : <div className="flex flex-wrap items-center gap-4 text-sm"><span>{session.user.email}</span><button onClick={()=>run(()=>supabase.auth.signOut())} disabled={busy} className="text-indigo-300">Sair da conta</button>{!autorizado && (checkingAccess ? <span className="text-slate-400">Validando acesso de administrador…</span> : <button className={button} onClick={()=>setAccessAttempt(value=>value+1)}>Tentar conectar novamente</button>)}</div>}
     {autorizado && <>
-      {!job && <form onSubmit={upload} className="space-y-4 rounded-2xl bg-slate-900 border border-slate-800 p-6">
+      {!job && <form onSubmit={upload} className="space-y-4 rounded-2xl bg-slate-900 border border-slate-800 p-4 sm:p-6">
         <h2 className="text-xl font-bold">1. Enviar documentos</h2>
         <div className="grid md:grid-cols-2 gap-4">
           <label>Prova completa (PDF)<input className={field} type="file" accept="application/pdf,.pdf" required onChange={e=>setProva(e.target.files[0])} /></label>
@@ -255,7 +255,7 @@ export default function ImportarPdf({ onPublicado }) {
         <p className="text-sm text-slate-400">Até 6 MB e 100 páginas por PDF; até 150 questões numeradas a partir de 1. No modo local, o PDF e a classificação permanecem no seu computador. Confira fórmulas, figuras e gabarito antes de publicar.</p>
         <button className={button} disabled={busy}>{busy?'Enviando…':'Extrair questões'}</button>
       </form>}
-      {job && <div className="space-y-5 rounded-2xl border border-slate-800 bg-slate-900 p-5">
+      {job && <div className="space-y-5 rounded-2xl border border-slate-800 bg-slate-900 p-3 sm:p-5">
         <div className="flex flex-wrap gap-4 items-center justify-between"><h2 className="text-xl font-bold">{job.concurso} · {job.ano} · Modelo {job.modelo}</h2><button disabled={busy||dirty} className="text-sm text-indigo-300 disabled:opacity-40" onClick={()=>replaceJob(null)}>Voltar às importações</button></div>
         <p role="status">{labels[job.status]} — {job.progresso}/{job.esperadas} questões processadas</p>
         {job.status==='REVISAO' && job.questoes.length<job.esperadas && <p className="text-amber-200">A leitura identificou {job.questoes.length} de {job.esperadas} questões. Confira a numeração e adicione as ausentes antes de publicar.</p>}
@@ -298,13 +298,13 @@ export default function ImportarPdf({ onPublicado }) {
             <button className="text-red-300 text-sm" onClick={()=>{setJob({...job,questoes:job.questoes.filter((_,i)=>i!==indice)});setIndice(0);setDirty(true)}}>Remover esta questão do rascunho</button>
           </div>}
           {job.questoes.length < job.esperadas && <button className={button} onClick={()=>{const n=Array.from({length:job.esperadas},(_,i)=>i+1).find(n=>!job.questoes.some(q=>q.numero_original===n));setJob({...job,questoes:[...job.questoes,{numero_original:n,pagina:1,materia:'',conteudo:'',dificuldade:'Média',texto_apoio:'',enunciado:'',opcoes:['','','','',''],resposta_correta:null,anulada:false,tem_imagem:false,revisada:false}]});setIndice(job.questoes.length);setDirty(true)}}>Adicionar questão ausente</button>}
-          <div className="sticky bottom-2 bg-slate-950 border border-slate-700 rounded-xl p-4 space-y-3">
+          <div className="sticky bottom-2 bg-slate-950 border border-slate-700 rounded-xl p-3 sm:p-4 space-y-3">
             <div className="flex flex-wrap items-center gap-3"><span className="text-sm">{revisadas}/{job.esperadas} aprovadas{dirty?' · alterações não salvas':''}</span><button className={button} disabled={busy} onClick={()=>save(false)}>Salvar rascunho</button><button className={button+' bg-emerald-700'} disabled={busy||dirty||bloqueiosPublicacao.length>0} onClick={()=>save(true)}>Publicar {job.questoes.length} questões</button></div>
             {bloqueiosPublicacao.length>0&&<div className="rounded-lg bg-amber-950/50 p-3 text-sm text-amber-100"><strong>Antes de publicar:</strong><ul className="mt-1 list-disc pl-5">{bloqueiosPublicacao.map(item=><li key={item}>{item}</li>)}</ul>{job.questoes.length>0&&job.questoes.length!==job.esperadas&&<button className="mt-2 underline" onClick={()=>{setJob({...job,esperadas:job.questoes.length});setDirty(true)}}>Usar as {job.questoes.length} questões extraídas como tamanho deste lote</button>}</div>}
           </div>
         </>}
       </div>}
-      {!job && <section className="space-y-3"><div className="flex gap-4 items-center"><h2 className="font-bold text-xl">Minhas importações</h2><button disabled={busy} className="text-indigo-300 text-sm" onClick={()=>run(async()=>setLista(await api('')))}>Atualizar lista</button></div>{!lista.length&&<p className="text-slate-400">Suas provas aparecerão aqui após o envio.</p>}{lista.map(item=><button key={item.id} disabled={busy} className="block w-full rounded-xl border border-slate-700 p-4 text-left hover:bg-slate-900" onClick={()=>run(async()=>replaceJob(await api(`/${item.id}`)))}><strong>{item.concurso} · {item.ano} · {item.modelo}</strong><span className="block text-sm text-slate-400">{labels[item.status]} · {item.progresso}/{item.esperadas}</span></button>)}</section>}
+      {!job && <section className="space-y-3"><div className="flex flex-wrap gap-3 items-center justify-between"><h2 className="font-bold text-xl">Minhas importações</h2><button disabled={busy} className="text-indigo-300 text-sm" onClick={()=>run(async()=>setLista(await api('')))}>Atualizar lista</button></div>{!lista.length&&<p className="text-slate-400">Suas provas aparecerão aqui após o envio.</p>}{lista.map(item=><button key={item.id} disabled={busy} className="block w-full break-words rounded-xl border border-slate-700 p-4 text-left hover:bg-slate-900" onClick={()=>run(async()=>replaceJob(await api(`/${item.id}`)))}><strong>{item.concurso} · {item.ano} · {item.modelo}</strong><span className="block text-sm text-slate-400">{labels[item.status]} · {item.progresso}/{item.esperadas}</span></button>)}</section>}
     </>}
   </section>
 }

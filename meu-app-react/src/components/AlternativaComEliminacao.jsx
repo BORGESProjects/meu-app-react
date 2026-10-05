@@ -2,8 +2,8 @@ import AlternativaQuestao from './AlternativaQuestao'
 
 export default function AlternativaComEliminacao({ questao, indice, texto, selecionada, eliminada, compacta = false, onSelecionar, onEliminar }) {
   const letra = String.fromCharCode(65 + indice)
-  const espacamento = compacta ? 'p-3 rounded-xl gap-3' : 'p-4 rounded-2xl gap-4'
-  const tamanhoLetra = compacta ? 'w-6 h-6 rounded-lg' : 'w-8 h-8 rounded-xl'
+  const espacamento = compacta ? 'p-3 rounded-xl gap-2 sm:gap-3' : 'p-3 sm:p-4 rounded-2xl gap-2 sm:gap-4'
+  const tamanhoLetra = compacta ? 'w-6 h-6 rounded-lg' : 'w-7 h-7 sm:w-8 sm:h-8 rounded-xl'
 
   return <div className="flex items-stretch gap-2">
     <button
@@ -27,7 +27,7 @@ export default function AlternativaComEliminacao({ questao, indice, texto, selec
       aria-pressed={eliminada}
       title={eliminada ? 'Restaurar alternativa' : 'Eliminar alternativa'}
       onClick={onEliminar}
-      className={`w-12 shrink-0 rounded-2xl border text-lg transition-all ${eliminada ? 'border-amber-500/60 bg-amber-500/15 text-amber-300' : 'border-slate-800 bg-slate-950/40 text-slate-500 hover:border-amber-500/50 hover:text-amber-300'}`}
+      className={`w-10 shrink-0 rounded-2xl border text-base transition-all sm:w-12 sm:text-lg ${eliminada ? 'border-amber-500/60 bg-amber-500/15 text-amber-300' : 'border-slate-800 bg-slate-950/40 text-slate-500 hover:border-amber-500/50 hover:text-amber-300'}`}
     >
       ✂️
     </button>
