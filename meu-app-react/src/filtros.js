@@ -19,22 +19,23 @@ export function chaveCampoFiltro(campo, valor) {
 
 const gruposConteudo = [
   ['Interpretação de textos', /interpretacao|compreensao|leitura|inferenc|tese|pressupost|parafrase/],
-  ['Gêneros e funções da linguagem', /genero|funcao da linguagem|linguagem verbal|tipologia textual|finalidade do texto/],
+  ['Gêneros e funções da linguagem', /genero|funcao da linguagem|teoria da linguagem|linguagem verbal|tipologia textual|tipos? de discurso|finalidade do texto/],
   ['Coesão, coerência e argumentação', /coesao|coerencia|argument|conectiv|operadores discursivos|progressao textual/],
   ['Semântica e vocabulário', /semant|sentido|signific|sinonim|antonim|polissem|vocabulario|lexico/],
-  ['Figuras de linguagem e estilística', /figura de linguagem|estilistic|recursos expressivos|ironia|metalinguagem/],
+  ['Figuras de linguagem e estilística', /figuras? de linguagem|estilistic|recursos expressivos|ironia|metalinguagem/],
   ['Fonética, ortografia e acentuação', /fonetic|fonolog|ortograf|acentua|silab|hiato|ditongo|encontro consonantal/],
-  ['Morfologia e classes de palavras', /morfolog|classe de palavra|substantiv|adjetiv|pronome|artigo|numeral|adverb|preposic|conjunc|verbo|formacao de palavra|estrutura e formacao/],
-  ['Sintaxe e análise sintática', /sintax|orac(?:ao|oes)|periodo composto|termos da oracao|sujeito|predicado|complemento nominal|adjunto|aposto|vocativo/],
+  ['Morfologia e classes de palavras', /morfolog|classes? de palavras?|substantiv|adjetiv|pronome|artigo|numerais?|adverb|preposic|conjunc|verbo|conjugacao verbal|tempos? verbais|palavras denotativas|colocacao pronominal|formacao de palavra|estrutura e formacao/],
+  ['Sintaxe e análise sintática', /sintax|sintat|orac(?:ao|oes)|periodo composto|termos da oracao|sujeito|predicado|predicativ|complemento nominal|adjunto|aposto|vocativo/],
+  ['Variação linguística', /variacao linguistica/],
   ['Concordância verbal e nominal', /concordancia/],
   ['Regência e crase', /regencia|crase/],
   ['Pontuação', /pontuacao|virgula/],
   ['Literatura brasileira e portuguesa', /literatura|romantismo|realismo|modernismo|simbolismo|parnasianismo|barroco|arcadismo|quinhentismo|maneirismo|machado de assis/],
-  ['Aritmética e números', /aritmet|numero(?:s)? (?:natural|inteiro|racional|real|primo)|divisibilidade|mdc|mmc|fracao|razao|proporcao|porcentagem|regra de tres|expressoes numericas/],
-  ['Álgebra, equações e inequações', /algebr|equac|inequac|sistema linear|expressoes algebricas/],
+  ['Aritmética e números', /aritmet|numero(?:s)? (?:natural|inteiro|racional|real|primo)|divisibilidade|mdc|mmc|frac(?:ao|oes)|razao|proporc|potenciacao|sistema decimal|porcentagem|regra de tres|expressoes numericas/],
+  ['Álgebra, equações e inequações', /algebr|equac|inequac|sistemas? lineares?|binomio de newton|expressoes algebricas/],
   ['Funções e gráficos', /funcao|funcoes|dominio de funcao|grafico de funcao/],
   ['Logaritmos e exponenciais', /logarit|exponencial/],
-  ['Geometria plana', /geometria plana|triangulo|quadrilatero|poligono|circunferencia|circulo|teorema de tales|pitagor|semelhanca/],
+  ['Geometria plana', /geometria plana|geometria e medidas|area de figuras|areas e unidades|triangulo|quadrilatero|poligono|circunferencia|circulo|teorema de tales|pitagor|semelhanca/],
   ['Geometria espacial', /geometria espacial|prisma|piramide|cilindro|cone|esfera|paralelepipedo|volume/],
   ['Geometria analítica', /geometria analitica|equacao da reta|distancia entre pontos|baricentro|plano cartesiano/],
   ['Trigonometria', /trigonom|seno|cosseno|tangente/],
@@ -83,7 +84,7 @@ const gruposConteudo = [
   ['Zoologia', /zoolog|animal|invertebrado|vertebrado/],
   ['Microbiologia e imunologia', /microbiolog|imunolog|virus|bacteria|fungo|protozo/],
   ['Química geral e estrutura atômica', /estrutura atomica|atomo|tabela periodica|ligacao quimica|quimica geral/],
-  ['Estequiometria e soluções', /estequiometr|solucao|concentracao|diluicao|mistura/],
+  ['Estequiometria e soluções', /estequiometr|\bsolucoes?\b|concentracao|diluicao|mistura/],
   ['Físico-química', /termoquim|cinetica quimica|equilibrio quimico|eletroquim|pilha|corrosao/],
   ['Química orgânica', /organica|hidrocarboneto|funcao organica|isomer|polimero/],
   ['Ácidos, bases e pH', /acido|base|ph|ionizacao/],
@@ -120,6 +121,11 @@ export function grupoConteudo(valor, materia = '') {
   }
   const grupo = [...gruposConteudoPrioritarios, ...gruposConteudo].find(([, padrao]) => padrao.test(chave))
   if (grupo) return { value: chaveFiltro(grupo[0]), label: grupo[0] }
+  if (chave === chaveMateria || chave.startsWith(`${chaveMateria} `)) {
+    const nomeMateria = limparValorFiltro(materia)
+    const label = `Conhecimentos gerais de ${nomeMateria}`
+    return { value: chaveFiltro(label), label }
+  }
 
   const base = original
     .split(/\s+(?:[—–]|\/)\s+|\s+-\s+/)[0]
