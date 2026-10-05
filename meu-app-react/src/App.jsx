@@ -11,6 +11,16 @@ import { tentarLeitura } from './carregarAcervo'
 import { chaveCampoFiltro, chaveConteudoFiltro, opcoesConteudo, opcoesFiltro } from './filtros'
 import { bancasRedacao, temasRedacao } from './data/temasRedacao'
 
+const DIAS_SEMANA = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo']
+
+function formatarDuracaoPlanejada(minutos) {
+  const total = Number(minutos) || 0
+  const horas = Math.floor(total / 60)
+  const restantes = total % 60
+  if (!horas) return `${restantes}min`
+  return restantes ? `${horas}h ${restantes}min` : `${horas}h`
+}
+
 function limparNomeDaProva(questao) {
   const banca = String(questao.banca || 'Prova').trim()
   const ano = anoDaQuestao(questao)
@@ -92,7 +102,9 @@ export default function App() {
 
   // Estados das Tarefas
   const [tarefas, setTarefas] = useState([])
-  const [novaTarefa, setNovaTarefa] = useState('')
+  const [novaTarefa, setNovaTarefa] = useState({
+    dia: 'Segunda-feira', materia: '', atividade: '', horario: '08:00', minutos: 60
+  })
 
   // Estados do Módulo de Redação (IA)
   const [temaRedacao, setTemaRedacao] = useState('')
@@ -450,13 +462,28 @@ export default function App() {
 
   function adicionarTarefa(e) {
     e.preventDefault()
-    if (!novaTarefa.trim()) return
-    setTarefas(prev => [{ id: crypto.randomUUID(), texto: novaTarefa.trim(), criada_em: new Date().toISOString() }, ...prev])
-    setNovaTarefa('')
+    if (!novaTarefa.materia.trim()) return
+    setTarefas(prev => [...prev, {
+      id: crypto.randomUUID(),
+      dia: novaTarefa.dia,
+      materia: novaTarefa.materia.trim(),
+      atividade: novaTarefa.atividade.trim(),
+      horario: novaTarefa.horario,
+      minutos: Math.max(15, Number(novaTarefa.minutos) || 60),
+      concluida: false,
+      criada_em: new Date().toISOString(),
+    }])
+    setNovaTarefa(atual => ({ ...atual, materia: '', atividade: '' }))
   }
 
   function deletarTarefa(id) {
     setTarefas(prev => prev.filter(tarefa => tarefa.id !== id))
+  }
+
+  function alternarTarefa(id) {
+    setTarefas(prev => prev.map(tarefa => tarefa.id === id
+      ? { ...tarefa, concluida: !tarefa.concluida }
+      : tarefa))
   }
 
   async function adicionarEditalItem(e) {
@@ -662,6 +689,13 @@ export default function App() {
   const totalQuestoesResolvidas = historicoRespostas.length
   const totalAcertos = historicoRespostas.filter(h => h.acertou).length
   const taxaAcertoGeral = totalQuestoesResolvidas > 0 ? ((totalAcertos / totalQuestoesResolvidas) * 100).toFixed(1) : 0
+
+  const tarefasDoCronograma = tarefas.filter(tarefa => DIAS_SEMANA.includes(tarefa.dia))
+  const tarefasSemDia = tarefas.filter(tarefa => !DIAS_SEMANA.includes(tarefa.dia))
+  const minutosPlanejados = tarefasDoCronograma.reduce((total, tarefa) => total + (Number(tarefa.minutos) || 0), 0)
+  const minutosConcluidos = tarefasDoCronograma.filter(tarefa => tarefa.concluida).reduce((total, tarefa) => total + (Number(tarefa.minutos) || 0), 0)
+  const nomesDiaAtual = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
+  const diaAtual = nomesDiaAtual[new Date().getDay()]
 
   const errosPorConteudo = {}
   historicoRespostas.forEach(h => {
@@ -1248,20 +1282,96 @@ export default function App() {
 
         {/* ABA: TAREFAS */}
         {abaAtiva === 'tarefas' && (
-          <div className="max-w-xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-8 shadow-xl backdrop-blur-md">
-            <h2 className="text-2xl font-extrabold text-slate-100 mb-6 tracking-tight">⚡ Tarefas de Estudo</h2>
-            <form onSubmit={adicionarTarefa} className="mb-6 flex flex-col gap-3 sm:flex-row">
-              <input type="text" placeholder="Nova tarefa..." value={novaTarefa} onChange={e => setNovaTarefa(e.target.value)} className="flex-1 bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 shadow-inner" />
-              <button type="submit" className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white px-6 py-3 rounded-2xl text-sm font-medium shadow-md shadow-indigo-600/20">Adicionar</button>
+          <div className="space-y-6">
+            <header>
+              <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">📅 Cronograma semanal</h1>
+              <p className="mt-1 text-sm text-slate-400">Distribua matérias e horas ao longo da semana e marque cada sessão concluída.</p>
+            </header>
+
+            <section className="grid grid-cols-1 gap-3 min-[380px]:grid-cols-3">
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+                <p className="text-xs font-semibold uppercase text-slate-500">Planejado</p>
+                <p className="mt-1 text-2xl font-extrabold text-indigo-300">{formatarDuracaoPlanejada(minutosPlanejados)}</p>
+              </div>
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+                <p className="text-xs font-semibold uppercase text-slate-500">Concluído</p>
+                <p className="mt-1 text-2xl font-extrabold text-emerald-400">{formatarDuracaoPlanejada(minutosConcluidos)}</p>
+              </div>
+              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4">
+                <p className="text-xs font-semibold uppercase text-slate-500">Sessões</p>
+                <p className="mt-1 text-2xl font-extrabold text-slate-100">{tarefasDoCronograma.filter(tarefa => tarefa.concluida).length}/{tarefasDoCronograma.length}</p>
+              </div>
+            </section>
+
+            <form onSubmit={adicionarTarefa} className="rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-xl sm:p-6">
+              <div className="mb-4">
+                <h2 className="text-lg font-bold text-slate-100">Adicionar sessão de estudo</h2>
+                <p className="mt-1 text-xs text-slate-400">A duração representa o tempo que você pretende dedicar à matéria.</p>
+              </div>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+                <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Dia
+                  <select value={novaTarefa.dia} onChange={e => setNovaTarefa({ ...novaTarefa, dia: e.target.value })} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100">
+                    {DIAS_SEMANA.map(dia => <option key={dia}>{dia}</option>)}
+                  </select>
+                </label>
+                <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Matéria
+                  <input required list="materias-cronograma" placeholder="Ex.: Matemática" value={novaTarefa.materia} onChange={e => setNovaTarefa({ ...novaTarefa, materia: e.target.value })} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100" />
+                  <datalist id="materias-cronograma">{materiasDisponiveis.map(opcao => <option key={opcao.value} value={opcao.label} />)}</datalist>
+                </label>
+                <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Atividade
+                  <input placeholder="Ex.: Funções" value={novaTarefa.atividade} onChange={e => setNovaTarefa({ ...novaTarefa, atividade: e.target.value })} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100" />
+                </label>
+                <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Horário
+                  <input type="time" required value={novaTarefa.horario} onChange={e => setNovaTarefa({ ...novaTarefa, horario: e.target.value })} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100" />
+                </label>
+                <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Duração
+                  <select value={novaTarefa.minutos} onChange={e => setNovaTarefa({ ...novaTarefa, minutos: Number(e.target.value) })} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100">
+                    {[30, 45, 60, 90, 120, 180].map(minutos => <option key={minutos} value={minutos}>{formatarDuracaoPlanejada(minutos)}</option>)}
+                  </select>
+                </label>
+              </div>
+              <button type="submit" className="mt-5 w-full rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 px-6 py-3 text-sm font-semibold text-white shadow-md shadow-indigo-600/20 sm:w-auto">Adicionar ao cronograma</button>
             </form>
-            <div className="space-y-3">
-              {tarefas.map(t => (
-                <div key={t.id} className="flex items-start justify-between gap-3 bg-slate-950/40 p-4 rounded-2xl border border-slate-800 text-sm">
-                  <span className="min-w-0 break-words text-slate-200 font-medium">{t.texto}</span>
-                  <button onClick={() => deletarTarefa(t.id)} className="text-slate-500 hover:text-red-400 p-1.5 rounded-xl transition-colors">✕</button>
-                </div>
-              ))}
-            </div>
+
+            <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {DIAS_SEMANA.map(dia => {
+                const sessoes = tarefasDoCronograma
+                  .filter(tarefa => tarefa.dia === dia)
+                  .sort((a, b) => String(a.horario || '').localeCompare(String(b.horario || '')))
+                const minutosDia = sessoes.reduce((total, tarefa) => total + (Number(tarefa.minutos) || 0), 0)
+                return <article key={dia} className={`rounded-3xl border p-4 shadow-lg ${dia === diaAtual ? 'border-indigo-500/60 bg-indigo-950/20' : 'border-slate-800 bg-slate-900/60'}`}>
+                  <div className="mb-4 flex items-center justify-between gap-3 border-b border-slate-800 pb-3">
+                    <div>
+                      <h2 className="font-bold text-slate-100">{dia}</h2>
+                      {dia === diaAtual && <span className="text-xs font-semibold text-indigo-300">Hoje</span>}
+                    </div>
+                    <span className="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-slate-300">{formatarDuracaoPlanejada(minutosDia)}</span>
+                  </div>
+                  {sessoes.length === 0 ? <p className="py-5 text-center text-sm text-slate-500">Dia livre</p> : <div className="space-y-3">
+                    {sessoes.map(tarefa => <div key={tarefa.id} className={`rounded-2xl border p-3 ${tarefa.concluida ? 'border-emerald-500/30 bg-emerald-950/20' : 'border-slate-800 bg-slate-950/50'}`}>
+                      <div className="flex items-start gap-3">
+                        <input aria-label={`Marcar ${tarefa.materia} como concluída`} type="checkbox" checked={Boolean(tarefa.concluida)} onChange={() => alternarTarefa(tarefa.id)} className="mt-1 h-5 w-5 shrink-0 cursor-pointer" />
+                        <div className="min-w-0 flex-1">
+                          <div className="flex flex-wrap items-center gap-2">
+                            <strong className={`break-words text-sm ${tarefa.concluida ? 'text-emerald-300 line-through' : 'text-slate-100'}`}>{tarefa.materia}</strong>
+                            <span className="text-xs text-slate-500">{tarefa.horario}</span>
+                          </div>
+                          {tarefa.atividade && <p className="mt-1 break-words text-xs text-slate-400">{tarefa.atividade}</p>}
+                          <p className="mt-2 text-xs font-semibold text-indigo-300">{formatarDuracaoPlanejada(tarefa.minutos)}</p>
+                        </div>
+                        <button aria-label={`Excluir sessão de ${tarefa.materia}`} onClick={() => deletarTarefa(tarefa.id)} className="shrink-0 rounded-lg p-1 text-slate-500 hover:text-red-400">✕</button>
+                      </div>
+                    </div>)}
+                  </div>}
+                </article>
+              })}
+            </section>
+
+            {tarefasSemDia.length > 0 && <section className="rounded-3xl border border-amber-500/25 bg-amber-950/10 p-4 sm:p-6">
+              <h2 className="font-bold text-amber-200">Tarefas antigas sem horário</h2>
+              <p className="mt-1 text-xs text-slate-400">Estas tarefas foram criadas antes do cronograma semanal.</p>
+              <div className="mt-4 space-y-2">{tarefasSemDia.map(tarefa => <div key={tarefa.id} className="flex items-start justify-between gap-3 rounded-xl border border-slate-800 bg-slate-950/40 p-3 text-sm"><span className="min-w-0 break-words text-slate-200">{tarefa.texto || tarefa.atividade || 'Tarefa sem descrição'}</span><button onClick={() => deletarTarefa(tarefa.id)} className="shrink-0 text-slate-500 hover:text-red-400">✕</button></div>)}</div>
+            </section>}
           </div>
         )}
       </main>
