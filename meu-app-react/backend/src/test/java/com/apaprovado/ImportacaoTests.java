@@ -111,6 +111,17 @@ class ImportacaoTests {
         assertThrows(ResponseStatusException.class,()->drafts.normalize(mapper.createArrayNode(),job,true));
         assertThrows(ResponseStatusException.class,()->pdfs.validate("not a PDF".getBytes()));
     }
+    @Test void reviewRejectsRepeatedBlankAndContaminatedOptions() throws Exception {
+        ImportacaoPdf job=new ImportacaoPdf();job.esperadas=1;job.paginas=1;
+        ArrayNode values=fixture();
+        ArrayNode options=(ArrayNode)values.get(0).path("opcoes");
+        options.set(1,options.get(0));
+        assertThrows(ResponseStatusException.class,()->drafts.normalize(values,job,true));
+        options.set(1,TextNode.valueOf(""));
+        assertThrows(ResponseStatusException.class,()->drafts.normalize(values,job,true));
+        options.set(1,TextNode.valueOf("x".repeat(501)));
+        assertThrows(ResponseStatusException.class,()->drafts.normalize(values,job,true));
+    }
     @Test void interruptedExtractionPreservesCompletedBatches() throws Exception {
         when(local.extract(any())).thenThrow(new IllegalStateException("PDF ilegível"));
         byte[] original=pdf();

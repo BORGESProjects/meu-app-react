@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { existsSync } from 'node:fs'
-import { acervo as completo, anoDaQuestao, unirQuestoes, podeCorrigir } from '../src/acervo.js'
+import { acervo as completo, anoDaQuestao, unirQuestoes, podeCorrigir, corrigirQuestaoConferida, questaoPublicavel } from '../src/acervo.js'
 const acervo = completo.filter(q => q.banca === 'ESA')
 
 test('imagens de enunciado não repetem alternativas e figuras de resposta ficam separadas', () => {
@@ -53,10 +53,34 @@ test('anos desconhecidos continuam visíveis e registros existentes são preserv
   assert.equal(anoDaQuestao({}), 'Não informado')
   assert.equal(anoDaQuestao({concurso:'ESA 2024'}), '2024')
   assert.equal(anoDaQuestao({ano:2023,concurso:'ESA 2024'}), '2023')
-  const antiga = { id:123, enunciado:'Questão existente', resposta_correta:0 }
+  const antiga = { id:123, enunciado:'Questão existente e válida', opcoes:['Uma','Duas'], resposta_correta:0 }
   assert.equal(unirQuestoes([antiga]).length, completo.length + 1)
   assert.deepEqual(unirQuestoes([antiga]).find(q => q.id === 123), antiga)
   assert.equal(unirQuestoes([acervo[0]]).length, completo.length)
+})
+
+test('corrige a alternativa contaminada da UTFPR e bloqueia questões estruturalmente inválidas', () => {
+  const utfpr = corrigirQuestaoConferida({
+    id:3165,
+    enunciado:'Assinale a solução da equação biquadrada.',
+    opcoes:['A','B','C','D','alternativa seguida por uma questão da EPCAR'],
+    resposta_correta:'C',
+  })
+  assert.deepEqual(utfpr.opcoes, [
+    '{−√2/2, √2/2}',
+    '{−√3/2, √3/2}',
+    '{−√2, √2}',
+    '{−√2/3, √2/3}',
+    '{−√3, √3}',
+  ])
+  assert.equal(utfpr.resposta_correta, 2)
+  assert.equal(utfpr.numero_original, 19)
+  assert.equal(utfpr.ano, 2018)
+  assert.equal(questaoPublicavel(utfpr), true)
+  assert.equal(questaoPublicavel({ ...utfpr, opcoes:['igual','igual'] }), false)
+  assert.equal(questaoPublicavel({ ...utfpr, opcoes:['válida',''] }), false)
+  assert.equal(questaoPublicavel({ ...utfpr, resposta_correta:8 }), false)
+  assert.equal(questaoPublicavel({ ...utfpr, opcoes:['a'.repeat(501),'válida'], resposta_correta:1 }), false)
 })
 
 test('ENEM 2022 contém ambos os idiomas, 185 questões e os dois gabaritos oficiais', () => {

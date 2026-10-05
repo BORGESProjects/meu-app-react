@@ -57,7 +57,14 @@ public class QuestionDrafts {
                 for (String field : List.of("enunciado", "materia", "conteudo"))
                     if (clean.path(field).asText().isBlank()) throw bad("Preencha " + field + " na questão " + n + ".");
                 if (!List.of("Fácil", "Média", "Difícil").contains(clean.path("dificuldade").asText())) throw bad("Dificuldade inválida.");
-                for (JsonNode opt : opts) if (opt.asText().isBlank()) throw bad("Preencha as alternativas da questão " + n + ".");
+                Set<String> uniqueOptions = new HashSet<>();
+                for (JsonNode opt : opts) {
+                    String option = opt.asText().trim();
+                    if (option.isBlank()) throw bad("Preencha as alternativas da questão " + n + ".");
+                    if (option.length() > 500) throw bad("A questão " + n + " contém uma alternativa longa demais. Verifique se outra questão foi anexada por engano.");
+                    String normalized = option.replaceAll("\\s+", " ").toLowerCase(Locale.ROOT);
+                    if (!uniqueOptions.add(normalized)) throw bad("A questão " + n + " contém alternativas repetidas.");
+                }
                 if (!cancelled && clean.path("resposta_correta").isNull()) throw bad("Confira o gabarito da questão " + n + ".");
                 if (page < 1 || page > job.paginas) throw bad("Confira a página original da questão " + n + ".");
             }
