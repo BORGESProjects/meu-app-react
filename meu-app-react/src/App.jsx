@@ -650,7 +650,7 @@ export default function App() {
   const anosDisponiveis = [...new Set(questoes.map(anoDaQuestao))].sort((a,b) => b.localeCompare(a)).map(ano => ({ value: ano, label: ano }))
   const dificuldadesDisponiveis = opcoesFiltro(questoes, 'dificuldade')
   const baseConteudos = filtroMateria === TODOS ? questoes : questoes.filter(q => chaveCampoFiltro('materia', q.materia) === filtroMateria)
-  const conteudosDisponiveis = filtroMateria === TODOS ? [] : opcoesConteudo(baseConteudos)
+  const conteudosDisponiveis = opcoesConteudo(baseConteudos)
   function limparFiltros() {
     setFiltrosAno([]); setFiltroMateria(TODOS); setFiltroConteudo(TODOS)
     setFiltrosBanca([]); setFiltroDificuldade(TODOS); setLimiteVisivel(40)
@@ -757,7 +757,7 @@ export default function App() {
             {/* Filtros */}
             <div className="relative z-20 mb-6 grid grid-cols-1 gap-4 overflow-visible rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-xl backdrop-blur-md sm:mb-8 sm:grid-cols-2 sm:p-6 2xl:grid-cols-5">
               <div className="sm:col-span-2 2xl:col-span-5 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
-                <div><h2 className="font-bold text-slate-100">Filtrar questões</h2><p className="text-xs text-slate-400 mt-1">Escolha uma matéria para ver poucos grupos de conteúdo, organizados por assunto.</p></div>
+                <div><h2 className="font-bold text-slate-100">Filtrar questões</h2><p className="text-xs text-slate-400 mt-1">Os conteúdos semelhantes já aparecem agrupados; escolher uma matéria reduz ainda mais a lista.</p></div>
                 {totalFiltrosAtivos > 0 && <button type="button" onClick={limparFiltros} className="rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:border-indigo-500 hover:text-indigo-200">Limpar {totalFiltrosAtivos} filtro(s)</button>}
               </div>
               <FiltroMultiplo titulo="Ano" opcoes={anosDisponiveis} selecionados={filtrosAno} aoAlterar={valores => { setFiltrosAno(valores); setLimiteVisivel(40) }} rotuloTodos="Todos os anos" />
@@ -769,9 +769,9 @@ export default function App() {
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Conteúdo{filtroMateria !== TODOS ? ` (${conteudosDisponiveis.length} grupos)` : ''}</label>
-                <select disabled={filtroMateria === TODOS} value={filtroConteudo} onChange={(e) => { setFiltroConteudo(e.target.value); setLimiteVisivel(40) }} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner disabled:cursor-not-allowed disabled:opacity-60">
-                  <option value={TODOS}>{filtroMateria === TODOS ? 'Escolha uma matéria primeiro' : 'Todos os conteúdos'}</option>
+                <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Conteúdo ({conteudosDisponiveis.length} grupos)</label>
+                <select value={filtroConteudo} onChange={(e) => { setFiltroConteudo(e.target.value); setLimiteVisivel(40) }} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner">
+                  <option value={TODOS}>Todos os conteúdos</option>
                   {conteudosDisponiveis.map(opcao => <option key={opcao.value} value={opcao.value}>{opcao.label}</option>)}
                 </select>
               </div>
