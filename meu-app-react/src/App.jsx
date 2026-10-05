@@ -11,6 +11,45 @@ import { tentarLeitura } from './carregarAcervo'
 import { chaveCampoFiltro, opcoesFiltro, TODOS } from './filtros'
 import { bancasRedacao, temasRedacao } from './data/temasRedacao'
 
+function limparNomeDaProva(questao) {
+  const banca = String(questao.banca || 'Prova').trim()
+  const ano = anoDaQuestao(questao)
+  const materia = String(questao.materia || '').trim()
+  let concurso = String(questao.concurso || `${banca} ${ano}`).trim()
+  if (materia) {
+    const materiaEscapada = materia.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    concurso = concurso.replace(new RegExp(`\\s*[—–-]\\s*${materiaEscapada}\\s*$`, 'i'), '').trim()
+  }
+  if (banca.toUpperCase() === 'ENEM') concurso = `ENEM ${ano}`
+  return concurso
+}
+
+function dadosDaProva(questao) {
+  const ano = anoDaQuestao(questao)
+  const banca = String(questao.banca || 'Geral').trim()
+  const concurso = limparNomeDaProva(questao)
+  const dia = Number(questao.dia)
+  const modelo = String(questao.modelo || '').trim()
+  const detalhes = []
+  if (Number.isInteger(dia) && dia > 0 && !concurso.toLowerCase().includes(`${dia}º dia`)) detalhes.push(`${dia}º dia`)
+  if (modelo && !/^aplicação regular$/i.test(modelo) && !concurso.toLowerCase().includes(modelo.toLowerCase())) detalhes.push(modelo)
+  const prova = [concurso, ...detalhes].join(' · ')
+  return { ano, banca, concurso, prova, id: [ano, banca, prova].join('|').toLocaleLowerCase('pt-BR') }
+}
+
+function questoesDaProva(questoes, provaId) {
+  return questoes
+    .filter(questao => podeCorrigir(questao) && dadosDaProva(questao).id === provaId)
+    .sort((a, b) => {
+      const numeroA = Number(a.numero_original)
+      const numeroB = Number(b.numero_original)
+      if (Number.isFinite(numeroA) && Number.isFinite(numeroB)) return numeroA - numeroB
+      if (Number.isFinite(numeroA)) return -1
+      if (Number.isFinite(numeroB)) return 1
+      return String(a.id).localeCompare(String(b.id), 'pt-BR', { numeric: true })
+    })
+}
+
 export default function App() {
   const [abaAtiva, setAbaAtiva] = useState('questoes')
   const [session, setSession] = useState(null)
@@ -74,9 +113,9 @@ export default function App() {
     concluido: false 
   })
 
-  // Estados de Simulados (Otimizados com Curso, Ano e Tipo)
-  const [filtroCursoSimulado, setFiltroCursoSimulado] = useState('Todos')
-  const [filtroTipoSimulado, setFiltroTipoSimulado] = useState('Todos') // 'Oficial' | 'Inédito/Professor'
+  // Estados de Simulados organizados por edição completa da prova
+  const [filtroAnoSimulado, setFiltroAnoSimulado] = useState('Todos')
+  const [filtroProvaSimulado, setFiltroProvaSimulado] = useState('Todos')
   const [simuladoAtivo, setSimuladoAtivo] = useState(null) // Guarda o objeto do simulado selecionado
   const [respostasSimulado, setRespostasSimulado] = useState({})
   const [resultadoSimuladoFinal, setResultadoSimuladoFinal] = useState(null)
@@ -527,7 +566,7 @@ export default function App() {
 
   function finalizarSimulado() {
     if (!simuladoAtivo) return
-    const questoesSimulado = questoes.filter(q => podeCorrigir(q) && q.concurso === simuladoAtivo.concurso && q.banca === simuladoAtivo.banca)
+    const questoesSimulado = questoesDaProva(questoes, simuladoAtivo.id)
     let acertos = 0
     let erros = 0
     const detalhes = []
@@ -581,25 +620,30 @@ export default function App() {
   
   questoes.forEach(q => {
     if (!q.concurso || !podeCorrigir(q)) return
-    const chave = `${q.concurso}-${q.banca || 'Geral'}`
+    const dados = dadosDaProva(q)
+    const chave = dados.id
     if (!mapaSimulados[chave]) {
       mapaSimulados[chave] = {
         id: chave,
-        concurso: q.concurso,
-        banca: q.banca || 'Inédito / Professor',
-        tipo: q.banca && q.banca.toLowerCase().includes('professor') ? 'Inédito/Professor' : 'Oficial',
+        ano: dados.ano,
+        prova: dados.prova,
+        concurso: dados.concurso,
+        banca: dados.banca,
         questoesCount: 0
       }
       simuladosDisponiveis.push(mapaSimulados[chave])
     }
     mapaSimulados[chave].questoesCount++
   })
+  simuladosDisponiveis.sort((a, b) => b.ano.localeCompare(a.ano, 'pt-BR', { numeric: true }) || a.prova.localeCompare(b.prova, 'pt-BR'))
 
   const simuladosFiltrados = simuladosDisponiveis.filter(sim => {
-    const bateCurso = filtroCursoSimulado === 'Todos' || sim.concurso.toLowerCase().includes(filtroCursoSimulado.toLowerCase())
-    const bateTipo = filtroTipoSimulado === 'Todos' || sim.tipo === filtroTipoSimulado
-    return bateCurso && bateTipo
+    const bateAno = filtroAnoSimulado === 'Todos' || sim.ano === filtroAnoSimulado
+    const bateProva = filtroProvaSimulado === 'Todos' || sim.id === filtroProvaSimulado
+    return bateAno && bateProva
   })
+  const anosSimuladoDisponiveis = [...new Set(simuladosDisponiveis.map(sim => sim.ano))].sort((a, b) => b.localeCompare(a, 'pt-BR', { numeric: true }))
+  const provasSimuladoDisponiveis = simuladosDisponiveis.filter(sim => filtroAnoSimulado === 'Todos' || sim.ano === filtroAnoSimulado)
 
   const materiasDisponiveis = opcoesFiltro(questoes, 'materia')
   const bancasDisponiveis = opcoesFiltro(questoes, 'banca')
@@ -793,36 +837,32 @@ export default function App() {
                 <header className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
                     <h1 className="text-3xl font-extrabold text-slate-100 tracking-tight">📝 Provas e Simulados</h1>
-                    <p className="text-slate-400 text-sm mt-1">Filtre por curso e origem das questões para iniciar sua simulação. Questões anuladas não entram no simulado.</p>
+                    <p className="text-slate-400 text-sm mt-1">Escolha o ano e a prova completa. Todas as matérias do caderno aparecem juntas e as questões anuladas ficam de fora.</p>
                   </div>
                 </header>
 
                 <div className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-6 mb-8 grid grid-cols-1 md:grid-cols-2 gap-4 backdrop-blur-md shadow-xl">
                   <div>
-                    <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Filtrar por Curso</label>
+                    <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Ano</label>
                     <select 
-                      value={filtroCursoSimulado} 
-                      onChange={(e) => setFiltroCursoSimulado(e.target.value)} 
+                      value={filtroAnoSimulado}
+                      onChange={(e) => { setFiltroAnoSimulado(e.target.value); setFiltroProvaSimulado('Todos') }}
                       className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
                     >
-                      <option value="Todos">Todos os Cursos</option>
-                      <option value="EsPCEx">EsPCEx</option>
-                      <option value="ESA">ESA</option>
-                      <option value="ENEM">ENEM</option>
-                      <option value="EEAR">EEAR</option>
+                      <option value="Todos">Todos os anos</option>
+                      {anosSimuladoDisponiveis.map(ano => <option key={ano} value={ano}>{ano}</option>)}
                     </select>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Tipo de Questões</label>
+                    <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Prova</label>
                     <select 
-                      value={filtroTipoSimulado} 
-                      onChange={(e) => setFiltroTipoSimulado(e.target.value)} 
+                      value={filtroProvaSimulado}
+                      onChange={(e) => setFiltroProvaSimulado(e.target.value)}
                       className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
                     >
-                      <option value="Todos">Todos (Oficiais & Professores)</option>
-                      <option value="Oficial">Provas Oficiais</option>
-                      <option value="Inédito/Professor">Questões Inéditas / Criadas por Professores</option>
+                      <option value="Todos">Todas as provas</option>
+                      {provasSimuladoDisponiveis.map(sim => <option key={sim.id} value={sim.id}>{sim.prova}</option>)}
                     </select>
                   </div>
                 </div>
@@ -833,16 +873,16 @@ export default function App() {
                       <div>
                         <div className="flex items-center gap-2 mb-2 flex-wrap">
                           <span className="bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full text-xs font-medium">
-                            {simulado.concurso}
+                            {simulado.ano}
                           </span>
                           <span className="bg-slate-800 text-slate-300 px-3 py-1 rounded-full text-xs font-medium">
                             {simulado.banca}
                           </span>
                         </div>
                         <h3 className="text-xl font-bold text-slate-100 mt-3 group-hover:text-indigo-300 transition-colors">
-                          Simulado {simulado.concurso} ({simulado.banca})
+                          {simulado.prova}
                         </h3>
-                        <p className="text-slate-400 text-sm mt-2">{simulado.questoesCount} questão(ões) nesta seleção.</p>
+                        <p className="text-slate-400 text-sm mt-2">Prova completa com {simulado.questoesCount} questão(ões), reunindo todas as matérias disponíveis.</p>
                       </div>
                       <button 
                         onClick={() => { setSimuladoAtivo(simulado); setRespostasSimulado({}); setResultadoSimuladoFinal(null); limparEliminacoesDoSimulado(); }}
@@ -864,13 +904,13 @@ export default function App() {
               <div className="space-y-6">
                 <div className="flex items-center justify-between bg-slate-900/80 border border-slate-800 p-5 rounded-3xl backdrop-blur-md shadow-xl">
                   <div>
-                    <h2 className="text-xl font-bold text-slate-100">Simulado: {simuladoAtivo.concurso} - {simuladoAtivo.banca}</h2>
+                    <h2 className="text-xl font-bold text-slate-100">{simuladoAtivo.prova} · {simuladoAtivo.banca}</h2>
                     <p className="text-xs text-slate-400 mt-0.5">Responda todas as questões e finalize para auditar o seu resultado.</p>
                   </div>
                   <button onClick={() => setSimuladoAtivo(null)} className="text-slate-400 hover:text-slate-100 text-xs font-medium bg-slate-800 px-4 py-2 rounded-2xl transition-all">Sair da Prova</button>
                 </div>
 
-                {questoes.filter(q => podeCorrigir(q) && q.concurso === simuladoAtivo.concurso && q.banca === simuladoAtivo.banca).map((q, index) => (
+                {questoesDaProva(questoes, simuladoAtivo.id).map((q, index) => (
                   <div key={q.id} className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-7 shadow-xl backdrop-blur-md">
                     <div className="flex gap-2.5 mb-5">
                       <span className="bg-indigo-600 text-white px-3.5 py-1 rounded-full text-xs font-bold shadow-md shadow-indigo-600/20">Questão {index + 1}</span>
