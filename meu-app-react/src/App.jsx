@@ -240,8 +240,18 @@ export default function App() {
       setFontesAcervo(prev => ({ ...prev, enemHistorico: data.length }))
       setQuestoes(prev => unirQuestoes([...prev,...data]))
     })
-    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021']
-    const resultados = await Promise.allSettled([banco,importadas,enemHistorico])
+    const cfnHistorico = tentarLeitura(async () => {
+      const r = await fetch('/acervo/cfn-2020-2025/questoes.json', {signal:AbortSignal.timeout(30000)})
+      if (!r.ok) throw new Error('Edições históricas do CFN indisponíveis')
+      const data = await r.json()
+      if (!Array.isArray(data) || data.length !== 300) throw new Error('Lote histórico do CFN inválido')
+      return data
+    }).then(data => {
+      setFontesAcervo(prev => ({ ...prev, cfnHistorico: data.length }))
+      setQuestoes(prev => unirQuestoes([...prev,...data]))
+    })
+    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025']
+    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico])
     setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
     setCarregandoAcervo(false)
   }
