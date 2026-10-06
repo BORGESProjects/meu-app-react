@@ -2,6 +2,7 @@ import { anoDaQuestao } from '../acervo'
 import { API_URL } from '../api'
 
 export default function EnunciadoQuestao({ questao: q }) {
+  const imagemPrincipal = q.imagem_original || q.pagina_imagem
   return <div className="mb-6 space-y-3">
     <div className="flex flex-wrap gap-3 text-xs text-slate-400">
       <span>Ano: {anoDaQuestao(q)}</span>
@@ -22,13 +23,13 @@ export default function EnunciadoQuestao({ questao: q }) {
     </section>}
     {q.imagem_original ? <>
       <a href={q.imagem_original} target="_blank" rel="noreferrer" className="block" aria-label={`Ampliar questão ${q.numero_original}`}>
-        <img src={q.imagem_original} alt={q.enunciado} loading="lazy" className="w-full h-auto rounded-lg bg-white" />
+        <img src={q.imagem_original} alt={q.texto_extraido_corrompido ? `Questão ${q.numero_original} da prova` : q.enunciado} loading="lazy" className="w-full h-auto rounded-lg bg-white" />
       </a>
       <p className="text-xs text-slate-400">Clique na imagem para ampliar.{!q.anulada && ' Selecione sua resposta abaixo.'}</p>
-      <details className="text-sm text-slate-300"><summary className="cursor-pointer">Ler texto extraído</summary>
+      {!q.texto_extraido_corrompido && <details className="text-sm text-slate-300"><summary className="cursor-pointer">Ler texto extraído</summary>
         <p className="whitespace-pre-wrap mt-2">{q.enunciado}</p>
         <p className="text-xs mt-2">Consulte a imagem original para fórmulas, gráficos e trechos destacados.</p>
-      </details>
-    </> : <p className="text-slate-100 text-base font-medium leading-relaxed whitespace-pre-wrap">{q.enunciado}</p>}
+      </details>}
+    </> : !imagemPrincipal && <p className="text-slate-100 text-base font-medium leading-relaxed whitespace-pre-wrap">{q.enunciado}</p>}
   </div>
 }

@@ -25,7 +25,7 @@ public class QuestionDrafts {
             clean.put("numero_original", n);
             if (q.path("numero_fonte").canConvertToInt()) clean.put("numero_fonte", q.path("numero_fonte").asInt());
             for (String field : List.of("enunciado", "texto_apoio", "materia", "conteudo", "dificuldade", "observacao", "banca", "concurso", "fonte", "modelo")) {
-                String value = q.path(field).asText("").trim();
+                String value = cleanExtractionMarkers(q.path(field).asText(""));
                 if (value.length() > (field.equals("texto_apoio") ? 30000 : field.equals("enunciado") ? 15000 : 600))
                     throw bad("Um campo da questão " + n + " é longo demais.");
                 clean.put(field, value);
@@ -38,7 +38,7 @@ public class QuestionDrafts {
             ArrayNode opts = clean.putArray("opcoes");
             for (JsonNode opt : options) {
                 if (!opt.isTextual() || opt.asText().length() > 5000) throw bad("Alternativa inválida na questão " + n + ".");
-                opts.add(opt.asText().trim());
+                opts.add(cleanExtractionMarkers(opt.asText()));
             }
             boolean cancelled = q.path("anulada").asBoolean(false);
             clean.put("anulada", cancelled);
@@ -56,12 +56,15 @@ public class QuestionDrafts {
                 if (!clean.path("revisada").asBoolean()) throw bad("Revise e confirme a questão " + n + ".");
                 for (String field : List.of("enunciado", "materia", "conteudo"))
                     if (clean.path(field).asText().isBlank()) throw bad("Preencha " + field + " na questão " + n + ".");
+                for (String field : List.of("enunciado", "texto_apoio"))
+                    if (hasBrokenGlyphs(clean.path(field).asText())) throw bad("A questão " + n + " contém texto ou equação ilegível. Confira o PDF original.");
                 if (!List.of("Fácil", "Média", "Difícil").contains(clean.path("dificuldade").asText())) throw bad("Dificuldade inválida.");
                 Set<String> uniqueOptions = new HashSet<>();
                 for (JsonNode opt : opts) {
                     String option = opt.asText().trim();
                     if (option.isBlank()) throw bad("Preencha as alternativas da questão " + n + ".");
                     if (option.length() > 500) throw bad("A questão " + n + " contém uma alternativa longa demais. Verifique se outra questão foi anexada por engano.");
+                    if (hasBrokenGlyphs(option)) throw bad("A questão " + n + " contém uma alternativa ilegível. Confira o PDF original.");
                     String normalized = option.replaceAll("\\s+", " ").toLowerCase(Locale.ROOT);
                     if (!uniqueOptions.add(normalized)) throw bad("A questão " + n + " contém alternativas repetidas.");
                 }
@@ -76,6 +79,15 @@ public class QuestionDrafts {
         output.forEach(sorted::add);
         sorted.sort(Comparator.comparingInt(q -> q.path("numero_original").asInt()));
         return mapper.createArrayNode().addAll(sorted);
+    }
+    private String cleanExtractionMarkers(String value) {
+        return value.replaceAll("(?m)(?:^|\\s)#{3,}(?=\\s|$)", " ").replaceAll("[ \\t]+\\n", "\n").trim();
+    }
+    private boolean hasBrokenGlyphs(String value) {
+        return value.matches("(?s).*[\\uE000-\\uF8FF\\uFFFD\\u25A0\\u25A1\\u0900-\\u0DFF\\u1200-\\u137F].*")
+            || value.matches("(?is).*\\(cid:\\d+\\).*")
+            || value.matches("(?s).*(?:\\?\\s*){4,}.*")
+            || value.chars().anyMatch(c -> c < 32 && c != '\n' && c != '\r' && c != '\t');
     }
     private ResponseStatusException bad(String msg) { return new ResponseStatusException(HttpStatus.BAD_REQUEST, msg); }
 }

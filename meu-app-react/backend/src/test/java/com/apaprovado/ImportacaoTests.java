@@ -122,6 +122,19 @@ class ImportacaoTests {
         options.set(1,TextNode.valueOf("x".repeat(501)));
         assertThrows(ResponseStatusException.class,()->drafts.normalize(values,job,true));
     }
+    @Test void reviewCleansPdfSeparatorsAndRejectsBrokenEquationGlyphs() throws Exception {
+        ImportacaoPdf job=new ImportacaoPdf();job.esperadas=1;job.paginas=1;
+        ArrayNode values=fixture();
+        ((ArrayNode)values.get(0).path("opcoes")).set(4,TextNode.valueOf("7\n#####"));
+        JsonNode clean=drafts.normalize(values,job,true).get(0);
+        assertEquals("7",clean.path("opcoes").get(4).asText());
+
+        ((ObjectNode)values.get(0)).put("enunciado","A equação 𝑥ଶ൅𝑦ଶെ4𝑥ൌെ3 está ilegível.");
+        assertThrows(ResponseStatusException.class,()->drafts.normalize(values,job,true));
+        ((ObjectNode)values.get(0)).put("enunciado","Assinale a alternativa correta.");
+        ((ArrayNode)values.get(0).path("opcoes")).set(0,TextNode.valueOf("𝑟′ ൌ𝑎ଵ"));
+        assertThrows(ResponseStatusException.class,()->drafts.normalize(values,job,true));
+    }
     @Test void interruptedExtractionPreservesCompletedBatches() throws Exception {
         when(local.extract(any())).thenThrow(new IllegalStateException("PDF ilegível"));
         byte[] original=pdf();

@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { existsSync } from 'node:fs'
-import { acervo as completo, anoDaQuestao, unirQuestoes, podeCorrigir, corrigirQuestaoConferida, questaoPublicavel } from '../src/acervo.js'
+import { acervo as completo, anoDaQuestao, unirQuestoes, podeCorrigir, corrigirQuestaoConferida, questaoPublicavel, limparMarcadoresExtracao, textoCorrompido } from '../src/acervo.js'
 const acervo = completo.filter(q => q.banca === 'ESA')
 
 test('imagens de enunciado não repetem alternativas e figuras de resposta ficam separadas', () => {
@@ -81,6 +81,38 @@ test('corrige a alternativa contaminada da UTFPR e bloqueia questões estrutural
   assert.equal(questaoPublicavel({ ...utfpr, opcoes:['válida',''] }), false)
   assert.equal(questaoPublicavel({ ...utfpr, resposta_correta:8 }), false)
   assert.equal(questaoPublicavel({ ...utfpr, opcoes:['a'.repeat(501),'válida'], resposta_correta:1 }), false)
+})
+
+test('remove marcadores do PDF, restaura fórmulas oficiais e bloqueia texto ilegível', () => {
+  assert.equal(limparMarcadoresExtracao('alternativa final\n#####'), 'alternativa final')
+  assert.equal(textoCorrompido('x² + y² − 4x = −3'), false)
+  assert.equal(textoCorrompido('𝑥ଶ൅𝑦ଶെ4𝑥ൌെ3'), true)
+
+  const circulos = corrigirQuestaoConferida({
+    id: 6442,
+    enunciado: '𝑥ଶ൅𝑦ଶെ4𝑥ൌെ3',
+    opcoes: ['A', 'B', 'C', 'D', 'E #####'],
+    resposta_correta: 'E',
+  })
+  assert.match(circulos.enunciado, /x² \+ y² − 4x = −3/)
+  assert.equal(circulos.opcoes[4], 'duas circunferências com centros distintos e que não se interceptam.')
+  assert.equal(circulos.resposta_correta, 4)
+  assert.equal(questaoPublicavel(circulos), true)
+
+  const ilegivel = {
+    id: 'quebrada',
+    enunciado: 'Equação corrompida 𝑥ଶ൅𝑦ଶെ4𝑥ൌെ3',
+    opcoes: ['Uma alternativa', 'Outra alternativa'],
+    resposta_correta: 0,
+  }
+  assert.equal(questaoPublicavel(ilegivel), false)
+  assert.equal(questaoPublicavel({ ...ilegivel, imagem_original: '/prova.webp' }), true)
+  assert.equal(questaoPublicavel({
+    ...ilegivel,
+    enunciado: 'Enunciado perfeitamente legível',
+    opcoes: ['Opção ilegível 𝑥ଶ', 'Outra alternativa'],
+    opcoes_imagens: ['/alternativa-a.webp', null],
+  }), true)
 })
 
 test('ENEM 2022 contém ambos os idiomas, 185 questões e os dois gabaritos oficiais', () => {

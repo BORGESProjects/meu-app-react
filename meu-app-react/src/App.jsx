@@ -1,4 +1,4 @@
-import { acervo, anoDaQuestao, unirQuestoes, podeCorrigir } from './acervo'
+import { anoDaQuestao, unirQuestoes, podeCorrigir } from './acervo'
 import EnunciadoQuestao from './components/EnunciadoQuestao'
 import AlternativaComEliminacao from './components/AlternativaComEliminacao'
 import FiltroMultiplo from './components/FiltroMultiplo'
@@ -71,7 +71,7 @@ export default function App() {
   const [erroProgresso, setErroProgresso] = useState('')
 
   // Estados das Questões
-  const [questoes, setQuestoes] = useState(acervo)
+  const [questoes, setQuestoes] = useState(() => unirQuestoes())
   const [carregandoAcervo, setCarregandoAcervo] = useState(true)
   const [falhasAcervo, setFalhasAcervo] = useState([])
   const [limiteVisivel, setLimiteVisivel] = useState(40)
