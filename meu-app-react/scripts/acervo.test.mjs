@@ -183,3 +183,24 @@ test('ENEM 2022 contém ambos os idiomas, 185 questões e os dois gabaritos ofic
   }
   assert.equal(unirQuestoes(enem).length, completo.length)
 })
+
+test('EsPCEx 2017 a 2026 contém as 1.000 questões completas e publicáveis', async () => {
+  const arquivo = new URL('../public/acervo/espcex-2017-2026/questoes.json', import.meta.url)
+  const espcex = JSON.parse(await (await import('node:fs/promises')).readFile(arquivo, 'utf8'))
+
+  assert.equal(espcex.length, 1000)
+  assert.equal(new Set(espcex.map(q => q.id)).size, 1000)
+  for (const ano of Array.from({ length:10 }, (_, indice) => 2017 + indice)) {
+    const edicao = espcex.filter(q => q.ano === ano)
+    assert.equal(edicao.length, 100)
+    assert.equal(edicao.filter(q => q.dia === 1).length, 44)
+    assert.equal(edicao.filter(q => q.dia === 2).length, 56)
+  }
+
+  for (const questao of espcex) {
+    assert.equal(questaoPublicavel(corrigirQuestaoConferida(questao)), true, questao.id)
+    for (const imagem of [questao.imagem_original, ...(questao.opcoes_imagens || []), ...(questao.apoio || []).map(item => item.imagem)].filter(Boolean)) {
+      assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+    }
+  }
+})

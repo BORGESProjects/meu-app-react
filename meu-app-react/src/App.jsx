@@ -305,8 +305,15 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 131) throw new Error('Lote UFRGS 2022 inválido')
       return data
     })
-    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2023', 'UFRGS 2022']
-    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2023,ufrgs2022])
+    const espcexHistorico = tentarLeitura(async () => {
+      const r = await fetch('/acervo/espcex-2017-2026/questoes.json', {signal:AbortSignal.timeout(30000)})
+      if (!r.ok) throw new Error('Edições históricas da EsPCEx indisponíveis')
+      const data = await r.json()
+      if (!Array.isArray(data) || data.length !== 1000) throw new Error('Lote histórico da EsPCEx inválido')
+      return data
+    })
+    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026']
+    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2023,ufrgs2022,espcexHistorico])
     const carregadas = resultados.flatMap(resultado => resultado.status === 'fulfilled' && Array.isArray(resultado.value) ? resultado.value : [])
     setQuestoes(unirQuestoes(carregadas))
     setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
