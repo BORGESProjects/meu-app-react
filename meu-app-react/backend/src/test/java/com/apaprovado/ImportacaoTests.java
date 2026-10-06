@@ -62,7 +62,7 @@ class ImportacaoTests {
             .put("concurso","Questão avulsa").put("materia","Português").put("conteudo","Sintaxe")
             .put("dificuldade","Média").put("enunciado","Assinale a alternativa correta.")
             .put("resposta_correta",1);
-        body.set("opcoes",mapper.createArrayNode().add("A").add("B").add("C").add("D").add("E"));
+        body.set("opcoes",mapper.createArrayNode().add("Primeira alternativa").add("Segunda alternativa").add("Terceira alternativa").add("Quarta alternativa").add("Quinta alternativa"));
         JsonNode published=jobs.createManual("admin-one",body);
         assertEquals("Professor",published.path("banca").asText());
         assertEquals(2026,published.path("ano").asInt());
@@ -121,6 +121,22 @@ class ImportacaoTests {
         assertThrows(ResponseStatusException.class,()->drafts.normalize(values,job,true));
         options.set(1,TextNode.valueOf("x".repeat(501)));
         assertThrows(ResponseStatusException.class,()->drafts.normalize(values,job,true));
+    }
+    @Test void reviewRejectsLostSupportAndAnotherQuestionInsideAnOption() throws Exception {
+        ImportacaoPdf job=new ImportacaoPdf();job.esperadas=1;job.paginas=1;
+        ArrayNode missingSupport=fixture(); ObjectNode question=(ObjectNode)missingSupport.get(0);
+        question.put("enunciado","According to the text, choose the correct alternative.");
+        question.put("texto_apoio","");
+        assertThrows(ResponseStatusException.class,()->drafts.normalize(missingSupport,job,true));
+
+        ArrayNode attachedQuestion=fixture(); question=(ObjectNode)attachedQuestion.get(0);
+        ((ArrayNode)question.path("opcoes")).set(4,TextNode.valueOf(
+            "Alternativa incompleta.  **84 - These are expressions a) one b) two c) three d) four"));
+        assertThrows(ResponseStatusException.class,()->drafts.normalize(attachedQuestion,job,true));
+
+        ArrayNode lostOptions=fixture(); question=(ObjectNode)lostOptions.get(0);
+        question.set("opcoes",mapper.createArrayNode().add("A").add("B").add("C").add("D"));
+        assertThrows(ResponseStatusException.class,()->drafts.normalize(lostOptions,job,true));
     }
     @Test void reviewCleansPdfSeparatorsAndRejectsBrokenEquationGlyphs() throws Exception {
         ImportacaoPdf job=new ImportacaoPdf();job.esperadas=1;job.paginas=1;

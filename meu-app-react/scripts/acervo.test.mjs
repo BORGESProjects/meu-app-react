@@ -115,6 +115,52 @@ test('remove marcadores do PDF, restaura fórmulas oficiais e bloqueia texto ile
   }), true)
 })
 
+test('remove duplicatas exatas e põe gabaritos conflitantes em quarentena', () => {
+  const base = {
+    banca: 'Questões inéditas', concurso: 'Material de estudo', ano: 2022,
+    materia: 'Português', conteudo: 'Sintaxe', dificuldade: 'Média',
+    enunciado: 'Assinale a alternativa que completa corretamente a frase.',
+    opcoes: ['Primeira resposta plausível.', 'Segunda resposta plausível.'],
+  }
+  const duplicadas = unirQuestoes([
+    { ...base, id: 'duplicada-a', resposta_correta: 'B' },
+    { ...base, id: 'duplicada-b', banca: 'ESA', concurso: 'ESA 2022', resposta_correta: 1 },
+  ]).filter(q => q.id === 'duplicada-a' || q.id === 'duplicada-b')
+  assert.deepEqual(duplicadas.map(q => q.id), ['duplicada-b'])
+
+  const conflitantes = unirQuestoes([
+    { ...base, id: 'conflito-a', resposta_correta: 0 },
+    { ...base, id: 'conflito-b', resposta_correta: 1 },
+  ])
+  assert.equal(conflitantes.some(q => q.id === 'conflito-a' || q.id === 'conflito-b'), false)
+
+  const formulas = unirQuestoes([
+    { ...base, id: 'formula-quadrada', enunciado: 'Resolva a expressão x² + 1.', resposta_correta: 0 },
+    { ...base, id: 'formula-cubica', enunciado: 'Resolva a expressão x³ + 1.', resposta_correta: 0 },
+  ])
+  assert.equal(formulas.filter(q => q.id === 'formula-quadrada' || q.id === 'formula-cubica').length, 2)
+})
+
+test('bloqueia questões sem apoio e alternativas contaminadas por outra questão', () => {
+  const base = {
+    id: 'incompleta', enunciado: 'According to the text, choose the correct alternative.',
+    opcoes: ['A', 'B', 'C', 'D'], resposta_correta: 0,
+  }
+  assert.equal(questaoPublicavel(base), false)
+  assert.equal(questaoPublicavel({
+    ...base,
+    enunciado: 'According to the text, choose the correct alternative after reading the complete passage presented below in this question, considering its central argument and supporting evidence in detail.',
+    opcoes: ['A primeira afirmação está correta.', 'A segunda afirmação está correta.'],
+    texto_apoio: 'Texto completo necessário para responder à questão.',
+  }), true)
+  assert.equal(questaoPublicavel({
+    ...base,
+    enunciado: 'Assinale a alternativa correta sobre o tema apresentado.',
+    opcoes: ['Alternativa válida.', 'Alternativa seguida por outra questão.  **84 - These are expressions a) one b) two c) three d) four'],
+    resposta_correta: 0,
+  }), false)
+})
+
 test('ENEM 2022 contém ambos os idiomas, 185 questões e os dois gabaritos oficiais', () => {
   const enem = completo.filter(q => q.banca === 'ENEM' && q.ano === 2022)
   assert.equal(enem.length, 185)

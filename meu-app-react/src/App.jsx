@@ -262,8 +262,6 @@ export default function App() {
         todas.push(...(data || []))
         if (!data || data.length < 500) return todas
       }
-    }).then(data => {
-      setQuestoes(prev => unirQuestoes([...prev,...data]))
     })
     const importadas = tentarLeitura(async () => {
       const r = await fetch(`${API_URL}/api/acervo`, {signal:AbortSignal.timeout(90000)})
@@ -272,19 +270,12 @@ export default function App() {
       if (!Array.isArray(data)) throw new Error('Resposta inválida do acervo')
       return data
     })
-      .then(data => {
-        if(Array.isArray(data)) {
-          setQuestoes(prev => unirQuestoes([...prev,...data]))
-        }
-      })
     const enemHistorico = tentarLeitura(async () => {
       const r = await fetch('/acervo/enem-2017-2021/questoes.json', {signal:AbortSignal.timeout(30000)})
       if (!r.ok) throw new Error('Edições históricas do ENEM indisponíveis')
       const data = await r.json()
       if (!Array.isArray(data) || data.length !== 925) throw new Error('Lote histórico do ENEM inválido')
       return data
-    }).then(data => {
-      setQuestoes(prev => unirQuestoes([...prev,...data]))
     })
     const cfnHistorico = tentarLeitura(async () => {
       const r = await fetch('/acervo/cfn-2020-2025/questoes.json', {signal:AbortSignal.timeout(30000)})
@@ -292,8 +283,6 @@ export default function App() {
       const data = await r.json()
       if (!Array.isArray(data) || data.length !== 300) throw new Error('Lote histórico do CFN inválido')
       return data
-    }).then(data => {
-      setQuestoes(prev => unirQuestoes([...prev,...data]))
     })
     const ufrgs2025 = tentarLeitura(async () => {
       const r = await fetch('/acervo/ufrgs-2025/questoes.json', {signal:AbortSignal.timeout(30000)})
@@ -301,8 +290,6 @@ export default function App() {
       const data = await r.json()
       if (!Array.isArray(data) || data.length !== 127) throw new Error('Lote UFRGS 2025 inválido')
       return data
-    }).then(data => {
-      setQuestoes(prev => unirQuestoes([...prev,...data]))
     })
     const ufrgs2023 = tentarLeitura(async () => {
       const r = await fetch('/acervo/ufrgs-2023/questoes.json', {signal:AbortSignal.timeout(30000)})
@@ -310,8 +297,6 @@ export default function App() {
       const data = await r.json()
       if (!Array.isArray(data) || data.length !== 130) throw new Error('Lote UFRGS 2023 inválido')
       return data
-    }).then(data => {
-      setQuestoes(prev => unirQuestoes([...prev,...data]))
     })
     const ufrgs2022 = tentarLeitura(async () => {
       const r = await fetch('/acervo/ufrgs-2022/questoes.json', {signal:AbortSignal.timeout(30000)})
@@ -319,11 +304,11 @@ export default function App() {
       const data = await r.json()
       if (!Array.isArray(data) || data.length !== 131) throw new Error('Lote UFRGS 2022 inválido')
       return data
-    }).then(data => {
-      setQuestoes(prev => unirQuestoes([...prev,...data]))
     })
     const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2023', 'UFRGS 2022']
     const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2023,ufrgs2022])
+    const carregadas = resultados.flatMap(resultado => resultado.status === 'fulfilled' && Array.isArray(resultado.value) ? resultado.value : [])
+    setQuestoes(unirQuestoes(carregadas))
     setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
     setCarregandoAcervo(false)
   }
@@ -485,33 +470,36 @@ export default function App() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(novoItemEdital)
       })
-      if (response.ok) {
-        setNovoItemEdital({ concurso: '', materia: '', conteudo: '', incidencia: 'Média', concluido: false })
-        buscarEditais()
-        alert('Item do edital adicionado com sucesso!')
-      }
-    } catch (err) {
-      alert('Erro ao guardar item do edital no backend.')
+      if (!response.ok) throw new Error(`Falha ao salvar (${response.status})`)
+      setNovoItemEdital({ concurso: '', materia: '', conteudo: '', incidencia: 'Média', concluido: false })
+      await buscarEditais()
+      alert('Item do edital adicionado com sucesso!')
+    } catch {
+      alert('Não foi possível guardar o item do edital. Tente novamente.')
     }
   }
 
   async function alternarStatusEditalItem(item) {
     const novoEstado = !item.concluido
-    setEditais(editais.map(e => e.id === item.id ? { ...e, concluido: novoEstado } : e))
+    setEditais(atuais => atuais.map(e => e.id === item.id ? { ...e, concluido: novoEstado } : e))
 
     try {
-      await fetch(`${API_URL}/api/editais/${item.id}/toggle`, { method: 'PATCH' })
-    } catch (err) {
-      setEditais(editais.map(e => e.id === item.id ? { ...e, concluido: item.concluido } : e))
+      const response = await fetch(`${API_URL}/api/editais/${item.id}/toggle`, { method: 'PATCH' })
+      if (!response.ok) throw new Error(`Falha ao atualizar (${response.status})`)
+    } catch {
+      setEditais(atuais => atuais.map(e => e.id === item.id ? { ...e, concluido: item.concluido } : e))
+      alert('Não foi possível atualizar esse item. A alteração foi desfeita.')
     }
   }
 
   async function deletarEditalItem(id) {
     try {
-      await fetch(`${API_URL}/api/editais/${id}`, { method: 'DELETE' })
-      buscarEditais()
+      const response = await fetch(`${API_URL}/api/editais/${id}`, { method: 'DELETE' })
+      if (!response.ok) throw new Error(`Falha ao excluir (${response.status})`)
+      await buscarEditais()
     } catch (err) {
       console.log('Erro ao apagar item:', err)
+      alert('Não foi possível excluir esse item. Tente novamente.')
     }
   }
 

@@ -93,6 +93,45 @@ const normalizarAlternativa = valor => String(valor ?? '')
   .trim()
   .toLocaleLowerCase('pt-BR')
 
+const normalizarConteudo = valor => String(valor ?? '')
+  .normalize('NFKC')
+  .replace(/[“”"'`´]/gu, '')
+  .replace(/\s+/gu, ' ')
+  .trim()
+  .toLocaleLowerCase('pt-BR')
+
+const marcadoresDeAlternativas = /(?:^|\s)a\)\s.+?\s+b\)\s.+?\s+c\)\s.+?\s+d\)\s/isu
+const trechoDeOutraQuestao = /texto para (?:as )?(?:próximas|questões)|(?:\n| {2,})\*?\d{1,3}\s*(?:\*\d{1,3}\s*)?-\s+.{12,}|PUC\s*-\s*DEMAIS CURSOS/iu
+
+function alternativaContaminada(valor) {
+  const texto = String(valor ?? '')
+  return trechoDeOutraQuestao.test(texto) || marcadoresDeAlternativas.test(texto)
+}
+
+function semTextoDeApoio(questao) {
+  const enunciado = String(questao.enunciado ?? '')
+  const referenciaOutroTexto = /(?:according to|de acordo com|conforme|segundo) (?:the |o )?(?:text|texto|tirinha|charge|figura|gráfico)/iu.test(enunciado)
+  const temApoio = Boolean(String(questao.texto_apoio ?? '').trim())
+    || Boolean(questao.imagem_original || questao.pagina_imagem)
+    || (Array.isArray(questao.apoio) && questao.apoio.length > 0)
+  return referenciaOutroTexto && enunciado.length < 180 && !temApoio
+}
+
+function identidadeConteudo(questao) {
+  return `${normalizarConteudo(questao.enunciado)}::${(questao.opcoes || []).map(normalizarConteudo).join('|')}`
+}
+
+function pontuarQualidade(questao) {
+  const banca = normalizarConteudo(questao.banca).normalize('NFD').replace(/[\u0300-\u036f]/gu, '')
+  const bancaGenerica = /^(questoes ineditas|questoes de estudo|professor)$/.test(banca)
+  return (banca && !bancaGenerica ? 20 : 0)
+    + (anoDaQuestao(questao) !== 'Não informado' ? 12 : 0)
+    + (questao.numero_original ? 5 : 0)
+    + (questao.fonte || questao.fonte_pdf ? 4 : 0)
+    + (questao.materia ? 2 : 0) + (questao.conteudo ? 2 : 0) + (questao.dificuldade ? 2 : 0)
+    + (questao.texto_apoio || questao.imagem_original || questao.pagina_imagem || questao.apoio?.length ? 3 : 0)
+}
+
 function indiceResposta(questao) {
   if (Number.isInteger(questao.resposta_correta)) return questao.resposta_correta
   const resposta = String(questao.resposta_correta ?? '').trim().toUpperCase()
@@ -131,6 +170,9 @@ export function questaoPublicavel(questao) {
   const opcoes = questao.opcoes.map(normalizarAlternativa)
   if (opcoes.some(opcao => !opcao || opcao.length > 500)) return false
   if (new Set(opcoes).size !== opcoes.length) return false
+  if (opcoes.every(opcao => /^[a-e]$/u.test(opcao))) return false
+  if (questao.opcoes.some(alternativaContaminada)) return false
+  if (semTextoDeApoio(questao)) return false
 
   if (!questao.anulada) {
     const resposta = indiceResposta(questao)
@@ -163,7 +205,22 @@ export function unirQuestoes(cadastradas = []) {
     .map(corrigirQuestaoConferida)
     .filter(questaoPublicavel)
     .forEach(q => mapa.set(origem(q), q))
-  return [...mapa.values()].filter(questaoPublicavel)
+  const porConteudo = new Map()
+  for (const questao of [...mapa.values()].filter(questaoPublicavel)) {
+    const chave = identidadeConteudo(questao)
+    if (!porConteudo.has(chave)) porConteudo.set(chave, [])
+    porConteudo.get(chave).push(questao)
+  }
+
+  const resultado = []
+  for (const grupo of porConteudo.values()) {
+    const respostas = new Set(grupo.map(questao => questao.anulada ? 'anulada' : indiceResposta(questao)))
+    // Conteúdo idêntico com gabaritos diferentes não é seguro para estudo.
+    // O grupo fica em quarentena até que uma fonte oficial resolva o conflito.
+    if (respostas.size > 1) continue
+    resultado.push(grupo.reduce((melhor, atual) => pontuarQualidade(atual) > pontuarQualidade(melhor) ? atual : melhor))
+  }
+  return resultado
 }
 
 export function podeCorrigir(q) {

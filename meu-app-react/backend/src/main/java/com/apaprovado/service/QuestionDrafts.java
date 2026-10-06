@@ -60,6 +60,7 @@ public class QuestionDrafts {
                     if (hasBrokenGlyphs(clean.path(field).asText())) throw bad("A questão " + n + " contém texto ou equação ilegível. Confira o PDF original.");
                 if (!List.of("Fácil", "Média", "Difícil").contains(clean.path("dificuldade").asText())) throw bad("Dificuldade inválida.");
                 Set<String> uniqueOptions = new HashSet<>();
+                boolean onlyOptionLabels = true;
                 for (JsonNode opt : opts) {
                     String option = opt.asText().trim();
                     if (option.isBlank()) throw bad("Preencha as alternativas da questão " + n + ".");
@@ -67,7 +68,11 @@ public class QuestionDrafts {
                     if (hasBrokenGlyphs(option)) throw bad("A questão " + n + " contém uma alternativa ilegível. Confira o PDF original.");
                     String normalized = option.replaceAll("\\s+", " ").toLowerCase(Locale.ROOT);
                     if (!uniqueOptions.add(normalized)) throw bad("A questão " + n + " contém alternativas repetidas.");
+                    if (!option.matches("(?i)[A-E]")) onlyOptionLabels = false;
+                    if (hasAttachedQuestion(option)) throw bad("A questão " + n + " contém texto de outra questão dentro de uma alternativa.");
                 }
+                if (onlyOptionLabels) throw bad("A questão " + n + " perdeu o texto das alternativas. Confira o PDF original.");
+                if (needsMissingSupport(clean)) throw bad("A questão " + n + " faz referência a um texto ou figura que não foi extraído.");
                 if (!cancelled && clean.path("resposta_correta").isNull()) throw bad("Confira o gabarito da questão " + n + ".");
                 if (page < 1 || page > job.paginas) throw bad("Confira a página original da questão " + n + ".");
             }
@@ -88,6 +93,19 @@ public class QuestionDrafts {
             || value.matches("(?is).*\\(cid:\\d+\\).*")
             || value.matches("(?s).*(?:\\?\\s*){4,}.*")
             || value.chars().anyMatch(c -> c < 32 && c != '\n' && c != '\r' && c != '\t');
+    }
+    private boolean hasAttachedQuestion(String value) {
+        return value.matches("(?isu).*texto para (?:as )?(?:próximas|questões).*")
+            || value.matches("(?isu).*(?:\\n| {2,})\\*?\\d{1,3}\\s*(?:\\*\\d{1,3}\\s*)?-\\s+.{12,}.*")
+            || value.matches("(?isu).*\\ba\\)\\s.+?\\sb\\)\\s.+?\\sc\\)\\s.+?\\sd\\)\\s.*")
+            || value.matches("(?isu).*PUC\\s*-\\s*DEMAIS CURSOS.*");
+    }
+    private boolean needsMissingSupport(ObjectNode question) {
+        String prompt = question.path("enunciado").asText("");
+        boolean referencesSupport = prompt.matches("(?isu).*(?:according to|de acordo com|conforme|segundo) (?:the |o )?(?:text|texto|tirinha|charge|figura|gráfico).*");
+        return referencesSupport && prompt.length() < 180
+            && question.path("texto_apoio").asText("").isBlank()
+            && !question.path("tem_imagem").asBoolean(false);
     }
     private ResponseStatusException bad(String msg) { return new ResponseStatusException(HttpStatus.BAD_REQUEST, msg); }
 }
