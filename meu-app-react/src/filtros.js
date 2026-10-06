@@ -11,8 +11,44 @@ export function chaveFiltro(valor) {
     .toLocaleLowerCase('pt-BR')
 }
 
+const BANCAS_CANONICAS = new Map([
+  ['acafe', 'ACAFE'], ['afa', 'AFA'], ['cfn', 'CFN'], ['cftce', 'CFTCE'], ['cftmg', 'CFTMG'],
+  ['cm', 'Colégio Militar'], ['cmrj', 'CMRJ'],
+  ['colegio naval', 'Colégio Naval'], ['cpor', 'CPOR'], ['cpor/sp', 'CPOR'], ['cpor-sp', 'CPOR'], ['cpor sp', 'CPOR'],
+  ['eam', 'EAM'], ['eear', 'EEAR'], ['efomm', 'EFOMM'], ['efomm 2019', 'EFOMM'], ['enem', 'ENEM'],
+  ['epcar', 'EPCAR'], ['esa', 'ESA'], ['esc. naval', 'Escola Naval'], ['escola naval', 'Escola Naval'],
+  ['esfcex', 'EsFCEx'], ['espcex', 'EsPCEx'], ['espm', 'ESPM'], ['fgv', 'FGV'], ['fn', 'CFN'],
+  ['fuzileiro naval', 'CFN'], ['fuzileiros navais', 'CFN'], ['fuvest', 'FUVEST'], ['ifal', 'IFAL'],
+  ['ifpe', 'IFPE'], ['ifsc', 'IFSC'], ['ifsul', 'IFSUL'], ['ime', 'IME'], ['inedita', 'Questões inéditas'],
+  ['insper', 'Insper'], ['ita', 'ITA'], ['pucrj', 'PUC-Rio'], ['puc-rio', 'PUC-Rio'], ['pucrs', 'PUCRS'],
+  ['smv', 'SMV'], ['udesc', 'UDESC'], ['uece', 'UECE'], ['uefs', 'UEFS'], ['uepb', 'UEPB'], ['uern', 'UERN'],
+  ['uespi', 'UESPI'], ['ufc', 'UFC'], ['ufg', 'UFG'], ['ufjf', 'UFJF'], ['ufpr', 'UFPR'], ['ufrgs', 'UFRGS'],
+  ['ufu', 'UFU'], ['unesp', 'UNESP'], ['unicamp', 'UNICAMP'], ['upf', 'UPF'], ['utfpr', 'UTFPR'],
+  ['exercicio', 'Questões de estudo'],
+])
+
+const BANCAS_INVALIDAS = new Set(['g', 'esc', 'fac', 'fonte nao informada'])
+
+export function normalizarBanca(valor, concurso = '') {
+  const original = limparValorFiltro(valor)
+  const chave = chaveFiltro(original)
+  const chaveConcurso = chaveFiltro(concurso)
+  if (!chave || BANCAS_INVALIDAS.has(chave)) return ''
+  if (chave === 'marinha' && /\bsmv\b/.test(chaveConcurso)) return 'SMV'
+  if (chave === 'estrategia militares') {
+    if (/espcex/.test(chaveConcurso)) return 'EsPCEx'
+    if (/\besa\b/.test(chaveConcurso)) return 'ESA'
+    if (/\beear\b/.test(chaveConcurso)) return 'EEAR'
+    if (/fuzileir/.test(chaveConcurso)) return 'CFN'
+    if (/\beam\b/.test(chaveConcurso)) return 'EAM'
+    if (/\bcn\b|colegio naval/.test(chaveConcurso)) return 'Colégio Naval'
+    if (/inedit|questao inedita/.test(chaveConcurso)) return 'Questões inéditas'
+  }
+  return BANCAS_CANONICAS.get(chave) || original
+}
+
 export function chaveCampoFiltro(campo, valor) {
-  const chave = chaveFiltro(valor)
+  const chave = chaveFiltro(campo === 'banca' ? normalizarBanca(valor) : valor)
   if (campo === 'dificuldade' && chave === 'medio') return 'media'
   return chave
 }
@@ -166,7 +202,9 @@ function rotuloPreferido(chave, contagens, campo) {
 export function opcoesFiltro(questoes, campo) {
   const grupos = new Map()
   for (const questao of questoes) {
-    const valor = limparValorFiltro(questao?.[campo])
+    const valor = campo === 'banca'
+      ? normalizarBanca(questao?.[campo], questao?.concurso)
+      : limparValorFiltro(questao?.[campo])
     const chave = chaveCampoFiltro(campo, valor)
     if (!chave) continue
     if (!grupos.has(chave)) grupos.set(chave, new Map())
