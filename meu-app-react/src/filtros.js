@@ -141,11 +141,38 @@ const gruposConteudoPrioritarios = [
   ['Geometria espacial', /geometria espacial|prisma|piramide|cilindro|cone|esfera|paralelepipedo|volume/],
 ]
 
-export function grupoConteudo(valor, materia = '') {
+const gruposQuimica = [
+  ['Termoquímica', /termoquim|entalpia|lei de hess|calor de (?:formacao|combustao|reacao)|energia de ligacao|reacao (?:exo|endo)termica|exoterm|endoterm/],
+  ['Equilíbrio iônico', /equilibrio ionico|produto de solubilidade|\bkps\b|solucao tampao|hidrolise salina|\bph\b|\bpoh\b|\bka\b|\bkb\b|acido (?:forte|fraco)|base (?:forte|fraca)|ionizacao de acidos/],
+  ['Equilíbrio químico', /equilibrio quimico|principio de le chatelier|le chatelier|constante de equilibrio|\bkc\b|\bkp\b|deslocamento do equilibrio/],
+  ['Cinética química', /cinetica quimica|velocidade da reacao|energia de ativacao|ordem da reacao|lei de velocidade|catalisador/],
+  ['Eletroquímica', /eletroquim|pilha|eletrolise|eletrodo|potencial (?:padrao|de reducao)|corrosao|celula galvanica|oxidacao e reducao|oxirreducao|numero de oxidacao|\bnox\b/],
+  ['Soluções', /\bsolucoes?\b|concentracao (?:comum|molar)|molaridade|molalidade|diluicao|solubilidade|mistura de solucoes|titulo em massa/],
+  ['Estequiometria', /estequiometr|calculo estequiometrico|rendimento da reacao|reagente limitante|pureza de reagente|volume molar/],
+  ['Química orgânica', /quimica organica|hidrocarbon|funcao organica|isomer|polimero|cadeia carbonica|nomenclatura organica|reacao organica|\balcool|aldeido|cetona|\bester\b|\beter\b|\bfenol|\bamina|\bamida/],
+  ['Funções inorgânicas', /funcoes? inorganicas?|acidos?, bases?, sais?|oxidos?|nomenclatura inorganica/],
+  ['Reações químicas', /reacoes? quimicas?|balanceamento|equacao quimica|reacao de (?:sintese|decomposicao|deslocamento|dupla troca)/],
+  ['Ligações químicas', /ligacoes? quimicas?|ligacao (?:ionica|covalente|metalica)|geometria molecular|polaridade|forcas? intermoleculares?|hibridizacao/],
+  ['Atomística e tabela periódica', /atomistic|estrutura atomica|tabela periodica|propriedade periodica|modelo atomico|distribuicao eletronica|configuracao eletronica|numero (?:atomico|de massa)|isotop/],
+  ['Matéria, misturas e separação', /materia e transform|misturas?|separacao de misturas|mudancas? de estado|estado fisico|substancia (?:simples|composta|pura)|propriedades? da materia/],
+  ['Gases', /estudo dos gases|lei dos gases|equacao de clapeyron|gas ideal|transformacao (?:isotermica|isobarica|isocorica)/],
+  ['Propriedades coligativas', /propriedades? coligativas?|tonoscopia|ebulioscopia|crioscopia|osmoscopia|pressao osmotica/],
+  ['Radioatividade', /radioativ|decaimento nuclear|meia-vida|fissao nuclear|fusao nuclear|emissao alfa|emissao beta/],
+]
+
+function grupoQuimica(valor, contexto = '') {
+  const texto = `${chaveFiltro(valor)} ${chaveFiltro(contexto)}`
+  const grupo = gruposQuimica.find(([, padrao]) => padrao.test(texto))
+  const label = grupo?.[0] || 'Fundamentos de Química'
+  return { value: chaveFiltro(label), label }
+}
+
+export function grupoConteudo(valor, materia = '', contexto = '') {
   const original = limparValorFiltro(valor)
   const chave = chaveFiltro(original)
   if (!chave) return { value: '', label: '' }
   const chaveMateria = chaveFiltro(materia)
+  if (/\bquimica\b/.test(chaveMateria)) return grupoQuimica(original, contexto)
   if (/ingles|lingua inglesa|espanhol/.test(chaveMateria)) {
     if (/interpretacao|compreensao|leitura|texto|comic strip/.test(chave)) {
       return { value: 'interpretacao em lingua estrangeira', label: 'Interpretação em língua estrangeira' }
@@ -171,14 +198,15 @@ export function grupoConteudo(valor, materia = '') {
   return { value: chaveFiltro(rotulo), label: rotulo.charAt(0).toLocaleUpperCase('pt-BR') + rotulo.slice(1) }
 }
 
-export function chaveConteudoFiltro(valor, materia) {
-  return grupoConteudo(valor, materia).value
+export function chaveConteudoFiltro(valor, materia, contexto = '') {
+  return grupoConteudo(valor, materia, contexto).value
 }
 
 export function opcoesConteudo(questoes) {
   const grupos = new Map()
   for (const questao of questoes) {
-    const grupo = grupoConteudo(questao?.conteudo, questao?.materia)
+    const contexto = `${questao?.enunciado || ''} ${(questao?.opcoes || []).join(' ')}`
+    const grupo = grupoConteudo(questao?.conteudo, questao?.materia, contexto)
     if (!grupo.value) continue
     if (!grupos.has(grupo.value)) grupos.set(grupo.value, { ...grupo, quantidade: 0 })
     grupos.get(grupo.value).quantidade++

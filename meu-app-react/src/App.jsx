@@ -620,7 +620,8 @@ export default function App() {
 
   const questoesFiltradas = temFiltrosAtivos ? questoes.filter(q => {
     const bateMateria = filtrosMateria.length === 0 || filtrosMateria.includes(chaveCampoFiltro('materia', q.materia))
-    const bateConteudo = filtrosConteudo.length === 0 || filtrosConteudo.includes(chaveConteudoFiltro(q.conteudo, q.materia))
+    const contextoConteudo = `${q.enunciado || ''} ${(q.opcoes || []).join(' ')}`
+    const bateConteudo = filtrosConteudo.length === 0 || filtrosConteudo.includes(chaveConteudoFiltro(q.conteudo, q.materia, contextoConteudo))
     const bateBanca = filtrosBanca.length === 0 || filtrosBanca.includes(chaveCampoFiltro('banca', q.banca))
     const bateDificuldade = filtrosDificuldade.length === 0 || filtrosDificuldade.includes(chaveCampoFiltro('dificuldade', q.dificuldade))
     const bateAno = filtrosAno.length === 0 || filtrosAno.includes(anoDaQuestao(q))
