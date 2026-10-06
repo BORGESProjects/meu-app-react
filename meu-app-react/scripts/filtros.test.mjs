@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { chaveCampoFiltro, grupoConteudo, normalizarBanca, opcoesFiltro } from '../src/filtros.js'
+import { chaveCampoFiltro, grupoConteudo, normalizarBanca, normalizarMateria, opcoesFiltro } from '../src/filtros.js'
 import { unirQuestoes } from '../src/acervo.js'
 
 test('unifica variações equivalentes de banca', () => {
@@ -55,4 +55,40 @@ test('química é dividida em áreas didáticas a partir do conteúdo e do enunc
   for (const [conteudo, enunciado, esperado] of casos) {
     assert.equal(grupoConteudo(conteudo, 'Química', enunciado).label, esperado)
   }
+})
+
+test('as demais matérias usam grupos próprios sem colisões entre disciplinas', () => {
+  const casos = [
+    ['Potenciação, Radiciação, Produtos Notáveis e Fatoração', 'Matemática', '', 'Álgebra, equações e inequações'],
+    ['Eletricidade I', 'Física', 'Um circuito possui dois resistores ligados em paralelo.', 'Eletricidade e circuitos'],
+    ['Brasil Império II', 'História', '', 'Independência e Brasil Império'],
+    ['Período Regencial', 'História', '', 'Independência e Brasil Império'],
+    ['Fusos horários', 'Geografia', '', 'Cartografia, escalas e fusos'],
+    ['Matriz energética brasileira', 'Geografia', '', 'Energia e recursos naturais'],
+    ['Língua Portuguesa', 'Língua Portuguesa', 'Assinale a oração cujo sujeito é indeterminado.', 'Sintaxe e análise sintática'],
+    ['Biologia', 'Biologia', 'A seleção natural proposta por Darwin explica', 'Evolução'],
+    ['Língua Inglesa', 'Inglês', 'According to the text, the author argues that', 'Interpretação em língua estrangeira'],
+    ['Filosofia', 'Filosofia', 'Para Aristóteles, a virtude e a vida ética', 'Filosofia antiga'],
+    ['Sociologia', 'Sociologia', 'A desigualdade de classe estrutura a sociedade.', 'Desigualdades sociais'],
+    ['Literatura', 'Literatura', 'O Romantismo brasileiro caracteriza-se por', 'Escolas literárias'],
+    ['Arte', 'Arte', 'A pintura e a escultura integram diferentes linguagens.', 'Artes visuais'],
+  ]
+  for (const [conteudo, materia, contexto, esperado] of casos) {
+    assert.equal(grupoConteudo(conteudo, materia, contexto).label, esperado)
+  }
+})
+
+test('unifica matérias equivalentes e corrige tópicos matemáticos marcados como Física', () => {
+  assert.equal(normalizarMateria('Língua Portuguesa'), 'Português')
+  assert.equal(normalizarMateria('Língua Inglesa'), 'Inglês')
+  assert.equal(normalizarMateria('Fisica'), 'Física')
+  assert.equal(normalizarMateria('Física', 'Produtos Notáveis e Fatoração'), 'Matemática')
+  assert.equal(normalizarMateria('Física', 'Frações'), 'Matemática')
+  assert.deepEqual(opcoesFiltro([
+    { materia: 'Português' }, { materia: 'Língua Portuguesa' },
+    { materia: 'Inglês' }, { materia: 'Língua Inglesa' },
+  ], 'materia'), [
+    { value: 'ingles', label: 'Inglês' },
+    { value: 'portugues', label: 'Português' },
+  ])
 })
