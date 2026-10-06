@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { existsSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { acervo as completo, anoDaQuestao, unirQuestoes, podeCorrigir, corrigirQuestaoConferida, questaoPublicavel, limparMarcadoresExtracao, textoCorrompido } from '../src/acervo.js'
 const acervo = completo.filter(q => q.banca === 'ESA')
 
@@ -201,6 +201,32 @@ test('EsPCEx 2017 a 2026 contém as 1.000 questões completas e publicáveis', a
     assert.equal(questaoPublicavel(corrigirQuestaoConferida(questao)), true, questao.id)
     for (const imagem of [questao.imagem_original, ...(questao.opcoes_imagens || []), ...(questao.apoio || []).map(item => item.imagem)].filter(Boolean)) {
       assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+    }
+  }
+})
+
+test('todos os lotes públicos estão completos, publicáveis e com imagens presentes', () => {
+  const raiz = new URL('../public/acervo/', import.meta.url)
+  const lotes = readdirSync(raiz, { withFileTypes: true })
+    .filter(item => item.isDirectory())
+    .map(item => new URL(`${item.name}/questoes.json`, raiz))
+    .filter(existsSync)
+
+  assert.ok(lotes.length >= 6)
+  for (const arquivo of lotes) {
+    const questoes = JSON.parse(readFileSync(arquivo, 'utf8'))
+    for (const questao of questoes) {
+      const corrigida = corrigirQuestaoConferida(questao)
+      assert.equal(questaoPublicavel(corrigida), true, questao.id)
+      for (const imagem of [
+        corrigida.imagem_original,
+        corrigida.pagina_imagem,
+        ...(corrigida.opcoes_imagens || []),
+        ...(corrigida.apoio || []).map(item => item.imagem),
+      ].filter(Boolean)) {
+        if (imagem.startsWith('/')) assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+        else assert.match(imagem, /^https:\/\//, imagem)
+      }
     }
   }
 })
