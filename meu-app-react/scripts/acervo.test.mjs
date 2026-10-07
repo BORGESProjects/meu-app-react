@@ -215,6 +215,24 @@ test('UFRGS 2024 mantém o lote original e põe itens sem apoio visual em quaren
   }
 })
 
+test('CFN 2020 a 2025 contém 300 questões publicáveis e os seis apoios restaurados', () => {
+  const arquivo = new URL('../public/acervo/cfn-2020-2025/questoes.json', import.meta.url)
+  const cfn = JSON.parse(readFileSync(arquivo, 'utf8'))
+  const reparadas = new Set([
+    'cfn-2020-88-35', 'cfn-2021-11-34', 'cfn-2021-11-46',
+    'cfn-2023-14-28', 'cfn-2024-55-29', 'cfn-2025-11-34',
+  ])
+  assert.equal(cfn.length, 300)
+  assert.equal(new Set(cfn.map(q => q.id)).size, 300)
+  for (const questao of cfn) {
+    assert.equal(questaoPublicavel(corrigirQuestaoConferida(questao)), true, questao.id)
+    if (reparadas.has(questao.id)) {
+      assert.equal(questao.apoio.length, 1, questao.id)
+      assert.ok(existsSync(new URL('../public' + questao.apoio[0].imagem, import.meta.url)), questao.id)
+    }
+  }
+})
+
 test('EsPCEx 2017 a 2026 mantém 1.000 registros e bloqueia os que perderam apoio visual', async () => {
   const arquivo = new URL('../public/acervo/espcex-2017-2026/questoes.json', import.meta.url)
   const espcex = JSON.parse(await (await import('node:fs/promises')).readFile(arquivo, 'utf8'))
