@@ -102,19 +102,21 @@ const normalizarConteudo = valor => String(valor ?? '')
 
 const marcadoresDeAlternativas = /(?:^|\s)a\)\s.+?\s+b\)\s.+?\s+c\)\s.+?\s+d\)\s/isu
 const trechoDeOutraQuestao = /texto para (?:as )?(?:próximas|questões)|(?:\n| {2,})\*?\d{1,3}\s*(?:\*\d{1,3}\s*)?-\s+.{12,}|PUC\s*-\s*DEMAIS CURSOS/iu
+const cabecalhoVazado = /(?:^|\n)\s*(?:BIOLOGIA|FILOSOFIA|FÍSICA|GEOGRAFIA|HISTÓRIA|LÍNGUA (?:PORTUGUESA|INGLESA|ESPANHOLA)|LITERATURA|MATEMÁTICA|QUÍMICA|SOCIOLOGIA)\s*(?:\n|$)/iu
 
 function alternativaContaminada(valor) {
   const texto = String(valor ?? '')
-  return trechoDeOutraQuestao.test(texto) || marcadoresDeAlternativas.test(texto)
+  return trechoDeOutraQuestao.test(texto) || marcadoresDeAlternativas.test(texto) || cabecalhoVazado.test(texto)
 }
 
 function semTextoDeApoio(questao) {
   const enunciado = String(questao.enunciado ?? '')
-  const referenciaOutroTexto = /(?:according to|de acordo com|conforme|segundo) (?:the |o )?(?:text|texto|tirinha|charge|figura|gráfico)/iu.test(enunciado)
+  const referenciaOutroTexto = /(?:according to|de acordo com|conforme|segundo) (?:the |o |a )?(?:text|texto|trecho|poema|tirinha|charge|cartum)/iu.test(enunciado)
+  const referenciaVisualAusente = /(?:figura|imagem|gráfico|mapa|infográfico|diagrama|esquema|charge|tirinha|cartum|fotografia|quadro|tabela)\s+(?:a seguir|abaixo|acima|ao lado)|(?:observe|analise|considere|com base n[oa])\s+(?:a |o )?(?:figura|imagem|gráfico|mapa|infográfico|diagrama|esquema|charge|tirinha|cartum|fotografia|quadro|tabela)/iu.test(enunciado)
   const temApoio = Boolean(String(questao.texto_apoio ?? '').trim())
     || Boolean(questao.imagem_original || questao.pagina_imagem)
     || (Array.isArray(questao.apoio) && questao.apoio.length > 0)
-  return referenciaOutroTexto && enunciado.length < 180 && !temApoio
+  return (referenciaOutroTexto || referenciaVisualAusente) && !temApoio
 }
 
 function identidadeConteudo(questao) {
@@ -191,7 +193,11 @@ export function unirQuestoes(cadastradas = []) {
   // Um registro já cadastrado com a mesma origem substitui a cópia do acervo.
   const origem = q => {
     const id = q.id?.toString() || ''
-    if (/^(esa-2025-a-|enem-20(?:1[7-9]|2[0-2])-)/.test(id)) return id
+    const numero = q.numero_original || q.numero
+    if (/^(esa-2025-a-|enem-20(?:1[7-9]|2[0-2])-|ufpr-2025-)/.test(id)) return id
+    if (normalizarBanca(q.banca, q.concurso) === 'UFPR' && anoDaQuestao(q) === '2025' && numero) {
+      return `ufpr-2025-${String(numero).padStart(2, '0')}`
+    }
     if (q.banca?.toString().toUpperCase() === 'ENEM' && q.numero_original) {
       const ano = anoDaQuestao(q)
       const idioma = q.idioma?.toString().toLowerCase() || ''

@@ -159,6 +159,20 @@ test('bloqueia questões sem apoio e alternativas contaminadas por outra questã
     opcoes: ['Alternativa válida.', 'Alternativa seguida por outra questão.  **84 - These are expressions a) one b) two c) three d) four'],
     resposta_correta: 0,
   }), false)
+
+  const visual = {
+    id: 'visual-ausente',
+    enunciado: 'Observe o gráfico abaixo e assinale a alternativa que representa corretamente a evolução da grandeza durante todo o período analisado.',
+    opcoes: ['A grandeza aumentou.', 'A grandeza diminuiu.'],
+    resposta_correta: 0,
+  }
+  assert.equal(questaoPublicavel(visual), false)
+  assert.equal(questaoPublicavel({ ...visual, imagem_original: '/grafico.webp' }), true)
+  assert.equal(questaoPublicavel({
+    ...visual,
+    enunciado: 'Assinale a alternativa correta sobre o tema apresentado.',
+    opcoes: ['Alternativa válida.', 'Alternativa contaminada.\nFILOSOFIA'],
+  }), false)
 })
 
 test('ENEM 2022 contém ambos os idiomas, 185 questões e os dois gabaritos oficiais', () => {
@@ -184,7 +198,7 @@ test('ENEM 2022 contém ambos os idiomas, 185 questões e os dois gabaritos ofic
   assert.equal(unirQuestoes(enem).length, completo.length)
 })
 
-test('UFRGS 2024 contém 104 questões textuais conferidas com o gabarito definitivo', () => {
+test('UFRGS 2024 mantém o lote original e põe itens sem apoio visual em quarentena', () => {
   const arquivo = new URL('../public/acervo/ufrgs-2024/questoes.json', import.meta.url)
   const ufrgs = JSON.parse(readFileSync(arquivo, 'utf8'))
 
@@ -193,14 +207,15 @@ test('UFRGS 2024 contém 104 questões textuais conferidas com o gabarito defini
   assert.equal(ufrgs.filter(q => q.modelo === '1º dia').length, 48)
   assert.equal(ufrgs.filter(q => q.modelo === '2º dia').length, 56)
   assert.deepEqual(ufrgs.filter(q => q.anulada).map(q => q.id), ['ufrgs-2024-d1-46'])
-  for (const questao of ufrgs) {
-    assert.equal(questaoPublicavel(corrigirQuestaoConferida(questao)), true, questao.id)
+  const quarentena = ufrgs.filter(questao => !questaoPublicavel(corrigirQuestaoConferida(questao)))
+  assert.deepEqual(quarentena.map(q => q.id), ['ufrgs-2024-d2-28', 'ufrgs-2024-d2-50'])
+  for (const questao of ufrgs.filter(q => !quarentena.includes(q))) {
     assert.equal(questao.opcoes.length, 5, questao.id)
     assert.ok(questao.opcoes.every(Boolean), questao.id)
   }
 })
 
-test('EsPCEx 2017 a 2026 contém as 1.000 questões completas e publicáveis', async () => {
+test('EsPCEx 2017 a 2026 mantém 1.000 registros e bloqueia os que perderam apoio visual', async () => {
   const arquivo = new URL('../public/acervo/espcex-2017-2026/questoes.json', import.meta.url)
   const espcex = JSON.parse(await (await import('node:fs/promises')).readFile(arquivo, 'utf8'))
 
@@ -213,15 +228,16 @@ test('EsPCEx 2017 a 2026 contém as 1.000 questões completas e publicáveis', a
     assert.equal(edicao.filter(q => q.dia === 2).length, 56)
   }
 
-  for (const questao of espcex) {
-    assert.equal(questaoPublicavel(corrigirQuestaoConferida(questao)), true, questao.id)
+  const publicaveis = espcex.filter(questao => questaoPublicavel(corrigirQuestaoConferida(questao)))
+  assert.equal(publicaveis.length, 986)
+  for (const questao of publicaveis) {
     for (const imagem of [questao.imagem_original, ...(questao.opcoes_imagens || []), ...(questao.apoio || []).map(item => item.imagem)].filter(Boolean)) {
       assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
     }
   }
 })
 
-test('todos os lotes públicos estão completos, publicáveis e com imagens presentes', () => {
+test('itens publicáveis de todos os lotes possuem estrutura e imagens válidas', () => {
   const raiz = new URL('../public/acervo/', import.meta.url)
   const lotes = readdirSync(raiz, { withFileTypes: true })
     .filter(item => item.isDirectory())
@@ -231,9 +247,8 @@ test('todos os lotes públicos estão completos, publicáveis e com imagens pres
   assert.ok(lotes.length >= 6)
   for (const arquivo of lotes) {
     const questoes = JSON.parse(readFileSync(arquivo, 'utf8'))
-    for (const questao of questoes) {
-      const corrigida = corrigirQuestaoConferida(questao)
-      assert.equal(questaoPublicavel(corrigida), true, questao.id)
+    for (const questao of questoes.map(corrigirQuestaoConferida).filter(questaoPublicavel)) {
+      const corrigida = questao
       for (const imagem of [
         corrigida.imagem_original,
         corrigida.pagina_imagem,
@@ -243,6 +258,23 @@ test('todos os lotes públicos estão completos, publicáveis e com imagens pres
         if (imagem.startsWith('/')) assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
         else assert.match(imagem, /^https:\/\//, imagem)
       }
+    }
+  }
+})
+
+test('UFPR 2025 contém 90 questões oficiais com recortes independentes', () => {
+  const arquivo = new URL('../public/acervo/ufpr-2025/questoes.json', import.meta.url)
+  const ufpr = JSON.parse(readFileSync(arquivo, 'utf8'))
+  assert.equal(ufpr.length, 90)
+  assert.deepEqual(ufpr.map(q => q.numero_original), Array.from({length: 90}, (_, i) => i + 1))
+  assert.deepEqual(ufpr.filter(q => q.anulada).map(q => q.numero_original), [39])
+  for (const questao of ufpr) {
+    assert.equal(questao.opcoes.length, 5, questao.id)
+    assert.equal(questao.opcoes_imagens.length, 5, questao.id)
+    assert.equal(questao.imagem_sem_alternativas, true, questao.id)
+    assert.equal(questaoPublicavel(corrigirQuestaoConferida(questao)), true, questao.id)
+    for (const imagem of [questao.imagem_original, ...questao.opcoes_imagens, ...(questao.apoio || []).map(item => item.imagem)]) {
+      assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
     }
   }
 })
