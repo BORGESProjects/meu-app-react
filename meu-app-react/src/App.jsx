@@ -291,6 +291,13 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 127) throw new Error('Lote UFRGS 2025 inválido')
       return data
     })
+    const ufrgs2024 = tentarLeitura(async () => {
+      const r = await fetch('/acervo/ufrgs-2024/questoes.json', {signal:AbortSignal.timeout(30000)})
+      if (!r.ok) throw new Error('Vestibular UFRGS 2024 indisponível')
+      const data = await r.json()
+      if (!Array.isArray(data) || data.length !== 104) throw new Error('Lote UFRGS 2024 inválido')
+      return data
+    })
     const ufrgs2023 = tentarLeitura(async () => {
       const r = await fetch('/acervo/ufrgs-2023/questoes.json', {signal:AbortSignal.timeout(30000)})
       if (!r.ok) throw new Error('Vestibular UFRGS 2023 indisponível')
@@ -312,8 +319,8 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 1000) throw new Error('Lote histórico da EsPCEx inválido')
       return data
     })
-    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026']
-    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2023,ufrgs2022,espcexHistorico])
+    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026']
+    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico])
     const carregadas = resultados.flatMap(resultado => resultado.status === 'fulfilled' && Array.isArray(resultado.value) ? resultado.value : [])
     setQuestoes(unirQuestoes(carregadas))
     setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))

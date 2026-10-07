@@ -184,6 +184,22 @@ test('ENEM 2022 contém ambos os idiomas, 185 questões e os dois gabaritos ofic
   assert.equal(unirQuestoes(enem).length, completo.length)
 })
 
+test('UFRGS 2024 contém 104 questões textuais conferidas com o gabarito definitivo', () => {
+  const arquivo = new URL('../public/acervo/ufrgs-2024/questoes.json', import.meta.url)
+  const ufrgs = JSON.parse(readFileSync(arquivo, 'utf8'))
+
+  assert.equal(ufrgs.length, 104)
+  assert.equal(new Set(ufrgs.map(q => q.id)).size, 104)
+  assert.equal(ufrgs.filter(q => q.modelo === '1º dia').length, 48)
+  assert.equal(ufrgs.filter(q => q.modelo === '2º dia').length, 56)
+  assert.deepEqual(ufrgs.filter(q => q.anulada).map(q => q.id), ['ufrgs-2024-d1-46'])
+  for (const questao of ufrgs) {
+    assert.equal(questaoPublicavel(corrigirQuestaoConferida(questao)), true, questao.id)
+    assert.equal(questao.opcoes.length, 5, questao.id)
+    assert.ok(questao.opcoes.every(Boolean), questao.id)
+  }
+})
+
 test('EsPCEx 2017 a 2026 contém as 1.000 questões completas e publicáveis', async () => {
   const arquivo = new URL('../public/acervo/espcex-2017-2026/questoes.json', import.meta.url)
   const espcex = JSON.parse(await (await import('node:fs/promises')).readFile(arquivo, 'utf8'))
