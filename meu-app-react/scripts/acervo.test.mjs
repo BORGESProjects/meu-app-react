@@ -238,6 +238,24 @@ test('UFRGS 2022 contém as 135 questões oficiais com os apoios visuais restaur
   }
 })
 
+test('UFRGS 2023 contém as 135 questões oficiais com os apoios visuais restaurados', () => {
+  const arquivo = new URL('../public/acervo/ufrgs-2023/questoes.json', import.meta.url)
+  const ufrgs = JSON.parse(readFileSync(arquivo, 'utf8'))
+
+  assert.equal(ufrgs.length, 135)
+  assert.equal(new Set(ufrgs.map(q => q.id)).size, 135)
+  assert.equal(ufrgs.filter(q => q.modelo === '1º dia').length, 60)
+  assert.equal(ufrgs.filter(q => q.modelo === '2º dia').length, 75)
+  assert.deepEqual(ufrgs.filter(q => q.anulada).map(q => q.id), ['ufrgs-2023-d2-20'])
+  assert.deepEqual(ufrgs.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
+  for (const questao of ufrgs) {
+    assert.equal(questao.opcoes.length, 5, questao.id)
+    for (const imagem of [questao.imagem_original, ...(questao.opcoes_imagens || [])].filter(Boolean)) {
+      assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+    }
+  }
+})
+
 test('CFN 2020 a 2025 contém 300 questões publicáveis e os seis apoios restaurados', () => {
   const arquivo = new URL('../public/acervo/cfn-2020-2025/questoes.json', import.meta.url)
   const cfn = JSON.parse(readFileSync(arquivo, 'utf8'))
