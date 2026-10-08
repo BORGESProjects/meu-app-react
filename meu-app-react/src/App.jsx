@@ -333,6 +333,13 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 90) throw new Error('Lote UFPR 2024 inválido')
       return data
     })
+    const ufpr2023 = tentarLeitura(async () => {
+      const r = await fetch('/acervo/ufpr-2023/questoes.json', {signal:AbortSignal.timeout(30000)})
+      if (!r.ok) throw new Error('Vestibular UFPR 2023 indisponível')
+      const data = await r.json()
+      if (!Array.isArray(data) || data.length !== 90) throw new Error('Lote UFPR 2023 inválido')
+      return data
+    })
     const utfpr2025 = tentarLeitura(async () => {
       const r = await fetch('/acervo/utfpr-2025/questoes.json', {signal:AbortSignal.timeout(30000)})
       if (!r.ok) throw new Error('Vestibular UTFPR 2025 indisponível')
@@ -340,8 +347,8 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 60) throw new Error('Lote UTFPR 2025 inválido')
       return data
     })
-    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UTFPR 2025']
-    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,utfpr2025])
+    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UTFPR 2025']
+    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,utfpr2025])
     const carregadas = resultados.flatMap(resultado => resultado.status === 'fulfilled' && Array.isArray(resultado.value) ? resultado.value : [])
     setQuestoes(unirQuestoes(carregadas))
     setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
