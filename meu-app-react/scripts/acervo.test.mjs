@@ -357,3 +357,22 @@ test('UFPR 2025 contém 90 questões oficiais com recortes independentes', () =>
     }
   }
 })
+
+test('UTFPR 2025 contém as 60 questões oficiais com recortes independentes', () => {
+  const arquivo = new URL('../public/acervo/utfpr-2025/questoes.json', import.meta.url)
+  const utfpr = JSON.parse(readFileSync(arquivo, 'utf8'))
+
+  assert.equal(utfpr.length, 60)
+  assert.equal(new Set(utfpr.map(q => q.id)).size, 60)
+  assert.deepEqual(utfpr.filter(q => q.anulada).map(q => q.id), ['utfpr-2025-51'])
+  assert.deepEqual(utfpr.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
+  for (const questao of utfpr) {
+    assert.equal(questao.opcoes.length, 5, questao.id)
+    assert.equal(questao.opcoes_imagens.length, 5, questao.id)
+    assert.equal(questao.imagem_sem_alternativas, true, questao.id)
+    assert.ok(questao.enunciado.length > 10, questao.id)
+    for (const imagem of [questao.imagem_original, ...questao.opcoes_imagens, ...(questao.apoio || []).map(item => item.imagem)]) {
+      assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+    }
+  }
+})
