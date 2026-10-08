@@ -434,3 +434,25 @@ test('UFPR 2022 contém as 60 questões oficiais com apoios e recortes independe
     }
   }
 })
+
+test('UFPR 2021 contém as 60 questões oficiais com apoios e recortes independentes', () => {
+  const arquivo = new URL('../public/acervo/ufpr-2021/questoes.json', import.meta.url)
+  const ufpr = JSON.parse(readFileSync(arquivo, 'utf8'))
+
+  assert.equal(ufpr.length, 60)
+  assert.deepEqual(ufpr.map(q => q.numero_original), Array.from({length: 60}, (_, i) => i + 1))
+  assert.deepEqual(ufpr.filter(q => q.anulada).map(q => q.numero_original), [])
+  assert.deepEqual(ufpr.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
+  assert.equal(ufpr[50].materia, 'Química')
+  assert.equal(ufpr[52].opcoes_imagens.length, 5)
+  assert.ok(!ufpr[59].opcoes.some(opcao => opcao.includes('COMPREENSÃO E PRODUÇÃO DE TEXTO')))
+  for (const questao of ufpr) {
+    assert.equal(questao.opcoes.length, 5, questao.id)
+    assert.equal(questao.opcoes_imagens.length, 5, questao.id)
+    assert.equal(questao.imagem_sem_alternativas, true, questao.id)
+    assert.ok(questao.enunciado.length > 10, questao.id)
+    for (const imagem of [questao.imagem_original, ...questao.opcoes_imagens, ...(questao.apoio || []).map(item => item.imagem)]) {
+      assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+    }
+  }
+})

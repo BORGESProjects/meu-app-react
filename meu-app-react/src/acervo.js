@@ -194,8 +194,8 @@ export function unirQuestoes(cadastradas = []) {
   const origem = q => {
     const id = q.id?.toString() || ''
     const numero = q.numero_original || q.numero
-    if (/^(esa-2025-a-|enem-20(?:1[7-9]|2[0-2])-|ufpr-202[2-5]-|utfpr-2025-)/.test(id)) return id
-    if (normalizarBanca(q.banca, q.concurso) === 'UFPR' && /^(?:2022|2023|2024|2025)$/.test(anoDaQuestao(q)) && numero) {
+    if (/^(esa-2025-a-|enem-20(?:1[7-9]|2[0-2])-|ufpr-202[1-5]-|utfpr-2025-)/.test(id)) return id
+    if (normalizarBanca(q.banca, q.concurso) === 'UFPR' && /^(?:2021|2022|2023|2024|2025)$/.test(anoDaQuestao(q)) && numero) {
       const ano = anoDaQuestao(q)
       return `ufpr-${ano}-${String(numero).padStart(2, '0')}`
     }
