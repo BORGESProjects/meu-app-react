@@ -1,4 +1,4 @@
-"""Restaura as questões visuais omitidas do Vestibular UFRGS 2024."""
+"""Restaura as questões visuais omitidas do Vestibular UFRGS 2022."""
 from __future__ import annotations
 
 import json
@@ -8,23 +8,22 @@ from pathlib import Path
 import pdfplumber
 import pypdfium2 as pdfium
 
-from importar_ufrgs_2024 import GABARITO_DIA_1, GABARITO_DIA_2, materia
+from importar_ufrgs_2022 import GABARITO_DIA_1, GABARITO_DIA_2, materia
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DESTINO = ROOT / "public/acervo/ufrgs-2024/questoes.json"
-FONTES = ROOT / "tmp/ufrgs-2024"
+DESTINO = ROOT / "public/acervo/ufrgs-2022/questoes.json"
+FONTES = ROOT / "tmp/ufrgs-2022"
 IMAGENS = DESTINO.parent / "imagens/reparadas"
 ESCALA = 2.0
 
 # Página física do PDF. Os dois primeiros arquivos incluem folhas de rosto e
 # cartões de respostas, por isso a relação é explicitada e auditável.
 PAGINAS = {
-    1: {40: 28, 48: 33, 50: 34, 51: 34, 52: 35, 53: 35, 54: 36,
-        55: 36, 56: 37, 57: 37, 58: 38, 60: 38},
-    2: {16: 8, 17: 8, 18: 8, 20: 9, 21: 9, 23: 10, 24: 10, 25: 10,
-        26: 10, 27: 11, 28: 12, 34: 14, 35: 15, 39: 16, 40: 17,
-        50: 20, 52: 21, 55: 22, 56: 23, 59: 25, 66: 28},
+    1: {45: 24, 48: 25, 51: 27, 52: 27, 53: 28, 54: 28,
+        56: 30, 57: 30, 58: 31, 59: 32, 60: 32},
+    2: {16: 7, 17: 7, 19: 8, 21: 9, 22: 9, 23: 10, 25: 11,
+        27: 12, 29: 13, 31: 16, 48: 24, 52: 27, 54: 28, 60: 32},
 }
 
 
@@ -125,7 +124,7 @@ def main() -> None:
                 recorte = original.crop((int(recorte_esquerda * ESCALA), int(topo * ESCALA),
                                          int(recorte_direita * ESCALA), int((inicio_opcoes - 3) * ESCALA)))
 
-                base = f"ufrgs-2024-d{dia}-{numero:02d}"
+                base = f"ufrgs-2022-d{dia}-{numero:02d}"
                 enunciado_path = IMAGENS / f"{base}-enunciado.webp"
                 if recorte.width > 1180:
                     recorte = recorte.resize((1180, round(recorte.height * 1180 / recorte.width)))
@@ -165,10 +164,10 @@ def main() -> None:
                 id_ = base
                 registro = por_id.get(id_, {})
                 registro.update({
-                    "id": id_, "ano": 2024, "numero_original": numero,
+                    "id": id_, "ano": 2022, "numero_original": numero,
                     "modelo": f"{dia}º dia", "materia": materia(numero, dia),
                     "conteudo": materia(numero, dia), "banca": "UFRGS",
-                    "concurso": "Vestibular UFRGS 2024", "dificuldade": "Média",
+                    "concurso": "Vestibular UFRGS 2022", "dificuldade": "Média",
                     "dificuldade_estimada": True,
                     "enunciado": registro.get("enunciado") or limpar(" ".join(palavras_enunciado)),
                     "opcoes": registro.get("opcoes") or [f"Alternativa {letra}" for letra in "ABCDE"],
@@ -176,8 +175,8 @@ def main() -> None:
                     "imagem_original": "/" + enunciado_path.relative_to(ROOT / "public").as_posix(),
                     "imagem_sem_alternativas": True, "texto_extraido_corrompido": True,
                     "apoio": registro.get("apoio", []),
-                    "origem": "UFRGS - Vestibular 2024 - prova oficial",
-                    "fonte_dados": "https://www.ufrgs.br/vestibular/cv2024/gabaritos/",
+                    "origem": "UFRGS - Vestibular 2022 - prova oficial",
+                    "fonte_dados": "https://vestibular.ufrgs.br/cv2022/",
                     "resposta_correta": 0 if gabarito[numero - 1] == "X" else ord(gabarito[numero - 1]) - ord("A"),
                     "anulada": gabarito[numero - 1] == "X",
                 })
@@ -189,7 +188,7 @@ def main() -> None:
     if len(questoes) != 135 or len({q["id"] for q in questoes}) != 135:
         raise ValueError(f"Acervo incompleto após reparação: {len(questoes)} registros")
     DESTINO.write_text(json.dumps(questoes, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
-    print("UFRGS 2024 restaurada: 135 questões, 33 com apoio visual verificado")
+    print("UFRGS 2022 restaurada: 135 questões, 25 com apoio visual verificado")
 
 
 if __name__ == "__main__":
