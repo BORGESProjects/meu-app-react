@@ -528,3 +528,29 @@ test('UTFPR 2024 contém as 60 questões oficiais com apoios e recortes independ
     }
   }
 })
+
+
+test('UTFPR 2023 contém as 60 questões oficiais com apoios e recortes independentes', () => {
+  const arquivo = new URL('../public/acervo/utfpr-2023/questoes.json', import.meta.url)
+  const utfpr = JSON.parse(readFileSync(arquivo, 'utf8'))
+
+  assert.equal(utfpr.length, 60)
+  assert.deepEqual(utfpr.map(q => q.numero_original), Array.from({length: 60}, (_, i) => i + 1))
+  assert.deepEqual(utfpr.filter(q => q.anulada).map(q => q.numero_original), [58])
+  assert.deepEqual(utfpr.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
+  assert.deepEqual(utfpr.filter(q => q.apoio?.length).map(q => q.numero_original), [9, 10, 13, 14, 15, 16])
+  assert.equal(utfpr[12].resposta_correta, 1)
+  assert.equal(utfpr[57].anulada, true)
+  assert.equal(utfpr[26].materia, 'Filosofia')
+  assert.equal(utfpr[28].materia, 'Sociologia')
+  for (const questao of utfpr) {
+    assert.equal(questao.ano, 2023, questao.id)
+    assert.equal(questao.opcoes.length, 5, questao.id)
+    assert.equal(questao.opcoes_imagens.length, 5, questao.id)
+    assert.equal(questao.imagem_sem_alternativas, true, questao.id)
+    assert.ok(questao.enunciado.length > 10, questao.id)
+    for (const imagem of [questao.imagem_original, ...questao.opcoes_imagens, ...(questao.apoio || []).map(item => item.imagem)]) {
+      assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+    }
+  }
+})
