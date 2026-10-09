@@ -579,3 +579,29 @@ test('UTFPR 2024/2 contém as 60 questões oficiais com recortes independentes',
     }
   }
 })
+
+test('PUC-PR 2025/2 Medicina contém as 60 questões oficiais com recortes independentes', () => {
+  const arquivo = new URL('../public/acervo/pucpr-2025-2-medicina/questoes.json', import.meta.url)
+  const pucpr = JSON.parse(readFileSync(arquivo, 'utf8'))
+
+  assert.equal(pucpr.length, 60)
+  assert.deepEqual(pucpr.map(q => q.numero_original), Array.from({length: 60}, (_, i) => i + 1))
+  assert.deepEqual(pucpr.filter(q => q.anulada).map(q => q.numero_original), [])
+  assert.deepEqual(pucpr.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
+  assert.equal(pucpr[0].resposta_correta, 2)
+  assert.equal(pucpr[29].resposta_correta, 1)
+  assert.equal(pucpr[59].resposta_correta, 1)
+  assert.equal(pucpr[20].materia, 'Química')
+  assert.equal(pucpr[54].materia, 'Língua Inglesa')
+  for (const questao of pucpr) {
+    assert.equal(questao.ano, 2025, questao.id)
+    assert.equal(questao.banca, 'PUC-PR', questao.id)
+    assert.equal(questao.opcoes.length, 5, questao.id)
+    assert.equal(questao.opcoes_imagens.length, 5, questao.id)
+    assert.equal(questao.imagem_sem_alternativas, true, questao.id)
+    assert.ok(questao.enunciado.length > 10, questao.id)
+    for (const imagem of [questao.imagem_original, ...questao.opcoes_imagens]) {
+      assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+    }
+  }
+})
