@@ -478,3 +478,27 @@ test('UFPR 2020 contém as 90 questões oficiais com apoios e recortes independe
     }
   }
 })
+
+test('UFPR 2019 contém as 90 questões oficiais com apoios e recortes independentes', () => {
+  const arquivo = new URL('../public/acervo/ufpr-2019/questoes.json', import.meta.url)
+  const ufpr = JSON.parse(readFileSync(arquivo, 'utf8'))
+
+  assert.equal(ufpr.length, 90)
+  assert.deepEqual(ufpr.map(q => q.numero_original), Array.from({length: 90}, (_, i) => i + 1))
+  assert.deepEqual(ufpr.filter(q => q.anulada).map(q => q.numero_original), [10])
+  assert.deepEqual(ufpr.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
+  assert.equal(ufpr[9].materia, 'História')
+  assert.equal(ufpr[10].materia, 'Química')
+  assert.equal(ufpr[82].materia, 'Língua Inglesa')
+  assert.deepEqual(ufpr[56].opcoes, ['U = 24 µJ.', 'U = 36 µJ.', 'U = 72 µJ.', 'U = 96 µJ.', 'U = 144 µJ.'])
+  for (const questao of ufpr) {
+    assert.equal(questao.ano, 2019, questao.id)
+    assert.equal(questao.opcoes.length, 5, questao.id)
+    assert.equal(questao.opcoes_imagens.length, 5, questao.id)
+    assert.equal(questao.imagem_sem_alternativas, true, questao.id)
+    assert.ok(questao.enunciado.length > 10, questao.id)
+    for (const imagem of [questao.imagem_original, ...questao.opcoes_imagens, ...(questao.apoio || []).map(item => item.imagem)]) {
+      assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+    }
+  }
+})
