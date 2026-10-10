@@ -1,0 +1,392 @@
+[
+  {
+    "id": "uem-2025-01",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 1,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "enunciado": "Assinale o que for correto.",
+    "texto_apoio": "Texto 1\nDesse fruto*\nEdvaldo Santana e Osnofa\n1 Tem gente por aí vivendo que nem bicho,\n2 fuçando comida na lata do lixo.\n3 Irmã gêmea da loucura\n4 dos gritos na noite escura.\n5 É gente dormindo debaixo do viaduto\n6 e comendo a parte mais podre do fruto.\n7 É gente que nem parece que é gente,\n8 mas que a gente sabe que é gente.\n9\n10 Também tem gente por aí vivendo que nem gente,\n11 Guardando seu ouro à unha e dente.\n12 Tem gente por aí vivendo que nem gente,\n13 guardando seu ouro à unha e dente.\n14 Trancando as portas sem saber que na rua\n15 sangra exposta a ferida sua.\n16 É gente engordando por cima do fruto\n17 e atirando a parte mais podre no lixo.\n18 É gente que até parece que é gente,\n19 mas que a gente sabe que é bicho.\n* Letra de canção gravada por Edvaldo Santana e Zélia Duncan.\nFonte: SANTANA, E. Desse Fruto. Amor de Periferia. São Paulo: 2003.\nDisponível em: https://open.spotify.com/track/4LbdXoYaFwlxa0x7oh\n45i?si=EOQmu0c-RLOOL3YME_3wug, Acesso 24 jun 2024.",
+    "opcoes": [
+      "A canção opõe as pessoas em situação de miséria à parcela\nprivilegiada que concentra a maior parte da renda.",
+      "O tema principal da canção é a desigualdade\nsocioeconômica.",
+      "Em “Irmã gêmea da loucura / dos gritos na noite escura.”\n(linhas 3 e 4) toma-se a miséria como um fato natural que\nfaz parte da ordem natural da vida.",
+      "De acordo com a canção, a miséria faz “gente” (linha 1) se\ncomportar como “bicho” (linha 1), no modo como se\nalimentam e no lugar onde moram.",
+      "A conjunção coordenada adversativa “mas” (linha 8) faz\numa ressalva ao fato de que esses indivíduos não perdem seu\ncaráter humano, embora se alimentem e vivam como bichos."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 27,
+    "resposta_correta": 27,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 6
+  },
+  {
+    "id": "uem-2025-02",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 2,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "enunciado": "Assinale o que for correto.",
+    "texto_apoio": "Texto 1\nDesse fruto*\nEdvaldo Santana e Osnofa\n1 Tem gente por aí vivendo que nem bicho,\n2 fuçando comida na lata do lixo.\n3 Irmã gêmea da loucura\n4 dos gritos na noite escura.\n5 É gente dormindo debaixo do viaduto\n6 e comendo a parte mais podre do fruto.\n7 É gente que nem parece que é gente,\n8 mas que a gente sabe que é gente.\n9\n10 Também tem gente por aí vivendo que nem gente,\n11 Guardando seu ouro à unha e dente.\n12 Tem gente por aí vivendo que nem gente,\n13 guardando seu ouro à unha e dente.\n14 Trancando as portas sem saber que na rua\n15 sangra exposta a ferida sua.\n16 É gente engordando por cima do fruto\n17 e atirando a parte mais podre no lixo.\n18 É gente que até parece que é gente,\n19 mas que a gente sabe que é bicho.\n* Letra de canção gravada por Edvaldo Santana e Zélia Duncan.\nFonte: SANTANA, E. Desse Fruto. Amor de Periferia. São Paulo: 2003.\nDisponível em: https://open.spotify.com/track/4LbdXoYaFwlxa0x7oh\n45i?si=EOQmu0c-RLOOL3YME_3wug, Acesso 24 jun 2024.",
+    "opcoes": [
+      "O sentido da expressão “Guardando seu ouro à unha e\ndente.” (linha 11) é agir de modo inflexível para distribuir a\nriqueza acumulada.",
+      "Em “sangra exposta a ferida sua.” (linha 15), a canção\nvincula o indivíduo rico à situação dos miseráveis que vivem\nnas ruas.",
+      "A oração coordenada “mas que a gente sabe que é bicho.”\n(linha 19) faz a ressalva de que indivíduos ricos que não são\nsensíveis à miséria acabam por perder sua humanidade.",
+      "Em “e atirando a parte mais podre no lixo.” (linha 17), fazse referência à questão do acúmulo de lixo que prejudica o\nmeio ambiente.",
+      "Em “É gente engordando por cima do fruto” (linha 16), fazse referência ao problema de saúde pública da obesidade que\natinge a população mais pobre."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 7,
+    "resposta_correta": 7,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 6
+  },
+  {
+    "id": "uem-2025-03",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 3,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Variação linguística",
+    "dificuldade": "Médio",
+    "enunciado": "Assinale a(s) alternativa(s) que ilustra(m) uso(s) linguístico(s)\ntípico(s) da oralidade presente(s) na canção que não seria(m)\nadequado(s) em textos escritos formais.",
+    "texto_apoio": "Texto 1\nDesse fruto*\nEdvaldo Santana e Osnofa\n1 Tem gente por aí vivendo que nem bicho,\n2 fuçando comida na lata do lixo.\n3 Irmã gêmea da loucura\n4 dos gritos na noite escura.\n5 É gente dormindo debaixo do viaduto\n6 e comendo a parte mais podre do fruto.\n7 É gente que nem parece que é gente,\n8 mas que a gente sabe que é gente.\n9\n10 Também tem gente por aí vivendo que nem gente,\n11 Guardando seu ouro à unha e dente.\n12 Tem gente por aí vivendo que nem gente,\n13 guardando seu ouro à unha e dente.\n14 Trancando as portas sem saber que na rua\n15 sangra exposta a ferida sua.\n16 É gente engordando por cima do fruto\n17 e atirando a parte mais podre no lixo.\n18 É gente que até parece que é gente,\n19 mas que a gente sabe que é bicho.\n* Letra de canção gravada por Edvaldo Santana e Zélia Duncan.\nFonte: SANTANA, E. Desse Fruto. Amor de Periferia. São Paulo: 2003.\nDisponível em: https://open.spotify.com/track/4LbdXoYaFwlxa0x7oh\n45i?si=EOQmu0c-RLOOL3YME_3wug, Acesso 24 jun 2024.",
+    "opcoes": [
+      "Emprego de “sua” após “ferida” (linha 15).",
+      "Emprego de “a gente sabe” (linhas 8 e 19).",
+      "Emprego de “Tem” com sentido existencial (linhas 1 e 12).",
+      "Emprego do gerúndio “guardando” (linha 13).",
+      "Emprego de “que nem” (linhas 1 e 10)."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 30,
+    "resposta_correta": 30,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 6
+  },
+  {
+    "id": "uem-2025-04",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 4,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "enunciado": "Assinale o que for correto em relação ao texto 2.",
+    "texto_apoio": "Texto 2\nBrasil e a desigualdade social planejada*\nRenato Janine Ribeiro\n1 Apesar do crescimento da renda dos mais pobres, o\n2 Brasil ainda tem pessoas que vivem com R$ 126 por mês ou\n3 menos. Na editoria especial do JC Notícias desta sexta-feira,\n4 a reflexão é sobre como o país precisa reconhecer seus\n5 passados históricos para, assim, conseguir resolver os\n6 desníveis na sociedade\n7 Na última semana, o IBGE (Instituto Brasileiro de\n8 Geografia e Estatística) divulgou mais um dado sobre a\n9 discrepância social presente em nosso país. Apesar da renda\n10 dos 5% mais pobres ter aumentado cerca de 40% em 2023,\n11 essa mesma renda equivale a meros R$ 126 por mês. É\n12 preciso destacar, porém, que se trata do maior valor na série\n13 histórica de tal levantamento, iniciado em 2012.\n14 Sim, existem pessoas em nosso Brasil cuja renda\n15 mensal é só um pouco mais de R$ 100. Em paralelo, o mesmo\n16 levantamento do IBGE identificou que a renda média do 1%\n17 mais rico do país cresceu 13%, passando de R$ 18,3 mil para,\n18 aproximadamente, R$ 20,7 mil.\n19 Falar de desigualdade social é lidar com um cenário\n20 complexo e, infelizmente, plural. A desigualdade social se\n21 manifesta na distribuição de renda, no acesso à Educação, nas\n22 políticas de Saúde e, até mesmo, no quanto de impostos são\n23 pagos por cada um. Portanto, quando um dado aponta\n24 elementos dessa desigualdade, ele escancara a necessidade de\n25 um conjunto de políticas públicas.\n26 Historicamente, o Brasil sempre foi um país que varreu\n27 para debaixo do tapete as suas mazelas. Não reconhecemos o\n28 desnível social que veio desde a colonização e que o período\n29 monárquico não apenas não reverteu, mas provavelmente\n30 agravou – assim como ainda não reconhecemos todas as\n31 vítimas da Ditadura Militar. Somos um país que não enfrenta\n32 o seu passado e que, consequentemente, lida com ele nas\n33 estatísticas do presente.\n34 Convivemos há mais de 500 anos com uma\n35 desigualdade social gritante. O nosso projeto de país, de\n36 nação, foi pensado para que houvesse uma subordinação, um\n37 recorte de quem manda e quem obedece definido por cor, raça\n38 e pobreza. É por isso que temos que dizer: a nossa\n39 desigualdade social foi e é uma desigualdade planejada,\n40 oriunda de inúmeros projetos políticos que comandaram o\n41 Brasil.\n42 [...]\n43 Essa desigualdade social ainda se manifesta na\n44 apropriação privada das iniciativas públicas. Qual é a classe\n45 social que fica, majoritariamente, sem energia elétrica,\n46 enquanto a empresa privatizada não dá explicações? Onde\n47 estão os que não possuem água tratada? Quem paga as\n48 maiores taxas de telefonia? Quanto mais os serviços\n49 essenciais vão para as mãos de quem visa o lucro,\n50 continuamos escrevendo a história de exclusão do nosso país.\n51 Em algumas conferências preparatórias para a 5ª\n52 Conferência Nacional de Ciência, Tecnologia e Inovação (5ª\n53 CNCTI), realizadas neste mês de abril, conversamos sobre o\n54 papel das Ciências Humanas e das Humanidades na\n55 construção das políticas públicas. Reforçamos, em mais de\n56 um encontro, sobre como as Ciências Humanas e Sociais\n57 ajudam a olhar para além dos números e, assim, entender as\n58 necessidades da sociedade.\n59 Agora, temos mais um dado: o Bolsa Família em um\n60 ano ajudou a aumentar a renda dos mais pobres em 40%, mas\n61 ainda é inadmissível que tenhamos pessoas em nosso país que\n62 vivam com R$ 126 por mês. O que é viver com essa quantia?\n63 Onde estão as demandas mais urgentes que os governos\n64 precisam olhar?\n65 Combater a desigualdade social exige uma\n66 reestruturação das políticas públicas, algo que o hoje permite.\n67 Vivemos um período em que as políticas estão em debate.\n68 Não só por conta da 5ª CNCTI, mas por termos um Governo\n69 Federal que vem reativando todos os espaços de participação\n70 popular – muitos, fechados e censurados nas duas gestões\n71 presidenciais anteriores. O espaço para falarmos e fazermos\n72 política existe, agora precisamos ocupar cada vez mais esses\n73 espaços para que as mudanças sociais ocorram na prática.\nRenato Janine Ribeiro, presidente da Sociedade Brasileira para o Progresso\nda Ciência – SBPC\n* Texto publicado como editorial do jornal JC Notícias.\nDisponível em: https://portal.sbpcnet.org.br/noticias/editorial-brasil-e-adesigualdade-social-planejada/. Acesso 25 jun 2025.",
+    "opcoes": [
+      "O texto apresenta como tese central que a desigualdade\nsocial brasileira é resultado de inúmeros projetos políticos\nque comandaram o país.",
+      "As políticas públicas atuais são suficientes para reverter a\ndesigualdade social no país.",
+      "O texto argumenta que o período monárquico não reverteu,\nmas provavelmente agravou a desigualdade social no país.",
+      "Além da distribuição de renda, o editorial argumenta que a\ndesigualdade social se manifesta apenas no acesso à\neducação e nas políticas de saúde.",
+      "O editorial destaca que o programa Bolsa Família ajudou a\naumentar a renda dos mais pobres em 40%."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 21,
+    "resposta_correta": 21,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 7
+  },
+  {
+    "id": "uem-2025-05",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 5,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "enunciado": "Assinale o que for correto em relação ao texto 2.",
+    "texto_apoio": "Texto 2\nBrasil e a desigualdade social planejada*\nRenato Janine Ribeiro\n1 Apesar do crescimento da renda dos mais pobres, o\n2 Brasil ainda tem pessoas que vivem com R$ 126 por mês ou\n3 menos. Na editoria especial do JC Notícias desta sexta-feira,\n4 a reflexão é sobre como o país precisa reconhecer seus\n5 passados históricos para, assim, conseguir resolver os\n6 desníveis na sociedade\n7 Na última semana, o IBGE (Instituto Brasileiro de\n8 Geografia e Estatística) divulgou mais um dado sobre a\n9 discrepância social presente em nosso país. Apesar da renda\n10 dos 5% mais pobres ter aumentado cerca de 40% em 2023,\n11 essa mesma renda equivale a meros R$ 126 por mês. É\n12 preciso destacar, porém, que se trata do maior valor na série\n13 histórica de tal levantamento, iniciado em 2012.\n14 Sim, existem pessoas em nosso Brasil cuja renda\n15 mensal é só um pouco mais de R$ 100. Em paralelo, o mesmo\n16 levantamento do IBGE identificou que a renda média do 1%\n17 mais rico do país cresceu 13%, passando de R$ 18,3 mil para,\n18 aproximadamente, R$ 20,7 mil.\n19 Falar de desigualdade social é lidar com um cenário\n20 complexo e, infelizmente, plural. A desigualdade social se\n21 manifesta na distribuição de renda, no acesso à Educação, nas\n22 políticas de Saúde e, até mesmo, no quanto de impostos são\n23 pagos por cada um. Portanto, quando um dado aponta\n24 elementos dessa desigualdade, ele escancara a necessidade de\n25 um conjunto de políticas públicas.\n26 Historicamente, o Brasil sempre foi um país que varreu\n27 para debaixo do tapete as suas mazelas. Não reconhecemos o\n28 desnível social que veio desde a colonização e que o período\n29 monárquico não apenas não reverteu, mas provavelmente\n30 agravou – assim como ainda não reconhecemos todas as\n31 vítimas da Ditadura Militar. Somos um país que não enfrenta\n32 o seu passado e que, consequentemente, lida com ele nas\n33 estatísticas do presente.\n34 Convivemos há mais de 500 anos com uma\n35 desigualdade social gritante. O nosso projeto de país, de\n36 nação, foi pensado para que houvesse uma subordinação, um\n37 recorte de quem manda e quem obedece definido por cor, raça\n38 e pobreza. É por isso que temos que dizer: a nossa\n39 desigualdade social foi e é uma desigualdade planejada,\n40 oriunda de inúmeros projetos políticos que comandaram o\n41 Brasil.\n42 [...]\n43 Essa desigualdade social ainda se manifesta na\n44 apropriação privada das iniciativas públicas. Qual é a classe\n45 social que fica, majoritariamente, sem energia elétrica,\n46 enquanto a empresa privatizada não dá explicações? Onde\n47 estão os que não possuem água tratada? Quem paga as\n48 maiores taxas de telefonia? Quanto mais os serviços\n49 essenciais vão para as mãos de quem visa o lucro,\n50 continuamos escrevendo a história de exclusão do nosso país.\n51 Em algumas conferências preparatórias para a 5ª\n52 Conferência Nacional de Ciência, Tecnologia e Inovação (5ª\n53 CNCTI), realizadas neste mês de abril, conversamos sobre o\n54 papel das Ciências Humanas e das Humanidades na\n55 construção das políticas públicas. Reforçamos, em mais de\n56 um encontro, sobre como as Ciências Humanas e Sociais\n57 ajudam a olhar para além dos números e, assim, entender as\n58 necessidades da sociedade.\n59 Agora, temos mais um dado: o Bolsa Família em um\n60 ano ajudou a aumentar a renda dos mais pobres em 40%, mas\n61 ainda é inadmissível que tenhamos pessoas em nosso país que\n62 vivam com R$ 126 por mês. O que é viver com essa quantia?\n63 Onde estão as demandas mais urgentes que os governos\n64 precisam olhar?\n65 Combater a desigualdade social exige uma\n66 reestruturação das políticas públicas, algo que o hoje permite.\n67 Vivemos um período em que as políticas estão em debate.\n68 Não só por conta da 5ª CNCTI, mas por termos um Governo\n69 Federal que vem reativando todos os espaços de participação\n70 popular – muitos, fechados e censurados nas duas gestões\n71 presidenciais anteriores. O espaço para falarmos e fazermos\n72 política existe, agora precisamos ocupar cada vez mais esses\n73 espaços para que as mudanças sociais ocorram na prática.\nRenato Janine Ribeiro, presidente da Sociedade Brasileira para o Progresso\nda Ciência – SBPC\n* Texto publicado como editorial do jornal JC Notícias.\nDisponível em: https://portal.sbpcnet.org.br/noticias/editorial-brasil-e-adesigualdade-social-planejada/. Acesso 25 jun 2025.",
+    "opcoes": [
+      "O texto relaciona a apropriação privada de iniciativas\npúblicas à desigualdade social, citando como exemplo a\nfalta de energia elétrica, de água tratada, e as altas taxas de\ntelefonia para a maioria.",
+      "O papel das Ciências Humanas e das Humanidades seria\ncontribuir com a construção de políticas públicas.",
+      "O editorial menciona que vivemos um contexto mais\nfavorável para a reestruturação de políticas públicas.",
+      "A recomendação do autor para que as mudanças sociais\nocorram na prática é ocupar cada vez mais os espaços para\nfazer política e falar.",
+      "O principal objetivo do editorial foi expressar a opinião e o\nposicionamento do autor (que representa a Sociedade\nBrasileira para o Progresso da Ciência (SBPC)) sobre a\ndesigualdade social no Brasil."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 31,
+    "resposta_correta": 31,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 7
+  },
+  {
+    "id": "uem-2025-06",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 6,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Semântica e estilística",
+    "dificuldade": "Médio",
+    "enunciado": "Assinale o que for correto.",
+    "texto_apoio": "Texto 2\nBrasil e a desigualdade social planejada*\nRenato Janine Ribeiro\n1 Apesar do crescimento da renda dos mais pobres, o\n2 Brasil ainda tem pessoas que vivem com R$ 126 por mês ou\n3 menos. Na editoria especial do JC Notícias desta sexta-feira,\n4 a reflexão é sobre como o país precisa reconhecer seus\n5 passados históricos para, assim, conseguir resolver os\n6 desníveis na sociedade\n7 Na última semana, o IBGE (Instituto Brasileiro de\n8 Geografia e Estatística) divulgou mais um dado sobre a\n9 discrepância social presente em nosso país. Apesar da renda\n10 dos 5% mais pobres ter aumentado cerca de 40% em 2023,\n11 essa mesma renda equivale a meros R$ 126 por mês. É\n12 preciso destacar, porém, que se trata do maior valor na série\n13 histórica de tal levantamento, iniciado em 2012.\n14 Sim, existem pessoas em nosso Brasil cuja renda\n15 mensal é só um pouco mais de R$ 100. Em paralelo, o mesmo\n16 levantamento do IBGE identificou que a renda média do 1%\n17 mais rico do país cresceu 13%, passando de R$ 18,3 mil para,\n18 aproximadamente, R$ 20,7 mil.\n19 Falar de desigualdade social é lidar com um cenário\n20 complexo e, infelizmente, plural. A desigualdade social se\n21 manifesta na distribuição de renda, no acesso à Educação, nas\n22 políticas de Saúde e, até mesmo, no quanto de impostos são\n23 pagos por cada um. Portanto, quando um dado aponta\n24 elementos dessa desigualdade, ele escancara a necessidade de\n25 um conjunto de políticas públicas.\n26 Historicamente, o Brasil sempre foi um país que varreu\n27 para debaixo do tapete as suas mazelas. Não reconhecemos o\n28 desnível social que veio desde a colonização e que o período\n29 monárquico não apenas não reverteu, mas provavelmente\n30 agravou – assim como ainda não reconhecemos todas as\n31 vítimas da Ditadura Militar. Somos um país que não enfrenta\n32 o seu passado e que, consequentemente, lida com ele nas\n33 estatísticas do presente.\n34 Convivemos há mais de 500 anos com uma\n35 desigualdade social gritante. O nosso projeto de país, de\n36 nação, foi pensado para que houvesse uma subordinação, um\n37 recorte de quem manda e quem obedece definido por cor, raça\n38 e pobreza. É por isso que temos que dizer: a nossa\n39 desigualdade social foi e é uma desigualdade planejada,\n40 oriunda de inúmeros projetos políticos que comandaram o\n41 Brasil.\n42 [...]\n43 Essa desigualdade social ainda se manifesta na\n44 apropriação privada das iniciativas públicas. Qual é a classe\n45 social que fica, majoritariamente, sem energia elétrica,\n46 enquanto a empresa privatizada não dá explicações? Onde\n47 estão os que não possuem água tratada? Quem paga as\n48 maiores taxas de telefonia? Quanto mais os serviços\n49 essenciais vão para as mãos de quem visa o lucro,\n50 continuamos escrevendo a história de exclusão do nosso país.\n51 Em algumas conferências preparatórias para a 5ª\n52 Conferência Nacional de Ciência, Tecnologia e Inovação (5ª\n53 CNCTI), realizadas neste mês de abril, conversamos sobre o\n54 papel das Ciências Humanas e das Humanidades na\n55 construção das políticas públicas. Reforçamos, em mais de\n56 um encontro, sobre como as Ciências Humanas e Sociais\n57 ajudam a olhar para além dos números e, assim, entender as\n58 necessidades da sociedade.\n59 Agora, temos mais um dado: o Bolsa Família em um\n60 ano ajudou a aumentar a renda dos mais pobres em 40%, mas\n61 ainda é inadmissível que tenhamos pessoas em nosso país que\n62 vivam com R$ 126 por mês. O que é viver com essa quantia?\n63 Onde estão as demandas mais urgentes que os governos\n64 precisam olhar?\n65 Combater a desigualdade social exige uma\n66 reestruturação das políticas públicas, algo que o hoje permite.\n67 Vivemos um período em que as políticas estão em debate.\n68 Não só por conta da 5ª CNCTI, mas por termos um Governo\n69 Federal que vem reativando todos os espaços de participação\n70 popular – muitos, fechados e censurados nas duas gestões\n71 presidenciais anteriores. O espaço para falarmos e fazermos\n72 política existe, agora precisamos ocupar cada vez mais esses\n73 espaços para que as mudanças sociais ocorram na prática.\nRenato Janine Ribeiro, presidente da Sociedade Brasileira para o Progresso\nda Ciência – SBPC\n* Texto publicado como editorial do jornal JC Notícias.\nDisponível em: https://portal.sbpcnet.org.br/noticias/editorial-brasil-e-adesigualdade-social-planejada/. Acesso 25 jun 2025.",
+    "opcoes": [
+      "Em “Historicamente, o Brasil sempre foi um país que\nvarreu para debaixo do tapete as suas mazelas.” (linhas\n26 e 27), a metáfora em negrito sugere que o Brasil escondeu\nseus problemas sociais e históricos, evitando enfrentá-los\nabertamente.",
+      "Em “É preciso destacar, porém, que se trata do maior valor\nna série histórica de tal levantamento, iniciado em 2012.”\n(linhas 11-13), o termo em destaque é uma conjunção\nadversativa que introduz uma ressalva importante após a\ninformação do aumento da renda.",
+      "Em “Falar de desigualdade social é lidar com um cenário\ncomplexo e, infelizmente, plural.” (linhas 19 e 20), o autor,\ncom o uso do vocábulo “infelizmente”, expressa uma\navaliação negativa sobre a pluralidade da desigualdade.",
+      "O contraste entre o crescimento de renda da população mais\npobre com a parcela mais rica, em 2023, mostra um\nequacionamento da questão da desigualdade social no Brasil.",
+      "O uso de sentenças interrogativas, como em “O que é viver\ncom essa quantia? Onde estão as demandas mais urgentes\nque os governos precisam olhar?” (linhas 62-64), constitui o\nestilo da linguagem do gênero editorial."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 23,
+    "resposta_correta": 23,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 7
+  },
+  {
+    "id": "uem-2025-07",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 7,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "enunciado": "Assinale o que for correto em relação aos textos 1 e 2.",
+    "texto_apoio": "Texto 1\nDesse fruto*\nEdvaldo Santana e Osnofa\n1 Tem gente por aí vivendo que nem bicho,\n2 fuçando comida na lata do lixo.\n3 Irmã gêmea da loucura\n4 dos gritos na noite escura.\n5 É gente dormindo debaixo do viaduto\n6 e comendo a parte mais podre do fruto.\n7 É gente que nem parece que é gente,\n8 mas que a gente sabe que é gente.\n9\n10 Também tem gente por aí vivendo que nem gente,\n11 Guardando seu ouro à unha e dente.\n12 Tem gente por aí vivendo que nem gente,\n13 guardando seu ouro à unha e dente.\n14 Trancando as portas sem saber que na rua\n15 sangra exposta a ferida sua.\n16 É gente engordando por cima do fruto\n17 e atirando a parte mais podre no lixo.\n18 É gente que até parece que é gente,\n19 mas que a gente sabe que é bicho.\n* Letra de canção gravada por Edvaldo Santana e Zélia Duncan.\nFonte: SANTANA, E. Desse Fruto. Amor de Periferia. São Paulo: 2003.\nDisponível em: https://open.spotify.com/track/4LbdXoYaFwlxa0x7oh\n45i?si=EOQmu0c-RLOOL3YME_3wug, Acesso 24 jun 2024.\n\nTexto 2\nBrasil e a desigualdade social planejada*\nRenato Janine Ribeiro\n1 Apesar do crescimento da renda dos mais pobres, o\n2 Brasil ainda tem pessoas que vivem com R$ 126 por mês ou\n3 menos. Na editoria especial do JC Notícias desta sexta-feira,\n4 a reflexão é sobre como o país precisa reconhecer seus\n5 passados históricos para, assim, conseguir resolver os\n6 desníveis na sociedade\n7 Na última semana, o IBGE (Instituto Brasileiro de\n8 Geografia e Estatística) divulgou mais um dado sobre a\n9 discrepância social presente em nosso país. Apesar da renda\n10 dos 5% mais pobres ter aumentado cerca de 40% em 2023,\n11 essa mesma renda equivale a meros R$ 126 por mês. É\n12 preciso destacar, porém, que se trata do maior valor na série\n13 histórica de tal levantamento, iniciado em 2012.\n14 Sim, existem pessoas em nosso Brasil cuja renda\n15 mensal é só um pouco mais de R$ 100. Em paralelo, o mesmo\n16 levantamento do IBGE identificou que a renda média do 1%\n17 mais rico do país cresceu 13%, passando de R$ 18,3 mil para,\n18 aproximadamente, R$ 20,7 mil.\n19 Falar de desigualdade social é lidar com um cenário\n20 complexo e, infelizmente, plural. A desigualdade social se\n21 manifesta na distribuição de renda, no acesso à Educação, nas\n22 políticas de Saúde e, até mesmo, no quanto de impostos são\n23 pagos por cada um. Portanto, quando um dado aponta\n24 elementos dessa desigualdade, ele escancara a necessidade de\n25 um conjunto de políticas públicas.\n26 Historicamente, o Brasil sempre foi um país que varreu\n27 para debaixo do tapete as suas mazelas. Não reconhecemos o\n28 desnível social que veio desde a colonização e que o período\n29 monárquico não apenas não reverteu, mas provavelmente\n30 agravou – assim como ainda não reconhecemos todas as\n31 vítimas da Ditadura Militar. Somos um país que não enfrenta\n32 o seu passado e que, consequentemente, lida com ele nas\n33 estatísticas do presente.\n34 Convivemos há mais de 500 anos com uma\n35 desigualdade social gritante. O nosso projeto de país, de\n36 nação, foi pensado para que houvesse uma subordinação, um\n37 recorte de quem manda e quem obedece definido por cor, raça\n38 e pobreza. É por isso que temos que dizer: a nossa\n39 desigualdade social foi e é uma desigualdade planejada,\n40 oriunda de inúmeros projetos políticos que comandaram o\n41 Brasil.\n42 [...]\n43 Essa desigualdade social ainda se manifesta na\n44 apropriação privada das iniciativas públicas. Qual é a classe\n45 social que fica, majoritariamente, sem energia elétrica,\n46 enquanto a empresa privatizada não dá explicações? Onde\n47 estão os que não possuem água tratada? Quem paga as\n48 maiores taxas de telefonia? Quanto mais os serviços\n49 essenciais vão para as mãos de quem visa o lucro,\n50 continuamos escrevendo a história de exclusão do nosso país.\n51 Em algumas conferências preparatórias para a 5ª\n52 Conferência Nacional de Ciência, Tecnologia e Inovação (5ª\n53 CNCTI), realizadas neste mês de abril, conversamos sobre o\n54 papel das Ciências Humanas e das Humanidades na\n55 construção das políticas públicas. Reforçamos, em mais de\n56 um encontro, sobre como as Ciências Humanas e Sociais\n57 ajudam a olhar para além dos números e, assim, entender as\n58 necessidades da sociedade.\n59 Agora, temos mais um dado: o Bolsa Família em um\n60 ano ajudou a aumentar a renda dos mais pobres em 40%, mas\n61 ainda é inadmissível que tenhamos pessoas em nosso país que\n62 vivam com R$ 126 por mês. O que é viver com essa quantia?\n63 Onde estão as demandas mais urgentes que os governos\n64 precisam olhar?\n65 Combater a desigualdade social exige uma\n66 reestruturação das políticas públicas, algo que o hoje permite.\n67 Vivemos um período em que as políticas estão em debate.\n68 Não só por conta da 5ª CNCTI, mas por termos um Governo\n69 Federal que vem reativando todos os espaços de participação\n70 popular – muitos, fechados e censurados nas duas gestões\n71 presidenciais anteriores. O espaço para falarmos e fazermos\n72 política existe, agora precisamos ocupar cada vez mais esses\n73 espaços para que as mudanças sociais ocorram na prática.\nRenato Janine Ribeiro, presidente da Sociedade Brasileira para o Progresso\nda Ciência – SBPC\n* Texto publicado como editorial do jornal JC Notícias.\nDisponível em: https://portal.sbpcnet.org.br/noticias/editorial-brasil-e-adesigualdade-social-planejada/. Acesso 25 jun 2025.",
+    "opcoes": [
+      "Embora os textos sejam exemplares de gêneros distintos,\neles se aproximam por apresentarem a mesma temática.",
+      "O texto 1 traz um contraste de imagens da vida cotidiana,\nenquanto o texto 2 lança mão de uma estrutura\nargumentativa apoiando-se em dados objetivos, como\nindicadores estatísticos e fatos históricos.",
+      "Enquanto o texto 2 questiona o que é viver com baixa renda,\no texto 1 ilustra a sobrevivência em condições de miséria.",
+      "A parcela que ganha atualmente 20,7 mil reais (texto 2) é a\nque poderia ser identificada com as pessoas “vivendo que\nnem gente” (texto 1, linha 10).",
+      "Tanto o texto 1 quanto o texto 2 apresentam possibilidades\nde enfrentamento da questão da desigualdade no Brasil."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 8
+  },
+  {
+    "id": "uem-2025-08",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 8,
+    "materia": "Literatura",
+    "conteudo": "Literatura brasileira",
+    "dificuldade": "Médio",
+    "enunciado": "Assinale o que for correto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "O Conto “Uma amizade sincera”, que integra a coletânea\ndenominada A legião estrangeira, de Clarice Lispector,\nnarra a história de duas adolescentes que resolvem morar\njuntas. A convivência, porém, expõe o caráter e o egoísmo\nde ambas, levando-as a um desentendimento profundo. Elas\nse separam por um tempo e combinam de voltar a viver\njuntas depois que a raiva passar.",
+      "“A terceira margem do rio”, conto de João Guimarães Rosa,\nque faz parte do livro Primeiras estórias, caracteriza-se pelo\nabandono da linguagem experimental e pela ausência de\nmarcas poéticas, devido à intenção do narrador, de primeira\npessoa, de representar a história de seu pai do modo mais\nfidedigno possível. O pai havia decidido permanecer em\numa canoa. O filho, porém, insiste na ideia de trocar de lugar\ncom ele. Essa troca ocorre no final do conto.",
+      "Narrado em terceira pessoa, o conto “Viagem a Petrópolis”,\nde Clarice Lispector, descreve uma velha, apelidada de\nMocinha, mas cujo nome é Margarida. A senhora dorme\ndurante a viagem para a cidade de Petrópolis e, ao acordar,\nnão sabe mais onde se encontra. Desce do carro, dirige-se a\num chafariz, senta-se em uma pedra, encosta a cabeça em\numa árvore e morre.",
+      "Os contos “Trezentas onças”, de Simões Lopes Neto, e\n“Maria pintada de prata”, de Dalton Trevisan, focalizam a\nregião amazônica. As duas narrativas abordam a vida dos\nanimais na floresta e exploram a linguagem peculiar da\nregião Norte do Brasil.",
+      "Quarto de despejo, de Carolina Maria de Jesus, trata de\nexperiências cotidianas de uma mulher negra, mãe solteira,\npobre, que luta pela sobrevivência trabalhando como\ndoméstica e vendendo lixo reciclável. Ela enfrenta a dura\ntarefa de educar os filhos em um ambiente completamente\nadverso. Violência, discriminação racial, miséria, fome,\nfazem parte de seu dia a dia."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 20,
+    "resposta_correta": 20,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 8
+  },
+  {
+    "id": "uem-2025-09",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 9,
+    "materia": "Literatura",
+    "conteudo": "Poesia brasileira",
+    "dificuldade": "Médio",
+    "enunciado": "Assinale o que for correto sobre o poema e sobre a poesia de\nsua autora.\ndefinição\npoeta é onda\nonda é canto\ncanto é espera\nespera é adeus\nadeus é morte\nmorte é nódoa\nnódoa é ostra\nostra é ensaio\nensaio é busca\nbusca é poeira\npoeira é poeta\nCÉSAR, A. C. Poética. São Paulo: Companhia das Letras, 2013.\nVocabulário:\nnódoa: mancha;\nostra: molusco marinho de concha irregular.",
+    "texto_apoio": "",
+    "opcoes": [
+      "O poema “definição”, de Ana Cristina César, utiliza uma\nlinguagem denotativa e versos semanticamente simples, de\nfácil compreensão, o que define a poeta de forma clara e\nobjetiva.",
+      "A autora adota e expande, na totalidade do poema, a\nprosopopeia da “onda” e da “ostra”, focalizando imagens do\nmar como elementos centrais para a construção dos sentidos.",
+      "Há uma sequência de metáforas no poema que começa e\ntermina com a palavra “poeta”. Essa disposição figurativa\nsugere que o poema apresenta algumas atitudes do poeta:\ncantar, esperar, despedir-se, morrer, buscar... A conclusão,\nnos dois últimos versos, tem matiz pessimista: busca inútil.",
+      "Por pertencer ao movimento parnasiano e, por consequência,\nser avessa às novidades modernistas, a autora utiliza, no\npoema transcrito, rigor gramatical e sintático, elementos\ncoesivos abundantes, pontuação cuidadosa, e privilegia os\npredicados verbais.",
+      "Ana Cristina César utiliza, nesse seu poema, os recursos da\nmetalinguagem. O verso “adeus é morte” contém quatro\nsílabas poéticas."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 20,
+    "resposta_correta": 20,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 8
+  },
+  {
+    "id": "uem-2025-10",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 10,
+    "materia": "Literatura",
+    "conteudo": "Literatura brasileira",
+    "dificuldade": "Médio",
+    "enunciado": "Sobre “Amor por anexins”, de Artur Azevedo, assinale o que for\ncorreto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "“Amor por anexins” é uma peça de teatro cômico cujos\nprotagonistas são um solteirão e uma viúva. O título da peça\nprovém de uma característica da personagem masculina que\nse comunica compulsivamente por provérbios, sentenças ou\nditados populares.",
+      "A peça, apesar de seu caráter romântico, não apresenta o\nfinal feliz que costuma ser uma das marcas da comédia. Pelo\ncontrário, o conflito crescente entre as personagens\nsurpreende o leitor e o público. Este, ao final, é convidado a\naplaudir a conveniente separação do casal.",
+      "Em “Amor por anexins”, as ações ocorrem na cidade de São\nPaulo, em contexto histórico atual. Há um grande número de\npersonagens secundárias, entre as quais estão comerciantes\ne funcionários públicos.",
+      "No que se refere à linguagem, a peça de Artur Azevedo\nrecusa variações linguísticas próprias da oralidade. O\nsolteirão apaixonado usa sempre linguagem formal, elevada,\nde acordo com os padrões da norma culta.",
+      "No desenrolar dos acontecimentos, a certa altura das\ndiscussões entre o solteirão e a viúva, esta propõe ao\npretendente conquistador uma condição para o casamento:\nele deveria parar de se comunicar por meio de provérbios."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 17,
+    "resposta_correta": 17,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 9
+  }
+]

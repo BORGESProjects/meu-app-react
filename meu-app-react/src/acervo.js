@@ -142,6 +142,12 @@ function indiceResposta(questao) {
   return -1
 }
 
+function respostaCanonica(questao) {
+  return questao.tipo_resposta === 'somatoria'
+    ? `somatoria:${Number(questao.resposta_soma ?? questao.resposta_correta)}`
+    : indiceResposta(questao)
+}
+
 export function corrigirQuestaoConferida(questao) {
   const correcao = CORRECOES_CONFERIDAS.get(String(questao?.id ?? ''))
   const corrigida = correcao ? { ...questao, ...correcao } : { ...questao }
@@ -178,8 +184,17 @@ export function questaoPublicavel(questao) {
   if (semTextoDeApoio(questao)) return false
 
   if (!questao.anulada) {
-    const resposta = indiceResposta(questao)
-    if (resposta < 0 || resposta >= opcoes.length) return false
+    if (questao.tipo_resposta === 'somatoria') {
+      const valores = questao.valores_opcoes
+      const resposta = Number(questao.resposta_soma ?? questao.resposta_correta)
+      if (!Array.isArray(valores) || valores.length !== opcoes.length || valores.some(valor => !Number.isInteger(valor) || valor <= 0)) return false
+      if (!Number.isInteger(resposta) || resposta < 0 || resposta > valores.reduce((total, valor) => total + valor, 0)) return false
+      const alcancaveis = valores.reduce((somas, valor) => new Set([...somas, ...[...somas].map(soma => soma + valor)]), new Set([0]))
+      if (!alcancaveis.has(resposta)) return false
+    } else {
+      const resposta = indiceResposta(questao)
+      if (resposta < 0 || resposta >= opcoes.length) return false
+    }
   }
   return true
 }
@@ -194,7 +209,7 @@ export function unirQuestoes(cadastradas = []) {
   const origem = q => {
     const id = q.id?.toString() || ''
     const numero = q.numero_original || q.numero
-    if (/^(esa-2025-a-|enem-20(?:1[7-9]|2[0-2])-|ufpr-20(?:19|2[0-5])-|utfpr-202[3-5]-)/.test(id)) return id
+    if (/^(esa-2025-a-|enem-20(?:1[7-9]|2[0-2])-|ufpr-20(?:19|2[0-5])-|utfpr-202[3-5]-|uem-2025-)/.test(id)) return id
     if (normalizarBanca(q.banca, q.concurso) === 'UFPR' && /^(?:2019|2020|2021|2022|2023|2024|2025)$/.test(anoDaQuestao(q)) && numero) {
       const ano = anoDaQuestao(q)
       return `ufpr-${ano}-${String(numero).padStart(2, '0')}`
@@ -225,7 +240,7 @@ export function unirQuestoes(cadastradas = []) {
 
   const resultado = []
   for (const grupo of porConteudo.values()) {
-    const respostas = new Set(grupo.map(questao => questao.anulada ? 'anulada' : indiceResposta(questao)))
+    const respostas = new Set(grupo.map(questao => questao.anulada ? 'anulada' : respostaCanonica(questao)))
     // Conteúdo idêntico com gabaritos diferentes não é seguro para estudo.
     // O grupo fica em quarentena até que uma fonte oficial resolva o conflito.
     if (respostas.size > 1) continue
@@ -235,5 +250,7 @@ export function unirQuestoes(cadastradas = []) {
 }
 
 export function podeCorrigir(q) {
-  return !q.anulada && q.resposta_correta !== null && q.resposta_correta !== undefined
+  if (q.anulada) return false
+  if (q.tipo_resposta === 'somatoria') return Number.isInteger(Number(q.resposta_soma ?? q.resposta_correta))
+  return q.resposta_correta !== null && q.resposta_correta !== undefined
 }

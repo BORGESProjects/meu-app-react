@@ -723,3 +723,25 @@ test('PUC-PR 2024/2 Medicina contém as 60 questões oficiais com recortes indep
   }
 })
 
+
+
+test('UEM 2025 contém o primeiro lote oficial no formato de somatória', () => {
+  const arquivo = new URL('../public/acervo/uem-2025/questoes.json', import.meta.url)
+  const uem = JSON.parse(readFileSync(arquivo, 'utf8'))
+
+  assert.equal(uem.length, 10)
+  assert.deepEqual(uem.map(q => q.numero_original), Array.from({length: 10}, (_, i) => i + 1))
+  assert.deepEqual(uem.map(q => q.resposta_soma), [27, 7, 30, 21, 31, 23, 15, 20, 20, 17])
+  assert.deepEqual(uem.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
+  assert.ok(uem.slice(0, 7).every(q => q.texto_apoio.length > 500))
+  for (const questao of uem) {
+    assert.equal(questao.ano, 2025, questao.id)
+    assert.equal(questao.banca, 'UEM', questao.id)
+    assert.equal(questao.tipo_resposta, 'somatoria', questao.id)
+    assert.deepEqual(questao.valores_opcoes, [1, 2, 4, 8, 16], questao.id)
+    assert.deepEqual(questao.rotulos_opcoes, ['01', '02', '04', '08', '16'], questao.id)
+    assert.equal(questao.opcoes.length, 5, questao.id)
+    assert.doesNotMatch([questao.enunciado, questao.texto_apoio, ...questao.opcoes].join('\n'), /UEM\/CVU|Caderno de Prova|#{3,}|\(cid:/)
+  }
+})
+

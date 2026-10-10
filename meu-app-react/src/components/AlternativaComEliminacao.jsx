@@ -1,7 +1,7 @@
 import AlternativaQuestao from './AlternativaQuestao'
 
 export default function AlternativaComEliminacao({ questao, indice, texto, selecionada, eliminada, compacta = false, onSelecionar, onEliminar }) {
-  const letra = String.fromCharCode(65 + indice)
+  const letra = questao.rotulos_opcoes?.[indice] || String.fromCharCode(65 + indice)
   const espacamento = compacta ? 'p-3 rounded-xl gap-3' : 'p-3.5 sm:px-5 sm:py-4 rounded-2xl gap-3 sm:gap-4'
   const tamanhoLetra = compacta ? 'w-6 h-6 rounded-lg' : 'w-7 h-7 sm:w-8 sm:h-8 rounded-xl'
 

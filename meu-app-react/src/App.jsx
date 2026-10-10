@@ -60,6 +60,36 @@ function questoesDaProva(questoes, provaId) {
     })
 }
 
+function questaoDeSomatoria(questao) {
+  return questao?.tipo_resposta === 'somatoria'
+}
+
+function alternativaSelecionada(respostas, questao, indice) {
+  const selecionada = respostas[questao.id]
+  return questaoDeSomatoria(questao) ? Array.isArray(selecionada) && selecionada.includes(indice) : selecionada === indice
+}
+
+function alternarResposta(setter, questao, indice) {
+  setter(prev => {
+    if (!questaoDeSomatoria(questao)) return { ...prev, [questao.id]: indice }
+    const atuais = Array.isArray(prev[questao.id]) ? prev[questao.id] : []
+    const proximas = atuais.includes(indice) ? atuais.filter(item => item !== indice) : [...atuais, indice].sort((a, b) => a - b)
+    return { ...prev, [questao.id]: proximas }
+  })
+}
+
+function avaliarSelecao(questao, selecionada) {
+  if (questaoDeSomatoria(questao)) {
+    const indices = Array.isArray(selecionada) ? selecionada : []
+    const soma = indices.reduce((total, indice) => total + Number(questao.valores_opcoes?.[indice] || 0), 0)
+    const correta = Number(questao.resposta_soma ?? questao.resposta_correta)
+    return { respondida: indices.length > 0, acertou: soma === correta, escolhida: soma, correta }
+  }
+  let correta = questao.resposta_correta
+  if (typeof correta === 'string') correta = correta.toUpperCase().charCodeAt(0) - 65
+  return { respondida: selecionada !== undefined, acertou: selecionada === correta, escolhida: selecionada, correta }
+}
+
 export default function App() {
   const [abaAtiva, setAbaAtiva] = useState('questoes')
   const [session, setSession] = useState(null)
@@ -410,6 +440,13 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 55) throw new Error('Lote IFPR 2023 inválido')
       return data
     })
+    const uem2025 = tentarLeitura(async () => {
+      const r = await fetch('/acervo/uem-2025/questoes.json', {signal:AbortSignal.timeout(30000)})
+      if (!r.ok) throw new Error('Vestibular de Verão UEM 2025 indisponível')
+      const data = await r.json()
+      if (!Array.isArray(data) || data.length !== 10) throw new Error('Lote UEM 2025 inválido')
+      return data
+    })
     const pucpr2024InvernoMedicina = tentarLeitura(async () => {
       const r = await fetch('/acervo/pucpr-2024-2-medicina/questoes.json', {signal:AbortSignal.timeout(30000)})
       if (!r.ok) throw new Error('Vestibular de Inverno PUCPR 2024/2 Medicina indisponível')
@@ -431,8 +468,8 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 60) throw new Error('Lote PUCPR 2025/2 Medicina inválido')
       return data
     })
-    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UFPR 2022', 'UFPR 2021', 'UFPR 2020', 'UFPR 2019', 'UTFPR 2025', 'UTFPR 2024/1', 'UTFPR 2024/2', 'UTFPR 2023', 'IFPR 2024', 'IFPR 2023', 'PUC-PR 2024/2 Medicina', 'PUC-PR 2025/1 Medicina', 'PUC-PR 2025/2 Medicina']
-    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina])
+    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UFPR 2022', 'UFPR 2021', 'UFPR 2020', 'UFPR 2019', 'UTFPR 2025', 'UTFPR 2024/1', 'UTFPR 2024/2', 'UTFPR 2023', 'IFPR 2024', 'IFPR 2023', 'UEM 2025 (questões 1 a 10)', 'PUC-PR 2024/2 Medicina', 'PUC-PR 2025/1 Medicina', 'PUC-PR 2025/2 Medicina']
+    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,uem2025,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina])
     const carregadas = resultados.flatMap(resultado => resultado.status === 'fulfilled' && Array.isArray(resultado.value) ? resultado.value : [])
     setQuestoes(unirQuestoes(carregadas))
     setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
@@ -528,6 +565,9 @@ export default function App() {
     })
 
     const limparResposta = setter => setter(prev => {
+      if (Array.isArray(prev[questaoId])) {
+        return { ...prev, [questaoId]: prev[questaoId].filter(item => item !== indice) }
+      }
       if (prev[questaoId] !== indice) return prev
       const proximo = { ...prev }
       delete proximo[questaoId]
@@ -663,37 +703,30 @@ export default function App() {
     }
   }
 
-  function validarResposta(questaoId, respostaCorretaDoBanco, isSimulado = false) {
-    if (!podeCorrigir(questoes.find(q => q.id === questaoId) || {})) return
-    const indiceSelecionado = isSimulado ? respostasSimulado[questaoId] : respostasSelecionadas[questaoId]
-    if (indiceSelecionado === undefined) return
-
-    let indiceCorreto = respostaCorretaDoBanco
-    if (typeof respostaCorretaDoBanco === 'string') {
-      indiceCorreto = respostaCorretaDoBanco.toUpperCase().charCodeAt(0) - 65
-    }
-
-    const acertou = indiceSelecionado === indiceCorreto
+  function validarResposta(questaoId, _respostaCorretaDoBanco, isSimulado = false) {
     const questaoAtual = questoes.find(q => q.id === questaoId)
-
-    if (questaoAtual && !isSimulado) {
-      setHistoricoRespostas(prev => [...prev, {
-        id: crypto.randomUUID(), questaoId, acertou,
-        materia: questaoAtual.materia, conteudo: questaoAtual.conteudo,
-        respostaSelecionada: indiceSelecionado, respostaCorreta: indiceCorreto,
-        tipo: 'questao', respondidaEm: new Date().toISOString(),
-      }])
-    }
+    if (!podeCorrigir(questaoAtual || {})) return
+    const selecionada = isSimulado ? respostasSimulado[questaoId] : respostasSelecionadas[questaoId]
+    const avaliacao = avaliarSelecao(questaoAtual, selecionada)
+    if (!avaliacao.respondida) return
 
     if (!isSimulado) {
-      if (acertou) {
+      setHistoricoRespostas(prev => [...prev, {
+        id: crypto.randomUUID(), questaoId, acertou: avaliacao.acertou,
+        materia: questaoAtual.materia, conteudo: questaoAtual.conteudo,
+        respostaSelecionada: avaliacao.escolhida, respostaCorreta: avaliacao.correta,
+        tipo: 'questao', respondidaEm: new Date().toISOString(),
+      }])
+      if (avaliacao.acertou) {
         setFeedbacks({ ...feedbacks, [questaoId]: { status: 'correto', msg: '✨ Resposta Correta!' } })
       } else {
-        const letraCorreta = String.fromCharCode(65 + indiceCorreto)
-        setFeedbacks({ ...feedbacks, [questaoId]: { status: 'incorreto', msg: `❌ Incorreto. A alternativa certa era a letra ${letraCorreta}.` } })
+        const resposta = questaoDeSomatoria(questaoAtual)
+          ? `a soma ${String(avaliacao.correta).padStart(2, '0')}`
+          : `a letra ${String.fromCharCode(65 + avaliacao.correta)}`
+        setFeedbacks({ ...feedbacks, [questaoId]: { status: 'incorreto', msg: `❌ Incorreto. A resposta oficial era ${resposta}.` } })
       }
     }
-    return acertou
+    return avaliacao.acertou
   }
 
   function finalizarSimulado() {
@@ -706,20 +739,16 @@ export default function App() {
 
     questoesSimulado.forEach(q => {
       const selecionada = respostasSimulado[q.id]
-      if (selecionada !== undefined) {
-        let indiceCorreto = q.resposta_correta
-        if (typeof q.resposta_correta === 'string') {
-          indiceCorreto = q.resposta_correta.toUpperCase().charCodeAt(0) - 65
-        }
-        const acertou = selecionada === indiceCorreto
-        if (acertou) acertos++
+      const avaliacao = avaliarSelecao(q, selecionada)
+      if (avaliacao.respondida) {
+        if (avaliacao.acertou) acertos++
         else erros++
 
-        detalhes.push({ ...q, acertou, escolhida: selecionada, correta: indiceCorreto })
+        detalhes.push({ ...q, acertou: avaliacao.acertou, escolhida: avaliacao.escolhida, correta: avaliacao.correta })
         novasRespostas.push({
-          id: crypto.randomUUID(), questaoId: q.id, acertou,
+          id: crypto.randomUUID(), questaoId: q.id, acertou: avaliacao.acertou,
           materia: q.materia, conteudo: q.conteudo,
-          respostaSelecionada: selecionada, respostaCorreta: indiceCorreto,
+          respostaSelecionada: avaliacao.escolhida, respostaCorreta: avaliacao.correta,
           tipo: 'simulado', concurso: simuladoAtivo.concurso,
           respondidaEm: new Date().toISOString(),
         })
@@ -931,12 +960,13 @@ export default function App() {
                       {q.concurso && <span className="bg-slate-800 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium">{q.concurso}</span>}
                     </div>
                     <EnunciadoQuestao questao={q} />
+                    {questaoDeSomatoria(q) && <p className="mb-3 text-xs font-medium text-indigo-300">Marque todas as afirmações corretas. A resposta é a soma dos valores selecionados.</p>}
                     <div className="space-y-3 mb-6">
                       {Array.isArray(q.opcoes) && q.opcoes.map((opcao, idx) => <AlternativaComEliminacao
                         key={idx} questao={q} indice={idx} texto={opcao}
-                        selecionada={respostasSelecionadas[q.id] === idx}
+                        selecionada={alternativaSelecionada(respostasSelecionadas, q, idx)}
                         eliminada={alternativaFoiEliminada('normal', q.id, idx)}
-                        onSelecionar={() => setRespostasSelecionadas(prev => ({ ...prev, [q.id]: idx }))}
+                        onSelecionar={() => alternarResposta(setRespostasSelecionadas, q, idx)}
                         onEliminar={() => alternarEliminacao('normal', q.id, idx)}
                       />)}
                     </div>
@@ -1041,12 +1071,13 @@ export default function App() {
                       {q.materia && <span className="bg-slate-800 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium">{q.materia}</span>}
                     </div>
                     <EnunciadoQuestao questao={q} />
+                    {questaoDeSomatoria(q) && <p className="mb-3 text-xs font-medium text-indigo-300">Marque todas as afirmações corretas. A resposta é a soma dos valores selecionados.</p>}
                     <div className="space-y-3">
                       {Array.isArray(q.opcoes) && q.opcoes.map((opcao, idx) => <AlternativaComEliminacao
                         key={idx} questao={q} indice={idx} texto={opcao}
-                        selecionada={respostasSimulado[q.id] === idx}
+                        selecionada={alternativaSelecionada(respostasSimulado, q, idx)}
                         eliminada={alternativaFoiEliminada('simulado', q.id, idx)}
-                        onSelecionar={() => setRespostasSimulado(prev => ({ ...prev, [q.id]: idx }))}
+                        onSelecionar={() => alternarResposta(setRespostasSimulado, q, idx)}
                         onEliminar={() => alternarEliminacao('simulado', q.id, idx)}
                       />)}
                     </div>
@@ -1180,9 +1211,9 @@ export default function App() {
                       <div className="space-y-2.5 mb-4">
                         {Array.isArray(q.opcoes) && q.opcoes.map((opcao, idx) => <AlternativaComEliminacao
                           key={idx} questao={q} indice={idx} texto={opcao} compacta
-                          selecionada={respostasSelecionadas[q.id] === idx}
+                          selecionada={alternativaSelecionada(respostasSelecionadas, q, idx)}
                           eliminada={alternativaFoiEliminada('normal', q.id, idx)}
-                          onSelecionar={() => setRespostasSelecionadas(prev => ({ ...prev, [q.id]: idx }))}
+                          onSelecionar={() => alternarResposta(setRespostasSelecionadas, q, idx)}
                           onEliminar={() => alternarEliminacao('normal', q.id, idx)}
                         />)}
                       </div>
