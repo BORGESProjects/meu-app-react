@@ -580,6 +580,37 @@ test('UTFPR 2024/2 contém as 60 questões oficiais com recortes independentes',
   }
 })
 
+test('IFPR 2023 contém os 55 itens oficiais dos cadernos de Inglês e Espanhol', () => {
+  const arquivo = new URL('../public/acervo/ifpr-2023/questoes.json', import.meta.url)
+  const ifpr = JSON.parse(readFileSync(arquivo, 'utf8'))
+
+  assert.equal(ifpr.length, 55)
+  assert.equal(new Set(ifpr.map(q => q.id)).size, 55)
+  assert.equal(ifpr.filter(q => q.modelo === 'Espanhol').length, 5)
+  assert.equal(ifpr.filter(q => q.modelo === 'Inglês').length, 5)
+  assert.equal(ifpr.filter(q => q.modelo === 'Prova geral').length, 45)
+  assert.deepEqual(ifpr.filter(q => q.anulada).map(q => q.id), [])
+  assert.deepEqual(ifpr.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
+  assert.equal(ifpr.find(q => q.id === 'ifpr-2023-esp-01').resposta_correta, 3)
+  assert.equal(ifpr.find(q => q.id === 'ifpr-2023-ing-01').resposta_correta, 3)
+  assert.equal(ifpr.find(q => q.id === 'ifpr-2023-geral-18').resposta_correta, 3)
+  assert.equal(ifpr.find(q => q.id === 'ifpr-2023-geral-42').materia, 'Geografia')
+  assert.equal(ifpr.find(q => q.id === 'ifpr-2023-geral-45').materia, 'Filosofia')
+  assert.equal(ifpr.find(q => q.id === 'ifpr-2023-geral-48').materia, 'Sociologia')
+  assert.equal(ifpr.find(q => q.id === 'ifpr-2023-geral-13').apoio.length, 1)
+  for (const questao of ifpr) {
+    assert.equal(questao.ano, 2023, questao.id)
+    assert.equal(questao.banca, 'IFPR', questao.id)
+    assert.equal(questao.opcoes.length, 4, questao.id)
+    assert.equal(questao.opcoes_imagens.length, 4, questao.id)
+    assert.equal(questao.imagem_sem_alternativas, true, questao.id)
+    assert.ok(questao.enunciado.length > 10, questao.id)
+    assert.doesNotMatch([questao.enunciado, ...questao.opcoes].join('\n'), /►/)
+    for (const imagem of [questao.imagem_original, ...questao.opcoes_imagens, ...questao.apoio.map(a => a.imagem)]) {
+      assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+    }
+  }
+})
 test('IFPR 2024 contém todas as 55 questões disponíveis no caderno oficial', () => {
   const arquivo = new URL('../public/acervo/ifpr-2024/questoes.json', import.meta.url)
   const ifpr = JSON.parse(readFileSync(arquivo, 'utf8'))
@@ -691,3 +722,4 @@ test('PUC-PR 2024/2 Medicina contém as 60 questões oficiais com recortes indep
     }
   }
 })
+
