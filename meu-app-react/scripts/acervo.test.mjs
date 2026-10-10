@@ -580,6 +580,36 @@ test('UTFPR 2024/2 contém as 60 questões oficiais com recortes independentes',
   }
 })
 
+test('IFPR 2024 contém todas as 55 questões disponíveis no caderno oficial', () => {
+  const arquivo = new URL('../public/acervo/ifpr-2024/questoes.json', import.meta.url)
+  const ifpr = JSON.parse(readFileSync(arquivo, 'utf8'))
+
+  assert.equal(ifpr.length, 55)
+  assert.equal(new Set(ifpr.map(q => q.id)).size, 55)
+  assert.equal(ifpr.filter(q => q.modelo === 'Espanhol').length, 5)
+  assert.equal(ifpr.filter(q => q.modelo === 'Inglês').length, 5)
+  assert.equal(ifpr.filter(q => q.modelo === 'Prova geral').length, 45)
+  assert.deepEqual(ifpr.filter(q => q.anulada).map(q => q.id), ['ifpr-2024-geral-35'])
+  assert.deepEqual(ifpr.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
+  assert.equal(ifpr.find(q => q.id === 'ifpr-2024-esp-01').resposta_correta, 0)
+  assert.equal(ifpr.find(q => q.id === 'ifpr-2024-ing-01').resposta_correta, 2)
+  assert.equal(ifpr.find(q => q.id === 'ifpr-2024-geral-42').materia, 'Geografia')
+  assert.equal(ifpr.find(q => q.id === 'ifpr-2024-geral-48').materia, 'Sociologia')
+  assert.equal(ifpr.find(q => q.id === 'ifpr-2024-geral-20').apoio.length, 0)
+  assert.equal(ifpr.find(q => q.id === 'ifpr-2024-geral-06').apoio.length, 1)
+  for (const questao of ifpr) {
+    assert.equal(questao.ano, 2024, questao.id)
+    assert.equal(questao.banca, 'IFPR', questao.id)
+    assert.equal(questao.opcoes.length, 4, questao.id)
+    assert.equal(questao.opcoes_imagens.length, 4, questao.id)
+    assert.equal(questao.imagem_sem_alternativas, true, questao.id)
+    assert.ok(questao.enunciado.length > 10, questao.id)
+    assert.doesNotMatch([questao.enunciado, ...questao.opcoes].join('\n'), /►/)
+    for (const imagem of [questao.imagem_original, ...questao.opcoes_imagens, ...questao.apoio.map(a => a.imagem)]) {
+      assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+    }
+  }
+})
 test('PUC-PR 2025/2 Medicina contém as 60 questões oficiais com recortes independentes', () => {
   const arquivo = new URL('../public/acervo/pucpr-2025-2-medicina/questoes.json', import.meta.url)
   const pucpr = JSON.parse(readFileSync(arquivo, 'utf8'))
