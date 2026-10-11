@@ -1,0 +1,3512 @@
+[
+  {
+    "id": "uem-2023-in-01",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 1,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 01 —————————————————\nConforme o texto, assinale o que for correto.",
+    "opcoes": [
+      "O Brasil lidera o ranking de maior empregador de\ntrabalhadores domésticos do mundo, com uma média de",
+      "O perfil predominantemente feminino, afrodescendente e\nde baixa escolaridade dos trabalhadores domésticos no\nBrasil é alimentado pela desigualdade e pela dinâmica",
+      "Como o Brasil foi um dos últimos países do mundo a\nacabar com a escravidão, as empregadas domésticas",
+      "Uma diferença marcante entre Brasil e EUA no tratamento\nàs empregadas domésticas é que neste último as",
+      "Em todo o mundo, o trabalho doméstico é uma atividade\nmajoritariamente desempenhada pelas mulheres, em torno de\n80%, e no Brasil é a principal fonte de emprego para elas."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-01-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-01-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-01-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-01-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-01-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-01-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 19,
+    "resposta_correta": 19,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 6,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-02",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 2,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 02 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "No trecho “Essa profissionalização daria o distanciamento\nnecessário” (linhas 86 e 87), o uso de dar no futuro do\npretérito denota uma atitude de certeza do locutor em\nrelação ao fato expresso pela forma verbal.",
+      "Em “A OIT não chega a afirmar” (linha 103), depreende-se\nque o conteúdo expresso pela OIT foi formulado em\nmomento anterior ao da produção do texto, tendo o seu\nvalor de verdade se prolongado até o instante presente.",
+      "No trecho “se um país vai ter uma grande população de\nserviçais.” (linhas 98 e 99), o uso da locução “vai ter”\ncorresponde a um emprego mais informal para expressar o\ntempo verbal presente do subjuntivo.",
+      "Conforme a norma padrão, no trecho “David Evan Harris é\num dos especialistas que defendem” (linhas 23 e 24),\nadmite-se também a flexão do verbo defender na terceira\npessoa do singular.",
+      "Em “Há dois fatores majoritários” (linha 97), o verbo haver\npode ser substituído pelo verbo ter no português brasileiro\ncoloquial."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-02-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-02-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-02-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-02-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-02-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-02-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 26,
+    "resposta_correta": 26,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 7,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-03",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 3,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 03 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "A expressão “trabalhadores domésticos” (linha 2), em vez de\nempregados, transmite a ideia de que esses profissionais\ndeveriam ter os mesmos direitos que os indivíduos que\ndesempenham qualquer outra profissão.",
+      "O termo “aviltados” (linha 41) é uma escolha lexical que\ncaracteriza a maneira como as ocupações desempenhadas\npor afrodescendentes eram vistas antes e mesmo após a\nabolição da escravidão.",
+      "“Segundo” (linha 33) e “segundo” (linha 100) apresentam o\nmesmo valor semântico e pertencem à mesma classe\ngramatical.",
+      "No trecho “praticamente como se fosse alguém da família”\n(linha 84), o tom de afetividade é reforçado pelo uso do\nadvérbio “praticamente”, que denota sentido de aproximação\ncomparativa.",
+      "Em “incidência” (linha 105), o prefixo -in é,\nsemanticamente, equivalente ao que está presente no\nvocábulo “informalidade” (linha 10)."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-03-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-03-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-03-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-03-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-03-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-03-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 11,
+    "resposta_correta": 11,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 7,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-04",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 4,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 04 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "Em “Se organizasse um encontro de todos os seus\ntrabalhadores domésticos” (linhas 1 e 2), o valor de\ncondicionalidade expresso na oração seria mantido com a\nsubstituição de “se” por ainda que.",
+      "No trecho “permanece sendo a principal fonte de emprego\nentre as mulheres” (linhas 20 e 21), o sujeito elíptico\naponta para a expressão antecedente “o trabalho\ndoméstico” (linha 17).",
+      "Em “acabar com a escravidão” (linha 28), a substituição de\n“acabar” por abolir não exige alteração em termos de\nregência verbal.",
+      "A expressão “quaisquer direitos” (linha 60) apresenta um caso\nde ausência de concordância nominal, pois “quaisquer” não\ntraz a desinência de plural -s exigida por “direitos”.",
+      "Em “Já que o trabalho formal é um meio de ascensão”\n(linha 68), a locução conjuntiva “Já que” expressa relação\nsemântica de causa."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-04-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-04-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-04-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-04-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-04-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-04-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 18,
+    "resposta_correta": 18,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 7,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-05",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 5,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 05 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "Em “Quando as pessoas tinham dinheiro, elas compravam\nescravos com muita frequência.” (linhas 48-50), a vírgula\nsepara a oração principal de uma oração subordinada\nanteposta.",
+      "Em “A ideia de ter um servo na família era muito comum,\nmesmo entre quem não era rico e vivia nas regiões\nsemiurbanas do século 19” (linhas 43-45), a vírgula separa\na oração principal da oração que remete à ideia de inclusão.",
+      "As aspas em “‘profunda desigualdade na sociedade que não\nfoi resolvida’” (linhas 54 e 55) são utilizadas para isolar\ncitação textual de terceiros, no caso, a de Marília Bueno de\nAraújo Ariza.",
+      "As aspas em “‘culpa’” e “‘constrangimento moral’” (linha\n88) indicam que o autor não considera que as famílias\namericanas sintam culpa ou constrangimento moral pela\ndesigualdade social.",
+      "Em “A OIT não chega a afirmar (...) mas reconhece que\nambos os aspectos – alta incidência de trabalho doméstico\ne desigualdade social – estão de alguma forma\nrelacionados.” (linhas 103-107), os travessões são usados\npara explicar a expressão mencionada anteriormente."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-05-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-05-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-05-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-05-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-05-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-05-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 31,
+    "resposta_correta": 31,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 7,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-06",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 6,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 06 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "Em “para que não evoluíssem economicamente” (linhas 71\ne 72), a locução “para que” expressa valor semântico de\nfinalidade semelhante ao de a fim de.",
+      "A forma verbal ascender, a partir da qual se deriva o\nvocábulo “ascensão” (linha 68), tem uma relação de\nsinonímia com o verbo acender.",
+      "Em “ele é mal remunerado” (linha 59), o antônimo de “mal”,\nem termos sintático-semânticos, é o item lexical bom.",
+      "No contexto em que aparecem, as escolhas lexicais “culpa”\ne “constrangimento moral” (linha 88) são empregadas em\num contexto sintático-semântico de paralelismo.",
+      "No trecho “em ambos os países os empregados são\nexplorados, apesar das diferenças culturais” (linhas 79-81),\na expressão “apesar de” introduz um fato que não anula a\nideia de que no Brasil e nos EUA os trabalhadores\ndomésticos enfrentam uma situação de exploração."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-06-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-06-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-06-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-06-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-06-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-06-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 25,
+    "resposta_correta": 25,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 7,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-07",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 7,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 07 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "Em “A escravidão brasileira foi diversa, mas foi sobretudo\numa escravidão de pequena posse.” (linhas 46 e 47), o\nelemento coesivo “mas” pode ser substituído sem prejuízo\nde sentido pela conjunção porque.",
+      "Em “Quando as pessoas tinham dinheiro, elas compravam\nescravos com muita frequência.” (linhas 48-50), o pronome\n“elas” tem valor indeterminado, não sendo possível\nrecuperar a sua referência.",
+      "Em “Apesar dos esforços dos governos recentes em trazer\nessas empregadas para a formalidade” (linhas 62 e 63), o\nelemento coesivo “apesar de” introduz ideia oposta à\nexpressa no trecho “o que se vê hoje é o aumento da\ninformalidade” (linhas 63 e 64).",
+      "Em “Para ele, em ambos os países os empregados são\nexplorados, apesar das diferenças culturais.” (linhas 79-\n81), o elemento coesivo “ele” se refere a Carlos Eduardo",
+      "No trecho “Já que o trabalho formal é um meio de\nascensão” (linha 68), o item lexical “já” pode ser\nsubstituído por ainda sem alterar o sentido do texto."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-07-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-07-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-07-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-07-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-07-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-07-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 4,
+    "resposta_correta": 4,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 8,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-08",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 8,
+    "materia": "Literatura",
+    "conteudo": "Literatura brasileira",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 08 —————————————————\nSobre o poema a seguir e sobre o seu autor Carlos Drummond\nde Andrade, assinale o que for correto.\nPoema de sete faces\nQuando nasci, um anjo torto\ndesses que vivem na sombra\ndisse: Vai, Carlos! ser gauche na vida.\nAs casas espiam os homens\nque correm atrás de mulheres.\nA tarde talvez fosse azul,\nnão houvesse tantos desejos.\nO bonde passa cheio de pernas:\npernas brancas pretas amarelas.\nPara que tanta perna, meu Deus, pergunta meu coração.\nPorém meus olhos\nnão perguntam nada.\nO homem atrás do bigode\né sério, simples e forte.\nQuase não conversa.\nTem poucos, raros amigos\no homem atrás dos óculos e do bigode.\nMeu Deus, por que me abandonaste\nse sabias que eu não era Deus\nse sabias que eu era fraco.\nMundo mundo vasto mundo,\nse eu me chamasse Raimundo\nseria uma rima, não seria uma solução.\nMundo mundo vasto mundo,\nmais vasto é o meu coração.\nEu não devia te dizer\nmas essa lua\nmas esse conhaque\nbotam a gente comovido como o diabo.\nANDRADE, C. D. de. Antologia poética. São Paulo: Companhia das\nLetras, 2012. p. 19-20.",
+    "opcoes": [
+      "O poema não traz convergências semânticas em relação ao\nnúmero de estrofes e ao seu título. Como se trata de um texto\ninspirado no ideário do spleen, cultivado na segunda geração\nromântica, as estrofes são escritas em diferentes situações e\ndepois agrupadas em um só poema sem o compromisso de",
+      "A exploração dos diferentes sentidos das palavras na\nexpressão poética pode ocorrer por meio do uso de figuras\nde linguagem. No poema aparece a prosopopeia no verso\n“As casas espiam os homens”. No verso “O bonde passa",
+      "Na última estrofe, o eu lírico, comovido com sua perda\namorosa, preocupa-se com o abuso da bebida alcoólica e\naconselha o leitor a evitar o seu consumo, mesmo correndo",
+      "O título do poema, bem como o número de estrofes, por\nrefletirem o sincretismo religioso brasileiro, estão\nrelacionados aos sete pecados capitais: soberba, inveja,",
+      "A segunda e a terceira estrofes representam dois espaços\ndiferentes: os dois primeiros versos da segunda estrofe\nfocalizam casas que espiam homens; a terceira estrofe\nfocaliza o bonde, dentro do qual se constata variedade racial."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-08-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-08-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-08-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-08-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-08-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-08-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 18,
+    "resposta_correta": 18,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 8,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-09",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 9,
+    "materia": "Literatura",
+    "conteudo": "Literatura brasileira",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 09 —————————————————\nSobre “Os desastres de Sofia”, da coletânea A legião estrangeira\n(Clarice Lispector), assinale o que for correto. (LISPECTOR, C.\nA legião estrangeira. Rio de Janeiro: Rocco, 1999).",
+    "opcoes": [
+      "A protagonista relata o caso de uma amizade sincera entre\ndois amigos que se tornaram confidentes, a ponto de um\nnão conseguir guardar segredos para o outro. Essa\nprotagonista afirma que, durante uma viagem a Petrópolis,\nos dois se desentenderam devido aos ciúmes que ambos\nnutriam em relação a Margarida.",
+      "Narrado em primeira pessoa, o conto focaliza a relação\nconflituosa estabelecida pela personagem protagonista,\numa menina de nove anos, em relação ao seu professor.\nSofia, estudante do curso primário, tinha sentimentos\ncontraditórios: irritava-se com o professor e, ao mesmo\ntempo, sentia uma atração pela “controlada impaciência”\n(p. 11) que ele demonstrava.",
+      "O conto “Os desastres de Sofia”, publicado durante a\nprimeira fase do Modernismo brasileiro, pode ser\nclassificado como neorrealista devido à sua forte\nvinculação com a realidade brasileira. A narrativa\nproblematiza questões educacionais brasileiras da segunda\nmetade do século XIX, e o comportamento de Sofia na sala\nde aula representa a desintegração da sociedade.",
+      "Embora seja possível perceber na narrativa as três unidades\ntradicionalmente pertencentes ao gênero literário conto\n(unidade de ação, unidade de tempo e unidade de espaço), a\ncomposição mostra sua modernidade/contemporaneidade no\ndesenvolvimento da ação, pois os acontecimentos dispostos\nno enredo repercutem na consciência de Sofia.",
+      "O conto possui uma configuração intimista, perceptível na\nbusca pela fixação na crise do sujeito, na sua consciência e\ninconsciência. Marcada pela introspecção, a narrativa\napresenta uma compreensão subjetiva da realidade."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-09-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-09-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-09-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-09-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-09-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-09-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 26,
+    "resposta_correta": 26,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 8,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-10",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 10,
+    "materia": "Literatura",
+    "conteudo": "Literatura brasileira",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 10 —————————————————\nSobre o poema a seguir, sobre o fazer literário do autor e sobre\na escola literária à qual ele pertence, assinale o que for correto.\nSoneto\nPálida, à luz da lâmpada sombria,\nSobre o leito de flores reclinada,\nComo a lua por noite embalsamada,\nEntre as nuvens do amor ela dormia!\nEra a virgem do mar! na escuma fria\nPela maré das águas embalada!\nEra um anjo entre nuvens d’alvorada\nQue em sonhos se banhava e se esquecia!\nEra mais bela! O seio palpitando...\nNegros olhos as pálpebras abrindo...\nFormas nuas no leito resvalando...\nNão te rias de mim, meu anjo lindo!\nPor ti ─ as noites eu velei chorando,\nPor ti ─ nos sonhos morrerei sorrindo!\nAZEVEDO, A. de. Os melhores poemas de Álvares de Azevedo. São\nPaulo: Global, 2003. p. 43.",
+    "opcoes": [
+      "Na busca pela identidade nacional, o eu lírico descreve as\nbelezas da costa do país (“mar”, “maré”), exalta a flora\n(“leito de flores”) e valoriza a população nativa, símbolo da\nnacionalidade brasileira (“Negros olhos”, “Era a virgem do\nmar!”).",
+      "Nos dois últimos versos do poema se encontram anáfora\n(“Por ti” / “Por ti”), antítese (“chorando” / “sorrindo”) e\nverbos conjugados na primeira pessoa (“velei” / “morrerei”),\nelementos que recuperam os sentimentos do eu lírico em\nrelação à mulher, demonstrando o caráter egoico (culto ao\neu) que permeia a poesia da geração do mal do século.",
+      "Construído com versos heptassílabos, denominados\ntambém redondilhas maiores, e apresentando rimas\ncruzadas, o poema exibe uma poesia repleta de ironia,\nsarcasmo e autodestruição, marcas ultrarromânticas da\npoesia de Álvares de Azevedo. Destaca-se, também, o\nbucolismo, tema que perpassou toda a escola romântica.",
+      "Expressões como “Era um anjo”, “Era mais bela!” e “meu\nanjo lindo!” são exemplos que remetem à idealização da\nmulher, tomada como virginal e etérea. As palavras\n“Pálida”, “sombria”, “embalsamada” e a forma verbal\n“morrerei” remetem à literatura negativista, em parte\ngótica, cultivada por Álvares de Azevedo.",
+      "Em um cenário místico e sob um clima noturno e onírico, o\neu lírico descreve, no segundo e no terceiro versos da\nprimeira estrofe, o sono fúnebre de sua amada. A morte da\njovem é reiterada pelos versos “Sobre o leito de flores\nreclinada, / Como a lua por noite embalsamada,”."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-10-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-10-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-10-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-10-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-10-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-10-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 10,
+    "resposta_correta": 10,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 9,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-15",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 15,
+    "materia": "Arte",
+    "conteudo": "Arte e cultura",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 15 —————————————————\nAssinale o que for correto a respeito de esculturas e escultores\nna história do Mundo Ocidental.",
+    "opcoes": [
+      "Com o combate dos sacerdotes ao paganismo, na\nAntiguidade Clássica Greco-Romana os escultores não\npodiam tratar de personagens históricos ou da vida\ncotidiana; podiam tratar apenas de personagens religiosos,",
+      "Preocupados em afirmar a grandeza de sua civilização,\nartistas e governantes da Roma Antiga não se interessaram\npela arte e pela arquitetura de outros povos de seu tempo,\ncomo os gregos e os egípcios, pois consideravam-nas",
+      "Um dos debates mais vigorosos que envolveu a escultura\nbizantina foi a disputa entre os que defendiam e os que",
+      "A escultura do período renascentista expressou um retorno\nconsciente aos modelos da Antiguidade Clássica, levando\nos artistas a se concentrarem em temas mitológicos e a",
+      "Uma das características marcantes dos escultores de\nvanguarda do século XX é o pluralismo temático e\nestilístico. Assim, há os que mantêm a tradição de\nrepresentação de seres humanos e de animais e os que\nelaboram somente formas geométricas ou mesmo abstratas."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-15-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-15-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-15-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-15-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-15-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-15-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 20,
+    "resposta_correta": 20,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 14,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-16",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 16,
+    "materia": "Arte",
+    "conteudo": "Arte e cultura",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 16 —————————————————\nSobre a arte contemporânea no Brasil e no mundo, assinale o\nque for correto.",
+    "opcoes": [
+      "Em decorrência de suas características próprias, não depende\ndo impacto digital e do pluralismo cultural da sociedade.",
+      "É composta de múltiplos suportes e expressões; apresenta-\nse por meio de palavras e símbolos e utiliza o próprio\ncorpo humano e materiais diversos.",
+      "Os historiadores da arte brasileira, influenciados pelas\nobras de Michelangelo, Rembrandt e Delacroix,\ndesconsideram certos estilos e movimentos, por exemplo o\nImpressionismo, o Surrealismo, a pop art.",
+      "Há expressões artísticas que foram concebidas com o\nobjetivo de disseminar pautas inclusivas e que abordam\nbuscas, encontros e desencontros, conflitos pessoais,\nfamiliares e sociais.",
+      "No cenário europeu, o neoexpressionismo e a\ntransvanguarda são considerados expressões importantes\nda arte contemporânea."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-16-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-16-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-16-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-16-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-16-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-16-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 26,
+    "resposta_correta": 26,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 14,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-17",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 17,
+    "materia": "Arte",
+    "conteudo": "Arte e cultura",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 17 —————————————————\nSobre Patrimônio Histórico, assinale o que for correto.",
+    "opcoes": [
+      "As primeiras experiências de preservação oficial de obras\nde arte e de arquitetura ocorreram na Antiguidade, época\nem que vários governantes proibiram que seus exércitos\ndestruíssem o patrimônio artístico dos povos vencidos.",
+      "Para homenagear a rainha Vitória, os colonizadores\nbritânicos erigiram na Índia o Terminal Vitória, edificação\nneogótica mesclada com as características da arquitetura\npalaciana hindu. Essa edificação é considerada patrimônio\nda humanidade pela Unesco.",
+      "No Brasil, várias grutas e um grande maciço de paredes\nmontanhosas, com inúmeras pinturas rupestres contendo\nfiguras zoomorfas, compõem o sítio arqueológico Lapa da\nCerca Grande, tombado pelo Instituto do Patrimônio\nHistórico e Artístico Nacional (Iphan).",
+      "A ópera de Sydney, cuja imagem remete a um barco a vela\nse desenvolvendo no mar e inserido exatamente na\npaisagem marinha, abriga salas de concertos, de teatros, e\nrestaurantes, e é considerada pela Unesco Patrimônio\nCultural da Humanidade.",
+      "A noção de patrimônio imaterial no Brasil é contestada por\nmuitos especialistas, pois a legislação vigente considera\nque somente devem ser tombados os objetos artísticos\nfísicos, grandes, médios ou pequenos, feitos com matérias-\nprimas naturais."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-17-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-17-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-17-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-17-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-17-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-17-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 14,
+    "resposta_correta": 14,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 15,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-18",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 18,
+    "materia": "Educação Física",
+    "conteudo": "Saúde e cultura corporal",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 18 —————————————————\nSobre esporte, luta e ginástica, assinale o que for correto.",
+    "opcoes": [
+      "Atletismo, natação, vela, remo e hipismo são esportes de\nmarca.",
+      "Sinuca, boliche, bocha e tiro com arco e flecha são\nexemplos de esportes de precisão.",
+      "O início do processo de desenvolvimento da ginástica\nrítmica, que ocorreu no século XIX, foi uma conquista das\nmulheres que reivindicavam o direito de praticar ginástica,\npois até então elas estiveram afastadas das atividades\nesportivas e gímnicas.",
+      "A ginástica acrobática é uma modalidade esportiva recente;\nsurgiu a partir da década de 1970 e recebeu influência de\noutras modalidades gímnicas e da dança.",
+      "A expressão arte marcial, utilizada para caracterizar alguns\ntipos de luta, originou-se da mitologia greco-romana que\nreverenciava numerosos deuses."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-18-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-18-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-18-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-18-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-18-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-18-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 23,
+    "resposta_correta": 23,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 15,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-19",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 19,
+    "materia": "Educação Física",
+    "conteudo": "Saúde e cultura corporal",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 19 —————————————————\nSobre os benefícios da atividade física para a saúde, assinale o\nque for correto.",
+    "opcoes": [
+      "Os efeitos da atividade física na saúde não são influenciados\npor variáveis culturais e econômicas de quem a pratica, tais\ncomo gênero, condição econômica e cor da pele.",
+      "O fato de o Sistema Único de Saúde (SUS) não reconhecer\na prática de atividade física como importante fator para a\nsaúde dificulta a ampliação do número de praticantes.",
+      "Práticas corporais que demandam de 50% a 70% da força\nmáxima muscular são importantes, pois aumentam a massa\nmuscular, protegem as articulações e promovem a\nmineralização da estrutura óssea.",
+      "Uma adaptação fisiológica produzida por atividades\naeróbicas, e que possui grande valor para a saúde, é o\naumento da capacidade celular dos músculos na\nmetabolização do oxigênio.",
+      "A relevância de um estilo de vida corporalmente ativo leva\nà necessidade de políticas públicas específicas, voltadas\nnão apenas à divulgação dos benefícios das práticas\ncorporais, mas também à superação de barreiras culturais e\neconômicas que dificultam o acesso a essas práticas."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-19-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-19-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-19-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-19-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-19-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-19-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 28,
+    "resposta_correta": 28,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 15,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-20",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 20,
+    "materia": "Educação Física",
+    "conteudo": "Saúde e cultura corporal",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 20 —————————————————\nSobre a influência de padrões estéticos do corpo na adesão a\npráticas corporais, assinale o que for correto.",
+    "opcoes": [
+      "O aumento do alcance de tecnologias relacionadas à\ncomunicação durante o século XX estimulou a adesão das\npessoas a práticas corporais voltadas à manutenção de\npadrões estéticos do corpo.",
+      "A permanência de um único padrão de beleza, consagrado\nem variados períodos da história, sustenta a pertinência da\nexpressão corpo ideal.",
+      "Além de gerar a busca de padrões de beleza por meio das\npráticas corporais, a expansão das redes sociais também\ntem levado grupos sociais a questionarem a imposição\ndesses padrões.",
+      "A Idade Média destaca-se como um período em que a beleza\ndo corpo feminino foi vista como algo a ser cultuado e\nbuscado por meio de um amplo leque de práticas.",
+      "O apelo midiático do corpo forte tem levado ao aumento do\nnúmero de casos de transtorno dismórfico muscular,\ntambém conhecido como vigorexia, em que as pessoas\npriorizam rotinas extenuantes de exercícios, associadas ao\nconsumo de substâncias anabolizantes."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-20-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-20-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-20-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-20-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-20-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-20-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 21,
+    "resposta_correta": 21,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 15,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-21",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 21,
+    "materia": "Filosofia",
+    "conteudo": "Filosofia política",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 21 —————————————————\nA Declaração Universal dos Direitos Humanos foi proclamada\nna Assembleia Geral das Nações Unidas em 1948, motivada, em\nparte, pelas ações violentas e ultrajantes cometidas contra seres\nhumanos e a humanidade na Primeira e na Segunda Guerra\nMundial. Sobre a Declaração Universal dos Direitos Humanos e\nos direitos humanos fundamentais, assinale o que for correto.",
+    "opcoes": [
+      "São alguns dos direitos fundamentais inalienáveis de todo\nser humano: o direito à vida, à segurança pessoal, à\ninstrução, à propriedade, à crença religiosa de livre escolha,\nà liberdade de pensamento, de expressão e de opinião.",
+      "Homens e mulheres, independentemente de raça, cor,\norigem social, ou de outra condição, têm direito a igual\nremuneração por igual trabalho, sem qualquer distinção.",
+      "Todo ser humano, quando acusado de um delito ou crime,\ntem direito a uma audiência justa e pública, em um tribunal\nindependente e imparcial, assegurado seu pleno direito de\ndefesa.",
+      "A instrução é um direito fundamental gratuito, acessível a\ntodo ser humano para o pleno desenvolvimento da sua\npersonalidade nos graus elementares e fundamentais.",
+      "Criminosos e terroristas perdem os seus direitos\nfundamentais e podem ser torturados e tratados de forma\ndegradante quando o seu silêncio coloca em risco a\nintegridade e a vida de outras pessoas."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-21-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-21-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-21-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-21-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-21-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-21-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 16,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-22",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 22,
+    "materia": "Sociologia",
+    "conteudo": "Sociedade e cultura",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 22 —————————————————\nDe acordo com estudos sobre o Estado (concepção,\norganização, estruturação), assinale o que for correto.",
+    "opcoes": [
+      "Nas sociedades indígenas sul-americanas pré-colombianas,\nexcetuando-se os incas, a configuração institucional do\nEstado é assumida pela divisão sexual e etária do trabalho a\npartir de uma dinâmica social homogênea e comunitária,\nsem a existência de classes.",
+      "Nas sociedades ocidentais modernas o Estado surge como\nentidade destacada da sociedade e tem como funções a sua\ndireção e seu controle, além de resolver os conflitos e\nempregar a força legítima.",
+      "A inexistência do Estado, observada em sociedades indígenas\npor antropólogos como Pierre Clastres, é indicativo de um\nestágio incipiente de desenvolvimento institucional.",
+      "Soluções despóticas para os conflitos sociais são também\nbase para a constituição do Estado.",
+      "A constituição do Estado pressupõe sistemas de elaboração\nintelectual, tecnológica e científica sem os quais as\nsociedades são primitivas ou deficitárias do ponto de vista\ndo desenvolvimento humano."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-22-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-22-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-22-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-22-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-22-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-22-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 11,
+    "resposta_correta": 11,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 16,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-23",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 23,
+    "materia": "Sociologia",
+    "conteudo": "Sociedade e cultura",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 23 —————————————————\nTheodor W. Adorno e Max Horkheimer desenvolveram o\nconceito de indústria cultural. Acerca desse conceito, assinale o\nque for correto.",
+    "opcoes": [
+      "Esse conceito foi elaborado para designar o modo\nindustrial de produção em série de bens culturais.",
+      "Segundo os autores, a reprodução das obras de arte\ncontribuiria para facilitar o acesso a criações e, com isso,\ndemocratizar a cultura.",
+      "De acordo com a análise proposta pelo conceito de\nindústria cultural, as obras de arte produzidas pelas grandes\nempresas foram esvaziadas de críticas mais radicais e\nconvertidas em entretenimento.",
+      "Uma das consequências da indústria cultural seria a elitização\nda arte crítica, tornada erudita e para consumo de poucos.",
+      "O conceito de indústria cultural propõe que a cultura de\nmassa produz divertimento e conformismo, obliterando os\nconflitos existentes na sociedade."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-23-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-23-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-23-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-23-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-23-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-23-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 29,
+    "resposta_correta": 29,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 16,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-24",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 24,
+    "materia": "História",
+    "conteudo": "Idade Média",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 24 —————————————————\nA partir do Renascimento houve profundas mudanças culturais\nna Europa. Sobre a revolução das ciências nos períodos\nmoderno e contemporâneo, e assuntos correlatos, assinale o\nque for correto.",
+    "opcoes": [
+      "A prova ontológica da existência de Deus, segundo\nDescartes, e a reforma da religião no período moderno\nrevelam o predomínio do pensamento teocêntrico medieval\nna filosofia e na ciência modernas.",
+      "De acordo com Thomas Kuhn, o progresso científico\nocorre de forma gradual e contínua ao longo da história,\ncom a retomada e a reformulação de antigas teorias\ncosmológicas, ajustadas às novas descobertas científicas.",
+      "Segundo Karl Popper, uma teoria científica deve ser\ncoerente e suas consequências devem ser adequadas aos\nfatos.",
+      "A expressão conhecer é poder, de Francis Bacon, expõe a\nideia de que a ciência moderna deve contemplar a natureza\ne também intervir nela para controlá-la e dominá-la.",
+      "Com o Renascimento, a concepção mecanicista do universo\ntraz um novo paradigma às ciências com a retomada dos\nconceitos de causa formal, de causa material, de causa\neficiente e de causa final da metafísica de Aristóteles."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-24-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-24-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-24-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-24-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-24-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-24-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 12,
+    "resposta_correta": 12,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 16,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-25",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 25,
+    "materia": "História",
+    "conteudo": "Idade Média",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 25 —————————————————\nAssinale o que for correto a respeito do Mundo Ocidental na\nIdade Média.",
+    "opcoes": [
+      "Motivada pelo ambiente de paz e de segurança que sucedeu o\nfim do Império Romano, a população das cidades cresceu, o\nque levou ao surgimento de diversas atividades comerciais e,\nconsequentemente, à formação da burguesia mercantil urbana.",
+      "Embora não fosse o único tipo de unidade produtiva rural,\na grande propriedade senhorial cultivada por famílias de\ncamponeses em condição servil foi um dos elementos\ncaracterísticos da sociedade feudal.",
+      "Para afirmarem seu poder e sua riqueza diante dos pobres e\nseu prestígio diante dos seus semelhantes, muitos senhores\nfeudais mantiveram cortes em seus domínios, com\nfrequência rivalizando em luxo e diversidade com as cortes\ndas casas reais.",
+      "Valorizando os bens espirituais e defendendo a ideia de\nque todos os seres humanos são iguais perante Deus, a\nIgreja Católica foi crítica ao sistema feudal e à divisão\ntripartite da sociedade em clero, nobreza e povo.",
+      "Com o declínio do Império Romano, surgiram diversos\npaíses nos quais foram desencadeados dois processos de\ngrandes consequências históricas: a formação dos Estados\nNacionais Modernos e o surgimento do Capitalismo."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-25-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-25-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-25-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-25-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-25-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-25-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 6,
+    "resposta_correta": 6,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 17,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-26",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 26,
+    "materia": "História",
+    "conteudo": "História do Brasil",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 26 —————————————————\nAssinale o que for correto sobre a economia e a ocupação\nmoderna do estado do Paraná.",
+    "opcoes": [
+      "Diferentemente dos estados nordestinos nos quais havia\nvariadas comunidades indígenas na época em que os\nportugueses chegaram ao Brasil, os estados sulinos eram\nocupados por uma etnia homogênea: o povo guarani.",
+      "A integração das fazendas paranaenses ao mercado\naçucareiro internacional durante o período colonial foi\nfacilitada pelas características do litoral do estado, pois as\náguas calmas das baías davam segurança para a atividade\nportuária.",
+      "No decorrer da primeira metade do século XX, o aumento\nda população urbana fez que o crescimento da agricultura\ncafeeira ocorresse independentemente das oscilações do\nmercado consumidor externo.",
+      "O desenvolvimento da economia do mate nas últimas\ndécadas do século XIX e nas primeiras décadas do século\nXX baseou-se em uma relação complementar entre o\nextrativismo no meio rural e a produção manufatureira no\nmeio urbano.",
+      "A população afrodescendente do Paraná não foi submetida\nà escravidão e não houve espaços próprios, como os\nquilombos, porque neste estado não havia atividades\neconômicas voltadas para o grande mercado internacional."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-26-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-26-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-26-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-26-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-26-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-26-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 8,
+    "resposta_correta": 8,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 17,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-27",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 27,
+    "materia": "Geografia",
+    "conteudo": "Geografia humana",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 27 —————————————————\nAssinale o que for correto sobre a interseção entre a Divisão\nTerritorial do Trabalho e a formação social e econômica dos\nEstados Unidos da América (EUA).",
+    "opcoes": [
+      "Os EUA atraem menos imigrantes brasileiros do que\nPortugal devido às facilidades da língua e à proximidade\ncultural existentes entre o Brasil e sua antiga metrópole.",
+      "No governo de Donald Trump as políticas adotadas em\nrelação aos estrangeiros foram receptivas aos imigrantes\nlatinos, facilitando seu ingresso nos EUA.",
+      "Nos últimos anos, os EUA têm se mantido como o principal\ndestino para os migrantes internacionais, recebendo número\nmaior de imigrantes do que outros países.",
+      "O filme Tempos Modernos, dirigido e protagonizado por\nCharles Chaplin, retrata um sistema de trabalho por ofício,\nem que o trabalhador é remunerado de acordo com os bens\nintegralmente produzidos por ele.",
+      "Atualmente muitas empresas dos EUA estão terceirizando\nas atividades de serviços não estratégicas para países como\na Índia, onde o custo do trabalho é mais baixo."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-27-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-27-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-27-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-27-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-27-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-27-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 20,
+    "resposta_correta": 20,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 17,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-28",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 28,
+    "materia": "Geografia",
+    "conteudo": "Geografia física",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 28 —————————————————\nSobre a representação, a cobertura e a dinâmica das paisagens,\nassinale o que for correto.",
+    "opcoes": [
+      "A atual configuração dos continentes é resultado da\nfragmentação e do afastamento das terras emersas a partir\nde um único bloco continental denominado Pangeia. Esse\nfenômeno é explicado pela Teoria das Placas Tectônicas.",
+      "Para a representação (em uma folha de caderno) de\npaisagens em nível planetário é necessário utilizar um\nmapa-múndi em escala grande. Assim haverá um maior\ngrau de detalhamento no mapa.",
+      "Com a utilização de sensores a bordo de satélites de\nrastreamento é possível realizar o monitoramento de\nextensas áreas da superfície da Terra, possibilitando, por\nexemplo, a identificação das transformações antrópicas nas\npaisagens ao longo do tempo.",
+      "Em escala planetária, pode-se dizer que a distribuição dos\nbiomas terrestres está intimamente ligada às diferentes\ncondições de temperatura, de chuva e de incidência dos\nraios solares nas diversas regiões do planeta.",
+      "O vulcanismo é um agente modelador externo do relevo;\nprovoca o deslizamento de terras a partir da força\ngravitacional terrestre em áreas menos acidentadas da\nsuperfície do planeta."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-28-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-28-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-28-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-28-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-28-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-28-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 13,
+    "resposta_correta": 13,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 17,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-29",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 29,
+    "materia": "Geografia",
+    "conteudo": "Geografia humana",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 29 —————————————————\nSobre o conceito de Geografia da Fome, cunhado por Josué de\nCastro, assinale o que for correto.",
+    "opcoes": [
+      "Parte da crítica à naturalização do fenômeno da fome busca\nexplicações com base nas especificidades regionais nacionais.",
+      "Estabelece como objeto de pesquisa sociológica as fomes\ncoletivas permanentes, temporárias, totais, parciais e ocultas.",
+      "Antecipa o problema da desnutrição de grupos\npopulacionais obesos ao propor a noção de fome oculta.",
+      "Para construir o conceito, o autor propôs a divisão do\nBrasil em cinco regiões alimentares: Amazônia, Nordeste\nAçucareiro, Sertão Nordestino, Centro-oeste e Sul.",
+      "Enfatiza os condicionantes ecológicos na composição da\nfome, tais como tipo de solo e regimes de chuvas."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-29-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-29-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-29-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-29-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-29-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-29-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 18,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-30",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 30,
+    "materia": "Geografia",
+    "conteudo": "Geografia humana",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 30 —————————————————\nAcerca da sociologia de Émile Durkheim, assinale o que for\ncorreto.",
+    "opcoes": [
+      "Em Durkheim o termo anomia caracteriza uma situação na\nqual a sociedade deixa de ser capaz de regular a conduta\ndas pessoas.",
+      "No pensamento durkheimiano o indivíduo precede a\nsociedade.",
+      "Para Durkheim, o tema da ordem social pode ser\ncompreendido por meio dos conceitos de coesão e de\nsolidariedade.",
+      "A divisão social do trabalho, na interpretação durkheimiana,\ntem a função sociológica exclusiva de elevar os ganhos de\nprodutividade das sociedades por meio da especialização\nprofissional, e depende da implantação consciente e\nplanejada dos gestores das modernas indústrias.",
+      "No pensamento de Durkheim, instituições como a religião,\na escola e a família são menos relevantes do que o mercado\npara a construção da solidariedade social."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-30-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-30-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-30-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-30-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-30-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-30-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 5,
+    "resposta_correta": 5,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 18,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-31",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 31,
+    "materia": "Matemática",
+    "conteudo": "Estatística",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 31 —————————————————\nO quadro a seguir apresenta o consumo mensal de energia\nelétrica (em kWh) em uma residência durante o ano de 2022.\nMês Jan. Fev. Mar. Abr. Mai. Jun.\nConsumo (kWh) 290 317 273 242 237 113\nMês Jul. Ago. Set. Out. Nov. Dez.\nConsumo (kWh) 216 234 246 270 293 311\nEm relação a esses dados, assinale o que for correto.",
+    "opcoes": [
+      "O consumo no primeiro trimestre foi maior que o consumo\nno quarto trimestre.",
+      "O consumo em julho foi 100% maior que o consumo em\njunho.",
+      "Se cada kWh custa noventa centavos, então a conta de\nenergia no mês de dezembro foi superior a duzentos e\nsetenta reais.",
+      "A média de consumo nos meses de fevereiro e março é\nmaior que a média de consumo nos meses de junho, julho e\nagosto.",
+      "A proporção entre o consumo nos meses de setembro e\noutubro é .\n8\n15"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-31-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-31-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-31-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-31-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-31-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-31-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 13,
+    "resposta_correta": 13,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 18,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2023-in-32",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 32,
+    "materia": "Matemática",
+    "conteudo": "Geometria",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 32 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "Se reduzirmos os lados de um quadrado em 20%, então sua\nárea será reduzida em pelo menos 40%.",
+      "Se aumentarmos os lados de um retângulo (que não é\nquadrado) em 25%, então sua diagonal aumentará em\nexatamente 25%.",
+      "Há esferas cujos volumes são números racionais.",
+      "Há um pentágono convexo que tem três ângulos internos\nmedindo 100º e dois ângulos internos medindo 125º.",
+      "Se bombearmos água para dentro de um reservatório\ninicialmente vazio, com capacidade de , a uma taxa\nconstante de , então após quatro 3minutos esse\nreservatório estará totalmente cheio. 1m\n4L/s"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-32-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-32-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-32-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-32-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-32-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-32-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 6,
+    "resposta_correta": 6,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 18,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2023-in-33",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 33,
+    "materia": "Matemática",
+    "conteudo": "Funções",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 33 —————————————————\nConsidere as funções , e\n. Assinale o que for correto. 2\n3 2 𝑓𝑓(𝑥𝑥)=3𝑥𝑥+9 𝑔𝑔(𝑥𝑥)=𝑥𝑥 −4𝑥𝑥+1\n𝑥𝑥 −9𝑥𝑥\n2",
+    "opcoes": [
+      "O gráfico da função não passa pela origem do sistema\ncartesiano.",
+      "ℎ(𝑥𝑥)\n02) Os domínios das funções e são iguais.",
+      "Os gráficos das funções e se interceptam em\nℎ(𝑥𝑥) 𝑓𝑓(𝑥𝑥)\ndois pontos distintos.",
+      "Afirmação 08: consulte a imagem oficial.",
+      "Pelo menos uma das três funções dadas no enunciado de\nc𝐼𝐼𝑚𝑚om(a𝑔𝑔n)do= (c[a−p3ut,)+ é∞ bi)jetora."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-33-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-33-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-33-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-33-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-33-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-33-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 28,
+    "resposta_correta": 28,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 19,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2023-in-34",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 34,
+    "materia": "Matemática",
+    "conteudo": "Sistemas lineares e matrizes",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 34 —————————————————\nConsidere as matrizes quadradas , ,\ne , todas de ordem , em que ,\n𝐴𝐴=(𝑎𝑎𝑖𝑖𝑖𝑖) 𝑞𝑞 =(𝑏𝑏𝑖𝑖𝑖𝑖)\n, , . Assinale o q2ue fo2r\n𝐶𝐶 =(𝑚𝑚𝑖𝑖𝑖𝑖) 𝐷𝐷 =(𝐹𝐹𝑖𝑖𝑖𝑖) 2 𝑎𝑎𝑖𝑖𝑖𝑖 =𝑖𝑖 −𝑗𝑗\ncorreto. 2 2 2 2\n𝑏𝑏 𝑖𝑖𝑖𝑖 =(𝑖𝑖−𝑗𝑗) 𝑚𝑚𝑖𝑖𝑖𝑖 =𝑖𝑖 +𝑗𝑗 𝐹𝐹𝑖𝑖𝑖𝑖 =(𝑖𝑖+𝑗𝑗)",
+    "opcoes": [
+      "Nenhuma das matrizes , , e é invertível.",
+      "Afirmação 02: consulte a imagem oficial.",
+      "Todas as entradas da matriz são números pares.",
+      "Afirmação 08: consulte a imagem oficial.",
+      ", ou seja, é igual a sua transposta.\n𝑞𝑞\n𝑎𝑎\n+𝐷𝐷 =2𝐶𝐶\n𝑞𝑞 =𝑞𝑞 𝑞𝑞"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-34-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-34-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-34-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-34-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-34-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-34-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 26,
+    "resposta_correta": 26,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 19,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2023-in-35",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 35,
+    "materia": "Matemática",
+    "conteudo": "Matemática",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 35 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "A equação possui seis soluções reais.",
+      "O polinômio6 2 possui ao menos duas\nraízes inteir𝑥𝑥as. =4 3 𝑥𝑥 2",
+      "A soma dos inversos das raízes do polinômio\né igual a . 2",
+      "O polinômio não é divisível por\n, em− q1ue 7é a un5idade i4maginária.",
+      "As raízes do polinômio dado por\n𝑥𝑥−𝑖𝑖 𝑖𝑖\nsão e 𝑥𝑥 𝑥𝑥\n𝑝𝑝(𝑥𝑥)=𝐹𝐹𝑑𝑑𝑡𝑡� �\n𝑥𝑥+1 −2\n2 −1."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-35-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-35-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-35-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-35-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-35-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-35-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 8,
+    "resposta_correta": 8,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 19,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2023-in-36",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 36,
+    "materia": "Matemática",
+    "conteudo": "Geometria",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 36 —————————————————\nConsiderando um sistema cartesiano de coordenadas no plano,\nassinale o que for correto.",
+    "opcoes": [
+      "O triângulo com vértices , e e o triângulo\ncom vértices , e são semelhantes.",
+      "A reta de equação é tangente à circunferência\n.( 0,0) (2,0) (2,−2)",
+      "O2s pont2os em que as retas ,\ne𝑥𝑥 +𝑦𝑦 = s4e interceptam duas a duas são os vértices de um\ntriângulo. 𝑟𝑟:𝑦𝑦 =2𝑥𝑥+5 𝑠𝑠:4𝑥𝑥−2𝑦𝑦=−20",
+      "Há pelo menos uma circunferência que passa pelos pontos\n(0,0) e e determina um círculo com área menor do\nque dezoito unidades de área.",
+      "As retas com equações e são\nperpendiculares.\n𝑦𝑦=2𝑥𝑥+1 𝑥𝑥+2𝑦𝑦=10"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-36-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-36-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-36-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-36-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-36-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-36-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 17,
+    "resposta_correta": 17,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 19,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2023-in-37",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 37,
+    "materia": "Matemática",
+    "conteudo": "Funções",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 37 —————————————————\nConsiderando as medidas de ângulos em radianos, assinale o\nque for correto.",
+    "opcoes": [
+      "A igualdade\né válida para todo número real .",
+      "A equação possui exatamente uma solução no\nintervalo aberto . 𝑥𝑥",
+      "O gráfico da função não intercepta o\neixo . ]−𝜋𝜋/2,𝜋𝜋/2[",
+      "O período da função é igual a .",
+      "A função é crescente no intervalo\n. 𝑔𝑔(𝑥𝑥)=2cos (3𝑥𝑥) 6𝜋𝜋\nℎ(𝑥𝑥)=sen𝑥𝑥+tg𝑥𝑥\n[−𝜋𝜋/4,0]"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-37-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-37-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-37-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-37-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-37-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-37-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 22,
+    "resposta_correta": 22,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 20,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2023-in-38",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 38,
+    "materia": "Matemática",
+    "conteudo": "Probabilidade",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 38 —————————————————\nNa gaveta de uma loja de bijuterias, há três anéis, três brincos e\nquatro colares, todos diferentes uns dos outros. Um dos anéis\ncusta dez reais; outro, vinte reais; e o terceiro, trinta reais. Um\ndos brincos custa vinte reais; e os outros dois, trinta reais cada.\nCada colar custa quarenta reais. Assinale o que for correto.",
+    "opcoes": [
+      "Há mais de maneiras de organizar esses objetos\nem uma fila. 6",
+      "Há dezesseis maneiras de montar um conjunto no valor de\noitenta reais contendo exatamente um anel, um brinco e um\ncolar.",
+      "Se uma pessoa escolher ao acaso um anel e um brinco,\nentão a probabilidade de que o valor total seja maior do\nque cinquenta reais é maior do que 0,3.",
+      "Há mais de oitocentas maneiras diferentes de organizar\nesses objetos em uma fila, de forma que, da esquerda para\na direita, fiquem primeiro os anéis, depois os brincos e, por\nfim, os colares.",
+      "Se uma pessoa escolher ao acaso dois brincos e dois\ncolares, então a probabilidade de que o valor total seja\nmenor do que cento e quarenta reais é menor do que 0,6."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-38-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-38-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-38-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-38-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-38-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-38-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 9,
+    "resposta_correta": 9,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 20,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2023-in-39",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 39,
+    "materia": "Matemática",
+    "conteudo": "Geometria",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 39 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "Se é um termo da PA , então o par\nordenado está sobre a reta .",
+      "Se o menor cateto de um triângulo retângulo mede 1cm e\nse a sequ(ê𝑛𝑛n,c𝑎𝑎ia 𝑛𝑛 )formada pelas m𝑦𝑦ed=ida−s3 d+os5 𝑥𝑥catetos e da\nhipotenusa é uma PA crescente, então a razão da PA é um\nnúmero irracional.",
+      "Se a soma dos 10 primeiros termos da PA é\nigual a 100, então , em que é a razão\nda PA.\n(𝑎𝑎1,𝑎𝑎2,…,𝑎𝑎𝑛𝑛)",
+      "Se é uma PG de termos positivos e razão\nsatisfazendo , então .",
+      "Se é uma PG de termos positivos\nsatisfazendo 𝑎𝑎3×𝑎𝑎5×𝑎𝑎, 7 e=m𝑎𝑎 2 q 5 ue 𝑎𝑎é 1 =a 3so𝑞𝑞ma dos\nprime(𝑎𝑎ir 1 o,s𝑎𝑎 t 2 e,r…m,o𝑎𝑎s 𝑛𝑛 d)a PG, então a razão da PG é maior do\nque 2. 𝐸𝐸4 =20𝑎𝑎1 𝐸𝐸𝑛𝑛 𝑛𝑛"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-39-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-39-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-39-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-39-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-39-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-39-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 21,
+    "resposta_correta": 21,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 20,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2023-in-40",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 40,
+    "materia": "Matemática",
+    "conteudo": "Matemática",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 40 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "Para quaisquer números reais e vale a igualdade\n.",
+      "Se2 é u2m núm2ero rea2l com e se é a unidade\ni|m𝑥𝑥ag+in𝑦𝑦ári|a=, e|𝑥𝑥ntã|o+ |𝑦𝑦 | é representado no segundo\nqua𝑎𝑎drante do plano complex2o 0(p<lan𝑎𝑎o< de1 Argan𝑖𝑖d-Gauss).",
+      "No conjunto dos números complexos, a equação ,\nem que é a unidade imaginária, tem como solução um\nnúmero complexo com parte real negativa. 𝑖𝑖𝑖𝑖=2+𝑖𝑖",
+      "Há infinitos números naturais no conjunto solução da\ndesigualdade com no conjunto dos\n2\nnúmeros reais n𝑥𝑥ão+ 𝑥𝑥nulos. 5\n2 2",
+      "O intervalo fechado está contido no conjunto\nsolução da inequação , com\nno conjunto dos número[s− r1e,a2is]. 2\nlog5(𝑥𝑥+2)≤log5(𝑥𝑥 +1) 𝑥𝑥"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-40-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-40-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-40-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-40-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-40-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-40-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 3,
+    "resposta_correta": 3,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 20,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2023-in-41",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 41,
+    "materia": "Biologia",
+    "conteudo": "Biologia",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 41 —————————————————\nVários organismos geneticamente modificados já estão\ndisponíveis no mercado brasileiro como produtos alimentícios,\ndentre eles milho, soja, leite, arroz, feijão, salmão, e seus\nderivados. Sobre o assunto, e correlatos, assinale o que for\ncorreto.",
+    "opcoes": [
+      "A prole transgênica resultante do cruzamento do salmão-rei\ncom uma espécie selvagem de salmão não poderá\ntransmitir os genes incorporados à sua descendência.",
+      "A importância dos organismos transgênicos está na\nobtenção de indivíduos com fenótipo inalterado, de forma a\nse apresentarem mais vistosos e, consequentemente, mais\nfacilmente comercializáveis.",
+      "O uso de organismos transgênicos ainda é controverso\ndevido aos riscos ao ambiente e à saúde humana. Por\nexemplo, os grãos de pólen de plantas transgênicas podem\nser levados pelo vento e fecundar plantas convencionais,\ncausando desequilíbrio ambiental.",
+      "Organismos geneticamente modificados são aqueles\nportadores de DNA da sua própria espécie somados ao de\noutra espécie, gerados pela transferência de parte do\nmaterial genético de outra espécie.",
+      "Os vetores conhecidos e utilizados nos processos de produção\nde organismos geneticamente modificados são procariontes."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-41-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-41-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-41-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-41-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-41-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-41-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 12,
+    "resposta_correta": 12,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 21,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-42",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 42,
+    "materia": "Biologia",
+    "conteudo": "Biologia",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 42 —————————————————\nImagine uma paisagem do Cerrado brasileiro em que ema e\nlobo-guará estão próximos de uma vegetação, com árvores de\ncaules retorcidos e com cascas bem desenvolvidas, e em que\nabelhas estão tocando flores para coletar pólen e néctar.\nConsiderando o exposto, e conhecimentos correlatos, assinale o\nque for correto.",
+    "opcoes": [
+      "Os invertebrados citados são fêmeas diploides, cujos machos\nsão haploides e se desenvolveram por partenogênese.",
+      "Os cordados citados possuem sistema circulatório fechado e\ncoração com quatro câmaras: dois átrios e dois ventrículos. No\nentanto, a curvatura da aorta é dirigida para a direita naquele\nque possui cloaca e para a esquerda naquele que possui dentes.",
+      "A casca grossa das angiospermas citadas refere-se a um\ntecido morto componente da periderme da planta. Esse\ntecido é rico em suberina e protege as células vivas da\nplanta em casos de incêndio, que são comuns no Cerrado.",
+      "No Cerrado, o fogo controlado é benéfico porque estimula\no brotamento das gemas subterrâneas, a floração, a abertura\ndos frutos e a germinação de sementes. Além disso, impede\no acúmulo de matéria orgânica e, consequentemente, a\nocorrência de incêndios naturais de grandes proporções.",
+      "Parte da água presente nas plantas retorna continuamente\nao ambiente por meio da transpiração. As antófitas do\nCerrado precisam minimizar a liberação de água para a\natmosfera, especialmente no inverno, e, para tanto,\napresentam ajustamento osmótico das raízes, bem como\nfolhas com estômatos abaxiais; cutícula espessa e tricomas."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-42-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-42-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-42-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-42-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-42-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-42-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 31,
+    "resposta_correta": 31,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 21,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-43",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 43,
+    "materia": "Biologia",
+    "conteudo": "Biologia",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 43 —————————————————\nEm um lixão a céu aberto, em área rural com um pequeno riacho e\npróxima a um grande centro urbano, foram vistos seres humanos\nbuscando alimento, dividindo o espaço com muitos ratos, urubus,\ne baratas. Grande parte dos restos de alimentos ali disponíveis está\ncontaminada por fungos e bactérias e se encontra em grau\nacentuado de decomposição. Com base no exposto, e em\nconhecimentos correlatos, assinale o que for correto.",
+    "opcoes": [
+      "Os organismos decompositores citados no texto são\nunicelulares, formados por uma única célula procariótica e\npertencentes ao Reino Monera.",
+      "Uma maneira de evitar a possível eutrofização do riacho\ncitado, influenciada pelo lixão, é o incentivo à reciclagem de\nlatas, plásticos e papéis, evitando o seu acúmulo no lixão.",
+      "A convivência entre humanos e animais no local\ncaracteriza o conceito de população.",
+      "O cenário descrito no enunciado de comando da questão\n(caput) favorece o desenvolvimento de verminoses.",
+      "Ao ingerirem os restos de alimento encontrados no lixão, os\nhumanos podem adquirir o botulismo, causado por um\norganismo aeróbico e transmitido por gotículas de saliva; e ser\ncontaminados com os zigomicetos, procariontes com corpos\nde frutificação, que causam fortes alergias ao serem inalados."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-43-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-43-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-43-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-43-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-43-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-43-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 8,
+    "resposta_correta": 8,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 21,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-44",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 44,
+    "materia": "Biologia",
+    "conteudo": "Biologia",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 44 —————————————————\nA radioatividade é um fenômeno natural ou artificial muito\npresente em nosso cotidiano. Embora a exposição a altas dosagens\nde radiação possa ser prejudicial ao ser humano, sua utilização em\ndosagens corretas e sua manipulação responsável garantem\nbenefícios na medicina, na agricultura, na produção de alimentos,\nna indústria. Sobre o assunto, assinale o que for correto.",
+    "opcoes": [
+      "As emissões alfa (α) são as principais responsáveis pelos\nefeitos biológicos das radiações. Podem produzir reações\nquímicas leves nas células, alterando sua função, mas sem\nconsequências genéticas.",
+      "Na agricultura, baixas doses de radiações eletromagnéticas\nde alta frequência são utilizadas para alterar\ncomportamento dos machos de insetos prejudiciais às\nplantações. Esses machos irradiados não reconhecerão as\nfêmeas de sua espécie, reduzindo a população da praga.",
+      "Radioatividade é a emissão espontânea de partículas e/ou\nde radiações de núcleos instáveis de átomos, dando origem\na outros núcleos, que podem ser instáveis ou não.",
+      "A medicina utiliza solução contendo iodo-131 em\npequenas doses como um rastreador radioativo para\ndiagnósticos das glândulas tireoides. Um contador Geiger\ncolocado na região do pescoço determina a habilidade da\ntireoide em absorver o iodo.",
+      "A radioatividade excessiva causa mutações nos ácidos\nnucleicos, principalmente no nucleotídeo uracila do ácido\ndesoxirribonucleico."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-44-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-44-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-44-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-44-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-44-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-44-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 12,
+    "resposta_correta": 12,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 21,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-45",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 45,
+    "materia": "Química",
+    "conteudo": "Estequiometria",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 45 —————————————————\nDadas as fórmulas moleculares a seguir, assinale o que for\ncorreto.\nI) C H\n7 16\nII) C H O\n4 10",
+    "opcoes": [
+      "O composto I pode ser o 2,3-dimetilpentano.",
+      "O composto II pode ser o ácido butanoico.",
+      "O composto II pode ser o butan-2-ol, um álcool secundário.",
+      "O composto II pode ser a butan-2-ona, que é isômero de\nfunção do butan-2-ol.",
+      "O composto I pode ser um hidrocarboneto insaturado\nsolúvel em água."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-45-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-45-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-45-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-45-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-45-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-45-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 5,
+    "resposta_correta": 5,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 22,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-46",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 46,
+    "materia": "Química",
+    "conteudo": "Química",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 46 —————————————————\nSabendo-se que uma substância X reage com uma substância Y\nproduzindo as substâncias Z e W, e considerando as duas\nreações descritas no quadro a seguir, realizadas sob as mesmas\ncondições, assinale o que for correto.\nAntes da reação Depois da reação\nReação X Y Z W X Y\n1 40g 100g 71g a 0g 51g\n2 b c 21,3g d 6g 0g",
+    "opcoes": [
+      "O valor de a é 18g.",
+      "O valor de b é 18g.",
+      "O valor de c é 30g.",
+      "O valor de d é 14,7g.",
+      "O reagente limitante na reação 1 é Y."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-46-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-46-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-46-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-46-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-46-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-46-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 3,
+    "resposta_correta": 3,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 22,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-47",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 47,
+    "materia": "Química",
+    "conteudo": "Estrutura atômica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 47 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "Em um sistema gasoso, a energia interna está relacionada a\ndiversos fatores, entre eles os movimentos de translação, de\nrotação e de vibração de suas moléculas, íons ou átomos.",
+      "Se um sistema recebe calor (Q) do meio ambiente e realiza\ntrabalho (W) sobre esse meio, a variação da energia interna\n(∆U) desse sistema é igual a Q W.",
+      "A entropia é uma medida da desordem de um sistema. O\ntermo desordem está relaciona−do a uma distribuição mais\nhomogênea da matéria e/ou da energia pelo sistema.",
+      "Quando a variação da energia livre de Gibbs de uma reação\n(que ocorre sob pressão e temperatura constantes) for\nexatamente igual a zero, significa que essa reação está em\nequilíbrio.",
+      "A entropia (do universo), resultante da soma da entropia do\nsistema e da entropia da vizinhança, diminui nos processos\nespontâneos."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-47-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-47-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-47-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-47-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-47-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-47-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 22,
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-48",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 48,
+    "materia": "Física",
+    "conteudo": "Mecânica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 48 —————————————————\nNo tratamento de água e esgoto há diversos processos físicos e\nquímicos que ocorrem em grandes reservatórios. Geralmente o\ntratamento é composto pelas seguintes etapas: Coagulação e\nFloculação, Decantação, Filtração, Desinfecção e Fluoretação.\nAssinale o que for correto.",
+    "opcoes": [
+      "A pressão hidrostática em um ponto situado no interior de\num líquido em equilíbrio no reservatório depende da razão\nentre a profundidade em que esse ponto se encontra e a\ndensidade do fluido.",
+      "A Decantação é uma etapa que separa misturas\nheterogêneas, formadas por duas ou mais fases.",
+      "Todo sólido imerso em um líquido em equilíbrio recebe\numa força vertical cuja intensidade é igual ao peso do\nlíquido deslocado e cujo sentido é contrário ao da força\ngravitacional.",
+      "A etapa de Coagulação e Floculação consiste em reduzir os\ntamanhos de moléculas imersas na água para que sejam\nposteriormente retiradas por filtração.",
+      "A Centrifugação é um processo de Decantação acelerado,\nem que a força centrífuga é mais relevante do que a força\nda gravidade. Assim, quanto maior a velocidade angular da\ncentrífuga mais rápida será a Decantação."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-48-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-48-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-48-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-48-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-48-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-48-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 22,
+    "resposta_correta": 22,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 23,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/formulario-2.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2023-in-49",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 49,
+    "materia": "Física",
+    "conteudo": "Eletricidade",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 49 —————————————————\nUma partícula de massa g e carga elétrica positiva\ncai verticalmente, a partir do repouso, sobre uma placa\nhorizontal (plana). A altur𝑚𝑚a i=nic0i,a5l dessa partícula em𝑞𝑞 relação à\nplaca é igual a cm. No local do experimento, em que há um\n125\ncampo gravitacional pode haver um campo elétrico e/ou\n98\num campo magnético . Os módulos dos campos são,\n𝑔𝑔⃗, 𝐸𝐸�⃗\nrespectivamente, , e (constantes e dados no\nsistema CGS). Se\n𝑞𝑞�⃗\n, a2 partícula atinge a placa e fica\nem contato com e𝑔𝑔la= po9r8 00,c0m2s/ sdura𝐸𝐸nte 𝑞𝑞a colisão. Considerando\nque essa colisão é𝐸𝐸 el=ás𝑞𝑞tic=a e0 desprezando a resistência do ar,\nassinale o que for correto.",
+    "opcoes": [
+      "Se e se o módulo da força exercida pela placa\nsobre a partícula durante a colisão for constante, então\n𝐸𝐸 =𝑞𝑞 = 0 𝐹𝐹",
+      "Se então a energia cinética da partícula\ni2m4e0d0idatianma.ente após a colisão será igual a",
+      "Se e se o campo for perpendicular à placa e\n625erg.\ndirecionado para cima, então o módulo da aceleração da\npart 𝑞𝑞 ícu = la 0 será nulo se � 𝐸𝐸 �⃗ .",
+      "Se e se o campo for perpendicular à placa e\n𝐸𝐸 = 𝑞𝑞\ndirecionado para baixo, então o módulo da aceleração da\npart 𝐸𝐸 ícu = la 0 durante a queda se𝑞𝑞 ��⃗ rá igual a , em que é\no módulo da velocidade da partícula. 𝑞𝑞𝑣𝑣𝐵𝐵",
+      "Se e são campos cruzados, com perpendicular à\nplaca e perpendicular a , então a trajetória da partícula\n��⃗ ��⃗ ��⃗\nserá𝐸𝐸 uma𝑞𝑞 linha reta. 𝐸𝐸\n��⃗ ��⃗\n𝑞𝑞 𝐸𝐸"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-49-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-49-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-49-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-49-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-49-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-49-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 7,
+    "resposta_correta": 7,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 23,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/formulario-2.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2023-in-50",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 50,
+    "materia": "Física",
+    "conteudo": "Óptica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 50 —————————————————\nSobre fenômenos relacionados a oscilações e ondas, assinale o\nque for correto.",
+    "opcoes": [
+      "No movimento harmônico simples (MHS) de uma\npartícula, a aceleração depende da posição dessa\npartícula, de tal forma que, quanto mais distante da posição\nde equilíbrio ( ), maior o módulo da aceleraçã𝑥𝑥o.",
+      "Se a massa e o comprimento de quatro pêndulos simples\nsão, respectiv𝑥𝑥am=en0te, e (pêndulo I), e\n(pêndulo II), e (pêndulo III) e e (pêndulo IV),\nentão as maiores freq𝑚𝑚uência𝑙𝑙s, no regime d𝑚𝑚e /p2eque𝑙𝑙n/a2s\noscilações, se2rã𝑚𝑚o ob𝑙𝑙servadas nos pên4du𝑚𝑚los I2 𝑙𝑙e III.",
+      "A amplitude e a frequência de uma onda estacionária em\numa corda esticada, presa em suas extremidades, são iguais\nà amplitude e à frequência da oscilação do ponto central da\ncorda no modo de vibração fundamental.",
+      "Quando uma onda sonora produzida em um meio passa\npara outro meio em que sua velocidade é diferente, a\nfrequência do som permanece a mesma, mas o\ncomprimento de onda se modifica.",
+      "As diversas colorações observadas em películas de bolhas\nde sabão e em películas de óleo depositadas sobre água\nestão relacionadas às espessuras dessas películas e à\ninterferência da luz refletida por elas."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-50-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-50-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-50-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-50-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-50-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-50-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 29,
+    "resposta_correta": 29,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 23,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/formulario-2.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2023-in-11-es",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 11,
+    "materia": "Língua Espanhola",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 11 —————————————————\nTras la lectura detenida del texto, señala la(s) alternativa(s)\ncorrecta(s).",
+    "opcoes": [
+      "El texto nos enseña cuatro consejos respecto a la cuestión",
+      "El escrito empieza por referirse a “nosotras” (línea 1), pues se",
+      "Revisar la factura de restaurantes y bares evita pagar",
+      "El texto intitulado “El juego del dinero” fue redactado a los\nque juegan al azar desde la temprana edad.",
+      "Ideas simples sobre economía doméstica son el tema del\ntexto que les sirve de recomendación a los lectores."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-11-es-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-11-es-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-11-es-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-11-es-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-11-es-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-11-es-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 18,
+    "resposta_correta": 18,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 10,
+    "idioma": "Espanhol",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-Espanhol.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-12-es",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 12,
+    "materia": "Língua Espanhola",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 12 —————————————————\nA partir de la lectura del texto, señala la(s) alternativa(s)\ncorrecta(s).",
+    "opcoes": [
+      "Cuándo pagar las cuentas es el asunto de una de las partes\ndel texto, cuyo título es “No pagues de inmediato”.",
+      "Pequeños gastos extras pueden ser cobrados erróneamente\nen ciertas facturas no revisadas con la debida cautela.",
+      "La autora defiende que el banco guarda nuestro dinero de\nmanera a hacer crecer nuestra fortuna.",
+      "Contratar a un contable especializado a la hora de hacer el\nseguro del coche ayuda a ahorrar dinero.",
+      "Pagar las cuentas así que las recibes es una práctica no\nrecomendable, según la autora."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-12-es-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-12-es-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-12-es-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-12-es-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-12-es-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-12-es-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 19,
+    "resposta_correta": 19,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 10,
+    "idioma": "Espanhol",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-Espanhol.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-13-es",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 13,
+    "materia": "Língua Espanhola",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 13 —————————————————\nDe acuerdo con aspectos gramaticales de la lengua española,\nseñala la(s) alternativa(s) correcta(s).",
+    "opcoes": [
+      "Las formas “tendrás” (línea 19) y “saldrás (línea 54) están en",
+      "“Haz” (línea 22) es un verbo conjugado en el modo\nimperativo, segunda persona de singular, así como",
+      "La expresión “costos altísimos” (línea 45) trae un sustantivo",
+      "La expresión “un 7%” (línea 38) presenta la cifra referente\nal porcentaje antecedida de un artículo indefinido",
+      "La expresión “pudo haber sido utilizado” (línea 10) trae un\nverbo en presente de indicativo, seguido de dos verbos en\ninfinitivo, uno en participio."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-13-es-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-13-es-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-13-es-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-13-es-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-13-es-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-13-es-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 14,
+    "resposta_correta": 14,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 10,
+    "idioma": "Espanhol",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-Espanhol.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-14-es",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 14,
+    "materia": "Língua Espanhola",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 14 —————————————————\nDe acuerdo con el vocabulario y la gramática de la lengua\nespañola, señala la(s) alternativa(s) correcta(s).",
+    "opcoes": [
+      "La forma “se percatan” (línea 30) está en presente de\nindicativo del verbo regular percatarse, que significa darse\ncuenta, notar.",
+      "La forma “ahorra” (línea 32) está conjugada en presente de\nsubjuntivo del verbo ahorrar, que significa evitar\n“ganancias” (línea 40).",
+      "La conjunción “Si” (línea 5) y el pronombre personal “Sí”\n(línea 9) son vocablos monosílabos. El pronombre está\nacentuado por la tilde diacrítica para distinguirlos, ya que",
+      "La forma “alquilamos” (línea 53) está conjugada en\nprimera persona de plural del verbo alquilar, cuyo\nsignificado es arrendar u ocupar un inmueble o usar un",
+      "El vocablo “sumas” (línea 2) es un sustantivo plural, relativo\nal verbo sumar, cuyo significado es agregar, adicionar. El\nverbo sumar está conjugado en presente de indicativo, como\n“sumamos” (línea 8), primera persona de plural."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-14-es-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-14-es-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-14-es-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-14-es-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-14-es-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-14-es-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 25,
+    "resposta_correta": 25,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 10,
+    "idioma": "Espanhol",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-Espanhol.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-11-fr",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 11,
+    "materia": "Língua Francesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 11 —————————————————\nÀ partir de la lecture du texte, cochez le(s) bon(s) choix à\npropos du personnage Mercredi.",
+    "opcoes": [
+      "Elle est la fille la plus âgée de La Famille Addams.",
+      "Ce personnage est devenu populaire à partir des années\n1991.",
+      "La source d'inspiration de son prénom a été le jour de sa\nnaissance.",
+      "Dans la série, Mercredi est encore un enfant.",
+      "C'est au premier épisode de la série qu'on apprend sur la\nvraie origine de son prénom."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-11-fr-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-11-fr-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-11-fr-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-11-fr-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-11-fr-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-11-fr-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 19,
+    "resposta_correta": 19,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 12,
+    "idioma": "Francês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-Francês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-12-fr",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 12,
+    "materia": "Língua Francesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 12 —————————————————\nD'après le texte, cochez le(s) bon(s) choix.",
+    "opcoes": [
+      "La Famille Addams est à la fois terrifiante et exécrable.",
+      "Christina Ricci est l'actrice qui a rendu célèbre le\npersonnage de Mercredi Addams.",
+      "Le public gothique n'aime pas trop le personnage de\nMercredi Addams.",
+      "Quand le réalisateur, Tim Burton, a annoncé vouloir créer\nune série sur le personnage de Mercredi Addams, les fans\nn'ont pas vu cette idée d'un bon oeil.",
+      "La comptine Monday's Child raconte que l'enfant du\nmercredi est plein de malheur, d'où vient le prénom du\npersonnage Mercredi Addams."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-12-fr-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-12-fr-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-12-fr-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-12-fr-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-12-fr-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-12-fr-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 18,
+    "resposta_correta": 18,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 12,
+    "idioma": "Francês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-Francês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-13-fr",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 13,
+    "materia": "Língua Francesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 13 —————————————————\nCochez le(s) choix où le mot souligné est en relation avec l'idée\nde mystère autour du personnage Mercredi.",
+    "opcoes": [
+      "\"son intrigant prénom\" (lignes 12 et 13).",
+      "\"sa sombre héroïne\" (ligne 28).",
+      "\"la jeune protagoniste\" (ligne 44).",
+      "\"son étrange famille\" (ligne 52).",
+      "\"ce pensionnat prestigieux\" (ligne 54)."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-13-fr-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-13-fr-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-13-fr-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-13-fr-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-13-fr-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-13-fr-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 11,
+    "resposta_correta": 11,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 12,
+    "idioma": "Francês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-Francês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-14-fr",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 14,
+    "materia": "Língua Francesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 14 —————————————————\nCochez le(s) choix où la forme soulignée correspond au passé\ncomposé.",
+    "opcoes": [
+      "‟Popularisée par Christina Ricci dans le téléfilm La\nFamille Addams de 1991” (lignes 3 et 4).",
+      "‟Alors lorsque Tim Burton a annoncé vouloir créer une\nsérie sur la vie de la jeune Mercredi” (lignes 7 et 8).",
+      "‟Un prénom choisi par le créateur de La Famille Addams”\n(lignes 21 et 22).",
+      "‟Une anecdote qu'elle a racontée dans le magazine” (ligne\n30).",
+      "‟Je vivais en Caroline du Nord” (lignes 32 et 33)."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-14-fr-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-14-fr-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-14-fr-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-14-fr-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-14-fr-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-14-fr-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 10,
+    "resposta_correta": 10,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 12,
+    "idioma": "Francês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-Francês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-11-en",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 11,
+    "materia": "Língua Inglesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 11 —————————————————\nAccording to the text, mark the correct affirmative(s).",
+    "opcoes": [
+      "Afirmação 01: consulte a imagem oficial.",
+      "Afirmação 02: consulte a imagem oficial.",
+      "Chat GPT has been seen by the more liberal educators as a",
+      "For the past two decades, chatbots could answer all types",
+      "One of the negative aspect of Chat GPT is that it may\ninterfere in the students´ ability to think in a critical way."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-11-en-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-11-en-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-11-en-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-11-en-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-11-en-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-11-en-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 16,
+    "resposta_correta": 16,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 14,
+    "idioma": "Inglês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-Inglês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-12-en",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 12,
+    "materia": "Língua Inglesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 12 —————————————————\nAccording to the text, mark the correct affirmative(s).",
+    "opcoes": [
+      "The adverbs “However” (line 20) and “Furthermore” (line\n52) can be replaced with Nevertheless and Moreover,",
+      "In the sentences “others believe Chat GPT, if employed\nwisely” (lines 42 and 43) and “Many believe these features,\nif used ethically,” (lines 55 and 56), the conjunction if",
+      "The expressions “has already had” (lines 58 and 59) and\n“was trained on” (line 50) are examples of present perfect",
+      "In the sentence “students who can think” (line 37) the",
+      "The pronouns “them” (line 32) and “those” (line 39) refer to\n“Chat GPT” (line 31) and “chatbots” (line 39), respectively."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-12-en-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-12-en-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-12-en-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-12-en-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-12-en-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-12-en-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 14,
+    "idioma": "Inglês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-Inglês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-13-en",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 13,
+    "materia": "Língua Inglesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 13 —————————————————\nAccording to the text, mark the correct affirmative(s).",
+    "opcoes": [
+      "Chat GPT is considered an advance in technology in the\nartificial intelligence area.",
+      "Some educators were worried when their students used\nartificial intelligence to do assignments and exams.",
+      "Chat GPT is not able to organize a text, for instance. The\ntool can only search information about a subject.",
+      "In the educational area, Chat GPT may be used as a tool for\nreviewing students’ texts, for instance.",
+      "Although plagiarism is a concern, artificial intelligence\noffers many advantages for learning."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-13-en-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-13-en-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-13-en-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-13-en-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-13-en-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-13-en-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 27,
+    "resposta_correta": 27,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 14,
+    "idioma": "Inglês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-Inglês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2023-in-14-en",
+    "ano": 2023,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2023",
+    "numero_original": 14,
+    "materia": "Língua Inglesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 14 —————————————————\nAccording to the text, mark the correct affirmative(s).",
+    "opcoes": [
+      "Afirmação 01: consulte a imagem oficial.",
+      "The construction “are taking”, in “Others are taking a more\nliberal approach” (line 10), is an example of present\ncontinuous.",
+      "The words “absolutely” (line 37) and “critically” (line 40)\nare examples of adverbs.",
+      "The word “Writing”, in “Writing is the deepest form of",
+      "The word “Others” (line 10) can be replaced with Other\neducators without changing the meaning of the sentence."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2023-in/uem-2023-in-14-en-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2023-in/uem-2023-in-14-en-01.webp",
+      "/acervo/uem-2023-in/uem-2023-in-14-en-02.webp",
+      "/acervo/uem-2023-in/uem-2023-in-14-en-04.webp",
+      "/acervo/uem-2023-in/uem-2023-in-14-en-08.webp",
+      "/acervo/uem-2023-in/uem-2023-in-14-en-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 22,
+    "resposta_correta": 22,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in23/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in23/gabdef.pdf",
+    "pagina": 14,
+    "idioma": "Inglês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2023-in/apoio-Inglês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  }
+]

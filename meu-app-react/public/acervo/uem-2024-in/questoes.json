@@ -1,0 +1,3530 @@
+[
+  {
+    "id": "uem-2024-in-01",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 1,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 01 —————————————————\nEm seu texto, o autor tece uma série de considerações sobre a\nmalandragem. Assinale a(s) alternativa(s) que expressa(m)\ncorretamente a visão irônica do autor a respeito da malandragem.",
+    "opcoes": [
+      "É uma habilidade natural dos jovens e não precisa de\naprendizado.",
+      "É uma atitude que não tem lugar no mundo moderno e\nacadêmico.",
+      "É um sacerdócio que deve ser valorizado e praticado com\nprazer.",
+      "É uma forma de enganar que requer pouco esforço e não tem\nvalor.",
+      "É uma maneira de facilitar a vida e não deve ser vista como\numa virtude."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-01-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-01-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-01-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-01-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-01-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-01-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 4,
+    "resposta_correta": 4,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 6,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-02",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 2,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 02 —————————————————\nPara ilustrar o conceito de malandragem, o autor utiliza o\nexemplo da mentira. Assinale o que for correto, de acordo com\notexto, sobre as dificuldades no ato de mentir.",
+    "opcoes": [
+      "É difícil manter a mentira por muito tempo sem ser descoberto.",
+      "É difícil mentir sem sentir culpa.",
+      "É difícil mentir sem prejudicar os outros.",
+      "É cansativo sustentar as mentiras contadas.",
+      "Afirmação 16: consulte a imagem oficial."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-02-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-02-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-02-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-02-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-02-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-02-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 25,
+    "resposta_correta": 25,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 6,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-03",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 3,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 03 —————————————————\nUm dos pilares do texto em análise é o humor, materializado\nespecialmente pelo emprego de ironias. Assinale a(s)\nalternativa(s) que exemplifica(m) corretamente o uso desse\nmecanismo linguístico.",
+    "opcoes": [
+      "“Que esperança podemos ter num mundo melhor se os\nhomens e mulheres de amanhã não possuem a mais básica\ncapacidade de enganar professores?” (linhas 13-15)",
+      "“Alguém pergunta: ‘Você já leu tal livro?’”(linhas 32 e 33)",
+      "“Esta geração está perdida.” (linha 17)",
+      "“Há muitos livros no mundo, não é vergonha não ter lido\num.” (linhas 51 e 52)",
+      "“Preocupado e indignado. São alunos universitários. O\nfuturo do país. E fazem isso.” (linhas 7 e 8)"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-03-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-03-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-03-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-03-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-03-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-03-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 21,
+    "resposta_correta": 21,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 6,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-04",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 4,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 04 —————————————————\nAssinale a(s) alternativa(s) em que o operador discursivo em\ndestaque (sublinhado e em negrito) de cada fragmento\ncorresponde corretamente à relação expressa em parênteses.",
+    "opcoes": [
+      "Linhas 7 e 8: “Preocupado e indignado. São alunos\nuniversitários. O futuro do país. E fazem isso.” (alternativa)",
+      "Linhas 9-12: “Eles não têm o discernimento de acrescentar\numa gralha aqui, colocar mal uma vírgula acolá, de modo a\ncamuflar o fato de o texto ter sido escrito por uma máquina.”\n(explicação)",
+      "Linhas 13-15: “Que esperança podemos ter num mundo\nmelhor se os homens e mulheres de amanhã não possuem a\nmais básica capacidade de enganar professores?”\n(consequência)",
+      "Linhas 27 e 28: “Quem não entende a malandragem julga\nque o malandro é malandro para facilitar a sua vida.”\n(finalidade)",
+      "Linhas 51-53: “Há muitos livros no mundo, não é vergonha\nnão ter lido um. Mas, pelo prazer de enganar, todo o\nsofrimento vale a pena.” (acréscimo)"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-04-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-04-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-04-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-04-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-04-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-04-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 8,
+    "resposta_correta": 8,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 7,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-05",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 5,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 05 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "Em “Esta geração está perdida.” (linha 17), o autor lança\nmão de um eufemismo para atenuar a situação dos jovens.",
+      "O texto apresenta um tom irônico e sarcástico ao discutir\ncomo o automatismo no uso de tecnologias alcança inclusive\noato de enganar.",
+      "Em sua argumentação, o autor não utiliza de exemplificação\npara construir seu argumento.",
+      "Uma das evidências de que o texto em análise é uma crônica\né o fato de ele, além de abordar uma temática cotidiana, estar\nescrito em primeira pessoa, o que permite ao autor expressar\nsuas emoções e seus pensamentos diretamente.",
+      "O texto em questão apresenta uma crítica contundente ao\nuso do ChatGPT por alunos universitários, defendendo\nvalores como a honestidade, o esforço e a busca pelo\nconhecimento genuíno."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-05-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-05-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-05-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-05-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-05-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-05-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 10,
+    "resposta_correta": 10,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 7,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-06",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 6,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 06 —————————————————\nConsidere a última linha do texto com o seu elemento em\ndestaque: “Respeitem-no, jovens.” Assinale a(s) alternativa(s)\nem que o elemento destacado se encaixa corretamente na\nmesma classe de palavras.",
+    "opcoes": [
+      "“Com que competências vão enfrentar o mercado de\ntrabalho e a vida em geral?” (linhas 15-17)",
+      "“No meu tempo não havia ChatGPT e estudávamos pelos\napontamentos da Susana.” (linhas 18 e 19)",
+      "“enganar os outros dá muito prazer.” (linhas 25 e 26)",
+      "“E daí passar para uma reflexão sobre a precariedade do acto\nde traduzir.” (linhas 48 e 49)",
+      "“Ou admitir que não o lemos.” (linhas 50 e 51)"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-06-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-06-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-06-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-06-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-06-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-06-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 16,
+    "resposta_correta": 16,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 7,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-07",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 7,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 07 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "Na linha 33, as aspas são empregadas para indicar falas de\num hipotético diálogo.",
+      "Embora seja um texto com marcas de linguagem formal, ele\ntambém apresenta certas características que são típicas do\ndiscurso informal, como o uso da forma “a gente” (linha 33).",
+      "Um tipo de variação presente no texto é o uso da palavra\n“acto” (linha 49), que evidencia usos linguísticos (grafias)\ndiferentes em Portugal e no Brasil.",
+      "O autor emprega no texto uma série de verbos no pretérito,\ntais como “estudávamos” (linha 18), “tínhamos” (linha 19)\ne “estávamos” (linha 20), transportando o leitor para um\npassado que diverge da realidade atual.",
+      "Em “Daria muito menos trabalho ler o raio do livro.” (linha\n50), a forma verbal “Daria” é usada para descrever uma\nsituação que expressa um grau de certeza em relação a um\nacontecimento futuro."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-07-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-07-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-07-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-07-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-07-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-07-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 7,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-portugues.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-08",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 8,
+    "materia": "Literatura",
+    "conteudo": "Literatura brasileira",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 08 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "No conto “Duzu-Querença”, de Conceição Evaristo, escrito\nem primeira pessoa, a personagem-narradora, depois de\ntrabalhar o dia todo como doméstica, volta de ônibus para\ncasa, levando restos de comida para os filhos. Entretanto,\npor um terrível engano, é acusada de cumplicidade em um\nassalto e, por isso, é linchada pelos demais passageiros.",
+      "Em “Trezentas onças”, de J. Simões Lopes Neto, é possível\nverificar o espetáculo do cenário regional rio-grandense (com\nrico arcabouço linguístico), relacionado ao tropeirismo. Ao\nlado das particularidades locais, o conto tem feições\nuniversais porque apresenta um drama de consciência: as\npreocupações éticas da personagem principal exemplificam\na vida humana em sua complexidade.",
+      "A crônica “Mar”, de Rubem Braga, pode surpreender o leitor\npor seu aspecto híbrido quanto ao gênero literário. Em forma\nde poema, exalta as cores das praias tropicais, o movimento\ndas ondas, as marés e a vida cotidiana à beira-mar. Por essa\nrazão, essa crônica apresenta semelhanças com a poesia\nromântica brasileira da primeira fase que, entre outros\ntemas, idealiza a natureza do Novo Mundo.",
+      "O conto “Maria pintada de prata”, de Dalton Trevisan, narra\num drama familiar contemporâneo e frequente que afeta a\ninfância. Pai e mãe em crise deixam os filhos aos cuidados\ndos avós que, esgotados, levam as crianças para o orfanato.\nQuando são liberadas para visitar o pai, que é dominado pelo\nalcoolismo, as crianças o encontram pela última vez e\nacabam por testemunhar a sua morte.",
+      "O soneto “Caboclo roceiro”, de Patativa do Assaré, exalta o\ntrabalho dos roceiros, mostrando a importância de sua\npresença nas pequenas propriedades agrícolas e nos bons\nresultados do agronegócio nacional."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-08-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-08-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-08-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-08-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-08-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-08-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 10,
+    "resposta_correta": 10,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 7,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-09",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 9,
+    "materia": "Literatura",
+    "conteudo": "Literatura brasileira",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 09 —————————————————\nConsiderando o poema transcrito, assinale o que for correto.\nNÃO SE MATE\nCarlos, sossegue, o amor\né isso que você está vendo:\nhoje beija, amanhã não beija,\ndepois de amanhã é domingo\ne segunda-feira ninguém sabe\noque será.\nInútil você resistir\nou mesmo suicidar-se.\nNão se mate, oh não se mate,\nreserve-se todo para\nas bodas que ninguém sabe\nquando virão,\nse é que virão.\nO amor, Carlos, você telúrico,\na noite passou em você,\ne os recalques se sublimando,\nlá dentro um barulho inefável,\nrezas,\nvitrolas,\nsantos que se persignam,\nanúncios do melhor sabão,\nbarulho que ninguém sabe\nde quê, pra quê.\nEntretanto você caminha\nmelancólico e vertical.\nVocê é a palmeira, você é o grito\nque ninguém ouviu no teatro\ne as luzes todas se apagam.\nO amor no escuro, não, no claro,\né sempre triste, meu filho, Carlos,\nmas não diga nada a ninguém,\nninguém sabe nem saberá.\nANDRADE, C. D. de. Antologia poética. São Paulo: Companhia das\nLetras, 2012.\nVOCABULÁRIO\ntelúrico: relativo à terra ou ao solo.\npersignar: fazer, com o polegar da mão direita, três cruzes,\npronunciando uma forma litúrgica; benzer.\nsublimando: elevando, enaltecendo, engrandecendo, exaltando.",
+    "opcoes": [
+      "Seguindo uma tendência existencialista, o eu lírico aconselha\nCarlos a não resistir, a confiar plenamente no amor,\nespecialmente aquele vivido na claridade, porque esse tipo de\namor é capaz de eliminar a melancolia. Desse modo, a temática\nentra em conformidade com a lírica árcade, que questionava a\ninfantilidade do ser humano e a brevidade da vida.",
+      "O poema apresenta, além de visão crítica da sociedade\n(“anúncios do melhor sabão, / barulho que ninguém sabe /\nde quê, pra quê.”), incertezas diante do futuro (“e segunda-\nfeira ninguém sabe / o que será.”) e um pessimismo que\ncoloca o ser humano diante do vazio e do nada (“as bodas\nque ninguém sabe / quando virão, / se é que virão.”).",
+      "Escrito nos moldes do ideário modernista, o poema apresenta\nmétrica irregular. É composto por quatro estrofes com versos\nlivres e brancos. Figuras como metáforas (“Você é a palmeira,\nvocê é o grito / que ninguém ouviu no teatro”), anáforas (“Não\nse mate, oh não se mate,”) (“quando virão, / se é que virão.”),\nuso de apóstrofe (“meu filho, Carlos,”).",
+      "O poema aponta para um individualismo constante na poesia\nde Carlos Drummond de Andrade, autor que afasta a sua\nprodução artística dos problemas do dia a dia do sujeito\ncomum. Influenciada por escritores que defendem uma\npostura determinista, sua poesia é marcada por certa alienação\nfrente à vida, aproximando-a da temática neoclássica.",
+      "Uma das marcas da poesia de Carlos Drummond de Andrade\nencontra-se na utilização da metalinguagem (metapoesia),\nque consiste no fato de suavizar uma realidade desagradável\nou chocante por meio de palavras amenas, como é o caso dos\nversos: “O amor, Carlos, você telúrico, / a noite passou em\nvocê,”. A conjunção adversativa “mas”, no penúltimo verso\ndo poema, ratifica essa ideia."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-09-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-09-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-09-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-09-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-09-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-09-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 6,
+    "resposta_correta": 6,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 8,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-10",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 10,
+    "materia": "Literatura",
+    "conteudo": "Literatura brasileira",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 10 —————————————————\nSobre a primeira fase do Modernismo brasileiro, assinale o que\nfor correto.",
+    "opcoes": [
+      "Oswald de Andrade aderiu ao nacionalismo temático e\nlinguístico, perceptível nas poesias da coletânea Pau Brasil.\nNesses textos, o poeta mostra-se iconoclasta ao criar uma\npoesia ousada e inovadora, com ênfase também no\ncotidiano, no surpreendente, no poder de invenção.",
+      "Com a intenção de resgatar as raízes da língua e da poesia\nbrasileiras, Oswald de Andrade lança mão de uma linguagem\nculta, criticando e corrigindo desvios próprios do coloquialismo\nda linguagem brasileira. Outro elemento importante de sua\npoesia consiste no uso de imagens que apresentam os\nfenômenos naturais brasileiros, por isso a recorrência aos temas\nda Antiguidade Clássica.",
+      "Assim como Mário de Andrade e Alcântara Machado, Oswald\nde Andrade abominava qualquer espécie de irreverência crítica,\nde liberdade formal, preferindo o metro regular, o ritmo e a\nrima, contribuindo, assim, para a perfeição formal e para a\nconciliação das manifestações culturais da elite com as do\npovo, em uma literatura mais moderada e condizente com as\nteorias evolucionistas.",
+      "Destoando da ideia do nacionalismo ufanista do grupo da\nAnta, Oswald de Andrade lançou o Manifesto antropófago,\nno qual problematiza as influências europeias, propõe a\nassimilação do que pudesse ser aproveitado e exalta símbolos\nda nacionalidade.",
+      "Uma das preocupações dos poetas da primeira fase do\nModernismo e, de modo especial, de alguns participantes da\n“Semana de Arte Moderna”, realizada em São Paulo, em\n1922, era a de causar alvoroço, chocar o público acostumado\ncom o gosto parnasiano."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-10-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-10-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-10-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-10-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-10-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-10-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 25,
+    "resposta_correta": 25,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 8,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-15",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 15,
+    "materia": "Arte",
+    "conteudo": "Arte e cultura",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 15 —————————————————\nSobre o Patrimônio histórico e artístico brasileiro, assinale o que\nfor correto.",
+    "opcoes": [
+      "Atualmente, os bens passíveis de serem preservados são os\nbens materiais. Festas e religiões, como a de São João e o\ncandomblé, ainda não se constituem patrimônio porque não\npodem ser tocados.",
+      "O órgão responsável pela preservação do Patrimônio\nHistórico Brasileiro é o Instituto do Patrimônio Histórico e\nArtístico Nacional (Iphan).",
+      "A expressão “tombamento de patrimônio material” se refere\nà iminência de determinado edifício ou monumento cair\ndevido à pouca importância que lhe é conferida, à sua má\npreservação.",
+      "A literatura de cordel e a xilogravura são expressões\nartísticas consideradas patrimônio cultural brasileiro.",
+      "Objetos de culturas indígenas brasileiras (instrumentos\nmusicais, cestarias, vestimentas, entre outros) fazem parte do\nPatrimônio Cultural do Brasil e são considerados patrimônios\nmateriais."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-15-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-15-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-15-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-15-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-15-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-15-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 26,
+    "resposta_correta": 26,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 12,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-16",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 16,
+    "materia": "Arte",
+    "conteudo": "Arte e cultura",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 16 —————————————————\nSobre o “Abstracionismo”, assinale o que for correto.",
+    "opcoes": [
+      "Uma abordagem possível dessa corrente artística é o\nAbstracionismo Geométrico, que se expressou em três\nsituações relevantes: no Construtivismo Russo, na Escola\nBauhaus e no Neoplasticismo.",
+      "O Abstracionismo na pintura e na escultura se expressa por\nmeio do registro do campo, das pradarias, das herbáceas, dos\nanimais, das pessoas em suas atividades laborais. Essa\nexpressão artística compõe-se de experiências vivenciadas\nentre todos os seres vivos.",
+      "O Abstracionismo é uma corrente estética do início do\nséculo XX, caracterizada pelo abandono da representação\nfigurativa, das imagens ou da aparência da realidade, pelo\nuso de formas e cores com ritmo e expressão.",
+      "É própria dessa corrente artística uma visão objetiva do\nmundo dotada de grande quantidade de ornamentos e de\naparência exuberante, carregando conflitos entre o místico e\no temporal.",
+      "Na arte abstrata é possível identificar técnicas (como\ncampos de cores, arte cinética, manchas na tela, gotejamento\n– conhecido como dripping) que foram utilizadas por\ngrandes representantes do movimento."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-16-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-16-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-16-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-16-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-16-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-16-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 21,
+    "resposta_correta": 21,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 12,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-17",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 17,
+    "materia": "Arte",
+    "conteudo": "Arte e cultura",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 17 —————————————————\nSobre a arte bizantina, assinale o que for correto.",
+    "opcoes": [
+      "O Império Bizantino, ou Império Romano do Oriente,\ncaracterizou-se como a síntese da cultura greco-romana e\nteve seu apogeu político sob o império de Justiniano.",
+      "A expressão artística desenvolvida foi também conhecida\ncomo arte pobre, desprovida de materiais nobres ou\nvaliosos, elaborada com o mínimo de elementos e matérias.",
+      "Uma das convenções da representação da arte bizantina foi\na da frontalidade, técnica que transmitia a postura rígida da\npersonagem representada, o que levava o observador a uma\natitude de respeito e veneração.",
+      "No processo de elaboração de figuras religiosas, artistas\nbizantinos criaram uma forma de expressão por meio da\nrepresentação de ícones que simulavam, por exemplo,\nfiguras de Jesus Cristo, apóstolos, mártires, santos e a\nvirgem.",
+      "A colocação de pequenos pedaços de pedras de diversas\ncores sobre uma superfície de gesso ou argamassa,\norganizadas de acordo com um desenho determinado,\ninstaladas nos pisos e paredes – os mosaicos – são as mais\nexpressivas formas da arte bizantina."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-17-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-17-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-17-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-17-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-17-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-17-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 29,
+    "resposta_correta": 29,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 12,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-18",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 18,
+    "materia": "Educação Física",
+    "conteudo": "Saúde e cultura corporal",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 18 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "O assédio moral e o assédio sexual são considerados os mais\ndanosos no contexto esportivo, porém há outras formas de\nassédio; por exemplo, de fãs, de torcedores e de mídia.",
+      "Mídias, redes sociais e patrocínios são estratégias de\ncomunicação e marketing indissociáveis do esporte de alto\nrendimento, pois permitem a propaganda dos produtos das\nempresas patrocinadoras, assim como a criação de ídolos\nesportivos, de forma mais rápida do que qualquer outro recurso.",
+      "No Brasil, as universidades promovem a formação de atletas\ne desenvolvem pesquisas sobre o esporte de alto rendimento\ncomo ações associadas, para fortalecer a imagem dessas\ninstituições e possibilitar retorno financeiro.",
+      "No esporte de alta performance, o racismo costuma ocorrer\nno dia a dia de técnicos e atletas. Por esse motivo, o Comitê\nOlímpico Internacional e o Comitê Olímpico Brasileiro\nadotaram ações para capacitar treinadores de todos os\nesportes a fim de coibir a presença dessa prática.",
+      "O âmbito dos esportes de alto rendimento é um dos poucos\nespaços em que não há hegemonia masculina."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-18-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-18-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-18-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-18-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-18-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-18-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 11,
+    "resposta_correta": 11,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 12,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-19",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 19,
+    "materia": "Educação Física",
+    "conteudo": "Saúde e cultura corporal",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 19 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "Os primeiros Jogos Olímpicos da era moderna aconteceram\nem 1896, em Atenas, com a participação somente de\nhomens, nos mais variados esportes.",
+      "Os Jogos Olímpicos de 2024, a serem realizados em Paris,\nterão 48 modalidades e 32 esportes. As novidades dessa\nedição serão o breaking dance e a canoagem slalom extremo.",
+      "Com relação aos Jogos Olímpicos de 2020, na Espanha, três\nmodalidades deixarão o circuito olímpico nas Olimpíadas de\n2024, em Paris. São elas: o boxe, os saltos ornamentais e o\ntiro esportivo.",
+      "Os Jogos Olímpicos, importante evento internacional,\nacontecem a cada dois anos, com diferentes modalidades,\nalternando suas edições entre os Jogos Olímpicos de Verão\ne os Jogos Olímpicos de Inverno.",
+      "A primeira participação de mulheres competindo em Jogos\nOlímpicos ocorreu no ano de 1900, em Paris."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-19-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-19-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-19-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-19-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-19-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-19-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 27,
+    "resposta_correta": 27,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 13,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-20",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 20,
+    "materia": "Educação Física",
+    "conteudo": "Saúde e cultura corporal",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 20 —————————————————\nAssinale o que for correto sobre a relação entre atividade física,\nexercício físico e saúde.",
+    "opcoes": [
+      "Os programas de exercícios devem ser organizados e/ou\nmodificados de acordo com as respostas individuais\nobservadas, isto porque há variações quanto a respostas\npsicológicas, a adaptações ao exercício, a resultados\nesperados, à adaptação comportamental, entre outros.",
+      "Qualquer modalidade de exercício aeróbio que envolva\ngrandes grupos musculares é apropriada para pessoas com\ndoença pulmonar.",
+      "Pessoas interessadas em participar de programas de\nexercícios organizados, antes de iniciarem as atividades\nprecisam passar por avaliação quanto a sinais e sintomas\nsugestivos de doenças cardiopulmonares e a fatores de risco\nde doença de artéria coronária.",
+      "Para pessoas com doenças pulmonares não é recomendada\numa frequência de exercício físico maior do que dois dias\nsemanais.",
+      "Não é recomendado que um aquecimento ativo preceda\nexercícios de alongamento vigorosos."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-20-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-20-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-20-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-20-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-20-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-20-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 7,
+    "resposta_correta": 7,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 13,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-21",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 21,
+    "materia": "Filosofia",
+    "conteudo": "Teoria do conhecimento",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 21 —————————————————\n“Até agora se supôs que todo o nosso conhecimento tinha que se\nregular pelos objetos; porém todas as tentativas de mediante\nconceitos estabelecer algo a priori sobre os mesmos, através do que\nampliaria o nosso conhecimento, fracassaram sob esta\npressuposição. Por isso tente-se ver uma vez se não progredimos\nmelhor nas tarefas da Metafísica admitindo que os objetos têm que\nse regular pelo nosso conhecimento, o que concorda melhor com a\nrequerida possibilidade de um conhecimento a priori dos objetos\nque deve estabelecer algo sobre os mesmos antes de nos serem\ndados”. (KANT, I. Crítica da razão pura. Prefácio à segunda\nedição. Trad. Valerio Rohden e Udo Baldur Moosburger. São\nPaulo: Abril Cultural, 1983, p. 12). Sobre conhecimentos a priori e\nseus fundamentos na filosofia de Kant, assinale o que for correto.",
+    "opcoes": [
+      "Kant denomina transcendental todo nosso conhecimento que\nse ocupa não tanto com os objetos, mas com o nosso modo\nde conhecê-los, na medida em que a forma desses objetos\ndeve ser possível a priori.",
+      "O espaço e o tempo são condições transcendentais e formais\nde todos os objetos do conhecimento, sejam eles a priori e\nindependentes da experiência, sejam eles a posteriori e\noriginados na experiência.",
+      "Kant afirma que, segundo o tempo, todo nosso\nconhecimento começa com a experiência, e este é sempre\nempírico, mas nem todo ele surge da experiência, como é o\ncaso do conhecimento a priori da matemática.",
+      "Na citação do comando da questão, Kant está se referindo à\n“revolução copernicana” como revolução na metafísica, que\nconsiste na mudança do modo de pensar a relação entre\nsujeito e objeto do conhecimento.",
+      "A sensibilidade e o entendimento não nos proporcionam o\nconhecimento teórico de objetos, pois só a síntese da razão,\nque unifica no raciocínio dedutivo a operação daquelas\nfaculdades, constitui, pela primeira vez, a objetividade do\nconhecimento."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-21-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-21-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-21-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-21-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-21-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-21-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 13,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-22",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 22,
+    "materia": "Filosofia",
+    "conteudo": "Teoria do conhecimento",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 22 —————————————————\nSobre ideias de Thomas Kuhn, assinale o que for correto.",
+    "opcoes": [
+      "Kuhn argumenta que a ciência é completamente\nindependente de valores e interesses pessoais e segue apenas\ncritérios objetivos na avaliação das teorias.",
+      "Considerações de ordem ética e moral devem guiar com\nexclusividade a prática científica, sobrepondo-se a qualquer\npretensão de objetividade.",
+      "A cientificidade, para Kuhn, não possui critérios absolutos;\nela é determinada pela prática dos cientistas, realizada\nsegundo os rígidos critérios do paradigma vigente.",
+      "A ciência normal é o resultado da prática de aperfeiçoamento\nde um paradigma, com o desenvolvimento de instrumentos e\ntécnicas no âmbito do modelo de referência, que eliminam ou\natenuam possíveis anomalias.",
+      "Ainda que um paradigma possa vir a ser substituído por\noutro por meio das revoluções científicas, Kuhn preserva a\nideia de ciência universal e necessária ao indicar as inúmeras\ncontinuidades que unem um paradigma a outro."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-22-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-22-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-22-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-22-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-22-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-22-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 12,
+    "resposta_correta": 12,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 13,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-23",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 23,
+    "materia": "Sociologia",
+    "conteudo": "Sociedade e cultura",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 23 —————————————————\nAcerca do Estado Moderno, assinale o que for correto.",
+    "opcoes": [
+      "As expressões Estado Moderno e Estado Nação referem-se\nà forma de organização do poder que surgiu na Europa no\nfinal do feudalismo.",
+      "A administração parcial e centrada na pessoa do governante é\numa característica definidora do Estado Moderno.",
+      "Povo, território, governo, finalidade e soberania são\ncomponentes dessa forma de organização política moderna.",
+      "Desconcentração e privatização do poder militar foram\nações necessárias para a formação do Estado Moderno.",
+      "Absolutista, Liberal e Socialista são algumas das versões\nhistoricamente localizadas do Estado Moderno."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-23-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-23-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-23-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-23-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-23-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-23-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 21,
+    "resposta_correta": 21,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 14,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-24",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 24,
+    "materia": "Sociologia",
+    "conteudo": "Sociedade e cultura",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 24 —————————————————\nSobre a explicação sociológica para a criminalidade, assinale o\nque for correto.",
+    "opcoes": [
+      "Desde os estudos pioneiros de Émile Durkheim, a sociologia\npropõe uma explicação não individualista para o crime,\napontando a existência de aberturas nas estruturas sociais\npara a transgressão.",
+      "A explicação proposta pelo sociólogo norte-americano\nRobert Merton associa o comportamento desviante à\ndesigualdade de oportunidades para que os indivíduos\nalcancem metas e objetivos socialmente valorizados.",
+      "Na abordagem interacionista, a definição de um\ncomportamento desviante é resultado de uma rotulagem\nbaseada em preconceito e discriminação.",
+      "A delinquência pode ser interpretada como uma forma\ndesviante de afirmação social utilizada por grupos que não\ndispõem de meios necessários para alcançar o que é\nsocialmente valorizado.",
+      "Para a sociologia clássica funcionalista, o comportamento\ncriminoso é sempre disfuncional e prejudica a estabilidade\ndo tecido social."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-24-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-24-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-24-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-24-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-24-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-24-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 14,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-25",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 25,
+    "materia": "Sociologia",
+    "conteudo": "Sociedade e cultura",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 25 —————————————————\nAcerca do consumo em massa contemporâneo, assinale o que\nfor correto.",
+    "opcoes": [
+      "Uma das tendências no mundo pós-industrial é a\nglobalização tanto da produção quanto do consumo.",
+      "Os padrões de consumo atuais permitem que os mesmos\nprodutos façam parte do cotidiano de diferentes países.",
+      "O emprego de alta tecnologia na produção de bens permite\nque os produtos sejam fabricados de forma separada em\ndiferentes partes do mundo.",
+      "A internacionalização da produção não permite mais a exata\ndefinição de produtos considerados tipicamente ocidentais\nou orientais.",
+      "Apesar da produção internacionalizada, pesquisas demonstram\nque a interpretação e os usos de bens e produtos variam em\nrazão de características locais dos mercados consumidores."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-25-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-25-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-25-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-25-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-25-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-25-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 31,
+    "resposta_correta": 31,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 14,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-26",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 26,
+    "materia": "História",
+    "conteudo": "História do Brasil",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 26 —————————————————\nAssinale o que for correto sobre escravidão ou trabalho análogo\nà escravidão no Brasil.",
+    "opcoes": [
+      "O tráfico escravo, que vigorou até 1850, era uma atividade\naltamente lucrativa e, além de ser motivado pela alegada\nnecessidade de mão de obra, estava vinculado ao sistema\neconômico mundial.",
+      "Nas províncias do sul do Brasil (Rio Grande do Sul, Santa\nCatarina e Paraná), no século XIX, o registro da presença de\nmão de obra escravizada era menor do que em outras regiões\ndo Império, principalmente no sudeste cafeeiro. Além disso,\nno Paraná, os escravizados viviam em condições de trabalho\ndignas, semelhantes às dos trabalhadores livres assalariados.",
+      "Os atuais registros da existência de trabalhadores brasileiros\nvivendo em condições análogas à escravidão não têm\nrelação histórica com experiências passadas, as quais já\nforam superadas.",
+      "As resistências cotidianas, o enfrentamento direto e a\nconstituição de quilombos foram algumas das formas que os\nescravizados empregaram para garantir condições melhores de\nvida. Além disso, o protagonismo dessas populações foi um dos\nfatores que resultou na abolição da escravatura em 1888.",
+      "A Revolta dos Malês, ocorrida em 1835, foi um dos momentos\nfundamentais e mais importantes na história do Brasil\nMonárquico, pois consolidou definitivamente o lugar da\nescravidão na sociedade e, durante esse período, o país não\nregistrou outras experiências de revoltas e resistências de\nescravizados."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-26-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-26-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-26-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-26-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-26-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-26-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 9,
+    "resposta_correta": 9,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 14,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-27",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 27,
+    "materia": "História",
+    "conteudo": "História geral",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 27 —————————————————\nVivemos anos marcados pela ascensão, no Brasil e em escala\ninternacional, de movimentos ideologicamente posicionados na\ndireita ou na extrema direita do espectro ideológico. Tanto no\ndebate acadêmico quanto nos embates políticos societários,\nalguns desses movimentos costumam ser qualificados, por seus\ncríticos, como manifestações de neofascismo. Independentemente\nda pertinência dessa interpretação sobre esses movimentos\nrecentes, é importante estudar a experiência do fascismo histórico,\ntanto em sua matriz italiana quanto em sua variação alemã, o\nnazismo, para compreender o tempo presente. Sobre o fascismo\nitaliano e o nazismo, assinale o que for correto.",
+    "opcoes": [
+      "Em 1922, atendendo a uma convocação de Benito\nMussolini, milicianos fascistas invadiram a capital da Itália,\noriundos de todo o país, promovendo a Marcha Sobre Roma.\nO objetivo dessa demonstração de força era pressionar o Rei\nVictor Emanuel III a entregar o poder ao partido fascista.\nCom efeito, o resultado foi a nomeação de Benito Mussolini\ncomo primeiro-ministro.",
+      "Hitler tornou-se primeiro-ministro da Alemanha, em 1933,\npor intermédio de um bem-sucedido golpe de Estado,\nplanejado e desencadeado a partir de Munique.",
+      "Após a morte do presidente da República (Marechal Paul von\nHindenburg), Hitler passou a acumular os cargos de\npresidente e primeiro-ministro. Mediante a concentração de\npoderes, dissolveu o parlamento, criou a Gestapo (polícia\nsecreta) e estabeleceu o regime de partido único, permitindo\napenas a existência do Partido Nazista.",
+      "Editada sob a tutela do líder Benito Mussolini, a Carta del\nLavoro foi uma legislação que concedeu ampla liberdade de\norganização e atuação aos sindicatos dos trabalhadores,\ncomo forma de obter apoio para as políticas econômicas do\ngoverno fascista.",
+      "Uma das principais características do nazismo foi seu visceral\nantissemitismo, evidenciado nas Leis de Nuremberg e\nconsumado pela política de extermínio conhecida como\n“solução final”, que levou ao Holocausto milhões de judeus."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-27-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-27-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-27-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-27-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-27-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-27-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 21,
+    "resposta_correta": 21,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 15,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-28",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 28,
+    "materia": "Geografia",
+    "conteudo": "Globalização",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 28 —————————————————\n“Uma das características do mundo atual é a exigência de fluidez\npara a circulação de ideias, mensagens, produtos ou dinheiro,\ninteressando aos atores hegemônicos. A fluidez contemporânea é\nbaseada nas redes técnicas, que são um dos suportes da\ncompetitividade. Daí a busca voraz de ainda mais fluidez, levando\nà procura de novas técnicas ainda mais eficazes. A fluidez é, ao\nmesmo tempo, uma causa, uma condição e um resultado. Criam-se\nobjetos e lugares destinados a favorecer a fluidez: oleodutos,\ngasodutos, canais, autopistas, aeroportos, teleportos.\nConstroem-se edifícios telemáticos, bairros inteligentes,\ntecnopolos. Esses objetos transmitem valor às atividades que\ndeles se utilizam. Nesse caso, podemos dizer que eles\n‘circulam’. É como se, também, fossem fluxos”. (SANTOS, M.\nNatureza do espaço. Técnica e tempo, razão e emoção. São\nPaulo: USP, 2006, p. 185).\nHistoricamente os processos descritos pelo geógrafo Milton\nSantos emergiram e acompanharam o desenrolar do período\nmoderno e estão relacionados à história do capitalismo. São\ncaracterísticas da modernidade a aceleração e o\ndesenvolvimento de meios técnicos e tecnológicos capazes de\naumentar a velocidade da produção, de flexibilizar e de\nmaximizar os resultados do trabalho. Algumas das facetas mais\nrecentes desse processo são a globalização, o estabelecimento da\nchamada “Sociedade em Rede” e o desenvolvimento e a\naplicação dos princípios do neoliberalismo econômico por\ngovernos de diferentes nações do mundo. No caso do Brasil,\nsobre os impactos das políticas neoliberais no contexto da Nova\nRepública, assinale o que for correto.",
+    "opcoes": [
+      "O governo Fernando Collor (1990-1992), seguindo os\nprincípios do neoliberalismo econômico, estimulou a\nabertura do mercado brasileiro ao comércio exterior por\nmeio da redução das taxas de importação e de eliminação\ndas restrições para entrada de produtos estrangeiros no país.",
+      "Um dos resultados da adoção dos princípios neoliberais na\nadministração do país foi o aumento da competitividade das\nempresas que buscavam automação em seu processo\nprodutivo.",
+      "A incorporação dos princípios do neoliberalismo levou a um\ncrescimento no número de desempregados no Brasil. Esse\nprocesso também foi acompanhado pela expansão da prática\nda terceirização, pela flexibilização da legislação trabalhista\ne pelo aumento dos casos de fusão de empresas.",
+      "A adoção de políticas neoliberais pelo governo brasileiro\nimplicou o avanço dos processos de privatização de\nempresas estatais, sob alegação de que elas eram deficitárias\ne pouco eficientes.",
+      "O neoliberalismo foi eficiente em resolver os problemas\neconômicos e sociais brasileiros. Seus efeitos, no longo\nprazo, foram positivos para a economia e para os\ntrabalhadores, pois o aumento no número de desempregados\ne a flexibilização das relações de trabalho ficaram restritas à\ndécada de 1990."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-28-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-28-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-28-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-28-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-28-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-28-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 15,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-29",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 29,
+    "materia": "Geografia",
+    "conteudo": "Geografia do Paraná",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 29 —————————————————\nSobre aspectos territoriais, demográficos e ambientais do estado\ndo Paraná, assinale o que for correto.",
+    "opcoes": [
+      "Durante a vigência do período monárquico do Brasil, a\nporção oeste do atual estado de Santa Catarina pertencia ao\nParaná.",
+      "Assim como no estado de São Paulo, a maior parte da\npopulação paranaense se autodeclara preta ou parda.",
+      "A declividade do relevo da frente de cuesta no estado do\nParaná favorece a mecanização agrícola para o cultivo de\nsoja e de milho.",
+      "As áreas de recarga do Aquífero Guarani não abrangem o\nestado do Paraná.",
+      "O leito rochoso nas Cataratas do Iguaçu é formado por\nrochas ígneas extrusivas."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-29-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-29-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-29-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-29-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-29-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-29-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 17,
+    "resposta_correta": 17,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 16,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-30",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 30,
+    "materia": "Geografia",
+    "conteudo": "Fontes de energia",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 30 —————————————————\nSobre fontes de geração de energia, assinale o que for correto.",
+    "opcoes": [
+      "O procedimento de destilação fracionada para o refino do\npetróleo é realizado com variações de temperatura em\ncolunas de fracionamento, variações estas que se associam à\nformação de diferentes produtos.",
+      "O consumo de gás natural é limitado à geração de energia\nelétrica e é inviável como combustível para veículos.",
+      "A geração de energia nuclear é favorecida pelo baixo custo\nde implantação.",
+      "Os barramentos para geração de energia hidrelétrica\nasseguram a conectividade do fluxo sedimentológico e o\nequilíbrio dos processos erosivos e deposicionais.",
+      "O carvão é o combustível fóssil mais abundante e também o\nmais poluente."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-30-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-30-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-30-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-30-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-30-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-30-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 17,
+    "resposta_correta": 17,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 16,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-31",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 31,
+    "materia": "Matemática",
+    "conteudo": "Geometria",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 31 —————————————————\nConsidere uma sequência infinita de quadrados 𝑇 ,𝑇 ,𝑇 ,𝑇 ,…\n1 2 3 4\nem que o quadrado 𝑇 tem lado medindo 3cm, o quadrado 𝑇\n1 2\ntem lado medindo 7cm, o quadrado 𝑇 tem lado medindo 11cm,\n3\no quadrado 𝑇 tem lado medindo 15cm, e assim por diante. Em\n4\nrelação aos quadrados 𝑇 ,𝑇 ,𝑇 ,𝑇 ,…, assinale o que for\n1 2 3 4\ncorreto.",
+    "opcoes": [
+      "O lado do quadrado 𝑇 mede (4𝑛+3)cm.\n𝑛",
+      "A diagonal do quadrado 𝑇 mede (√4𝑛−1)cm.\n𝑛",
+      "A soma das medidas dos lados dos quadrados\n𝑇 ,𝑇 ,𝑇 ,𝑇 ,…,𝑇 é igual a 20.100cm2.",
+      "A área do quadrado 𝑇 é igual a (16𝑛 −8𝑛+1)cm2.",
+      "Se a área do quadrado 𝑇 é denotada por 𝐴 , então a\n𝑛 𝑛\nsequência 𝐴 ,𝐴 ,𝐴 ,𝐴 ,… é uma PG.\n1 2 3 4"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-31-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-31-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-31-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-31-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-31-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-31-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 8,
+    "resposta_correta": 8,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 16,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-32",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 32,
+    "materia": "Matemática",
+    "conteudo": "Probabilidade",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 32 —————————————————\nConsidere as funções reais a valores reais 𝑓(𝑥)=−𝑥2+𝑥+6\ne 𝑔(𝑥)=5𝑥+7. Assinale o que for correto.",
+    "opcoes": [
+      "𝑔(1)=2⋅𝑓(1).",
+      "O gráfico de 𝑓 intercepta o eixo 𝑥 em dois pontos distintos.",
+      "Os gráficos das funções 𝑓 e 𝑔 não se interceptam.",
+      "A imagem da função 𝑓 é o intervalo [6,+∞).",
+      "O gráfico da função composta 𝑓∘𝑔 é uma parábola de\nconcavidade voltada para baixo."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-32-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-32-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-32-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-32-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-32-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-32-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 19,
+    "resposta_correta": 19,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 16,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-33",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 33,
+    "materia": "Matemática",
+    "conteudo": "Sistemas lineares e matrizes",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 33 —————————————————\nUm sistema linear 𝑚×𝑛 é um conjunto de 𝑚 equações lineares\n𝑥−𝑦=1\ncom 𝑛 incógnitas. Por exemplo, 𝑆 ={ 𝑥−𝑧=2 é um\n2𝑥−𝑦−𝑧=4\nsistema linear 3×3. Sobre sistemas lineares e sobre o sistema\n𝑆, assinale o que for correto.",
+    "opcoes": [
+      "𝑆 é um sistema possível e indeterminado.",
+      "A tripla ordenada (2,1,0) é solução do sistema 𝑆.\n1 −1 1",
+      "A matriz (1 −1 2) é a matriz dos coeficientes de 𝑆.",
+      "Se a matriz dos coeficientes de um sistema linear 3×3 é\ninversível, então o sistema possui uma única solução.",
+      "Se no lugar dos valores 1, 2 e 4 tivéssemos apenas 0,\nformando um sistema homogêneo, então 𝑆 seria possível e\ndeterminado."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-33-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-33-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-33-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-33-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-33-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-33-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 8,
+    "resposta_correta": 8,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 17,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-34",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 34,
+    "materia": "Matemática",
+    "conteudo": "Sistemas lineares e matrizes",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 34 —————————————————\n1 2 3 1 −1 1\nConsidere as matrizes 𝐴=(3 2 5),𝐵 =(−1 −1 1 )\n4 5 6 1 1 −1\n1 2\ne 𝐶 =(3 2). Assinale o que for correto.\n4 5",
+    "opcoes": [
+      "𝐴⋅𝐵 é uma matriz triangular.",
+      "É possível calcular 𝐴⋅𝐶, mas não é possível calcular 𝐶⋅𝐴.",
+      "𝐴+2⋅𝐶+𝐵 é uma matriz diagonal.\n3",
+      "A matriz 𝐶 somada com a matriz coluna (4) é igual à matriz 𝐴.",
+      "𝐴⋅𝐵 =𝐵⋅𝐴."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-34-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-34-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-34-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-34-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-34-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-34-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 3,
+    "resposta_correta": 3,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 17,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-35",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 35,
+    "materia": "Matemática",
+    "conteudo": "Geometria",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 35 —————————————————\nUm arco de uma circunferência é qualquer região da\ncircunferência delimitada por dois pontos. O comprimento de\num arco é a medida linear do arco e pode ser medida em\ncentímetros (cm), por exemplo. Por outro lado, a medida angular\nde um arco é a medida do ângulo central da circunferência\ncorrespondente ao arco. Sobre ângulos e arcos, assinale o que\nfor correto.",
+    "opcoes": [
+      "Em uma circunferência de raio 1, em centímetros, o\ncomprimento do arco e a medida angular do arco, em\nradianos, coincidem numericamente.",
+      "Em uma circunferência de raio 10m, o comprimento do arco\ncorrespondente ao ângulo central de 5rad é de 10m.",
+      "Grau é a unidade de medida obtida da divisão de qualquer\ncircunferência em 360 arcos congruentes.",
+      "Em qualquer circunferência, ao medir-se um ângulo central,\ntem-se que 90𝑜 é equivalente a 𝜋 ⁄ rad.",
+      "O comprimento do arco correspondente a 45 em uma\ncircunferência de raio 4cm é de 𝜋 centímetros."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-35-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-35-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-35-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-35-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-35-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-35-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 29,
+    "resposta_correta": 29,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 17,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-36",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 36,
+    "materia": "Matemática",
+    "conteudo": "Funções",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 36 —————————————————\nPor 10 dias consecutivos um indivíduo anotou a temperatura, em\ngraus Celsius, ao meio-dia, e descobriu que ela estava\naumentando de forma linear. O conjunto de pares ordenados\n𝐴={(1,25),(3,27),(8,32),(9,33)} representa 4 dessas\nmedições, nos dias 1, 3, 8 e 9, respectivamente. Assinale o que\nfor correto.",
+    "opcoes": [
+      "O coeficiente angular da reta que representa essas medições\né 24.",
+      "A função que bem representa os dados obtidos é injetora.",
+      "No dia 5 o valor medido foi 29.",
+      "A função que representa os dados é denominada função\nlinear.",
+      "O conjunto de todas as medições, e que contém 𝐴, possui 20\nelementos."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-36-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-36-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-36-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-36-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-36-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-36-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 6,
+    "resposta_correta": 6,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 17,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-37",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 37,
+    "materia": "Matemática",
+    "conteudo": "Geometria",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 37 —————————————————\nConsidere um paralelogramo 𝐴𝐵𝐶𝐷 de modo que, ao traçarmos\nduas retas paralelas por 𝐴 e por 𝐶 e perpendiculares a 𝐶𝐷,\nformamos um quadrado central de área 25un2 e dois triângulos\nisósceles. Assinale o que for correto.",
+    "opcoes": [
+      "A área do paralelogramo 𝐴𝐵𝐶𝐷 é igual a 50un .",
+      "Os triângulos formados são semelhantes.",
+      "Uma das diagonais do quadrado formado é paralela à\nhipotenusa dos triângulos.",
+      "As hipotenusas dos triângulos formados medem 10un.",
+      "A área do quadrado formado é igual à soma das áreas dos\ntriângulos."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-37-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-37-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-37-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-37-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-37-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-37-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 23,
+    "resposta_correta": 23,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 18,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-38",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 38,
+    "materia": "Matemática",
+    "conteudo": "Geometria",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 38 —————————————————\nSuponha que seja construído um boneco de madeira com quatro\nsólidos (considere todos retos). A cabeça é uma esfera de raio\n3un, o corpo é um tronco de cone de altura 6un e raios medindo\n2un e 3un, respectivamente, e os braços são dois cilindros de\nraio 1un e altura 2un. Em relação ao enunciado, e a assuntos\ncorrelatos, assinale o que for correto.",
+    "opcoes": [
+      "O volume total do boneco é de 78𝜋un .",
+      "A área total, considerando-se os quatro sólidos separados, é\nde 106𝜋un2.",
+      "O volume dos braços é maior que o volume da cabeça.",
+      "O volume do tronco e o volume da cabeça são iguais.",
+      "Para guardar o boneco montado em uma caixa em forma\ncúbica é necessário que o lado dessa caixa meça ao menos\n6un."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-38-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-38-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-38-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-38-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-38-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-38-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 1,
+    "resposta_correta": 1,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 18,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-39",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 39,
+    "materia": "Matemática",
+    "conteudo": "Estatística",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 39 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "A média aritmética dos divisores positivos de 12 é um\ndivisor de 12.",
+      "O mínimo múltiplo comum de quaisquer dois números\nnaturais, distintos e maiores que 1, é um número composto.",
+      "O máximo divisor comum de quaisquer dois números\nnaturais, ímpares e maiores que 1, é um número primo.",
+      "A quantidade de divisores positivos de 360 é 50% maior que\na quantidade de divisores positivos de 180.",
+      "A interseção do conjunto dos divisores e do conjunto dos\nmúltiplos de um número natural não nulo é um conjunto não\nvazio."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-39-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-39-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-39-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-39-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-39-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-39-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 18,
+    "resposta_correta": 18,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 18,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-40",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 40,
+    "materia": "Matemática",
+    "conteudo": "Matemática",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 40 —————————————————\nPor motivos de segurança, a liberação ao acesso de um celular\nocorre por meio de uma senha numérica de 4 dígitos escolhidos\nentre os algarismos 0, 1, 2, 3, 4, 5, 6, 7, 8 e 9. Em relação ao\nenunciado, assinale o que for correto.",
+    "opcoes": [
+      "Podemos formar 10 senhas distintas em que todos os dígitos\nsão iguais.",
+      "O número de senhas distintas, com dígitos distintos, que\niniciam com 19 ou com 20, é inferior a 100.",
+      "A chance de alguém que desconhece a senha acertá-la na\nprimeira tentativa é igual a 0,01%.",
+      "O número de senhas distintas que começam com 0 é igual a\n1.000.",
+      "O número de senhas distintas, em que há pelo menos dois\ndígitos iguais, é inferior a 5.000."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-40-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-40-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-40-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-40-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-40-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-40-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 29,
+    "resposta_correta": 29,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 18,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-3.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-41",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 41,
+    "materia": "Biologia",
+    "conteudo": "Biologia",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 41 —————————————————\nSobre a origem da vida, assinale o que for correto.",
+    "opcoes": [
+      "Aristóteles elaborou a teoria da geração espontânea ou\nabiogênese acreditando que um princípio ativo vindo de fora\ndo planeta Terra, trazido por meteoritos, cometas ou poeira\nespacial, explicaria como a vida surgiu.",
+      "A presença dos átomos de hidrogênio, oxigênio, carbono e\nnitrogênio nas moléculas dos seres vivos pode estar\nrelacionada à abundância, na atmosfera primitiva da Terra,\nde substâncias como gás carbônico, gás nitrogênio, gás\noxigênio e vapor d’água.",
+      "Os experimentos de Miller e Urey possibilitaram a produção\nde moléculas orgânicas, que, até então, acreditava-se serem\nproduzidas apenas por células vivas. Esse fato comprovou a\nhipótese de Oparin e Haldane.",
+      "De acordo com a teoria sobre a origem da vida, os\nprocariontes surgiram antes dos eucariontes.",
+      "O meio científico considera que a invaginação da membrana\nplasmática e a interiorização de bactérias em determinadas\ncélulas primitivas propiciaram o surgimento (seleção) de\nseres multicelulares."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-41-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-41-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-41-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-41-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-41-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-41-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 28,
+    "resposta_correta": 28,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 19,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-42",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 42,
+    "materia": "Biologia",
+    "conteudo": "Biologia",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 42 —————————————————\nOs poluentes emitidos na atmosfera, assim como o material\nparticulado liberado, podem acarretar diversas consequências ao\nambiente e aos seres vivos. Sobre o assunto, assinale o que for\ncorreto.",
+    "opcoes": [
+      "A chuva ácida, resultante da oxidação do dióxido de enxofre\n(SO ) e do óxido de nitrogênio (NO) com a água, tem como\n2\nconsequências a acidificação de rios e lagos e efeitos\ncorrosivos em construções e monumentos históricos, além de\nirritações e problemas nas vias respiratórias humanas.",
+      "O efeito estufa, interação de alguns gases da atmosfera\n(como gás carbônico e dióxido de nitrogênio), e a radiação\nsolar provocam ondas de calor extremo e alteração do\nregime de chuvas.",
+      "A camada de ozônio, localizada na estratosfera, ocorre em\nfunção da interação entre a radiação ultravioleta e as\nmoléculas de gás oxigênio; atua como um filtro, impedindo\nque parte da radiação ultravioleta do Sol, nociva aos seres\nvivos, atinja a superfície terrestre.",
+      "Poluentes e material particulado podem causar mutações no\nDNA dos seres vivos, o que, evolutivamente, quando ocorre,\né sempre prejudicial aos organismos afetados.",
+      "A emissão de poluentes na atmosfera provoca gripes e\nresfriados nos seres humanos, entre outros males."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-42-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-42-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-42-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-42-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-42-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-42-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 7,
+    "resposta_correta": 7,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 19,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-43",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 43,
+    "materia": "Biologia",
+    "conteudo": "Biologia",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 43 —————————————————\nDe acordo com o Programa das Nações Unidas para o Meio\nAmbiente (PNUMA), 15% a 20% da diversidade biológica\nconhecida no mundo estão no Brasil. Com base no assunto, e\ncorrelatos, assinale o que for correto.",
+    "opcoes": [
+      "Os produtores das cadeias alimentares são organismos\nquimiotróficos capazes de transformar moléculas complexas\n(menos energéticas) em moléculas simples (mais\nenergéticas), utilizando uma fonte de energia solar.",
+      "O peixe-boi e o tucano são animais endotérmicos, com\ncirculação dupla e completa. Isso possibilita que o peixe-boi\nseja ativo em diversas temperaturas e que o tucano seja\nmelhor adaptado ao voo.",
+      "Na biodiversidade das plantas temos variações quanto ao\ntransporte da seiva, quanto à sustentação da planta e quanto\nà proteção contra a desidratação. A diversidade das plantas\nterrestres ocorre devido a sua independência de água para a\nreprodução.",
+      "A porcentagem citada no comando da questão é encontrada\nna floresta amazônica, na mata atlântica, no cerrado, nos\npampas, no pantanal, na mata das araucárias, na mata dos\ncocais, nos manguezais e nos ecossistemas aquáticos.",
+      "No planeta, a biosfera é afetada principalmente pelo clima\nda região, que está diretamente influenciado pela longitude\ndas regiões. Os biomas são classificados em relação à\nposição dos meridianos."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-43-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-43-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-43-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-43-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-43-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-43-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 14,
+    "resposta_correta": 14,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 19,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-44",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 44,
+    "materia": "Biologia",
+    "conteudo": "Biologia",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 44 —————————————————\nNos seres humanos a respiração ocorre mediante uma complexa\nsequência química de transporte de uma mistura de moléculas\ngasosas do pulmão para as células e das células para o pulmão.\nAo se analisar quimicamente a composição percentual em\nquantidade de matéria das moléculas gasosas inaladas e exaladas\npor uma pessoa, a concentração de uma molécula A passou de\n21% (inalação) para cerca de 16% (exalação), e de uma molécula\nB passou de 0,04% (inalação) para cerca de 3% (exalação).\nAssinale o que for correto.",
+    "opcoes": [
+      "A combinação da molécula A com a hemoglobina forma a\ncarboxiemoglobina, responsável pelo transporte do oxigênio\npara as células.",
+      "A quantidade de gases da respiração presentes no pulmão\nhumano não é afetada pela pressão atmosférica à qual ele\nestá submetido.",
+      "A maior parte das moléculas B produzidas nas células é\ntransportada para os pulmões na forma de íons HCO  .\n3",
+      "importância na manutenção do pH sanguíneo (que fica em\ntorno de 7,4) pela formação de uma solução-tampão.",
+      "Moléculas B são geradas pela respiração humana, mas\ntambém pela queima de combustíveis fósseis. Essa queima\né uma das maiores responsáveis pelo aumento da\ntemperatura média do planeta Terra pelo efeito estufa."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-44-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-44-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-44-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-44-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-44-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-44-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 28,
+    "resposta_correta": 28,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 20,
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-45",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 45,
+    "materia": "Química",
+    "conteudo": "Estrutura atômica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 45 —————————————————\nO Tramadol é um analgésico opioide muito utilizado para o\nalívio de dores. Ele é comercializado como uma mistura\nracêmica de l e s estereoisômeros. Observe a estrutura a seguir\nde um dos estereoisômeros e assinale o que for correto.",
+    "opcoes": [
+      "A molécula apresenta dois carbonos quirais no anel\naromático.",
+      "Amina, éter e álcool são funções orgânicas presentes na\nmolécula.",
+      "Uma mistura racêmica de Tramadol é aquela que apresenta\numa quantidade diferente de moléculas dos dois\nestereoisômeros.",
+      "A molécula apresenta uma amina terciária, e o átomo de\nnitrogênio dessa amina contém um par de elétrons livres que\nnão forma uma ligação covalente.",
+      "A razão entre o número de átomos de carbono e o número\nde átomos de hidrogênio na molécula é menor que 1."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-45-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-45-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-45-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-45-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-45-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-45-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 26,
+    "resposta_correta": 26,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 20,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-22.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-46",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 46,
+    "materia": "Química",
+    "conteudo": "Estequiometria",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 46 —————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "Nas suspensões as partículas da fase dispersa são grupos de\níons ou de moléculas ou, ainda, grupos de macroíons ou\nmacromoléculas com diâmetro superior a 10−4cm.",
+      "Para uma solução de água oxigenada de concentração igual\na 20 volumes temos que 1L dessa solução dará origem a 20L\nde gás oxigênio medido nas CNTP, considerando-se a\ndecomposição completa de todo H O contido nesse 1L de\n2 2\nsolução.",
+      "Quando um líquido está em equilíbrio com seu vapor, em\ndeterminada temperatura, a pressão da fase vapor é\ndenominada pressão (máxima) de vapor desse líquido.",
+      "Quantidades iguais (em mols) de dois solutos diferentes, não\neletrólitos e não voláteis, dissolvidos em uma quantidade\nigual de solventes e mesma temperatura, causam efeitos\ndiferentes no abaixamento da pressão de vapor do solvente\nquando comparados à pressão de vapor do solvente puro.",
+      "O fluxo efetivo de solvente através de uma membrana\npermeável apenas ao solvente é denominado osmose."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-46-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-46-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-46-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-46-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-46-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-46-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 23,
+    "resposta_correta": 23,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 20,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-22.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-47",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 47,
+    "materia": "Química",
+    "conteudo": "Estrutura atômica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 47 —————————————————\nSobre o tipo de ligação química presente nos materiais e as\ncaracterísticas de condutividade elétrica desses materiais,\nassinale o que for correto.",
+    "opcoes": [
+      "A aplicação de uma diferença de potencial elétrico entre as\npontas de um fio de cobre faz que os elétrons livres desse fio\nfiquem em movimento desordenado, e assim todo o fio\napresenta o mesmo potencial elétrico.",
+      "Os compostos formados por meio da ligação química entre\nmetais e não metais apresentam-se como condutores\nelétricos somente no estado líquido.",
+      "Substâncias formadas pela ligação química covalente entre\nátomos de não metais, por exemplo o naftaleno, apresentam\ncondutividade elétrica (não nula) no estado sólido, mas não\nno estado líquido.",
+      "O efeito Joule, ou efeito térmico do movimento de elétrons,\nocorre quando elétrons se movimentam em um material\nisolante.",
+      "Um fio uniforme composto de uma liga metálica de cobre,\nmanganês e níquel (a manganina), que é usada na produção de\nresistores elétricos, tem sua resistência elétrica diretamente\nproporcional ao seu comprimento, em uma dada temperatura."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-47-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-47-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-47-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-47-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-47-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-47-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 18,
+    "resposta_correta": 18,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 20,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-22.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-48",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 48,
+    "materia": "Física",
+    "conteudo": "Termodinâmica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 48 —————————————————\nConsidere uma porção de alimento cujo valor energético é igual\na 900kcal. Assinale o que for correto.",
+    "opcoes": [
+      "Esse valor energético é menor que 3×10 J.",
+      "Se esse valor energético fosse convertido em energia\ncinética de uma partícula de 2kg de massa, o módulo da\nvelocidade dessa partícula seria menor que 2km/s.",
+      "Se esse valor energético fosse convertido em energia\npotencial gravitacional de uma partícula de 100kg de massa,\ninicialmente no nível do mar, a altura alcançada por essa\npartícula seria menor que 3km.",
+      "Se esse valor energético fosse usado para aquecer 100kg de\nágua (líquida), a variação da temperatura dessa água seria\nmenor que 10ºC.",
+      "Uma reação química que libera 900kcal de calor é\nclassificada como endotérmica."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-48-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-48-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-48-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-48-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-48-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-48-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 10,
+    "resposta_correta": 10,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 21,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-2.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-49",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 49,
+    "materia": "Física",
+    "conteudo": "Óptica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 49 —————————————————\nSobre fenômenos relacionados a óptica, assinale o que for\ncorreto.",
+    "opcoes": [
+      "Um espelho plano sempre fornece, de um objeto real, uma\nimagem virtual, direita e do mesmo tamanho que o objeto.",
+      "Uma lente bicôncava de vidro no ar sempre fornece, de um\nobjeto real, uma imagem virtual, direita e de tamanho menor\nque o objeto.",
+      "Quando um feixe de luz monocromático que se propaga no\nar (n = 1) incide obliquamente sobre um meio transparente\nar\nde índice de refração n, de modo que n > n , a velocidade\nar\ndesse feixe aumenta.",
+      "Quando um feixe de luz monocromático incide frontalmente\nem duas fendas próximas e paralelas, a imagem formada no\nanteparo é composta por uma franja central escura e por\nfranjas claras e escuras alternadas, acima e abaixo da franja\ncentral.",
+      "Quando um feixe de luz branca incide em um prisma, há\numa dispersão desse feixe de luz de acordo com as\nfrequências do espectro eletromagnético."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-49-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-49-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-49-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-49-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-49-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-49-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 19,
+    "resposta_correta": 19,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 21,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-2.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-50",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 50,
+    "materia": "Física",
+    "conteudo": "Mecânica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 50 —————————————————\nPara avaliar a intensidade das forças dissipativas que agem sobre\num veículo de 1000kg, projetado para trafegar no gelo,\npesquisadores desligam o motor e deixam o veículo deslizar por\numa ladeira de inclinação constante 𝜃 em relação à horizontal.\nOs resultados obtidos (válidos após um certo intervalo de tempo)\nem dois desses experimentos são os seguintes: i) para 𝜃 =𝜃 , o\n1\nveículo desce com velocidade constante 𝑣 (experimento 1); ii)\n1\npara 𝜃 =𝜃 , o veículo desce com velocidade constante 𝑣\n2 2\n(experimento 2). O módulo da força dissipativa total 𝐷, na\ndireção contrária ao movimento do veículo, é dado por\n𝐷 =𝑓 +𝑅 (experimento 1) e 𝐷 =𝑓 +𝑅 (experimento 2),\n1 1 1 2 2 2\nem que 𝑓 e 𝑓 são os módulos das forças de atrito cinético entre\n1 2\no veículo e a ladeira (o coeficiente de atrito é o mesmo,\n𝜇 =𝜇 =𝜇) e 𝑅 e 𝑅 são os módulos das forças de arrasto\n1 2 1 2\n(resistência do ar) sobre o veículo. Além disso, 𝑃 e 𝑃 são as\n1 2\npotências dissipadas pelas forças cujos módulos são 𝐷 e 𝐷 ,\n1 2\nrespectivamente. Com base nessas informações e nos dados\nobtidos nos experimentos descritos, assinale o que for correto.\nDados: 𝜃 >𝜃 , sen𝜃 =0,100, cos𝜃 =0,995, sen𝜃 =\n2 1 2 2 1\n0,050, cos𝜃 =0,999, 𝑣 =20 m/s e 𝑣 =30 m/s.\n1 1 2",
+    "opcoes": [
+      "𝑓 <𝑓 .",
+      "𝑅 > 𝑅 .",
+      "𝐷 =2𝐷 .",
+      "𝑃 =3𝑃 .",
+      "Nos dois experimentos descritos, a energia total (𝐸 =𝑇+𝑈)\ndo veículo diminui com o tempo, mas a energia cinética 𝑇\npermanece constante."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-50-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-50-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-50-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-50-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-50-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-50-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 28,
+    "resposta_correta": 28,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 21,
+    "anulada": false,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/formulario-2.webp",
+        "texto": "Material de consulta fornecido no caderno"
+      }
+    ]
+  },
+  {
+    "id": "uem-2024-in-11-es",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 11,
+    "materia": "Língua Espanhola",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 11 —————————————————\nTras la lectura detenida del texto, señala la(s) alternativa(s)\ncorrecta(s).",
+    "opcoes": [
+      "El descontrol climático trae consecuencias para la salud y\npara la alimentación en general.",
+      "En la 28.ª Conferencia de las Naciones Unidas sobre el Cambio\nClimático se decidió dejar de utilizar combustibles fósiles.",
+      "Las situaciones climáticas actuales ponen de relieve la economía\ny ayudan en la producción de alimentos para la humanidad.",
+      "Según la Organización Mundial de la Salud han muerto de\nhambre 21 millones de personas en el mundo.",
+      "Los cambios climáticos empujan a la humanidad hacia la\npobreza."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-11-es-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-11-es-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-11-es-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-11-es-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-11-es-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-11-es-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 19,
+    "resposta_correta": 19,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 9,
+    "idioma": "Espanhol",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-Espanhol.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-12-es",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 12,
+    "materia": "Língua Espanhola",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 12 —————————————————\nSegún el texto, señala la(s) alternativa(s) correcta(s).",
+    "opcoes": [
+      "La población mundial sufre con la pobreza desde hace\nmuchos años.",
+      "Las pandemias surgen más a menudo debido a las\nalteraciones del clima.",
+      "Las situaciones económicas son afectadas por los cambios\nclimáticos.",
+      "La amenaza se extiende hacia una crisis de salud pública en\ntodo el mundo.",
+      "Las inversiones y la concientización acelerarán las\nsoluciones y salvarán vidas."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-12-es-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-12-es-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-12-es-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-12-es-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-12-es-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-12-es-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 14,
+    "resposta_correta": 14,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 9,
+    "idioma": "Espanhol",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-Espanhol.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-13-es",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 13,
+    "materia": "Língua Espanhola",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 13 —————————————————\nDe acuerdo con la gramática española, señala la(s) alternativa(s)\ncorrecta(s).",
+    "opcoes": [
+      "En los ejemplos “e impulsando” (línea 23), “e inestabilidad”\n(línea 25) y “e inversiones” (línea 45), la conjunción “y” fue\nconvertida en e pues la palabra siguiente empieza por “i”\nseguida de consonante.",
+      "En la frase “Este fue un primer paso” (línea 44) el ordinal\nprimero sufrió apócope. Eso se debe al hecho de que “paso”\nes un sustantivo masculino singular.",
+      "Las perífrasis “está provocando” (título), “Está cambiando”\n(líneas 13 y 14) y “están aumentando” (líneas 21 y 22)\nexpresan una acción futura.",
+      "El adjetivo “audaces” (línea 46) está en plural, y su singular\nes audaz.",
+      "El término “pandemias” (línea 16) es un ejemplo de\nsustantivo heterogenérico."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-13-es-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-13-es-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-13-es-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-13-es-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-13-es-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-13-es-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 11,
+    "resposta_correta": 11,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 9,
+    "idioma": "Espanhol",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-Espanhol.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-14-es",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 14,
+    "materia": "Língua Espanhola",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 14 —————————————————\nSegún las reglas de la lengua española, señala la(s) alternativa(s)\ncorrecta(s).",
+    "opcoes": [
+      "El término “limitado” (línea 19) es ejemplo de palabra\ngrave/llana terminada en vocal, y, debido a eso, no lleva tilde.",
+      "Los vocablos “migración” (línea 23) y “Climático” (línea 8)\nson, respectivamente, ejemplos de palabra aguda y esdrújula.",
+      "Los números cardinales “2030” (línea 34) y “2050” (línea\n31) se escriben, por extensión, dos mil treinta y dos mil\ncincuenta, respectivamente.",
+      "El verbo regular mostrar está conjugado en presente de\nindicativo en segunda persona del plural en la línea 32:\n“muestran”.",
+      "Las formas “fue” (línea 4) y “se celebró” (línea 43) son\nformas verbales conjugadas en pretérito perfecto simple de\nindicativo en tercera persona del singular."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-14-es-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-14-es-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-14-es-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-14-es-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-14-es-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-14-es-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 23,
+    "resposta_correta": 23,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 9,
+    "idioma": "Espanhol",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-Espanhol.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-11-fr",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 11,
+    "materia": "Língua Francesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 11 —————————————————\nChoisissez le(s) bon(s) choix qui correpond(ent) à ce que dit\nRobin Monjanel de son travail.",
+    "opcoes": [
+      "Il nʼest pas important que les images correspondent au\nmieux au récit du journaliste.",
+      "La limitation du temps est lʼun des facteurs quʼil nʼaime pas\ndans son travail.",
+      "Il nʼy a rien quʼil nʼaime pas dans son travail.",
+      "Avec les mêmes sources dʼimages, on peut raconter deux\nhistoires différentes.",
+      "Le travail dʼun monteur consiste à faire correspondre le récit\ndu journaliste et les images correspondantes."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-11-fr-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-11-fr-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-11-fr-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-11-fr-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-11-fr-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-11-fr-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 26,
+    "resposta_correta": 26,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 10,
+    "idioma": "Francês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-Francês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-12-fr",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 12,
+    "materia": "Língua Francesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 12 —————————————————\nAux jeunes qui souhaitent débuter leur carrière, Robin Monjanel\nconseille",
+    "opcoes": [
+      "de se mettre au montage dʼimages en amateur avant dʼentrer\ndans une école.",
+      "de se concentrer uniquement sur des activités en rapport\navec le métier de monteur.",
+      "dʼêtre capable de gérer leur temps et de gérer la pression qui\nva avec.",
+      "dʼécouter et bien entendre le rédacteur avec lequel on\ntravaille et de bien comprendre ce dont il veut traiter.",
+      "de ne pas suivre de conseils."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-12-fr-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-12-fr-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-12-fr-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-12-fr-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-12-fr-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-12-fr-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 13,
+    "resposta_correta": 13,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 10,
+    "idioma": "Francês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-Francês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-13-fr",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 13,
+    "materia": "Língua Francesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 13 —————————————————\nCochez le(s) choix où la forme soulignée correspond à un\nadjectif possessif:",
+    "opcoes": [
+      "‟si on montre en premier plan” (ligne 6)",
+      "‟Dans ton métier, tu aimes?” (ligne 14)",
+      "Ce que je préfère dans mon travail” (ligne 15)",
+      "‟On peut déjà beaucoup plus installer nos personnages”\n(ligne 17)",
+      "‟dʼêtre assez polyvalent en fait.” (ligne 48)"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-13-fr-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-13-fr-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-13-fr-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-13-fr-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-13-fr-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-13-fr-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 14,
+    "resposta_correta": 14,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 10,
+    "idioma": "Francês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-Francês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-14-fr",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 14,
+    "materia": "Língua Francesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 14 —————————————————\nCochez le(s) choix qui remplace(nt), sans trop changer le sens\nde la phrase, lʼexpression ‟avoir plusieurs cordes à son arc”\n(ligne 45).",
+    "opcoes": [
+      "avoir plus dʼune idée en tête",
+      "avoir beaucoup dʼargent dans sa poche",
+      "avoir beaucoup d amis",
+      "avoir dʼautres habiletés liées à son métier",
+      "avoir plusieurs solutions à un problème"
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-14-fr-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-14-fr-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-14-fr-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-14-fr-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-14-fr-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-14-fr-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 25,
+    "resposta_correta": 25,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 10,
+    "idioma": "Francês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-Francês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-11-en",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 11,
+    "materia": "Língua Inglesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 11 —————————————————\nAccording to the text, mark the correct affirmative(s).",
+    "opcoes": [
+      "The climate is one factor that can influence the increase or",
+      "The rain and high temperatures make places favorable to the\ndevelopment and spread of the mosquito.",
+      "According to Dr. Albert Ko, if in one country the number of",
+      "75% of dengue infected people will have symptoms similar",
+      "When dengue infection is critical, the infected person has\nheadache, vomiting, and may take several days to recover."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-11-en-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-11-en-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-11-en-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-11-en-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-11-en-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-11-en-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 19,
+    "resposta_correta": 19,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 11,
+    "idioma": "Inglês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-Inglês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-12-en",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 12,
+    "materia": "Língua Inglesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 12 —————————————————\nAccording to the text, mark the correct affirmative(s).",
+    "opcoes": [
+      "“experts” (line 9) means a person with high knowledge in",
+      "In “But some dengue infections are serious” (lines 35 and 36),\n“are” is in the plural form because of the word “serious”.",
+      "“typically” (line 8), “generally” (line 23) and “rapidly” (line",
+      "“enormous” (line 1) is in the plural form.",
+      "In “we will generally see waves” (lines 23 and 24), “will”\nmeans an event in the future."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-12-en-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-12-en-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-12-en-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-12-en-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-12-en-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-12-en-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 21,
+    "resposta_correta": 21,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 11,
+    "idioma": "Inglês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-Inglês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-13-en",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 13,
+    "materia": "Língua Inglesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 13 —————————————————\nAccording to the text, mark the correct affirmative(s).",
+    "opcoes": [
+      "The number of dengue cases generally rise and fall in a four-\nyear cycle and it doesn´t depend on climate changes.",
+      "Argentina, Uruguay and Paraguay have registered less\ndengue case numbers in the last few months.",
+      "Dengue has been considered a global health problem by the\nWorld Health Organization.",
+      "In Brazil, there is a high number of dengue cases in the\ncenter and north states.",
+      "The campaign to immunize children in Brazil is not going to\nbe enough to cover 100 percent of them for the next two years."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-13-en-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-13-en-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-13-en-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-13-en-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-13-en-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-13-en-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 20,
+    "resposta_correta": 20,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 11,
+    "idioma": "Inglês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-Inglês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  },
+  {
+    "id": "uem-2024-in-14-en",
+    "ano": 2024,
+    "banca": "UEM",
+    "concurso": "Vestibular de Inverno UEM 2024",
+    "numero_original": 14,
+    "materia": "Língua Inglesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 14 —————————————————\nAccording to the text, mark the correct affirmative(s).",
+    "opcoes": [
+      "In the sentence “‘The record heat in the country (…) have\nincreased the number of mosquito (…)’” (lines 13-15), the\nverb “have increased” is an example of Present Perfect.",
+      "The pronoun “those” (line 34) refers to people who have\nsymptoms of the dengue disease.",
+      "In the sentence “which are typically much cooler than Rio”\n(line 42), there is an example of the comparative form.",
+      "The word “few” (line 16) can be replaced with more without\nchanging the meaning of the sentence.",
+      "In the sentence “A bad dengue case can leave a person\ndebilitated for weeks.” (lines 38 and 39), the verb “can”\nexpresses a possibility."
+    ],
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "imagem_original": "/acervo/uem-2024-in/uem-2024-in-14-en-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/uem-2024-in/uem-2024-in-14-en-01.webp",
+      "/acervo/uem-2024-in/uem-2024-in-14-en-02.webp",
+      "/acervo/uem-2024-in/uem-2024-in-14-en-04.webp",
+      "/acervo/uem-2024-in/uem-2024-in-14-en-08.webp",
+      "/acervo/uem-2024-in/uem-2024-in-14-en-16.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "tipo_resposta": "somatoria",
+    "resposta_soma": 23,
+    "resposta_correta": 23,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/in24/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/in24/gabdef.pdf",
+    "pagina": 11,
+    "idioma": "Inglês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2024-in/apoio-Inglês.webp",
+        "texto": "Texto de apoio integral do caderno oficial"
+      }
+    ],
+    "anulada": false
+  }
+]

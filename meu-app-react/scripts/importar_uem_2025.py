@@ -141,6 +141,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+    from completar_uem_2025 import main as completar_caderno
+    completar_caderno()
 
 
 

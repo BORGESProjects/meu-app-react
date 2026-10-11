@@ -11,6 +11,10 @@ DEST=ROOT/'public/acervo/uem-2025-inverno'
 PDF=ROOT/'tmp/pdfs/uem-in25/prova.pdf'
 KEY=[15,11,31,25,23,27,15,13,10,24,None,None,None,None,23,13,27,31,27,23,14,21,27,15,7,21,23,19,5,27,20,26,15,4,16,11,18,13,27,3,5,28,3,19,3,21,23,19,29,28]
 LANG={'Espanhol':[18,21,24,3],'Francês':[10,11,26,21],'Inglês':[13,24,11,17]}
+MIRROR=False
+TRIMS={(7,True,4):289}
+CONTINUATIONS={(15,False),(17,False)}
+SKIP_SIDES=set()
 
 def image(parts,name):
     images=[p.crop(box).to_image(resolution=190).original.convert('RGB') for p,box in parts]
@@ -18,10 +22,11 @@ def image(parts,name):
     y=0
     for im in images: canvas.paste(im,(0,y)); y+=im.height+10
     canvas.save(DEST/(name+'.webp'),'WEBP',quality=92)
-    return '/acervo/uem-2025-inverno/'+name+'.webp'
+    return '/acervo/'+DEST.name+'/'+name+'.webp'
 
 def col(page,left):
     a,b=(34,301) if left else (318,580)
+    if MIRROR and page.page_number % 2 == 0: a-=17; b-=17
     crop=page.crop((a,22,b,795))
     words=crop.extract_words(x_tolerance=2,y_tolerance=3)
     heads=[(int(words[i+1]['text']),w['top']) for i,w in enumerate(words[:-1]) if w['text']=='Questão' and words[i+1]['text'].isdigit()]
@@ -32,14 +37,15 @@ def questions(pdf,pages,idioma=None):
     for pn in pages:
         p=pdf.pages[pn-1]
         for left in (True,False):
+            if (pn,left) in SKIP_SIDES: continue
             a,b,words,heads=col(p,left)
             # Antes do primeiro título só existe continuação nas questões 17 e 27.
             segments=[]
-            if current and current['n'] in [17,27] and heads and heads[0][1]>100:
-                segments.append((None,22,heads[0][1]-5))
+            if current and (pn,left) in CONTINUATIONS and (not heads or heads[0][1]>100):
+                segments.append((None,22,heads[0][1]-5 if heads else 795))
             for i,(n,top) in enumerate(heads):
                 end=heads[i+1][1]-5 if i+1<len(heads) else 795
-                if pn==7 and left and n==4: end=289
+                end=TRIMS.get((pn,left,n),end)
                 segments.append((n,top-2,end))
             for n,start,end in segments:
                 if n is not None:
@@ -51,7 +57,7 @@ def questions(pdf,pages,idioma=None):
                 bounds=[(start,current['index'])]
                 for m in markers:
                     idx=['01)','02)','04)','08)','16)'].index(m['text'])
-                    bounds.append((ajustar_limite(p,a,b,m['top']-4),idx))
+                    bounds.append((ajustar_limite(p,a,b,m['top']-1),idx))
                 maxbottom=max((c['bottom'] for c in p.chars if a<=c['x0']<b and start<=c['top']<end),default=end)
                 finish=min(end,maxbottom+3)
                 for i,(top,idx) in enumerate(bounds):
@@ -66,11 +72,16 @@ def questions(pdf,pages,idioma=None):
     out=[]
     for r in records:
         n=r['n']; suffix='-'+{'Inglês':'en','Espanhol':'es','Francês':'fr'}[idioma] if idioma else ''
-        ident=f'uem-2025-inverno-{n:02d}'+suffix
+        ident=f'{DEST.name}-{n:02d}'+suffix
         assert all(r['options']),ident
         resposta=LANG[idioma][n-11] if idioma else KEY[n-1]
-        materia=('Língua '+{'Inglês':'Inglesa','Espanhol':'Espanhola','Francês':'Francesa'}[idioma]) if idioma else ('Língua Portuguesa' if n<=7 else 'Literatura' if n<=10 else 'Arte' if n<=17 else 'Educação Física' if n<=20 else 'Filosofia' if n<=24 else 'Sociologia' if n<=26 else 'História' if n<=28 else 'Geografia' if n<=30 else 'Matemática' if n<=40 else 'Biologia' if n<=44 else 'Química' if n<=47 else 'Física')
+        materia=('Língua '+{'Inglês':'Inglesa','Espanhol':'Espanhola','Francês':'Francesa'}[idioma]) if idioma else ('Língua Portuguesa' if n<=7 else 'Literatura' if n<=10 else 'Arte' if n<=17 else 'Educação Física' if n<=20 else 'Filosofia' if n<=24 else 'Sociologia' if n<=25 else 'História' if n<=28 else 'Geografia' if n<=30 else 'Matemática' if n<=40 else 'Biologia' if n<=44 else 'Química' if n<=47 else 'Física')
         textos=[re.sub(r'^\s*(01|02|04|08|16)\)\s*','',t.strip()) or f'Afirmação {2**i:02d}: consulte a imagem oficial.' for i,t in enumerate(r['text'][1:])]
+        # Matrizes e outras fontes matemáticas podem desaparecer na extração textual.
+        # Os recortes são a fonte visual; nunca trate textos incompletos iguais como opções iguais.
+        for i, texto in enumerate(textos[:]):
+            if textos.count(texto) > 1 or len(texto.strip()) < 3:
+                textos[i] = f'Afirmação {2**i:02d}: consulte a imagem oficial.'
         enunciado=r['text'][0].strip()
         q=dict(id=ident,ano=2025,banca='UEM',concurso='Vestibular de Inverno UEM 2025',numero_original=n,materia=materia,
                conteudo={'Língua Portuguesa':'Interpretação de textos','Literatura':'Literatura brasileira','Arte':'Arte e cultura','Educação Física':'Saúde e cultura corporal','Filosofia':'Filosofia política','Sociologia':'Sociedade e cultura','História':'História do Brasil','Geografia':'Geografia física','Matemática':'Matemática','Biologia':'Biologia','Química':'Química','Física':'Física'}.get(materia,'Interpretação de textos'),

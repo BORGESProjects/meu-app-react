@@ -4,6 +4,33 @@ import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { acervo as completo, anoDaQuestao, unirQuestoes, podeCorrigir, corrigirQuestaoConferida, questaoPublicavel, limparMarcadoresExtracao, textoCorrompido } from '../src/acervo.js'
 const acervo = completo.filter(q => q.banca === 'ESA')
 
+test('UEM 2023 e 2024 preservam os quatro cadernos completos e todos os recortes', () => {
+  const lotes = ['uem-2023-ve', 'uem-2023-in', 'uem-2024-ve', 'uem-2024-in']
+  const todos = lotes.flatMap(nome => {
+    const itens = JSON.parse(readFileSync(new URL(`../public/acervo/${nome}/questoes.json`, import.meta.url), 'utf8'))
+    assert.equal(itens.length, 58, nome)
+    assert.equal(itens.filter(q => !q.idioma).length, 46, nome)
+    for (const idioma of ['Inglês', 'Espanhol', 'Francês']) {
+      assert.equal(itens.filter(q => q.idioma === idioma).length, 4, nome)
+      assert.equal(itens.filter(q => !q.idioma || q.idioma === idioma).length, 50, nome)
+    }
+    assert.deepEqual(itens.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
+    for (const q of itens) {
+      assert.deepEqual(q.valores_opcoes, [1,2,4,8,16], q.id)
+      assert.equal(q.opcoes.length, 5, q.id)
+      assert.equal(q.opcoes_imagens.length, 5, q.id)
+      assert.equal(q.imagem_sem_alternativas, true, q.id)
+      assert.ok(q.resposta_soma === null || (Number.isInteger(q.resposta_soma) && q.resposta_soma >= 0 && q.resposta_soma <= 31), q.id)
+      for (const imagem of [q.imagem_original, ...q.opcoes_imagens, ...(q.apoio || []).map(a => a.imagem)]) {
+        assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+      }
+    }
+    return itens
+  })
+  assert.equal(new Set(todos.map(q => q.id)).size, 232)
+  assert.equal(unirQuestoes(todos).filter(q => lotes.some(lote => q.id.startsWith(lote + '-'))).length, 232)
+})
+
 test('imagens de enunciado não repetem alternativas e figuras de resposta ficam separadas', () => {
   for (const q of completo) {
     assert.equal(q.imagem_sem_alternativas, true)

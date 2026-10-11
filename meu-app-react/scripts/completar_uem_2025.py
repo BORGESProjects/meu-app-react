@@ -36,7 +36,7 @@ def ajustar_limite(page,x0,x1,y):
     image=RENDER_CACHE[page]
     candidates=[]
     for linha in range(max(1,int((y-9)*2)),min(image.height-2,int((y+5)*2))):
-        faixa=image.crop((int(x0*2),linha,int(x1*2),linha+2))
+        faixa=image.crop((int(x0*2),linha,int(x1*2),linha+1))
         if ImageStat.Stat(faixa).extrema[0][0]>245:
             candidates.append(linha/2)
     return min(candidates,key=lambda pos:abs(pos-y)) if candidates else y
