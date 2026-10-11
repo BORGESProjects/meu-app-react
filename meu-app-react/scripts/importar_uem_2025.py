@@ -9,12 +9,16 @@ ROOT = Path(__file__).resolve().parents[1]
 PDF = ROOT / "tmp" / "pdfs" / "uem-2025" / "prova.pdf"
 DESTINO = ROOT / "public" / "acervo" / "uem-2025" / "questoes.json"
 
-GABARITO = {1: 27, 2: 7, 3: 30, 4: 21, 5: 31, 6: 23, 7: 15, 8: 20, 9: 20, 10: 17}
+GABARITO = {1: 27, 2: 7, 3: 30, 4: 21, 5: 31, 6: 23, 7: 15, 8: 20, 9: 20, 10: 17,
+            15: 26, 16: 15, 17: 6, 18: 29, 19: 21, 20: 30}
 CONTEUDOS = {
     1: "Interpretação de textos", 2: "Interpretação de textos", 3: "Variação linguística",
     4: "Interpretação de textos", 5: "Interpretação de textos", 6: "Semântica e estilística",
     7: "Interpretação de textos", 8: "Literatura brasileira", 9: "Poesia brasileira",
     10: "Literatura brasileira",
+    15: "Arte bizantina", 16: "Folclore brasileiro", 17: "História da fotografia",
+    18: "Dança e cultura corporal", 19: "Comportamento sedentário",
+    20: "Atividade física e envelhecimento",
 }
 
 
@@ -70,6 +74,8 @@ def main():
         p7e, p7d = coluna(pdf.pages[6], "E"), coluna(pdf.pages[6], "D")
         p8e, p8d = coluna(pdf.pages[7], "E"), coluna(pdf.pages[7], "D")
         p9e = coluna(pdf.pages[8], "E")
+        p15e, p15d = coluna(pdf.pages[14], "E"), coluna(pdf.pages[14], "D")
+        p16e = coluna(pdf.pages[15], "E")
 
     texto1 = prefixo_antes(p6e, 1)
     texto1 = apos(texto1, r"Leia o texto a seguir para responder as questões de 01 a 03\.")
@@ -81,9 +87,12 @@ def main():
         1: (p6e, None), 2: (p6d, 3), 3: (p6d, None),
         4: (p7d, 5), 5: (p7d, 6), 6: (p7d, None),
         7: (p8e, 8), 8: (p8e, None), 9: (p8d, None), 10: (p9e, None),
+        15: (p15e, 16), 16: (p15e, None), 17: (p15d, 18), 18: (p15d, None),
+        19: (p16e, 20), 20: (p16e, None),
     }
     questoes = []
-    for numero in range(1, 11):
+    numeros = [*range(1, 11), *range(15, 21)]
+    for numero in numeros:
         trecho = bloco(fontes[numero][0], numero, fontes[numero][1])
         if numero == 3:
             trecho = trecho.split("Leia o texto a seguir para responder as questões de 04 a 06.", 1)[0]
@@ -95,7 +104,7 @@ def main():
             "banca": "UEM",
             "concurso": "Vestibular de Verão UEM 2025",
             "numero_original": numero,
-            "materia": "Língua Portuguesa" if numero <= 7 else "Literatura",
+            "materia": "Língua Portuguesa" if numero <= 7 else "Literatura" if numero <= 10 else "Arte" if numero <= 17 else "Educação Física",
             "conteudo": CONTEUDOS[numero],
             "dificuldade": "Médio",
             "enunciado": enunciado,
@@ -108,7 +117,8 @@ def main():
             "resposta_correta": GABARITO[numero],
             "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
             "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
-            "pagina": 6 + (numero >= 4) + (numero >= 7) + (numero >= 10),
+            "pagina": ({15: 15, 16: 15, 17: 15, 18: 15, 19: 16, 20: 16}.get(numero)
+                       or 6 + (numero >= 4) + (numero >= 7) + (numero >= 10)),
         })
 
     DESTINO.parent.mkdir(parents=True, exist_ok=True)

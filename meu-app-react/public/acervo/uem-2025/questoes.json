@@ -388,5 +388,239 @@
     "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
     "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
     "pagina": 9
+  },
+  {
+    "id": "uem-2025-15",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 15,
+    "materia": "Arte",
+    "conteudo": "Arte bizantina",
+    "dificuldade": "Médio",
+    "enunciado": "Assinale o que for correto a respeito da arquitetura e das demais\nmanifestações artísticas na Civilização Bizantina.",
+    "texto_apoio": "",
+    "opcoes": [
+      "Após muitos séculos de dificuldades, a pintura e a escultura\natingiram seu auge criativo na Época do Renascimento,\nquando os artistas se viram finalmente livres das restrições\nestéticas impostas pelo clero grego ortodoxo.",
+      "Fortemente controladas pelas autoridades políticas e\nreligiosas, as artes tinham como finalidade principal o\nenaltecimento de Deus, dos santos e de seu representante na\nTerra, o imperador.",
+      "Proibidos de representarem em imagens seres humanos ou\ndivinos, os artistas bizantinos criaram o abstracionismo, ou\nestilo abstrato, utilizando ladrilhos e pedras coloridas em\nmosaicos para desenharem seres mitológicos distorcidos.",
+      "Expressão visual do poder imperial, ao mesmo tempo\nsecular e sagrado, a basílica de Santa Sofia, em\nConstantinopla, foi convertida em uma mesquita pelos\notomanos, que mudaram parte de sua fachada com o\nacréscimo de minaretes.",
+      "A suntuosidade das artes plásticas bizantinas pode ser vista\nem sua plenitude nos ícones, quadros que representam\npersonagens religiosos pintados com materiais que\nacentuam efeitos de luxo e riqueza."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 26,
+    "resposta_correta": 26,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 15
+  },
+  {
+    "id": "uem-2025-16",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 16,
+    "materia": "Arte",
+    "conteudo": "Folclore brasileiro",
+    "dificuldade": "Médio",
+    "enunciado": "A palavra Folclore (em inglês, Folklore) surgiu na Inglaterra,\nem 1845. Segundo o Dicionário UNESP do Português\nContemporâneo, uma de suas acepções é “conjunto de tradições,\nconhecimentos, crenças e manifestações artísticas populares”\n(2004, p. 631). Assinale o que for correto sobre essa palavra e\nseus contextos históricos.",
+    "texto_apoio": "",
+    "opcoes": [
+      "Seu surgimento expressou, nas maiores cidades inglesas, o\nsentimento coletivo de que o êxodo rural, a industrialização\ne a urbanização estavam destruindo aceleradamente modos\nde vida tradicionais, principalmente nas áreas rurais.",
+      "No decorrer do século XX personagens dos contos populares\nconsiderados folclóricos foram incorporados pela grande\nmídia, a exemplo do Saci Pererê, que chegou a ser parte da\nsérie Sítio do pica-pau amarelo, de grande sucesso de\npúblico.",
+      "O escritor Mário de Andrade, que dirigiu o Departamento de\nCultura e Recreação da Prefeitura Municipal de São Paulo\nna década de 1930, organizou uma Missão de Pesquisas\nFolclóricas que percorreu várias áreas do Norte e do\nNordeste brasileiros registrando manifestações da cultura\npopular.",
+      "Em 1947 autoridades do governo brasileiro acataram uma\nrecomendação da Unesco e criaram a Comissão Nacional do\nFolclore, cujos objetivos eram, entre outros, fazer um\nlevantamento das manifestações folclóricas, estudá-las e\npropor medidas para protegê-las.",
+      "Nos estados da região Sul do Brasil a forte presença de\ngrupos nacionais de origem europeia e asiática restringiu as\nexpressões culturais a esses grupos, motivo pelo qual não se\nconhecem manifestações características do folclore\nbrasileiro naquelas unidades da federação."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 15
+  },
+  {
+    "id": "uem-2025-17",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 17,
+    "materia": "Arte",
+    "conteudo": "História da fotografia",
+    "dificuldade": "Médio",
+    "enunciado": "Leia atentamente o trecho a seguir: “Uma das principais\ninvenções desse século, que permitiu finalmente o registro\nvisual preciso da realidade, foi a fotografia. Uma busca de tantos\nartistas ao longo da história chegava ao fim.” (BOZZANO, H.\nB. et al. Arte em interação. São Paulo: Ibep, 2013, p. 360).\nAssinale o que for correto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "O século ao qual o trecho se refere é o atual, que conhece\navanços velozes na capacidade de representar fielmente a\nrealidade por meio dos mais diversos recursos digitais.",
+      "A busca de tantos artistas mencionada no trecho é a tentativa\nde representar fielmente a realidade exterior por meio de\nideias, técnicas e materiais adequados.",
+      "O trecho se refere ao século XIX, período que experimentou\num crescimento vertiginoso das invenções mecânicas,\ndentre elas tecnologias de reprodução de imagens.",
+      "Com o surgimento da fotografia, os negociantes de arte\nabandonaram os artistas naturalistas ou realistas e passaram\na comercializar apenas obras de arte que não tivessem\npreocupações com a representação da realidade.",
+      "A fotografia não pode ser considerada uma arte, somente\numa técnica, pois sua finalidade não é produzir imagens\ncriativas, e sim registrar com exatidão a realidade imediata."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 6,
+    "resposta_correta": 6,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 15
+  },
+  {
+    "id": "uem-2025-18",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 18,
+    "materia": "Educação Física",
+    "conteudo": "Dança e cultura corporal",
+    "dificuldade": "Médio",
+    "enunciado": "A Base Nacional Comum Curricular (BNCC-2018) elege a\nDança como um dos conteúdos a ser trabalhado nas aulas de\nEducação Física no Ensino Fundamental e no Ensino Médio. Em\nrelação ao assunto, assinale o que for correto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "A dança oportuniza ao praticante problematizar e\ntransformar a percepção do corpo por meio de movimentos\nque permitem novas visões de si e do mundo.",
+      "A dança é uma manifestação da cultura de um povo e está\ncentrada na reprodução de movimentos, impedindo a\ncriatividade e a exploração do corpo em movimento.",
+      "A dança como expressão cultural propicia diferentes\naprendizados através dos movimentos corporais. Esses\nmovimentos expressam a relação entre técnica, emoção e os\ncontextos social e político em que ela está inserida.",
+      "As danças urbanas, a exemplo do freestyle, break e o hiphop, possibilitam ao praticante expressar e representar, por\nmeio do seu corpo e seus movimentos, ideais e vocabulários\nespecíficos de cada povo, tribo ou estilo.",
+      "O sportdance, ou dança esportiva, é uma modalidade\nesportiva inspirada em danças urbanas, como o breaking\ndance, ligado à cultura hip-hop. No break, os integrantes\npropõem diversos tipos de disputa, desafiando-se com\nmovimentos intensos que devem ser realizados próximo ao\nchão."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 29,
+    "resposta_correta": 29,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 15
+  },
+  {
+    "id": "uem-2025-19",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 19,
+    "materia": "Educação Física",
+    "conteudo": "Comportamento sedentário",
+    "dificuldade": "Médio",
+    "enunciado": "Sobre comportamento sedentário, assinale o que for correto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "A Quarta Revolução Industrial (1990 até a atualidade)\ncaracterizada pelas redes de computadores, pela internet,\npelo uso de novas tecnologias, pode ser considerada uma das\nresponsáveis pela redução dos níveis de atividade física e\npelo aumento do comportamento sedentário das pessoas.",
+      "A crescente automação do trabalho foi positiva, pois\nresultou em mais tempo livre e em mais oportunidades para\nque os trabalhadores se envolvessem em atividades de lazer\ne produção cultural, reduzindo, assim, o comportamento\nsedentário.",
+      "O tempo excessivo diante das telas tem aumentado a\nprevalência de problemas cardiometabólicos, ainda mais por\nestes estarem associados a hábitos alimentares inadequados,\npodendo reduzir a expectativa de vida.",
+      "O comportamento sedentário, associado ao uso extensivo de\ncelulares, tablets e computadores, não tem influenciado na\npostura corporal, pois, embora haja parâmetros\nbiomecânicos, admite-se que não há um padrão para todos,\numa vez que a boa postura depende de como cada corpo usa\no equilíbrio muscular e do alinhamento dos ossos e das\narticulações.",
+      "Para a redução do comportamento sedentário, o incentivo e os\ninvestimentos em políticas públicas de esporte e lazer são\nfundamentais para promover maior interesse e possibilidade de\nas pessoas se beneficiarem de seus efeitos no corpo biológico,\nnas relações sociais, no desenvolvimento do pensamento e das\nemoções."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 21,
+    "resposta_correta": 21,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 16
+  },
+  {
+    "id": "uem-2025-20",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 20,
+    "materia": "Educação Física",
+    "conteudo": "Atividade física e envelhecimento",
+    "dificuldade": "Médio",
+    "enunciado": "Sobre atividade física, exercício físico e envelhecimento,\nassinale o que for correto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "Nem toda atividade física regular trará benefícios ao longo\ndo processo de envelhecimento, por isso não se pode\nesquecer que velhice e doença são condições inseparáveis e\nprecisam ser enfrentados.",
+      "A prática de atividades e exercícios físicos pode proporcionar\nautoconhecimento, respeito às individualidades e aos limites\ncorporais, sem a necessidade de adequar o corpo a\ndeterminado padrão.",
+      "A prática de exercícios físicos ao longo dos anos parece ter\ncapacidade de manter a funcionalidade do sistema\nimunológico.",
+      "Pessoas mais velhas e ativas possuem massa muscular\npreservada e níveis de colesterol parecidos com os de\nindivíduos mais jovens.",
+      "Além dos benefícios individuais da prática de atividades e\nexercícios físicos, as práticas corporais proporcionam meios\nde vivenciar a socialização em meio comunitário."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 30,
+    "resposta_correta": 30,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 16
   }
 ]
