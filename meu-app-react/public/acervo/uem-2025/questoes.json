@@ -856,5 +856,161 @@
     "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
     "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
     "pagina": 17
+  },
+  {
+    "id": "uem-2025-27",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 27,
+    "materia": "Geografia",
+    "conteudo": "Economia do Paraná",
+    "dificuldade": "Médio",
+    "enunciado": "Sobre a economia cafeeira no estado do Paraná, assinale o que\nfor correto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "A expansão da cafeicultura consolidou um processo de\nocupação do interior do estado, o chamado “Norte novo”,\ndevido às economias ligadas à cafeicultura, como as\natividades de benefício e transporte de grãos. Nesse período\nsurgem cidades como Apucarana, Rolândia e Jandaia do Sul.",
+      "O crescimento da população e a proliferação das cidades\nestiveram ligadas tanto à expansão da cafeicultura quanto à\nação das companhias colonizadoras que patrocinaram, entre\n1940 e 1970, a criação da maioria dos municípios do estado.",
+      "Embora a Geada Negra (1975) tenha deixado marcas\nprofundas na memória, a produção de café já dava sinais de\nesgotamento desde a década de 1970 (em 1974 apenas uma\npequena parte das exportações do Paraná era de café),\nsobretudo devido às novas políticas implementadas pelo\ngoverno federal e à paulatina introdução da cultura de soja.",
+      "A cultura da soja, que substituiu o café, foi facilitada pela\nestrutura preexistente dedicada ao plantio e à\ncomercialização do café. Nesse contexto, percebem-se\nalgumas modificações na geografia econômica do estado,\nporém sem grandes transformações e impactos sociais.",
+      "A expansão da cafeicultura pelo interior do estado obedeceu\na um planejamento estratégico que envolveu o poder\npúblico, agricultores, as companhias de comércio e as\npopulações originárias que já habitavam a região."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 7,
+    "resposta_correta": 7,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 18
+  },
+  {
+    "id": "uem-2025-28",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 28,
+    "materia": "Geografia",
+    "conteudo": "Globalização",
+    "dificuldade": "Médio",
+    "enunciado": "Sobre as consequências da globalização, assinale o que for\ncorreto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "Houve um processo de esvaziamento do poder dos Estados\nnacionais, tendo em vista os processos de\ntransnacionalização da economia e a formação de blocos\neconômicos, como a União Europeia e o Nafta.",
+      "Ao contrário da formação de uma “aldeia global”, após a\ncrise de 2008 é possível observar o retorno dos\nnacionalismos (de esquerda e de direita) e de movimentos\nsociais que procuram garantir a existência de culturas\nancestrais, como os movimentos indígenas na América\nLatina.",
+      "No chamado “Sul Global”, é possível apontar a\nconsolidação do BRICS como um bloco econômico que, ao\nconcentrar parte considerável da população e recursos\nnaturais do planeta, terá o potencial de, no futuro, superar as\nprincipais economias do mundo.",
+      "O aquecimento global e o agravamento dos problemas\nambientais, incluindo o aumento dos eventos climáticos\nextremos, é um produto de um modelo integrado de\neconomia que não se preocupa com a sustentabilidade no\nuso dos recursos naturais.",
+      "A redução das políticas econômicas protecionistas\nfavoreceu a circulação de mercadorias e pessoas, o que\naumentou a integração econômica e a cooperação na\nresolução de problemas como a pobreza e outras\ndesigualdades."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 18
+  },
+  {
+    "id": "uem-2025-29",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 29,
+    "materia": "Geografia",
+    "conteudo": "População e desenvolvimento",
+    "dificuldade": "Médio",
+    "enunciado": "Sobre indicadores das condições de vida da população,\nincluindo questões relacionadas ao Índice de Desenvolvimento\nHumano (IDH), assinale o que for correto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "As três variáveis do IDH são longevidade, educação e renda.",
+      "O IDH, elaborado no início da década de 1990 pelo\nPrograma das Nações Unidas para o Desenvolvimento\n(PNUD), busca oferecer uma métrica multidimensional das\ncondições de vida das populações.",
+      "A análise do desenvolvimento deve levar em conta aspectos\npolíticos, como a participação da população nas decisões\npúblicas.",
+      "Indicadores da economia global são suficientes para a\ncompreensão das condições de vida de uma população.",
+      "Inferir condições de vida pela renda média da população\npode ocultar desigualdades internas significativas."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 23,
+    "resposta_correta": 23,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 18
+  },
+  {
+    "id": "uem-2025-30",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 30,
+    "materia": "Geografia",
+    "conteudo": "Fontes de energia",
+    "dificuldade": "Médio",
+    "enunciado": "Sobre a questão energética brasileira e eventos relacionados ao\ntema, assinale o que for correto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "O Programa Nacional do Álcool (Proálcool) foi implantado\ne desenvolvido pelo governo com o objetivo de diminuir a\ndependência do país das fontes externas de energia.",
+      "A crise do petróleo ocorrida na década de 1970 teve impacto\nsevero sobre a economia devido à elevada dependência dos\nderivados desse produto na matriz energética brasileira.",
+      "O etanol é caracterizado como um biocombustível que, no\nBrasil, é produzido a partir da cana-de-açúcar e do milho,\nsobretudo no Centro-Sul do país, incluindo o Paraná.",
+      "Apesar dos esforços recentes quanto à diversificação da\nmatriz energética, o percentual de energia eólica ofertado\ninternamente no Brasil diminuiu na última década.",
+      "Há problemas sociais relacionados aos biocombustíveis,\ncomo a necessidade de dedicar grandes extensões de terras\nagricultáveis à produção das matérias-primas, e o impulso à\nconcentração fundiária."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 23,
+    "resposta_correta": 23,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 18
   }
 ]

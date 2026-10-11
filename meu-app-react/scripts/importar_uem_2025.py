@@ -11,7 +11,8 @@ DESTINO = ROOT / "public" / "acervo" / "uem-2025" / "questoes.json"
 
 GABARITO = {1: 27, 2: 7, 3: 30, 4: 21, 5: 31, 6: 23, 7: 15, 8: 20, 9: 20, 10: 17,
             15: 26, 16: 15, 17: 6, 18: 29, 19: 21, 20: 30,
-            21: 22, 22: 20, 23: 7, 24: 15, 25: 23, 26: 22}
+            21: 22, 22: 20, 23: 7, 24: 15, 25: 23, 26: 22,
+            27: 7, 28: 15, 29: 23, 30: 23}
 CONTEUDOS = {
     1: "Interpretação de textos", 2: "Interpretação de textos", 3: "Variação linguística",
     4: "Interpretação de textos", 5: "Interpretação de textos", 6: "Semântica e estilística",
@@ -22,6 +23,8 @@ CONTEUDOS = {
     20: "Atividade física e envelhecimento",
     21: "Ética", 22: "Filosofia política", 23: "Filosofia política",
     24: "Filosofia da tecnologia", 25: "Sustentabilidade", 26: "Guerra Fria",
+    27: "Economia do Paraná", 28: "Globalização", 29: "População e desenvolvimento",
+    30: "Fontes de energia",
 }
 
 
@@ -81,6 +84,7 @@ def main():
         p16e = coluna(pdf.pages[15], "E")
         p16d = coluna(pdf.pages[15], "D")
         p17e, p17d = coluna(pdf.pages[16], "E"), coluna(pdf.pages[16], "D")
+        p18e, p18d = coluna(pdf.pages[17], "E"), coluna(pdf.pages[17], "D")
 
     texto1 = prefixo_antes(p6e, 1)
     texto1 = apos(texto1, r"Leia o texto a seguir para responder as questões de 01 a 03\.")
@@ -96,9 +100,10 @@ def main():
         19: (p16e, 20), 20: (p16e, None),
         21: (p16d, 22), 22: (p16d, None), 23: (p17e, 24), 24: (p17e, None),
         25: (p17d, 26), 26: (p17d, None),
+        27: (p18e, 28), 28: (p18e, None), 29: (p18d, 30), 30: (p18d, None),
     }
     questoes = []
-    numeros = [*range(1, 11), *range(15, 27)]
+    numeros = [*range(1, 11), *range(15, 31)]
     for numero in numeros:
         trecho = bloco(fontes[numero][0], numero, fontes[numero][1])
         if numero == 3:
@@ -111,7 +116,7 @@ def main():
             "banca": "UEM",
             "concurso": "Vestibular de Verão UEM 2025",
             "numero_original": numero,
-            "materia": "Língua Portuguesa" if numero <= 7 else "Literatura" if numero <= 10 else "Arte" if numero <= 17 else "Educação Física" if numero <= 20 else "Filosofia" if numero <= 24 else "Sociologia" if numero == 25 else "História",
+            "materia": "Língua Portuguesa" if numero <= 7 else "Literatura" if numero <= 10 else "Arte" if numero <= 17 else "Educação Física" if numero <= 20 else "Filosofia" if numero <= 24 else "Sociologia" if numero == 25 else "História" if numero == 26 else "Geografia",
             "conteudo": CONTEUDOS[numero],
             "dificuldade": "Médio",
             "enunciado": enunciado,
@@ -125,7 +130,7 @@ def main():
             "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
             "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
             "pagina": ({15: 15, 16: 15, 17: 15, 18: 15, 19: 16, 20: 16, 21: 16, 22: 16,
-                        23: 17, 24: 17, 25: 17, 26: 17}.get(numero)
+                        23: 17, 24: 17, 25: 17, 26: 17, 27: 18, 28: 18, 29: 18, 30: 18}.get(numero)
                        or 6 + (numero >= 4) + (numero >= 7) + (numero >= 10)),
         })
 
