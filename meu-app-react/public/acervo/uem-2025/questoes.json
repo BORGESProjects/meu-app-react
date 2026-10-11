@@ -622,5 +622,239 @@
     "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
     "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
     "pagina": 16
+  },
+  {
+    "id": "uem-2025-21",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 21,
+    "materia": "Filosofia",
+    "conteudo": "Ética",
+    "dificuldade": "Médio",
+    "enunciado": "“No nosso dia-a-dia, encontramo-nos frequentemente diante de\nsituações nas quais a nossa decisão depende daquilo que\nconsideramos bom, justo ou moralmente correto. Toda vez que\nisso ocorre, estamos diante de uma decisão que envolve um\njulgamento moral, a partir do qual vamos orientar nossa ação.”\n(COTRIM, G. Fundamentos da filosofia. História e grandes\ntemas. São Paulo: Saraiva, 2006. p. 243). Sobre ética e\ncomportamento moral, assinale o que for correto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "Para Sócrates, o comportamento moral, motivado pelos\ndesejos e pelas paixões, conduz os homens a um estado\nduradouro de bem-estar e de felicidade que não pode ser\nalcançado na esfera política, apenas na esfera individual,\ncomo a ideia da realização de todos os desejos humanos em\nmáxima quantidade, máxima duração e máxima intensidade.",
+      "O comportamento moral tem como base um conjunto de\nregras ou normas de caráter histórico-social e de livre e\nconsciente aceitação, as quais determinam o comportamento\ndos indivíduos nos grupos sociais nos quais estão inseridos.",
+      "Segundo os filósofos estoicos, a felicidade consiste em uma\nvida guiada por preceitos racionais e vivida em harmonia\ncom a natureza como organismo vivo, ordenada por Deus\ncomo Razão Universal e princípio inteligente.",
+      "Rousseau argumenta que a consciência moral nasce das\nrelações dos seres humanos em sociedade, pois, não sendo o\nhomem bom e nem mau por natureza, as regras e as normas\nmorais surgem da necessidade de um contrato social como\ncondição do surgimento do comportamento ético e moral.",
+      "Com base em várias experiências realizadas com grupos\nhumanos diversos, Kohlberg propõe a teoria de que o\ncomportamento moral pleno é alcançado apenas pelo ser\nhumano adulto, identificando três níveis de desenvolvimento:\no nível pré-convencional, o nível convencional e o nível\npós-convencional."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 22,
+    "resposta_correta": 22,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 16
+  },
+  {
+    "id": "uem-2025-22",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 22,
+    "materia": "Filosofia",
+    "conteudo": "Filosofia política",
+    "dificuldade": "Médio",
+    "enunciado": "Leia atentamente o texto a seguir:\n“Nas ações de todos os homens, especialmente os príncipes, contra\nos quais não há tribunais a que recorrer, os fins é que contam. Faça,\npois, o príncipe tudo para alcançar e manter o poder; os meios de\nque se valer serão sempre considerados honrosos e louvados por\ntodos, porque o vulgo atenta sempre para aquilo que parece ser e\npara os resultados.” (MAQUIAVEL, N., O príncipe, Cap. XVIII, p.\n113, in FIGUEIREDO, V. de, Seis filósofos na sala de aula, São\nPaulo: Berlendis & Vertecchia, 2005).\nDe acordo com a posição defendida por Maquiavel, assinale o\nque for correto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "A ação política é considerada boa se realiza o bem comum,\na virtude e a justiça.",
+      "A ação política deve considerar os valores da moral cristã\npara avaliar se os fins justificam os meios.",
+      "A ação política tem uma lógica própria baseada na\npercepção da eficácia e dos benefícios pelo cidadão comum.",
+      "A esfera de ação e moralidade individuais coincide com a\nesfera da ação política, pois envolve os mesmos interesses.",
+      "O critério decisivo para julgar se uma ação política é boa ou\nmá são seus resultados produzidos, independentemente dos\nmeios utilizados."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 20,
+    "resposta_correta": 20,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 16
+  },
+  {
+    "id": "uem-2025-23",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 23,
+    "materia": "Filosofia",
+    "conteudo": "Filosofia política",
+    "dificuldade": "Médio",
+    "enunciado": "“Para os gregos, a finalidade da vida política era a justiça na\ncomunidade. (...) A ideia de justiça se refere (...) a uma ordem\ndivina e natural, que regula, julga e pune as ações das coisas e\ndos seres humanos. A justiça é a lei e a ordem do mundo, isto é,\nda natureza ou physis. Lei (nómos), natureza (physis) e ordem\n(kósmos) constituem assim o campo da ideia de justiça”.\n(CHAUÍ, M. Convite à filosofia. 14ª ed. São Paulo: Ática, 2011.\npág. 444). Sobre a finalidade da vida política e o conceito de\njustiça, assinale o que for correto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "Para os sofistas, a finalidade da vida política é a concórdia\ndos cidadãos e a manutenção da ordem na pólis, por meio da\ncriação e da preservação das leis de acordo com a vontade\nda maioria, mediante a participação ativa dos cidadãos nas\ndiscussões públicas e a utilização da retórica como\ninstrumento de defesa e combate de opiniões.",
+      "Segundo Platão, a pólis é formada por três classes sociais: a\ndos proprietários de terras, artesãos e comerciantes; a dos\nguerreiros; a dos magistrados. A pólis é governada pelos\nfilósofos, os quais asseguram a justiça como o bem geral,\ndesde que todas as classes cumpram com a sua função.",
+      "A partir do governo de Júlio Cesar e, principalmente, com o\nseu sucessor Augusto, Roma passa por mudanças políticas\nque concentram o poder administrativo e o poder judiciário\ne militar nas mãos do imperador. Com essas mudanças\nRoma deixa de ser uma República oligárquica e passa a ser\num império, governado por um príncipe do qual o povo\nromano espera justiça e vida boa.",
+      "Nicolau Maquiavel, em sua teoria política, sustenta a tese de\nque o Príncipe deve ser virtuoso, justo e bom e deve\ngovernar segundo a vontade de Deus para o bem e a\nfelicidade de toda a comunidade. Para tanto, ele precisa ter\nvirtú, que consiste no uso de todos os meios virtuosos e bons\nà sua disposição para a realização do bem comum.",
+      "Thomas Hobbes, em o Contrato social, afirma que o pacto\noriginário e hipotético de todos os seres humanos é a condição\nfundamental para a potencialização da liberdade que nos é\nconcedida por Deus em nosso estado de natureza, como forma\nde assegurar o bem-estar e a justiça social e evitar um estado\npermanente de guerra de todos contra todos."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 7,
+    "resposta_correta": 7,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 17
+  },
+  {
+    "id": "uem-2025-24",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 24,
+    "materia": "Filosofia",
+    "conteudo": "Filosofia da tecnologia",
+    "dificuldade": "Médio",
+    "enunciado": "No que concerne às relações entre ciência, técnica e tecnologia\nconforme os escritos de Walter Benjamin, assinale o que for\ncorreto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "Os recursos tecnológicos alteram a forma como as pessoas\npercebem o mundo.",
+      "A fotografia é o marco do progresso das técnicas de\nreprodução e das alterações na percepção da realidade.",
+      "Com o surgimento do cinema, a percepção do tempo se\nalterou drasticamente.",
+      "O desenvolvimento tecnológico da captação de imagens\ncada vez mais nítidas e precisas alterou a percepção que as\npessoas têm de si mesmas.",
+      "A fotografia e o cinema exemplificam os efeitos\npotencializadores da técnica e da tecnologia sobre a autoria\ne a originalidade das obras artísticas."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 17
+  },
+  {
+    "id": "uem-2025-25",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 25,
+    "materia": "Sociologia",
+    "conteudo": "Sustentabilidade",
+    "dificuldade": "Médio",
+    "enunciado": "Acerca da temática da sustentabilidade e da produção de\nalimentos, assinale o que for correto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "A degradação ambiental gera consequências sociais cada\nvez mais contrárias ao ideário moderno de emancipação\nhumana.",
+      "A conscientização acerca dos problemas ambientais em\ndeterminados lugares levou indústrias predatórias para\npaíses em desenvolvimento com legislação ambiental frágil.",
+      "O processo de industrialização com consumo acelerado de\nrecursos naturais criou diferentes problemas, como a\neliminação do lixo industrial e a produção de energia.",
+      "A fome emerge da insuficiência técnica na produção de\nalimentos.",
+      "A denominada lógica de mercado, associada à concentração\nda propriedade fundiária, impossibilita a diversificação na\nprodução de gêneros alimentícios e a sustentação de preços\nadequados para se extinguir a fome."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 23,
+    "resposta_correta": 23,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 17
+  },
+  {
+    "id": "uem-2025-26",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 26,
+    "materia": "História",
+    "conteudo": "Guerra Fria",
+    "dificuldade": "Médio",
+    "enunciado": "Sobre o período da Guerra Fria e seus desdobramentos, assinale\no que for correto.",
+    "texto_apoio": "",
+    "opcoes": [
+      "Em abril de 1986 ocorreu a explosão do reator na usina\nnuclear de Chernobyl. Ao reconhecer imediatamente a\nexplosão e ao elaborar políticas de contenção da radiação e\nde proteção da população, o governo da URSS demonstrou\no bom funcionamento das políticas implementadas por\nMikhail Gorbatchov, a glasnost e a perestroika.",
+      "No ocidente foi possível observar o surgimento de\ncampanhas anticomunistas, como o macarthismo, que\nconsistiu na criação de um “Comitê de Atividades\nAntiamericanas”, cujo objetivo era identificar e punir\nsuspeitos de envolvimento com o comunismo.",
+      "Foi um período marcado pela disputa de hegemonia entre\nEUA e URSS, as duas superpotências herdeiras da Segunda\nGuerra Mundial.",
+      "Foi marcado pela cooperação entre EUA e URSS,\ndenominada “Corrida Espacial”, para expandir a presença\nhumana no espaço, com o lançamento de satélites até a\nchegada do homem à Lua, em 1969.",
+      "Embora nunca tenham entrado em conflito direto, EUA e\nURSS patrocinaram um conjunto de guerras ao redor do\nmundo, como a Guerra da Coreia, a Guerra do Vietnã e a\nGuerra do Afeganistão."
+    ],
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 22,
+    "resposta_correta": 22,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 17
   }
 ]

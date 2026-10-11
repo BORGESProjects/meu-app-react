@@ -729,9 +729,9 @@ test('UEM 2025 contém o primeiro lote oficial no formato de somatória', () => 
   const arquivo = new URL('../public/acervo/uem-2025/questoes.json', import.meta.url)
   const uem = JSON.parse(readFileSync(arquivo, 'utf8'))
 
-  assert.equal(uem.length, 16)
-  assert.deepEqual(uem.map(q => q.numero_original), [...Array.from({length: 10}, (_, i) => i + 1), ...Array.from({length: 6}, (_, i) => i + 15)])
-  assert.deepEqual(uem.map(q => q.resposta_soma), [27, 7, 30, 21, 31, 23, 15, 20, 20, 17, 26, 15, 6, 29, 21, 30])
+  assert.equal(uem.length, 22)
+  assert.deepEqual(uem.map(q => q.numero_original), [...Array.from({length: 10}, (_, i) => i + 1), ...Array.from({length: 12}, (_, i) => i + 15)])
+  assert.deepEqual(uem.map(q => q.resposta_soma), [27, 7, 30, 21, 31, 23, 15, 20, 20, 17, 26, 15, 6, 29, 21, 30, 22, 20, 7, 15, 23, 22])
   assert.deepEqual(uem.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
   assert.ok(uem.slice(0, 7).every(q => q.texto_apoio.length > 500))
   for (const questao of uem) {
@@ -744,4 +744,3 @@ test('UEM 2025 contém o primeiro lote oficial no formato de somatória', () => 
     assert.doesNotMatch([questao.enunciado, questao.texto_apoio, ...questao.opcoes].join('\n'), /UEM\/CVU|Caderno de Prova|#{3,}|\(cid:/)
   }
 })
-
