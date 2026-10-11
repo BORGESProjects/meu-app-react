@@ -1012,5 +1012,1794 @@
     "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
     "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
     "pagina": 18
+  },
+  {
+    "id": "uem-2025-11-es",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 11,
+    "materia": "Língua Espanhola",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 11 ———————————————————\nA partir de la lectura minuciosa del texto, señala lo que está\ncorrecto.",
+    "opcoes": [
+      "Las propiedades de la miel son comentadas en nuestras\nviviendas, y hay la creencia de que cura muchas\nenfermedades.",
+      "eLnofse rmfaemdoasdoess . a rtistas del siglo pasado fueron los que\nrepresentaron este alimento por primera vez, a través de sus\nobras.",
+      "oLbar aresc. omendación de ingestión adulta diaria del “néctar de\nlas abejas” (línea 67), según la OMS, es de, como máximo,\n12 cucharaditas no completamente llenas.",
+      "La causa exacta de la muerte de las abejas no puede ser\ndeterminada por solo un factor, pero según investigaciones,\nel cambio climático sería una de las posibles razones.",
+      "El azúcar encontrado en el 99% de la composición de la miel\nprovoca casos de obesidad e infarto."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-11-es-01.webp",
+      "/acervo/uem-2025/uem-2025-11-es-02.webp",
+      "/acervo/uem-2025/uem-2025-11-es-04.webp",
+      "/acervo/uem-2025/uem-2025-11-es-08.webp",
+      "/acervo/uem-2025/uem-2025-11-es-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-11-es-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 13,
+    "resposta_correta": 13,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 10,
+    "idioma": "Espanhol",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/apoio-Espanhol-1.webp",
+        "texto": "Texto-base oficial Espanhol"
+      },
+      {
+        "imagem": "/acervo/uem-2025/apoio-Espanhol-2.webp",
+        "texto": "Continuação do texto-base"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-12-es",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 12,
+    "materia": "Língua Espanhola",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 12 ———————————————————\nSegún el texto, señala lo que está correcto sobre las propiedades\nde la miel.",
+    "opcoes": [
+      "Posee en su composición las vitaminas y minerales\nnecesarios para obtener beneficios de salud.",
+      "Tiene el poder de amenizar la tos, principalmente cuando la\ntenemos durante las horas de sueño.",
+      "tPeuneedmeo sq udeu rannot el ala sp hoodraams odse scuoenñsou.m ir más en un futuro\ncercano, pues las abejas mueren cuando hace mucho frío.",
+      "Es un alimento que debemos consumir con prudencia.",
+      "Tiene azúcar y es muy dulce, sin embargo, los dátiles son\npreferibles como edulcorante, ya que tienen también mucha\nfibra."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-12-es-01.webp",
+      "/acervo/uem-2025/uem-2025-12-es-02.webp",
+      "/acervo/uem-2025/uem-2025-12-es-04.webp",
+      "/acervo/uem-2025/uem-2025-12-es-08.webp",
+      "/acervo/uem-2025/uem-2025-12-es-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-12-es-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 24,
+    "resposta_correta": 24,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 10,
+    "idioma": "Espanhol",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/apoio-Espanhol-1.webp",
+        "texto": "Texto-base oficial Espanhol"
+      },
+      {
+        "imagem": "/acervo/uem-2025/apoio-Espanhol-2.webp",
+        "texto": "Continuação do texto-base"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-13-es",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 13,
+    "materia": "Língua Espanhola",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 13 ———————————————————\nDe acuerdo con los aspectos lexicales y gramaticales de la\nlengua española, señala lo que está correcto.",
+    "opcoes": [
+      "El vocablo “expertos” (línea 50) es un sustantivo masculino\nen plural.",
+      "El nombre “miel” (título) es un caso de palabra heterotónica,\nasí como “sangre” (línea 81).",
+      "aLsaí cfoormmoa ““ssaen gmreu”ri e(lríonne”a 8(l1ín).e a 23) se refiere al pronombre\npersonal vos.",
+      "El pronombre de objeto directo “lo” (línea 10) sustituye el\nsustantivo “producto” (línea 8).",
+      "El adjetivo “Cualquier” (línea 39) es apócope de cualquiera,\ny se emplea delante de nombres femeninos o masculinos."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-13-es-01.webp",
+      "/acervo/uem-2025/uem-2025-13-es-02.webp",
+      "/acervo/uem-2025/uem-2025-13-es-04.webp",
+      "/acervo/uem-2025/uem-2025-13-es-08.webp",
+      "/acervo/uem-2025/uem-2025-13-es-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-13-es-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 25,
+    "resposta_correta": 25,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 10,
+    "idioma": "Espanhol",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/apoio-Espanhol-1.webp",
+        "texto": "Texto-base oficial Espanhol"
+      },
+      {
+        "imagem": "/acervo/uem-2025/apoio-Espanhol-2.webp",
+        "texto": "Continuação do texto-base"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-14-es",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 14,
+    "materia": "Língua Espanhola",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 14 ———————————————————\nSegún la gramática del español, señala lo que está correcto.",
+    "opcoes": [
+      "El participio “muriendo” (línea 15) forma parte de una\nestructura que se refiere al futuro: “se están muriendo”\n(líneas 14 y 15).",
+      "(Llaínse faosr m14a sy “ 1s5e )h. a e ncontrado” (línea 26), “aseguraba” (línea\n53) y “descartó” (línea 59) son verbos regulares en pretéritos\nperfecto, imperfecto e indefinido, respectivamente.",
+      "pLeorsf evcotoc,a bimlopse “rfdeicfítcoi le” in(ldínefeian i2d0o), rye s“pneéccttiavra”m (elínnteea. 67) son\nacentuados gráficamente, pues son graves terminados por\nconsonantes.",
+      "consonantes.\n08) La forma verbal “fuera” (línea 43) está conjugada en\npretérito imperfecto de subjuntivo en tercera persona del\nsingular.",
+      "sEiln gvuelarbr.o regular seguir está conjugado en imperativo\nnegativo en la línea 11: “sigue”."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-14-es-01.webp",
+      "/acervo/uem-2025/uem-2025-14-es-02.webp",
+      "/acervo/uem-2025/uem-2025-14-es-04.webp",
+      "/acervo/uem-2025/uem-2025-14-es-08.webp",
+      "/acervo/uem-2025/uem-2025-14-es-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-14-es-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 14,
+    "resposta_correta": 14,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 10,
+    "idioma": "Espanhol",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/apoio-Espanhol-1.webp",
+        "texto": "Texto-base oficial Espanhol"
+      },
+      {
+        "imagem": "/acervo/uem-2025/apoio-Espanhol-2.webp",
+        "texto": "Continuação do texto-base"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-11-fr",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 11,
+    "materia": "Língua Francesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 11 ———————————————————\nD'après le texte, il est correct d'affirmer, sur l'Intelligence\nArtificielle, que",
+    "opcoes": [
+      "elle est présente dans plusieurs domaines aujourd'hui.",
+      "elle ne permet pas encore de générer de fausses images à\nl'identique.",
+      "elle n'est disponible que pour une partie de la société.",
+      "elle permet même de débloquer un téléphone portable par\nidentification faciale.",
+      "ilde esntatitfioicnantieomn efnatc aiaslsei.s té est maintenant possible grâce à l'IA."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-11-fr-01.webp",
+      "/acervo/uem-2025/uem-2025-11-fr-02.webp",
+      "/acervo/uem-2025/uem-2025-11-fr-04.webp",
+      "/acervo/uem-2025/uem-2025-11-fr-08.webp",
+      "/acervo/uem-2025/uem-2025-11-fr-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-11-fr-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 25,
+    "resposta_correta": 25,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 12,
+    "idioma": "Francês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/apoio-Francês-1.webp",
+        "texto": "Texto-base oficial Francês"
+      },
+      {
+        "imagem": "/acervo/uem-2025/apoio-Francês-2.webp",
+        "texto": "Continuação do texto-base"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-12-fr",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 12,
+    "materia": "Língua Francesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 12 ———————————————————\nD'après le texte, il est correct d'afirmer que",
+    "opcoes": [
+      "les centres universitaires sont des pôles importants pour le\ndéveloppement de l'IA.",
+      "dl'IéAve lmopetp eemn ejnetu d de els'I Aq.u estions diplomatiques scientifiques\ncomplexes.",
+      "cleosm prélegximese. s autoritaires utilisent l'IA pour exercer un\ncontrôle de masse sur la population.",
+      "cl'ountitlriôsaleti odne dmea ls'sIAe s suuri tl ad peso prèuglaletiso inn.t ernationales.",
+      "0186)) ld'u'atpilrièssa tiSotne pdhe eln'I AH sauwit kdiensg rèugnle sj oinutre rlneast iomnaaclehsi.n es seront\nsupérieures aux humains."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-12-fr-01.webp",
+      "/acervo/uem-2025/uem-2025-12-fr-02.webp",
+      "/acervo/uem-2025/uem-2025-12-fr-04.webp",
+      "/acervo/uem-2025/uem-2025-12-fr-08.webp",
+      "/acervo/uem-2025/uem-2025-12-fr-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-12-fr-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 23,
+    "resposta_correta": 23,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 12,
+    "idioma": "Francês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/apoio-Francês-1.webp",
+        "texto": "Texto-base oficial Francês"
+      },
+      {
+        "imagem": "/acervo/uem-2025/apoio-Francês-2.webp",
+        "texto": "Continuação do texto-base"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-13-fr",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 13,
+    "materia": "Língua Francesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 13 ———————————————————\nSur les éléments linguistiques du texte, il est correct d'affirmer\nque",
+    "opcoes": [
+      "La phrase “On la retrouve dans les assistants des voitures”\n(lignes 2 et 3) peut être comprise comme Nous la retrouvons\ndans les assistants des voitures.",
+      "dans les assistants des voitures.\n02) Dans “Mais d’où vient l’intelligence artificielle” (lignes 5 et\n6), “où” peut être remplacé par jusque.",
+      "Dans “Il doit réunir quelque 3000 participants, dont des\ndirigeants de l'industrie” (lignes 16 et 17), il est possible de\ncomprendre que les dirigeants participeront, eux aussi, à\ncette réunion.",
+      "cDeatntes ré“uAnuio-dne. là du domaine professionnel” (ligne 21), la\nforme féminine du mot souligné est professionnelle.",
+      "Dans “Le développement fulgurant de l’intelligence\nartificielle suscite toutefois de nombreuses craintes.” (lignes\n32 et 33), le mot souligné peut être remplacé par inquiétudes."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-13-fr-01.webp",
+      "/acervo/uem-2025/uem-2025-13-fr-02.webp",
+      "/acervo/uem-2025/uem-2025-13-fr-04.webp",
+      "/acervo/uem-2025/uem-2025-13-fr-08.webp",
+      "/acervo/uem-2025/uem-2025-13-fr-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-13-fr-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 29,
+    "resposta_correta": 29,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 12,
+    "idioma": "Francês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/apoio-Francês-1.webp",
+        "texto": "Texto-base oficial Francês"
+      },
+      {
+        "imagem": "/acervo/uem-2025/apoio-Francês-2.webp",
+        "texto": "Continuação do texto-base"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-14-fr",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 14,
+    "materia": "Língua Francesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 14 ———————————————————\nSur les verbes employés dans le texte, il est correct d'affirmer\nque",
+    "opcoes": [
+      "Dans “Mais d’où vient l’intelligence artificielle et comment\ns’est-elle démocratisée?” (lignes 5-7), le verbe souligné, est\nau Passé Récent.",
+      "au Passé Récent.\n02) Dans “La diffusion sur les réseaux sociaux de fausses\nimages, plus vraies que nature, alertent sur les risques de\nmanipulation de l'opinion” (lignes 39-41), le verbe souligné\nest au Gérondif.",
+      "eDsat nasu “GEét rfoinn dmifa. rs, des centaines d'universitaires, patrons et\npersonnalités, ont demandé un moratoire” (lignes 45-47), le\nverbe souligné est au Passé Composé.",
+      "Dans “Stephen Hawking avait argumenté que notre espèce\nne serait plus un jour en capacité de rivaliser avec les\nmachines” (lignes 58-60), le verbe souligné est au\nConditionnel Présent.",
+      "Conditionnel Présent.\n16) Dans “il a affirmé récemment qu'il était possible que\nl'humanité ne soit qu'une phase passagère dans l'évolution\nde l'intelligence'.” (lignes 66-68), le verbe souligné est à\nl'Imparfait de l'Indicatif."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-14-fr-01.webp",
+      "/acervo/uem-2025/uem-2025-14-fr-02.webp",
+      "/acervo/uem-2025/uem-2025-14-fr-04.webp",
+      "/acervo/uem-2025/uem-2025-14-fr-08.webp",
+      "/acervo/uem-2025/uem-2025-14-fr-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-14-fr-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 28,
+    "resposta_correta": 28,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 12,
+    "idioma": "Francês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/apoio-Francês-1.webp",
+        "texto": "Texto-base oficial Francês"
+      },
+      {
+        "imagem": "/acervo/uem-2025/apoio-Francês-2.webp",
+        "texto": "Continuação do texto-base"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-11-en",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 11,
+    "materia": "Língua Inglesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 11 ———————————————————\nAccording to the text, mark the correct affirmative(s).",
+    "opcoes": [
+      "Teachers use more AI than students.",
+      "AI has been useful to help students with a disability, such as\nbeing deaf.",
+      "People are afraid that their personal information can be\naccessed when using AI.",
+      "More than 25% of the students have never tried AI writing\ntools.",
+      "tEotohlisc.a l aspects about using AI are also being discussed in\nthe education area."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-11-en-01.webp",
+      "/acervo/uem-2025/uem-2025-11-en-02.webp",
+      "/acervo/uem-2025/uem-2025-11-en-04.webp",
+      "/acervo/uem-2025/uem-2025-11-en-08.webp",
+      "/acervo/uem-2025/uem-2025-11-en-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-11-en-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": null,
+    "resposta_correta": null,
+    "anulada": true,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 14,
+    "idioma": "Inglês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/apoio-Inglês-1.webp",
+        "texto": "Texto-base oficial Inglês"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-12-en",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 12,
+    "materia": "Língua Inglesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 12 ———————————————————\nAccording to the text, mark the correct affirmative(s).",
+    "opcoes": [
+      "“Cheating” (line 53) and “plagiarism” (line 53) are\ndescribing qualities of AI.",
+      "In “AI can help teachers prepare their content to individual\nstudent needs and learning styles” (lines 17-19), the pronoun\n“their” refers to the word “teachers”.",
+      "“Inth e“Iirt ”c raenf erress tuol tt hine wmoorrde “itnecalcuhseivrse” .l essons.” (line 23), the\nword “can” expresses a possibility.",
+      "“has opened” (line 1) and “have been” (line 43) are\nexamples of Present Perfect.",
+      "The auxiliary “do” in “for those who do cheat.” (lines 57 and\n58) is emphasizing the main verb “cheat”."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-12-en-01.webp",
+      "/acervo/uem-2025/uem-2025-12-en-02.webp",
+      "/acervo/uem-2025/uem-2025-12-en-04.webp",
+      "/acervo/uem-2025/uem-2025-12-en-08.webp",
+      "/acervo/uem-2025/uem-2025-12-en-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-12-en-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 30,
+    "resposta_correta": 30,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 14,
+    "idioma": "Inglês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/apoio-Inglês-1.webp",
+        "texto": "Texto-base oficial Inglês"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-13-en",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 13,
+    "materia": "Língua Inglesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 13 ———————————————————\nAccording to the text, mark the correct affirmative(s).",
+    "opcoes": [
+      "The sentence “Students are naturally intrigued by AI.” (line\n39) is an example of passive voice.",
+      "The sentence “If students learn to cheat and take shortcuts\nin classrooms, what kind of citizens will they make when\nthey are finished with their education? (lines 58-60)\nexpresses a conditional situation.",
+      "“Nearly half” (line 13) is used to express more than 50% of\nsomething.",
+      "In the text, “however” (line 9) is used to express a\nconclusion.",
+      "c“souncchlu assio” n(.l i ne 33) is used to introduce some examples."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-13-en-01.webp",
+      "/acervo/uem-2025/uem-2025-13-en-02.webp",
+      "/acervo/uem-2025/uem-2025-13-en-04.webp",
+      "/acervo/uem-2025/uem-2025-13-en-08.webp",
+      "/acervo/uem-2025/uem-2025-13-en-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-13-en-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 19,
+    "resposta_correta": 19,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 14,
+    "idioma": "Inglês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/apoio-Inglês-1.webp",
+        "texto": "Texto-base oficial Inglês"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-14-en",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 14,
+    "materia": "Língua Inglesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 14 ———————————————————\nAccording to the text, mark the correct affirmative(s).",
+    "opcoes": [
+      "One of the advantages of AI is that it offers a lot of platforms\nfor educators helping them to plan their classes.",
+      "fAoIr deodeusc antootr se nhceolpuirnagg et hsetumd eton tpsl aton tthhienikr cclraitsisceasl.l y .",
+      "0024)) AIf Is dtuodees nntos t uesnec oAuIr atgoe c shteuadte notrs ctoo ptyh insokm creitthicinagll yi.t does not\naffect their apprenticeship considerably.",
+      "It is a fact that AI has many advantages and limitations.",
+      "One of the challenges of AI in education is that it may\ncontribute to spread false information."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-14-en-01.webp",
+      "/acervo/uem-2025/uem-2025-14-en-02.webp",
+      "/acervo/uem-2025/uem-2025-14-en-04.webp",
+      "/acervo/uem-2025/uem-2025-14-en-08.webp",
+      "/acervo/uem-2025/uem-2025-14-en-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-14-en-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 25,
+    "resposta_correta": 25,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 14,
+    "idioma": "Inglês",
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/apoio-Inglês-1.webp",
+        "texto": "Texto-base oficial Inglês"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-31",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 31,
+    "materia": "Matemática",
+    "conteudo": "Trigonometria",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 31 ———————————————————\nSobre trigonometria, assinale o que for correto.",
+    "opcoes": [
+      "O comprimento de arco na circunferência trigonométrica é\nnumericamente igual à medida em radianos do ângulo\ncentral que o subtende.",
+      "tg𝜃 é o coeficiente angular da reta que passa pela origem e\no ponto, na circunferência trigonométrica, associado ao\nângulo 𝜃.",
+      "No eixo 𝑥 das abcissas estão os valores correspondentes ao\nseno.\n𝜋",
+      "A cossecante de 𝜋 não está definida.\n2",
+      "−cotg𝜃 é o coefi2ciente angular de uma reta perpendicular a\numa reta cujo coeficiente angular é tg𝜃."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-31-01.webp",
+      "/acervo/uem-2025/uem-2025-31-02.webp",
+      "/acervo/uem-2025/uem-2025-31-04.webp",
+      "/acervo/uem-2025/uem-2025-31-08.webp",
+      "/acervo/uem-2025/uem-2025-31-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-31-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 19,
+    "resposta_correta": 19,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 19,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-3.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-32",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 32,
+    "materia": "Matemática",
+    "conteudo": "Geometria plana",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 32 ———————————————————\nConsidere um quadrado inscrito em uma circunferência de\nraio r. Assinale o que for correto.",
+    "opcoes": [
+      "O perímetro do quadrado é 4𝑟√2.",
+      "Se o lado do quadrado m√ede 10, então a área da\ncircunferência é 25𝜋.",
+      "circunferência é 25𝜋.\n04) Se o raio da circunferência é 4, então a área formada entre a\ncircunferência e um lado do quadrado é 16(𝜋−2).",
+      "Todo triângulo inscrito no quadrado é retângulo.",
+      "0186)) TQoudaolq tureiâr ngtruiâlon ginuslcor iteoq uniol áqteuraod raindsoc réi troe tânnag uclior.c unferência\npossui área menor que a área do quadrado."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-32-01.webp",
+      "/acervo/uem-2025/uem-2025-32-02.webp",
+      "/acervo/uem-2025/uem-2025-32-04.webp",
+      "/acervo/uem-2025/uem-2025-32-08.webp",
+      "/acervo/uem-2025/uem-2025-32-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-32-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 17,
+    "resposta_correta": 17,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 19,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-3.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-33",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 33,
+    "materia": "Matemática",
+    "conteudo": "Geometria espacial",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 33 ———————————————————\nDado um número real 𝑎>0 e diferente de 1, chama-se função\nexponencial de base 𝑎 a uma função real a valores reais positivos\ndefinida por 𝑓(𝑥)=𝑎𝑥. Assinale o que for correto.",
+    "opcoes": [
+      "Se 𝑎∈ℚ , então 𝑓(𝑥)∉ℤ,∀𝑥 ∈ℤ.",
+      "A s𝑎eq∈uêℚncia {𝑓(1𝑓),𝑥𝑓(2∉),ℤ𝑓,(∀3𝑥),∈𝑓(ℤ4.),…} é uma progressão\ngeométrica.",
+      "Se 𝑎>1, então 𝑓 é uma função crescente.",
+      "Se 𝑎<1, então 𝑓(𝑥)<10−33 para algum valor de 𝑥.",
+      "𝑓(21)<𝑓(22) para todo valor de 𝑎 >0."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-33-01.webp",
+      "/acervo/uem-2025/uem-2025-33-02.webp",
+      "/acervo/uem-2025/uem-2025-33-04.webp",
+      "/acervo/uem-2025/uem-2025-33-08.webp",
+      "/acervo/uem-2025/uem-2025-33-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-33-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 14,
+    "resposta_correta": 14,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 19,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-3.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-34",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 34,
+    "materia": "Matemática",
+    "conteudo": "Análise combinatória",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 34 ———————————————————\nConsidere 25 bolinhas numeradas de 1 a 25 e 25 cubos com\ncores distintas. Assinale o que for correto.",
+    "opcoes": [
+      "Há 25 formas de organizarmos as bolinhas em fila de ordem\ncrescente de numeração.",
+      "cProedsecmenotes dfoer nmuamr e6r2aç5ã opa. res distintos com um cubo e uma\nbolinha.",
+      "bolinha.\n04) Se enfileirarmos as 25 bolinhas e depois os 25 cubos teremos\n25!+25! maneiras de fazê-lo.",
+      "25!+25! maneiras de fazê-lo.\n08) Para calcularmos quantas possibilidades há de tomar\nconjuntos de 5 cubos com cores distintas usamos a fórmula\nde arranjo simples.",
+      "dSee arjruanntjaor msiomsp letos.d os os objetos para contar quantos\nsubconjuntos com 3 objetos podemos formar usamos a\ncombinação simples."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-34-01.webp",
+      "/acervo/uem-2025/uem-2025-34-02.webp",
+      "/acervo/uem-2025/uem-2025-34-04.webp",
+      "/acervo/uem-2025/uem-2025-34-08.webp",
+      "/acervo/uem-2025/uem-2025-34-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-34-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 18,
+    "resposta_correta": 18,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 19,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-3.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-35",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 35,
+    "materia": "Matemática",
+    "conteudo": "Logaritmos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 35 ———————————————————\nConsidere a função 𝑓(𝑥)=log 𝑥. Assinale o que for correto.\n10",
+    "opcoes": [
+      "𝑓(2)=𝑓(30)−𝑓(15).",
+      "𝑓(121)=2.𝑓(11).",
+      "0024)) 𝑓A f1u2n1ção= n2ão.𝑓 po1d1e .s er calculada em números negativos.",
+      "0048)) AA ifmunaçgãeom n ãdoe p𝑓o éd eto sdeor ccoalncjuulnatdoa d eoms nnúúmmeerrooss rneeagisa.t ivos.",
+      "O gráfico da função f é simétrico ao gráfico da função\n𝑔(𝑥)=10𝑥 em relação ao eixo 𝑦."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-35-01.webp",
+      "/acervo/uem-2025/uem-2025-35-02.webp",
+      "/acervo/uem-2025/uem-2025-35-04.webp",
+      "/acervo/uem-2025/uem-2025-35-08.webp",
+      "/acervo/uem-2025/uem-2025-35-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-35-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 19,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-3.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-36",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 36,
+    "materia": "Matemática",
+    "conteudo": "Equações",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 36 ———————————————————\nAssinale o que for correto.\n8",
+    "opcoes": [
+      "8\n01) +2> √12−1.\n7",
+      "| 3 − 5 |<√( 3 − 5 )2.\n5 3 5 3\n1",
+      "(−8)−1 3 = 3√8=2.\n1",
+      "1\n08) 𝑙𝑜𝑔 0,01+𝑙𝑜𝑔 =−6.\n10 381",
+      "1 3 7 19\n16) (− + )+1= .\n2 4 2 8"
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-36-01.webp",
+      "/acervo/uem-2025/uem-2025-36-02.webp",
+      "/acervo/uem-2025/uem-2025-36-04.webp",
+      "/acervo/uem-2025/uem-2025-36-08.webp",
+      "/acervo/uem-2025/uem-2025-36-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-36-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 25,
+    "resposta_correta": 25,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 19,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-3.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-37",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 37,
+    "materia": "Matemática",
+    "conteudo": "Sistemas lineares",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 37 ———————————————————\n2𝑥+𝑦−𝑧=4\nConsidere o sistema linear {𝑥−3𝑦+2𝑧=5\n−2𝑥−𝑦+𝑧=1\nAssinale o que for correto.",
+    "opcoes": [
+      "Esse sistema possui infinitas soluções.",
+      "0012)) E𝑥s=se 2s,i s 𝑦tem=a0 p eo s𝑧su=i i0n éfi nuimtaas ssoolluuççãõoe ps.a ra esse sistema linear.",
+      "0024)) 𝑥Re=str2in, g 𝑦in=do0-s ee 𝑧as= eq0u éa çuõmeas sdoolu sçiãsote pmaar aa eos spel asnisot ecmarat elisniaeanro.\nao considerarmos z identicamente nulo, a primeira e a terceira\nequações do sistema passam a representar retas paralelas.",
+      "O sistema não possui solução que satisfaça a condição 𝑦=1.",
+      "0186)) OO sdiestteermmai nnaãnot ep odsas umi astorliuzç 3ão× q3u e( fsoartmisfaadçaa pae cloosn dcioçeãfoic 𝑦ie=nte1s.\ndas incógnitas desse sistema linear) é nulo."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-37-01.webp",
+      "/acervo/uem-2025/uem-2025-37-02.webp",
+      "/acervo/uem-2025/uem-2025-37-04.webp",
+      "/acervo/uem-2025/uem-2025-37-08.webp",
+      "/acervo/uem-2025/uem-2025-37-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-37-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 28,
+    "resposta_correta": 28,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 20,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-3.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-38",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 38,
+    "materia": "Matemática",
+    "conteudo": "Geometria analítica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 38 ———————————————————\nConsidere as funções 𝑓:ℝ→ℝ e 𝑔:ℝ→ℝ definidas por\n𝑓(𝑥)=2𝑥−1 e 𝑔(𝑥)=𝑥2+1. Assinale o que for correto.",
+    "opcoes": [
+      "1\n01) 𝑔(𝑓( ))=5.\n2",
+      "As funções compostas (𝑓∘𝑔) e (𝑔∘𝑓) são funções\nsobrejetoras.",
+      "Os gráficos das funções 𝑓 e 𝑔 não se interceptam.",
+      "0048)) O𝑓 sé gurmáfai cfousn çdãaos fbuijneçtõoeras . 𝑓 e 𝑔 não se interceptam.",
+      "𝑔 é uma função injetora."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-38-01.webp",
+      "/acervo/uem-2025/uem-2025-38-02.webp",
+      "/acervo/uem-2025/uem-2025-38-04.webp",
+      "/acervo/uem-2025/uem-2025-38-08.webp",
+      "/acervo/uem-2025/uem-2025-38-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-38-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 12,
+    "resposta_correta": 12,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 20,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-3.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-39",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 39,
+    "materia": "Matemática",
+    "conteudo": "Geometria analítica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 39 ———————————————————\nConsidere os pontos 𝐴=(𝑎,0), 𝐵 =(0,𝑏) e 𝐶 = (𝑎,𝑏), em\nque 𝑎,𝑏 ∈ℝ. Assinale o que for correto.",
+    "opcoes": [
+      "Se 𝑎 =𝑏 ≠ 0, então o triângulo ABC é equilátero.",
+      "𝑎 =𝑏 ≠ 0 ABC\n02) Se 𝑎=√2 e 𝑏 =√7, então a altura do triângulo ABC,\n√14\nrelativa ao lado 𝐴𝐵, tem medida .\n3",
+      "Se 𝑎 ≠𝑏 com 𝑎 e 𝑏 não nulos, en3tão o triângulo ABC não\nserá isósceles.",
+      "s S e e r á 𝑎 i = sós 𝑏 ce ≠ le 0 s. , então o triângulo ABC tem área 𝑎2.",
+      "Se 𝑎 =0 ou b =0, então os pontos 𝐴,𝐵 e 𝐶 são colineares,\ne, portanto, não haverá triângulo 𝐴𝐵𝐶."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-39-01.webp",
+      "/acervo/uem-2025/uem-2025-39-02.webp",
+      "/acervo/uem-2025/uem-2025-39-04.webp",
+      "/acervo/uem-2025/uem-2025-39-08.webp",
+      "/acervo/uem-2025/uem-2025-39-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-39-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 18,
+    "resposta_correta": 18,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 20,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-3.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-40",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 40,
+    "materia": "Matemática",
+    "conteudo": "Porcentagem",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 40 ———————————————————\nDurante uma campanha de educação fiscal os cidadãos tiveram\no conhecimento de como os valores arrecadados com impostos\ninfluenciam os preços de produtos e serviços. Um determinado\nserviço municipal tinha custo base de R$ 800,00. No início do\nano foi acrescido um imposto de 13% sobre o valor original,\nmas, após pressão popular, a prefeitura ofereceu um desconto de\n10% sobre o novo valor com imposto, como forma de incentivar\na regularização. Nesse contexto, assinale o que for correto.",
+    "opcoes": [
+      "O valor pago após o desconto foi de R$ 813,60.",
+      "O aumento de 𝑥% sobre um valor 𝑉 resulta em um valor de\n𝑉+𝑥%.",
+      "𝑉Se+m 𝑥a% pr.e ssão popular para que fosse reduzido o imposto de\n13%, o valor que o contribuinte pagaria pelo serviço\nmunicipal seria de R$ 904,00.",
+      "Se o acréscimo fosse de 10% e o desconto fosse de 13%, o\nvalor final seria menor que o valor inicial.",
+      "Aplicar um desconto de 10% sobre um acréscimo de 13%\nresulta em um acréscimo de 3% no valor inicial."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-40-01.webp",
+      "/acervo/uem-2025/uem-2025-40-02.webp",
+      "/acervo/uem-2025/uem-2025-40-04.webp",
+      "/acervo/uem-2025/uem-2025-40-08.webp",
+      "/acervo/uem-2025/uem-2025-40-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-40-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 13,
+    "resposta_correta": 13,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 20,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-3.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-41",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 41,
+    "materia": "Biologia",
+    "conteudo": "Ecologia",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 41 ———————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "A síntese da maior parte do ATP gerado na respiração\ncelular está acoplada à oxidação de moléculas de NADH e\nFADH , que se transformam em NAD+ e FAD+,\n2\nrespectivamente.",
+      "Embriões de répteis e aves conseguem sobreviver fora do\nambiente aquático porque apresentam âmnio, alantoide,\ncórion e saco vitelínico.",
+      "córion e saco vitelínico.\n04) As estruturas vegetais seiva, parênquima e floema\nequivalem, respectivamente, do ponto de vista funcional, ao\nsangue, aos ossos e aos vasos sanguíneos dos animais.",
+      "No transporte ativo ocorre movimento de solutos através da\nmembrana plasmática contra seu gradiente de concentração\ne com gasto de energia para igualar as suas concentrações\ndentro e fora da célula.",
+      "dDeunatsr o me ofolércau dlaas c éilduêlnat.i cas de DNA de um cromossomo\nduplicado são denominadas cromátides-irmãs, enquanto as\ncromátides de um par de cromossomos homólogos\nduplicados formam uma tétrade."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-41-01.webp",
+      "/acervo/uem-2025/uem-2025-41-02.webp",
+      "/acervo/uem-2025/uem-2025-41-04.webp",
+      "/acervo/uem-2025/uem-2025-41-08.webp",
+      "/acervo/uem-2025/uem-2025-41-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-41-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 19,
+    "resposta_correta": 19,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 20,
+    "apoio": []
+  },
+  {
+    "id": "uem-2025-42",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 42,
+    "materia": "Biologia",
+    "conteudo": "Ecologia",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 42 ———————————————————\nO mexilhão-dourado (Limnoperna fortunei), originário da Ásia,\nfoi introduzido nos rios da América do Sul pelas águas de lastros\nde navios e tem causado sérios impactos ecológicos, como a\ncompetição com espécies nativas por espaço e alimento, a\nobstrução de sistemas de captação de água e o desequilíbrio nas\ncadeias alimentares aquáticas. (INSTITUTO BRASILEIRO DE\nMEIO AMBIENTE E DOS RECURSOS NATURAIS\nRENOVÁVEIS. Plano nacional, controle e monitoramento do\nmexilhão-dourado (Limnoperna fortunei) no Brasil / Diretoria de\nUso Sustentável da Biodiversidade e Florestas. Brasília: Ibama,\n2020. Acesso 21 maio de 2025.)\nSobre esse assunto, e correlatos, assinale o que for correto.",
+    "opcoes": [
+      "O mexilhão-dourado favorece as espécies nativas de peixes,\npois aumenta a diversidade de alimentos disponíveis para\nesses predadores locais.",
+      "A competição interespecífica ocorre quando o mexilhão-\ndourado disputa espaço e alimento com outras espécies de\nmoluscos nativos.",
+      "mO oaluumsceonst on adtai vpoosp.u lação do mexilhão-dourado pode provocar\num aumento na transparência da água e reduzir a quantidade de\nfitoplâncton, afetando negativamente organismos\nconsumidores primários, secundários e terciários.",
+      "A simplificação das cadeias alimentares é uma possível\nconsequência da introdução de espécies exóticas que não\npossuem predadores naturais no novo ambiente.",
+      "São características gerais do filo Mollusca: simetria\nbilateral, presença de celoma, sistema digestório completo,\nsistema circulatório aberto, respiração branquial exclusiva,\nsistema nervoso ganglionar e reprodução sexuada."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-42-01.webp",
+      "/acervo/uem-2025/uem-2025-42-02.webp",
+      "/acervo/uem-2025/uem-2025-42-04.webp",
+      "/acervo/uem-2025/uem-2025-42-08.webp",
+      "/acervo/uem-2025/uem-2025-42-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-42-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 14,
+    "resposta_correta": 14,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 21,
+    "apoio": []
+  },
+  {
+    "id": "uem-2025-43",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 43,
+    "materia": "Biologia",
+    "conteudo": "Biologia celular",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 43 ———————————————————\nAssinale o que for correto.",
+    "opcoes": [
+      "Um homem com uma doença monogênica autossômica\nrecessiva casa-se com uma mulher heterozigota. Ambos\npossuem sangue do tipo AB. A probabilidade de esse casal\nter um filho do sexo masculino, com a doença e com sangue\ndo tipo A, é de 1/8.",
+      "Em uma população, a ocorrência de seleção natural, ao\nlongo de várias gerações e em uma determinada condição\nambiental, pode promover a fixação de características\nhereditárias vantajosas.",
+      "Quando um grande incêndio florestal diminui drasticamente o\ntamanho de uma população e os sobreviventes não constituem\numa representação genética da população original, aumentos na\nfrequência de alguns alelos ou desaparecimento de outros na\npopulação são mais provavelmente explicados por fenômenos\nde mutação gênica.",
+      "O genoma das diferentes células autossômicas de um\norganismo é praticamente constante, enquanto o proteoma\nserá distinto e responsivo às condições ambientais.",
+      "A evolução do xilema nas plantas vasculares, como\npteridófitas, gimnospermas e angiospermas, permitiu o\ntransporte mais eficiente de água do solo para as folhas,\nprocesso fundamental à participação das plantas no ciclo da\nágua."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-43-01.webp",
+      "/acervo/uem-2025/uem-2025-43-02.webp",
+      "/acervo/uem-2025/uem-2025-43-04.webp",
+      "/acervo/uem-2025/uem-2025-43-08.webp",
+      "/acervo/uem-2025/uem-2025-43-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-43-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 26,
+    "resposta_correta": 26,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 21,
+    "apoio": []
+  },
+  {
+    "id": "uem-2025-44",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 44,
+    "materia": "Química",
+    "conteudo": "Química orgânica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 44 ———————————————————\nA fenilcetonúria é uma doença hereditária autossômica recessiva\ncausada pela deficiência de fenilalanina hidroxilase, enzima que\nadiciona uma hidroxila ao anel benzênico, convertendo a\nfenilalanina em tirosina, conforme a equação a seguir:\nO processo de conversão acontece no fígado, e essa deficiência\npode causar acúmulo de fenilalanina no sangue, com riscos de\ncausar complicações no desenvolvimento físico e mental.\nConsiderando a equação dada, assinale o que for correto.",
+    "opcoes": [
+      "Na equação dada, ocorre redução da fenilalanina para\nformar a tirosina.",
+      "fOo rmoaxri gaê tniiroo sinqau.e participa da reação atua como um\ncatalisador.",
+      "catalisador.\n04) A tirosina, normalmente produzida a partir da fenilalanina,\ntorna-se um aminoácido essencial em indivíduos com\nfenilcetonúria.",
+      "fenilcetonúria.\n08) Somente a tirosina é um aminoácido, pois ela contém um\ngrupo fenol.",
+      "Os dois compostos acima podem combinar-se, com\nformação de ligação peptídica."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-44-01.webp",
+      "/acervo/uem-2025/uem-2025-44-02.webp",
+      "/acervo/uem-2025/uem-2025-44-04.webp",
+      "/acervo/uem-2025/uem-2025-44-08.webp",
+      "/acervo/uem-2025/uem-2025-44-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-44-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 20,
+    "resposta_correta": 20,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 21,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-24.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-45",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 45,
+    "materia": "Química",
+    "conteudo": "Estequiometria",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 45 ———————————————————\nA obtenção do ácido sulfúrico envolve três etapas de reação,\ncujas equações não balanceadas são dadas a seguir:\n(I) xS + yO  zSO\n8(s) 2(g) 2(g)\n(II) zSO + y/2O  zSO\n2(g) 2(g) 3(g)\n(III) 8xSO + zH O  yH SO\n3(g) 2 (l) 2 4(aq)\nCerto volume V de oxigênio reagiu com enxofre sólido e\nproduziu 8mols de SO gasoso, e houve consumo de todo o\n2\noxigênio. As condições da reação foram T = 273K, p = 1,0atm.\n(Dados: a atmosfera contém 21% de oxigênio em volume e R =\n0,082L.atm/mol.K.) Com base nessas informações, assinale o\nque for correto.",
+    "opcoes": [
+      "Na etapa (I) do processo o oxigênio sofreu redução.",
+      "0012)) NOas ectoaepfaic (iIe)n dteos persotceeqsusioo mo éotxriicgoêsn ipoa sroa fare rue areçdãou çdãeo .1 mol d e\nenxofre sólido são x = 1, y = 8, z = 8.",
+      "eOn xeolefmree snótloi dqou símãoi cxo =e n1x, oyf r=e 8e,s ztá = p 8re. sente nas três reações\nacima. O número de oxidação do enxofre varia dos reagentes\npara os produtos nas três etapas da reação.",
+      "pOa rtao toasl pdreo dguátso so xniagsê tnriêos ectoanpsausm diad ore ançaã ore. ação de 1mol de\nenxofre sólido até formar ácido sulfúrico foi de 12mols.",
+      "eNnaxso CfrNe TsóPl iod ov aotléu mfoer mdea rg áácsi doox isguêlnfúiori ccoo nfosui mdeid 1o2 mfooi lms.a ior\ndo que 260L."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-45-01.webp",
+      "/acervo/uem-2025/uem-2025-45-02.webp",
+      "/acervo/uem-2025/uem-2025-45-04.webp",
+      "/acervo/uem-2025/uem-2025-45-08.webp",
+      "/acervo/uem-2025/uem-2025-45-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-45-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 27,
+    "resposta_correta": 27,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 22,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-24.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-46",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 46,
+    "materia": "Química",
+    "conteudo": "Química ambiental",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 46 ———————————————————\nEm algumas regiões das grandes metrópoles as temperaturas são\nmais elevadas do que a média da cidade por conta de diversos\nfatores: a presença de grandes arranha-céus, com uso intensivo\nde vidro e concreto, a baixa densidade de arborização ou áreas\nverdes, o tráfego intenso de veículos automotores. A queima de\ncombustível fóssil (gasolina e diesel) gera muitos gases\npoluentes, como óxidos de enxofre e de nitrogênio. Esses\npoluentes reagem entre si e com outros gases presentes na\natmosfera, gerando ácidos de enxofre e de nitrogênio.\nConsiderando as informações acima, assinale o que for correto.",
+    "opcoes": [
+      "O aumento da temperatura nessas regiões aumenta a\nprodução dos óxidos de enxofre e nitrogênio pelos veículos.",
+      "A formação dos ácidos a partir de seus óxidos é mais rápida\nem dias frios.",
+      "em dias frios.\n04) Os poluentes estão em fase gasosa, e suas moléculas sofrem\nmuitas colisões entre si e com gases atmosféricos por\nsegundo, no entanto nem todas essas colisões vão conduzir\nà formação de produtos.",
+      "A ocorrência de chuva nas grandes metrópoles elimina todos\nos riscos de danos causados pelos poluentes no meio\nambiente, pois a chuva “lava” todos os poluentes da\natmosfera.",
+      "atmosfera.\n16) Os óxidos de enxofre e de nitrogênio podem causar irritação,\npois reagem com a água existente nos olhos e nas mucosas\ndo sistema respiratório."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-46-01.webp",
+      "/acervo/uem-2025/uem-2025-46-02.webp",
+      "/acervo/uem-2025/uem-2025-46-04.webp",
+      "/acervo/uem-2025/uem-2025-46-08.webp",
+      "/acervo/uem-2025/uem-2025-46-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-46-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 20,
+    "resposta_correta": 20,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 22,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-24.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-47",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 47,
+    "materia": "Física",
+    "conteudo": "Eletricidade",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 47 ———————————————————\nEm um forno de laboratório, o elemento de aquecimento inclui um\nfilamento de tungstênio. Durante o aquecimento inicial, ao ser\nligada a uma fonte de tensão constante, a resistência elétrica 𝑅 (em\nΩ) do elemento aumenta com a temperatura 𝑇 (em K) do filamento\nde acordo com a seguinte relação: 𝑅 =𝑅 [1+𝜂(𝑇−𝑇 )], em\n0 0\nque 𝑅 , 𝑇 e 𝜂 são constantes positivas. Após o período inicial\n0 0\nde aquecimento, o filamento atinge uma temperatura de\nequilíbrio, e sua resistência elétrica se estabiliza. Sobre esse\ntema, assinale o que for correto.",
+    "opcoes": [
+      "A unidade da constante 𝜂 é igual a Ω/K.",
+      "0012)) AA cuonnidsatadnet ed a𝑅 c ornepstraensteen 𝜂ta éa irgeusiaslt êan Ωci/aK e.l étrica do filamento\n0\nà temperatura 𝑇−𝑇 , para qualquer 𝑇 durante o\n0\naquecimento inicial.",
+      "Na temperatura 𝑇 =𝑇 +600, a corrente elétrica 𝑖 que\n0\npassa pelo filamento é igual a 𝑖 /(1+600𝜂), em que 𝑖 é a\n0 0\ncorrente elétrica à temperatura 𝑇 .\n0",
+      "O tungstênio é um metal de t𝑇ra0nsição com alto ponto de\nfusão, permitindo que o elemento de aquecimento opere a\naltas temperaturas sem se fundir.",
+      "aOlt atus ntegmstpênerioat urreaasg ese mco mse fou nodxiirg. ênio a altas temperaturas,\nformando trióxido de tungstênio (𝑊𝑂 ).\n3"
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-47-01.webp",
+      "/acervo/uem-2025/uem-2025-47-02.webp",
+      "/acervo/uem-2025/uem-2025-47-04.webp",
+      "/acervo/uem-2025/uem-2025-47-08.webp",
+      "/acervo/uem-2025/uem-2025-47-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-47-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 28,
+    "resposta_correta": 28,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 22,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-2.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-48",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 48,
+    "materia": "Química",
+    "conteudo": "Eletroquímica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 48 ———————————————————\nBaterias de lítio que equipam os modernos celulares são\ndispositivos constituídos por um eletrodo contendo lítio\nmetálico disperso em grafite (que aqui vamos representar por\nLiC6). O outro eletrodo é constituído por óxido de cobalto\n(LiCoO ), contendo também lítio metálico disperso em sua rede\n2\ncristalina. As semirreações que ocorrem enquanto a bateria é\ndescarregada são:\n(I) 𝐿𝑖𝐶6→𝐶6+𝐿𝑖++𝑒−\n(II) 𝐶𝑜𝑂 +𝐿𝑖++𝑒− → 𝐿𝑖+[𝐶𝑜𝑂 ]−\n2 2\nConsiderando o que foi apresentado, assinale o que for correto.",
+    "opcoes": [
+      "Os cátions 𝐿𝑖+ liberados na semirreação (I) percorrem o\ncircuito externo à bateria e são coletados no eletrodo da\nsemirreação (II).",
+      "sOe mcaitroredaoç ãcoap (tIuIr)a. os íons de lítio liberados no polo negativo\nda bateria.",
+      "dAa braetaeçrãiao. global que ocorre na recarga da bateria é\n𝐶6+𝐿𝑖+[𝐶𝑜𝑂 ] − →𝐿𝑖𝐶6+𝐶𝑜𝑂 .\n2 2",
+      "A semirreação (2II) é uma oxidação.2",
+      "0186)) AM essemmoir rseeamç ãuos o(I, Ia) béa utemriaa odxei ldíatiçoã toe.n de a se descarregar com\no passar do tempo, em concordância com a Segunda Lei da\nTermodinâmica."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-48-01.webp",
+      "/acervo/uem-2025/uem-2025-48-02.webp",
+      "/acervo/uem-2025/uem-2025-48-04.webp",
+      "/acervo/uem-2025/uem-2025-48-08.webp",
+      "/acervo/uem-2025/uem-2025-48-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-48-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 22,
+    "resposta_correta": 22,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 23,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-24.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-49",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 49,
+    "materia": "Física",
+    "conteudo": "Mecânica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 49 ———————————————————\nUm projétil de massa 𝑚 =0,2kg é lançado verticalmente a\npartir do solo com velocidade inicial 𝑣 =30m/s. Além da força\n0\npeso, suposta constante (𝑔=9,8 m/s2), uma força de resistência\ndo ar, proporcional ao quadrado da velocidade, age sobre esse\nprojétil. O módulo dessa força é dado por 𝑓 =𝑏𝑣2, em que 𝑏 =\n0,01kg/m e 𝑣 é o módulo da velocidade em m/s. O sentido da\nforça de resistência do ar é contrário ao sentido da velocidade do\nprojétil. Sobre o movimento desse projétil, assinale o que for\ncorreto.",
+    "opcoes": [
+      "A aceleração do projétil é constante durante a sua trajetória.",
+      "No instante inicial do lançamento, o módulo da força de\nresistência do ar é maior que o peso do projétil.",
+      "rOe smistóêdnuclioa ddao faor réç am daeio rre qsuiset êon cpieas od od oa rp rsoojbérteil .o projétil no\nponto em que ele atinge sua altura máxima é igual a 1/100\ndo seu peso.",
+      "No instante em que a velocidade do projétil é igual a 14m/s,\no módulo da força de resistência do ar é numericamente\nigual ao peso do projétil.",
+      "iOg uparlo ajéot iple rseot odron ap raooj éptiol.n to de lançamento com velocidade\n(em módulo) maior ou igual a 16m/s."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-49-01.webp",
+      "/acervo/uem-2025/uem-2025-49-02.webp",
+      "/acervo/uem-2025/uem-2025-49-04.webp",
+      "/acervo/uem-2025/uem-2025-49-08.webp",
+      "/acervo/uem-2025/uem-2025-49-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-49-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 10,
+    "resposta_correta": 10,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 23,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-2.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
+  },
+  {
+    "id": "uem-2025-50",
+    "ano": 2025,
+    "banca": "UEM",
+    "concurso": "Vestibular de Verão UEM 2025",
+    "numero_original": 50,
+    "materia": "Física",
+    "conteudo": "Termodinâmica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "Questão 50 ———————————————————\nUm motor de combustão interna do tipo flex pode ser abastecido\ncom gasolina, etanol ou uma mistura desses combustíveis.\nSuponha que esse motor opere de acordo com o ciclo de Otto\n(idealizado), que inclui as seguintes etapas: uma compressão\nadiabática, um aumento isocórico de pressão, uma expansão\nadiabática e um decréscimo isocórico de pressão. A eficiência\n1\ntérmica do ciclo de Otto é dada pela expressão 𝜂 =1− , em\n𝑟𝛾−1\nque 𝑟 é a taxa de compressão do combustível e 𝛾 é um parâmetro\nque depende da natureza do combustível utilizado. Considere\n10≤𝑟 ≤12 e 1,2≤𝛾 ≤1,4. Sobre esse ciclo idealizado,\nassinale o que for correto.",
+    "opcoes": [
+      "O calor trocado com o meio exterior (a diferença entre o\ncalor recebido e o calor cedido) é convertido integralmente\nem trabalho em um ciclo completo.",
+      "eOm s itsrtaebmalah op oedme ruemce cbiecrl oo uco cmedpeler tcoa. lor durante os processos\nisocóricos.",
+      "iMsoacnóterincdoos.- se fixo o valor de 𝛾, um aumento na taxa de\ncompressão leva a uma maior eficiência do ciclo.",
+      "Mantendo-se fixa a taxa de compressão, um com bustível\ncom maior valor de 𝛾 leva a uma maior eficiência do ciclo.",
+      "cAo emfi cmiêaniocria v taélromr idcea 𝛾m álexvima aa duemssae m ciaciloor ée figicuiaêln ac i1a +do1 c2ic−l0o,4. ."
+    ],
+    "opcoes_imagens": [
+      "/acervo/uem-2025/uem-2025-50-01.webp",
+      "/acervo/uem-2025/uem-2025-50-02.webp",
+      "/acervo/uem-2025/uem-2025-50-04.webp",
+      "/acervo/uem-2025/uem-2025-50-08.webp",
+      "/acervo/uem-2025/uem-2025-50-16.webp"
+    ],
+    "imagem_original": "/acervo/uem-2025/uem-2025-50-enunciado.webp",
+    "imagem_sem_alternativas": true,
+    "rotulos_opcoes": [
+      "01",
+      "02",
+      "04",
+      "08",
+      "16"
+    ],
+    "tipo_resposta": "somatoria",
+    "valores_opcoes": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "resposta_soma": 15,
+    "resposta_correta": 15,
+    "anulada": false,
+    "fonte_pdf": "https://www.vestibular.uem.br/provas/ve25/P1.pdf",
+    "fonte_gabarito": "https://www.vestibular.uem.br/provas/ve25/gabdef.pdf",
+    "pagina": 23,
+    "apoio": [
+      {
+        "imagem": "/acervo/uem-2025/formulario-2.webp",
+        "texto": "Material de consulta fornecido na prova"
+      }
+    ]
   }
 ]

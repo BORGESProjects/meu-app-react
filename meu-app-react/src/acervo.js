@@ -177,7 +177,7 @@ export function questaoPublicavel(questao) {
   if (questao.opcoes.some((opcao, indice) => textoCorrompido(opcao) && !questao.opcoes_imagens?.[indice])) return false
 
   const opcoes = questao.opcoes.map(normalizarAlternativa)
-  if (opcoes.some(opcao => !opcao || opcao.length > 500)) return false
+  if (opcoes.some((opcao, indice) => !opcao || opcao.length > (questao.opcoes_imagens?.[indice] ? 2000 : 500))) return false
   if (new Set(opcoes).size !== opcoes.length && !questao.duplicata_oficial) return false
   if (opcoes.every(opcao => /^[a-e]$/u.test(opcao))) return false
   if (questao.opcoes.some(alternativaContaminada)) return false

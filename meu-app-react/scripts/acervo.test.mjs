@@ -725,13 +725,18 @@ test('PUC-PR 2024/2 Medicina contém as 60 questões oficiais com recortes indep
 
 
 
-test('UEM 2025 contém o primeiro lote oficial no formato de somatória', () => {
+test('UEM Verão 2025 tem 50 questões por idioma com fórmulas e apoio completos', () => {
   const arquivo = new URL('../public/acervo/uem-2025/questoes.json', import.meta.url)
   const uem = JSON.parse(readFileSync(arquivo, 'utf8'))
 
-  assert.equal(uem.length, 26)
-  assert.deepEqual(uem.map(q => q.numero_original), [...Array.from({length: 10}, (_, i) => i + 1), ...Array.from({length: 16}, (_, i) => i + 15)])
-  assert.deepEqual(uem.map(q => q.resposta_soma), [27, 7, 30, 21, 31, 23, 15, 20, 20, 17, 26, 15, 6, 29, 21, 30, 22, 20, 7, 15, 23, 22, 7, 15, 23, 23])
+  assert.equal(uem.length, 58)
+  assert.equal(new Set(uem.map(q => q.id)).size, 58)
+  for (const [idioma, respostas] of Object.entries({'Inglês':[null,30,19,25], 'Espanhol':[13,24,25,14], 'Francês':[25,23,29,28]})) {
+    assert.deepEqual(uem.filter(q => q.idioma === idioma).map(q => q.resposta_soma), respostas)
+    assert.equal(uem.filter(q => !q.idioma || q.idioma === idioma).length, 50)
+  }
+  assert.deepEqual(uem.filter(q => q.anulada).map(q => q.id), ['uem-2025-11-en'])
+  assert.deepEqual(uem.filter(q => !q.idioma).map(q => q.resposta_soma), [27, 7, 30, 21, 31, 23, 15, 20, 20, 17, 26, 15, 6, 29, 21, 30, 22, 20, 7, 15, 23, 22, 7, 15, 23, 23, 19,17,14,18,15,25,28,12,18,13,19,14,26,20,27,20,28,22,10,15])
   assert.deepEqual(uem.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
   assert.ok(uem.slice(0, 7).every(q => q.texto_apoio.length > 500))
   for (const questao of uem) {
@@ -741,6 +746,30 @@ test('UEM 2025 contém o primeiro lote oficial no formato de somatória', () => 
     assert.deepEqual(questao.valores_opcoes, [1, 2, 4, 8, 16], questao.id)
     assert.deepEqual(questao.rotulos_opcoes, ['01', '02', '04', '08', '16'], questao.id)
     assert.equal(questao.opcoes.length, 5, questao.id)
+    for (const imagem of [questao.imagem_original, ...(questao.opcoes_imagens || []), ...(questao.apoio || []).map(a => a.imagem)].filter(Boolean)) {
+      assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+    }
     assert.doesNotMatch([questao.enunciado, questao.texto_apoio, ...questao.opcoes].join('\n'), /UEM\/CVU|Caderno de Prova|#{3,}|\(cid:/)
+  }
+})
+
+test('UEM Inverno 2025 tem todas as questões oficiais, três idiomas e continuações', () => {
+  const uem = JSON.parse(readFileSync(new URL('../public/acervo/uem-2025-inverno/questoes.json', import.meta.url), 'utf8'))
+  assert.equal(uem.length, 58)
+  assert.equal(new Set(uem.map(q => q.id)).size, 58)
+  assert.deepEqual(uem.filter(q => !q.idioma).map(q => q.resposta_soma), [15,11,31,25,23,27,15,13,10,24,23,13,27,31,27,23,14,21,27,15,7,21,23,19,5,27,20,26,15,4,16,11,18,13,27,3,5,28,3,19,3,21,23,19,29,28])
+  for (const [idioma, respostas] of Object.entries({'Inglês':[13,24,11,17], 'Espanhol':[18,21,24,3], 'Francês':[10,11,26,21]})) {
+    assert.deepEqual(uem.filter(q => q.idioma === idioma).map(q => q.resposta_soma), respostas)
+    assert.equal(uem.filter(q => !q.idioma || q.idioma === idioma).length, 50)
+  }
+  assert.deepEqual(uem.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
+  assert.ok(uem.find(q => q.numero_original === 17).opcoes[4].includes('Arte Povera'))
+  assert.ok(uem.find(q => q.numero_original === 27).opcoes[4].includes('grupos indígenas'))
+  for (const q of uem) {
+    assert.equal(q.opcoes_imagens.length, 5)
+    assert.equal(q.imagem_sem_alternativas, true)
+    for (const imagem of [q.imagem_original, ...q.opcoes_imagens, ...(q.apoio || []).map(a => a.imagem)]) {
+      assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
+    }
   }
 })

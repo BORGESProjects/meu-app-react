@@ -47,9 +47,10 @@ function dadosDaProva(questao) {
   return { ano, banca, concurso, prova, id: [ano, banca, prova].join('|').toLocaleLowerCase('pt-BR') }
 }
 
-function questoesDaProva(questoes, provaId) {
+function questoesDaProva(questoes, provaId, idioma = 'Inglês') {
   return questoes
     .filter(questao => podeCorrigir(questao) && dadosDaProva(questao).id === provaId)
+    .filter(questao => questao.banca !== 'UEM' || !questao.idioma || questao.idioma === idioma)
     .sort((a, b) => {
       const numeroA = Number(a.numero_original)
       const numeroB = Number(b.numero_original)
@@ -158,6 +159,7 @@ export default function App() {
   const [filtroAnoSimulado, setFiltroAnoSimulado] = useState('Todos')
   const [filtroProvaSimulado, setFiltroProvaSimulado] = useState('Todos')
   const [simuladoAtivo, setSimuladoAtivo] = useState(null) // Guarda o objeto do simulado selecionado
+  const [idiomaSimulado, setIdiomaSimulado] = useState('Inglês')
   const [respostasSimulado, setRespostasSimulado] = useState({})
   const [resultadoSimuladoFinal, setResultadoSimuladoFinal] = useState(null)
 
@@ -444,7 +446,14 @@ export default function App() {
       const r = await fetch('/acervo/uem-2025/questoes.json', {signal:AbortSignal.timeout(30000)})
       if (!r.ok) throw new Error('Vestibular de Verão UEM 2025 indisponível')
       const data = await r.json()
-      if (!Array.isArray(data) || data.length !== 26) throw new Error('Lote UEM 2025 inválido')
+      if (!Array.isArray(data) || data.length !== 58) throw new Error('Lote UEM 2025 inválido')
+      return data
+    })
+    const uem2025Inverno = tentarLeitura(async () => {
+      const r = await fetch('/acervo/uem-2025-inverno/questoes.json', {signal:AbortSignal.timeout(30000)})
+      if (!r.ok) throw new Error('Vestibular de Inverno UEM 2025 indisponível')
+      const data = await r.json()
+      if (!Array.isArray(data) || data.length !== 58) throw new Error('Lote UEM Inverno 2025 inválido')
       return data
     })
     const pucpr2024InvernoMedicina = tentarLeitura(async () => {
@@ -468,8 +477,8 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 60) throw new Error('Lote PUCPR 2025/2 Medicina inválido')
       return data
     })
-    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UFPR 2022', 'UFPR 2021', 'UFPR 2020', 'UFPR 2019', 'UTFPR 2025', 'UTFPR 2024/1', 'UTFPR 2024/2', 'UTFPR 2023', 'IFPR 2024', 'IFPR 2023', 'UEM 2025 (questões 1 a 10 e 15 a 30)', 'PUC-PR 2024/2 Medicina', 'PUC-PR 2025/1 Medicina', 'PUC-PR 2025/2 Medicina']
-    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,uem2025,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina])
+    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UFPR 2022', 'UFPR 2021', 'UFPR 2020', 'UFPR 2019', 'UTFPR 2025', 'UTFPR 2024/1', 'UTFPR 2024/2', 'UTFPR 2023', 'IFPR 2024', 'IFPR 2023', 'UEM Verão 2025 completa', 'UEM Inverno 2025 completa', 'PUC-PR 2024/2 Medicina', 'PUC-PR 2025/1 Medicina', 'PUC-PR 2025/2 Medicina']
+    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,uem2025,uem2025Inverno,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina])
     const carregadas = resultados.flatMap(resultado => resultado.status === 'fulfilled' && Array.isArray(resultado.value) ? resultado.value : [])
     setQuestoes(unirQuestoes(carregadas))
     setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
@@ -731,7 +740,7 @@ export default function App() {
 
   function finalizarSimulado() {
     if (!simuladoAtivo) return
-    const questoesSimulado = questoesDaProva(questoes, simuladoAtivo.id)
+    const questoesSimulado = questoesDaProva(questoes, simuladoAtivo.id, idiomaSimulado)
     let acertos = 0
     let erros = 0
     const detalhes = []
@@ -782,6 +791,7 @@ export default function App() {
   
   questoes.forEach(q => {
     if (!q.concurso || !podeCorrigir(q)) return
+    if (q.banca === 'UEM' && q.idioma && q.idioma !== idiomaSimulado) return
     const dados = dadosDaProva(q)
     const chave = dados.id
     if (!mapaSimulados[chave]) {
@@ -1064,7 +1074,12 @@ export default function App() {
                   <button onClick={() => setSimuladoAtivo(null)} className="w-full shrink-0 text-slate-400 hover:text-slate-100 text-xs font-medium bg-slate-800 px-4 py-2 rounded-2xl transition-all sm:w-auto">Sair da Prova</button>
                 </div>
 
-                {questoesDaProva(questoes, simuladoAtivo.id).map((q, index) => (
+                {simuladoAtivo.banca === 'UEM' && <label className="block text-sm text-slate-300">Língua estrangeira
+                  <select value={idiomaSimulado} onChange={e => setIdiomaSimulado(e.target.value)} className="ml-3 rounded-xl border border-slate-700 bg-slate-900 p-3">
+                    {['Inglês','Espanhol','Francês'].map(idioma => <option key={idioma}>{idioma}</option>)}
+                  </select>
+                </label>}
+                {questoesDaProva(questoes, simuladoAtivo.id, idiomaSimulado).map((q, index) => (
                   <div key={q.id} className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md">
                     <div className="flex flex-wrap gap-2.5 mb-5">
                       <span className="bg-indigo-600 text-white px-3.5 py-1 rounded-full text-xs font-bold shadow-md shadow-indigo-600/20">Questão {index + 1}</span>
