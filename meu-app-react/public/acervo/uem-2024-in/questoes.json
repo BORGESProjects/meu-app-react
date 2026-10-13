@@ -77,8 +77,8 @@
       "É difícil manter a mentira por muito tempo sem ser descoberto.",
       "É difícil mentir sem sentir culpa.",
       "É difícil mentir sem prejudicar os outros.",
-      "É cansativo sustentar as mentiras contadas.",
-      "Afirmação 16: consulte a imagem oficial."
+      "Afirmação 08: consulte a imagem oficial.",
+      "É difícil inventar uma mentira convincente."
     ],
     "texto_extraido_corrompido": true,
     "opcoes_texto_corrompido": [
@@ -1662,7 +1662,7 @@
     "enunciado": "Questão 33 —————————————————\nUm sistema linear 𝑚×𝑛 é um conjunto de 𝑚 equações lineares\n𝑥−𝑦=1\ncom 𝑛 incógnitas. Por exemplo, 𝑆 ={ 𝑥−𝑧=2 é um\n2𝑥−𝑦−𝑧=4\nsistema linear 3×3. Sobre sistemas lineares e sobre o sistema\n𝑆, assinale o que for correto.",
     "opcoes": [
       "𝑆 é um sistema possível e indeterminado.",
-      "A tripla ordenada (2,1,0) é solução do sistema 𝑆.\n1 −1 1",
+      "A tripla ordenada (2,1,0) é solução do sistema 𝑆.",
       "A matriz (1 −1 2) é a matriz dos coeficientes de 𝑆.",
       "Se a matriz dos coeficientes de um sistema linear 3×3 é\ninversível, então o sistema possui uma única solução.",
       "Se no lugar dos valores 1, 2 e 4 tivéssemos apenas 0,\nformando um sistema homogêneo, então 𝑆 seria possível e\ndeterminado."
@@ -1726,7 +1726,7 @@
     "opcoes": [
       "𝐴⋅𝐵 é uma matriz triangular.",
       "É possível calcular 𝐴⋅𝐶, mas não é possível calcular 𝐶⋅𝐴.",
-      "𝐴+2⋅𝐶+𝐵 é uma matriz diagonal.\n3",
+      "𝐴+2⋅𝐶+𝐵 é uma matriz diagonal.",
       "A matriz 𝐶 somada com a matriz coluna (4) é igual à matriz 𝐴.",
       "𝐴⋅𝐵 =𝐵⋅𝐴."
     ],
@@ -2160,7 +2160,7 @@
     "concurso": "Vestibular de Inverno UEM 2024",
     "numero_original": 41,
     "materia": "Biologia",
-    "conteudo": "Biologia",
+    "conteudo": "Microbiologia",
     "dificuldade": "Médio",
     "dificuldade_estimada": true,
     "enunciado": "Questão 41 —————————————————\nSobre a origem da vida, assinale o que for correto.",
@@ -2217,7 +2217,7 @@
     "concurso": "Vestibular de Inverno UEM 2024",
     "numero_original": 42,
     "materia": "Biologia",
-    "conteudo": "Biologia",
+    "conteudo": "Genética",
     "dificuldade": "Médio",
     "dificuldade_estimada": true,
     "enunciado": "Questão 42 —————————————————\nOs poluentes emitidos na atmosfera, assim como o material\nparticulado liberado, podem acarretar diversas consequências ao\nambiente e aos seres vivos. Sobre o assunto, assinale o que for\ncorreto.",
@@ -2274,7 +2274,7 @@
     "concurso": "Vestibular de Inverno UEM 2024",
     "numero_original": 43,
     "materia": "Biologia",
-    "conteudo": "Biologia",
+    "conteudo": "Ecologia",
     "dificuldade": "Médio",
     "dificuldade_estimada": true,
     "enunciado": "Questão 43 —————————————————\nDe acordo com o Programa das Nações Unidas para o Meio\nAmbiente (PNUMA), 15% a 20% da diversidade biológica\nconhecida no mundo estão no Brasil. Com base no assunto, e\ncorrelatos, assinale o que for correto.",
@@ -2331,15 +2331,15 @@
     "concurso": "Vestibular de Inverno UEM 2024",
     "numero_original": 44,
     "materia": "Biologia",
-    "conteudo": "Biologia",
+    "conteudo": "Citologia",
     "dificuldade": "Médio",
     "dificuldade_estimada": true,
     "enunciado": "Questão 44 —————————————————\nNos seres humanos a respiração ocorre mediante uma complexa\nsequência química de transporte de uma mistura de moléculas\ngasosas do pulmão para as células e das células para o pulmão.\nAo se analisar quimicamente a composição percentual em\nquantidade de matéria das moléculas gasosas inaladas e exaladas\npor uma pessoa, a concentração de uma molécula A passou de\n21% (inalação) para cerca de 16% (exalação), e de uma molécula\nB passou de 0,04% (inalação) para cerca de 3% (exalação).\nAssinale o que for correto.",
     "opcoes": [
       "A combinação da molécula A com a hemoglobina forma a\ncarboxiemoglobina, responsável pelo transporte do oxigênio\npara as células.",
       "A quantidade de gases da respiração presentes no pulmão\nhumano não é afetada pela pressão atmosférica à qual ele\nestá submetido.",
-      "A maior parte das moléculas B produzidas nas células é\ntransportada para os pulmões na forma de íons HCO  .\n3",
-      "importância na manutenção do pH sanguíneo (que fica em\ntorno de 7,4) pela formação de uma solução-tampão.",
+      "A maior parte das moléculas B produzidas nas células é",
+      "3\n08) Íons bicarbonato presentes no sangue têm grande\nimportância na manutenção do pH sanguíneo (que fica em\ntorno de 7,4) pela formação de uma solução-tampão.",
       "Moléculas B são geradas pela respiração humana, mas\ntambém pela queima de combustíveis fósseis. Essa queima\né uma das maiores responsáveis pelo aumento da\ntemperatura média do planeta Terra pelo efeito estufa."
     ],
     "texto_extraido_corrompido": true,

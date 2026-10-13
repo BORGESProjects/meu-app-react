@@ -120,6 +120,11 @@ function semTextoDeApoio(questao) {
 }
 
 function identidadeConteudo(questao) {
+  // O texto auxiliar de uma fórmula pode ser vazio/igual em recortes diferentes.
+  // Identifique esses itens pela posição no caderno oficial, nunca pelo texto incompleto.
+  if (questao.banca === 'UEM' && questao.texto_extraido_corrompido && questao.imagem_original && /^https:\/\/(?:www\.)?vestibular\.uem\.br\/provas\//.test(questao.fonte_pdf || '')) {
+    return ['uem-oficial', questao.fonte_pdf, questao.numero_original, questao.idioma || '', questao.bloco_especifico || ''].join('|')
+  }
   return `${normalizarConteudo(questao.enunciado)}::${(questao.opcoes || []).map(normalizarConteudo).join('|')}`
 }
 
@@ -209,7 +214,7 @@ export function unirQuestoes(cadastradas = []) {
   const origem = q => {
     const id = q.id?.toString() || ''
     const numero = q.numero_original || q.numero
-    if (/^(esa-2025-a-|enem-20(?:1[7-9]|2[0-2])-|ufpr-20(?:19|2[0-5])-|utfpr-202[3-5]-|uem-2025-)/.test(id)) return id
+    if (/^(esa-2025-a-|enem-20(?:1[7-9]|2[0-2])-|ufpr-20(?:19|2[0-5])-|utfpr-202[3-5]-|uem-20(?:19|2[0-5])-)/.test(id)) return id
     if (normalizarBanca(q.banca, q.concurso) === 'UFPR' && /^(?:2019|2020|2021|2022|2023|2024|2025)$/.test(anoDaQuestao(q)) && numero) {
       const ano = anoDaQuestao(q)
       return `ufpr-${ano}-${String(numero).padStart(2, '0')}`

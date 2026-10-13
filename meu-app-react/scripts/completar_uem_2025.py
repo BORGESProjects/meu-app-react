@@ -33,9 +33,10 @@ def ajustar_limite(page,x0,x1,y):
     """Encontra separação em branco, preservando radicais e índices acima da linha."""
     if page not in RENDER_CACHE:
         RENDER_CACHE[page]=page.to_image(resolution=144).original.convert('L')
+        if len(RENDER_CACHE)>24:RENDER_CACHE.pop(next(iter(RENDER_CACHE)))
     image=RENDER_CACHE[page]
     candidates=[]
-    for linha in range(max(1,int((y-9)*2)),min(image.height-2,int((y+5)*2))):
+    for linha in range(max(1,int((y-40)*2)),min(image.height-2,int((y+1)*2))):
         faixa=image.crop((int(x0*2),linha,int(x1*2),linha+1))
         if ImageStat.Stat(faixa).extrema[0][0]>245:
             candidates.append(linha/2)

@@ -36,15 +36,17 @@ def conteudo(q):
       'Geografia':[('energia|energétic','Fontes de energia'),('paraná','Geografia do Paraná'),('rocha|relevo','Geografia física'),('representação|mapa|cartogra','Cartografia'),('globaliza','Globalização')],
       'Filosofia':[('conhecimento|kant|hume|paradigma','Teoria do conhecimento'),('ética|moral|utilitar','Ética'),('estado|política|direitos','Filosofia política')],
       'História':[('escravid|escraviza','História do Brasil'),('idade média|medieval','Idade Média'),('renascimento','Renascimento'),('paraná','História do Paraná')],
+      'Biologia':[('ecossistema|ecologia|bioma|trófic|cadeia alimentar','Ecologia'),('gene|cromossomo|dna','Genética'),('fung|vírus|bactéri|levedura','Microbiologia'),('membrana|célul','Citologia'),('sistema nervoso|hormônio|respiração|digestão','Fisiologia humana')],
     }
     for padrao,nome in regras.get(q['materia'],[]):
         if re.search(padrao,texto): return nome
-    return {'Sociologia':'Sociedade e cultura','História':'História geral','Geografia':'Geografia humana'}.get(q['materia'],q['conteudo'])
+    return {'Língua Portuguesa':'Interpretação de textos','Literatura':'Literatura brasileira','Arte':'Arte e cultura','Educação Física':'Saúde e cultura corporal','Filosofia':'Filosofia política','Sociologia':'Sociedade e cultura','História':'História geral','Geografia':'Geografia humana','Matemática':'Matemática','Biologia':'Biologia','Química':'Química','Física':'Física','Conhecimentos gerais':'Atualidades e conhecimentos gerais'}.get(q['materia'],'Interpretação de textos')
 
 def support(pdf,specs,name):
     parts=[]
     for pn,left,top,bottom in specs:
-        p=pdf.pages[pn-1]; a,b,_,_=engine.col(p,left)
+        p=pdf.pages[pn-1]; a,b,_,heads=engine.col(p,left)
+        assert not any(top<=y<bottom for _,y in heads),(name,pn,'o apoio inclui uma questão')
         parts.append((p,(a,top,b,bottom)))
     return dict(imagem=engine.image(parts,name),texto='Texto de apoio integral do caderno oficial')
 

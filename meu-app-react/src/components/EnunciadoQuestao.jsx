@@ -6,7 +6,7 @@ export default function EnunciadoQuestao({ questao: q }) {
   return <div className="mb-6 space-y-3">
     <div className="flex flex-wrap gap-3 text-xs text-slate-400">
       <span>Ano: {anoDaQuestao(q)}</span>
-      {q.numero_original && <span>Questão original {q.numero_original} · Modelo {q.modelo}</span>}
+      {q.numero_original && <span>Questão original {q.numero_original}{q.modelo && ` · Modelo ${q.modelo}`}</span>}
       {q.dificuldade_estimada && <span>Dificuldade estimada</span>}
       {q.idioma && <span>Língua estrangeira: {q.idioma}</span>}
     </div>

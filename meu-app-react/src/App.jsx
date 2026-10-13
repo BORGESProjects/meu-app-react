@@ -10,6 +10,7 @@ import { supabase } from './supabaseClient'
 import { tentarLeitura } from './carregarAcervo'
 import { chaveCampoFiltro, chaveConteudoFiltro, opcoesConteudo, opcoesFiltro } from './filtros'
 import { bancasRedacao, temasRedacao } from './data/temasRedacao'
+import { ESPECIFICAS_UEM, incluirNoSimuladoUem } from './uem'
 
 const DIAS_SEMANA = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo']
 
@@ -47,11 +48,14 @@ function dadosDaProva(questao) {
   return { ano, banca, concurso, prova, id: [ano, banca, prova].join('|').toLocaleLowerCase('pt-BR') }
 }
 
-function questoesDaProva(questoes, provaId, idioma = 'Inglês') {
+function questoesDaProva(questoes, provaId, idioma = 'Inglês', especificas = ['Biologia', 'Química']) {
   return questoes
     .filter(questao => podeCorrigir(questao) && dadosDaProva(questao).id === provaId)
-    .filter(questao => questao.banca !== 'UEM' || !questao.idioma || questao.idioma === idioma)
+    .filter(questao => incluirNoSimuladoUem(questao, idioma, especificas))
     .sort((a, b) => {
+      const blocoA = a.bloco_especifico ? especificas.indexOf(a.bloco_especifico) + 1 : 0
+      const blocoB = b.bloco_especifico ? especificas.indexOf(b.bloco_especifico) + 1 : 0
+      if (blocoA !== blocoB) return blocoA - blocoB
       const numeroA = Number(a.numero_original)
       const numeroB = Number(b.numero_original)
       if (Number.isFinite(numeroA) && Number.isFinite(numeroB)) return numeroA - numeroB
@@ -160,6 +164,7 @@ export default function App() {
   const [filtroProvaSimulado, setFiltroProvaSimulado] = useState('Todos')
   const [simuladoAtivo, setSimuladoAtivo] = useState(null) // Guarda o objeto do simulado selecionado
   const [idiomaSimulado, setIdiomaSimulado] = useState('Inglês')
+  const [especificasUem, setEspecificasUem] = useState(['Biologia', 'Química'])
   const [respostasSimulado, setRespostasSimulado] = useState({})
   const [resultadoSimuladoFinal, setResultadoSimuladoFinal] = useState(null)
 
@@ -456,12 +461,13 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 58) throw new Error('Lote UEM Inverno 2025 inválido')
       return data
     })
-    const uem2023e2024 = tentarLeitura(async () => {
-      const lotes = await Promise.all(['uem-2023-ve', 'uem-2023-in', 'uem-2024-ve', 'uem-2024-in'].map(async nome => {
+    const uemHistorico = tentarLeitura(async () => {
+      const cadernos = [['uem-2019-ve',220], ['uem-2019-in',220], ['uem-2020-anual',220], ['uem-2021-anual',140], ['uem-2022-anual',140], ['uem-2023-ve',58], ['uem-2023-in',58], ['uem-2024-ve',58], ['uem-2024-in',58]]
+      const lotes = await Promise.all(cadernos.map(async ([nome, quantidade]) => {
         const r = await fetch(`/acervo/${nome}/questoes.json`, {signal:AbortSignal.timeout(30000)})
         if (!r.ok) throw new Error(`Lote ${nome} indisponível`)
         const data = await r.json()
-        if (!Array.isArray(data) || data.length !== 58) throw new Error(`Lote ${nome} inválido`)
+        if (!Array.isArray(data) || data.length !== quantidade) throw new Error(`Lote ${nome} inválido`)
         return data
       }))
       return lotes.flat()
@@ -487,8 +493,8 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 60) throw new Error('Lote PUCPR 2025/2 Medicina inválido')
       return data
     })
-    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UFPR 2022', 'UFPR 2021', 'UFPR 2020', 'UFPR 2019', 'UTFPR 2025', 'UTFPR 2024/1', 'UTFPR 2024/2', 'UTFPR 2023', 'IFPR 2024', 'IFPR 2023', 'UEM Verão 2025 completa', 'UEM Inverno 2025 completa', 'UEM Verão e Inverno 2023–2024', 'PUC-PR 2024/2 Medicina', 'PUC-PR 2025/1 Medicina', 'PUC-PR 2025/2 Medicina']
-    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,uem2025,uem2025Inverno,uem2023e2024,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina])
+    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UFPR 2022', 'UFPR 2021', 'UFPR 2020', 'UFPR 2019', 'UTFPR 2025', 'UTFPR 2024/1', 'UTFPR 2024/2', 'UTFPR 2023', 'IFPR 2024', 'IFPR 2023', 'UEM Verão 2025 completa', 'UEM Inverno 2025 completa', 'UEM 2019 a 2024 completa', 'PUC-PR 2024/2 Medicina', 'PUC-PR 2025/1 Medicina', 'PUC-PR 2025/2 Medicina']
+    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,uem2025,uem2025Inverno,uemHistorico,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina])
     const carregadas = resultados.flatMap(resultado => resultado.status === 'fulfilled' && Array.isArray(resultado.value) ? resultado.value : [])
     setQuestoes(unirQuestoes(carregadas))
     setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
@@ -750,7 +756,7 @@ export default function App() {
 
   function finalizarSimulado() {
     if (!simuladoAtivo) return
-    const questoesSimulado = questoesDaProva(questoes, simuladoAtivo.id, idiomaSimulado)
+    const questoesSimulado = questoesDaProva(questoes, simuladoAtivo.id, idiomaSimulado, especificasUem)
     let acertos = 0
     let erros = 0
     const detalhes = []
@@ -801,7 +807,7 @@ export default function App() {
   
   questoes.forEach(q => {
     if (!q.concurso || !podeCorrigir(q)) return
-    if (q.banca === 'UEM' && q.idioma && q.idioma !== idiomaSimulado) return
+    if (!incluirNoSimuladoUem(q, idiomaSimulado, especificasUem)) return
     const dados = dadosDaProva(q)
     const chave = dados.id
     if (!mapaSimulados[chave]) {
@@ -1089,7 +1095,17 @@ export default function App() {
                     {['Inglês','Espanhol','Francês'].map(idioma => <option key={idioma}>{idioma}</option>)}
                   </select>
                 </label>}
-                {questoesDaProva(questoes, simuladoAtivo.id, idiomaSimulado).map((q, index) => (
+                {simuladoAtivo.banca === 'UEM' && questoes.some(q => q.bloco_especifico && dadosDaProva(q).id === simuladoAtivo.id) && <div className="rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
+                  <p className="mb-3 text-sm text-slate-300">Escolha as duas matérias de conhecimentos específicos da sua prova.</p>
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {[0,1].map(indice => <label key={indice} className="text-sm text-slate-300">Matéria {indice + 1}
+                      <select value={especificasUem[indice]} onChange={e => setEspecificasUem(atuais => atuais.map((materia, i) => i === indice ? e.target.value : materia))} className="mt-2 block w-full rounded-xl border border-slate-700 bg-slate-900 p-3">
+                        {ESPECIFICAS_UEM.map(materia => <option key={materia} disabled={materia === especificasUem[1-indice]}>{materia}</option>)}
+                      </select>
+                    </label>)}
+                  </div>
+                </div>}
+                {questoesDaProva(questoes, simuladoAtivo.id, idiomaSimulado, especificasUem).map((q, index) => (
                   <div key={q.id} className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md">
                     <div className="flex flex-wrap gap-2.5 mb-5">
                       <span className="bg-indigo-600 text-white px-3.5 py-1 rounded-full text-xs font-bold shadow-md shadow-indigo-600/20">Questão {index + 1}</span>

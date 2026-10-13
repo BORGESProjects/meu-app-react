@@ -1,6 +1,10 @@
 """Importação do caderno oficial, incluindo questões que continuam na outra coluna."""
 import json
 import re
+import io
+import os
+import time
+from collections import OrderedDict
 from pathlib import Path
 import pdfplumber
 from PIL import Image
@@ -15,13 +19,36 @@ MIRROR=False
 TRIMS={(7,True,4):289}
 CONTINUATIONS={(15,False),(17,False)}
 SKIP_SIDES=set()
+LANG_START=11
+ID_EXTRA=''
+AUTO_CONTINUATIONS=False
+IMAGE_CACHE=OrderedDict()
 
 def image(parts,name):
-    images=[p.crop(box).to_image(resolution=190).original.convert('RGB') for p,box in parts]
+    images=[]
+    for p,box in parts:
+        if p not in IMAGE_CACHE:
+            rendered=p.to_image(resolution=190)
+            IMAGE_CACHE[p]=(rendered.original.convert('RGB'),rendered.scale)
+            if len(IMAGE_CACHE)>12:IMAGE_CACHE.popitem(last=False)
+        IMAGE_CACHE.move_to_end(p)
+        original,scale=IMAGE_CACHE[p]
+        images.append(original.crop(tuple(int(value*scale) for value in box)))
     canvas=Image.new('RGB',(max(i.width for i in images),sum(i.height for i in images)+10*(len(images)-1)),'white')
     y=0
     for im in images: canvas.paste(im,(0,y)); y+=im.height+10
-    canvas.save(DEST/(name+'.webp'),'WEBP',quality=92)
+    encoded=io.BytesIO()
+    canvas.save(encoded,'WEBP',quality=92,method=2)
+    target=DEST/(name+'.webp')
+    temporary=target.with_suffix('.webp.tmp')
+    for attempt in range(3):
+        try:
+            temporary.write_bytes(encoded.getvalue())
+            os.replace(temporary,target)
+            break
+        except OSError:
+            if attempt==2:raise
+            time.sleep(0.15)
     return '/acervo/'+DEST.name+'/'+name+'.webp'
 
 def col(page,left):
@@ -29,22 +56,25 @@ def col(page,left):
     if MIRROR and page.page_number % 2 == 0: a-=17; b-=17
     crop=page.crop((a,22,b,795))
     words=crop.extract_words(x_tolerance=2,y_tolerance=3)
-    heads=[(int(words[i+1]['text']),w['top']) for i,w in enumerate(words[:-1]) if w['text']=='Questão' and words[i+1]['text'].isdigit()]
+    heads=[(int(words[i+1]['text'].split('/')[0]),w['top']) for i,w in enumerate(words[:-1]) if w['text']=='Questão' and re.fullmatch(r'\d{2}(?:/\d{2})?',words[i+1]['text'])]
     return a,b,words,heads
 
 def questions(pdf,pages,idioma=None):
     records=[]; current=None
     for pn in pages:
         p=pdf.pages[pn-1]
+        footer=[r['top']-2 for r in p.rects if r['top']>760 and 15<r['width']<35 and 18<r['height']<30 and r.get('non_stroking_color') in (0.878,0.87843)]
+        pagebottom=min([795,*footer])
         for left in (True,False):
             if (pn,left) in SKIP_SIDES: continue
             a,b,words,heads=col(p,left)
             # Antes do primeiro título só existe continuação nas questões 17 e 27.
             segments=[]
-            if current and (pn,left) in CONTINUATIONS and (not heads or heads[0][1]>100):
-                segments.append((None,22,heads[0][1]-5 if heads else 795))
+            orphan_markers=any(re.fullmatch(r'(01|02|04|08|16)\)',w['text']) and w['x0']<a+12 and w['top']<(heads[0][1] if heads else pagebottom) for w in words)
+            if current and ((pn,left) in CONTINUATIONS or AUTO_CONTINUATIONS and orphan_markers) and (not heads or heads[0][1]>100):
+                segments.append((None,22,heads[0][1]-5 if heads else pagebottom))
             for i,(n,top) in enumerate(heads):
-                end=heads[i+1][1]-5 if i+1<len(heads) else 795
+                end=heads[i+1][1]-5 if i+1<len(heads) else pagebottom
                 end=TRIMS.get((pn,left,n),end)
                 segments.append((n,top-2,end))
             for n,start,end in segments:
@@ -53,12 +83,25 @@ def questions(pdf,pages,idioma=None):
                     current=dict(n=n,pagina=pn,stem=[],options=[[] for _ in range(5)],text=['' for _ in range(6)],index=-1)
                 ws=[w for w in words if start<=w['top']<end]
                 markers=[w for w in ws if re.fullmatch(r'(01|02|04|08|16)\)',w['text']) and w['x0']<a+12]
+                # A extração de palavras pode juntar uma fórmula da linha anterior ao rótulo.
+                # Reconstrua os rótulos pela linha e pela fonte original, sem alterar a imagem.
+                groups={}
+                for c in p.chars:
+                    if a<=c['x0']<a+20 and start<=c['top']<end:
+                        groups.setdefault((round(c['top'],1),c['fontname']),[]).append(c)
+                for chars in groups.values():
+                    text=''.join(c['text'] for c in sorted(chars,key=lambda c:c['x0'])).replace(' ','')
+                    m=re.match(r'^(01|02|04|08|16)\)',text)
+                    if m and not any(w['text']==m[0] and abs(w['top']-chars[0]['top'])<3 for w in markers):
+                        markers.append(dict(text=m[0],top=chars[0]['top'],x0=min(c['x0'] for c in chars)))
+                markers.sort(key=lambda w:w['top'])
                 if not current: continue
                 bounds=[(start,current['index'])]
                 for m in markers:
                     idx=['01)','02)','04)','08)','16)'].index(m['text'])
                     bounds.append((ajustar_limite(p,a,b,m['top']-1),idx))
-                maxbottom=max((c['bottom'] for c in p.chars if a<=c['x0']<b and start<=c['top']<end),default=end)
+                objects=[*p.chars,*p.images,*p.curves,*p.rects,*p.lines]
+                maxbottom=max((c['bottom'] for c in objects if c['x1']>a and c['x0']<b and start<=c['top']<end and c['bottom']<=end),default=end)
                 finish=min(end,maxbottom+3)
                 for i,(top,idx) in enumerate(bounds):
                     bottom=bounds[i+1][0] if i+1<len(bounds) else finish
@@ -72,9 +115,9 @@ def questions(pdf,pages,idioma=None):
     out=[]
     for r in records:
         n=r['n']; suffix='-'+{'Inglês':'en','Espanhol':'es','Francês':'fr'}[idioma] if idioma else ''
-        ident=f'{DEST.name}-{n:02d}'+suffix
+        ident=f'{DEST.name}{ID_EXTRA}-{n:02d}'+suffix
         assert all(r['options']),ident
-        resposta=LANG[idioma][n-11] if idioma else KEY[n-1]
+        resposta=LANG[idioma][n-LANG_START] if idioma else KEY[n-1]
         materia=('Língua '+{'Inglês':'Inglesa','Espanhol':'Espanhola','Francês':'Francesa'}[idioma]) if idioma else ('Língua Portuguesa' if n<=7 else 'Literatura' if n<=10 else 'Arte' if n<=17 else 'Educação Física' if n<=20 else 'Filosofia' if n<=24 else 'Sociologia' if n<=25 else 'História' if n<=28 else 'Geografia' if n<=30 else 'Matemática' if n<=40 else 'Biologia' if n<=44 else 'Química' if n<=47 else 'Física')
         textos=[re.sub(r'^\s*(01|02|04|08|16)\)\s*','',t.strip()) or f'Afirmação {2**i:02d}: consulte a imagem oficial.' for i,t in enumerate(r['text'][1:])]
         # Matrizes e outras fontes matemáticas podem desaparecer na extração textual.
