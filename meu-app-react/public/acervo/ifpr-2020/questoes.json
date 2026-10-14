@@ -1,0 +1,186 @@
+[
+  {
+    "id": "ifpr-2020-01",
+    "ano": 2020,
+    "banca": "IFPR",
+    "concurso": "Processo Seletivo IFPR 2020 — Graduação",
+    "numero_original": 1,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "QUESTÃO 01\nAssinale a alternativa correta.",
+    "opcoes": [
+      "No \"Poema em Linha Reta\", o eu lírico afirma que só os\nseus amigos são bem sucedidos na vida, e ele se envergonha de não sê-lo.",
+      "O eu lírico se compara aos semideuses, pois consegue\nperceber as incoerências nos discursos de todos os que",
+      "O eu lírico expressa simpatia por aqueles que assumem\nsuas vilezas, embora ressaltando-as como aspectos nem",
+      "O eu lírico gostaria de conseguir reagir às piadas das criadas de hotel e dos moços de fretes."
+    ],
+    "resposta_correta": 2,
+    "prova_incompleta": true,
+    "imagem_original": "/acervo/ifpr-2020/ifpr-2020-01-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/ifpr-2020/ifpr-2020-01-A.webp",
+      "/acervo/ifpr-2020/ifpr-2020-01-B.webp",
+      "/acervo/ifpr-2020/ifpr-2020-01-C.webp",
+      "/acervo/ifpr-2020/ifpr-2020-01-D.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "apoio": [
+      {
+        "imagem": "/acervo/ifpr-2020/poema-em-linha-reta.webp",
+        "texto": "Poema em linha reta, Álvaro de Campos; texto integral compartilhado pelas questões 1–4"
+      }
+    ],
+    "fonte_pdf": "https://arquivos.qconcursos.com/prova/arquivo_prova/77667/funtef-pr-2019-if-pr-vestibular-cursos-superiores-prova.pdf",
+    "fonte_gabarito": "https://arquivos.qconcursos.com/prova/arquivo_gabarito/77667/funtef-pr-2019-if-pr-vestibular-cursos-superiores-gabarito.pdf",
+    "pagina": 4,
+    "organizadora": "FUNTEF-PR",
+    "data_aplicacao": "2019-10-20"
+  },
+  {
+    "id": "ifpr-2020-02",
+    "ano": 2020,
+    "banca": "IFPR",
+    "concurso": "Processo Seletivo IFPR 2020 — Graduação",
+    "numero_original": 2,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Semântica",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "QUESTÃO 02\nAssinale a alternativa que reescreve os versos assinalados em negrito no texto, sem alterar o sentido original.",
+    "opcoes": [
+      "Assim, sou só eu que é vil e errôneo nesta terra?\nPoderão as mulheres não os terem amado,\nPodem ter sido traídos – conquanto ridículos nunca!",
+      "Contudo, sou só eu que é vil e errôneo nesta terra?\nPoderão as mulheres não os terem amado,\nPodem ter sido traídos – mais ridículos nunca!",
+      "Em contrapartida, sou só eu que é vil e errôneo nesta\nterra?\nPoderão as mulheres não os terem amado,\nPodem ter sido traídos – porém ridículos nunca!",
+      "Assim, sou só eu que é vil e errôneo nesta terra?\nPoderão as mulheres não os terem amado,\nPodem ter sido traídos – porém ridículos nunca!"
+    ],
+    "resposta_correta": 3,
+    "prova_incompleta": true,
+    "imagem_original": "/acervo/ifpr-2020/ifpr-2020-02-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/ifpr-2020/ifpr-2020-02-A.webp",
+      "/acervo/ifpr-2020/ifpr-2020-02-B.webp",
+      "/acervo/ifpr-2020/ifpr-2020-02-C.webp",
+      "/acervo/ifpr-2020/ifpr-2020-02-D.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "apoio": [
+      {
+        "imagem": "/acervo/ifpr-2020/poema-em-linha-reta.webp",
+        "texto": "Poema em linha reta, Álvaro de Campos; texto integral compartilhado pelas questões 1–4"
+      }
+    ],
+    "fonte_pdf": "https://arquivos.qconcursos.com/prova/arquivo_prova/77667/funtef-pr-2019-if-pr-vestibular-cursos-superiores-prova.pdf",
+    "fonte_gabarito": "https://arquivos.qconcursos.com/prova/arquivo_gabarito/77667/funtef-pr-2019-if-pr-vestibular-cursos-superiores-gabarito.pdf",
+    "pagina": 4,
+    "organizadora": "FUNTEF-PR",
+    "data_aplicacao": "2019-10-20"
+  },
+  {
+    "id": "ifpr-2020-03",
+    "ano": 2020,
+    "banca": "IFPR",
+    "concurso": "Processo Seletivo IFPR 2020 — Graduação",
+    "numero_original": 3,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "QUESTÃO 03\nConsiderando o verso \"Que tenho enrolado os pés publicamente nos tapetes das etiquetas\" (10a linha), assinale a\nalternativa correta.",
+    "opcoes": [
+      "O eu lírico afirma que ele não sabe se portar em ambien-",
+      "O eu lírico se apresenta como alguém que ousa se assu-",
+      "O eu lírico expressa simpatia por aqueles que escondem\nsuas vilezas, embora ressaltando-as como aspectos nem",
+      "O eu lírico assume que precisa deixar de sofrer enxovalho\ne de cometer atos ridículos."
+    ],
+    "resposta_correta": 1,
+    "prova_incompleta": true,
+    "imagem_original": "/acervo/ifpr-2020/ifpr-2020-03-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/ifpr-2020/ifpr-2020-03-A.webp",
+      "/acervo/ifpr-2020/ifpr-2020-03-B.webp",
+      "/acervo/ifpr-2020/ifpr-2020-03-C.webp",
+      "/acervo/ifpr-2020/ifpr-2020-03-D.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "apoio": [
+      {
+        "imagem": "/acervo/ifpr-2020/poema-em-linha-reta.webp",
+        "texto": "Poema em linha reta, Álvaro de Campos; texto integral compartilhado pelas questões 1–4"
+      }
+    ],
+    "fonte_pdf": "https://arquivos.qconcursos.com/prova/arquivo_prova/77667/funtef-pr-2019-if-pr-vestibular-cursos-superiores-prova.pdf",
+    "fonte_gabarito": "https://arquivos.qconcursos.com/prova/arquivo_gabarito/77667/funtef-pr-2019-if-pr-vestibular-cursos-superiores-gabarito.pdf",
+    "pagina": 4,
+    "organizadora": "FUNTEF-PR",
+    "data_aplicacao": "2019-10-20"
+  },
+  {
+    "id": "ifpr-2020-04",
+    "ano": 2020,
+    "banca": "IFPR",
+    "concurso": "Processo Seletivo IFPR 2020 — Graduação",
+    "numero_original": 4,
+    "materia": "Língua Portuguesa",
+    "conteudo": "Interpretação de textos",
+    "dificuldade": "Médio",
+    "dificuldade_estimada": true,
+    "enunciado": "QUESTÃO 04\nConsiderando o \"Poema em linha reta\", sobretudo os versos \"Quem me dera ouvir de alguém a voz humana\" (31a linha) e \"Onde é que há gente no mundo?\" (39a linha), assinale\na alternativa INCORRETA.",
+    "opcoes": [
+      "O eu lírico considera que viver sem assumir suas covardias, atos ridículos e fraquezas desumaniza quem assim o",
+      "O eu lírico se apresenta como o único ser que pode ser\nchamado de humano, por assumir suas fraquezas e vile-",
+      "O eu lírico expressa antipatia por aqueles que escondem\nsuas vilezas, embora ressaltando-as como aspectos nem",
+      "O eu lírico afirma que, para os demais, ser traído, ter\npecado, ser violento, não é aceitável; o que pode ser aceito\né o ridículo, a covardia, a infâmia."
+    ],
+    "resposta_correta": 3,
+    "prova_incompleta": true,
+    "imagem_original": "/acervo/ifpr-2020/ifpr-2020-04-enunciado.webp",
+    "opcoes_imagens": [
+      "/acervo/ifpr-2020/ifpr-2020-04-A.webp",
+      "/acervo/ifpr-2020/ifpr-2020-04-B.webp",
+      "/acervo/ifpr-2020/ifpr-2020-04-C.webp",
+      "/acervo/ifpr-2020/ifpr-2020-04-D.webp"
+    ],
+    "imagem_sem_alternativas": true,
+    "texto_extraido_corrompido": true,
+    "opcoes_texto_corrompido": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "apoio": [
+      {
+        "imagem": "/acervo/ifpr-2020/poema-em-linha-reta.webp",
+        "texto": "Poema em linha reta, Álvaro de Campos; texto integral compartilhado pelas questões 1–4"
+      }
+    ],
+    "fonte_pdf": "https://arquivos.qconcursos.com/prova/arquivo_prova/77667/funtef-pr-2019-if-pr-vestibular-cursos-superiores-prova.pdf",
+    "fonte_gabarito": "https://arquivos.qconcursos.com/prova/arquivo_gabarito/77667/funtef-pr-2019-if-pr-vestibular-cursos-superiores-gabarito.pdf",
+    "pagina": 4,
+    "organizadora": "FUNTEF-PR",
+    "data_aplicacao": "2019-10-20"
+  }
+]
