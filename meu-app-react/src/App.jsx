@@ -456,6 +456,13 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 55) throw new Error('Lote IFPR 2020 inválido')
       return data
     })
+    const ifpr2019 = tentarLeitura(async () => {
+      const r = await fetch('/acervo/ifpr-2019/questoes.json', {signal:AbortSignal.timeout(30000)})
+      if (!r.ok) throw new Error('Processo Seletivo IFPR 2019 indisponível')
+      const data = await r.json()
+      if (!Array.isArray(data) || data.length !== 55) throw new Error('Lote IFPR 2019 inválido')
+      return data
+    })
     const uem2025 = tentarLeitura(async () => {
       const r = await fetch('/acervo/uem-2025/questoes.json', {signal:AbortSignal.timeout(30000)})
       if (!r.ok) throw new Error('Vestibular de Verão UEM 2025 indisponível')
@@ -502,8 +509,8 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 60) throw new Error('Lote PUCPR 2025/2 Medicina inválido')
       return data
     })
-    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UFPR 2022', 'UFPR 2021', 'UFPR 2020', 'UFPR 2019', 'UTFPR 2025', 'UTFPR 2024/1', 'UTFPR 2024/2', 'UTFPR 2023', 'IFPR 2024', 'IFPR 2023', 'IFPR 2020 completa', 'UEM Verão 2025 completa', 'UEM Inverno 2025 completa', 'UEM 2019 a 2024 completa', 'PUC-PR 2024/2 Medicina', 'PUC-PR 2025/1 Medicina', 'PUC-PR 2025/2 Medicina']
-    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,ifpr2020,uem2025,uem2025Inverno,uemHistorico,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina])
+    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UFPR 2022', 'UFPR 2021', 'UFPR 2020', 'UFPR 2019', 'UTFPR 2025', 'UTFPR 2024/1', 'UTFPR 2024/2', 'UTFPR 2023', 'IFPR 2024', 'IFPR 2023', 'IFPR 2020 completa', 'IFPR 2019 completa', 'UEM Verão 2025 completa', 'UEM Inverno 2025 completa', 'UEM 2019 a 2024 completa', 'PUC-PR 2024/2 Medicina', 'PUC-PR 2025/1 Medicina', 'PUC-PR 2025/2 Medicina']
+    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,ifpr2020,ifpr2019,uem2025,uem2025Inverno,uemHistorico,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina])
     const carregadas = resultados.flatMap(resultado => resultado.status === 'fulfilled' && Array.isArray(resultado.value) ? resultado.value : [])
     setQuestoes(unirQuestoes(carregadas))
     setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
