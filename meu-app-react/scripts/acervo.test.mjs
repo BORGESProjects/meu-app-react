@@ -514,7 +514,7 @@ test('UFPR 2019 contém as 90 questões oficiais com apoios e recortes independe
   assert.deepEqual(ufpr.map(q => q.numero_original), Array.from({length: 90}, (_, i) => i + 1))
   assert.deepEqual(ufpr.filter(q => q.anulada).map(q => q.numero_original), [10])
   assert.deepEqual(ufpr.filter(q => !questaoPublicavel(corrigirQuestaoConferida(q))).map(q => q.id), [])
-  assert.equal(ufpr[9].materia, 'História')
+  assert.equal(ufpr[9].materia, 'Química')
   assert.equal(ufpr[10].materia, 'Química')
   assert.equal(ufpr[82].materia, 'Língua Inglesa')
   assert.deepEqual(ufpr[56].opcoes, ['U = 24 µJ.', 'U = 36 µJ.', 'U = 72 µJ.', 'U = 96 µJ.', 'U = 144 µJ.'])

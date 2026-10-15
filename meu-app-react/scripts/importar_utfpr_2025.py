@@ -24,7 +24,7 @@ class Marcador:
     numero:int; painel:int; top:float
 
 def materia(n):
-    return next(nome for limite,nome in [(6,'Literatura'),(12,'Língua Portuguesa'),(18,'Língua Inglesa'),(23,'História'),(28,'Geografia'),(33,'Sociologia'),(38,'Biologia'),(43,'Química'),(52,'Matemática'),(60,'Física')] if n<=limite)
+    return next(nome for limite,nome in [(4,'Literatura'),(12,'Língua Portuguesa'),(18,'Língua Inglesa'),(22,'História'),(26,'Geografia'),(28,'Filosofia'),(30,'Sociologia'),(36,'Biologia'),(44,'Química'),(52,'Matemática'),(60,'Física')] if n<=limite)
 
 def limpar(t):
     t=t.replace('\u00ad','').replace('�','')

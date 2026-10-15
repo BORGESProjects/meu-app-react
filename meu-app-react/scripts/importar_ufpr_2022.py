@@ -41,27 +41,9 @@ def limpar(texto: str) -> str:
 
 
 def materia(numero: int) -> str:
-    if numero <= 4:
-        return "Língua Inglesa"
-    if numero <= 10:
-        return "Biologia"
-    if numero <= 20:
-        return "Matemática"
-    if numero <= 22:
-        return "História"
-    if numero <= 28:
-        return "Física"
-    if numero <= 36:
-        return "Língua Portuguesa"
-    if numero <= 40:
-        return "Literatura"
-    if numero <= 46:
-        return "Química"
-    if numero <= 51:
-        return "Filosofia"
-    if numero <= 59:
-        return "Geografia"
-    return "Sociologia"
+    from revisar_materias_ufpr_utfpr import materia_ufpr
+    return materia_ufpr(2022, numero)
+
 
 def salvar_webp(imagem: Image.Image, caminho: Path, qualidade: int = 82) -> None:
     caminho.parent.mkdir(parents=True, exist_ok=True)
