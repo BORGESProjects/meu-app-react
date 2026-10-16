@@ -112,12 +112,13 @@ def extrair(meta, destino):
    else:merged.append((typ,event))
   events=merged
   active=[];records=[];seen={}
-  for typ,event in events:
+  for event_index,(typ,event) in enumerate(events):
    if typ=='support':
-    t=event['texto']; continuation=bool(re.search(r'texto\s+(?:\w[\w.-]*|apresentado|precedente|anterior)|figura|situação (?:hipotética|apresentada)|caso (?:apresentado|hipotético)',t,re.I))
+    adjacent_support=event_index>0 and events[event_index-1][0]=='support' and events[event_index-1][1]['pagina']==event['pagina']
+    t=event['texto']; continuation=bool(re.search(r'texto\s+(?:\w[\w.-]*|apresentado|precedente|anterior)|text (?:above|below|preceding)|figura|situação (?:hipotética|apresentada)|caso (?:apresentado|hipotético)',t,re.I))
     # Referenced texts and scenarios may continue from the previous column.
-    if not continuation and not re.match(r'^(?:Ainda|[a-záéíóúç])',t):active=[]
-    if len(t)>450 and not re.match(r'^(?:Ainda|Julgue|Com|A respeito|Considerando|[a-záéíóúç])',t):active=[]
+    if not adjacent_support and not continuation and not re.match(r'^(?:Ainda|[a-záéíóúç])',t):active=[]
+    if not adjacent_support and len(t)>450 and not re.match(r'^(?:Ainda|Julgue|Com|A respeito|Considerando|[a-záéíóúç])',t):active=[]
     active=active+[event]
     report.append({'antes_de':next((e['n'] for tp,e in events[events.index((typ,event))+1:] if tp=='item'),None),'pagina':event['pagina'],'texto':t})
     continue

@@ -512,11 +512,11 @@ export default function App() {
       return data
     })
     const federaisRevisadas = tentarLeitura(async () => {
-      const lotes = await Promise.all(['prf-2019','pf-2021-delegado'].map(async nome => {
+      const lotes = await Promise.all([['prf-2019',120],['pf-2021-delegado',120],['prf-2021',128]].map(async ([nome,quantidade]) => {
         const r = await fetch(`/acervo/${nome}/questoes.json`, {signal:AbortSignal.timeout(30000)})
         if (!r.ok) throw new Error('Caderno federal indisponível')
         const data = await r.json()
-        if (!Array.isArray(data) || data.length !== 120) throw new Error('Caderno federal incompleto')
+        if (!Array.isArray(data) || data.length !== quantidade) throw new Error('Caderno federal incompleto')
         return data
       }))
       return lotes.flat()
