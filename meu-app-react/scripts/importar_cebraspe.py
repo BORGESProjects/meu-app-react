@@ -69,6 +69,10 @@ def extrair(meta, destino):
      if prefix:events.append(('support',prefix))
      continue
     def marker_top(marker):
+     # Limites conferidos na página evitam incluir tinta da linha anterior
+     # quando uma fração deixa os itens muito próximos.
+     override=meta.get('topos_itens',{}).get(int(marker['text']))
+     if override is not None:return override
      # Fraction numerators and tall brackets may extend above the item label.
      baseline=marker['top']
      raised=[c['top']-2 for c in p.chars if x0<=c['x0']<x1 and baseline-12<=c['top']<baseline-2 and c['bottom']>baseline+1]

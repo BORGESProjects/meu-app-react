@@ -9,6 +9,8 @@ from publicar_pf2021_operacionais import normalizar
 # Cargo Cebraspe -> limites dos comandos específicos conferidos nas páginas oficiais.
 APROVADOS = {
     2: [51,54,58,61,63,65,69,74,77,80,83,85,91,93,97,99,101,103,105,110,113,114,116,118],
+    3: [51,55,57,61,65,69,71,73,75,77,80,83,87,92,96,100,104,109,113,117],
+    4: [51,55,57,60,62,65,67,69,72,74,76,79,81,83,85,87,89,91,93,95,97,100,102,104,106,110,114,117],
 }
 COMUM = [1,9,13,15,21,23,25,29,31,32,35,37,40,46]
 DESTINO = ROOT/'public/acervo/pf-2025-peritos'
@@ -24,6 +26,22 @@ def classificar(cargo,n):
     if n<=39:return 'Criminalística','Vestígios e perícia criminal'
     if n<=45:return 'Direitos Humanos','Direitos Humanos'
     if n<=50:return 'Matemática','Raciocínio lógico'
+    if cargo==4:
+        if n<=56:return 'Informática','Arquitetura de computadores e armazenamento'
+        if n<=64:return 'Informática','Bancos de dados'
+        if n<=68:return 'Informática','Segurança da informação'
+        if n<=78:return 'Informática','Programação e desenvolvimento de sistemas'
+        if n<=94:return 'Informática','Redes e segurança da informação'
+        if n<=101:return 'Informática','Sistemas operacionais'
+        if n<=103:return 'Informática','Governança de tecnologia da informação'
+        if n<=105:return 'Informática','Inteligência artificial'
+        return 'Informática','Perícia digital'
+    if cargo==3:
+        if n<=68:return 'Engenharia Elétrica','Sinais e processamento digital'
+        if n<=86:return 'Informática','Inteligência artificial'
+        if n<=95:return 'Engenharia Elétrica','Telecomunicações'
+        if n<=103:return 'Engenharia Elétrica','Eletrônica e circuitos elétricos'
+        return 'Informática','Algoritmos e processamento multimídia'
     assert cargo==2,'Classificação específica ainda não revisada'
     if n<=60:return 'Contabilidade','Contabilidade geral e custos'
     if n<=64:return 'Direito Administrativo','Licitações e contratos'
@@ -93,4 +111,14 @@ def preparar():
     print('PF 2025 Peritos:',len(itens),'itens;',len(provas),'áreas completas')
 
 
-if __name__=='__main__':preparar()
+if __name__=='__main__':
+    import sys
+    if '--reextrair' in sys.argv:
+        from importar_cebraspe import extrair
+        metas=json.loads((ROOT/'tmp/federais-manifesto-2025-prf.json').read_text(encoding='utf8'))
+        for cargo,opcoes in {3:{'topos_itens':{58:371.0,105:110.0}},4:{'itens_sem_divisao':[82,93,98],'topos_itens':{118:119.0,119:153.1,120:187.2}}}.items():
+            meta=next(m for m in metas if m['id']==f'pf-2025-cargo-{cargo}')
+            meta.update(opcoes)
+            qs=extrair(meta,ROOT/'public/acervo/federais-em-revisao')
+            (ROOT/f"tmp/{meta['id']}-questoes-revisar.json").write_text(json.dumps(qs,ensure_ascii=False,indent=2),encoding='utf8')
+    preparar()

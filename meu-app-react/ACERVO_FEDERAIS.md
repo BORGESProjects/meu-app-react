@@ -11,6 +11,8 @@ Este registro diferencia cadernos publicados de extrações ainda em revisão.
 | PF 2025 - Delegado de Polícia Federal | 120 | 6 | 114 |
 | PF 2025 - Agente, Escrivão e Papiloscopista (sem duplicatas) | 168 | 12 | 156 |
 | PF 2025 - Perito Criminal Federal - Área 1 Contábil-Financeira | 120 | 10 | 110 |
+| PF 2025 - Perito Criminal Federal - Área 2 Engenharia Elétrica/Eletrônica | 120 | 4 | 116 |
+| PF 2025 - Perito Criminal Federal - Área 3 Informática Forense | 120 | 5 | 115 |
 
 A prova PRF vinculada ao edital de 2018 foi aplicada em 03/02/2019. O acervo usa o ano da aplicação. Não são cadernos administrativos nem cursos internos.
 
@@ -24,7 +26,7 @@ O extrator `scripts/importar_cebraspe.py` lê o PDF e seu gabarito definitivo e 
 
 ## Ainda não concluído
 
-As outras 12 áreas de Perito Criminal Federal PF 2025 estão extraídas em `public/acervo/federais-em-revisao`, mas NÃO fazem parte destes lotes publicados. Precisam de revisão visual, conferência de contextos, classificação e associação aos cadernos antes da integração. Delegado, Agente, Escrivão, Papiloscopista e Perito Área 1 Contábil-Financeira estão concluídos nos lotes descritos abaixo. Não contar as extrações em quarentena como acervo disponível no site. Ao reunir itens comuns a cargos diferentes, preservar cada associação e número original; não fundir afirmações curtas de casos diferentes.
+As outras 10 áreas de Perito Criminal Federal PF 2025 estão extraídas em `public/acervo/federais-em-revisao`, mas NÃO fazem parte destes lotes publicados. Precisam de revisão visual, conferência de contextos, classificação e associação aos cadernos antes da integração. Delegado, Agente, Escrivão, Papiloscopista e Perito Áreas 1 Contábil-Financeira, 2 Engenharia Elétrica/Eletrônica e 3 Informática Forense estão concluídos nos lotes descritos abaixo. Não contar as extrações em quarentena como acervo disponível no site. Ao reunir itens comuns a cargos diferentes, preservar cada associação e número original; não fundir afirmações curtas de casos diferentes.
 
 Verificação desta entrega: 61 testes aprovados, incluindo as contagens, respostas, anuladas, arquivos de imagem e preservação dos 240 registros na união do acervo.
 
@@ -67,3 +69,7 @@ A primeira área completa de Perito reúne os 50 conhecimentos básicos e os 70 
 Foram conferidas as sete páginas e os 120 recortes. Incluem-se o texto de Português sobre IA, casos independentes de processo penal, proposições lógicas, gráfico de juros simples/compostos, boxplot, modelo de regressão, tabela de frequências e Python completo com a saída indicada na prova. Casos de SAC, desconto de duplicata, boxplot e JSON foram desvinculados de comandos anteriores. Os quatro PDFs oficiais (básicos/específicos e respectivos gabaritos) foram novamente comparados por SHA-256.
 
 O publicador `scripts/publicar_pf2025_peritos.py` contém a lista explícita de áreas aprovadas e suas fronteiras de comandos e matérias. Adições futuras ampliam essa mesma coleção e as associações do núcleo comum, sem duplicá-lo. A seleção por cargo, gabarito oficial, não duplicação do núcleo comum e regressões de contextos, gráficos e código são verificadas em testes.
+
+## PF 2025 - Perito: Áreas 2 e 3
+
+Engenharia Elétrica/Eletrônica e Informática Forense completas: 120 posições por prova, incluindo o núcleo comum de 50 itens, sem replicá-lo no acervo. O lote cumulativo contém 260 questões únicas e três provas completas. Engenharia Elétrica tem 116 itens corrigíveis; Informática segue o gabarito definitivo registrado no manifesto. Foram revisadas as sete páginas específicas e os 140 recortes. Preservadas as frações de sistemas discretos, o contexto da teoria da decisão, PHP/SQL, a sequência de permissões Linux e o diagrama Diffie-Hellman. Corrigidos os cortes internos nos itens 82, 93 e 98 de Informática e os fragmentos de linhas vizinhas em ambas as áreas. Fontes e hashes constam no manifesto; reprodução: `scripts/publicar_pf2025_peritos.py --reextrair`.
