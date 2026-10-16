@@ -172,3 +172,18 @@ test('PF 2025 Perito: Geologia e Engenharia Civil mantêm dados e casos separado
  assert.equal(q(6,120).materia,'Engenharia Civil')
  assert.doesNotMatch(q(6,120).enunciado,/Espaço livre/)
 })
+
+test('PF 2025 Perito: imagem orbital, matriz de classificação e comandos entre colunas',()=>{
+ const q=(cargo,n)=>peritos.find(q=>q.id===`pf-2025-cargo-${cargo}-${String(n).padStart(3,'0')}`)
+ assert.match(q(7,112).enunciado,/linha de ruído/)
+ assert.ok(readFileSync(new URL('../public'+q(7,112).imagem_original,import.meta.url)).length>40000)
+ assert.match(q(7,117).apoio[0].texto,/52 6 0 28 0 86/)
+ assert.match(q(7,120).apoio[0].texto,/65 60 82 143 80 430/)
+ assert.match(q(7,120).apoio[0].texto,/verdade terrestre/)
+ assert.match(q(8,63).apoio[0].texto,/energias de ordem mecânica/)
+ assert.match(q(8,115).apoio[0].texto,/servidor público federal/)
+ assert.match(q(8,116).apoio[0].texto,/servidor público federal/)
+ assert.doesNotMatch(q(8,117).apoio[0].texto,/servidor público federal/)
+ assert.match(q(8,120).enunciado,/Schilling/)
+ assert.doesNotMatch(q(8,120).enunciado,/Espaço livre/)
+})

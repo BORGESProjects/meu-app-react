@@ -13,6 +13,8 @@ APROVADOS = {
     4: [51,55,57,60,62,65,67,69,72,74,76,79,81,83,85,87,89,91,93,95,97,100,102,104,106,110,114,117],
     5: [51,54,59,63,67,70,74,79,82,85,87,90,92,94,104,107,109,111,116],
     6: [51,57,68,71,74,78,83,85,90,95,100,103,107,111,113,117],
+    7: [51,54,57,60,62,65,68,73,81,85,90,94,97,103,105,108,111,114,117],
+    8: [51,55,59,65,68,73,79,83,88,98,101,102,104,112,117],
 }
 COMUM = [1,9,13,15,21,23,25,29,31,32,35,37,40,46]
 DESTINO = ROOT/'public/acervo/pf-2025-peritos'
@@ -28,6 +30,24 @@ def classificar(cargo,n):
     if n<=39:return 'Criminalística','Vestígios e perícia criminal'
     if n<=45:return 'Direitos Humanos','Direitos Humanos'
     if n<=50:return 'Matemática','Raciocínio lógico'
+    if cargo==7:
+        if n<=67:return 'Engenharia Cartográfica','Topografia e geodésia'
+        if n<=84:return 'Engenharia Cartográfica','Cartografia e fotogrametria'
+        if n<=96:return 'Engenharia Cartográfica','Sensoriamento remoto'
+        if n<=102:return 'Engenharia Cartográfica','Sistemas de informações geográficas'
+        if n<=107:return 'Engenharia Cartográfica','Avaliação de imóveis'
+        return 'Engenharia Cartográfica','Georreferenciamento e processamento de imagens'
+    if cargo==8:
+        if n<=54:return 'Medicina Legal','Cadeia de custódia'
+        if n<=64:return 'Medicina Legal','Traumatologia forense'
+        if n<=67:return 'Medicina Legal','Asfixiologia e baropatias'
+        if n<=87:return 'Medicina Legal','Tanatologia e necropsia'
+        if n<=97:return 'Medicina Legal','Sexologia forense'
+        if n<=100:return 'Medicina Legal','Antropologia forense'
+        if n==101:return 'Medicina Legal','Toxicologia forense'
+        if n<=103:return 'Medicina Legal','Sexologia forense'
+        if n<=111:return 'Medicina Legal','Psiquiatria forense'
+        return 'Medicina Legal','Perícia médica e previdenciária'
     if cargo==5:
         if n<=58:return 'Geologia','Geoquímica e mineralogia'
         if n<=62:return 'Geologia','Paleontologia'
@@ -136,12 +156,12 @@ if __name__=='__main__':
     if '--reextrair' in sys.argv:
         from importar_cebraspe import extrair
         metas=json.loads((ROOT/'tmp/federais-manifesto-2025-prf.json').read_text(encoding='utf8'))
-        for cargo,opcoes in {3:{'topos_itens':{58:371.0,105:110.0}},4:{'itens_sem_divisao':[82,93,98],'topos_itens':{118:119.0,119:153.1,120:187.2}},5:{},6:{}}.items():
+        for cargo,opcoes in {3:{'topos_itens':{58:371.0,105:110.0}},4:{'itens_sem_divisao':[82,93,98],'topos_itens':{118:119.0,119:153.1,120:187.2}},5:{},6:{},7:{},8:{}}.items():
             meta=next(m for m in metas if m['id']==f'pf-2025-cargo-{cargo}')
             meta.update(opcoes)
             # Nestes itens, a primeira linha não possui símbolos elevados.
             # A margem de 1 ponto exclui os descendentes da linha anterior.
-            sem_fragmentos={5:[72,73,77],6:[115,116,119,120]}.get(cargo,[])
+            sem_fragmentos={5:[72,73,77],6:[115,116,119,120],7:[66,74,75,78,80],8:[116,118,119,120]}.get(cargo,[])
             if sem_fragmentos:
                 import pdfplumber
                 with pdfplumber.open(ROOT/f"tmp/federais/{meta['prova_local']}.pdf") as doc:

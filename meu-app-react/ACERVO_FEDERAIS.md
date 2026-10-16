@@ -15,6 +15,8 @@ Este registro diferencia cadernos publicados de extrações ainda em revisão.
 | PF 2025 - Perito Criminal Federal - Área 3 Informática Forense | 120 | 5 | 115 |
 | PF 2025 - Perito Criminal Federal - Área 5 Geologia Forense | 120 | 8 | 112 |
 | PF 2025 - Perito Criminal Federal - Área 7 Engenharia Civil | 120 | 7 | 113 |
+| PF 2025 - Perito Criminal Federal - Área 11 Engenharia Cartográfica | 120 | 6 | 114 |
+| PF 2025 - Perito Criminal Federal - Área 12 Medicina Legal | 120 | 6 | 114 |
 
 A prova PRF vinculada ao edital de 2018 foi aplicada em 03/02/2019. O acervo usa o ano da aplicação. Não são cadernos administrativos nem cursos internos.
 
@@ -28,7 +30,7 @@ O extrator `scripts/importar_cebraspe.py` lê o PDF e seu gabarito definitivo e 
 
 ## Ainda não concluído
 
-As outras 8 áreas de Perito Criminal Federal PF 2025 estão extraídas em `public/acervo/federais-em-revisao`, mas NÃO fazem parte destes lotes publicados. Precisam de revisão visual, conferência de contextos, classificação e associação aos cadernos antes da integração. Delegado, Agente, Escrivão, Papiloscopista e Perito Áreas 1 Contábil-Financeira, 2 Engenharia Elétrica/Eletrônica , 3 Informática Forense, 5 Geologia e 7 Engenharia Civil estão concluídos nos lotes descritos abaixo. Não contar as extrações em quarentena como acervo disponível no site. Ao reunir itens comuns a cargos diferentes, preservar cada associação e número original; não fundir afirmações curtas de casos diferentes.
+As outras 6 áreas de Perito Criminal Federal PF 2025 estão extraídas em `public/acervo/federais-em-revisao`, mas NÃO fazem parte destes lotes publicados. Precisam de revisão visual, conferência de contextos, classificação e associação aos cadernos antes da integração. Delegado, Agente, Escrivão, Papiloscopista e Perito Áreas 1 Contábil-Financeira, 2 Engenharia Elétrica/Eletrônica , 3 Informática Forense, 5 Geologia , 7 Engenharia Civil, 11 Engenharia Cartográfica e 12 Medicina Legal estão concluídos nos lotes descritos abaixo. Não contar as extrações em quarentena como acervo disponível no site. Ao reunir itens comuns a cargos diferentes, preservar cada associação e número original; não fundir afirmações curtas de casos diferentes.
 
 Verificação desta entrega: 61 testes aprovados, incluindo as contagens, respostas, anuladas, arquivos de imagem e preservação dos 240 registros na união do acervo.
 
@@ -79,3 +81,7 @@ Engenharia Elétrica/Eletrônica e Informática Forense completas: 120 posiçõe
 ## PF 2025 - Perito: Geologia e Engenharia Civil
 
 Mais duas provas completas com 120 posições cada, mantendo os 50 itens comuns compartilhados. O lote cumulativo passa a 400 questões únicas em cinco provas completas. Revisadas as seis páginas específicas, 140 recortes e os limites dos contextos: Formação Serra Geral, caracterização dos minerais, aterro com dados de volume/peso/umidade e contrato de reforma da PF. A classificação específica usa Geologia e Engenharia Civil, com agrupamentos por assunto. Eliminados fragmentos de linhas anteriores em sete recortes.
+
+## PF 2025 - Perito: Engenharia Cartográfica e Medicina Legal
+
+Duas provas adicionais completas de 120 posições. O núcleo de 50 itens permanece compartilhado, totalizando 540 questões únicas para sete áreas. Revisadas as seis páginas e os 140 recortes, incluindo a imagem de satélite do item 112 e a matriz de classificação de 430 pixels dos itens 117–120 de Cartográfica. Em Medicina Legal, os itens 63–64 continuam associados ao comando 59 e os 115–116 ao comando 112, apesar da mudança de coluna. Corrigidos nove recortes com fragmentos da linha anterior. Gabaritos definitivos e hashes no manifesto.
