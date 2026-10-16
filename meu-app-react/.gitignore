@@ -26,3 +26,8 @@ dist-ssr
 .env
 .env.*
 !.env.example
+
+# Generated from the pinned PDF/OCR dependencies before dev/build.
+public/leitura-editais/core/
+public/leitura-editais/pdf/
+public/leitura-editais/worker.min.js

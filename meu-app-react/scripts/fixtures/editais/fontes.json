@@ -1,0 +1,12 @@
+[
+  {
+    "arquivo": "marinha-2026.pdf",
+    "fonte": "https://www.marinha.mil.br/cpba/sites/www.marinha.mil.br.cpba/files/2026-02/Edital%20CFAQ-MOC%20n%C2%B0%2004-2026-%281%29.assinado.pdf",
+    "sha256": "eb5679c779c3085c9aa5f4e2003baba4a3e68fe3537678f7a80e3b2bdde988fd"
+  },
+  {
+    "arquivo": "ifsertao-2026.pdf",
+    "fonte": "https://ifsertaope.edu.br/wp-content/uploads/2026/05/Anexo-VII-Conteudo-Programatico.pdf",
+    "sha256": "ada7613099ec512c1f07c85f5e8ab96c055b45c6ab69d62e7ec0a412a8240b80"
+  }
+]

@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
+import {lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import {supabase} from '../supabaseClient'
 import {API_URL} from '../api'
 import {STATUS_EDITAL, novoIdEdital, lerConteudosEdital, acrescentarConteudos, alterarTopico, resumoEdital, topicoVisivel, identidadeEdital, copiarEditalAntigo} from '../editais'
@@ -6,6 +6,7 @@ import './EditalPlanejador.css'
 
 const vazio = {titulo:'', edicao:'', unidade:'', data_prova:''}
 const exemplo = 'Português:\nInterpretação de textos\nConcordância verbal e nominal\n\nMatemática:\nEquações do primeiro e segundo grau\nGeometria plana'
+const ImportarEditalPdf = lazy(()=>import('./ImportarEditalPdf'))
 
 function Progresso({materias}) {
   const r = resumoEdital(materias)
@@ -32,6 +33,7 @@ export default function EditalPlanejador({userId, client = supabase}) {
   const [editando,setEditando] = useState(null)
   const [antigos,setAntigos] = useState(null)
   const [lendoAntigos,setLendoAntigos] = useState(false)
+  const [leitorSolicitado,setLeitorSolicitado] = useState(false)
   const bloqueio = useRef(false)
   const ativo = editais.find(e => e.id === selecionado)
   const resumo = useMemo(() => resumoEdital(ativo?.materias || []),[ativo])
@@ -110,6 +112,16 @@ export default function EditalPlanejador({userId, client = supabase}) {
     return gravar({...ativo,materias:alterarTopico(ativo.materias,materiaId,topicoId,dados)})
   }
 
+  async function incluirDoPdf(grupos) {
+    const lote=acrescentarConteudos(ativo.materias,grupos)
+    if(!lote.adicionados)return false
+    if(await gravar({...ativo,materias:lote.materias})) {
+      setAviso(`${lote.adicionados} conteúdos do PDF acrescentados. O progresso e as outras matérias foram preservados.`)
+      return true
+    }
+    return false
+  }
+
   async function carregarAntigos() {
     setLendoAntigos(true); setErro('')
     try {
@@ -151,6 +163,7 @@ export default function EditalPlanejador({userId, client = supabase}) {
       {!!editais.length && <div className="edital-seletor"><label>Concurso em estudo<select disabled={salvando} value={selecionado} onChange={e => escolher(e.target.value)}>{editais.map(e => <option key={e.id} value={e.id}>{[e.titulo,e.edicao,e.unidade].filter(Boolean).join(' · ')}</option>)}</select></label><span>Seus editais e marcações são pessoais.</span></div>}
       {ativo ? <>
         <div className="edital-painel"><div className="edital-linha"><div><h3>{ativo.titulo} {ativo.edicao}</h3><p>{ativo.unidade}{ativo.data_prova ? ` · Prova em ${ativo.data_prova.split('-').reverse().join('/')}` : ''}</p></div><div className="edital-acoes"><button disabled={salvando} onClick={() => {setForm({titulo:ativo.titulo,edicao:ativo.edicao,unidade:ativo.unidade,data_prova:ativo.data_prova || ''});setConfigurando(true);setCriando(false)}}>Editar concurso</button><button onClick={exportar}>Baixar cópia</button></div></div><Progresso materias={ativo.materias} /><div className="edital-indicadores"><span><strong>{ativo.materias.length}</strong> matérias</span><span><strong>{resumo.estudando}</strong> em estudo</span><span><strong>{resumo.revisar}</strong> para revisar</span><span><strong>{resumo.total-resumo.concluidos}</strong> ainda não concluídos</span></div></div>
+        <details className="edital-painel edital-pdf" onToggle={e=>{if(e.currentTarget.open)setLeitorSolicitado(true)}}><summary>Importar e verticalizar um PDF de edital</summary>{leitorSolicitado && <Suspense fallback={<p>Carregando leitor de editais…</p>}><ImportarEditalPdf key={ativo.id} materiasExistentes={ativo.materias} onAdicionar={incluirDoPdf} disabled={salvando}/></Suspense>}</details>
         <details className="edital-painel edital-inclusao" open={!resumo.total || undefined}>
           <summary>+ Acrescentar matérias e conteúdos</summary>
           <form onSubmit={incluir} className="edital-form">
@@ -174,6 +187,7 @@ export default function EditalPlanejador({userId, client = supabase}) {
             {aberta && <><p className="edital-ajuda">Marque o que já estudou. Use “Revisar” para conteúdos que precisam de reforço.</p><ol className="edital-topicos">{visiveis.map(t => <li key={t.id} className={t.status === 'concluido' ? 'edital-concluido' : ''}>
               <div className="edital-topico"><label className="edital-check"><input type="checkbox" disabled={salvando} checked={t.status === 'concluido'} onChange={() => atualizar(m.id,t.id,{status:t.status === 'concluido' ? 'pendente' : 'concluido'})} /><span>{t.titulo}</span></label><div className="edital-topico-acoes"><select disabled={salvando} aria-label={`Etapa de ${t.titulo}`} value={t.status} onChange={e => atualizar(m.id,t.id,{status:e.target.value})}>{Object.entries(STATUS_EDITAL).map(([v,label]) => <option key={v} value={v}>{label}</option>)}</select><button className={t.prioridade === 'alta' ? 'edital-alta' : ''} aria-pressed={t.prioridade === 'alta'} disabled={salvando} title="Alternar prioridade" onClick={() => atualizar(m.id,t.id,{prioridade:t.prioridade === 'alta' ? 'normal' : 'alta'})}>{t.prioridade === 'alta' ? '★ Alta' : '☆ Prioridade'}</button><button disabled={salvando} onClick={() => setEditando({materiaId:m.id,...t})} aria-label={`Editar ${t.titulo}`}>Editar</button></div></div>
               {t.notas && <p className="edital-nota">{t.notas}</p>}
+              {t.fonte_pdf && <p className="edital-nota">PDF: {t.fonte_pdf.arquivo} · página {t.fonte_pdf.pagina}{t.fonte_pdf.pagina_fim!==t.fonte_pdf.pagina ? `–${t.fonte_pdf.pagina_fim}` : ''}{t.fonte_pdf.ocr ? ' · OCR' : ''}</p>}
               {editando?.id === t.id && <form className="edital-edicao edital-form" onSubmit={async e => {e.preventDefault(); if (await atualizar(m.id,t.id,{titulo:editando.titulo.trim(),notas:editando.notas.trim()})) setEditando(null)}}><label>Conteúdo<input required maxLength={1500} value={editando.titulo} onChange={e => setEditando({...editando,titulo:e.target.value})} /></label><label>Minhas anotações<textarea rows={3} maxLength={5000} placeholder="O que revisar, materiais, páginas, dúvidas…" value={editando.notas} onChange={e => setEditando({...editando,notas:e.target.value})} /></label><div className="edital-acoes"><button className="edital-primario" disabled={salvando || !editando.titulo.trim()}>Salvar tópico</button><button type="button" onClick={() => setEditando(null)}>Cancelar</button><button type="button" disabled={salvando} className="edital-perigo" onClick={async () => {if (window.confirm(`Excluir apenas o tópico “${t.titulo}”? Os outros conteúdos serão mantidos.`) && await gravar({...ativo,materias:ativo.materias.map(mm => mm.id === m.id ? {...mm,topicos:mm.topicos.filter(tt => tt.id !== t.id)} : mm)})) setEditando(null)}}>Excluir tópico</button></div></form>}
             </li>)}</ol><div className="edital-acoes"><button disabled={salvando} onClick={() => {setModo('materia');setMateria(m.nome);document.querySelector('.edital-inclusao')?.setAttribute('open','');document.querySelector('.edital-inclusao')?.scrollIntoView({behavior:'smooth',block:'start'})}}>+ Conteúdos em {m.nome}</button></div></>}
           </section>

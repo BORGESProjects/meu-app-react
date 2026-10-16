@@ -1,4 +1,6 @@
+import {normalizarMateria} from './filtros.js'
 const chave = valor => String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, ' ').trim().toLocaleLowerCase('pt-BR')
+const chaveMateria = nome => chave(normalizarMateria(nome))
 const texto = valor => String(valor || '').replace(/^\s*(?:[-•●▪]\s*|\d+(?:\.\d+)*(?:[.)]\s+|\s*[-–—]\s+)|\d+(?:\.\d+)+\s+)/, '').trim()
 export const STATUS_EDITAL = {pendente:'Não iniciado', estudando:'Em estudo', revisar:'Revisar', concluido:'Estudado'}
 export const novoIdEdital = () => crypto.randomUUID()
@@ -33,12 +35,14 @@ export function acrescentarConteudos(materias, grupos, id = novoIdEdital) {
   const copia = materias.map(m => ({...m, topicos:m.topicos.map(t => ({...t}))}))
   let adicionados = 0, repetidos = 0
   for (const grupo of grupos) {
-    let materia = copia.find(m => chave(m.nome) === chave(grupo.nome))
-    if (!materia) { materia = {id:id(), nome:grupo.nome.trim(), topicos:[]}; copia.push(materia) }
+    let materia = copia.find(m => chaveMateria(m.nome) === chaveMateria(grupo.nome))
+    if (!materia) { materia = {id:id(), nome:normalizarMateria(grupo.nome), topicos:[]}; copia.push(materia) }
     const existentes = new Set(materia.topicos.map(t => chave(t.titulo)))
-    for (const titulo of grupo.topicos) {
+    for (const item of grupo.topicos) {
+      const titulo = (typeof item === 'string' ? item : item.titulo).trim()
       if (existentes.has(chave(titulo))) { repetidos++; continue }
-      materia.topicos.push({id:id(), titulo, status:'pendente', prioridade:'normal', notas:''})
+      materia.topicos.push({id:id(), titulo, status:'pendente', prioridade:'normal', notas:'',
+        ...(typeof item === 'object' && item.fonte_pdf ? {fonte_pdf:item.fonte_pdf} : {})})
       existentes.add(chave(titulo)); adicionados++
     }
   }

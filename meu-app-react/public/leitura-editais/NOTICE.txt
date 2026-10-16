@@ -1,0 +1,4 @@
+Local document reading uses Mozilla PDF.js (Apache-2.0) and Tesseract.js / Tesseract.js-core (Apache-2.0).
+The Portuguese OCR model comes from https://github.com/tesseract-ocr/tessdata_fast (Apache-2.0).
+The por.traineddata model is served by this website; documents and recognized text are never sent to an external OCR or AI provider.
+Dependency versions and source licenses are included in package-lock.json and the corresponding dependency packages.
