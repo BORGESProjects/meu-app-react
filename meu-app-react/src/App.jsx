@@ -12,7 +12,7 @@ import { chaveCampoFiltro, chaveConteudoFiltro, opcoesConteudo, opcoesFiltro } f
 import { bancasRedacao, temasRedacao } from './data/temasRedacao'
 import { ESPECIFICAS_UEM, incluirNoSimuladoUem } from './uem'
 import { incluirNoSimuladoIfpr } from './ifpr'
-import { concursosDaQuestao, incluirIdiomaDaProva } from './provasCompartilhadas'
+import { concursosDaQuestao, incluirIdiomaDaProva, questaoNaProva } from './provasCompartilhadas'
 
 const DIAS_SEMANA = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo']
 
@@ -53,6 +53,7 @@ function dadosDaProva(questao) {
 function questoesDaProva(questoes, provaId, idioma = 'Inglês', especificas = ['Biologia', 'Química']) {
   return questoes
     .filter(questao => !questao.prova_incompleta && podeCorrigir(questao) && concursosDaQuestao(questao).some(concurso => dadosDaProva({...questao, concurso}).id === provaId))
+    .map(questao => questaoNaProva(questao, concursosDaQuestao(questao).find(concurso => dadosDaProva({...questao, concurso}).id === provaId)))
     .filter(questao => incluirNoSimuladoUem(questao, idioma, especificas))
     .filter(questao => incluirNoSimuladoIfpr(questao, idioma))
     .filter(questao => incluirIdiomaDaProva(questao, idioma))
@@ -512,7 +513,7 @@ export default function App() {
       return data
     })
     const federaisRevisadas = tentarLeitura(async () => {
-      const lotes = await Promise.all([['prf-2019',120],['pf-2021-delegado',120],['prf-2021',128]].map(async ([nome,quantidade]) => {
+      const lotes = await Promise.all([['prf-2019',120],['pf-2021-delegado',120],['prf-2021',128],['pf-2021-operacionais',153]].map(async ([nome,quantidade]) => {
         const r = await fetch(`/acervo/${nome}/questoes.json`, {signal:AbortSignal.timeout(30000)})
         if (!r.ok) throw new Error('Caderno federal indisponível')
         const data = await r.json()

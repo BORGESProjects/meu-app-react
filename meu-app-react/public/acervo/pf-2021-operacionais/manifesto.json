@@ -1,0 +1,59 @@
+{
+  "itens_unicos": 153,
+  "posicoes_originais": 360,
+  "cadernos": [
+    {
+      "caderno": "pf-2021-agente",
+      "concurso": "PF 2021 — Agente de Polícia Federal",
+      "itens": 120,
+      "corrigiveis": 115,
+      "anuladas": [
+        28,
+        92,
+        106,
+        108,
+        119
+      ],
+      "respostas": "ECEEECECCEEEECCCEECCEECECEEXCEECCEECCCEEEEECEECCCCEEECCECCEEECEECCCEEEEECCECEECCEEEEECEEECCXECCECCEEECCECXEXECECCEEECCXC",
+      "fonte_pdf": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos/provas-e-gabaritos-de-concursos-anteriores/concurso-carreira-policial-2021/agente-de-policia-federal/prova_cargo_2_agente_de_polcia_federal.pdf/@@download/file",
+      "fonte_gabarito": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos/provas-e-gabaritos-de-concursos-anteriores/concurso-carreira-policial-2021/agente-de-policia-federal/gab_definitivo_apf.pdf/@@download/file",
+      "sha256_pdf": "5464654f02abfcafe921eaa65c4f30bf9c267d80e667b7b35a8ca9e3f115b42f",
+      "sha256_gabarito": "36c70e3ad6bce79ae872333b0bc4cbb4848cd843b6ed7f56516b8a16902dbe3b"
+    },
+    {
+      "caderno": "pf-2021-escrivao",
+      "concurso": "PF 2021 — Escrivão de Polícia Federal",
+      "itens": 120,
+      "corrigiveis": 115,
+      "anuladas": [
+        28,
+        92,
+        101,
+        103,
+        113
+      ],
+      "respostas": "ECEEECECCEEEECCCEECCEECECEEXCEECCEECCCEEEEECEECCCCEEECCECCEEECEECCCEEEEECCECEECCEEEEECEEECCXECCECCECXEXECECCEEECXCCECECE",
+      "fonte_pdf": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos/provas-e-gabaritos-de-concursos-anteriores/concurso-carreira-policial-2021/escrivao-de-policia-federal/prova_cargo_3_escrivo_de_polcia_federal.pdf/@@download/file",
+      "fonte_gabarito": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos/provas-e-gabaritos-de-concursos-anteriores/concurso-carreira-policial-2021/escrivao-de-policia-federal/gab_definitivo_epf.pdf/@@download/file",
+      "sha256_pdf": "d10ff2dae65cd8614e076d5e318b8258f12aa7dcf60b858f1738d574b01e7d31",
+      "sha256_gabarito": "46805ba4e7f83506a73d4ea21b8ecfd7fd83e28c6536cbcc424f687f44cbb6c7"
+    },
+    {
+      "caderno": "pf-2021-papiloscopista",
+      "concurso": "PF 2021 — Papiloscopista Policial Federal",
+      "itens": 120,
+      "corrigiveis": 116,
+      "anuladas": [
+        28,
+        92,
+        109,
+        112
+      ],
+      "respostas": "ECEEECECCEEEECCCEECCEECECEEXCEECCECCCCEEEEECEECCCCEEECCECCEEECEECCCEEEEECCECEECCEEEEECEEECCXECCEECECCEECCEEEXCCXECCEECEC",
+      "fonte_pdf": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos/provas-e-gabaritos-de-concursos-anteriores/concurso-carreira-policial-2021/papiloscopista-policial-federal/prova_cargo_4_papiloscopista_policial_federal.pdf/@@download/file",
+      "fonte_gabarito": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos/provas-e-gabaritos-de-concursos-anteriores/concurso-carreira-policial-2021/papiloscopista-policial-federal/gab_definitivo_ppf.pdf/@@download/file",
+      "sha256_pdf": "99b59dac252614f67877bdd2dc82888807089796a630dc0f8dcef0d6f0c82c75",
+      "sha256_gabarito": "0013fbfa3a74e4ebe0e6d8a9bbd403dcc377724c36f976cfba2fd01683c89e7a"
+    }
+  ]
+}

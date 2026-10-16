@@ -68,10 +68,15 @@ def extrair(meta, destino):
      prefix=support(pg,x0,x1,start,815.8)
      if prefix:events.append(('support',prefix))
      continue
-    lo=start; prefix=support(pg,x0,x1,lo,markers[0]['top']-2)
+    def marker_top(marker):
+     # Fraction numerators and tall brackets may extend above the item label.
+     baseline=marker['top']
+     raised=[c['top']-2 for c in p.chars if x0<=c['x0']<x1 and baseline-12<=c['top']<baseline-2 and c['bottom']>baseline+1]
+     return min([baseline-2]+raised)
+    lo=start; prefix=support(pg,x0,x1,lo,marker_top(markers[0]))
     if prefix:events.append(('support',prefix))
     for idx,m in enumerate(markers):
-     n=int(m['text']);top=m['top']-2;end=markers[idx+1]['top']-2 if idx+1<len(markers) else 815.8
+     n=int(m['text']);top=marker_top(m);end=marker_top(markers[idx+1]) if idx+1<len(markers) else 815.8
      words=[w for w in ws if x0<=w['x0']<x1 and m['top']-3<=w['top']<end]
      lines=[]
      for w in sorted(words,key=lambda w:(round(w['top']/2),w['x0'])):
@@ -116,6 +121,10 @@ def extrair(meta, destino):
    if typ=='support':
     adjacent_support=event_index>0 and events[event_index-1][0]=='support' and events[event_index-1][1]['pagina']==event['pagina']
     t=event['texto']; continuation=bool(re.search(r'texto\s+(?:\w[\w.-]*|apresentado|precedente|anterior)|text (?:above|below|preceding)|figura|situação (?:hipotética|apresentada)|caso (?:apresentado|hipotético)',t,re.I))
+    # A new self-contained scenario resets the preceding topic, even if its
+    # own closing command says 'situação hipotética'.
+    new_topic=bool(re.match(r'^(?:BLOCO [IVX]+|Considere que|Considerando que|Determinad[ao] |Foi realizado|Considere os seguintes)',t,re.I))
+    if new_topic:active=[]
     # Referenced texts and scenarios may continue from the previous column.
     if not adjacent_support and not continuation and not re.match(r'^(?:Ainda|[a-záéíóúç])',t):active=[]
     if not adjacent_support and len(t)>450 and not re.match(r'^(?:Ainda|Julgue|Com|A respeito|Considerando|[a-záéíóúç])',t):active=[]
@@ -135,7 +144,7 @@ def extrair(meta, destino):
     for im in imgs:combined.paste(im,(0,y));y+=im.height+10
     combined.save(ROOT/'public'/itemimage.lstrip('/'),'WEBP',quality=90)
    ans=answers[n]
-   records.append(dict(id=qid,ano=meta['ano'],banca=meta['banca'],concurso=meta['concurso'],numero_original=n,materia=meta.get('materia','Conhecimentos específicos'),conteudo=meta.get('conteudo','Conhecimentos específicos'),dificuldade='Médio',dificuldade_estimada=True,tipo_resposta='certo_errado',enunciado=event['texto'],opcoes=['Certo','Errado'],resposta_correta=None if ans=='X' else 0 if ans=='C' else 1,anulada=ans=='X',imagem_original=itemimage,imagem_sem_alternativas=True,texto_extraido_corrompido=True,apoio=apoios,fonte_pdf=meta['fonte_pdf'],fonte_gabarito=meta['fonte_gabarito'],pagina=event['pagina'],organizadora='Cebraspe',**{k:v for k,v in meta.items() if k in ['idioma','cargo','provas']}))
+   records.append(dict(id=qid,ano=meta['ano'],banca=meta['banca'],concurso=meta['concurso'],numero_original=n,materia=meta.get('materia','Conhecimentos específicos'),conteudo=meta.get('conteudo','Conhecimentos específicos'),dificuldade='Médio',dificuldade_estimada=True,tipo_resposta='certo_errado',enunciado=event['texto'],opcoes=['Certo','Errado'],resposta_correta=None if ans=='X' else 0 if ans=='C' else 1,anulada=ans=='X',imagem_original=itemimage,imagem_sem_alternativas=True,texto_extraido_corrompido=True,apoio=apoios,fonte_pdf=meta['fonte_pdf'],fonte_gabarito=meta['fonte_gabarito'],pagina=event['pagina'],recortes_pdf=[{'pagina':event['pagina'],'caixa':event['box']}]+[{'pagina':a['pagina'],'caixa':a['box']} for a in event.get('continuacoes',[])],organizadora='Cebraspe',**{k:v for k,v in meta.items() if k in ['idioma','cargo','provas']}))
   (ROOT/'tmp'/f'{name}-comandos-revisar.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8')
   (ROOT/'tmp'/f'{name}-eventos-revisar.json').write_text(json.dumps(events,ensure_ascii=False,indent=2),encoding='utf8')
   return records
