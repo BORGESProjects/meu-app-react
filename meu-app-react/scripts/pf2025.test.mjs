@@ -94,3 +94,42 @@ test('PF 2025: fórmulas, tabela-verdade, código SQL, contabilidade e circuito 
  assert.match(origemOp('pf-2025-cargo-17-115').enunciado,/CO/)
  assert.equal(origemOp('pf-2025-cargo-17-120').recortes_pdf[0].caixa[2],568,'página final usa coluna inteira')
 })
+
+const peritos=JSON.parse(readFileSync(new URL('../public/acervo/pf-2025-peritos/questoes.json',import.meta.url),'utf8'))
+const manifestoPeritos=JSON.parse(readFileSync(new URL('../public/acervo/pf-2025-peritos/manifesto.json',import.meta.url),'utf8'))
+test('PF 2025 Perito: apenas áreas completas liberadas, sem duplicar o núcleo comum',()=>{
+ assert.equal(peritos.length,50+70*manifestoPeritos.cadernos.length)
+ for(const m of manifestoPeritos.cadernos){
+  const prova=peritos.filter(q=>concursosDaQuestao(q).includes(m.concurso)).map(q=>questaoNaProva(q,m.concurso)).sort((a,b)=>a.numero_original-b.numero_original)
+  assert.deepEqual(prova.map(q=>q.numero_original),Array.from({length:120},(_,i)=>i+1))
+  assert.equal(prova.filter(podeCorrigir).length,m.corrigiveis)
+  assert.equal(prova.map(q=>q.gabarito_oficial).join(''),m.respostas)
+  if(m.concurso.includes('Contábil-Financeira')){
+   assert.equal(m.corrigiveis,110)
+   assert.deepEqual(m.anuladas,[18,19,31,38,53,67,80,82,94,114])
+  }
+ }
+ assert.deepEqual([...new Set(peritos.flatMap(concursosDaQuestao))].sort(),manifestoPeritos.cadernos.map(m=>m.concurso).sort())
+ const unidas=unirQuestoes([...peritos,...operacionais,...qs])
+ for(const q of peritos){
+  assert.ok(unidas.some(item=>item.id===q.id),q.id)
+  assert.ok(questaoPublicavel(corrigirQuestaoConferida(q)),q.id)
+  assert.equal(q.apoio.length,1,q.id)
+  for(const img of [q.imagem_original,...q.apoio.map(a=>a.imagem)])assert.ok(existsSync(new URL('../public'+img,import.meta.url)),img)
+ }
+})
+test('PF 2025 Perito Contábil: casos independentes, gráficos e código completos',()=>{
+ const q=n=>peritos.find(q=>q.id===`pf-2025-cargo-2-${String(n).padStart(3,'0')}`)
+ assert.match(q(99).apoio[0].texto,/gráfico precedente/)
+ assert.match(q(101).apoio[0].texto,/amortização constante/);assert.doesNotMatch(q(101).apoio[0].texto,/gráfico precedente/)
+ assert.match(q(103).apoio[0].texto,/duplicata/);assert.doesNotMatch(q(103).apoio[0].texto,/amortização constante/)
+ assert.match(q(105).apoio[0].texto,/boxplot/);assert.doesNotMatch(q(105).apoio[0].texto,/duplicata/)
+ assert.match(q(113).apoio[0].texto,/arquivo JSON/);assert.doesNotMatch(q(113).apoio[0].texto,/regressão linear/)
+ assert.match(q(114).enunciado,/80 a 84/);assert.match(q(114).enunciado,/distribuição\s+normal/)
+ assert.match(q(120).enunciado,/print\(resultado\)/);assert.match(q(120).enunciado,/v_3/)
+ const p31=peritos.find(q=>q.id==='pf-2025-comum-peritos-031')
+ assert.match(p31.apoio[0].texto,/falsificação de documento/);assert.doesNotMatch(p31.apoio[0].texto,/Argentina/)
+ const p46=peritos.find(q=>q.id==='pf-2025-comum-peritos-046')
+ assert.match(p46.apoio[0].texto,/alarme de movimentação/)
+ for(const n of [99,105])assert.ok(readFileSync(new URL('../public'+q(n).apoio[0].imagem,import.meta.url)).length>12000)
+})

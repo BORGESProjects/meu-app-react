@@ -10,6 +10,7 @@ Este registro diferencia cadernos publicados de extrações ainda em revisão.
 | PF 2021 — Agente, Escrivão e Papiloscopista (sem duplicatas) | 153 | 7 | 146 |
 | PF 2025 - Delegado de Polícia Federal | 120 | 6 | 114 |
 | PF 2025 - Agente, Escrivão e Papiloscopista (sem duplicatas) | 168 | 12 | 156 |
+| PF 2025 - Perito Criminal Federal - Área 1 Contábil-Financeira | 120 | 10 | 110 |
 
 A prova PRF vinculada ao edital de 2018 foi aplicada em 03/02/2019. O acervo usa o ano da aplicação. Não são cadernos administrativos nem cursos internos.
 
@@ -23,7 +24,7 @@ O extrator `scripts/importar_cebraspe.py` lê o PDF e seu gabarito definitivo e 
 
 ## Ainda não concluído
 
-As 13 áreas de Perito Criminal Federal PF 2025 estão extraídos em `public/acervo/federais-em-revisao`, mas NÃO fazem parte destes lotes publicados. Precisam de revisão visual, conferência de contextos, classificação e associação aos cadernos antes da integração. Delegado, Agente, Escrivão e Papiloscopista estão concluídos nos lotes descritos abaixo. Não contar as extrações em quarentena como acervo disponível no site. Ao reunir itens comuns a cargos diferentes, preservar cada associação e número original; não fundir afirmações curtas de casos diferentes.
+As outras 12 áreas de Perito Criminal Federal PF 2025 estão extraídas em `public/acervo/federais-em-revisao`, mas NÃO fazem parte destes lotes publicados. Precisam de revisão visual, conferência de contextos, classificação e associação aos cadernos antes da integração. Delegado, Agente, Escrivão, Papiloscopista e Perito Área 1 Contábil-Financeira estão concluídos nos lotes descritos abaixo. Não contar as extrações em quarentena como acervo disponível no site. Ao reunir itens comuns a cargos diferentes, preservar cada associação e número original; não fundir afirmações curtas de casos diferentes.
 
 Verificação desta entrega: 61 testes aprovados, incluindo as contagens, respostas, anuladas, arquivos de imagem e preservação dos 240 registros na união do acervo.
 
@@ -58,3 +59,11 @@ O lote `pf-2025-operacionais` guarda 168 itens únicos, 96 compartilhados pelos 
 Foram revisadas as 11 páginas e os 168 recortes, incluindo texto literário integral, tabela-verdade do item 53, listas/conclusões dos itens 54, 55 e 60, fórmulas de Estatística, SQL dos itens 91–92, lançamentos contábeis, balancete de Agente, ponte de resistores e expressões de Física, além da página final de Química em coluna única. Instruções gerais da capa não integram mais o texto-base. Cada grupo recebe somente seu comando revisado; casos de alto-mar e estatística não herdam comandos anteriores. Os três cargos recuperam numeração, imagem, apoio e fonte em `origens_provas`.
 
 Reprodução: `scripts/publicar_pf2025_operacionais.py --reextrair`. As exceções de segmentação dos itens 54,55,60 estão explícitas e verificadas em testes. A associação de comandos segue os limites conferidos no PDF. O extrator reconhece cabeçalhos menores (9,96 pt), preserva enumerações internas nesses itens e encerra recortes antes da área de rascunho.
+
+## PF 2025 - Perito: Área 1 Contábil-Financeira
+
+A primeira área completa de Perito reúne os 50 conhecimentos básicos e os 70 específicos: 120 itens, dos quais 110 corrigíveis. Anuladas: 18,19,31,38,53,67,80,82,94,114. O lote cumulativo `pf-2025-peritos` só associa o núcleo comum às áreas específicas efetivamente revisadas. As demais áreas não aparecem como simulados incompletos de 50 itens.
+
+Foram conferidas as sete páginas e os 120 recortes. Incluem-se o texto de Português sobre IA, casos independentes de processo penal, proposições lógicas, gráfico de juros simples/compostos, boxplot, modelo de regressão, tabela de frequências e Python completo com a saída indicada na prova. Casos de SAC, desconto de duplicata, boxplot e JSON foram desvinculados de comandos anteriores. Os quatro PDFs oficiais (básicos/específicos e respectivos gabaritos) foram novamente comparados por SHA-256.
+
+O publicador `scripts/publicar_pf2025_peritos.py` contém a lista explícita de áreas aprovadas e suas fronteiras de comandos e matérias. Adições futuras ampliam essa mesma coleção e as associações do núcleo comum, sem duplicá-lo. A seleção por cargo, gabarito oficial, não duplicação do núcleo comum e regressões de contextos, gráficos e código são verificadas em testes.
