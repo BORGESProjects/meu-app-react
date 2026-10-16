@@ -1,0 +1,24 @@
+{
+  "caderno": "prf-2019",
+  "itens": 120,
+  "corrigiveis": 108,
+  "anuladas": [
+    3,
+    31,
+    33,
+    61,
+    62,
+    72,
+    73,
+    75,
+    83,
+    91,
+    109,
+    113
+  ],
+  "fonte_pdf": "https://cdn.cebraspe.org.br/concursos/PRF_18/arquivos/440_PRF_001_00_PAG_9.PDF",
+  "fonte_gabarito": "https://cdn.cebraspe.org.br/concursos/PRF_18/arquivos/GAB_DEFINITIVO_MATRIZ_440_PRF_001_00_PAG_9.PDF",
+  "sha256_pdf": "e9d4a9d8bef2c1321695df82599488225c8c9c84fb4475a68729390d12022c49",
+  "sha256_gabarito": "3ff3f423d75d3727fbba4736d0573150dc16cbd84e39d02a744fd0d0a02d026c",
+  "respostas": "CEXCECEECCECCEEEECCEEECECCECECXCXCEECECCEECCCEECECCCEEECCEEEXXCEEECCCEEXXEXEECCECEXECCECEEXCEEEEEECCCECEEEECXCEEXCECEEEC"
+}

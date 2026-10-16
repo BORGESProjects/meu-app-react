@@ -120,6 +120,10 @@ function semTextoDeApoio(questao) {
 }
 
 function identidadeConteudo(questao) {
+  // C/E curtos podem ter o mesmo texto, mas depender de casos distintos.
+  if (questao.tipo_resposta === 'certo_errado' && questao.chave_oficial && /^(?:PF|PRF)$/.test(questao.banca) && /^https:\/\/(?:www\.gov\.br\/pf\/|cdn\.cebraspe\.org\.br\/concursos\/)/.test(questao.fonte_pdf || '')) {
+    return `cebraspe-oficial:${questao.chave_oficial}`
+  }
   // O texto auxiliar de uma fórmula pode ser vazio/igual em recortes diferentes.
   // Identifique esses itens pela posição no caderno oficial, nunca pelo texto incompleto.
   if (questao.banca === 'UEM' && questao.texto_extraido_corrompido && questao.imagem_original && /^https:\/\/(?:www\.)?vestibular\.uem\.br\/provas\//.test(questao.fonte_pdf || '')) {

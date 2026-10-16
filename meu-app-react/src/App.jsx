@@ -12,6 +12,7 @@ import { chaveCampoFiltro, chaveConteudoFiltro, opcoesConteudo, opcoesFiltro } f
 import { bancasRedacao, temasRedacao } from './data/temasRedacao'
 import { ESPECIFICAS_UEM, incluirNoSimuladoUem } from './uem'
 import { incluirNoSimuladoIfpr } from './ifpr'
+import { concursosDaQuestao, incluirIdiomaDaProva } from './provasCompartilhadas'
 
 const DIAS_SEMANA = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo']
 
@@ -51,9 +52,10 @@ function dadosDaProva(questao) {
 
 function questoesDaProva(questoes, provaId, idioma = 'Inglês', especificas = ['Biologia', 'Química']) {
   return questoes
-    .filter(questao => !questao.prova_incompleta && podeCorrigir(questao) && dadosDaProva(questao).id === provaId)
+    .filter(questao => !questao.prova_incompleta && podeCorrigir(questao) && concursosDaQuestao(questao).some(concurso => dadosDaProva({...questao, concurso}).id === provaId))
     .filter(questao => incluirNoSimuladoUem(questao, idioma, especificas))
     .filter(questao => incluirNoSimuladoIfpr(questao, idioma))
+    .filter(questao => incluirIdiomaDaProva(questao, idioma))
     .sort((a, b) => {
       const blocoA = a.bloco_especifico ? especificas.indexOf(a.bloco_especifico) + 1 : 0
       const blocoB = b.bloco_especifico ? especificas.indexOf(b.bloco_especifico) + 1 : 0
@@ -509,8 +511,18 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 60) throw new Error('Lote PUCPR 2025/2 Medicina inválido')
       return data
     })
-    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UFPR 2022', 'UFPR 2021', 'UFPR 2020', 'UFPR 2019', 'UTFPR 2025', 'UTFPR 2024/1', 'UTFPR 2024/2', 'UTFPR 2023', 'IFPR 2024', 'IFPR 2023', 'IFPR 2020 completa', 'IFPR 2019 completa', 'UEM Verão 2025 completa', 'UEM Inverno 2025 completa', 'UEM 2019 a 2024 completa', 'PUC-PR 2024/2 Medicina', 'PUC-PR 2025/1 Medicina', 'PUC-PR 2025/2 Medicina']
-    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,ifpr2020,ifpr2019,uem2025,uem2025Inverno,uemHistorico,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina])
+    const federaisRevisadas = tentarLeitura(async () => {
+      const lotes = await Promise.all(['prf-2019','pf-2021-delegado'].map(async nome => {
+        const r = await fetch(`/acervo/${nome}/questoes.json`, {signal:AbortSignal.timeout(30000)})
+        if (!r.ok) throw new Error('Caderno federal indisponível')
+        const data = await r.json()
+        if (!Array.isArray(data) || data.length !== 120) throw new Error('Caderno federal incompleto')
+        return data
+      }))
+      return lotes.flat()
+    })
+    const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UFPR 2022', 'UFPR 2021', 'UFPR 2020', 'UFPR 2019', 'UTFPR 2025', 'UTFPR 2024/1', 'UTFPR 2024/2', 'UTFPR 2023', 'IFPR 2024', 'IFPR 2023', 'IFPR 2020 completa', 'IFPR 2019 completa', 'UEM Verão 2025 completa', 'UEM Inverno 2025 completa', 'UEM 2019 a 2024 completa', 'PUC-PR 2024/2 Medicina', 'PUC-PR 2025/1 Medicina', 'PUC-PR 2025/2 Medicina', 'PF e PRF revisadas']
+    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,ifpr2020,ifpr2019,uem2025,uem2025Inverno,uemHistorico,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina,federaisRevisadas])
     const carregadas = resultados.flatMap(resultado => resultado.status === 'fulfilled' && Array.isArray(resultado.value) ? resultado.value : [])
     setQuestoes(unirQuestoes(carregadas))
     setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
@@ -825,7 +837,9 @@ export default function App() {
     if (!q.concurso || q.prova_incompleta || !podeCorrigir(q)) return
     if (!incluirNoSimuladoUem(q, idiomaSimulado, especificasUem)) return
     if (!incluirNoSimuladoIfpr(q, idiomaSimulado)) return
-    const dados = dadosDaProva(q)
+    if (!incluirIdiomaDaProva(q, idiomaSimulado)) return
+    concursosDaQuestao(q).forEach(concurso => {
+    const dados = dadosDaProva({...q, concurso})
     const chave = dados.id
     if (!mapaSimulados[chave]) {
       mapaSimulados[chave] = {
@@ -839,6 +853,7 @@ export default function App() {
       simuladosDisponiveis.push(mapaSimulados[chave])
     }
     mapaSimulados[chave].questoesCount++
+    })
   })
   simuladosDisponiveis.sort((a, b) => b.ano.localeCompare(a.ano, 'pt-BR', { numeric: true }) || a.prova.localeCompare(b.prova, 'pt-BR'))
 
@@ -1107,8 +1122,8 @@ export default function App() {
                   <button onClick={() => setSimuladoAtivo(null)} className="w-full shrink-0 text-slate-400 hover:text-slate-100 text-xs font-medium bg-slate-800 px-4 py-2 rounded-2xl transition-all sm:w-auto">Sair da Prova</button>
                 </div>
 
-                {(simuladoAtivo.banca === 'UEM' || (simuladoAtivo.banca === 'IFPR' && questoes.some(q => q.idioma && dadosDaProva(q).id === simuladoAtivo.id))) && <label className="block text-sm text-slate-300">Língua estrangeira
-                  <select value={simuladoAtivo.banca === 'IFPR' && idiomaSimulado === 'Francês' ? 'Inglês' : idiomaSimulado} onChange={e => setIdiomaSimulado(e.target.value)} className="ml-3 rounded-xl border border-slate-700 bg-slate-900 p-3">
+                {(simuladoAtivo.banca === 'UEM' || (['IFPR','PRF'].includes(simuladoAtivo.banca) && questoes.some(q => q.idioma && dadosDaProva(q).id === simuladoAtivo.id))) && <label className="block text-sm text-slate-300">Língua estrangeira
+                  <select value={['IFPR','PRF'].includes(simuladoAtivo.banca) && idiomaSimulado === 'Francês' ? 'Inglês' : idiomaSimulado} onChange={e => setIdiomaSimulado(e.target.value)} className="ml-3 rounded-xl border border-slate-700 bg-slate-900 p-3">
                     {(simuladoAtivo.banca === 'UEM' ? ['Inglês','Espanhol','Francês'] : ['Inglês','Espanhol']).map(idioma => <option key={idioma}>{idioma}</option>)}
                   </select>
                 </label>}

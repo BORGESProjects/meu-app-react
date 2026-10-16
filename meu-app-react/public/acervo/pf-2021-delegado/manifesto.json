@@ -1,0 +1,16 @@
+{
+  "caderno": "pf-2021-delegado",
+  "itens": 120,
+  "corrigiveis": 116,
+  "anuladas": [
+    2,
+    4,
+    53,
+    112
+  ],
+  "fonte_pdf": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos/provas-e-gabaritos-de-concursos-anteriores/concurso-carreira-policial-2021/delegado-de-policia-federal/prova_cargo_1_delegado_de_polcia_federal.pdf/@@download/file",
+  "fonte_gabarito": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos/provas-e-gabaritos-de-concursos-anteriores/concurso-carreira-policial-2021/delegado-de-policia-federal/gab_definitivo_dpf.pdf/@@download/file",
+  "sha256_pdf": "70543026c4d36f8fd4c0642b5023df69a268a958fe147a48d2fac2a201dc3bfa",
+  "sha256_gabarito": "9bbaa7651a4fe7e236b20bea89313f30e9a45158f5946a255aca45afc4a07fda",
+  "respostas": "CXCXECECCECECEEECCCECCECECCCEECCEEEECEEECCEECCCEECCEXCCEECECEECECCECCECECCEECCEECCCEEEECECEECCCECECCECCECCCECEEXECCCEECE"
+}
