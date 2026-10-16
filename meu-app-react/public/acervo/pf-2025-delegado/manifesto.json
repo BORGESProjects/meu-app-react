@@ -1,0 +1,19 @@
+{
+  "caderno": "pf-2025-delegado",
+  "concurso": "PF 2025 — Delegado de Polícia Federal",
+  "itens": 120,
+  "corrigiveis": 114,
+  "anuladas": [
+    2,
+    3,
+    10,
+    14,
+    35,
+    78
+  ],
+  "respostas": "CXXEECEECXCECXCEEECCECECEECCECCCCEXEEEEECCEECECEEECECEEECECCCEECCECCEECCECCEEXECECEEECCEECECECCECCEECECCEEEECCCEECCEECEC",
+  "fonte_pdf": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos/provas-e-gabaritos-de-concursos-anteriores/concurso-carreira-policial-2025/provas-objetivas/cadernos-de-prova/prova-objetiva-2013-conhecimentos-especificos-2013-cargo-1.pdf/@@download/file",
+  "fonte_gabarito": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos/provas-e-gabaritos-de-concursos-anteriores/concurso-carreira-policial-2025/provas-objetivas/gabaritos/gabaritos-definitivos/gabarito-definitivo-conhecimentos-especificos-cargo-01.pdf/@@download/file",
+  "sha256_pdf": "f486b7d16c70981141660b3067c36ef96e5be23c9f00a2a8ef2922882981814d",
+  "sha256_gabarito": "677dacc04423c68867bd3e312bd6f4f36af9d531d1e8a46536ffabd0b593b162"
+}
