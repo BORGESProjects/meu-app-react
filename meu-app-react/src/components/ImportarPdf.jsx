@@ -1,3 +1,4 @@
+import { mensagemErroCadastro } from '../errosAutenticacao'
 import { useEffect, useRef, useState } from 'react'
 import { supabase } from '../supabaseClient'
 import { API_URL } from '../api'
@@ -122,7 +123,7 @@ export default function ImportarPdf({ onPublicado }) {
     await run(async () => {
       if (!email.trim() || senha.length < 8) throw new Error('Informe o e-mail autorizado e uma senha com pelo menos 8 caracteres.')
       const { error } = await supabase.auth.signUp({ email: email.trim(), password: senha })
-      if (error) throw new Error(error.message)
+      if (error) throw new Error(mensagemErroCadastro(error))
       setSenha(''); setAviso('Confira o e-mail de confirmação. Depois de confirmar, volte a esta aba e entre com sua senha. Se já tem conta, use Entrar.')
     })
   }

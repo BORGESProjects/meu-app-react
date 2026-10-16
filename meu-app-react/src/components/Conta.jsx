@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import { mensagemErroCadastro } from '../errosAutenticacao'
 import { supabase } from '../supabaseClient'
 
 const field = 'w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30'
 const button = 'rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-600/20 disabled:cursor-not-allowed disabled:opacity-50'
 
 export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, totais }) {
+  const enviando = useRef(false)
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [modo, setModo] = useState('entrar')
@@ -14,6 +16,8 @@ export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, 
 
   async function enviar(event) {
     event.preventDefault()
+    if (enviando.current) return
+    enviando.current = true
     setBusy(true); setErro(''); setAviso('')
     try {
       if (senha.length < 8) throw new Error('Use uma senha com pelo menos 8 caracteres.')
@@ -22,12 +26,12 @@ export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, 
         if (error) throw new Error('Não foi possível entrar. Confira o e-mail, a senha e a confirmação do cadastro.')
       } else {
         const { data, error } = await supabase.auth.signUp({ email: email.trim(), password: senha })
-        if (error) throw new Error(error.message)
+        if (error) throw new Error(mensagemErroCadastro(error))
         setAviso(data.session ? 'Conta criada e conectada.' : 'Conta criada. Confirme o e-mail recebido e depois entre no site.')
       }
       setSenha('')
     } catch (e) { setErro(e.message) }
-    finally { setBusy(false) }
+    finally { enviando.current = false; setBusy(false) }
   }
 
   if (session) return <section className="mx-auto max-w-xl rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-xl sm:p-8">
@@ -61,7 +65,7 @@ export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, 
       <label className="block text-sm font-semibold text-slate-300">Senha<input className={`${field} mt-2`} type="password" required minLength={8} autoComplete={modo === 'entrar' ? 'current-password' : 'new-password'} value={senha} onChange={e => setSenha(e.target.value)} /></label>
       <button className={`${button} w-full`} disabled={busy}>{busy ? 'Aguarde…' : modo === 'entrar' ? 'Entrar' : 'Cadastrar'}</button>
     </form>
-    <button className="mt-5 w-full text-sm font-semibold text-indigo-300" onClick={() => { setModo(modo === 'entrar' ? 'cadastrar' : 'entrar'); setErro(''); setAviso('') }}>
+    <button className="mt-5 w-full text-sm font-semibold text-indigo-300 disabled:opacity-50" disabled={busy} onClick={() => { setModo(modo === 'entrar' ? 'cadastrar' : 'entrar'); setErro(''); setAviso('') }}>
       {modo === 'entrar' ? 'Ainda não tenho conta' : 'Já tenho uma conta'}
     </button>
   </section>
