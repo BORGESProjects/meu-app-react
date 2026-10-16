@@ -1,0 +1,16 @@
+{
+  "instituicao": "UTFPR",
+  "edicao": 2026,
+  "aplicacao": "2025-11-23",
+  "itens_unicos": 44,
+  "questoes_por_idioma": 40,
+  "corrigiveis_por_idioma": 39,
+  "anuladas": [
+    34
+  ],
+  "gabarito": "Definitivo retificado em 31/12/2025",
+  "fonte_pdf": "https://www.utfpr.edu.br/cursos/estudenautfpr/vestibular/edicoes/2026-1/provas-e-gabaritos/prova-vestibular-utfpr-verao-2026.pdf/@@display-file/file",
+  "fonte_gabarito": "https://www.utfpr.edu.br/cursos/estudenautfpr/vestibular/edicoes/2026-1/provas-e-gabaritos/gabarito_vest_definitivo_311225.pdf/@@download/file",
+  "sha256_pdf": "5e6edd3fe0862d0ea4cd4664aa725ecbe9cae1f952be7d9b95ce45360cf546e6",
+  "sha256_gabarito": "67992163f16a03e9908c1be193b338c9dfb69e50733767a6d7b23ccf504f8c38"
+}
