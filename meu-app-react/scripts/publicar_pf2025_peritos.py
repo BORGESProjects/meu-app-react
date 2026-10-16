@@ -15,8 +15,11 @@ APROVADOS = {
     6: [51,57,68,71,74,78,83,85,90,95,100,103,107,111,113,117],
     7: [51,54,57,60,62,65,68,73,81,85,90,94,97,103,105,108,111,114,117],
     8: [51,55,59,65,68,73,79,83,88,98,101,102,104,112,117],
+    9: [51,54,57,61,65,66,70,73,76,79,83,86,88,91,98,103,106,111,117,119],
+    10: [51,56,61,63,64,65,67,70,74,77,81,83,85,87,90,93,97,99,101,107,113,117],
 }
 COMUM = [1,9,13,15,21,23,25,29,31,32,35,37,40,46]
+SOBREPOSICOES_CONFERIDAS = {(111,115),(112,113),(114,114),(115,116),(116,118),(117,120),(119,119),(120,117)}
 DESTINO = ROOT/'public/acervo/pf-2025-peritos'
 
 
@@ -30,6 +33,24 @@ def classificar(cargo,n):
     if n<=39:return 'Criminalística','Vestígios e perícia criminal'
     if n<=45:return 'Direitos Humanos','Direitos Humanos'
     if n<=50:return 'Matemática','Raciocínio lógico'
+    if cargo==10:
+        if n<=55:return 'Engenharia de Minas','Operação e encerramento de minas'
+        if n<=66:return 'Engenharia de Minas','Geotecnia e barragens'
+        if n<=76:return 'Engenharia de Minas','Recursos minerais e planejamento de lavra'
+        if n<=96:return 'Engenharia de Minas','Prospecção e análise mineral'
+        if n<=100:return 'Engenharia de Minas','Hidrologia e hidrogeologia'
+        return 'Engenharia de Minas','Normas e legislação mineral e ambiental'
+    if cargo==9:
+        if n<=56:return 'Física','Grandezas físicas e mecânica'
+        if n<=60:return 'Física','Fluidos e ondas'
+        if n<=65:return 'Física','Mecânica e balística'
+        if n<=72:return 'Física','Eletromagnetismo'
+        if n<=75:return 'Física','Termodinâmica'
+        if n<=82:return 'Física','Óptica e ondas'
+        if n<=90:return 'Física','Física moderna e nuclear'
+        if n<=105:return 'Criminalística','Balística forense'
+        if n<=110:return 'Física','Microscopia e análise de materiais'
+        return 'Legislação Especial','Armas e produtos controlados'
     if cargo==7:
         if n<=67:return 'Engenharia Cartográfica','Topografia e geodésia'
         if n<=84:return 'Engenharia Cartográfica','Cartografia e fotogrametria'
@@ -139,15 +160,28 @@ def preparar():
     # Nenhuma duplicata pode apagar o vínculo de uma prova já publicada.
     existentes=json.loads((ROOT/'public/acervo/pf-2025-operacionais/questoes.json').read_text(encoding='utf8'))
     assert not ({q['chave_oficial'] for q in itens}&{q['chave_oficial'] for q in existentes})
-    assert len({q['chave_oficial'] for q in itens})==len(itens)
+    unicos={};sobreposicoes=0
+    for q in itens:
+        chave=q['chave_oficial']
+        if chave not in unicos:
+            unicos[chave]=q
+            continue
+        anterior=unicos[chave]
+        assert anterior['id'].startswith('pf-2025-cargo-5-') and q['id'].startswith('pf-2025-cargo-10-'),(anterior['id'],q['id'])
+        assert (anterior['numero_original'],q['numero_original']) in SOBREPOSICOES_CONFERIDAS
+        assert (anterior['gabarito_oficial'],anterior['anulada'])==(q['gabarito_oficial'],q['anulada'])
+        anterior['provas']=list(dict.fromkeys(anterior['provas']+q['provas']))
+        anterior['origens_provas']+=q['origens_provas']
+        sobreposicoes+=1
+    itens=list(unicos.values())
     provas=[]
     for concurso in nomes:
-        qs=sorted([q for q in itens if concurso in q['provas']],key=lambda q:q['numero_original'])
+        qs=sorted([{**q,**next(o for o in q['origens_provas'] if o['concurso']==concurso)} for q in itens if concurso in q['provas']],key=lambda q:q['numero_original'])
         assert [q['numero_original'] for q in qs]==list(range(1,121)),concurso
         provas.append(dict(concurso=concurso,itens=120,corrigiveis=sum(not q['anulada'] for q in qs),
                            anuladas=[q['numero_original'] for q in qs if q['anulada']],respostas=''.join(q['gabarito_oficial'] for q in qs)))
     (DESTINO/'questoes.json').write_text(json.dumps(itens,ensure_ascii=False,separators=(',',':'))+'\n',encoding='utf8')
-    (DESTINO/'manifesto.json').write_text(json.dumps(dict(itens_unicos=len(itens),blocos=manifestos,cadernos=provas),ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+    (DESTINO/'manifesto.json').write_text(json.dumps(dict(itens_unicos=len(itens),sobreposicoes_conferidas=sobreposicoes,blocos=manifestos,cadernos=provas),ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     print('PF 2025 Peritos:',len(itens),'itens;',len(provas),'áreas completas')
 
 
@@ -156,12 +190,12 @@ if __name__=='__main__':
     if '--reextrair' in sys.argv:
         from importar_cebraspe import extrair
         metas=json.loads((ROOT/'tmp/federais-manifesto-2025-prf.json').read_text(encoding='utf8'))
-        for cargo,opcoes in {3:{'topos_itens':{58:371.0,105:110.0}},4:{'itens_sem_divisao':[82,93,98],'topos_itens':{118:119.0,119:153.1,120:187.2}},5:{},6:{},7:{},8:{}}.items():
+        for cargo,opcoes in {3:{'topos_itens':{58:371.0,105:110.0}},4:{'itens_sem_divisao':[82,93,98],'topos_itens':{118:119.0,119:153.1,120:187.2}},5:{},6:{},7:{},8:{},9:{},10:{}}.items():
             meta=next(m for m in metas if m['id']==f'pf-2025-cargo-{cargo}')
             meta.update(opcoes)
             # Nestes itens, a primeira linha não possui símbolos elevados.
             # A margem de 1 ponto exclui os descendentes da linha anterior.
-            sem_fragmentos={5:[72,73,77],6:[115,116,119,120],7:[66,74,75,78,80],8:[116,118,119,120]}.get(cargo,[])
+            sem_fragmentos={5:[72,73,77],6:[115,116,119,120],7:[66,74,75,78,80],8:[116,118,119,120],9:[120],10:[66,69,71,73,75,78,108,109,111,112,114,116,119,120]}.get(cargo,[])
             if sem_fragmentos:
                 import pdfplumber
                 with pdfplumber.open(ROOT/f"tmp/federais/{meta['prova_local']}.pdf") as doc:

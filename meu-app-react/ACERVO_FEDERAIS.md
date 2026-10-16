@@ -17,6 +17,8 @@ Este registro diferencia cadernos publicados de extrações ainda em revisão.
 | PF 2025 - Perito Criminal Federal - Área 7 Engenharia Civil | 120 | 7 | 113 |
 | PF 2025 - Perito Criminal Federal - Área 11 Engenharia Cartográfica | 120 | 6 | 114 |
 | PF 2025 - Perito Criminal Federal - Área 12 Medicina Legal | 120 | 6 | 114 |
+| PF 2025 - Perito Criminal Federal - Área 16 Física Forense | 120 | 7 | 113 |
+| PF 2025 - Perito Criminal Federal - Área 17 Engenharia de Minas | 120 | 5 | 115 |
 
 A prova PRF vinculada ao edital de 2018 foi aplicada em 03/02/2019. O acervo usa o ano da aplicação. Não são cadernos administrativos nem cursos internos.
 
@@ -30,7 +32,7 @@ O extrator `scripts/importar_cebraspe.py` lê o PDF e seu gabarito definitivo e 
 
 ## Ainda não concluído
 
-As outras 6 áreas de Perito Criminal Federal PF 2025 estão extraídas em `public/acervo/federais-em-revisao`, mas NÃO fazem parte destes lotes publicados. Precisam de revisão visual, conferência de contextos, classificação e associação aos cadernos antes da integração. Delegado, Agente, Escrivão, Papiloscopista e Perito Áreas 1 Contábil-Financeira, 2 Engenharia Elétrica/Eletrônica , 3 Informática Forense, 5 Geologia , 7 Engenharia Civil, 11 Engenharia Cartográfica e 12 Medicina Legal estão concluídos nos lotes descritos abaixo. Não contar as extrações em quarentena como acervo disponível no site. Ao reunir itens comuns a cargos diferentes, preservar cada associação e número original; não fundir afirmações curtas de casos diferentes.
+As outras 4 áreas de Perito Criminal Federal PF 2025 estão extraídas em `public/acervo/federais-em-revisao`, mas NÃO fazem parte destes lotes publicados. Precisam de revisão visual, conferência de contextos, classificação e associação aos cadernos antes da integração. Delegado, Agente, Escrivão, Papiloscopista e Perito Áreas 1 Contábil-Financeira, 2 Engenharia Elétrica/Eletrônica , 3 Informática Forense, 5 Geologia , 7 Engenharia Civil, 11 Engenharia Cartográfica , 12 Medicina Legal, 16 Física e 17 Engenharia de Minas estão concluídos nos lotes descritos abaixo. Não contar as extrações em quarentena como acervo disponível no site. Ao reunir itens comuns a cargos diferentes, preservar cada associação e número original; não fundir afirmações curtas de casos diferentes.
 
 Verificação desta entrega: 61 testes aprovados, incluindo as contagens, respostas, anuladas, arquivos de imagem e preservação dos 240 registros na união do acervo.
 
@@ -85,3 +87,7 @@ Mais duas provas completas com 120 posições cada, mantendo os 50 itens comuns 
 ## PF 2025 - Perito: Engenharia Cartográfica e Medicina Legal
 
 Duas provas adicionais completas de 120 posições. O núcleo de 50 itens permanece compartilhado, totalizando 540 questões únicas para sete áreas. Revisadas as seis páginas e os 140 recortes, incluindo a imagem de satélite do item 112 e a matriz de classificação de 430 pixels dos itens 117–120 de Cartográfica. Em Medicina Legal, os itens 63–64 continuam associados ao comando 59 e os 115–116 ao comando 112, apesar da mudança de coluna. Corrigidos nove recortes com fragmentos da linha anterior. Gabaritos definitivos e hashes no manifesto.
+
+## PF 2025 - Perito: Física e Engenharia de Minas
+
+Mais duas provas completas: 120 posições por área. O lote cumulativo possui 672 questões únicas em nove áreas, após reunir oito afirmações de legislação idênticas entre Geologia e Minas. Cada uma preserva em `origens_provas` o número, imagem, comando e caderno de origem; os simulados recuperam a numeração própria. Não foram fundidas fórmulas ou casos apenas semelhantes. Revisadas as oito páginas específicas e os 140 recortes, os diagramas eletromagnéticos e termodinâmico, projeção estereográfica, convergência/confinamento, tabela de fragmentos e perfil de solo. Física mantém as frações e a página final de coluna inteira.

@@ -98,7 +98,7 @@ test('PF 2025: fórmulas, tabela-verdade, código SQL, contabilidade e circuito 
 const peritos=JSON.parse(readFileSync(new URL('../public/acervo/pf-2025-peritos/questoes.json',import.meta.url),'utf8'))
 const manifestoPeritos=JSON.parse(readFileSync(new URL('../public/acervo/pf-2025-peritos/manifesto.json',import.meta.url),'utf8'))
 test('PF 2025 Perito: apenas áreas completas liberadas, sem duplicar o núcleo comum',()=>{
- assert.equal(peritos.length,50+70*manifestoPeritos.cadernos.length)
+ assert.equal(peritos.length,50+70*manifestoPeritos.cadernos.length-(manifestoPeritos.sobreposicoes_conferidas??0))
  for(const m of manifestoPeritos.cadernos){
   const prova=peritos.filter(q=>concursosDaQuestao(q).includes(m.concurso)).map(q=>questaoNaProva(q,m.concurso)).sort((a,b)=>a.numero_original-b.numero_original)
   assert.deepEqual(prova.map(q=>q.numero_original),Array.from({length:120},(_,i)=>i+1))
@@ -186,4 +186,26 @@ test('PF 2025 Perito: imagem orbital, matriz de classificação e comandos entre
  assert.doesNotMatch(q(8,117).apoio[0].texto,/servidor público federal/)
  assert.match(q(8,120).enunciado,/Schilling/)
  assert.doesNotMatch(q(8,120).enunciado,/Espaço livre/)
+})
+
+test('PF 2025 Física e Minas: gráficos e numeração própria sobrevivem à deduplicação',()=>{
+ const q=(cargo,n)=>peritos.find(q=>q.id===`pf-2025-cargo-${cargo}-${String(n).padStart(3,'0')}`)
+ assert.match(q(9,66).apoio[0].texto,/equações de Maxwell/)
+ assert.match(q(9,70).apoio[0].texto,/duas partículas/)
+ assert.match(q(9,73).apoio[0].texto,/motor térmico/)
+ for(const n of [66,70,73])assert.ok(readFileSync(new URL('../public'+q(9,n).apoio[0].imagem,import.meta.url)).length>20000)
+ assert.equal(q(9,120).recortes_pdf[0].caixa[2],568)
+ assert.doesNotMatch(q(9,120).enunciado,/Espaço livre/)
+ assert.ok(readFileSync(new URL('../public'+q(10,59).imagem_original,import.meta.url)).length>20000)
+ assert.match(q(10,61).apoio[0].texto,/convergência\/confinamento/)
+ assert.match(q(10,63).apoio[0].texto,/5 12 18 6 7 14 22 4/)
+ assert.match(q(10,64).apoio[0].texto,/20 kN\/m3/)
+ assert.equal(manifestoPeritos.sobreposicoes_conferidas,8)
+ const provaMinas=manifestoPeritos.cadernos.find(p=>p.concurso.includes('Área 17:')).concurso
+ const compartilhada=q(5,111)
+ const origem=questaoNaProva(compartilhada,provaMinas)
+ assert.equal(origem.numero_original,115)
+ assert.match(origem.imagem_original,/cargo-10\/q115/)
+ assert.match(compartilhada.imagem_original,/cargo-5\/q111/)
+ for(const item of peritos)for(const o of item.origens_provas)for(const img of [o.imagem_original,...o.apoio.map(a=>a.imagem)])assert.ok(existsSync(new URL('../public'+img,import.meta.url)))
 })
