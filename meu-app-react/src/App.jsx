@@ -3,6 +3,7 @@ import EnunciadoQuestao from './components/EnunciadoQuestao'
 import AlternativaComEliminacao from './components/AlternativaComEliminacao'
 import FiltroMultiplo from './components/FiltroMultiplo'
 import Conta from './components/Conta'
+import SessaoEstudo from './components/SessaoEstudo'
 import { API_URL } from './api'
 import { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react'
 import { supabase } from './supabaseClient'
@@ -172,10 +173,7 @@ export default function App() {
   const [historicoRespostas, setHistoricoRespostas] = useState([])
 
   // --- NOVOS ESTADOS PARA O CRONÓMETRO E SUGESTÃO DE QUESTÕES ---
-  const [cronometroAtivo, setCronometroAtivo] = useState(false)
-  const [segundosDecorridos, setSegundosDecorridos] = useState(0)
   const [materiaEstudo, setMateriaEstudo] = useState('')
-  const [conteudoEstudo, setConteudoEstudo] = useState('')
   const [questoesSugeridas, setQuestoesSugeridas] = useState([])
 
   useEffect(() => {
@@ -271,19 +269,6 @@ export default function App() {
   useEffect(() => {
     if (authReady && !checkingAdmin && !isAdmin && ['cadastrar', 'importar'].includes(abaAtiva)) setAbaAtiva('conta')
   }, [authReady, checkingAdmin, isAdmin, abaAtiva])
-
-  // Efeito do Cronómetro
-  useEffect(() => {
-    let intervalo = null
-    if (cronometroAtivo) {
-      intervalo = setInterval(() => {
-        setSegundosDecorridos(prev => prev + 1)
-      }, 1000)
-    } else {
-      clearInterval(intervalo)
-    }
-    return () => clearInterval(intervalo)
-  }, [cronometroAtivo])
 
   async function buscarQuestoes() {
     const requisicao = ++requisicaoAcervo.current
@@ -554,51 +539,32 @@ export default function App() {
   }
 
   // --- FUNÇÕES DO CRONÓMETRO E RECOMENDAÇÃO ---
-  function iniciarCronometro() {
-    if (!materiaEstudo) {
-      alert('Por favor, selecione ou escreva a matéria antes de iniciar o cronómetro.')
-      return
-    }
-    setCronometroAtivo(true)
-  }
-
-  function pausarOuFinalizarCronometro() {
-    setCronometroAtivo(false)
-    if (segundosDecorridos < 10) {
-      alert('Sessão muito curta para registar.')
-      return
-    }
-
-    const horasEstudadas = parseFloat((segundosDecorridos / 3600).toFixed(2))
+  function concluirSessaoEstudo({id, materia, conteudo, segundos}) {
+    const horasEstudadas = segundos / 3600
+    setMateriaEstudo(materia)
     const dataHoje = new Date().toISOString().split('T')[0]
 
     // 1. Guardar automaticamente no progresso desta conta
     setHorasEstudo(prev => [{
-      id: crypto.randomUUID(),
-      materia: materiaEstudo,
-      horas: horasEstudadas > 0 ? horasEstudadas : 0.1,
+      id,
+      materia,
+      horas: horasEstudadas,
+      segundos,
       data: dataHoje,
       criado_em: new Date().toISOString(),
     }, ...prev])
 
     // 2. Sugerir questões com base na matéria e conteúdo estudados
-    let filtradas = questoes.filter(q => podeCorrigir(q) && q.materia.toLowerCase() === materiaEstudo.toLowerCase())
-    if (conteudoEstudo.trim()) {
-      const exatas = filtradas.filter(q => q.conteudo && q.conteudo.toLowerCase().includes(conteudoEstudo.toLowerCase()))
+    let filtradas = questoes.filter(q => podeCorrigir(q) && String(q.materia || '').toLowerCase() === materia.toLowerCase())
+    if (conteudo.trim()) {
+      const exatas = filtradas.filter(q => q.conteudo && q.conteudo.toLowerCase().includes(conteudo.toLowerCase()))
       if (exatas.length > 0) filtradas = exatas
     }
 
     // Embaralhar e pegar até 3 questões para sugestão imediata
     const recomendadas = filtradas.sort(() => 0.5 - Math.random()).slice(0, 3)
     setQuestoesSugeridas(recomendadas)
-    setSegundosDecorridos(0)
     alert('Sessão guardada com sucesso! Veja as questões sugeridas abaixo.')
-  }
-
-  function formatarTempo(segundos) {
-    const mins = Math.floor(segundos / 60)
-    const segs = segundos % 60
-    return `${String(mins).padStart(2, '0')}:${String(segs).padStart(2, '0')}`
   }
 
   function alternativaFoiEliminada(contexto, questaoId, indice) {
@@ -1159,62 +1125,7 @@ export default function App() {
               ))}
             </div>
 
-            {/* SEÇÃO DO CRONÓMETRO DE ESTUDO */}
-            <div className="bg-gradient-to-br from-indigo-950/40 via-slate-900/60 to-slate-900/60 border border-indigo-500/30 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md">
-              <h3 className="text-lg font-bold text-slate-100 mb-4 flex items-center gap-2">
-                ⏱️ Cronómetro de Estudos & Sugestão Inteligente
-              </h3>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div>
-                  <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Matéria</label>
-                  <input
-                    type="text"
-                    placeholder="Ex: Matemática"
-                    value={materiaEstudo}
-                    onChange={e => setMateriaEstudo(e.target.value)}
-                    disabled={cronometroAtivo}
-                    className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Conteúdo / Tópico (Opcional)</label>
-                  <input
-                    type="text"
-                    placeholder="Ex: Geometria Plana"
-                    value={conteudoEstudo}
-                    onChange={e => setConteudoEstudo(e.target.value)}
-                    disabled={cronometroAtivo}
-                    className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
-                  />
-                </div>
-                <div className="flex flex-col justify-end">
-                  {!cronometroAtivo ? (
-                    <button
-                      onClick={iniciarCronometro}
-                      className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-medium py-3 rounded-2xl text-sm transition-all shadow-lg shadow-emerald-600/25"
-                    >
-                      ▶ Iniciar Sessão
-                    </button>
-                  ) : (
-                    <button
-                      onClick={pausarOuFinalizarCronometro}
-                      className="w-full bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-medium py-3 rounded-2xl text-sm transition-all shadow-lg shadow-red-600/25 animate-pulse"
-                    >
-                      ⏹ Parar e Registar ({formatarTempo(segundosDecorridos)})
-                    </button>
-                  )}
-                </div>
-              </div>
-
-              {cronometroAtivo && (
-                <div className="text-center py-6 bg-slate-950/60 rounded-2xl border border-indigo-500/20">
-                  <p className="text-xs text-indigo-400 uppercase font-semibold tracking-wider">A estudar agora</p>
-                  <p className="text-4xl font-extrabold text-slate-100 mt-2">{formatarTempo(segundosDecorridos)}</p>
-                  <p className="text-xs text-slate-400 mt-1">{materiaEstudo} {conteudoEstudo ? `> ${conteudoEstudo}` : ''}</p>
-                </div>
-              )}
-            </div>
+            <SessaoEstudo key={session.user.id} userId={session.user.id} onConcluir={concluirSessaoEstudo} />
 
             {/* QUESTÕES SUGERIDAS APÓS O ESTUDO */}
             {questoesSugeridas.length > 0 && (
