@@ -16,6 +16,7 @@ import { concursosDaQuestao, incluirIdiomaDaProva, questaoNaProva } from './prov
 
 const DIAS_SEMANA = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo']
 const ImportarPdf = lazy(() => import('./components/ImportarPdf'))
+const EditalPlanejador = lazy(() => import('./components/EditalPlanejador'))
 
 function formatarDuracaoPlanejada(minutos) {
   const total = Number(minutos) || 0
@@ -156,16 +157,6 @@ export default function App() {
   const [bancaRedacao, setBancaRedacao] = useState('Todas')
   const [temaRedacaoId, setTemaRedacaoId] = useState('')
 
-  // Estados do Edital Verticalizado (Spring Boot)
-  const [editais, setEditais] = useState([])
-  const [novoItemEdital, setNovoItemEdital] = useState({
-    concurso: '',
-    materia: '',
-    conteudo: '',
-    incidencia: 'Média',
-    concluido: false
-  })
-
   // Estados de Simulados organizados por edição completa da prova
   const [filtroAnoSimulado, setFiltroAnoSimulado] = useState('Todos')
   const [filtroProvaSimulado, setFiltroProvaSimulado] = useState('Todos')
@@ -199,7 +190,6 @@ export default function App() {
   useEffect(() => {
     if (!session?.user?.id) return
     buscarQuestoes()
-    buscarEditais()
     const controle = requisicaoAcervo
     return () => { controle.current++ }
   }, [session?.user?.id])
@@ -547,18 +537,6 @@ export default function App() {
     setCarregandoAcervo(false)
   }
 
-  async function buscarEditais() {
-    try {
-      const response = await fetch(`${API_URL}/api/editais`)
-      if (response.ok) {
-        const data = await response.json()
-        setEditais(data)
-      }
-    } catch (err) {
-      console.log('Erro ao comunicar com o Spring Boot:', err)
-    }
-  }
-
   function registarHoras(e) {
     e.preventDefault()
     if (!novaHora.materia || !novaHora.horas) return
@@ -697,47 +675,6 @@ export default function App() {
     setTarefas(prev => prev.map(tarefa => tarefa.id === id
       ? { ...tarefa, concluida: !tarefa.concluida }
       : tarefa))
-  }
-
-  async function adicionarEditalItem(e) {
-    e.preventDefault()
-    try {
-      const response = await fetch(`${API_URL}/api/editais`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(novoItemEdital)
-      })
-      if (!response.ok) throw new Error(`Falha ao salvar (${response.status})`)
-      setNovoItemEdital({ concurso: '', materia: '', conteudo: '', incidencia: 'Média', concluido: false })
-      await buscarEditais()
-      alert('Item do edital adicionado com sucesso!')
-    } catch {
-      alert('Não foi possível guardar o item do edital. Tente novamente.')
-    }
-  }
-
-  async function alternarStatusEditalItem(item) {
-    const novoEstado = !item.concluido
-    setEditais(atuais => atuais.map(e => e.id === item.id ? { ...e, concluido: novoEstado } : e))
-
-    try {
-      const response = await fetch(`${API_URL}/api/editais/${item.id}/toggle`, { method: 'PATCH' })
-      if (!response.ok) throw new Error(`Falha ao atualizar (${response.status})`)
-    } catch {
-      setEditais(atuais => atuais.map(e => e.id === item.id ? { ...e, concluido: item.concluido } : e))
-      alert('Não foi possível atualizar esse item. A alteração foi desfeita.')
-    }
-  }
-
-  async function deletarEditalItem(id) {
-    try {
-      const response = await fetch(`${API_URL}/api/editais/${id}`, { method: 'DELETE' })
-      if (!response.ok) throw new Error(`Falha ao excluir (${response.status})`)
-      await buscarEditais()
-    } catch (err) {
-      console.log('Erro ao apagar item:', err)
-      alert('Não foi possível excluir esse item. Tente novamente.')
-    }
   }
 
   async function enviarRedacao(e) {
@@ -1426,34 +1363,9 @@ export default function App() {
 
         {/* ABA: EDITAL VERTICALIZADO */}
         {abaAtiva === 'edital' && (
-          <div className="max-w-3xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-8 shadow-xl backdrop-blur-md">
-            <h2 className="text-2xl font-extrabold text-slate-100 mb-2 tracking-tight">📋 Edital Verticalizado</h2>
-            <p className="text-slate-400 text-sm mb-6">Acompanhe os tópicos sincronizados com o Spring Boot.</p>
-            <form onSubmit={adicionarEditalItem} className="grid grid-cols-1 md:grid-cols-5 gap-3.5 mb-8 bg-slate-950/50 p-4 rounded-3xl border border-slate-800/80">
-              <input type="text" placeholder="Concurso" required value={novoItemEdital.concurso} onChange={(e) => setNovoItemEdital({ ...novoItemEdital, concurso: e.target.value })} className="bg-slate-900 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40" />
-              <input type="text" placeholder="Matéria" required value={novoItemEdital.materia} onChange={(e) => setNovoItemEdital({ ...novoItemEdital, materia: e.target.value })} className="bg-slate-900 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40" />
-              <input type="text" placeholder="Conteúdo" required value={novoItemEdital.conteudo} onChange={(e) => setNovoItemEdital({ ...novoItemEdital, conteudo: e.target.value })} className="bg-slate-900 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40" />
-              <select value={novoItemEdital.incidencia} onChange={(e) => setNovoItemEdital({ ...novoItemEdital, incidencia: e.target.value })} className="bg-slate-900 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40">
-                <option value="Baixa">Baixa</option>
-                <option value="Média">Média</option>
-                <option value="Alta">Alta</option>
-              </select>
-              <button type="submit" className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-medium py-3 rounded-2xl text-sm transition-all shadow-md shadow-indigo-600/20">Adicionar</button>
-            </form>
-            <div className="space-y-3">
-              {editais.map((item) => (
-                <div key={item.id} className={`flex items-start justify-between gap-2 p-4 rounded-2xl text-sm border transition-all ${item.concluido ? 'bg-emerald-950/20 border-emerald-500/30' : 'bg-slate-950/40 border-slate-800 hover:border-slate-700'}`}>
-                  <div className="flex min-w-0 items-center gap-3.5 flex-wrap">
-                    <input type="checkbox" checked={item.concluido} onChange={() => alternarStatusEditalItem(item)} className="w-5 h-5 text-indigo-600 rounded-xl bg-slate-900 border-slate-700 cursor-pointer focus:ring-indigo-500" />
-                    <span className="bg-slate-800 text-slate-300 px-3 py-1 rounded-full text-xs">{item.concurso}</span>
-                    <span className="bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full text-xs">{item.materia}</span>
-                    <span className={item.concluido ? 'line-through text-slate-500' : 'text-slate-200 font-medium'}>{item.conteudo}</span>
-                  </div>
-                  <button onClick={() => deletarEditalItem(item.id)} className="text-slate-500 hover:text-red-400 p-2 rounded-xl transition-colors">✕</button>
-                </div>
-              ))}
-            </div>
-          </div>
+          <Suspense fallback={<p role="status">Carregando seu planejador de editais…</p>}>
+            <EditalPlanejador key={session.user.id} userId={session.user.id} />
+          </Suspense>
         )}
 
         {/* ABA: REDAÇÃO IA */}
