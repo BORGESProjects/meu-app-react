@@ -19,6 +19,10 @@ Este registro diferencia cadernos publicados de extrações ainda em revisão.
 | PF 2025 - Perito Criminal Federal - Área 12 Medicina Legal | 120 | 6 | 114 |
 | PF 2025 - Perito Criminal Federal - Área 16 Física Forense | 120 | 7 | 113 |
 | PF 2025 - Perito Criminal Federal - Área 17 Engenharia de Minas | 120 | 5 | 115 |
+| PF 2025 - Perito Criminal Federal - Área 22: Meio Ambiente | 120 | 7 | 113 |
+| PF 2025 - Perito Criminal Federal - Área 21: Antropologia Forense | 120 | 8 | 112 |
+| PF 2025 - Perito Criminal Federal - Área 20: Engenharia Ambiental | 120 | 10 | 110 |
+| PF 2025 - Perito Criminal Federal - Área 19: Genética Forense | 120 | 13 | 107 |
 
 A prova PRF vinculada ao edital de 2018 foi aplicada em 03/02/2019. O acervo usa o ano da aplicação. Não são cadernos administrativos nem cursos internos.
 
@@ -32,7 +36,7 @@ O extrator `scripts/importar_cebraspe.py` lê o PDF e seu gabarito definitivo e 
 
 ## Ainda não concluído
 
-As outras 4 áreas de Perito Criminal Federal PF 2025 estão extraídas em `public/acervo/federais-em-revisao`, mas NÃO fazem parte destes lotes publicados. Precisam de revisão visual, conferência de contextos, classificação e associação aos cadernos antes da integração. Delegado, Agente, Escrivão, Papiloscopista e Perito Áreas 1 Contábil-Financeira, 2 Engenharia Elétrica/Eletrônica , 3 Informática Forense, 5 Geologia , 7 Engenharia Civil, 11 Engenharia Cartográfica , 12 Medicina Legal, 16 Física e 17 Engenharia de Minas estão concluídos nos lotes descritos abaixo. Não contar as extrações em quarentena como acervo disponível no site. Ao reunir itens comuns a cargos diferentes, preservar cada associação e número original; não fundir afirmações curtas de casos diferentes.
+PF 2025 está concluída para os 17 cargos/áreas policiais: Delegado, Agente, Escrivão, Papiloscopista e as 13 áreas de Perito. Os três lotes públicos reúnem 1.240 questões únicas e preservam 2.040 posições oficiais (17 provas de 120 itens). As oito duplicatas de legislação entre Geologia e Minas preservam suas associações e números originais. A ampliação global de 2019–2026 das demais instituições ainda não está concluída; inventariar edições, aplicações, modelos e idiomas antes de novos lotes. Não repetir PF/PRF nem contabilizar `federais-em-revisao` como publicação adicional.
 
 Verificação desta entrega: 61 testes aprovados, incluindo as contagens, respostas, anuladas, arquivos de imagem e preservação dos 240 registros na união do acervo.
 
@@ -91,3 +95,7 @@ Duas provas adicionais completas de 120 posições. O núcleo de 50 itens perman
 ## PF 2025 - Perito: Física e Engenharia de Minas
 
 Mais duas provas completas: 120 posições por área. O lote cumulativo possui 672 questões únicas em nove áreas, após reunir oito afirmações de legislação idênticas entre Geologia e Minas. Cada uma preserva em `origens_provas` o número, imagem, comando e caderno de origem; os simulados recuperam a numeração própria. Não foram fundidas fórmulas ou casos apenas semelhantes. Revisadas as oito páginas específicas e os 140 recortes, os diagramas eletromagnéticos e termodinâmico, projeção estereográfica, convergência/confinamento, tabela de fragmentos e perfil de solo. Física mantém as frações e a página final de coluna inteira.
+
+## PF 2025 - Fechamento das 13 áreas de Perito
+
+Genética Forense, Engenharia Ambiental, Antropologia Forense e Meio Ambiente completam as treze áreas: 952 questões únicas, 1.560 posições nos cadernos (120 em cada área) e oito duplicatas específicas reunidas com preservação de origens. Os 50 itens básicos não são replicados para cada área. Revisadas as 14 páginas finais específicas, os 280 recortes, textos-base integrais da Genética, a fração do item 91 e a matriz geoestatística de Engenharia Ambiental. Na extração foram removidos fragmentos de linhas vizinhas, mantendo expoentes, frações e trechos de coluna inteira. Todos os cadernos e gabaritos definitivos tiveram seus hashes conferidos com as fontes oficiais; o manifesto guarda as respostas e anuladas de cada prova. Validação final: 81 testes aprovados e compilação de produção aprovada.

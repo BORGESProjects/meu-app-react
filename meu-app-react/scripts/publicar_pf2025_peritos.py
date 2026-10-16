@@ -17,6 +17,10 @@ APROVADOS = {
     8: [51,55,59,65,68,73,79,83,88,98,101,102,104,112,117],
     9: [51,54,57,61,65,66,70,73,76,79,83,86,88,91,98,103,106,111,117,119],
     10: [51,56,61,63,64,65,67,70,74,77,81,83,85,87,90,93,97,99,101,107,113,117],
+    11: [51,55,60,64,69,74,77,82,85,87,91,95,99,104,107,110,113],
+    12: [51,54,56,60,63,65,67,71,76,83,87,91,95,97,99,101,105,109,115,118],
+    13: [51,56,62,65,68,70,75,81,85,89,92,95,102,105,109,113,118],
+    14: [51,56,58,65,70,72,75,77,80,84,87,89,93,97,105,109,113,117,119],
 }
 COMUM = [1,9,13,15,21,23,25,29,31,32,35,37,40,46]
 SOBREPOSICOES_CONFERIDAS = {(111,115),(112,113),(114,114),(115,116),(116,118),(117,120),(119,119),(120,117)}
@@ -33,6 +37,37 @@ def classificar(cargo,n):
     if n<=39:return 'Criminalística','Vestígios e perícia criminal'
     if n<=45:return 'Direitos Humanos','Direitos Humanos'
     if n<=50:return 'Matemática','Raciocínio lógico'
+    if cargo==13:
+        if n<=67:return 'Medicina Legal','Antropologia forense e osteologia'
+        if n<=80:return 'Criminalística','Cadeia de custódia e arqueologia forense'
+        if n<=84:return 'Medicina Legal','Entomologia forense'
+        if n<=104:return 'Medicina Legal','Antropologia forense e identificação humana'
+        if n<=108:return 'Medicina Legal','Traumatologia forense'
+        return 'Criminalística','Identificação de vítimas e direitos humanos'
+    if cargo==14:
+        if n<=57:return 'Biologia','Fisiologia e anatomia vegetal'
+        if n<=64:return 'Geografia','Solos e domínios morfoclimáticos'
+        if n<=74:return 'Biologia','Ecologia'
+        if n<=88:return 'Engenharia Ambiental','Gestão ambiental e conservação florestal'
+        if n<=96:return 'Engenharia Ambiental','Qualidade ambiental e ecotoxicologia'
+        if n<=104:return 'Engenharia Ambiental','Geoprocessamento e sensoriamento remoto'
+        if n<=112:return 'Direito Agrário','Regularização fundiária e registros de imóveis'
+        return 'Direito Ambiental','Legislação ambiental'
+    if cargo==11:
+        if n<=68:return 'Biologia','Genética molecular'
+        if n<=73:return 'Biologia','Genética de populações'
+        if n<=86:return 'Biologia','Genética forense'
+        if n<=103:return 'Matemática','Probabilidade e estatística'
+        return 'Criminalística','Genética forense e gestão de laboratórios'
+    if cargo==12:
+        if n<=55:return 'Biologia','Ecologia e botânica'
+        if n<=59:return 'Geografia','Climatologia e relevo'
+        if n<=64:return 'Engenharia Ambiental','Gestão ambiental e planejamento urbano'
+        if n<=75:return 'Engenharia Ambiental','Urbanização e saneamento'
+        if n<=86:return 'Engenharia Ambiental','Hidrologia e poluição hídrica'
+        if n<=94:return 'Engenharia Ambiental','Poluição do solo e atmosférica'
+        if n<=108:return 'Engenharia Ambiental','Geoprocessamento e sensoriamento remoto'
+        return 'Direito Ambiental','Legislação ambiental'
     if cargo==10:
         if n<=55:return 'Engenharia de Minas','Operação e encerramento de minas'
         if n<=66:return 'Engenharia de Minas','Geotecnia e barragens'
@@ -190,12 +225,12 @@ if __name__=='__main__':
     if '--reextrair' in sys.argv:
         from importar_cebraspe import extrair
         metas=json.loads((ROOT/'tmp/federais-manifesto-2025-prf.json').read_text(encoding='utf8'))
-        for cargo,opcoes in {3:{'topos_itens':{58:371.0,105:110.0}},4:{'itens_sem_divisao':[82,93,98],'topos_itens':{118:119.0,119:153.1,120:187.2}},5:{},6:{},7:{},8:{},9:{},10:{}}.items():
+        for cargo,opcoes in {3:{'topos_itens':{58:371.0,105:110.0}},4:{'itens_sem_divisao':[82,93,98],'topos_itens':{118:119.0,119:153.1,120:187.2}},5:{},6:{},7:{},8:{},9:{},10:{},11:{},13:{},14:{}}.items():
             meta=next(m for m in metas if m['id']==f'pf-2025-cargo-{cargo}')
             meta.update(opcoes)
             # Nestes itens, a primeira linha não possui símbolos elevados.
             # A margem de 1 ponto exclui os descendentes da linha anterior.
-            sem_fragmentos={5:[72,73,77],6:[115,116,119,120],7:[66,74,75,78,80],8:[116,118,119,120],9:[120],10:[66,69,71,73,75,78,108,109,111,112,114,116,119,120]}.get(cargo,[])
+            sem_fragmentos={5:[72,73,77],6:[115,116,119,120],7:[66,74,75,78,80],8:[116,118,119,120],9:[120],10:[66,69,71,73,75,78,108,109,111,112,114,116,119,120],11:[52,55,69,71,73,75,76,100,101,108,109],13:[76,77,82,84,87,88,98,114,116,119,120],14:[110,111,114,115,118,120]}.get(cargo,[])
             if sem_fragmentos:
                 import pdfplumber
                 with pdfplumber.open(ROOT/f"tmp/federais/{meta['prova_local']}.pdf") as doc:

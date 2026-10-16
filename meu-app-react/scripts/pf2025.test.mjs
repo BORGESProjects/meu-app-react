@@ -209,3 +209,27 @@ test('PF 2025 Física e Minas: gráficos e numeração própria sobrevivem à de
  assert.match(compartilhada.imagem_original,/cargo-5\/q111/)
  for(const item of peritos)for(const o of item.origens_provas)for(const img of [o.imagem_original,...o.apoio.map(a=>a.imagem)])assert.ok(existsSync(new URL('../public'+img,import.meta.url)))
 })
+
+test('PF 2025: treze áreas de Perito completas e textos da genética preservados',()=>{
+ assert.equal(manifestoPeritos.cadernos.length,13)
+ assert.equal(peritos.length,952)
+ const q=(cargo,n)=>peritos.find(q=>q.id===`pf-2025-cargo-${cargo}-${String(n).padStart(3,'0')}`)
+ assert.match(q(11,51).apoio[0].texto,/6 e 24 horas/)
+ assert.match(q(11,51).apoio[0].texto,/Damour/)
+ assert.match(q(11,69).apoio[0].texto,/2.723 brasileiros/)
+ assert.match(q(11,91).apoio[0].texto,/15%/)
+ assert.doesNotMatch(q(11,95).apoio[0].texto,/15%|genótipo AB/)
+ assert.match(q(11,99).apoio[0].texto,/1 em 300/)
+ assert.match(q(11,103).apoio[0].texto,/100%/)
+ assert.match(q(12,97).apoio[0].texto,/10 8 30/)
+ assert.match(q(12,97).apoio[0].texto,/20 10 A/)
+ assert.match(q(12,97).apoio[0].texto,/B 30 80/)
+ assert.match(q(13,67).enunciado,/Nesse caso/)
+ assert.match(q(13,120).enunciado,/Minnesota/)
+ assert.equal(q(14,120).recortes_pdf[0].caixa[2],568)
+ assert.doesNotMatch(q(14,120).enunciado,/Espaço livre/)
+ const todas=[...peritos,...operacionais,...qs]
+ const provas=[...new Set(todas.flatMap(concursosDaQuestao))]
+ assert.equal(provas.length,17)
+ assert.equal(provas.reduce((s,p)=>s+todas.filter(q=>concursosDaQuestao(q).includes(p)).length,0),2040)
+})
