@@ -56,7 +56,7 @@ def extrair(meta, destino):
    first=min(w['top'] for w in ms)
    bars=[r['bottom'] for r in p.rects if r['width']>480 and r['height']>5 and r['bottom']<first and r['top']>65]
    start=max(bars)+3 if bars else 45
-   titles=[w['bottom'] for w in ws if w['text'] in ['BÁSICOS','ESPECÍFICOS'] and w['size']>11 and w['bottom']<first]
+   titles=[w['bottom'] for w in ws if w['text'] in ['BÁSICOS','ESPECÍFICOS'] and w['size']>9.5 and w['bottom']<first]
    if titles:start=max(start,max(titles)+4)
    # Some final PF pages switch to a single full-width column. Body glyphs
    # in the normal gutter distinguish them from the two-column layout.
@@ -85,6 +85,7 @@ def extrair(meta, destino):
      cutoff=end
      # Body continuations are indented; independent commands return to the column margin.
      for j,line in enumerate(lines):
+      if n in meta.get('itens_sem_divisao',[]):break
       t=' '.join(w['text'] for w in sorted(line,key=lambda w:w['x0']))
       prev=lines[j-1] if j else []
       gap=min(w['top'] for w in line)-max(w['bottom'] for w in prev) if prev else 0
@@ -97,6 +98,8 @@ def extrair(meta, destino):
      if separators:cutoff=min(cutoff,min(separators))
      headers=[w['top']-3 for w in ws if w['text']=='BLOCO' and w['size']>11 and top+10<w['top']<end]
      if headers:cutoff=min(cutoff,min(headers))
+     rascunhos=[w['top']-3 for w in ws if w['text']=='Espaço' and x0<=w['x0']<x0+3 and top+10<w['top']<end and any(v['text']=='livre' and 0<v['x0']-w['x1']<15 and abs(v['top']-w['top'])<2 for v in ws)]
+     if rascunhos:cutoff=min(cutoff,min(rascunhos))
      b=[x0,top,x1,cutoff]
      itemtext=texto(pg,b).strip()
      if len(itemtext)<12:itemtext=f'Item {n}: julgue a afirmação apresentada no recorte oficial.'

@@ -518,7 +518,7 @@ export default function App() {
       return data
     })
     const federaisRevisadas = tentarLeitura(async () => {
-      const lotes = await Promise.all([['prf-2019',120],['pf-2021-delegado',120],['prf-2021',128],['pf-2021-operacionais',153],['pf-2025-delegado',120]].map(async ([nome,quantidade]) => {
+      const lotes = await Promise.all([['prf-2019',120],['pf-2021-delegado',120],['prf-2021',128],['pf-2021-operacionais',153],['pf-2025-delegado',120],['pf-2025-operacionais',168]].map(async ([nome,quantidade]) => {
         const r = await fetch(`/acervo/${nome}/questoes.json`, {signal:AbortSignal.timeout(30000)})
         if (!r.ok) throw new Error('Caderno federal indisponível')
         const data = await r.json()
