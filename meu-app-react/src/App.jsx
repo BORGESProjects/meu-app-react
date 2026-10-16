@@ -2,19 +2,20 @@ import { anoDaQuestao, unirQuestoes, podeCorrigir } from './acervo'
 import EnunciadoQuestao from './components/EnunciadoQuestao'
 import AlternativaComEliminacao from './components/AlternativaComEliminacao'
 import FiltroMultiplo from './components/FiltroMultiplo'
-import ImportarPdf from './components/ImportarPdf'
 import Conta from './components/Conta'
 import { API_URL } from './api'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react'
 import { supabase } from './supabaseClient'
-import { tentarLeitura } from './carregarAcervo'
-import { chaveCampoFiltro, chaveConteudoFiltro, opcoesConteudo, opcoesFiltro } from './filtros'
+import { tentarLeitura, carregarEmEtapas } from './carregarAcervo'
+import { opcoesFiltro } from './filtros'
+import { indexarFiltros, filtrarIndice, conteudosDoIndice } from './indiceFiltros'
 import { bancasRedacao, temasRedacao } from './data/temasRedacao'
 import { ESPECIFICAS_UEM, incluirNoSimuladoUem } from './uem'
 import { incluirNoSimuladoIfpr } from './ifpr'
 import { concursosDaQuestao, incluirIdiomaDaProva, questaoNaProva } from './provasCompartilhadas'
 
 const DIAS_SEMANA = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo']
+const ImportarPdf = lazy(() => import('./components/ImportarPdf'))
 
 function formatarDuracaoPlanejada(minutos) {
   const total = Number(minutos) || 0
@@ -101,6 +102,7 @@ function avaliarSelecao(questao, selecionada) {
 }
 
 export default function App() {
+  const requisicaoAcervo = useRef(0)
   const [abaAtiva, setAbaAtiva] = useState('questoes')
   const [session, setSession] = useState(null)
   const [authReady, setAuthReady] = useState(false)
@@ -156,12 +158,12 @@ export default function App() {
 
   // Estados do Edital Verticalizado (Spring Boot)
   const [editais, setEditais] = useState([])
-  const [novoItemEdital, setNovoItemEdital] = useState({ 
-    concurso: '', 
-    materia: '', 
-    conteudo: '', 
-    incidencia: 'Média', 
-    concluido: false 
+  const [novoItemEdital, setNovoItemEdital] = useState({
+    concurso: '',
+    materia: '',
+    conteudo: '',
+    incidencia: 'Média',
+    concluido: false
   })
 
   // Estados de Simulados organizados por edição completa da prova
@@ -198,6 +200,8 @@ export default function App() {
     if (!session?.user?.id) return
     buscarQuestoes()
     buscarEditais()
+    const controle = requisicaoAcervo
+    return () => { controle.current++ }
   }, [session?.user?.id])
 
   useEffect(() => {
@@ -292,6 +296,7 @@ export default function App() {
   }, [cronometroAtivo])
 
   async function buscarQuestoes() {
+    const requisicao = ++requisicaoAcervo.current
     setCarregandoAcervo(true)
     setFalhasAcervo([])
     const banco = tentarLeitura(async () => {
@@ -523,7 +528,12 @@ export default function App() {
       return lotes.flat()
     })
     const fontes = ['banco de questões', 'questões importadas', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UFPR 2022', 'UFPR 2021', 'UFPR 2020', 'UFPR 2019', 'UTFPR 2025', 'UTFPR 2024/1', 'UTFPR 2024/2', 'UTFPR 2023', 'IFPR 2024', 'IFPR 2023', 'IFPR 2020 completa', 'IFPR 2019 completa', 'UEM Verão 2025 completa', 'UEM Inverno 2025 completa', 'UEM 2019 a 2024 completa', 'PUC-PR 2024/2 Medicina', 'PUC-PR 2025/1 Medicina', 'PUC-PR 2025/2 Medicina', 'PF e PRF revisadas']
-    const resultados = await Promise.allSettled([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,ifpr2020,ifpr2019,uem2025,uem2025Inverno,uemHistorico,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina,federaisRevisadas])
+    const resultados = await carregarEmEtapas([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,ifpr2020,ifpr2019,uem2025,uem2025Inverno,uemHistorico,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina,federaisRevisadas], estaticas => {
+      if (requisicao !== requisicaoAcervo.current) return
+      const parciais = estaticas.flatMap(r => r.status === 'fulfilled' && Array.isArray(r.value) ? r.value : [])
+      setQuestoes(unirQuestoes(parciais))
+    })
+    if (requisicao !== requisicaoAcervo.current) return
     const carregadas = resultados.flatMap(resultado => resultado.status === 'fulfilled' && Array.isArray(resultado.value) ? resultado.value : [])
     setQuestoes(unirQuestoes(carregadas))
     setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
@@ -785,7 +795,7 @@ export default function App() {
 
   function finalizarSimulado() {
     if (!simuladoAtivo) return
-    const questoesSimulado = questoesDaProva(questoes, simuladoAtivo.id, idiomaSimulado, especificasUem)
+    const questoesSimulado = questoesSimuladoAtivo
     let acertos = 0
     let erros = 0
     const detalhes = []
@@ -820,43 +830,43 @@ export default function App() {
     .filter(valores => valores.length > 0).length
   const temFiltrosAtivos = totalFiltrosAtivos > 0
 
-  const questoesFiltradas = temFiltrosAtivos ? questoes.filter(q => {
-    const bateMateria = filtrosMateria.length === 0 || filtrosMateria.includes(chaveCampoFiltro('materia', q.materia))
-    const contextoConteudo = `${q.enunciado || ''} ${(q.opcoes || []).join(' ')}`
-    const bateConteudo = filtrosConteudo.length === 0 || filtrosConteudo.includes(chaveConteudoFiltro(q.conteudo, q.materia, contextoConteudo))
-    const bateBanca = filtrosBanca.length === 0 || filtrosBanca.includes(chaveCampoFiltro('banca', q.banca))
-    const bateDificuldade = filtrosDificuldade.length === 0 || filtrosDificuldade.includes(chaveCampoFiltro('dificuldade', q.dificuldade))
-    const bateAno = filtrosAno.length === 0 || filtrosAno.includes(anoDaQuestao(q))
-    return bateMateria && bateConteudo && bateBanca && bateDificuldade && bateAno
-  }) : []
-  const questoesVisiveis = questoesFiltradas.slice(0, limiteVisivel)
+  const indiceFiltros = useMemo(() => indexarFiltros(questoes), [questoes])
+  const questoesFiltradas = useMemo(() => filtrarIndice(indiceFiltros, {
+    ano: filtrosAno, materia: filtrosMateria, conteudo: filtrosConteudo,
+    banca: filtrosBanca, dificuldade: filtrosDificuldade,
+  }), [indiceFiltros, filtrosAno, filtrosMateria, filtrosConteudo, filtrosBanca, filtrosDificuldade])
+  const questoesVisiveis = useMemo(() => questoesFiltradas.slice(0, limiteVisivel), [questoesFiltradas, limiteVisivel])
 
-  const simuladosDisponiveis = []
-  const mapaSimulados = {}
-  
-  questoes.forEach(q => {
-    if (!q.concurso || q.prova_incompleta || !podeCorrigir(q)) return
-    if (!incluirNoSimuladoUem(q, idiomaSimulado, especificasUem)) return
-    if (!incluirNoSimuladoIfpr(q, idiomaSimulado)) return
-    if (!incluirIdiomaDaProva(q, idiomaSimulado)) return
-    concursosDaQuestao(q).forEach(concurso => {
-    const dados = dadosDaProva({...q, concurso})
-    const chave = dados.id
-    if (!mapaSimulados[chave]) {
-      mapaSimulados[chave] = {
-        id: chave,
-        ano: dados.ano,
-        prova: dados.prova,
-        concurso: dados.concurso,
-        banca: dados.banca,
-        questoesCount: 0
+  const simuladosDisponiveis = useMemo(() => {
+    const simuladosDisponiveis = []
+    const mapaSimulados = {}
+
+    questoes.forEach(q => {
+      if (!q.concurso || q.prova_incompleta || !podeCorrigir(q)) return
+      if (!incluirNoSimuladoUem(q, idiomaSimulado, especificasUem)) return
+      if (!incluirNoSimuladoIfpr(q, idiomaSimulado)) return
+      if (!incluirIdiomaDaProva(q, idiomaSimulado)) return
+      concursosDaQuestao(q).forEach(concurso => {
+      const dados = dadosDaProva({...q, concurso})
+      const chave = dados.id
+      if (!mapaSimulados[chave]) {
+        mapaSimulados[chave] = {
+          id: chave,
+          ano: dados.ano,
+          prova: dados.prova,
+          concurso: dados.concurso,
+          banca: dados.banca,
+          questoesCount: 0
+        }
+        simuladosDisponiveis.push(mapaSimulados[chave])
       }
-      simuladosDisponiveis.push(mapaSimulados[chave])
-    }
-    mapaSimulados[chave].questoesCount++
+      mapaSimulados[chave].questoesCount++
+      })
     })
-  })
-  simuladosDisponiveis.sort((a, b) => b.ano.localeCompare(a.ano, 'pt-BR', { numeric: true }) || a.prova.localeCompare(b.prova, 'pt-BR'))
+    simuladosDisponiveis.sort((a, b) => b.ano.localeCompare(a.ano, 'pt-BR', { numeric: true }) || a.prova.localeCompare(b.prova, 'pt-BR'))
+
+    return simuladosDisponiveis
+  }, [questoes, idiomaSimulado, especificasUem])
 
   const simuladosFiltrados = simuladosDisponiveis.filter(sim => {
     const bateAno = filtroAnoSimulado === 'Todos' || sim.ano === filtroAnoSimulado
@@ -866,14 +876,14 @@ export default function App() {
   const anosSimuladoDisponiveis = [...new Set(simuladosDisponiveis.map(sim => sim.ano))].sort((a, b) => b.localeCompare(a, 'pt-BR', { numeric: true }))
   const provasSimuladoDisponiveis = simuladosDisponiveis.filter(sim => filtroAnoSimulado === 'Todos' || sim.ano === filtroAnoSimulado)
 
-  const materiasDisponiveis = opcoesFiltro(questoes, 'materia')
-  const bancasDisponiveis = opcoesFiltro(questoes, 'banca')
-  const anosDisponiveis = [...new Set(questoes.map(anoDaQuestao))].sort((a,b) => b.localeCompare(a)).map(ano => ({ value: ano, label: ano }))
-  const dificuldadesDisponiveis = opcoesFiltro(questoes, 'dificuldade')
-  const baseConteudos = filtrosMateria.length === 0
-    ? questoes
-    : questoes.filter(q => filtrosMateria.includes(chaveCampoFiltro('materia', q.materia)))
-  const conteudosDisponiveis = opcoesConteudo(baseConteudos)
+  const materiasDisponiveis = useMemo(() => opcoesFiltro(questoes, 'materia'), [questoes])
+  const bancasDisponiveis = useMemo(() => opcoesFiltro(questoes, 'banca'), [questoes])
+  const anosDisponiveis = useMemo(() => [...new Set(questoes.map(anoDaQuestao))].sort((a,b) => b.localeCompare(a)).map(ano => ({ value: ano, label: ano })), [questoes])
+  const dificuldadesDisponiveis = useMemo(() => opcoesFiltro(questoes, 'dificuldade'), [questoes])
+  const conteudosDisponiveis = useMemo(() => conteudosDoIndice(indiceFiltros, filtrosMateria), [indiceFiltros, filtrosMateria])
+  const questoesSimuladoAtivo = useMemo(() => simuladoAtivo
+    ? questoesDaProva(questoes, simuladoAtivo.id, idiomaSimulado, especificasUem) : [],
+    [questoes, simuladoAtivo, idiomaSimulado, especificasUem])
   function limparFiltros() {
     setFiltrosAno([]); setFiltrosMateria([]); setFiltrosConteudo([])
     setFiltrosBanca([]); setFiltrosDificuldade([]); setLimiteVisivel(40)
@@ -943,9 +953,9 @@ export default function App() {
             { id: 'tarefas', label: '⚡ Tarefas' },
             { id: 'conta', label: '👤 Minha conta' }
           ].map(tab => (
-            <button 
+            <button
               key={tab.id}
-              onClick={() => setAbaAtiva(tab.id)} 
+              onClick={() => setAbaAtiva(tab.id)}
               className={`shrink-0 whitespace-nowrap px-3 py-2 rounded-2xl text-xs md:text-sm font-medium transition-all duration-200 ${abaAtiva === tab.id ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-600/25 scale-[1.02]' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/80'}`}
             >
               {tab.label}
@@ -956,7 +966,7 @@ export default function App() {
 
       <main className="mx-auto min-w-0 max-w-5xl p-3 sm:p-6 md:p-8">
         {abaAtiva === 'conta' && <Conta session={session} isAdmin={isAdmin} checkingAdmin={checkingAdmin} sincronizacao={sincronizacao} totais={{ horas: totalHorasEstudo, questoes: totalQuestoesResolvidas, acertos: totalAcertos }} />}
-        {abaAtiva === 'importar' && isAdmin && <ImportarPdf onPublicado={buscarQuestoes} />}
+        {abaAtiva === 'importar' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Carregando importador…</p>}><ImportarPdf onPublicado={buscarQuestoes} /></Suspense>}
         {/* ABA: BANCO DE QUESTÕES */}
         {abaAtiva === 'questoes' && (
           <div>
@@ -1010,7 +1020,7 @@ export default function App() {
                 </div>
               ) : (
                 questoesVisiveis.map((q) => (
-                  <div key={q.id} className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md transition-all hover:border-slate-700">
+                  <div key={q.id} className="questao-renderizavel bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md transition-all hover:border-slate-700">
                     <div className="flex flex-wrap gap-2.5 mb-5">
                       {q.materia && <span className="bg-slate-800 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium">{q.materia}</span>}
                       {q.conteudo && <span className="bg-slate-800 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium">{q.conteudo}</span>}
@@ -1057,7 +1067,7 @@ export default function App() {
                 <div className="mb-6 grid grid-cols-1 gap-4 rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-xl backdrop-blur-md sm:mb-8 sm:p-6 md:grid-cols-2">
                   <div>
                     <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Ano</label>
-                    <select 
+                    <select
                       value={filtroAnoSimulado}
                       onChange={(e) => { setFiltroAnoSimulado(e.target.value); setFiltroProvaSimulado('Todos') }}
                       className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
@@ -1069,7 +1079,7 @@ export default function App() {
 
                   <div>
                     <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Prova</label>
-                    <select 
+                    <select
                       value={filtroProvaSimulado}
                       onChange={(e) => setFiltroProvaSimulado(e.target.value)}
                       className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
@@ -1097,7 +1107,7 @@ export default function App() {
                         </h3>
                         <p className="text-slate-400 text-sm mt-2">Prova completa com {simulado.questoesCount} questão(ões), reunindo todas as matérias disponíveis.</p>
                       </div>
-                      <button 
+                      <button
                         onClick={() => { setSimuladoAtivo(simulado); setRespostasSimulado({}); setResultadoSimuladoFinal(null); limparEliminacoesDoSimulado(); }}
                         className="mt-8 w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-medium py-3 rounded-2xl text-sm transition-all shadow-lg shadow-indigo-600/25"
                       >
@@ -1138,8 +1148,8 @@ export default function App() {
                     </label>)}
                   </div>
                 </div>}
-                {questoesDaProva(questoes, simuladoAtivo.id, idiomaSimulado, especificasUem).map((q, index) => (
-                  <div key={q.id} className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md">
+                {questoesSimuladoAtivo.map((q, index) => (
+                  <div key={q.id} className="questao-renderizavel bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md">
                     <div className="flex flex-wrap gap-2.5 mb-5">
                       <span className="bg-indigo-600 text-white px-3.5 py-1 rounded-full text-xs font-bold shadow-md shadow-indigo-600/20">Questão {index + 1}</span>
                       {q.materia && <span className="bg-slate-800 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium">{q.materia}</span>}
@@ -1210,41 +1220,41 @@ export default function App() {
               <h3 className="text-lg font-bold text-slate-100 mb-4 flex items-center gap-2">
                 ⏱️ Cronómetro de Estudos & Sugestão Inteligente
               </h3>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 <div>
                   <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Matéria</label>
-                  <input 
-                    type="text" 
-                    placeholder="Ex: Matemática" 
-                    value={materiaEstudo} 
-                    onChange={e => setMateriaEstudo(e.target.value)} 
+                  <input
+                    type="text"
+                    placeholder="Ex: Matemática"
+                    value={materiaEstudo}
+                    onChange={e => setMateriaEstudo(e.target.value)}
                     disabled={cronometroAtivo}
-                    className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40" 
+                    className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Conteúdo / Tópico (Opcional)</label>
-                  <input 
-                    type="text" 
-                    placeholder="Ex: Geometria Plana" 
-                    value={conteudoEstudo} 
-                    onChange={e => setConteudoEstudo(e.target.value)} 
+                  <input
+                    type="text"
+                    placeholder="Ex: Geometria Plana"
+                    value={conteudoEstudo}
+                    onChange={e => setConteudoEstudo(e.target.value)}
                     disabled={cronometroAtivo}
-                    className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40" 
+                    className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40"
                   />
                 </div>
                 <div className="flex flex-col justify-end">
                   {!cronometroAtivo ? (
-                    <button 
-                      onClick={iniciarCronometro} 
+                    <button
+                      onClick={iniciarCronometro}
                       className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-medium py-3 rounded-2xl text-sm transition-all shadow-lg shadow-emerald-600/25"
                     >
                       ▶ Iniciar Sessão
                     </button>
                   ) : (
-                    <button 
-                      onClick={pausarOuFinalizarCronometro} 
+                    <button
+                      onClick={pausarOuFinalizarCronometro}
                       className="w-full bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-medium py-3 rounded-2xl text-sm transition-all shadow-lg shadow-red-600/25 animate-pulse"
                     >
                       ⏹ Parar e Registar ({formatarTempo(segundosDecorridos)})
@@ -1302,7 +1312,7 @@ export default function App() {
             )}
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md">
+              <div className="questao-renderizavel bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md">
                 <h3 className="text-lg font-bold text-slate-100 mb-5">⏱️ Registar Bloco Manual</h3>
                 <form onSubmit={registarHoras} className="space-y-4">
                   <div>
@@ -1323,7 +1333,7 @@ export default function App() {
                 </form>
               </div>
 
-              <div className="bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md flex flex-col justify-between">
+              <div className="questao-renderizavel bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md flex flex-col justify-between">
                 <div>
                   <h3 className="text-lg font-bold text-slate-100 mb-5">⚠️ Principais Pontos a Melhorar</h3>
                   {pontosAMelhorar.length === 0 ? (

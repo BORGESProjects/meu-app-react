@@ -8,3 +8,12 @@ export async function tentarLeitura(ler, esperar = ms => new Promise(resolve => 
     }
   }
 }
+
+// As fontes estáticas não precisam esperar o servidor da API acordar.
+// A ordem original é mantida para a mesma precedência na deduplicação.
+export async function carregarEmEtapas(fontes, aoCarregarEstaticas) {
+  const completo = Promise.allSettled(fontes)
+  const estaticas = await Promise.allSettled(fontes.slice(2))
+  aoCarregarEstaticas(estaticas)
+  return completo
+}

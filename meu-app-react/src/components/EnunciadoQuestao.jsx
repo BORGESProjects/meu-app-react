@@ -1,7 +1,8 @@
 import { anoDaQuestao } from '../acervo'
 import { API_URL } from '../api'
+import { memo } from 'react'
 
-export default function EnunciadoQuestao({ questao: q }) {
+function EnunciadoQuestao({ questao: q }) {
   const imagemPrincipal = q.imagem_original || q.pagina_imagem
   return <div className="mb-6 space-y-3">
     <div className="flex flex-wrap gap-3 text-xs text-slate-400">
@@ -33,3 +34,5 @@ export default function EnunciadoQuestao({ questao: q }) {
     </> : !imagemPrincipal && <p className="text-slate-100 text-base font-medium leading-relaxed whitespace-pre-wrap">{q.enunciado}</p>}
   </div>
 }
+
+export default memo(EnunciadoQuestao)

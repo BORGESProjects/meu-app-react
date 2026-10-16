@@ -164,3 +164,9 @@ select:focus, input:focus {
   border-color: var(--color-tactical-primary) !important;
   outline: none;
 }
+
+/* Mantém as questões acessíveis e evita desenhar cartões fora da tela. */
+.questao-renderizavel {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 850px;
+}
