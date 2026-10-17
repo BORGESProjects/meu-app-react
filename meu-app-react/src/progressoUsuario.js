@@ -35,25 +35,45 @@ export function diferencaProgresso(campo, anterior, proximo) {
 }
 
 export function criarRepositorioProgresso(client) {
+  async function requisitar(consulta) {
+    let resultado = await consulta()
+    if (resultado.status === 401) {
+      let limite
+      try {
+        const renovacao = await Promise.race([
+          client.auth.refreshSession(),
+          new Promise((_,reject)=>{limite=setTimeout(()=>reject(new Error('Renovação indisponível')),20000)}),
+        ])
+        if (renovacao.error || !renovacao.data?.session) throw new Error('Sessão não renovada')
+      } catch {
+        throw {code:'AUTH_RELOGIN',message:'A sessão de acesso expirou e precisa de novo login.'}
+      } finally {clearTimeout(limite)}
+      resultado = await consulta()
+    }
+    if (resultado.error) throw {...resultado.error,statusHttp:resultado.status}
+    return resultado.data
+  }
   return {
     async ler(userId) {
-      const {data,error,status} = await client.from('progresso_usuario').select('horas_estudo,historico_respostas,tarefas,updated_at')
-        .eq('user_id',userId).abortSignal(AbortSignal.timeout(20000)).maybeSingle()
-      if (error) throw {...error,statusHttp:status}
-      return data
+      return requisitar(()=>client.from('progresso_usuario').select('horas_estudo,historico_respostas,tarefas,updated_at')
+        .eq('user_id',userId).abortSignal(AbortSignal.timeout(20000)).maybeSingle())
     },
     async gravar(userId, anterior, dados) {
       // Comparação de versão: uma aba não sobrescreve alterações de outra.
       const updated_at = new Date(Math.max(Date.now(), Date.parse(anterior?.updated_at || 0) + 1 || 0)).toISOString()
       const payload = {...dados,updated_at}
-      const consulta = anterior
-        ? client.from('progresso_usuario').update(payload).eq('user_id',userId).eq('updated_at',anterior.updated_at)
-        : client.from('progresso_usuario').insert({...payload,user_id:userId})
-      const {data,error,status} = await consulta.select('horas_estudo,historico_respostas,tarefas,updated_at')
-        .abortSignal(AbortSignal.timeout(20000)).maybeSingle()
-      if (error?.code === '23505') return null // Outra aba criou a linha primeiro.
-      if (error) throw {...error,statusHttp:status}
-      return data // null indica conflito; reler e mesclar antes de tentar novamente.
+      try {
+        return await requisitar(()=>{
+          const consulta = anterior
+            ? client.from('progresso_usuario').update(payload).eq('user_id',userId).eq('updated_at',anterior.updated_at)
+            : client.from('progresso_usuario').insert({...payload,user_id:userId})
+          return consulta.select('horas_estudo,historico_respostas,tarefas,updated_at')
+            .abortSignal(AbortSignal.timeout(20000)).maybeSingle()
+        })
+      } catch (erro) {
+        if (erro.code === '23505') return null // Outra aba criou a linha primeiro.
+        throw erro
+      }
     },
   }
 }
@@ -135,11 +155,13 @@ export function criarControleProgresso({userId, repositorio, storage, id = () =>
       throw new Error('O progresso mudou em outra aba. Vamos tentar novamente.')
     } catch (erro) {
       if (atual !== geracao) return
-      emitir('erro',erro?.code === '42501'
+      emitir('erro',erro?.code === 'AUTH_RELOGIN'
+        ? 'Sua sessão expirou. Entre novamente na mesma conta para sincronizar. As alterações pendentes foram mantidas.'
+        : erro?.code === '42501'
         ? 'O banco recusou o acesso ao progresso desta conta. Suas alterações pendentes foram mantidas.'
         : 'Não foi possível sincronizar com a conta. As alterações pendentes serão reenviadas automaticamente.',
         [erro?.statusHttp ? `HTTP ${erro.statusHttp}` : '',erro?.code,erro?.message || erro?.name].filter(Boolean).join(' · ').slice(0,600))
-      marcarTentativa(Math.min(30000,1000*2**Math.min(tentativas++,5)))
+      marcarTentativa(erro?.code === 'AUTH_RELOGIN' ? 30000 : Math.min(30000,1000*2**Math.min(tentativas++,5)))
     } finally { if (atual === geracao) rodando = true }
   }
   function mudar(campo, valor) {

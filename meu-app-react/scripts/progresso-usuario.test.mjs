@@ -1,6 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import {aplicarOperacoes, criarControleProgresso, diferencaProgresso} from '../src/progressoUsuario.js'
+import {aplicarOperacoes, criarControleProgresso, criarRepositorioProgresso, diferencaProgresso} from '../src/progressoUsuario.js'
 
 const clone = x=>structuredClone(x)
 const vazio = ()=>({horas_estudo:[],historico_respostas:[],tarefas:[],updated_at:'2026-10-17T12:00:00.000Z'})
@@ -138,4 +138,30 @@ test('armazenamento bloqueado sinaliza a limitação e mantém os dados na memó
   assert.equal(a.remoto().horas_estudo.length,1)
   assert.equal(a.controle.getSnapshot().pendentes,0)
   a.controle.parar()
+})
+function clienteExpirado(falhaRenovar=false) {
+  let chamadas=0,renovacoes=0;const filtros=[]
+  const construtor={select(){return this},update(){return this},insert(){return this},eq(...args){filtros.push(args);return this},abortSignal(){return this},
+    async maybeSingle(){chamadas++;return chamadas===1?{data:null,status:401,error:{code:'PGRST303',message:'JWT expired'}}:{data:vazio(),error:null,status:200}}}
+  return {client:{from:()=>construtor,auth:{async refreshSession(){renovacoes++;return falhaRenovar?{error:Error('revogada')}:{data:{session:{user:{id:'a'}}}}}}},
+    chamadas:()=>chamadas,renovacoes:()=>renovacoes,filtros}
+}
+test('JWT expirado é renovado antes de repetir a leitura da própria conta',async()=>{
+  const c=clienteExpirado();const repo=criarRepositorioProgresso(c.client)
+  assert.deepEqual(await repo.ler('a'),vazio())
+  assert.equal(c.chamadas(),2)
+  assert.equal(c.renovacoes(),1)
+  assert.deepEqual(c.filtros,[['user_id','a'],['user_id','a']])
+})
+test('sessão revogada pede login e não trata a falha como progresso vazio',async()=>{
+  const c=clienteExpirado(true)
+  await assert.rejects(()=>criarRepositorioProgresso(c.client).ler('a'),erro=>erro.code==='AUTH_RELOGIN')
+  assert.equal(c.chamadas(),1)
+  assert.equal(c.renovacoes(),1)
+})
+test('JWT expirado durante a gravação renova a sessão e preserva os filtros de versão e proprietário',async()=>{
+  const c=clienteExpirado();const anterior=vazio()
+  assert.deepEqual(await criarRepositorioProgresso(c.client).gravar('a',anterior,anterior),anterior)
+  assert.equal(c.renovacoes(),1)
+  assert.deepEqual(c.filtros,[['user_id','a'],['updated_at',anterior.updated_at],['user_id','a'],['updated_at',anterior.updated_at]])
 })
