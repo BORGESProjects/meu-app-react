@@ -4,6 +4,8 @@ import AlternativaComEliminacao from './components/AlternativaComEliminacao'
 import FiltroMultiplo from './components/FiltroMultiplo'
 import Conta from './components/Conta'
 import SessaoEstudo from './components/SessaoEstudo'
+import EstadoProgresso from './components/EstadoProgresso'
+import {useProgressoUsuario} from './useProgressoUsuario'
 import { API_URL } from './api'
 import { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react'
 import { supabase } from './supabaseClient'
@@ -110,9 +112,6 @@ export default function App() {
   const [authReady, setAuthReady] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
   const [checkingAdmin, setCheckingAdmin] = useState(false)
-  const [progressoCarregado, setProgressoCarregado] = useState(false)
-  const [sincronizacao, setSincronizacao] = useState('carregando')
-  const [erroProgresso, setErroProgresso] = useState('')
 
   // Estados das Questões
   const [questoes, setQuestoes] = useState(() => unirQuestoes())
@@ -144,7 +143,6 @@ export default function App() {
   })
 
   // Estados das Tarefas
-  const [tarefas, setTarefas] = useState([])
   const [novaTarefa, setNovaTarefa] = useState({
     dia: 'Segunda-feira', materia: '', atividade: '', horario: '08:00', minutos: 60
   })
@@ -168,13 +166,16 @@ export default function App() {
   const [resultadoSimuladoFinal, setResultadoSimuladoFinal] = useState(null)
 
   // Estados de Desempenho e Horas de Estudo
-  const [horasEstudo, setHorasEstudo] = useState([])
   const [novaHora, setNovaHora] = useState({ materia: '', horas: '', data: '' })
-  const [historicoRespostas, setHistoricoRespostas] = useState([])
 
   // --- NOVOS ESTADOS PARA O CRONÓMETRO E SUGESTÃO DE QUESTÕES ---
   const [materiaEstudo, setMateriaEstudo] = useState('')
   const [questoesSugeridas, setQuestoesSugeridas] = useState([])
+
+  const progresso = useProgressoUsuario(session?.user?.id)
+  const {horas_estudo:horasEstudo, historico_respostas:historicoRespostas, tarefas} = progresso.dados
+  const {setHorasEstudo, setHistoricoRespostas, setTarefas, carregado:progressoCarregado,
+    status:sincronizacao, erro:erroProgresso, tentarNovamente} = progresso
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => { setSession(data.session); setAuthReady(true) })
@@ -191,66 +192,6 @@ export default function App() {
     const controle = requisicaoAcervo
     return () => { controle.current++ }
   }, [session?.user?.id])
-
-  useEffect(() => {
-    let cancelled = false
-    async function carregarProgresso() {
-      if (!session?.user?.id) {
-        setTarefas([])
-        setHorasEstudo([])
-        setHistoricoRespostas([])
-        setProgressoCarregado(false)
-        setSincronizacao('carregando')
-        setErroProgresso('')
-        return
-      }
-
-      setProgressoCarregado(false)
-      setSincronizacao('carregando')
-      setErroProgresso('')
-      const { data, error } = await supabase.from('progresso_usuario')
-        .select('horas_estudo,historico_respostas,tarefas')
-        .eq('user_id', session.user.id)
-        .maybeSingle()
-
-      if (cancelled) return
-      if (error) {
-        setErroProgresso('Não foi possível carregar seu progresso. Tente entrar novamente.')
-        setSincronizacao('erro')
-        return
-      }
-
-      setHorasEstudo(Array.isArray(data?.horas_estudo) ? data.horas_estudo : [])
-      setHistoricoRespostas(Array.isArray(data?.historico_respostas) ? data.historico_respostas : [])
-      setTarefas(Array.isArray(data?.tarefas) ? data.tarefas : [])
-      setProgressoCarregado(true)
-      setSincronizacao('salvo')
-    }
-    carregarProgresso()
-    return () => { cancelled = true }
-  }, [session?.user?.id])
-
-  useEffect(() => {
-    if (!session?.user?.id || !progressoCarregado) return
-    setSincronizacao('salvando')
-    const timer = setTimeout(async () => {
-      const { error } = await supabase.from('progresso_usuario').upsert({
-        user_id: session.user.id,
-        horas_estudo: horasEstudo,
-        historico_respostas: historicoRespostas,
-        tarefas,
-        updated_at: new Date().toISOString(),
-      }, { onConflict: 'user_id' })
-      if (error) {
-        setErroProgresso('Seu progresso não pôde ser sincronizado. Verifique a conexão e tente novamente.')
-        setSincronizacao('erro')
-      } else {
-        setErroProgresso('')
-        setSincronizacao('salvo')
-      }
-    }, 500)
-    return () => clearTimeout(timer)
-  }, [session?.user?.id, progressoCarregado, horasEstudo, historicoRespostas, tarefas])
 
   useEffect(() => {
     let cancelled = false
@@ -535,7 +476,7 @@ export default function App() {
     }
     setHorasEstudo(prev => [registo, ...prev])
     setNovaHora({ materia: '', horas: '', data: '' })
-    alert('Horas de estudo registadas com sucesso!')
+
   }
 
   // --- FUNÇÕES DO CRONÓMETRO E RECOMENDAÇÃO ---
@@ -564,7 +505,7 @@ export default function App() {
     // Embaralhar e pegar até 3 questões para sugestão imediata
     const recomendadas = filtradas.sort(() => 0.5 - Math.random()).slice(0, 3)
     setQuestoesSugeridas(recomendadas)
-    alert('Sessão guardada com sucesso! Veja as questões sugeridas abaixo.')
+
   }
 
   function alternativaFoiEliminada(contexto, questaoId, indice) {
@@ -841,7 +782,7 @@ export default function App() {
 
   if (!progressoCarregado) return <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center gap-4 px-6 text-center">
     <p className="text-sm text-indigo-300">Carregando seu progresso…</p>
-    {erroProgresso && <><p className="max-w-md text-sm text-red-300">{erroProgresso}</p><button className="text-sm font-semibold text-indigo-300" onClick={() => supabase.auth.signOut()}>Voltar ao login</button></>}
+    {erroProgresso && <><p className="max-w-md text-sm text-red-300">{erroProgresso}</p><button className="text-sm font-semibold text-indigo-300" onClick={tentarNovamente}>Tentar novamente</button><button className="text-sm text-slate-400" onClick={() => supabase.auth.signOut()}>Voltar ao login</button></>}
   </div>
 
   return (
@@ -875,6 +816,7 @@ export default function App() {
       </nav>
 
       <main className="mx-auto min-w-0 max-w-5xl p-3 sm:p-6 md:p-8">
+        <EstadoProgresso progresso={progresso} />
         {abaAtiva === 'conta' && <Conta session={session} isAdmin={isAdmin} checkingAdmin={checkingAdmin} sincronizacao={sincronizacao} totais={{ horas: totalHorasEstudo, questoes: totalQuestoesResolvidas, acertos: totalAcertos }} />}
         {abaAtiva === 'importar' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Carregando importador…</p>}><ImportarPdf onPublicado={buscarQuestoes} /></Suspense>}
         {/* ABA: BANCO DE QUESTÕES */}

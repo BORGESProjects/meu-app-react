@@ -44,7 +44,7 @@ export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, 
       <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-3 text-center"><p className="text-xl font-bold text-emerald-400">{totais?.acertos || 0}</p><p className="mt-1 text-xs text-slate-500">Acertos</p></div>
     </div>
     <p className={`mt-4 text-xs ${sincronizacao === 'erro' ? 'text-red-300' : 'text-slate-400'}`}>
-      {sincronizacao === 'salvando' ? 'Salvando progresso…' : sincronizacao === 'erro' ? 'Falha ao salvar o progresso.' : '✓ Progresso sincronizado com sua conta'}
+      {sincronizacao === 'salvo' ? '✓ Progresso sincronizado com sua conta' : sincronizacao === 'erro' ? 'Sincronização pendente. As alterações serão reenviadas automaticamente.' : 'Sincronizando progresso…'}
     </p>
     <div className="mt-4 flex flex-wrap items-center gap-3">
       <span className={`rounded-full px-3 py-1 text-xs font-bold ${isAdmin ? 'bg-emerald-900 text-emerald-200' : 'bg-slate-800 text-slate-300'}`}>

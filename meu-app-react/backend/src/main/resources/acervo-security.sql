@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS public.progresso_usuario (
 
 ALTER TABLE public.progresso_usuario ENABLE ROW LEVEL SECURITY;
 REVOKE ALL ON TABLE public.progresso_usuario FROM anon;
+REVOKE ALL ON TABLE public.progresso_usuario FROM authenticated;
 GRANT SELECT, INSERT, UPDATE, DELETE ON TABLE public.progresso_usuario TO authenticated;
 
 DROP POLICY IF EXISTS progresso_usuario_select_own ON public.progresso_usuario;
