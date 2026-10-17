@@ -37,9 +37,9 @@ export function diferencaProgresso(campo, anterior, proximo) {
 export function criarRepositorioProgresso(client) {
   return {
     async ler(userId) {
-      const {data,error} = await client.from('progresso_usuario').select('horas_estudo,historico_respostas,tarefas,updated_at')
+      const {data,error,status} = await client.from('progresso_usuario').select('horas_estudo,historico_respostas,tarefas,updated_at')
         .eq('user_id',userId).abortSignal(AbortSignal.timeout(20000)).maybeSingle()
-      if (error) throw error
+      if (error) throw {...error,statusHttp:status}
       return data
     },
     async gravar(userId, anterior, dados) {
@@ -49,10 +49,10 @@ export function criarRepositorioProgresso(client) {
       const consulta = anterior
         ? client.from('progresso_usuario').update(payload).eq('user_id',userId).eq('updated_at',anterior.updated_at)
         : client.from('progresso_usuario').insert({...payload,user_id:userId})
-      const {data,error} = await consulta.select('horas_estudo,historico_respostas,tarefas,updated_at')
+      const {data,error,status} = await consulta.select('horas_estudo,historico_respostas,tarefas,updated_at')
         .abortSignal(AbortSignal.timeout(20000)).maybeSingle()
       if (error?.code === '23505') return null // Outra aba criou a linha primeiro.
-      if (error) throw error
+      if (error) throw {...error,statusHttp:status}
       return data // null indica conflito; reler e mesclar antes de tentar novamente.
     },
   }
@@ -85,8 +85,8 @@ export function criarControleProgresso({userId, repositorio, storage, id = () =>
     try { storage.setItem(chaveCache,JSON.stringify({userId,dados:base})) }
     catch { avisoLocal = 'Não foi possível guardar uma cópia neste navegador. Não feche a página até sincronizar.' }
   }
-  function emitir(status,erro='') {
-    snapshot = {dados:aplicarOperacoes(base,pendentes),carregado,status,erro,avisoLocal,pendentes:pendentes.length}
+  function emitir(status,erro='',diagnostico='') {
+    snapshot = {dados:aplicarOperacoes(base,pendentes),carregado,status,erro,diagnostico,avisoLocal,pendentes:pendentes.length}
     for (const ouvir of ouvintes) ouvir()
   }
   try {
@@ -137,7 +137,8 @@ export function criarControleProgresso({userId, repositorio, storage, id = () =>
       if (atual !== geracao) return
       emitir('erro',erro?.code === '42501'
         ? 'O banco recusou o acesso ao progresso desta conta. Suas alterações pendentes foram mantidas.'
-        : 'Não foi possível sincronizar com a conta. As alterações pendentes serão reenviadas automaticamente.')
+        : 'Não foi possível sincronizar com a conta. As alterações pendentes serão reenviadas automaticamente.',
+        [erro?.statusHttp ? `HTTP ${erro.statusHttp}` : '',erro?.code,erro?.message || erro?.name].filter(Boolean).join(' · ').slice(0,600))
       marcarTentativa(Math.min(30000,1000*2**Math.min(tentativas++,5)))
     } finally { if (atual === geracao) rodando = true }
   }

@@ -175,7 +175,7 @@ export default function App() {
   const progresso = useProgressoUsuario(session?.user?.id)
   const {horas_estudo:horasEstudo, historico_respostas:historicoRespostas, tarefas} = progresso.dados
   const {setHorasEstudo, setHistoricoRespostas, setTarefas, carregado:progressoCarregado,
-    status:sincronizacao, erro:erroProgresso, tentarNovamente} = progresso
+    status:sincronizacao, erro:erroProgresso} = progresso
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => { setSession(data.session); setAuthReady(true) })
@@ -187,11 +187,11 @@ export default function App() {
   }, [])
 
   useEffect(() => {
-    if (!session?.user?.id) return
+    if (!session?.user?.id || !progressoCarregado) return
     buscarQuestoes()
     const controle = requisicaoAcervo
     return () => { controle.current++ }
-  }, [session?.user?.id])
+  }, [session?.user?.id, progressoCarregado])
 
   useEffect(() => {
     let cancelled = false
@@ -782,7 +782,7 @@ export default function App() {
 
   if (!progressoCarregado) return <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center gap-4 px-6 text-center">
     <p className="text-sm text-indigo-300">Carregando seu progresso…</p>
-    {erroProgresso && <><p className="max-w-md text-sm text-red-300">{erroProgresso}</p><button className="text-sm font-semibold text-indigo-300" onClick={tentarNovamente}>Tentar novamente</button><button className="text-sm text-slate-400" onClick={() => supabase.auth.signOut()}>Voltar ao login</button></>}
+    {erroProgresso && <><EstadoProgresso progresso={progresso} /><button className="text-sm text-slate-400" onClick={() => supabase.auth.signOut()}>Voltar ao login</button></>}
   </div>
 
   return (
