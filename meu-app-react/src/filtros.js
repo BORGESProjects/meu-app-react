@@ -1,4 +1,5 @@
 export const TODOS = '__todos__'
+export const BANCA_ASSIMILACAO = 'Questões de assimilação'
 
 export function limparValorFiltro(valor) {
   return String(valor ?? '').trim().replace(/\s+/g, ' ')
@@ -19,21 +20,29 @@ const BANCAS_CANONICAS = new Map([
   ['epcar', 'EPCAR'], ['esa', 'ESA'], ['esc. naval', 'Escola Naval'], ['escola naval', 'Escola Naval'],
   ['esfcex', 'EsFCEx'], ['espcex', 'EsPCEx'], ['espm', 'ESPM'], ['fgv', 'FGV'], ['fn', 'CFN'],
   ['fuzileiro naval', 'CFN'], ['fuzileiros navais', 'CFN'], ['fuvest', 'FUVEST'], ['ifal', 'IFAL'],
-  ['ifpe', 'IFPE'], ['ifsc', 'IFSC'], ['ifsul', 'IFSUL'], ['ime', 'IME'], ['inedita', 'Questões inéditas'],
+  ['ifpe', 'IFPE'], ['ifsc', 'IFSC'], ['ifsul', 'IFSUL'], ['ime', 'IME'],
   ['insper', 'Insper'], ['ita', 'ITA'], ['pucrj', 'PUC-Rio'], ['puc-rio', 'PUC-Rio'], ['pucrs', 'PUCRS'],
   ['smv', 'SMV'], ['udesc', 'UDESC'], ['uece', 'UECE'], ['uefs', 'UEFS'], ['uepb', 'UEPB'], ['uern', 'UERN'],
   ['uespi', 'UESPI'], ['ufc', 'UFC'], ['ufg', 'UFG'], ['ufjf', 'UFJF'], ['ufpr', 'UFPR'], ['ufrgs', 'UFRGS'],
   ['ufu', 'UFU'], ['unesp', 'UNESP'], ['unicamp', 'UNICAMP'], ['upf', 'UPF'], ['utfpr', 'UTFPR'],
-  ['exercicio', 'Questões de estudo'],
 ])
 
 const BANCAS_INVALIDAS = new Set(['g', 'esc', 'fac', 'fonte nao informada'])
+const BANCAS_ASSIMILACAO = new Set([
+  'inedita', 'ineditas', 'inedito', 'ineditos', 'questao inedita', 'questoes ineditas',
+  'exercicio', 'exercicios', 'questoes de estudo', 'questao de estudo',
+  'fixacao', 'questoes de fixacao', 'questao de fixacao', 'exercicios de fixacao',
+  'assimilacao', 'questoes de assimilacao', 'questao de assimilacao',
+  'autoral', 'autorais', 'questoes autorais', 'professor',
+  'sem banca', 'nao informada', 'nao informado', 'sem identificacao',
+  'eu militar', 'seja oficial', 'r2 cursos', 'avaliacao diagnostica',
+])
 
 export function normalizarBanca(valor, concurso = '') {
   const original = limparValorFiltro(valor)
   const chave = chaveFiltro(original)
   const chaveConcurso = chaveFiltro(concurso)
-  if (!chave || BANCAS_INVALIDAS.has(chave)) return ''
+  if (!chave || BANCAS_INVALIDAS.has(chave) || BANCAS_ASSIMILACAO.has(chave)) return BANCA_ASSIMILACAO
   if (chave === 'marinha' && /\bsmv\b/.test(chaveConcurso)) return 'SMV'
   if (chave === 'estrategia militares') {
     if (/espcex/.test(chaveConcurso)) return 'EsPCEx'
@@ -42,7 +51,7 @@ export function normalizarBanca(valor, concurso = '') {
     if (/fuzileir/.test(chaveConcurso)) return 'CFN'
     if (/\beam\b/.test(chaveConcurso)) return 'EAM'
     if (/\bcn\b|colegio naval/.test(chaveConcurso)) return 'Colégio Naval'
-    if (/inedit|questao inedita/.test(chaveConcurso)) return 'Questões inéditas'
+    return BANCA_ASSIMILACAO
   }
   return BANCAS_CANONICAS.get(chave) || original
 }

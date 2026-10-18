@@ -82,7 +82,8 @@ test('anos desconhecidos continuam visíveis e registros existentes são preserv
   assert.equal(anoDaQuestao({ano:2023,concurso:'ESA 2024'}), '2023')
   const antiga = { id:123, enunciado:'Questão existente e válida', opcoes:['Uma','Duas'], resposta_correta:0 }
   assert.equal(unirQuestoes([antiga]).length, completo.length + 1)
-  assert.deepEqual(unirQuestoes([antiga]).find(q => q.id === 123), antiga)
+  assert.deepEqual(unirQuestoes([antiga]).find(q => q.id === 123), { ...antiga, banca: 'Questões de assimilação' })
+  assert.equal(Object.hasOwn(antiga, 'banca'), false)
   assert.equal(unirQuestoes([acervo[0]]).length, completo.length)
 })
 

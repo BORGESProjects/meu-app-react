@@ -1,6 +1,6 @@
 import esa2025 from './data/esa2025.json' with { type: 'json' }
 import enem2022 from './data/enem2022.json' with { type: 'json' }
-import { normalizarBanca, normalizarMateria } from './filtros.js'
+import { BANCA_ASSIMILACAO, normalizarBanca, normalizarMateria } from './filtros.js'
 
 export const acervo = [...esa2025, ...enem2022]
 
@@ -133,8 +133,8 @@ function identidadeConteudo(questao) {
 }
 
 function pontuarQualidade(questao) {
-  const banca = normalizarConteudo(questao.banca).normalize('NFD').replace(/[\u0300-\u036f]/gu, '')
-  const bancaGenerica = /^(questoes ineditas|questoes de estudo|professor)$/.test(banca)
+  const banca = normalizarBanca(questao.banca, questao.concurso)
+  const bancaGenerica = banca === BANCA_ASSIMILACAO
   return (banca && !bancaGenerica ? 20 : 0)
     + (anoDaQuestao(questao) !== 'Não informado' ? 12 : 0)
     + (questao.numero_original ? 5 : 0)
@@ -160,7 +160,7 @@ function respostaCanonica(questao) {
 export function corrigirQuestaoConferida(questao) {
   const correcao = CORRECOES_CONFERIDAS.get(String(questao?.id ?? ''))
   const corrigida = correcao ? { ...questao, ...correcao } : { ...questao }
-  if (Object.hasOwn(corrigida, 'banca')) corrigida.banca = normalizarBanca(corrigida.banca, corrigida.concurso)
+  corrigida.banca = normalizarBanca(corrigida.banca, corrigida.concurso)
   if (Object.hasOwn(corrigida, 'materia')) corrigida.materia = normalizarMateria(corrigida.materia, corrigida.conteudo)
   corrigida.enunciado = limparMarcadoresExtracao(corrigida.enunciado)
   if (Object.hasOwn(corrigida, 'texto_apoio')) corrigida.texto_apoio = limparMarcadoresExtracao(corrigida.texto_apoio)

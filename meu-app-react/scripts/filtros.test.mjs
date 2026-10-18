@@ -15,19 +15,19 @@ test('unifica variações equivalentes de banca', () => {
   assert.equal(normalizarBanca('Marinha', 'Marinha / SMV Oficial 2017'), 'SMV')
   assert.equal(normalizarBanca('Estratégia Militares', 'Estratégia Militares – EEAr – Professora'), 'EEAR')
   assert.equal(normalizarBanca('Estratégia Militares', 'Estratégia Militares 2022 – EsPCEx 2020'), 'EsPCEx')
-  assert.equal(normalizarBanca('Estratégia Militares', 'Estratégia Militares / Questão inédita 2021'), 'Questões inéditas')
+  assert.equal(normalizarBanca('Estratégia Militares', 'Estratégia Militares / Questão inédita 2021'), 'Questões de assimilação')
   assert.equal(chaveCampoFiltro('banca', 'CPOR/SP'), 'cpor')
 })
 
 test('remove classificações inválidas sem excluir suas questões', () => {
-  for (const valor of ['G', 'Esc', 'Fac', 'Fonte não informada']) assert.equal(normalizarBanca(valor), '')
+  for (const valor of ['G', 'Esc', 'Fac', 'Fonte não informada']) assert.equal(normalizarBanca(valor), 'Questões de assimilação')
   const questoes = unirQuestoes([{
     id: 'banca-invalida', banca: 'G', concurso: 'G 2017', enunciado: 'Enunciado válido para estudo',
     opcoes: ['Alternativa um', 'Alternativa dois'], resposta_correta: 0,
   }])
   const questao = questoes.find(item => item.id === 'banca-invalida')
   assert.ok(questao)
-  assert.equal(questao.banca, '')
+  assert.equal(questao.banca, 'Questões de assimilação')
   assert.deepEqual(opcoesFiltro(questoes, 'banca').filter(item => item.value === 'g'), [])
 })
 
@@ -40,7 +40,33 @@ test('lista uma única opção para cada banca normalizada', () => {
     { value: 'cfn', label: 'CFN' },
     { value: 'cpor', label: 'CPOR' },
     { value: 'efomm', label: 'EFOMM' },
+    { value: 'questoes de assimilacao', label: 'Questões de assimilação' },
   ])
+})
+
+test('reúne importações sem banca, inéditas, fixação e cursos em um único filtro', () => {
+  const bancas = [undefined, null, '', '  ', 'INÉDITA', 'Questões inéditas', 'Exercício',
+    'Questões de estudo', 'Fixação', 'Questões de fixação', 'Questões de assimilação',
+    'EU Militar', 'Seja Oficial', 'R2 Cursos', 'Estratégia Militares']
+  assert.deepEqual(opcoesFiltro(bancas.map(banca => ({ banca })), 'banca'), [
+    { value: 'questoes de assimilacao', label: 'Questões de assimilação' },
+  ])
+  const entrada = bancas.map((banca, i) => ({
+    id: `assimilacao-${i}`, ...(banca === undefined ? {} : { banca }),
+    enunciado: `Enunciado completo e independente número ${i}`,
+    opcoes: ['Primeira alternativa', 'Segunda alternativa'], resposta_correta: 0,
+    fonte: 'referencia-original', concurso: 'Lista original',
+  }))
+  const saida = unirQuestoes(entrada).filter(q => q.id.startsWith('assimilacao-'))
+  assert.equal(saida.length, entrada.length)
+  for (const q of saida) {
+    assert.equal(q.banca, 'Questões de assimilação')
+    assert.equal(q.fonte, 'referencia-original')
+    assert.equal(q.concurso, 'Lista original')
+  }
+  assert.equal(entrada[4].banca, 'INÉDITA')
+  assert.equal(normalizarBanca('ENEM', 'Simulado EU Militar'), 'ENEM')
+  assert.equal(normalizarBanca('UFPR', 'Lista de fixação'), 'UFPR')
 })
 
 test('química é dividida em áreas didáticas a partir do conteúdo e do enunciado', () => {

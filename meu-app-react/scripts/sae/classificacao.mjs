@@ -1,0 +1,30 @@
+import { BANCA_ASSIMILACAO, normalizarBanca } from '../../src/filtros.js'
+
+export const ASSIMILACAO = BANCA_ASSIMILACAO
+
+// Só a identificação no início do exercício pode determinar sua origem.
+// Datas de textos de apoio, referências bibliográficas e edição do livro não são anos de prova.
+export function classificarReferencia(enunciado) {
+  const inicio = String(enunciado ?? '')
+    .replace(/^\s*Resolução\s*/iu, '')
+    .replace(/^\s*\d{1,3}\s*[.)]\s*/u, '')
+    .replace(/^\s*(?:C\d+\s*:\s*H\d+\s*)+/iu, '')
+    .trimStart()
+  const referencia = inicio.match(/^\(([^)\n]{1,100})\)/u)?.[1]?.trim() ?? ''
+  const porAno = referencia.match(/^(.+?)\s*[-–—/,]\s*((?:19|20)\d{2})(?:\s*[-–—/,]\s*(adaptad[ao]))?$/iu)
+  const semAno = /^(?:ENEM|FUVEST|EsPCEx|ESA|EEAR|EAM|EFOMM|CFN|CPOR|NPOR|(?:UF|UE|IF)[A-Z]{1,8}(?:-[A-Z]{2})?|PUC(?:RS|PR|RJ|SP|MG|GO|RIO)?|UNESP|UNICAMP|UNICENTRO|UNIOESTE|UNIFOR|UPF|UPE|UDESC|CEFET(?:-[A-Z]{2})?|COSEAC-UFF|FTT|FCMSCSP)$/iu
+  const bancaDeclarada = porAno?.[1]?.trim() || (semAno.test(referencia) ? referencia : '')
+  // Exige sigla/nome institucional, evitando tratar uma fórmula ou data entre parênteses como banca.
+  const identificada = bancaDeclarada && semAno.test(bancaDeclarada)
+  if (!identificada) return {
+    banca: ASSIMILACAO, concurso: ASSIMILACAO, ano: null,
+    tipo_origem: 'assimilacao', referencia_original: null, adaptada: false,
+  }
+  const banca = normalizarBanca(bancaDeclarada)
+  const ano = porAno ? Number(porAno[2]) : null
+  return {
+    banca, concurso: ano ? `${banca} ${ano}` : banca, ano,
+    tipo_origem: 'prova_identificada', referencia_original: referencia,
+    adaptada: Boolean(porAno?.[3]),
+  }
+}
