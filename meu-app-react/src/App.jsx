@@ -14,7 +14,13 @@ import { opcoesFiltro } from './filtros'
 import { indexarFiltros, filtrarIndice, conteudosDoIndice } from './indiceFiltros'
 import { bancasRedacao, temasRedacao } from './data/temasRedacao'
 import { ESPECIFICAS_UEM } from './uem'
-import { questoesDaProva, listarProvasCompletas, gerarTreinoCpor, disponibilidadeTreinoCpor } from './simulados'
+import { questoesDaProva, listarProvasCompletas, gerarTreinoCpor } from './simulados'
+import { pertenceAoFoco, nomeFoco } from './focoEstudo'
+import { useFocoEstudo } from './useFocoEstudo'
+import SeletorFoco from './components/SeletorFoco'
+import TreinosFoco from './components/TreinosFoco'
+import TempoSimulado from './components/TempoSimulado'
+import RevisaoSimulado from './components/RevisaoSimulado'
 
 const DIAS_SEMANA = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo']
 const ImportarPdf = lazy(() => import('./components/ImportarPdf'))
@@ -116,6 +122,7 @@ export default function App() {
   const [idiomaSimulado, setIdiomaSimulado] = useState('Inglês')
   const [especificasUem, setEspecificasUem] = useState(['Biologia', 'Química'])
   const [respostasSimulado, setRespostasSimulado] = useState({})
+  const simuladoFinalizado = useRef(false)
   const [resultadoSimuladoFinal, setResultadoSimuladoFinal] = useState(null)
 
   // Estados de Desempenho e Horas de Estudo
@@ -125,6 +132,9 @@ export default function App() {
   const [materiaEstudo, setMateriaEstudo] = useState('')
   const [questoesSugeridas, setQuestoesSugeridas] = useState([])
 
+  const preferenciaFoco = useFocoEstudo(session)
+  const focoEstudo = preferenciaFoco.foco
+  const questoesDoFoco = useMemo(() => questoes.filter(q => pertenceAoFoco(q, focoEstudo, true)), [questoes, focoEstudo])
   const progresso = useProgressoUsuario(session?.user?.id)
   const {horas_estudo:horasEstudo, historico_respostas:historicoRespostas, tarefas} = progresso.dados
   const {setHorasEstudo, setHistoricoRespostas, setTarefas, carregado:progressoCarregado,
@@ -605,7 +615,8 @@ export default function App() {
   }
 
   function finalizarSimulado() {
-    if (!simuladoAtivo) return
+    if (!simuladoAtivo || simuladoFinalizado.current) return
+    simuladoFinalizado.current = true
     const questoesSimulado = questoesSimuladoAtivo
     let acertos = 0
     let erros = 0
@@ -624,7 +635,7 @@ export default function App() {
           id: crypto.randomUUID(), questaoId: q.id, acertou: avaliacao.acertou,
           materia: q.materia, conteudo: q.conteudo,
           respostaSelecionada: avaliacao.escolhida, respostaCorreta: avaliacao.correta,
-          tipo: 'simulado', concurso: simuladoAtivo.concurso,
+          tipo: 'simulado', concurso: simuladoAtivo.concurso, foco: simuladoAtivo.foco,
           respondidaEm: new Date().toISOString(),
         })
       } else {
@@ -634,27 +645,27 @@ export default function App() {
     })
 
     if (novasRespostas.length > 0) setHistoricoRespostas(prev => [...prev, ...novasRespostas])
-    setResultadoSimuladoFinal({ acertos, erros, total: questoesSimulado.length, detalhes })
+    setResultadoSimuladoFinal({ acertos, erros, total: questoesSimulado.length, detalhes, duracaoSegundos: Math.max(0, Math.floor((Date.now() - simuladoAtivo.inicio) / 1000)) })
   }
 
   const totalFiltrosAtivos = [filtrosAno, filtrosMateria, filtrosConteudo, filtrosBanca, filtrosDificuldade]
     .filter(valores => valores.length > 0).length
   const temFiltrosAtivos = totalFiltrosAtivos > 0
 
-  const indiceFiltros = useMemo(() => indexarFiltros(questoes), [questoes])
+  const indiceFiltros = useMemo(() => indexarFiltros(questoesDoFoco), [questoesDoFoco])
   const questoesFiltradas = useMemo(() => filtrarIndice(indiceFiltros, {
     ano: filtrosAno, materia: filtrosMateria, conteudo: filtrosConteudo,
     banca: filtrosBanca, dificuldade: filtrosDificuldade,
   }), [indiceFiltros, filtrosAno, filtrosMateria, filtrosConteudo, filtrosBanca, filtrosDificuldade])
   const questoesVisiveis = useMemo(() => questoesFiltradas.slice(0, limiteVisivel), [questoesFiltradas, limiteVisivel])
 
-  const simuladosDisponiveis = useMemo(() => abaAtiva === 'simulados' ? listarProvasCompletas(questoes, idiomaSimulado, especificasUem) : [], [abaAtiva, questoes, idiomaSimulado, especificasUem])
-  const disponibilidadeTreino = useMemo(() => abaAtiva === 'simulados' ? disponibilidadeTreinoCpor(questoes) : { pronto: false, faltantes: [] }, [abaAtiva, questoes])
+  const simuladosDisponiveis = useMemo(() => abaAtiva === 'simulados' ? listarProvasCompletas(questoes, idiomaSimulado, especificasUem).filter(p => pertenceAoFoco(p, focoEstudo)) : [], [abaAtiva, questoes, idiomaSimulado, especificasUem, focoEstudo])
   function iniciarSimulado(simulado) {
     // O acervo que chega depois não altera uma prova já iniciada.
-    const itens = simulado.tipo === 'treino' ? gerarTreinoCpor(questoes) : questoesDaProva(questoes, simulado.id, idiomaSimulado, especificasUem)
+    const itens = simulado.tipo === 'personalizado' ? simulado.itens : simulado.tipo === 'treino' ? gerarTreinoCpor(questoes) : questoesDaProva(questoes, simulado.id, idiomaSimulado, especificasUem)
     if (!itens.length) return
-    setSimuladoAtivo({ ...simulado, questoes: itens })
+    simuladoFinalizado.current = false
+    setSimuladoAtivo({ ...simulado, questoes: [...itens], inicio: Date.now(), foco: focoEstudo })
     setRespostasSimulado({}); setResultadoSimuladoFinal(null); limparEliminacoesDoSimulado()
   }
 
@@ -666,10 +677,10 @@ export default function App() {
   const anosSimuladoDisponiveis = [...new Set(simuladosDisponiveis.map(sim => sim.ano))].sort((a, b) => b.localeCompare(a, 'pt-BR', { numeric: true }))
   const provasSimuladoDisponiveis = simuladosDisponiveis.filter(sim => filtroAnoSimulado === 'Todos' || sim.ano === filtroAnoSimulado)
 
-  const materiasDisponiveis = useMemo(() => opcoesFiltro(questoes, 'materia'), [questoes])
-  const bancasDisponiveis = useMemo(() => opcoesFiltro(questoes, 'banca'), [questoes])
-  const anosDisponiveis = useMemo(() => [...new Set(questoes.map(anoDaQuestao))].sort((a,b) => b.localeCompare(a)).map(ano => ({ value: ano, label: ano })), [questoes])
-  const dificuldadesDisponiveis = useMemo(() => opcoesFiltro(questoes, 'dificuldade'), [questoes])
+  const materiasDisponiveis = useMemo(() => opcoesFiltro(questoesDoFoco, 'materia'), [questoesDoFoco])
+  const bancasDisponiveis = useMemo(() => opcoesFiltro(questoesDoFoco, 'banca'), [questoesDoFoco])
+  const anosDisponiveis = useMemo(() => [...new Set(questoesDoFoco.map(anoDaQuestao))].sort((a,b) => b.localeCompare(a)).map(ano => ({ value: ano, label: ano })), [questoesDoFoco])
+  const dificuldadesDisponiveis = useMemo(() => opcoesFiltro(questoesDoFoco, 'dificuldade'), [questoesDoFoco])
   const conteudosDisponiveis = useMemo(() => conteudosDoIndice(indiceFiltros, filtrosMateria), [indiceFiltros, filtrosMateria])
   const questoesSimuladoAtivo = useMemo(() => simuladoAtivo
     ? simuladoAtivo.questoes : [],
@@ -756,6 +767,7 @@ export default function App() {
 
       <main className="mx-auto min-w-0 max-w-5xl p-3 sm:p-6 md:p-8">
         <EstadoProgresso progresso={progresso} />
+        <SeletorFoco preferencia={preferenciaFoco} bloqueado={Boolean(simuladoAtivo)} onEscolher={valor => { if(simuladoAtivo) return; preferenciaFoco.escolher(valor); limparFiltros(); setFiltroAnoSimulado('Todos'); setFiltroProvaSimulado('Todos') }} />
         {abaAtiva === 'conta' && <Conta session={session} isAdmin={isAdmin} checkingAdmin={checkingAdmin} sincronizacao={sincronizacao} totais={{ horas: totalHorasEstudo, questoes: totalQuestoesResolvidas, acertos: totalAcertos }} />}
         {abaAtiva === 'importar' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Carregando importador…</p>}><ImportarPdf onPublicado={buscarQuestoes} /></Suspense>}
         {/* ABA: BANCO DE QUESTÕES */}
@@ -767,7 +779,7 @@ export default function App() {
                 ? `${questoesFiltradas.length} questão(ões) encontrada(s). ${questoesFiltradas.filter(q => q.anulada).length} anulada(s), disponíveis apenas para consulta.`
                 : 'Escolha os filtros abaixo para exibir as questões que deseja estudar.'}</p>
               {carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Carregando o restante do acervo… A quantidade acima ainda é parcial.</p>}
-              {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Acervo sincronizado: {questoes.length.toLocaleString('pt-BR')} questões carregadas.</p>}
+              {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Acervo carregado: {questoesDoFoco.length.toLocaleString('pt-BR')} questões neste foco.</p>}
               {falhasAcervo.length > 0 && <div role="alert" className="text-amber-300 text-sm mt-2">Não foi possível carregar: {falhasAcervo.join(' e ')}. A lista pode estar incompleta. <button className="underline font-semibold" onClick={buscarQuestoes} disabled={carregandoAcervo}>Tentar carregar novamente</button></div>}
               <div className="flex flex-wrap gap-4 mt-3 text-sm text-indigo-300">
                 <a href="/acervo/esa-2025/prova-original.pdf" target="_blank" rel="noreferrer">ESA 2025: prova completa e proposta de redação ↗</a>
@@ -851,18 +863,11 @@ export default function App() {
                 <header className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
                     <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">📝 Provas e Simulados</h1>
-                    <p className="text-slate-400 text-sm mt-1">Escolha uma edição completa ou monte um treino CPOR/NPOR com 40 questões.</p>
+                    <p className="text-slate-400 text-sm mt-1">{focoEstudo === 'vestibulares' ? 'Provas de vestibulares e treinos por áreas do conhecimento.' : focoEstudo === 'concursos' ? 'Provas de concursos públicos e simulados com as matérias do seu objetivo.' : focoEstudo === 'militares' ? 'Provas militares e treinos personalizados, incluindo CPOR/NPOR.' : 'Provas de concursos e vestibulares, com liberdade para montar seu treino.'}</p>
                   </div>
                 </header>
 
-                <section className="mb-8 rounded-3xl border border-indigo-500/40 bg-indigo-950/30 p-5 sm:p-7" aria-labelledby="treino-cpor-titulo">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-indigo-300">Treino personalizado · CPOR / NPOR</span>
-                  <h2 id="treino-cpor-titulo" className="mt-2 text-xl font-bold text-slate-100">40 questões para praticar</h2>
-                  <p className="mt-2 text-sm text-slate-300">10 de Português · 10 de Geografia · 10 de História · 10 de Matemática</p>
-                  <p className="mt-2 text-sm text-slate-400">Uma nova seleção a cada treino, priorizando questões militares e variando os conteúdos. Treino de estudo; não é um caderno oficial de uma unidade.</p>
-                  <button disabled={!disponibilidadeTreino.pronto} onClick={() => iniciarSimulado({ tipo: 'treino', id: 'treino-cpor-npor', prova: 'Treino CPOR / NPOR — 40 questões', concurso: 'Treino CPOR / NPOR', banca: 'Treino personalizado' })} className="mt-5 rounded-2xl bg-indigo-600 px-6 py-3 font-semibold text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-50">Gerar simulado de 40 questões</button>
-                  {!disponibilidadeTreino.pronto && <p role="status" className="mt-3 text-sm text-amber-300">Aguardando 10 questões válidas por matéria: {disponibilidadeTreino.faltantes.join(', ')}.</p>}
-                </section>
+                <TreinosFoco key={focoEstudo} questoes={questoes} foco={focoEstudo} historico={historicoRespostas} onIniciar={iniciarSimulado} />
                 <h2 className="mb-2 text-xl font-bold text-slate-100">Edições completas</h2>
                 <p className="mb-5 text-sm text-slate-400">Somente cadernos conferidos e integralmente carregados. Anuladas são descontadas da correção; conjuntos parciais continuam disponíveis no banco de questões.</p>
                 <div className="mb-5 grid gap-4 rounded-2xl border border-slate-800 p-4 sm:grid-cols-3">
@@ -872,7 +877,7 @@ export default function App() {
                     </select>
                     <span className="mt-1 block text-xs text-slate-400">Francês nas provas UEM; nas demais, mantém Inglês quando aplicável.</span>
                   </label>
-                  {[0,1].map(indice => <label key={indice} className="text-sm text-slate-300">Específica UEM {indice + 1}
+                  {['vestibulares','sem-preferencia'].includes(focoEstudo) && [0,1].map(indice => <label key={indice} className="text-sm text-slate-300">Específica UEM {indice + 1}
                     <select value={especificasUem[indice]} onChange={e => setEspecificasUem(atuais => atuais.map((materia,i) => i === indice ? e.target.value : materia))} className="mt-2 block w-full rounded-xl border border-slate-700 bg-slate-900 p-3">
                       {ESPECIFICAS_UEM.filter(materia => materia !== especificasUem[1-indice]).map(materia => <option key={materia}>{materia}</option>)}
                     </select>
@@ -947,7 +952,8 @@ export default function App() {
                   <button onClick={() => setSimuladoAtivo(null)} className="w-full shrink-0 text-slate-400 hover:text-slate-100 text-xs font-medium bg-slate-800 px-4 py-2 rounded-2xl transition-all sm:w-auto">Sair da Prova</button>
                 </div>
 
-                {simuladoAtivo.tipo === 'treino' && <p className="rounded-2xl border border-indigo-500/30 bg-indigo-950/30 p-4 text-sm text-indigo-200">40 questões · 10 por matéria · Português, Geografia, História e Matemática. Sua seleção é mantida até concluir ou sair deste treino.</p>}
+                <TempoSimulado inicio={simuladoAtivo.inicio} total={questoesSimuladoAtivo.length} respondidas={questoesSimuladoAtivo.filter(q => avaliarSelecao(q, respostasSimulado[q.id]).respondida).length} />
+                {simuladoAtivo.tipo === 'personalizado' && <p className="rounded-2xl border border-indigo-500/30 bg-indigo-950/30 p-4 text-sm text-indigo-200">{questoesSimuladoAtivo.length} questões · {nomeFoco(simuladoAtivo.foco)}. Sua seleção permanece fixa até concluir ou sair.</p>}
 
                 {questoesSimuladoAtivo.map((q, index) => (
                   <div key={q.id} className="questao-renderizavel bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md">
@@ -972,6 +978,7 @@ export default function App() {
                 <button onClick={finalizarSimulado} className="w-full bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold py-4 rounded-3xl text-base shadow-xl shadow-emerald-600/20 transition-all">Finalizar e Entregar Prova</button>
               </div>
             ) : (
+              <div className="space-y-6">
               <div className="bg-slate-900/80 border border-slate-800 rounded-3xl p-4 sm:p-8 shadow-2xl backdrop-blur-md space-y-6 text-center max-w-xl mx-auto">
                 <h2 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">🏆 Resultado do Simulado</h2>
                 <div className="grid grid-cols-1 gap-3 my-6 min-[380px]:grid-cols-3 sm:gap-4">
@@ -989,6 +996,8 @@ export default function App() {
                   </div>
                 </div>
                 <button onClick={() => { setSimuladoAtivo(null); setResultadoSimuladoFinal(null); }} className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white px-8 py-3.5 rounded-2xl font-medium text-sm transition-all shadow-lg shadow-indigo-600/25">Voltar aos Simulados</button>
+              </div>
+                <RevisaoSimulado resultado={resultadoSimuladoFinal} onRepetirErros={itens => iniciarSimulado({tipo:'personalizado', id:'revisar-'+crypto.randomUUID(), prova:'Retomar questões pendentes', concurso:'Retomar questões pendentes', banca:'Treino personalizado', itens})} />
               </div>
             )}
           </div>
