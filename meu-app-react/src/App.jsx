@@ -1,4 +1,4 @@
-import { anoDaQuestao, unirQuestoes, podeCorrigir } from './acervo'
+import { unirQuestoes, podeCorrigir } from './acervo'
 import EnunciadoQuestao from './components/EnunciadoQuestao'
 import AlternativaComEliminacao from './components/AlternativaComEliminacao'
 import FiltroMultiplo from './components/FiltroMultiplo'
@@ -11,7 +11,7 @@ import { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react'
 import { supabase } from './supabaseClient'
 import { tentarLeitura, carregarEmEtapas } from './carregarAcervo'
 import { opcoesFiltro } from './filtros'
-import { indexarFiltros, filtrarIndice, conteudosDoIndice } from './indiceFiltros'
+import { indexarFiltros, filtrarIndice, opcoesRelacionadas, atualizarFiltrosRelacionados } from './indiceFiltros'
 import { bancasRedacao, temasRedacao } from './data/temasRedacao'
 import { ESPECIFICAS_UEM } from './uem'
 import { questoesDaProva, listarProvasCompletas, gerarTreinoCpor } from './simulados'
@@ -87,6 +87,7 @@ export default function App() {
   const [filtrosConteudo, setFiltrosConteudo] = useState([])
   const [filtrosBanca, setFiltrosBanca] = useState([])
   const [filtrosDificuldade, setFiltrosDificuldade] = useState([])
+  const [avisoFiltros, setAvisoFiltros] = useState('')
 
   // Estado do Formulário de Cadastro de Questão
   const [novaQuestao, setNovaQuestao] = useState({
@@ -653,10 +654,18 @@ export default function App() {
   const temFiltrosAtivos = totalFiltrosAtivos > 0
 
   const indiceFiltros = useMemo(() => indexarFiltros(questoesDoFoco), [questoesDoFoco])
-  const questoesFiltradas = useMemo(() => filtrarIndice(indiceFiltros, {
-    ano: filtrosAno, materia: filtrosMateria, conteudo: filtrosConteudo,
-    banca: filtrosBanca, dificuldade: filtrosDificuldade,
-  }), [indiceFiltros, filtrosAno, filtrosMateria, filtrosConteudo, filtrosBanca, filtrosDificuldade])
+  const filtrosAtuais = useMemo(() => ({ano:filtrosAno,materia:filtrosMateria,conteudo:filtrosConteudo,banca:filtrosBanca,dificuldade:filtrosDificuldade}), [filtrosAno,filtrosMateria,filtrosConteudo,filtrosBanca,filtrosDificuldade])
+  const opcoesAtuais = useMemo(() => opcoesRelacionadas(indiceFiltros,filtrosAtuais), [indiceFiltros,filtrosAtuais])
+  const questoesFiltradas = useMemo(() => filtrarIndice(indiceFiltros,filtrosAtuais), [indiceFiltros,filtrosAtuais])
+  function chaveDoFiltro(campo) {
+    return focoEstudo+':'+campo+':'+JSON.stringify(Object.entries(filtrosAtuais).filter(([outro])=>outro!==campo))
+  }
+  function alterarFiltro(campo,valores) {
+    const {filtros,removidos}=atualizarFiltrosRelacionados(indiceFiltros,filtrosAtuais,campo,valores)
+    setFiltrosAno(filtros.ano); setFiltrosMateria(filtros.materia); setFiltrosConteudo(filtros.conteudo)
+    setFiltrosBanca(filtros.banca); setFiltrosDificuldade(filtros.dificuldade); setLimiteVisivel(40)
+    setAvisoFiltros(removidos.length ? 'Seleções sem questões compatíveis foram removidas para acompanhar sua última escolha.' : '')
+  }
   const questoesVisiveis = useMemo(() => questoesFiltradas.slice(0, limiteVisivel), [questoesFiltradas, limiteVisivel])
 
   const simuladosDisponiveis = useMemo(() => abaAtiva === 'simulados' ? listarProvasCompletas(questoes, idiomaSimulado, especificasUem).filter(p => pertenceAoFoco(p, focoEstudo)) : [], [abaAtiva, questoes, idiomaSimulado, especificasUem, focoEstudo])
@@ -677,17 +686,14 @@ export default function App() {
   const anosSimuladoDisponiveis = [...new Set(simuladosDisponiveis.map(sim => sim.ano))].sort((a, b) => b.localeCompare(a, 'pt-BR', { numeric: true }))
   const provasSimuladoDisponiveis = simuladosDisponiveis.filter(sim => filtroAnoSimulado === 'Todos' || sim.ano === filtroAnoSimulado)
 
-  const materiasDisponiveis = useMemo(() => opcoesFiltro(questoesDoFoco, 'materia'), [questoesDoFoco])
-  const bancasDisponiveis = useMemo(() => opcoesFiltro(questoesDoFoco, 'banca'), [questoesDoFoco])
-  const anosDisponiveis = useMemo(() => [...new Set(questoesDoFoco.map(anoDaQuestao))].sort((a,b) => b.localeCompare(a)).map(ano => ({ value: ano, label: ano })), [questoesDoFoco])
-  const dificuldadesDisponiveis = useMemo(() => opcoesFiltro(questoesDoFoco, 'dificuldade'), [questoesDoFoco])
-  const conteudosDisponiveis = useMemo(() => conteudosDoIndice(indiceFiltros, filtrosMateria), [indiceFiltros, filtrosMateria])
+  const {materia:materiasDisponiveis,banca:bancasDisponiveis,ano:anosDisponiveis,dificuldade:dificuldadesDisponiveis,conteudo:conteudosDisponiveis}=opcoesAtuais
+  const materiasCronograma = useMemo(() => opcoesFiltro(questoesDoFoco,'materia'), [questoesDoFoco])
   const questoesSimuladoAtivo = useMemo(() => simuladoAtivo
     ? simuladoAtivo.questoes : [],
     [simuladoAtivo])
   function limparFiltros() {
     setFiltrosAno([]); setFiltrosMateria([]); setFiltrosConteudo([])
-    setFiltrosBanca([]); setFiltrosDificuldade([]); setLimiteVisivel(40)
+    setFiltrosBanca([]); setFiltrosDificuldade([]); setLimiteVisivel(40); setAvisoFiltros('')
   }
 
   const totalHorasEstudo = horasEstudo.reduce((acc, curr) => acc + (curr.horas || 0), 0)
@@ -800,14 +806,15 @@ export default function App() {
             {/* Filtros */}
             <div className="relative z-20 mb-6 grid grid-cols-1 items-start gap-x-5 gap-y-5 overflow-visible rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-xl backdrop-blur-md sm:mb-8 sm:grid-cols-2 sm:p-6 lg:grid-cols-3">
               <div className="sm:col-span-2 lg:col-span-3 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
-                <div><h2 className="font-bold text-slate-100">Filtrar questões</h2><p className="text-xs text-slate-400 mt-1">Os conteúdos semelhantes já aparecem agrupados; escolher uma matéria reduz ainda mais a lista.</p></div>
+                <div><h2 className="font-bold text-slate-100">Filtrar questões</h2><p className="text-xs text-slate-400 mt-1">Os filtros se ajustam entre si: só aparecem opções com questões disponíveis para sua seleção.</p></div>
                 {totalFiltrosAtivos > 0 && <button type="button" onClick={limparFiltros} className="rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:border-indigo-500 hover:text-indigo-200">Limpar {totalFiltrosAtivos} filtro(s)</button>}
               </div>
-              <FiltroMultiplo titulo="Ano" opcoes={anosDisponiveis} selecionados={filtrosAno} aoAlterar={valores => { setFiltrosAno(valores); setLimiteVisivel(40) }} rotuloTodos="Todos os anos" />
-              <FiltroMultiplo titulo={`Matéria (${materiasDisponiveis.length})`} opcoes={materiasDisponiveis} selecionados={filtrosMateria} aoAlterar={valores => { setFiltrosMateria(valores); setFiltrosConteudo([]); setLimiteVisivel(40) }} rotuloTodos="Todas as matérias" />
-              <FiltroMultiplo titulo={`Conteúdo (${conteudosDisponiveis.length} grupos)`} opcoes={conteudosDisponiveis} selecionados={filtrosConteudo} aoAlterar={valores => { setFiltrosConteudo(valores); setLimiteVisivel(40) }} rotuloTodos="Todos os conteúdos" />
-              <FiltroMultiplo titulo={`Banca (${bancasDisponiveis.length})`} opcoes={bancasDisponiveis} selecionados={filtrosBanca} aoAlterar={valores => { setFiltrosBanca(valores); setLimiteVisivel(40) }} rotuloTodos="Todas as bancas" />
-              <FiltroMultiplo titulo="Dificuldade" opcoes={dificuldadesDisponiveis} selecionados={filtrosDificuldade} aoAlterar={valores => { setFiltrosDificuldade(valores); setLimiteVisivel(40) }} rotuloTodos="Todas as dificuldades" />
+              {avisoFiltros && <p role="status" className="sm:col-span-2 lg:col-span-3 text-xs text-indigo-300">{avisoFiltros}</p>}
+              <FiltroMultiplo key={chaveDoFiltro('ano')} titulo="Ano" opcoes={anosDisponiveis} selecionados={filtrosAno} aoAlterar={valores => alterarFiltro('ano',valores)} rotuloTodos="Todos os anos" />
+              <FiltroMultiplo key={chaveDoFiltro('materia')} titulo={`Matéria (${materiasDisponiveis.length})`} opcoes={materiasDisponiveis} selecionados={filtrosMateria} aoAlterar={valores => alterarFiltro('materia',valores)} rotuloTodos="Todas as matérias" />
+              <FiltroMultiplo key={chaveDoFiltro('conteudo')} titulo={`Conteúdo (${conteudosDisponiveis.length} grupos)`} opcoes={conteudosDisponiveis} selecionados={filtrosConteudo} aoAlterar={valores => alterarFiltro('conteudo',valores)} rotuloTodos="Todos os conteúdos" />
+              <FiltroMultiplo key={chaveDoFiltro('banca')} titulo={`Banca (${bancasDisponiveis.length})`} opcoes={bancasDisponiveis} selecionados={filtrosBanca} aoAlterar={valores => alterarFiltro('banca',valores)} rotuloTodos="Todas as bancas" />
+              <FiltroMultiplo key={chaveDoFiltro('dificuldade')} titulo="Dificuldade" opcoes={dificuldadesDisponiveis} selecionados={filtrosDificuldade} aoAlterar={valores => alterarFiltro('dificuldade',valores)} rotuloTodos="Todas as dificuldades" />
             </div>
 
             <div className="relative z-0 space-y-6">
@@ -1267,7 +1274,7 @@ export default function App() {
                 </label>
                 <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Matéria
                   <input required list="materias-cronograma" placeholder="Ex.: Matemática" value={novaTarefa.materia} onChange={e => setNovaTarefa({ ...novaTarefa, materia: e.target.value })} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100" />
-                  <datalist id="materias-cronograma">{materiasDisponiveis.map(opcao => <option key={opcao.value} value={opcao.label} />)}</datalist>
+                  <datalist id="materias-cronograma">{materiasCronograma.map(opcao => <option key={opcao.value} value={opcao.label} />)}</datalist>
                 </label>
                 <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Atividade
                   <input placeholder="Ex.: Funções" value={novaTarefa.atividade} onChange={e => setNovaTarefa({ ...novaTarefa, atividade: e.target.value })} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100" />
