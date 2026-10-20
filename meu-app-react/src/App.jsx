@@ -13,9 +13,8 @@ import { tentarLeitura, carregarEmEtapas } from './carregarAcervo'
 import { opcoesFiltro } from './filtros'
 import { indexarFiltros, filtrarIndice, conteudosDoIndice } from './indiceFiltros'
 import { bancasRedacao, temasRedacao } from './data/temasRedacao'
-import { ESPECIFICAS_UEM, incluirNoSimuladoUem } from './uem'
-import { incluirNoSimuladoIfpr } from './ifpr'
-import { concursosDaQuestao, incluirIdiomaDaProva, questaoNaProva } from './provasCompartilhadas'
+import { ESPECIFICAS_UEM } from './uem'
+import { questoesDaProva, listarProvasCompletas, gerarTreinoCpor, disponibilidadeTreinoCpor } from './simulados'
 
 const DIAS_SEMANA = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo']
 const ImportarPdf = lazy(() => import('./components/ImportarPdf'))
@@ -27,52 +26,6 @@ function formatarDuracaoPlanejada(minutos) {
   const restantes = total % 60
   if (!horas) return `${restantes}min`
   return restantes ? `${horas}h ${restantes}min` : `${horas}h`
-}
-
-function limparNomeDaProva(questao) {
-  const banca = String(questao.banca || 'Prova').trim()
-  const ano = anoDaQuestao(questao)
-  const materia = String(questao.materia || '').trim()
-  let concurso = String(questao.concurso || `${banca} ${ano}`).trim()
-  if (materia) {
-    const materiaEscapada = materia.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-    concurso = concurso.replace(new RegExp(`\\s*[—–-]\\s*${materiaEscapada}\\s*$`, 'i'), '').trim()
-  }
-  if (banca.toUpperCase() === 'ENEM') concurso = `ENEM ${ano}`
-  return concurso
-}
-
-function dadosDaProva(questao) {
-  const ano = anoDaQuestao(questao)
-  const banca = String(questao.banca || 'Geral').trim()
-  const concurso = limparNomeDaProva(questao)
-  const dia = Number(questao.dia)
-  const modelo = String(questao.banca === 'IFPR' && questao.idioma ? '' : questao.modelo || '').trim()
-  const detalhes = []
-  if (Number.isInteger(dia) && dia > 0 && !concurso.toLowerCase().includes(`${dia}º dia`)) detalhes.push(`${dia}º dia`)
-  if (modelo && !/^aplicação regular$/i.test(modelo) && !concurso.toLowerCase().includes(modelo.toLowerCase())) detalhes.push(modelo)
-  const prova = [concurso, ...detalhes].join(' · ')
-  return { ano, banca, concurso, prova, id: [ano, banca, prova].join('|').toLocaleLowerCase('pt-BR') }
-}
-
-function questoesDaProva(questoes, provaId, idioma = 'Inglês', especificas = ['Biologia', 'Química']) {
-  return questoes
-    .filter(questao => !questao.prova_incompleta && podeCorrigir(questao) && concursosDaQuestao(questao).some(concurso => dadosDaProva({...questao, concurso}).id === provaId))
-    .map(questao => questaoNaProva(questao, concursosDaQuestao(questao).find(concurso => dadosDaProva({...questao, concurso}).id === provaId)))
-    .filter(questao => incluirNoSimuladoUem(questao, idioma, especificas))
-    .filter(questao => incluirNoSimuladoIfpr(questao, idioma))
-    .filter(questao => incluirIdiomaDaProva(questao, idioma))
-    .sort((a, b) => {
-      const blocoA = a.bloco_especifico ? especificas.indexOf(a.bloco_especifico) + 1 : 0
-      const blocoB = b.bloco_especifico ? especificas.indexOf(b.bloco_especifico) + 1 : 0
-      if (blocoA !== blocoB) return blocoA - blocoB
-      const numeroA = Number(a.numero_original)
-      const numeroB = Number(b.numero_original)
-      if (Number.isFinite(numeroA) && Number.isFinite(numeroB)) return numeroA - numeroB
-      if (Number.isFinite(numeroA)) return -1
-      if (Number.isFinite(numeroB)) return 1
-      return String(a.id).localeCompare(String(b.id), 'pt-BR', { numeric: true })
-    })
 }
 
 function questaoDeSomatoria(questao) {
@@ -695,36 +648,15 @@ export default function App() {
   }), [indiceFiltros, filtrosAno, filtrosMateria, filtrosConteudo, filtrosBanca, filtrosDificuldade])
   const questoesVisiveis = useMemo(() => questoesFiltradas.slice(0, limiteVisivel), [questoesFiltradas, limiteVisivel])
 
-  const simuladosDisponiveis = useMemo(() => {
-    const simuladosDisponiveis = []
-    const mapaSimulados = {}
-
-    questoes.forEach(q => {
-      if (!q.concurso || q.prova_incompleta || !podeCorrigir(q)) return
-      if (!incluirNoSimuladoUem(q, idiomaSimulado, especificasUem)) return
-      if (!incluirNoSimuladoIfpr(q, idiomaSimulado)) return
-      if (!incluirIdiomaDaProva(q, idiomaSimulado)) return
-      concursosDaQuestao(q).forEach(concurso => {
-      const dados = dadosDaProva({...q, concurso})
-      const chave = dados.id
-      if (!mapaSimulados[chave]) {
-        mapaSimulados[chave] = {
-          id: chave,
-          ano: dados.ano,
-          prova: dados.prova,
-          concurso: dados.concurso,
-          banca: dados.banca,
-          questoesCount: 0
-        }
-        simuladosDisponiveis.push(mapaSimulados[chave])
-      }
-      mapaSimulados[chave].questoesCount++
-      })
-    })
-    simuladosDisponiveis.sort((a, b) => b.ano.localeCompare(a.ano, 'pt-BR', { numeric: true }) || a.prova.localeCompare(b.prova, 'pt-BR'))
-
-    return simuladosDisponiveis
-  }, [questoes, idiomaSimulado, especificasUem])
+  const simuladosDisponiveis = useMemo(() => abaAtiva === 'simulados' ? listarProvasCompletas(questoes, idiomaSimulado, especificasUem) : [], [abaAtiva, questoes, idiomaSimulado, especificasUem])
+  const disponibilidadeTreino = useMemo(() => abaAtiva === 'simulados' ? disponibilidadeTreinoCpor(questoes) : { pronto: false, faltantes: [] }, [abaAtiva, questoes])
+  function iniciarSimulado(simulado) {
+    // O acervo que chega depois não altera uma prova já iniciada.
+    const itens = simulado.tipo === 'treino' ? gerarTreinoCpor(questoes) : questoesDaProva(questoes, simulado.id, idiomaSimulado, especificasUem)
+    if (!itens.length) return
+    setSimuladoAtivo({ ...simulado, questoes: itens })
+    setRespostasSimulado({}); setResultadoSimuladoFinal(null); limparEliminacoesDoSimulado()
+  }
 
   const simuladosFiltrados = simuladosDisponiveis.filter(sim => {
     const bateAno = filtroAnoSimulado === 'Todos' || sim.ano === filtroAnoSimulado
@@ -740,8 +672,8 @@ export default function App() {
   const dificuldadesDisponiveis = useMemo(() => opcoesFiltro(questoes, 'dificuldade'), [questoes])
   const conteudosDisponiveis = useMemo(() => conteudosDoIndice(indiceFiltros, filtrosMateria), [indiceFiltros, filtrosMateria])
   const questoesSimuladoAtivo = useMemo(() => simuladoAtivo
-    ? questoesDaProva(questoes, simuladoAtivo.id, idiomaSimulado, especificasUem) : [],
-    [questoes, simuladoAtivo, idiomaSimulado, especificasUem])
+    ? simuladoAtivo.questoes : [],
+    [simuladoAtivo])
   function limparFiltros() {
     setFiltrosAno([]); setFiltrosMateria([]); setFiltrosConteudo([])
     setFiltrosBanca([]); setFiltrosDificuldade([]); setLimiteVisivel(40)
@@ -919,10 +851,33 @@ export default function App() {
                 <header className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
                     <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">📝 Provas e Simulados</h1>
-                    <p className="text-slate-400 text-sm mt-1">Escolha o ano e a prova completa. Todas as matérias do caderno aparecem juntas e as questões anuladas ficam de fora.</p>
+                    <p className="text-slate-400 text-sm mt-1">Escolha uma edição completa ou monte um treino CPOR/NPOR com 40 questões.</p>
                   </div>
                 </header>
 
+                <section className="mb-8 rounded-3xl border border-indigo-500/40 bg-indigo-950/30 p-5 sm:p-7" aria-labelledby="treino-cpor-titulo">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-indigo-300">Treino personalizado · CPOR / NPOR</span>
+                  <h2 id="treino-cpor-titulo" className="mt-2 text-xl font-bold text-slate-100">40 questões para praticar</h2>
+                  <p className="mt-2 text-sm text-slate-300">10 de Português · 10 de Geografia · 10 de História · 10 de Matemática</p>
+                  <p className="mt-2 text-sm text-slate-400">Uma nova seleção a cada treino, priorizando questões militares e variando os conteúdos. Treino de estudo; não é um caderno oficial de uma unidade.</p>
+                  <button disabled={!disponibilidadeTreino.pronto} onClick={() => iniciarSimulado({ tipo: 'treino', id: 'treino-cpor-npor', prova: 'Treino CPOR / NPOR — 40 questões', concurso: 'Treino CPOR / NPOR', banca: 'Treino personalizado' })} className="mt-5 rounded-2xl bg-indigo-600 px-6 py-3 font-semibold text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-50">Gerar simulado de 40 questões</button>
+                  {!disponibilidadeTreino.pronto && <p role="status" className="mt-3 text-sm text-amber-300">Aguardando 10 questões válidas por matéria: {disponibilidadeTreino.faltantes.join(', ')}.</p>}
+                </section>
+                <h2 className="mb-2 text-xl font-bold text-slate-100">Edições completas</h2>
+                <p className="mb-5 text-sm text-slate-400">Somente cadernos conferidos e integralmente carregados. Anuladas são descontadas da correção; conjuntos parciais continuam disponíveis no banco de questões.</p>
+                <div className="mb-5 grid gap-4 rounded-2xl border border-slate-800 p-4 sm:grid-cols-3">
+                  <label className="text-sm text-slate-300">Idioma das provas
+                    <select value={idiomaSimulado} onChange={e => setIdiomaSimulado(e.target.value)} className="mt-2 block w-full rounded-xl border border-slate-700 bg-slate-900 p-3">
+                      {['Inglês','Espanhol','Francês'].map(idioma => <option key={idioma}>{idioma}</option>)}
+                    </select>
+                    <span className="mt-1 block text-xs text-slate-400">Francês nas provas UEM; nas demais, mantém Inglês quando aplicável.</span>
+                  </label>
+                  {[0,1].map(indice => <label key={indice} className="text-sm text-slate-300">Específica UEM {indice + 1}
+                    <select value={especificasUem[indice]} onChange={e => setEspecificasUem(atuais => atuais.map((materia,i) => i === indice ? e.target.value : materia))} className="mt-2 block w-full rounded-xl border border-slate-700 bg-slate-900 p-3">
+                      {ESPECIFICAS_UEM.filter(materia => materia !== especificasUem[1-indice]).map(materia => <option key={materia}>{materia}</option>)}
+                    </select>
+                  </label>)}
+                </div>
                 <div className="mb-6 grid grid-cols-1 gap-4 rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-xl backdrop-blur-md sm:mb-8 sm:p-6 md:grid-cols-2">
                   <div>
                     <label className="block text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-2">Ano</label>
@@ -964,10 +919,10 @@ export default function App() {
                         <h3 className="text-xl font-bold text-slate-100 mt-3 group-hover:text-indigo-300 transition-colors">
                           {simulado.prova}
                         </h3>
-                        <p className="text-slate-400 text-sm mt-2">Prova completa com {simulado.questoesCount} questão(ões), reunindo todas as matérias disponíveis.</p>
+                        <p className="text-slate-400 text-sm mt-2">{simulado.questoesCount} questões para responder · {simulado.totalOriginal} posições no caderno{simulado.anuladas > 0 ? ` · ${simulado.anuladas} anulada(s)` : ''}.</p>
                       </div>
                       <button
-                        onClick={() => { setSimuladoAtivo(simulado); setRespostasSimulado({}); setResultadoSimuladoFinal(null); limparEliminacoesDoSimulado(); }}
+                        onClick={() => iniciarSimulado(simulado)}
                         className="mt-8 w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-medium py-3 rounded-2xl text-sm transition-all shadow-lg shadow-indigo-600/25"
                       >
                         Iniciar Simulado
@@ -976,7 +931,7 @@ export default function App() {
                   ))}
 
                   {simuladosFiltrados.length === 0 && (
-                    <div className="col-span-3 text-center py-16 bg-slate-900/30 rounded-3xl border border-slate-800/80">
+                    <div className="md:col-span-3 text-center py-16 bg-slate-900/30 rounded-3xl border border-slate-800/80">
                       <p className="text-slate-400">Nenhum simulado encontrado com os filtros selecionados.</p>
                     </div>
                   )}
@@ -992,21 +947,8 @@ export default function App() {
                   <button onClick={() => setSimuladoAtivo(null)} className="w-full shrink-0 text-slate-400 hover:text-slate-100 text-xs font-medium bg-slate-800 px-4 py-2 rounded-2xl transition-all sm:w-auto">Sair da Prova</button>
                 </div>
 
-                {(simuladoAtivo.banca === 'UEM' || (['IFPR','PRF'].includes(simuladoAtivo.banca) && questoes.some(q => q.idioma && dadosDaProva(q).id === simuladoAtivo.id))) && <label className="block text-sm text-slate-300">Língua estrangeira
-                  <select value={['IFPR','PRF'].includes(simuladoAtivo.banca) && idiomaSimulado === 'Francês' ? 'Inglês' : idiomaSimulado} onChange={e => setIdiomaSimulado(e.target.value)} className="ml-3 rounded-xl border border-slate-700 bg-slate-900 p-3">
-                    {(simuladoAtivo.banca === 'UEM' ? ['Inglês','Espanhol','Francês'] : ['Inglês','Espanhol']).map(idioma => <option key={idioma}>{idioma}</option>)}
-                  </select>
-                </label>}
-                {simuladoAtivo.banca === 'UEM' && questoes.some(q => q.bloco_especifico && dadosDaProva(q).id === simuladoAtivo.id) && <div className="rounded-2xl border border-slate-700 bg-slate-900/60 p-4">
-                  <p className="mb-3 text-sm text-slate-300">Escolha as duas matérias de conhecimentos específicos da sua prova.</p>
-                  <div className="grid gap-3 sm:grid-cols-2">
-                    {[0,1].map(indice => <label key={indice} className="text-sm text-slate-300">Matéria {indice + 1}
-                      <select value={especificasUem[indice]} onChange={e => setEspecificasUem(atuais => atuais.map((materia, i) => i === indice ? e.target.value : materia))} className="mt-2 block w-full rounded-xl border border-slate-700 bg-slate-900 p-3">
-                        {ESPECIFICAS_UEM.map(materia => <option key={materia} disabled={materia === especificasUem[1-indice]}>{materia}</option>)}
-                      </select>
-                    </label>)}
-                  </div>
-                </div>}
+                {simuladoAtivo.tipo === 'treino' && <p className="rounded-2xl border border-indigo-500/30 bg-indigo-950/30 p-4 text-sm text-indigo-200">40 questões · 10 por matéria · Português, Geografia, História e Matemática. Sua seleção é mantida até concluir ou sair deste treino.</p>}
+
                 {questoesSimuladoAtivo.map((q, index) => (
                   <div key={q.id} className="questao-renderizavel bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md">
                     <div className="flex flex-wrap gap-2.5 mb-5">
