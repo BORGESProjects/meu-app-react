@@ -1,7 +1,7 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {FOCOS_ESTUDO,validarFoco,categoriaQuestao,pertenceAoFoco,gerarSimuladoPersonalizado,gerarTreinoVestibular,planoRevisao,ultimasTentativas,dataProximaRevisao,materiaCanonica,AREAS_VESTIBULAR} from '../src/focoEstudo.js'
-import {focoDaConta,salvarFocoConta} from '../src/preferenciaFoco.js'
+import {focoDaConta,salvarFocoConta,estadoPertenceAConta} from '../src/preferenciaFoco.js'
 const DIA=86400000, agora=Date.parse('2026-10-20T12:00:00Z')
 function questao(id,materia='Matemática',banca='UFPR') {return {id,materia,banca,conteudo:'Conteúdo '+id,concurso:banca+' 2025',enunciado:'Uma pergunta íntegra para praticar conhecimentos e encontrar a resposta correta.',opcoes:['Primeira opção','Segunda opção','Terceira opção','Quarta opção','Quinta opção'],resposta_correta:1}}
 const materias=['Português','Geografia','História','Matemática','Física','Química','Biologia','Inglês']
@@ -80,4 +80,12 @@ test('preferência é armazenada somente na conta autenticada, sem alterar crede
 test('falha remota de preferência não é apresentada como salvamento confirmado',async()=>{
   const client={auth:{getUser:async()=>({data:{user:{id:'a'}}}),updateUser:async()=>({error:new Error('indisponível')})}}
   await assert.rejects(salvarFocoConta(client,'a','militares'),/Não foi possível salvar/)
+})
+
+test('inicialização sem sessão não confunde estado nulo com usuário indefinido',()=>{
+  assert.equal(estadoPertenceAConta(null,undefined),false)
+  assert.equal(estadoPertenceAConta(null,'a'),false)
+  assert.equal(estadoPertenceAConta({userId:undefined},undefined),false)
+  assert.equal(estadoPertenceAConta({userId:'a'},'b'),false)
+  assert.equal(estadoPertenceAConta({userId:'a',foco:'vestibulares'},'a'),true)
 })
