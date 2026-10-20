@@ -4,6 +4,7 @@ import { memo } from 'react'
 
 function EnunciadoQuestao({ questao: q }) {
   const imagemPrincipal = q.imagem_original || q.pagina_imagem
+  const textoAposApoio = q.enunciado_depois_apoio ?? q.enunciado
   return <div className="mb-6 space-y-3">
     <div className="flex flex-wrap gap-3 text-xs text-slate-400">
       <span>Ano: {anoDaQuestao(q)}</span>
@@ -16,10 +17,11 @@ function EnunciadoQuestao({ questao: q }) {
     {q.texto_apoio && <section aria-label="Texto de apoio" className="border-l-2 border-indigo-500 pl-4"><h3 className="font-semibold mb-2">Texto de apoio</h3><p className="whitespace-pre-wrap leading-relaxed">{q.texto_apoio}</p></section>}
     {q.pagina_imagem && <a href={`${API_URL}${q.pdf_original}#page=${q.pagina}`} target="_blank" rel="noreferrer" className="block"><p className="text-xs text-indigo-300 mb-2">Página original com figuras — clique para ampliar no PDF</p><img src={`${API_URL}${q.pagina_imagem}`} alt={`Página ${q.pagina} da prova, com as figuras da questão ${q.numero_original}`} loading="lazy" className="w-full rounded-lg bg-white" /></a>}
     {q.pdf_original && <a href={`${API_URL}${q.pdf_original}#page=${q.pagina}`} target="_blank" rel="noreferrer" className="block text-xs text-indigo-300">Conferir questão no PDF original · página {q.pagina} ↗</a>}
+    {q.enunciado_antes_apoio && <p className="whitespace-pre-wrap leading-relaxed">{q.enunciado_antes_apoio}</p>}
     {q.apoio?.length > 0 && <section aria-label="Texto de apoio" className="space-y-3">
       <h3 className="text-sm font-semibold">Texto de apoio</h3>
       {q.apoio.map((apoio, i) => <a key={apoio.imagem} href={apoio.imagem} target="_blank" rel="noreferrer" className="block">
-        <img src={apoio.imagem} alt={`Texto de apoio, parte ${i+1}: ${apoio.texto}`} loading="lazy" className="w-full h-auto rounded-lg bg-white" />
+        <img src={apoio.imagem} alt={`Texto de apoio, parte ${i+1}: ${apoio.texto}`} loading="lazy" className="mx-auto max-w-full w-auto h-auto rounded-lg bg-white" />
       </a>)}
     </section>}
     {q.imagem_original ? <>
@@ -31,7 +33,7 @@ function EnunciadoQuestao({ questao: q }) {
         <p className="whitespace-pre-wrap mt-2">{q.enunciado}</p>
         <p className="text-xs mt-2">Consulte a imagem original para fórmulas, gráficos e trechos destacados.</p>
       </details>}
-    </> : !imagemPrincipal && <p className="text-slate-100 text-base font-medium leading-relaxed whitespace-pre-wrap">{q.enunciado}</p>}
+    </> : !imagemPrincipal && textoAposApoio && <p className="text-slate-100 text-base font-medium leading-relaxed whitespace-pre-wrap">{textoAposApoio}</p>}
   </div>
 }
 

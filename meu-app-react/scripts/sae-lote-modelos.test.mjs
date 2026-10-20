@@ -18,6 +18,7 @@ test('figuras e equação nuclear são locais, íntegras e não contêm alternat
  for(const a of auditoria.recursos){assert.match(a.imagem,/^\/acervo\/estudo-quimica-modelos\/[a-f0-9]+\.jpg$/);assert.equal(createHash('sha256').update(fs.readFileSync(new URL('../public'+a.imagem,import.meta.url))).digest('hex'),a.sha256)}
  const nuclear=lote.find(q=>q.id==='sae-fcfbb4a2eb63fd5961c7');assert.equal(nuclear.apoio.length,1);assert.equal(nuclear.resposta_correta,4);assert.deepEqual(nuclear.opcoes,['1 e 3.','1 e 1.','2 e 3.','2 e 1.','1 e 2.'])
  for(const q of lote){assert.ok(!/Resolução|C\d+:H\d+/.test(q.enunciado));assert.ok(!q.imagem_original);assert.ok(q.apoio.every(a=>auditoria.recursos.some(r=>r.imagem===a.imagem)))}
+ for(const q of lote.filter(q=>q.apoio.length)){assert.equal((q.enunciado_antes_apoio+' '+q.enunciado_depois_apoio).replace(/\s+/g,' ').trim(),q.enunciado.replace(/\s+/g,' ').trim())}
 })
 test('tabela e texto-base completos, classificação sem ano inventado',()=>{
  const tabela=lote.find(q=>q.id==='sae-0c66c625805cf74c4ff6');for(const trecho of ['Elemento | Cor','sódio | laranja','cobre | azul-esverdeada'])assert.ok(tabela.enunciado.includes(trecho),trecho)

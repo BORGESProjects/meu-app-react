@@ -53,6 +53,12 @@ for(const q of cap.questoes){
  const jaExiste=semelhantes.find(a=>{const x=norm(a.enunciado),y=norm(item.enunciado);return x.includes(y)||y.includes(x)||x.includes(y.slice(0,100))||y.includes(x.slice(0,100))})
  if(jaExiste){duplicatas.push({id:q.id,existente:jaExiste.id});continue}
  const imagens=[];function buscar(n){if(!n||typeof n==='string')return;if(n.tag==='img')imagens.push(n.attrs.src);(n.children||[]).forEach(buscar)}q.enunciado_blocos.forEach(buscar)
+ if(imagens.length){
+  const possuiImagem=n=>n&&typeof n!=='string'&&(n.tag==='img'||(n.children||[]).some(possuiImagem))
+  const posicao=q.enunciado_blocos.findIndex(possuiImagem)
+  item.enunciado_antes_apoio=limpar(q.enunciado_blocos.slice(0,posicao).map(textoDoBloco).join('\n'))
+  item.enunciado_depois_apoio=limpar(q.enunciado_blocos.slice(posicao).map(textoDoBloco).join('\n'))
+ }
  for(const url of new Set(imagens)){
   const asset=cap.arquivos.find(a=>a.url===url);if(!asset)throw Error('Imagem ausente: '+url)
   const extensao=path.extname(asset.arquivo).toLowerCase();if(!['.jpg','.jpeg','.png','.webp'].includes(extensao))throw Error('Formato não conferido')
