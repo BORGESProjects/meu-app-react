@@ -1,0 +1,122 @@
+{
+  "capitulo": "Modelos atômicos",
+  "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+  "total_extraido": 39,
+  "publicados": [
+    "sae-f3f31b203287578851ef",
+    "sae-d1a33b9da92aeee2f6bf",
+    "sae-7016c2d51bb8894e7b47",
+    "sae-83bbfc0a422972a7b0fb",
+    "sae-a627c433b734f08ce49e",
+    "sae-77f605056beb4c9c3d5b",
+    "sae-7b22db71efc297d3ccc0",
+    "sae-9e5c17056dbab5395b8e",
+    "sae-b606dda4548a0c796eb4",
+    "sae-96e43ef55f3dc74c656e",
+    "sae-184d0ed3c099da0b6b22",
+    "sae-141cea5bae0160e59e67",
+    "sae-0aaa8df105080f45eee5",
+    "sae-671e141368a7bc03e44f",
+    "sae-a9afbf0157d969fa5264",
+    "sae-659e304a25ec6a1418fd",
+    "sae-07ce0eee985786dfa69d",
+    "sae-66f4a574a7e13bc904b9",
+    "sae-0c66c625805cf74c4ff6",
+    "sae-0be3ad0b975dce49ff5b",
+    "sae-df96151556a225d03b3e",
+    "sae-f861f94cc0590731b090",
+    "sae-98f2662f973c7b07013a",
+    "sae-55b31d74001006127416",
+    "sae-a54693913bde2a9258ca",
+    "sae-6e77d142697b6f260b22",
+    "sae-0258155b0b03c9d30068",
+    "sae-fcfbb4a2eb63fd5961c7",
+    "sae-a3b273c58084ea66037b"
+  ],
+  "quarentena": [
+    {
+      "id": "sae-490fb5127cd6fff31a74",
+      "motivo": "Discursiva ou sem marcação única de gabarito"
+    },
+    {
+      "id": "sae-248c91527e181959cc6e",
+      "motivo": "A marcação B contradiz as alternativas e a explicação do próprio material sobre Rutherford. Aguardar conferência."
+    },
+    {
+      "id": "sae-3b877bb33d653ac29987",
+      "motivo": "Discursiva ou sem marcação única de gabarito"
+    },
+    {
+      "id": "sae-87a743c7f19ad7271c45",
+      "motivo": "Discursiva ou sem marcação única de gabarito"
+    },
+    {
+      "id": "sae-5fd6dfdf8c33d3d431e4",
+      "motivo": "Discursiva ou sem marcação única de gabarito"
+    },
+    {
+      "id": "sae-f376e2c3c07b6e39e5a8",
+      "motivo": "Os índices atômicos do material (B com massa 21) não sustentam a alternativa marcada. Aguardar conferência com a aplicação IFCE 2019."
+    },
+    {
+      "id": "sae-39c447ae09a4951440b9",
+      "motivo": "A sequência marcada 3–2–1–4 contradiz a associação histórica apresentada. Aguardar gabarito original da UPF."
+    },
+    {
+      "id": "sae-5a10886a729e09a8a196",
+      "motivo": "Discursiva ou sem marcação única de gabarito"
+    }
+  ],
+  "duplicatas": [
+    {
+      "id": "sae-3870f8e45fda5096862c",
+      "existente": "enem-2019-105"
+    },
+    {
+      "id": "sae-60c2c78d5cbc61fe30f7",
+      "existente": "enem-2017-097"
+    }
+  ],
+  "recursos": [
+    {
+      "imagem": "/acervo/estudo-quimica-modelos/99547beb616701291e3a.jpg",
+      "sha256": "99547beb616701291e3a08347d4980e9bc595e568674b8b89bb66898034c666a",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/QUI/3B90iMGzwTLrwXni/resources/image/36.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-quimica-modelos/dfe76712d3678c26a82d.jpg",
+      "sha256": "dfe76712d3678c26a82dced8dbfe82ca499d0b9085910f8023adef7ab1b450f6",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/QUI/3B90iMGzwTLrwXni/resources/image/39.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-quimica-modelos/7aa02cced1c95fc36796.jpg",
+      "sha256": "7aa02cced1c95fc367964b54141c485616bec7ed4be0fd760f9d77055f51b1c4",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/QUI/3B90iMGzwTLrwXni/resources/image/40.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-quimica-modelos/14c276f79850938f70fc.jpg",
+      "sha256": "14c276f79850938f70fcfeb6a3fc78a717f7548093d2f8936dfd3a75e8d2c5a6",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/QUI/3B90iMGzwTLrwXni/resources/image/41.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-quimica-modelos/bb8cb7a5479e39d81447.jpg",
+      "sha256": "bb8cb7a5479e39d8144788e9ff0ba568707c94f6478f79d8a80e41eac5bb9d3a",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/QUI/3B90iMGzwTLrwXni/resources/image/EXT21_1_QUI_A_01_002.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-quimica-modelos/96abc6ee670586357216.jpg",
+      "sha256": "96abc6ee6705863572165b2bc43131e1501088744def059193d377acbfd7f327",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/QUI/3B90iMGzwTLrwXni/resources/image/42.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-quimica-modelos/e853ed28333c08deb597.jpg",
+      "sha256": "e853ed28333c08deb5970da43b4dc27dc1556963c7d647837841b38071c2cda7",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/QUI/3B90iMGzwTLrwXni/resources/image/EXT24_1_QUI1_EQN001.jpg"
+    }
+  ],
+  "observacoes": [
+    "Não foi usado o recorte antigo: desalinhamento visual identificado.",
+    "Figuras originais são recursos locais; tabelas são preservadas como linhas com colunas separadas por |; índices químicos em Unicode.",
+    "Nenhuma marcação de gabarito foi corrigida por inferência. Questões contraditórias permaneceram em quarentena."
+  ]
+}

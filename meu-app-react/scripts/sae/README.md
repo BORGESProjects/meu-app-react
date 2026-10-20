@@ -17,3 +17,13 @@ Antes de publicar: conferir cada gabarito, preservar textos de apoio, fórmulas 
 Exercícios discursivos ou sem resposta verificável permanecem separados para revisão.
 
 Validação: `node --test scripts/sae/classificacao.test.mjs`.
+
+## Lote publicado: Modelos atômicos
+
+`public/acervo/estudo-quimica-modelos/questoes.json` contém 29 questões conferidas do primeiro capítulo de Química. As sete figuras são recursos originais locais, sem alternativas embutidas. Tabelas são transcritas por linhas e colunas; subscritos/sobrescritos são preservados em Unicode quando necessários. A referência institucional é a declarada no exercício, não uma alegação de conferência do caderno oficial.
+
+Dos 39 exercícios capturados neste capítulo, oito permanecem em quarentena (cinco sem resposta objetiva única e três com contradições no enunciado/gabarito) e duas cópias já presentes no acervo foram excluídas. A auditoria em `docs/acervo/estudo-quimica-modelos.json` registra IDs, recursos e motivos. Não republicar esses IDs nos próximos lotes. O restante dos 52 capítulos de Química ainda requer revisão; Biologia, Física, Matemática, História, Geografia e Português permanecem no escopo autorizado.
+
+Os recortes antigos de `tmp/sae-importacao/paginas` apresentaram desalinhamento entre coordenadas e captura. Não os publicar sem nova conferência. Este lote usa os elementos e recursos originais preservados em `assets`, não esses recortes.
+
+Reconstrução auditável: `node scripts/sae/publicar-modelos-atomicos.mjs` (exige os dados intermediários locais). Validação do resultado publicado: `node --test scripts/sae-lote-modelos.test.mjs`.

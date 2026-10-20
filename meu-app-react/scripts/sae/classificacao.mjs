@@ -8,11 +8,11 @@ export function classificarReferencia(enunciado) {
   const inicio = String(enunciado ?? '')
     .replace(/^\s*Resolução\s*/iu, '')
     .replace(/^\s*\d{1,3}\s*[.)]\s*/u, '')
-    .replace(/^\s*(?:C\d+\s*:\s*H\d+\s*)+/iu, '')
+    .replace(/^\s*(?:C?\d+\s*:\s*H\d+\s*)+/iu, '')
     .trimStart()
   const referencia = inicio.match(/^\(([^)\n]{1,100})\)/u)?.[1]?.trim() ?? ''
   const porAno = referencia.match(/^(.+?)\s*[-–—/,]\s*((?:19|20)\d{2})(?:\s*[-–—/,]\s*(adaptad[ao]))?$/iu)
-  const semAno = /^(?:ENEM|FUVEST|EsPCEx|ESA|EEAR|EAM|EFOMM|CFN|CPOR|NPOR|(?:UF|UE|IF)[A-Z]{1,8}(?:-[A-Z]{2})?|PUC(?:RS|PR|RJ|SP|MG|GO|RIO)?|UNESP|UNICAMP|UNICENTRO|UNIOESTE|UNIFOR|UPF|UPE|UDESC|CEFET(?:-[A-Z]{2})?|COSEAC-UFF|FTT|FCMSCSP)$/iu
+  const semAno = /^(?:ENEM|FUVEST|EsPCEx|ESA|EEAR|EAM|EFOMM|CFN|CPOR|NPOR|(?:UF|UE|IF|UN)[A-Z]{1,18}|PUC(?:RS|PR|RJ|SP|MG|GO|RIO)?|UPF|UPE|UDESC|UCS|USCS|USF|CEFET|CFTRJ|CFTMG|CFTCE|COSEAC-UFF|FTT|FCMSCSP|FATEC|FAMERP|COTIL|CPS|EBMSP|IME|ITA|FGV|FCC|MACKENZIE)(?:[- /](?:[A-Z]{2,18}|\d+))*$/iu
   const bancaDeclarada = porAno?.[1]?.trim() || (semAno.test(referencia) ? referencia : '')
   // Exige sigla/nome institucional, evitando tratar uma fórmula ou data entre parênteses como banca.
   const identificada = bancaDeclarada && semAno.test(bancaDeclarada)
@@ -20,10 +20,11 @@ export function classificarReferencia(enunciado) {
     banca: ASSIMILACAO, concurso: ASSIMILACAO, ano: null,
     tipo_origem: 'assimilacao', referencia_original: null, adaptada: false,
   }
-  const banca = normalizarBanca(bancaDeclarada)
+  const base = bancaDeclarada.match(/^((?:UF|UE|IF|UN)[A-Z]{1,18}|PUC(?:RS|PR|RJ|SP|MG|GO|RIO)?|CEFET|USCS|USF)(?:[- /]|$)/iu)?.[1]
+  const banca = normalizarBanca((base || bancaDeclarada).toUpperCase())
   const ano = porAno ? Number(porAno[2]) : null
   return {
-    banca, concurso: ano ? `${banca} ${ano}` : banca, ano,
+    banca, concurso: ano ? `${bancaDeclarada} ${ano}` : bancaDeclarada, ano,
     tipo_origem: 'prova_identificada', referencia_original: referencia,
     adaptada: Boolean(porAno?.[3]),
   }

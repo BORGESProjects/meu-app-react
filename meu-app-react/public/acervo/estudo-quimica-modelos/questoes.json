@@ -1,0 +1,987 @@
+[
+  {
+    "id": "sae-f3f31b203287578851ef",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "Questões de assimilação",
+    "concurso": "Questões de assimilação",
+    "ano": null,
+    "tipo_origem": "assimilacao",
+    "referencia_original": null,
+    "adaptada": false,
+    "dificuldade": "Não informada",
+    "enunciado": "Ernest Rutherford realizou um experimento, representado na imagem a seguir, em que ele disparou partículas alfa contra uma placa de ouro muito fina. Rutherford percebeu que a maioria das partículas atravessava o metal, enquanto umas poucas eram rebatidas. Concluiu que algo bloqueava a radiação: estava descoberto o núcleo do átomo.\n\nTEORIA atômica. Superinteressante, 31 ago. 2006. Disponível em: Visite - Super Abril - Teoria Atômica . Acesso em: 28 maio 2020. (Adaptado).\n\nSergey Merkulov/Shutterstock\n\nA partir dos resultados obtidos em seu experimento, Rutherford propôs que",
+    "opcoes": [
+      "os átomos possuem carga positiva em seu núcleo, a qual desvia as partículas alfa de mesma carga.",
+      "no núcleo atômico estariam partículas de carga elétrica negativa, as quais atraíam as partículas alfa.",
+      "os átomos possuem um núcleo composto de uma massa homogênea com carga elétrica negativa.",
+      "os átomos são compostos de uma região com reduzida massa com carga elétrica neutra.",
+      "os átomos são realmente indivisíveis e indestrutíveis devido à elevada massa nuclear."
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Sistematização",
+      "numero": 1
+    },
+    "apoio": [
+      {
+        "imagem": "/acervo/estudo-quimica-modelos/99547beb616701291e3a.jpg",
+        "texto": "Figura de apoio do exercício de Modelos atômicos; atribuição preservada no enunciado."
+      }
+    ]
+  },
+  {
+    "id": "sae-d1a33b9da92aeee2f6bf",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "Questões de assimilação",
+    "concurso": "Questões de assimilação",
+    "ano": null,
+    "tipo_origem": "assimilacao",
+    "referencia_original": null,
+    "adaptada": false,
+    "dificuldade": "Não informada",
+    "enunciado": "O luminol é uma substância formada por átomos de carbono, hidrogênio, oxigênio e nitrogênio diluídos em água oxigenada. Essa solução, quando borrifada nos locais sujos de sangue, reage em contato com o ferro presente na hemoglobina do sangue e libera uma luz azulada, suficientemente forte para ser vista no escuro. É produzida quimicamente uma excitação no elétron de um elemento químico. No caso do luminol em contato com o ferro, esse elemento é o oxigênio.\n\nAnalisando as informações, é possível afirmar que a luz produzida no luminol está relacionada à teoria atômica proposta por",
+    "opcoes": [
+      "Dalton.",
+      "Thomson.",
+      "Rutherford-Bohr.",
+      "James Chadwick.",
+      "Heisenberg e De Broglie."
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Sistematização",
+      "numero": 2
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-7016c2d51bb8894e7b47",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "Questões de assimilação",
+    "concurso": "Questões de assimilação",
+    "ano": null,
+    "tipo_origem": "assimilacao",
+    "referencia_original": null,
+    "adaptada": false,
+    "dificuldade": "Não informada",
+    "enunciado": "O desastre radioativo com Césio-137 que ocorreu em Goiânia, em 1987, teve início quando dois catadores de lixo encontraram dentro de um aparelho de Raio X uma cápsula com 19 g de césio, que tinha um intenso brilho verde-azulado, o qual chamou muito a atenção. Esse intenso brilho deve-se ao fato de que o núcleo dos átomos de césio radioativo se partem com muita facilidade. Partindo-se, liberam partículas subatômicas que escapam do núcleo e vão se chocar com os elétrons localizados na periferia do átomo. Como resultado, a energia dos elétrons aumenta. Para retornar ao estado de equilíbrio anterior, os elétrons têm que se livrar do excesso de energia e fazem isso emitindo luz. Daí o brilho do Césio-137.\n\nPOR QUE o césio radioativo brilha? Superinteressante, 22 jul. 2009. Disponível em: Visite - Super abril - Por que o cesto radioativo brilha . Acesso em: 18 jun. 2020. (Adaptado).\n\nO fato descrito no texto está relacionado ao modelo atômico proposto por",
+    "opcoes": [
+      "Dalton.",
+      "Thomson.",
+      "Rutherford.",
+      "James Chadwick.",
+      "Bohr."
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Sistematização",
+      "numero": 4
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-83bbfc0a422972a7b0fb",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "Questões de assimilação",
+    "concurso": "Questões de assimilação",
+    "ano": null,
+    "tipo_origem": "assimilacao",
+    "referencia_original": null,
+    "adaptada": false,
+    "dificuldade": "Não informada",
+    "enunciado": "J. J. Thomson realizou diferentes experimentos utilizando o tubo de Crookes, um aparato composto de uma ampola de vidro totalmente vedada, com gases sob baixa pressão em seu interior. Em cada extremidade, havia metais com cargas elétricas opostas.\n\nCom base nos seus experimentos com a ampola de Crookes, Thomson",
+    "opcoes": [
+      "concluiu que os átomos possuem partículas dotadas de carga elétrica negativa.",
+      "afirmou que os átomos possuem um núcleo composto de prótons e nêutrons, os quais possuem elevada massa.",
+      "confirmou que os átomos possuem elevada massa atômica em seu núcleo e que os elétrons giram em torno dele.",
+      "confirmou que os átomos são esferas indivisíveis que apresentam propriedades nucleares semelhantes, como massa e carga elétrica."
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Sistematização",
+      "numero": 8
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-a627c433b734f08ce49e",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "Questões de assimilação",
+    "concurso": "Questões de assimilação",
+    "ano": null,
+    "tipo_origem": "assimilacao",
+    "referencia_original": null,
+    "adaptada": false,
+    "dificuldade": "Não informada",
+    "enunciado": "É um pouco complicado datar o início da ciência, mas sabe-se que muito se iniciou no período em que os principais cientistas eram os filósofos e poucas teorias eram realmente testadas. Após um bom tempo, foi criada a Alquimia, que já tinha muitas técnicas para testar as teorias. O principal motivo que impulsionou sua criação foi:",
+    "opcoes": [
+      "questionar a principal potência da época, a Igreja Católica.",
+      "buscar a pedra filosofal, que poderia transformar as coisas em ouro e outras pedras preciosas e produzir o elixir da vida.",
+      "encontrar respostas para alguns fenômenos até então inexplicáveis.",
+      "investigar a origem de toda a vida na Terra."
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Sistematização",
+      "numero": 9
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-77f605056beb4c9c3d5b",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "Questões de assimilação",
+    "concurso": "Questões de assimilação",
+    "ano": null,
+    "tipo_origem": "assimilacao",
+    "referencia_original": null,
+    "adaptada": false,
+    "dificuldade": "Não informada",
+    "enunciado": "Atualmente não conseguimos viver sem toda a tecnologia avançada de que dispomos, que facilita a vida de todos no planeta. Porém, a utilização desenfreada dos nossos recursos naturais preocupa especialistas da área ambiental. Um dos principais objetivos da química, pensando em evitar danos ambientais, é:",
+    "opcoes": [
+      "descobrir a fórmula da Pedra Filosofal para que se possa transformar nosso lixo em ouro, não sendo necessário desmatar as nossas florestas em busca de pedras preciosas.",
+      "formular o elixir da vida para que possamos viver eternamente.",
+      "frear o crescimento econômico, estagnando, assim, o desmatamento das florestas e a poluição dos rios.",
+      "buscar formas mais sustentáveis de crescer economicamente, sempre pensando no meio ambiente."
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Sistematização",
+      "numero": 10
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-7b22db71efc297d3ccc0",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "UNIFOR",
+    "concurso": "Unifor 2014",
+    "ano": 2014,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Unifor-2014",
+    "adaptada": false,
+    "dificuldade": "Não informada",
+    "enunciado": "(Unifor-2014) A descoberta do átomo representou um importante passo para o homem no reconhecimento dos materiais e suas propriedades e o estabelecimento do modelo atômico atual foi uma construção científica de diversos autores: Leucipo\\Demócrito; Dalton, Thomson, Rutherford\\Bohr, entre outros.\n\nA figura abaixo apresenta o modelo atômico (de Thomson) que contribuiu significativamente para o estabelecimento do conceito de átomo moderno, pois este defendia que:",
+    "opcoes": [
+      "a divisibilidade do átomo em uma massa protônica positiva e partículas negativas denominadas elétrons.",
+      "a divisibilidade do átomo em uma massa neutra composta por cargas negativas denominadas elétrons.",
+      "a existência de um átomo negativo e indivisível.",
+      "o átomo era divisível em partículas negativas conhecidas como prótons.",
+      "o átomo era formado somente por uma massa de elétrons positivos inseridos em uma matriz protônica negativa."
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 1
+    },
+    "apoio": [
+      {
+        "imagem": "/acervo/estudo-quimica-modelos/dfe76712d3678c26a82d.jpg",
+        "texto": "Figura de apoio do exercício de Modelos atômicos; atribuição preservada no enunciado."
+      }
+    ]
+  },
+  {
+    "id": "sae-9e5c17056dbab5395b8e",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "UFRGS",
+    "concurso": "UFRGS 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFRGS-2018",
+    "adaptada": false,
+    "dificuldade": "Não informada",
+    "enunciado": "(UFRGS-2018) Considere as seguintes afirmações a respeito do experimento de Rutherford e do modelo atômico de Rutherford-Bohr.\n\nI.A maior parte do volume do átomo é constituída pelo núcleo denso e positivo.\n\nII.Os elétrons movimentam-se em órbitas estacionárias ao redor do núcleo.\n\nIII.O elétron, ao pular de uma órbita mais externa para uma mais interna, emite uma quantidade de energia bem definida.\n\nQuais estão corretas?",
+    "opcoes": [
+      "Apenas I.",
+      "Apenas II.",
+      "Apenas III.",
+      "Apenas II e III.",
+      "I, II e III."
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 2
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-b606dda4548a0c796eb4",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "IFCE",
+    "concurso": "IFCE 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "IFCE-2016",
+    "adaptada": false,
+    "dificuldade": "Não informada",
+    "enunciado": "(IFCE-2016) Os filósofos gregos foram os responsáveis pela criação do termo átomo, que significa não divisível. O átomo seria a menor parte da matéria, ou seja, não poderia ser mais dividida. Entretanto, esse conceito não é mais aceito. Diante dessa assertiva, sobre os átomos, é correto afirmar-se que",
+    "opcoes": [
+      "possuem partículas sem carga conhecidas por elétrons.",
+      "não podem ser desintegrados.",
+      "possuem partículas negativas chamadas de nêutrons.",
+      "apresentam o núcleo formado somente por prótons.",
+      "apresentam duas regiões distintas: núcleo e eletrosfera."
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 3
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-96e43ef55f3dc74c656e",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "UECE",
+    "concurso": "UECE 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2016",
+    "adaptada": false,
+    "dificuldade": "Não informada",
+    "enunciado": "(UECE-2016) A alquimia – mistura de arte, ciência e magia precursora da química – elencou como objetivos a busca do elixir da longa vida e da pedra filosofal que permitiria a transformação de metais comuns em ouro. Inobstante o insucesso de suas pesquisas naquele campo restrito, a alquimia deixou um grande legado para a ciência química.\n\nAssinale a opção que corresponde a contribuições efetivas da alquimia.",
+    "opcoes": [
+      "O conceito de átomo e muitas informações que embasaram a teoria atômica moderna.",
+      "A descoberta de muitas substâncias, a invenção de equipamentos e os trabalhos na área da metalurgia.",
+      "Subsídios que conduziram as pesquisas sobre a transmutação dos metais.",
+      "Contribuições para o estabelecimento das leis das combinações químicas."
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 4
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-184d0ed3c099da0b6b22",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "COSEAC-UFF",
+    "concurso": "COSEAC-UFF 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "COSEAC-UFF-2016",
+    "adaptada": false,
+    "dificuldade": "Não informada",
+    "enunciado": "(COSEAC-UFF-2016) A palavra alquimia, AL-Khemy, vem do árabe e quer dizer “a química”. Esta ciência começou a se desenvolver por volta do século III a. C. e obteve grande êxito na metalurgia, na produção de papiros e na aparelhagem de laboratório. A partir das obscuras etimologias e através de uma leitura intrincada, enigmática e carregada de símbolos dos escritos alquimistas, pode-se ter claramente que uma das finalidades da alquimia era transformar os metais chamados inferiores (principalmente o mercúrio e o chumbo) em ouro e prata, metais tidos como superiores.\n\nPara obter átomos de ouro a partir de átomos de metais inferiores, seria necessário que os alquimistas fossem capazes de:",
+    "opcoes": [
+      "realizar a transmutação nuclear, na qual os núcleos de mercúrio e chumbo são aquecidos e posteriormente fundidos.",
+      "mudar a distribuição dos elétrons, em níveis e subníveis da eletrosfera, dos átomos dos elementos mercúrio e chumbo.",
+      "aplicar técnicas analíticas de separação de misturas metálicas, tais como a cromatografia e a destilação fracionada.",
+      "promover reações químicas entre soluções de metais inferiores, submetidas a temperaturas elevadas.",
+      "alterar o número de prótons de átomos de mercúrio e chumbo, pois este número é diferente do número de prótons de átomos do ouro."
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 5
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-141cea5bae0160e59e67",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "PUCRS",
+    "concurso": "PUCRS 2017",
+    "ano": 2017,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "PUCRS-2017",
+    "adaptada": false,
+    "dificuldade": "Não informada",
+    "enunciado": "(PUCRS-2017) Ao se deixar cair sal de cozinha na chama do fogão, observa-se que a chama fica amarelada. Se os sais são outros, as cores variam. Sais de cobre, por exemplo, deixam a chama esverdeada; e sais de potássio deixam a chama violeta. Isso também ocorre nos fogos de artifício.\n\nEsse fenômeno pode ser explicado pelas ideias de",
+    "opcoes": [
+      "Dalton, que refere que os átomos, por serem esféricos, emitem radiações com energias luminosas diferentes, produzindo cores distintas.",
+      "Rutherford, que refere que os átomos são semelhantes ao modelo planetário, emitindo energia na forma de luz com diferentes cores, como fazem os planetas.",
+      "Sommerfeld, que afirma que as órbitas dos elétrons não são necessariamente circulares, emitindo radiações com cores diferentes, dependendo da forma de sua órbita.",
+      "Einstein, que afirma que os elétrons mudam de massa em função da velocidade, o que interfere na cor que emitem.",
+      "Bohr, que refere que os elétrons, ao retornarem para órbitas mais internas, emitem radiações na faixa do espectro eletromagnético, podendo se manifestar na forma de luz colorida."
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 6
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-0aaa8df105080f45eee5",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "UERJ",
+    "concurso": "UERJ 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UERJ-2018",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UERJ-2018) O desastre de Chernobyl ainda custa caro para a Ucrânia. A radiação na região pode demorar mais de 24.000 anos para chegar a níveis seguros.\n\nAdaptado de Revista Superinteressante, 12 ago. 2016.\n\nApós 30 anos do acidente em Chernobyl, o principal contaminante radioativo presente na região é o césio-137, que se decompõe formando o bário-137.\n\nEsses átomos, ao serem comparados entre si, são denominados:",
+    "opcoes": [
+      "isótopos.",
+      "isótonos.",
+      "isóbaros.",
+      "isoeletrônicos."
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 7
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-671e141368a7bc03e44f",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "UDESC",
+    "concurso": "UDESC 2017",
+    "ano": 2017,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UDESC-2017",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UDESC-2017) Em 2017 comemoram-se 120 anos que o físico inglês J. J. Thomson mediu o valor da razão entre a carga e a massa do elétron. Esta experiência foi realizada no Laboratório Cavendish, situado na Universidade de Cambridge, e provou que:",
+    "opcoes": [
+      "a matéria é feita de partículas.",
+      "a matéria apresenta um aspecto ondulatório.",
+      "a radiação eletromagnética apresenta um aspecto ondulatório.",
+      "a radiação eletromagnética é feita de partículas.",
+      "a luz é uma onda transversal."
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 8
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-a9afbf0157d969fa5264",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "UEFS",
+    "concurso": "UEFS-BA 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UEFS-BA - 2016",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UEFS-BA - 2016) Os modelos atômicos foram sendo modificados ao longo do tempo, a partir de evidências experimentais, a exemplo dos modelos de Thomson, proposto com base em experimentos com tubo de raios catódicos e o de Rutherford, que, ao fazer incidir partículas alfa, α, sobre lâminas de ouro, observou que a maioria das partículas atravessavam a lâmina, algumas desviavam e poucas eram refletidas.\n\nA partir das considerações do texto, é correto destacar:",
+    "opcoes": [
+      "As partículas subatômicas de cargas elétricas opostas estão localizadas no núcleo do átomo, segundo Thomson.",
+      "O modelo de Thomson considera que o átomo é constituído por elétrons que ocupam diferentes níveis de energia.",
+      "O núcleo do átomo é denso e positivo com um tamanho muito menor do que o do seu raio atômico, de acordo com Rutherford.",
+      "As experiências com raios catódicos evidenciaram a presença de partículas de carga elétrica positiva nos átomos dos gases analisados.",
+      "O experimento conduzido por Rutherford permitiu concluir que as partículas positivas e negativas constituintes dos átomos têm massas iguais."
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 9
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-659e304a25ec6a1418fd",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "UPE",
+    "concurso": "UPE 2015",
+    "ano": 2015,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UPE-2015",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UPE-2015) Os átomos possuem um núcleo denso e positivo, que representa a maior parte da massa do sistema e que, à sua volta, existem elétrons que descrevem órbitas circulares de acordo com o cálculo da constante de Planck (h). Vale lembrar que esses dados são postulados, pois, naquele momento, a física ainda estava no paradigma clássico, necessitando de uma mudança para um novo paradigma, o quântico. Com base nessa estrutura, pôde se estabelecer que as emissões em séries de espectros seriam em decorrência da mudança e dos movimentos de elétrons de camadas mais externas para mais internas, seguindo um conjunto de regras postuladas ao final de 1913.\n\nAdaptado de Melzer et al. Encontro Nacional de Pesquisa em Educação em Ciências, 2009.\n\nDe que modelo atômico o texto trata?",
+    "opcoes": [
+      "Dalton.",
+      "Thomson.",
+      "Rutherford.",
+      "Demócrito.",
+      "Rutherford-Bohr."
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 10
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-07ce0eee985786dfa69d",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "FTT",
+    "concurso": "FTT 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "FTT-2016",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(FTT-2016) Na figura apresenta-se um esquema de um experimento realizado no século XX. Esse experimento empregava um material emissor de partículas alfa (α), que são partículas carregadas eletricamente e são constituídas por dois prótons e dois nêutrons. Ao se chocarem com a folha fina de ouro, parte das partículas alfa eram espalhadas e não atravessavam a lâmina metálica. A maioria das partículas alfa atravessava a folha de ouro sem sofrer espalhamento. As partículas alfa eram detectadas por um anteparo feito por uma tela de um material que se manchava ao receber o choque dessas partículas.\n\nhttps://socratic.org. Adaptado\n\nOs resultados desse experimento foram de grande importância, pois permitiram a ________ a proposta ________. As lacunas devem ser preenchidas, correta e respectivamente, por",
+    "opcoes": [
+      "Dalton … do modelo atômico de esferas maciças.",
+      "Thomson … da existência do elétron.",
+      "Rutherford … da existência do núcleo atômico.",
+      "Rutherford-Bohr … das órbitas de elétrons.",
+      "Bohr … da existência de níveis de energia."
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 12
+    },
+    "apoio": [
+      {
+        "imagem": "/acervo/estudo-quimica-modelos/7aa02cced1c95fc36796.jpg",
+        "texto": "Figura de apoio do exercício de Modelos atômicos; atribuição preservada no enunciado."
+      }
+    ]
+  },
+  {
+    "id": "sae-66f4a574a7e13bc904b9",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "UPE",
+    "concurso": "UPE 2014",
+    "ano": 2014,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UPE-2014",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UPE-2014) Um grupo de estudantes de uma escola fez uma visita ao Espaço Ciência. Ao observar a distribuição planetária para o Sistema Solar, localizada em uma área do museu, a professora de química aproveitou a oportunidade para abordar modelos atômicos. Explicou as características do modelo atômico, que é comumente associado a esse tipo de distribuição.\n\nUma das características associadas ao modelo atômico escolhido pela professora reside no fato de ele",
+    "opcoes": [
+      "ter sido proposto por Jonh Dalton.",
+      "ser semelhante e ser precedente ao modelo proposto por Thomson.",
+      "ter sido criado após as aplicações da fissão nuclear para fins bélicos.",
+      "passar a ser utilizado para ratificar a ideia de que átomos não possuíam cargas.",
+      "conceber o átomo como um pequeno núcleo positivo rodeado por uma região contendo elétrons."
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 13
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-0c66c625805cf74c4ff6",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "UNESP",
+    "concurso": "Unesp 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Unesp-2016",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Unesp-2016) A luz branca é composta por ondas eletromagnéticas de todas as frequências do espectro visível. O espectro de radiação emitido por um elemento, quando submetido a um arco elétrico ou a altas temperaturas, é descontínuo e apresenta uma de suas linhas com maior intensidade, o que fornece “uma impressão digital” desse elemento. Quando essas linhas estão situadas na região da radiação visível, é possível identificar diferentes elementos químicos por meio dos chamados testes de chama. A tabela apresenta as cores características emitidas por alguns elementos no teste de chama.\n\nElemento | Cor\nsódio | laranja\npotássio | violeta\ncálcio | vermelho-tijolo\ncobre | azul-esverdeada\n\nEm 1913, Niels Bohr (1885-1962) propôs um modelo que fornecia uma explicação para a origem dos espectros atômicos. Nesse modelo, Bohr introduziu uma série de postulados, dentre os quais, a energia do elétron só pode assumir certos valores discretos, ocupando níveis de energia permitidos ao redor do núcleo atômico. Considerando o modelo de Bohr, os diferentes espectros atômicos podem ser explicados em função:",
+    "opcoes": [
+      "do recebimento de elétrons por diferentes elementos.",
+      "da perda de elétrons por diferentes elementos.",
+      "das diferentes transições eletrônicas, que variam de elemento para elemento.",
+      "da promoção de diferentes elétrons para níveis mais energéticos.",
+      "da instabilidade nuclear de diferentes elementos."
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 14
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-0be3ad0b975dce49ff5b",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "UFJF",
+    "concurso": "UFJF 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFJF-2016",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UFJF-2016) Desde a Grécia antiga, filósofos e cientistas vêm levantando hipóteses sobre a constituição da matéria. Demócrito foi um dos primeiros filósofos a propor que a matéria era constituída por partículas muito pequenas e indivisíveis, as quais chamaram de átomos. A partir de então, vários modelos atômicos foram formulados, à medida que novos e melhores métodos de investigação foram sendo desenvolvidos. A seguir, são apresentadas as representações gráficas de alguns modelos atômicos:\n\nAssinale a alternativa que correlaciona o modelo atômico com a sua respectiva representação gráfica.",
+    "opcoes": [
+      "I - Thomson, II - Dalton, III - Rutherford-Bohr.",
+      "I - Rutherford-Bohr, II - Thomson, III - Dalton.",
+      "I - Dalton, II - Rutherford-Bohr, III - Thomson.",
+      "I - Dalton, II - Thomson, III - Rutherford-Bohr.",
+      "I - Thomson, II - Rutherford-Bohr, III - Dalton."
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 16
+    },
+    "apoio": [
+      {
+        "imagem": "/acervo/estudo-quimica-modelos/14c276f79850938f70fc.jpg",
+        "texto": "Figura de apoio do exercício de Modelos atômicos; atribuição preservada no enunciado."
+      }
+    ]
+  },
+  {
+    "id": "sae-df96151556a225d03b3e",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "CEFET",
+    "concurso": "CEFET-MG 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "CEFET-MG-2018",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(CEFET-MG-2018)A figura seguinte representa um fenômeno ocorrido ao atritar um pente em uma flanela e depois aproximá-lo de papel picado pelo fato de o pente ficar eletrizado por atrito.\n\nDisponível em: Visite - Ebah . Acesso em: 21 set. 2017.\n\nTendo em vista a evolução dos modelos atômicos, de Dalton até Bohr, o primeiro modelo que explica o fenômeno da eletrização é o de",
+    "opcoes": [
+      "Bohr.",
+      "Dalton.",
+      "Thomson.",
+      "Rutherford."
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 17
+    },
+    "apoio": [
+      {
+        "imagem": "/acervo/estudo-quimica-modelos/bb8cb7a5479e39d81447.jpg",
+        "texto": "Figura de apoio do exercício de Modelos atômicos; atribuição preservada no enunciado."
+      }
+    ]
+  },
+  {
+    "id": "sae-f861f94cc0590731b090",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "ENEM",
+    "concurso": "Enem 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Enem-2019",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(Enem-2019) Em 1808, Dalton publicou o seu famoso livro intitulado Um novo sistema de filosofia química (do original A New System of Chemical Philosophy), no qual continha os cinco postulados que serviam como alicerce da primeira teoria atômica da matéria fundamentada no método científico. Esses postulados são numerados a seguir:\n\n1.A matéria é constituída de átomos indivisíveis.\n\n2.Todos os átomos de um dado elemento químico são idênticos em massa e em todas as outras propriedades.\n\n3.Diferentes elementos químicos têm diferentes tipos de átomos; em particular, seus átomos têm diferentes massas.\n\n4.Os átomos são indestrutíveis e nas reações químicas mantêm suas identidades.\n\n5.Átomos de elementos combinam com átomos de outros elementos em proporções de números inteiros pequenos para formar compostos.\n\nApós o modelo de Dalton, outros modelos baseados em outros dados experimentais evidenciaram, entre outras coisas, a natureza elétrica da matéria, a composição e organização do átomo e a quantização da energia no modelo atômico.\n\nOXTOBY, D. W.; GILLIS, H. P.; BUTLER, L. J. Principles of Modern Chemistry. Boston: Cengage Learning, 2012 (adaptado).\n\nCom base no modelo atual que descreve o átomo, qual dos postulados de Dalton ainda é considerado correto?",
+    "opcoes": [
+      "1.",
+      "2.",
+      "3.",
+      "4.",
+      "5."
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 19
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-98f2662f973c7b07013a",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "UDESC",
+    "concurso": "UDESC 2015",
+    "ano": 2015,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UDESC-2015",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UDESC-2015) Os fundamentos da estrutura da matéria e da atomística baseados em resultados experimentais tiveram sua origem com John Dalton, no início do século XIX. Desde então, no transcorrer de aproximadamente 100 anos, outros cientistas, tais como J. J. Thomson, E. Rutherford e N. Bohr, deram contribuições marcantes de como possivelmente o átomo estaria estruturado. Com base nas ideias propostas por esses cientistas, marque (V) para verdadeira e (F) para falsa.\n\nI.(________)Rutherford foi o primeiro cientista a propor a ideia de que os átomos eram, na verdade, grandes espaços vazios constituídos por um centro pequeno, positivo e denso com elétrons girando ao seu redor.\n\nII.(________)Thomson utilizou uma analogia inusitada ao comparar um átomo com um “pudim de passas”, em que estas seriam prótons incrustados em uma massa uniforme de elétrons dando origem à atual eletrosfera.\n\nIII.(________)Dalton comparou os átomos a esferas maciças, perfeitas e indivisíveis, tais como “bolas de bilhar”. A partir deste estudo surgiu o termo “átomo” que significa “sem partes” ou “indivisível”.\n\nIV.(________)O modelo atômico de Bohr foi o primeiro a envolver conceitos de mecânica quântica, em que a eletrosfera possuía apenas algumas regiões acessíveis denominadas níveis de energia, sendo ao elétron proibido a movimentação entre estas regiões.\n\nV.(________)Rutherford utilizou em seu famoso experimento uma fonte radioativa que emitia descargas elétricas em uma fina folha de ouro, além de um anteparo para detectar a direção tomada pelos elétrons.\n\nAssinale a alternativa correta, de cima para baixo.",
+    "opcoes": [
+      "F, V, V, V, F.",
+      "V, V, F, V, F.",
+      "F, V, V, F, V.",
+      "V, F, F, F, F.",
+      "V, F, F, F, V."
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 20
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-55b31d74001006127416",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "UECE",
+    "concurso": "UECE 2015",
+    "ano": 2015,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2015",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UECE-2015) Há cerca de dois mil e quinhentos anos, o filósofo grego Demócrito disse que se dividirmos a matéria em pedacinhos, cada vez menores, chegaremos a grãozinhos indivisíveis, que são os átomos (a = não e tomo = parte). Em 1897, o físico inglês Joseph Thomson (1856-1940) descobriu que os átomos eram divisíveis: lá dentro havia o elétron, partícula com carga elétrica negativa. Em 1911, o neozelandês Ernest Rutherford (1871-1937) mostrou que os átomos tinham uma região central compacta chamada núcleo e que lá dentro encontravam-se os prótons, partículas com carga positiva.\n\nAtente à figura a seguir, que representa o núcleo e a eletrosfera do átomo.\n\nCom relação à figura acima, é correto afirmar que",
+    "opcoes": [
+      "o núcleo é muito pequeno, por isso, tem pouca massa se comparado à massa do átomo.",
+      "mais de 90% de toda a massa do átomo está na eletrosfera.",
+      "considerando as reais grandezas do núcleo e da eletrosfera do átomo, se comparadas às suas representações na figura, o tamanho da eletrosfera está desproporcional ao tamanho do núcleo.",
+      "a massa do núcleo é bem maior do que a massa da eletrosfera, cuja relação fica em torno de 100 vezes."
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 22
+    },
+    "apoio": [
+      {
+        "imagem": "/acervo/estudo-quimica-modelos/96abc6ee670586357216.jpg",
+        "texto": "Figura de apoio do exercício de Modelos atômicos; atribuição preservada no enunciado."
+      }
+    ]
+  },
+  {
+    "id": "sae-a54693913bde2a9258ca",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "FUVEST",
+    "concurso": "Fuvest 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Fuvest-2018",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(Fuvest-2018) Neste texto, o autor descreve o fascínio que as descobertas em Química exerciam sobre ele, durante sua infância.\n\nEu adorava Química em parte por ela ser uma ciência de transformações, de inúmeros compostos baseados em algumas dúzias de elementos, eles próprios fixos, invariáveis e eternos. A noção de estabilidade e de invariabilidade dos elementos era psicologicamente crucial para mim, pois eu os via como pontos fixos, como âncoras em um mundo instável. Mas agora, com a radioatividade, chegavam transformações das mais incríveis.\n\n[...]\n\nA radioatividade não alterava as realidades da Química ou a noção de elementos; não abalava a ideia de sua estabilidade e identidade. O que ela fazia era aludir a duas esferas no átomo – uma esfera relativamente superficial e acessível, que governava a reatividade e a combinação química, e uma esfera mais profunda, inacessível a todos os agentes químicos e físicos usuais e suas energias relativamente pequenas, onde qualquer mudança produzia uma alteração fundamental de identidade.\n\nOliver Sacks, Tio Tungstênio: Memórias de uma infância química.\n\nDe acordo com o autor:",
+    "opcoes": [
+      "o trecho “eles próprios fixos, invariáveis e eternos” (L. 3) remete à dificuldade para a quebra de ligações químicas, que são muito estáveis.",
+      "“esfera relativamente superficial” (L. 10) e “esfera mais profunda” (L. 12) dizem respeito, respectivamente, à eletrosfera e ao núcleo dos átomos.",
+      "“esfera relativamente superficial” (L. 10) e “esfera mais profunda” (L. 12) referem-se, respectivamente, aos elétrons da camada de valência, envolvidos nas reações químicas, e aos elétrons das camadas internas dos átomos, que não estão envolvidos nas reações químicas.",
+      "as energias envolvidas nos processos de transformação de um átomo em outro, como ocorre com materiais radioativos, são “relativamente pequenas” (L. 13).",
+      "a expressão “uma alteração fundamental de identidade” (L. 14) relaciona-se à capacidade que um mesmo átomo tem de fazer ligações químicas diferentes, formando compostos com propriedades distintas das dos átomos isolados."
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 23
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-6e77d142697b6f260b22",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "IFGO",
+    "concurso": "IFGO 2014",
+    "ano": 2014,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "IFGO-2014",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(IFGO-2014) Em 1803, John Dalton propôs um modelo para explicar o comportamento do átomo, conhecido por alguns como o “Modelo da Bola de Bilhar”. Considere que sobre a base conceitual desse modelo sejam feitas as seguintes afirmações:\n\nI.Para Dalton, o átomo não pode ser representado como uma esfera rígida.\n\nII.Os átomos caracterizam os elementos químicos e somente os átomos de um mesmo elemento são idênticos em todas as suas características.\n\nIII.Compostos químicos são formados de átomos de dois ou mais elementos unidos em uma razão fixa.\n\nIV.As transformações químicas consistem de combinação, separação, rearranjo ou destruição dos átomos.\n\nV.Este modelo é ainda bastante utilizado para o entendimento do comportamento dos gases ideais.\n\nEstão corretas:",
+    "opcoes": [
+      "I, II e IV.",
+      "II, III e V.",
+      "II e III.",
+      "I, III e IV.",
+      "II, III e IV."
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 24
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-0258155b0b03c9d30068",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "UPE",
+    "concurso": "UPE 2017",
+    "ano": 2017,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UPE-2017",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UPE-2017) Muitas informações veiculadas na internet contêm erros científicos. Um exemplo disso pode ser verificado em determinado blog sobre o ensino de química, cujo conteúdo é transcrito a seguir:\n\nModelos Atômicos\n\nOs modelos atômicos são diferentes ideias, que surgiram durante o desenvolvimento da história da ciência, na tentativa de explicar a composição íntima da matéria. O primeiro modelo atômico da era moderna foi proposto por John Dalton, que considerava os átomos como esferas maciças e indivisíveis. A descoberta dos elétrons, partículas subatômicas de carga elétrica positiva, fez os cientistas provarem que o átomo era divisível, abrindo espaço para uma nova ideia, um modelo que ficou conhecido como pudim de passas, atribuído ao físico Ernest Rutherford. Esse modelo durou alguns anos, até que o cientista Niels Böhr propôs um modelo no qual os elétrons giravam ao redor de um núcleo com energia variável, ao percorrer uma órbita fixa. A partir desses elétrons, os átomos poderiam se unir para formar compostos em um fenômeno conhecido como ligação química, que ocorria em busca de aumentar a energia do sistema e com isso adquirir estabilidade.\n\nQuantos erros científicos são encontrados no texto?",
+    "opcoes": [
+      "Um.",
+      "Dois.",
+      "Três.",
+      "Quatro.",
+      "Cinco."
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares",
+      "numero": 25
+    },
+    "apoio": []
+  },
+  {
+    "id": "sae-fcfbb4a2eb63fd5961c7",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "FCMSCSP",
+    "concurso": "FCMSCSP 2023",
+    "ano": 2023,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "FCMSCSP-2023",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(FCMSCSP-2023) Uma das teorias que explicam a origem dos elementos químicos em processos estelares apresenta reações que envolvem fusão nuclear entre isótopos dos elementos leves.\n\nUma dessas reações é a da formação do isótopo lítio-7 representada na equação a seguir.\n\nNessa reação, o nuclídeo representado por X tem número de prótons igual a ________ e quantidade de nêutrons igual a ________.\n\nAs lacunas do texto são preenchidas, respectivamente, por",
+    "opcoes": [
+      "1 e 3.",
+      "1 e 1.",
+      "2 e 3.",
+      "2 e 1.",
+      "1 e 2."
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares + Desafio",
+      "numero": 26
+    },
+    "apoio": [
+      {
+        "imagem": "/acervo/estudo-quimica-modelos/e853ed28333c08deb597.jpg",
+        "texto": "Figura de apoio do exercício de Modelos atômicos; atribuição preservada no enunciado."
+      }
+    ]
+  },
+  {
+    "id": "sae-a3b273c58084ea66037b",
+    "materia": "Química",
+    "conteudo": "Modelos atômicos",
+    "banca": "EsPCEx",
+    "concurso": "Espcex 2023",
+    "ano": 2023,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Espcex-2023",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(Espcex-2023) A elaboração de representações científicas é muito importante para organizar observações e conclusões resultantes do trabalho de pesquisa dos cientistas. Na Química, um dos mais emblemáticos exemplos dessa prática são os modelos atômicos. Cada um reúne a contribuição de diversos estudiosos, apesar de geralmente ser atribuído a apenas um deles. Nas alternativas abaixo, são apresentados alguns dos modelos atômicos (por meio da referência nominal aos seus respectivos elaboradores) e os nomes de alguns cientistas cujos trabalhos, citados entre parênteses, contribuíram para a elaboração de alguns desses modelos. Podemos afirmar que a relação entre o modelo atômico e o estudioso cujo trabalho contribuiu para a construção do respectivo modelo está corretamente apresentada na alternativa:",
+    "opcoes": [
+      "Modelo de Dalton – Plücker (comprovação da existência dos raios catódicos)",
+      "Modelo de Thomson – Becquerel (observação do fenômeno da radioatividade)",
+      "Modelo de Rutherford – Heisenberg (Princípio da Incerteza)",
+      "Modelo de Böhr – Planck (propôs o conceito de quantização da energia)",
+      "Modelo de Sommerfeld – Chadwick (descoberta da partícula nêutron)"
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "fonte_gabarito": "Marcação do gabarito do material autorizado, conferida na revisão do lote",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6d2",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Modelos atômicos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-modelos-atomicos--DTBs",
+      "titulo_documento": "EXT26_3_QUI_L1_A_01",
+      "secao": "Enem e vestibulares + Desafio",
+      "numero": 27
+    },
+    "apoio": []
+  }
+]

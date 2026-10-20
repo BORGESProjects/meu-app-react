@@ -9,6 +9,10 @@ test('recupera referências reais após número e competências do livro', () =>
     ['27.C7:H24 (Espcex-2023) A elaboração...', 'EsPCEx', 2023],
     ['11.C5:H17 (IFCE - 2019) Comparando...', 'IFCE', 2019],
     ['5.C5:H17 (COSEAC-UFF-2016) A palavra...', 'COSEAC-UFF', 2016],
+    ['12. C5:H17 (UFJF-PISM-2-2015) A Quercetina...', 'UFJF', 2015],
+    ['14. (USCS-Medicina-2016) Os humanos...', 'USCS', 2016],
+    ['1. (CFTRJ-2020) A tabela...', 'CFTRJ', 2020],
+    ['15. 5:H17 (FATEC-2016) Experiência...', 'FATEC', 2016],
   ]) {
     const resultado = classificarReferencia(texto)
     assert.equal(resultado.banca, banca)
