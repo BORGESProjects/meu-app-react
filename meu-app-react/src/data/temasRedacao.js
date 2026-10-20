@@ -1,5 +1,5 @@
 const criteriosEnem = 'Cinco competências do ENEM, de 0 a 200 pontos cada: norma-padrão; compreensão do tema e repertório; organização dos argumentos; coesão; proposta de intervenção que respeite os direitos humanos.'
-const criteriosFuvest = 'Critérios da FUVEST: desenvolvimento do tema e organização do texto dissertativo-argumentativo; coerência e articulação; correção gramatical e adequação vocabular. Nota de 10 a 50 pontos.'
+const criteriosFuvest = 'Critérios da FUVEST: desenvolvimento do tema e organização do texto dissertativo-argumentativo; coerência e articulação; correção gramatical e adequação vocabular. A nota da ferramenta é uma estimativa pedagógica normalizada, não a nota oficial da banca.'
 
 export const temasRedacao = [
   { id: 'enem-2024', banca: 'ENEM', ano: 2024, tema: 'Desafios para a valorização da herança africana no Brasil', tipo: 'Dissertativo-argumentativo', criterios: criteriosEnem },

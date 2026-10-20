@@ -12,7 +12,6 @@ import { supabase } from './supabaseClient'
 import { tentarLeitura, carregarEmEtapas } from './carregarAcervo'
 import { opcoesFiltro } from './filtros'
 import { indexarFiltros, filtrarIndice, opcoesRelacionadas, atualizarFiltrosRelacionados } from './indiceFiltros'
-import { bancasRedacao, temasRedacao } from './data/temasRedacao'
 import { ESPECIFICAS_UEM } from './uem'
 import { questoesDaProva, listarProvasCompletas, gerarTreinoCpor } from './simulados'
 import { pertenceAoFoco, nomeFoco } from './focoEstudo'
@@ -23,6 +22,7 @@ import TempoSimulado from './components/TempoSimulado'
 import RevisaoSimulado from './components/RevisaoSimulado'
 
 const DIAS_SEMANA = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo']
+const Redacao = lazy(() => import('./components/Redacao'))
 const ImportarPdf = lazy(() => import('./components/ImportarPdf'))
 const EditalPlanejador = lazy(() => import('./components/EditalPlanejador'))
 
@@ -106,15 +106,6 @@ export default function App() {
   const [novaTarefa, setNovaTarefa] = useState({
     dia: 'Segunda-feira', materia: '', atividade: '', horario: '08:00', minutos: 60
   })
-
-  // Estados do Módulo de Redação (IA)
-  const [temaRedacao, setTemaRedacao] = useState('')
-  const [textoRedacao, setTextoRedacao] = useState('')
-  const [loadingRedacao, setLoadingRedacao] = useState(false)
-  const [resultadoRedacao, setResultadoRedacao] = useState(null)
-  const [erroRedacao, setErroRedacao] = useState(null)
-  const [bancaRedacao, setBancaRedacao] = useState('Todas')
-  const [temaRedacaoId, setTemaRedacaoId] = useState('')
 
   // Estados de Simulados organizados por edição completa da prova
   const [filtroAnoSimulado, setFiltroAnoSimulado] = useState('Todos')
@@ -555,40 +546,6 @@ export default function App() {
       : tarefa))
   }
 
-  async function enviarRedacao(e) {
-    e.preventDefault()
-    setLoadingRedacao(true)
-    setResultadoRedacao(null)
-    setErroRedacao(null)
-
-    try {
-      const temaComContexto = temaRedacaoEscolhido
-        ? `${temaRedacao}\n\nBanca e edição: ${temaRedacaoEscolhido.banca} ${temaRedacaoEscolhido.ano}. Critérios de correção: ${temaRedacaoEscolhido.criterios} ${temaRedacaoEscolhido.banca === 'FUVEST' ? 'Não exija proposta de intervenção, pois ela não integra os critérios da FUVEST.' : ''}`
-        : temaRedacao
-      const response = await fetch(`${API_URL}/api/ia/corrigir-redacao`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          tema: temaComContexto,
-          texto: textoRedacao,
-          banca: temaRedacaoEscolhido?.banca || 'Tema livre',
-          ano: temaRedacaoEscolhido?.ano || null,
-          criterios: temaRedacaoEscolhido?.criterios || '',
-        }),
-      })
-
-      if (!response.ok) throw new Error('Erro ao comunicar com o servidor backend.')
-
-      const data = await response.json()
-      const textoResposta = data.candidates?.[0]?.content?.parts?.[0]?.text || JSON.stringify(data, null, 2)
-      setResultadoRedacao(textoResposta)
-    } catch (err) {
-      setErroRedacao(err.message)
-    } finally {
-      setLoadingRedacao(false)
-    }
-  }
-
   function validarResposta(questaoId, _respostaCorretaDoBanco, isSimulado = false) {
     const questaoAtual = questoes.find(q => q.id === questaoId)
     if (!podeCorrigir(questaoAtual || {})) return
@@ -715,17 +672,6 @@ export default function App() {
     }
   })
   const pontosAMelhorar = Object.entries(errosPorConteudo).sort((a, b) => b[1] - a[1]).slice(0, 5)
-  const temasRedacaoFiltrados = bancaRedacao === 'Todas' ? temasRedacao : temasRedacao.filter(item => item.banca === bancaRedacao)
-  const temaRedacaoEscolhido = temasRedacao.find(item => item.id === temaRedacaoId)
-
-  function selecionarTemaRedacao(id) {
-    const escolhido = temasRedacao.find(item => item.id === id)
-    setTemaRedacaoId(id)
-    setTemaRedacao(escolhido?.tema || '')
-    setResultadoRedacao(null)
-    setErroRedacao(null)
-  }
-
   if (!authReady) return <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center"><p className="text-sm text-indigo-300">Verificando sua sessão…</p></div>
 
   if (!session) return <div className="min-h-screen bg-slate-950 text-slate-100 px-3 py-8 sm:px-6 sm:py-12">
@@ -1186,57 +1132,7 @@ export default function App() {
           </Suspense>
         )}
 
-        {/* ABA: REDAÇÃO IA */}
-        {abaAtiva === 'redacao' && (
-          <div className="max-w-3xl mx-auto bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-8 shadow-xl backdrop-blur-md">
-            <h2 className="text-2xl font-extrabold text-slate-100 mb-2 tracking-tight">✍️ Auditoria de Redação por IA</h2>
-            <p className="text-slate-400 text-sm mb-6">Pratique com propostas de edições anteriores e receba uma correção adaptada aos critérios da banca.</p>
-            <div className="mb-7 rounded-3xl border border-indigo-500/25 bg-indigo-950/20 p-4 sm:p-6">
-              <div className="flex flex-wrap items-end gap-4">
-                <label className="w-full min-w-0 flex-1 text-xs font-semibold uppercase tracking-wider text-indigo-300 sm:min-w-40">Vestibular
-                  <select value={bancaRedacao} onChange={event => { setBancaRedacao(event.target.value); selecionarTemaRedacao('') }} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-200">
-                    <option value="Todas">Todos</option>
-                    {bancasRedacao.map(banca => <option key={banca} value={banca}>{banca}</option>)}
-                  </select>
-                </label>
-                <label className="w-full min-w-0 flex-[2] text-xs font-semibold uppercase tracking-wider text-indigo-300 sm:min-w-64">Tema de edição anterior
-                  <select value={temaRedacaoId} onChange={event => selecionarTemaRedacao(event.target.value)} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-200">
-                    <option value="">Escolher um tema…</option>
-                    {temasRedacaoFiltrados.map(item => <option key={item.id} value={item.id}>{item.banca} {item.ano} — {item.tema}</option>)}
-                  </select>
-                </label>
-              </div>
-              {temaRedacaoEscolhido && <div className="mt-5 rounded-2xl border border-slate-800 bg-slate-950/60 p-5">
-                <div className="flex flex-wrap gap-2"><span className="rounded-full bg-indigo-500/20 px-3 py-1 text-xs font-bold text-indigo-200">{temaRedacaoEscolhido.banca}</span><span className="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">{temaRedacaoEscolhido.ano}</span><span className="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">{temaRedacaoEscolhido.tipo}</span></div>
-                <h3 className="mt-4 font-bold text-slate-100">{temaRedacaoEscolhido.tema}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-400">{temaRedacaoEscolhido.instrucoes}</p>
-                <p className="mt-3 text-xs text-slate-500">A correção seguirá: {temaRedacaoEscolhido.criterios}</p>
-                <a className="mt-3 inline-block text-xs font-semibold text-indigo-300 hover:text-indigo-200" href={temaRedacaoEscolhido.fonte} target="_blank" rel="noreferrer">Consultar acervo oficial ↗</a>
-              </div>}
-            </div>
-            <form onSubmit={enviarRedacao} className="space-y-5">
-              <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Tema escolhido ou tema livre</label>
-                <input type="text" required placeholder="Escolha acima ou escreva um tema livre..." value={temaRedacao} onChange={(e) => { setTemaRedacao(e.target.value); if (temaRedacaoEscolhido && e.target.value !== temaRedacaoEscolhido.tema) setTemaRedacaoId('') }} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner" />
-              </div>
-              <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Texto</label>
-                <textarea required rows={8} placeholder="Escreva seu texto aqui..." value={textoRedacao} onChange={(e) => setTextoRedacao(e.target.value)} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl p-4 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner" />
-              </div>
-              <button type="submit" disabled={loadingRedacao} className="w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-medium py-3.5 rounded-2xl text-sm transition-all shadow-lg shadow-indigo-600/25">{loadingRedacao ? 'A processar...' : 'Submeter Redação'}</button>
-            </form>
-            {erroRedacao && <p role="alert" className="mt-5 rounded-2xl border border-red-500/30 bg-red-950/30 p-4 text-sm text-red-200">{erroRedacao}</p>}
-            {resultadoRedacao && (
-              <div className="mt-8 bg-slate-950/90 border border-indigo-500/30 rounded-3xl p-6 shadow-2xl space-y-5">
-                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
-                  <h3 className="text-lg font-bold text-slate-100">Relatório de Avaliação Tática</h3>
-                  <span className="bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 px-3 py-1 rounded-full text-xs font-semibold">Concluído</span>
-                </div>
-                <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-5 text-slate-200 text-sm whitespace-pre-wrap">{resultadoRedacao}</div>
-              </div>
-            )}
-          </div>
-        )}
+        {abaAtiva === 'redacao' && <Suspense fallback={<p role="status">Carregando a oficina de redação…</p>}><Redacao key={session.user.id} session={session} foco={focoEstudo}/></Suspense>}
 
         {/* ABA: TAREFAS */}
         {abaAtiva === 'tarefas' && (
