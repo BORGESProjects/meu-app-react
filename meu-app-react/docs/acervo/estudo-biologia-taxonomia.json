@@ -1,0 +1,131 @@
+{
+  "capitulo": "Seres vivos e taxonomia",
+  "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+  "total_extraido": 23,
+  "publicados": [
+    "sae-de6ca8f5d4990f1fb524",
+    "sae-c973a8aa1adf360159b2",
+    "sae-00d03e51778ae2d6931e",
+    "sae-1be6e80e3f3e94712cc1",
+    "sae-73fbb3b7aa1acc96a6a9",
+    "sae-ca1ae81f73710e3077d6",
+    "sae-f9adaf21933533d0fd71",
+    "sae-1620c5b4e540391fa043",
+    "sae-6aa495b37fc85741cd6a",
+    "sae-edd8bd9d0f0dae3dd708",
+    "sae-8e4f415f3e5c499423ed",
+    "sae-bf746247d9a3e99dacc7",
+    "sae-ef2ad0e9ac2ea7b45124",
+    "sae-21caa2b8ccea94b46919",
+    "sae-854f16d93860979ca259",
+    "sae-2ea01dce093e0d77294e",
+    "sae-4d95ea172ae896232244",
+    "sae-4f2d7963a7cda44fbb2c"
+  ],
+  "quarentena": [
+    {
+      "id": "sae-ae9827e6abf5df87c3c2",
+      "motivo": "Discursiva ou sem gabarito objetivo único"
+    },
+    {
+      "id": "sae-8739e19fbaeaf5358b95",
+      "motivo": "Marcação D incompatível com a grafia dos gêneros na alternativa. Necessária conferência com a prova UECE 2019."
+    },
+    {
+      "id": "sae-c031b9db6e3805bf0405",
+      "motivo": "Discursiva ou sem gabarito objetivo único"
+    },
+    {
+      "id": "sae-bdb2503c6ae28c713793",
+      "motivo": "Discursiva ou sem gabarito objetivo único"
+    }
+  ],
+  "duplicatas": [
+    {
+      "id": "sae-7f1e4ea2f61d2862347c",
+      "existente": "enem-2017-098"
+    }
+  ],
+  "recursos": [
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/b874a36fea4cf073b226.jpg",
+      "sha256": "b874a36fea4cf073b2263b2d018923226245ebe14790abb84f79167a2203b500",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/18.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/5edbbb9495c62486476c.jpg",
+      "sha256": "5edbbb9495c62486476c444a6d490acc57c314ab1eb636009e6cb61b7c64c546",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/19.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/d99f64a9f4053a9141d2.jpg",
+      "sha256": "d99f64a9f4053a9141d2a2b88f4e69569f47caacb7d14aca02fe64815bca2a36",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/Image240811.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/c6b93abc868b7a1919df.jpg",
+      "sha256": "c6b93abc868b7a1919df996532dd33c6fd0715402f201c43f8e90456a6cd9ea4",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/Image240818.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/8a2593a578866630c05c.jpg",
+      "sha256": "8a2593a578866630c05c762509b3c7a536e67911adb5690dcc4cd77c7f1d05b6",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/20.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/127bdf2b3c03037269a9.jpg",
+      "sha256": "127bdf2b3c03037269a9775c7969b1ffde2ad0e1df0db409df724710d68df192",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/21.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/c0c8684758fd8decff73.jpg",
+      "sha256": "c0c8684758fd8decff73e70d886271d622d407d5e4539a68f69fc87a2251b70f",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/22.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/1364ca85f37487f930f3.jpg",
+      "sha256": "1364ca85f37487f930f3e30bf7f2ec3842a21f506d6e2f07b1059dfe402cdc9a",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/23.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/56c45a8144912d21b5c8.jpg",
+      "sha256": "56c45a8144912d21b5c8b7b027cd9c1a60228843c820f4410d921af1a5f15848",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/24.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/b0d7d308b49b4bdcee9f.jpg",
+      "sha256": "b0d7d308b49b4bdcee9f3bca6b9229330d2f8594b9a6fc3e0e0de90303ac972a",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/Image240896.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/99bbb79c7e3e2762c484.jpg",
+      "sha256": "99bbb79c7e3e2762c484f43beeace0b633941aa0a0f8183588f2e1347f445446",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/25.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/0ad86dcadc8c36aa1c46.png",
+      "sha256": "0ad86dcadc8c36aa1c46408dfcd34f62db673d3daabeb8fb1910a0df10046814",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/21a.png"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/3075a487fae9fa723fb1.png",
+      "sha256": "3075a487fae9fa723fb16179d8b7cc9fb8964578ec5a516623c414df09674d41",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/21b.png"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/c70bf93903675712469e.png",
+      "sha256": "c70bf93903675712469eb533f4bee1abf01bacefbdaf860e957afcbdd4401a1d",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/21c.png"
+    },
+    {
+      "imagem": "/acervo/estudo-biologia-taxonomia/28e2ae6a406ff1b948ff.png",
+      "sha256": "28e2ae6a406ff1b948ffca7d666524811252abd351b8d1b879d66349aa12b075",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/Fdwon1sDdcs6Nv-E/resources/image/21d.png"
+    }
+  ],
+  "observacoes": [
+    "Nomes científicos, tabelas com células mescladas e diagramas foram preservados como blocos seguros.",
+    "UFGRS é normalizada como UFRGS; a referência original permanece registrada.",
+    "Gabaritos contraditórios não foram corrigidos por inferência."
+  ]
+}

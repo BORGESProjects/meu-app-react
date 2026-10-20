@@ -12,7 +12,7 @@ export function classificarReferencia(enunciado) {
     .trimStart()
   const referencia = inicio.match(/^\(([^)\n]{1,100})\)/u)?.[1]?.trim() ?? ''
   const porAno = referencia.match(/^(.+?)\s*[-–—/,]\s*((?:19|20)\d{2})(?:\s*[-–—/,]\s*(adaptad[ao]))?$/iu)
-  const semAno = /^(?:ENEM|FUVEST|EsPCEx|ESA|EEAR|EAM|EFOMM|CFN|CPOR|NPOR|(?:UF|UE|IF|UN)[A-Z]{1,18}|PUC(?:RS|PR|RJ|SP|MG|GO|RIO)?|UPF|UPE|UDESC|UCS|USCS|USF|CEFET|CFTRJ|CFTMG|CFTCE|COSEAC-UFF|FTT|FCMSCSP|FATEC|FAMERP|COTIL|CPS|EBMSP|IME|ITA|FGV|FCC|MACKENZIE)(?:[- /](?:[A-Z]{2,18}|\d+))*$/iu
+  const semAno = /^(?:ENEM|FUVEST|EsPCEx|ESA|EEAR|EAM|EFOMM|CFN|CPOR|NPOR|(?:UF|UE|IF|UN)[A-Z]{1,18}|PUC(?:RS|PR|RJ|SP|MG|GO|RIO)?|UPF|UPE|UDESC|UCS|USCS|USF|CEFET|CFTRJ|CFTMG|CFTCE|COSEAC-UFF|FTT|FCMSCSP|FATEC|FAMERP|COTIL|COTUCA|INSPER|CPS|EBMSP|IME|ITA|FGV|FCC|MACKENZIE)(?:[- /](?:[A-Z]{2,18}|\d+))*$/iu
   const bancaDeclarada = porAno?.[1]?.trim() || (semAno.test(referencia) ? referencia : '')
   // Exige sigla/nome institucional, evitando tratar uma fórmula ou data entre parênteses como banca.
   const identificada = bancaDeclarada && semAno.test(bancaDeclarada)
@@ -21,10 +21,11 @@ export function classificarReferencia(enunciado) {
     tipo_origem: 'assimilacao', referencia_original: null, adaptada: false,
   }
   const base = bancaDeclarada.match(/^((?:UF|UE|IF|UN)[A-Z]{1,18}|PUC(?:RS|PR|RJ|SP|MG|GO|RIO)?|CEFET|USCS|USF)(?:[- /]|$)/iu)?.[1]
-  const banca = normalizarBanca((base || bancaDeclarada).toUpperCase())
+  const sigla = (base || bancaDeclarada).toUpperCase()
+  const banca = normalizarBanca(sigla === 'UFGRS' ? 'UFRGS' : sigla)
   const ano = porAno ? Number(porAno[2]) : null
   return {
-    banca, concurso: ano ? `${bancaDeclarada} ${ano}` : bancaDeclarada, ano,
+    banca, concurso: ano ? `${sigla === 'UFGRS' ? 'UFRGS' : bancaDeclarada} ${ano}` : bancaDeclarada, ano,
     tipo_origem: 'prova_identificada', referencia_original: referencia,
     adaptada: Boolean(porAno?.[3]),
   }

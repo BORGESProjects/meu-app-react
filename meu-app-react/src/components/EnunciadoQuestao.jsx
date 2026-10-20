@@ -1,6 +1,7 @@
 import { anoDaQuestao } from '../acervo'
 import { API_URL } from '../api'
 import { memo } from 'react'
+import BlocosQuestao from './BlocosQuestao'
 
 function EnunciadoQuestao({ questao: q }) {
   const imagemPrincipal = q.imagem_original || q.pagina_imagem
@@ -17,7 +18,8 @@ function EnunciadoQuestao({ questao: q }) {
     {q.texto_apoio && <section aria-label="Texto de apoio" className="border-l-2 border-indigo-500 pl-4"><h3 className="font-semibold mb-2">Texto de apoio</h3><p className="whitespace-pre-wrap leading-relaxed">{q.texto_apoio}</p></section>}
     {q.pagina_imagem && <a href={`${API_URL}${q.pdf_original}#page=${q.pagina}`} target="_blank" rel="noreferrer" className="block"><p className="text-xs text-indigo-300 mb-2">Página original com figuras — clique para ampliar no PDF</p><img src={`${API_URL}${q.pagina_imagem}`} alt={`Página ${q.pagina} da prova, com as figuras da questão ${q.numero_original}`} loading="lazy" className="w-full rounded-lg bg-white" /></a>}
     {q.pdf_original && <a href={`${API_URL}${q.pdf_original}#page=${q.pagina}`} target="_blank" rel="noreferrer" className="block text-xs text-indigo-300">Conferir questão no PDF original · página {q.pagina} ↗</a>}
-    {q.enunciado_antes_apoio && <p className="whitespace-pre-wrap leading-relaxed">{q.enunciado_antes_apoio}</p>}
+    {q.blocos_enunciado && <BlocosQuestao blocos={q.blocos_enunciado}/>}
+    {!q.blocos_enunciado && q.enunciado_antes_apoio && <p className="whitespace-pre-wrap leading-relaxed">{q.enunciado_antes_apoio}</p>}
     {q.apoio?.length > 0 && <section aria-label="Texto de apoio" className="space-y-3">
       <h3 className="text-sm font-semibold">Texto de apoio</h3>
       {q.apoio.map((apoio, i) => <a key={apoio.imagem} href={apoio.imagem} target="_blank" rel="noreferrer" className="block">
@@ -33,7 +35,7 @@ function EnunciadoQuestao({ questao: q }) {
         <p className="whitespace-pre-wrap mt-2">{q.enunciado}</p>
         <p className="text-xs mt-2">Consulte a imagem original para fórmulas, gráficos e trechos destacados.</p>
       </details>}
-    </> : !imagemPrincipal && textoAposApoio && <p className="text-slate-100 text-base font-medium leading-relaxed whitespace-pre-wrap">{textoAposApoio}</p>}
+    </> : !q.blocos_enunciado && !imagemPrincipal && textoAposApoio && <p className="text-slate-100 text-base font-medium leading-relaxed whitespace-pre-wrap">{textoAposApoio}</p>}
   </div>
 }
 

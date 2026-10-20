@@ -1,0 +1,1795 @@
+[
+  {
+    "id": "sae-de6ca8f5d4990f1fb524",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "UFRGS",
+    "concurso": "UFRGS 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFGRS-2018",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UFGRS-2018) A partir da década de 90, foi proposta a classificação dos seres vivos em 3 domínios: Archaea, Bacteria e Eukarya. Sobre esses seres vivos, considere o quadro a seguir. \n\n Assinale a alternativa que, completando o quadro, contém a sequência de palavras que substitui corretamente os números de 1 a 4, de acordo com algumas das principais características de cada um desses grandes grupos.",
+    "opcoes": [
+      "ausente – ausentes – sim – sim",
+      "ausente – presentes – sim – sim",
+      "ausente – ausentes – sim – não",
+      "presente – presentes – não – sim",
+      "presente – ausentes – não – não"
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UFGRS-2018) A partir da década de 90, foi proposta a classificação dos seres vivos em 3 domínios: Archaea, Bacteria e Eukarya. Sobre esses seres vivos, considere o quadro a seguir. "
+        ]
+      },
+      {
+        "tag": "img",
+        "src": "/acervo/estudo-biologia-taxonomia/b874a36fea4cf073b226.jpg",
+        "alt": "Figura da questão",
+        "children": []
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Assinale a alternativa que, completando o quadro, contém a sequência de palavras que substitui corretamente os números de 1 a 4, de acordo com algumas das principais características de cada um desses grandes grupos. "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "ausente – ausentes – sim – sim "
+      ],
+      [
+        " ",
+        "ausente – presentes – sim – sim "
+      ],
+      [
+        " ",
+        "ausente – ausentes – sim – não "
+      ],
+      [
+        " ",
+        "presente – presentes – não – sim "
+      ],
+      [
+        " ",
+        "presente – ausentes – não – não "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 1,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-c973a8aa1adf360159b2",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "ENEM",
+    "concurso": "Enem 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Enem-2016",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(Enem-2016) Um pesquisador preparou um fragmento do caule de uma flor de margarida para que pudesse ser observado em microscopia óptica. Também preparou um fragmento de pele de rato com a mesma finalidade. Infelizmente, após algum descuido, as amostras foram misturadas. Que estruturas celulares permitiriam a separação das amostras, se reconhecidas?",
+    "opcoes": [
+      "Ribossomos e mitocôndrias, ausentes nas células animais.",
+      "Centríolos e lisossomos, organelas muito numerosas nas plantas.",
+      "Envoltório nuclear e nucléolo, característicos das células eucarióticas.",
+      "Lisossomos e peroxissomos, organelas exclusivas de células vegetais.",
+      "Parede celular e cloroplastos, estruturas características de células vegetais."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Enem-2016) Um pesquisador preparou um fragmento do caule de uma flor de margarida para que pudesse ser observado em microscopia óptica. Também preparou um fragmento de pele de rato com a mesma finalidade. Infelizmente, após algum descuido, as amostras foram misturadas. Que estruturas celulares permitiriam a separação das amostras, se reconhecidas? "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "Ribossomos e mitocôndrias, ausentes nas células animais. "
+      ],
+      [
+        " ",
+        "Centríolos e lisossomos, organelas muito numerosas nas plantas. "
+      ],
+      [
+        " ",
+        "Envoltório nuclear e nucléolo, característicos das células eucarióticas. "
+      ],
+      [
+        " ",
+        "Lisossomos e peroxissomos, organelas exclusivas de células vegetais. "
+      ],
+      [
+        " ",
+        "Parede celular e cloroplastos, estruturas características de células vegetais. "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 2,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-00d03e51778ae2d6931e",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "UFPA",
+    "concurso": "UFPA 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFPA-2016",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UFPA-2016) Em relação aos níveis de organização de um ser vivo, a alternativa que contém os termos que substituem adequadamente os números 1, 2, 3 e 4, sendo \n\n Célula → (1) → (2) → Sistema → (3) → (4) → Comunidade, é",
+    "opcoes": [
+      "1 - tecido, 2 - órgão, 3 - corpo, 4 - espécie",
+      "1 - órgão, 2 - tecido, 3 - organismo, 4 - ecossistema",
+      "1 - tecido, 2 - órgão, 3 - organismo, 4 - população",
+      "1 - organela, 2 - tecido, 3 - corpo, 4 - população",
+      "1 - organela, 2 - órgão, 3 - tecido, 4 - órgão"
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UFPA-2016) Em relação aos níveis de organização de um ser vivo, a alternativa que contém os termos que substituem adequadamente os números 1, 2, 3 e 4, sendo "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Célula ",
+          {
+            "tag": "span",
+            "children": [
+              "→"
+            ]
+          },
+          " (1) ",
+          {
+            "tag": "span",
+            "children": [
+              "→"
+            ]
+          },
+          " (2) ",
+          {
+            "tag": "span",
+            "children": [
+              "→"
+            ]
+          },
+          " Sistema ",
+          {
+            "tag": "span",
+            "children": [
+              "→"
+            ]
+          },
+          " (3) ",
+          {
+            "tag": "span",
+            "children": [
+              "→"
+            ]
+          },
+          " (4) ",
+          {
+            "tag": "span",
+            "children": [
+              "→"
+            ]
+          },
+          " Comunidade, é "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "1 - tecido, 2 - órgão, 3 - corpo, 4 - espécie "
+      ],
+      [
+        " ",
+        "1 - órgão, 2 - tecido, 3 - organismo, 4 - ecossistema "
+      ],
+      [
+        " ",
+        "1 - tecido, 2 - órgão, 3 - organismo, 4 - população "
+      ],
+      [
+        " ",
+        "1 - organela, 2 - tecido, 3 - corpo, 4 - população "
+      ],
+      [
+        " ",
+        "1 - organela, 2 - órgão, 3 - tecido, 4 - órgão "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 3,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-1be6e80e3f3e94712cc1",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "UECE",
+    "concurso": "UECE 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2019",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UECE-2019) Relacione, corretamente, os tipos celulares apresentados com suas respectivas características, numerando os parênteses de acordo com a seguinte indicação: \n\n1.Células eucariontes\n\n2.Células procariontes\n\n (________) Apresentam cromossomos que não são separados do citoplasma por membrana. \n\n (________) Não apresentam membranas internas no citoplasma. A invaginação da membrana plasmática é motivo de controvérsia entre pesquisadores. \n\n (________) Por serem células mais complexas, apresentam tamanho maior. \n\n (________) Apresentam uma complexa rede de tubos e filamentos que define sua forma e permite a realização de movimentos. \n\n A sequência correta, de cima para baixo, é:",
+    "opcoes": [
+      "2, 1, 2, 2.",
+      "2, 2, 1, 1.",
+      "1, 2, 1, 2.",
+      "1, 2, 2, 1."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UECE-2019) Relacione, corretamente, os tipos celulares apresentados com suas respectivas características, numerando os parênteses de acordo com a seguinte indicação: "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "1."
+            ]
+          },
+          "Células eucariontes"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "2."
+            ]
+          },
+          "Células procariontes"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          " Apresentam cromossomos que não são separados do citoplasma por membrana. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          " Não apresentam membranas internas no citoplasma. A invaginação da membrana plasmática é motivo de controvérsia entre pesquisadores. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          " Por serem células mais complexas, apresentam tamanho maior. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          " Apresentam uma complexa rede de tubos e filamentos que define sua forma e permite a realização de movimentos. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " A sequência correta, de cima para baixo, é: "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "2, 1, 2, 2. "
+      ],
+      [
+        " ",
+        "2, 2, 1, 1. "
+      ],
+      [
+        " ",
+        "1, 2, 1, 2. "
+      ],
+      [
+        " ",
+        "1, 2, 2, 1. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 4,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-73fbb3b7aa1acc96a6a9",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "UECE",
+    "concurso": "UECE 2015",
+    "ano": 2015,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2015",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UECE-2015) Árvores filogenéticas são diagramas representativos da classificação biológica, organizados com base em dados anatômicos, embriológicos e de informações derivadas do estudo de fósseis. Considerando as características dos organismos pertencentes aos cinco Reinos, é correto afirmar que",
+    "opcoes": [
+      "o Reino Animalia engloba seres vivos vertebrados, invertebrados, unicelulares, pluricelulares e preferencialmente heterótrofos.",
+      "seres pluricelulares, clorofilados e eucariontes pertencem ao Reino Plantae.",
+      "organismos autótrofos responsáveis pela decomposição da matéria orgânica animal ou vegetal pertencem ao Reino Fungi.",
+      "os Reinos Protista e Monera englobam, respectivamente, protozoários e algas."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UECE-2015) Árvores filogenéticas são diagramas representativos da classificação biológica, organizados com base em dados anatômicos, embriológicos e de informações derivadas do estudo de fósseis. Considerando as características dos organismos pertencentes aos cinco Reinos, é correto afirmar que "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "o Reino Animalia engloba seres vivos vertebrados, invertebrados, unicelulares, pluricelulares e preferencialmente heterótrofos. "
+      ],
+      [
+        " ",
+        "seres pluricelulares, clorofilados e eucariontes pertencem ao Reino Plantae. "
+      ],
+      [
+        " ",
+        "organismos autótrofos responsáveis pela decomposição da matéria orgânica animal ou vegetal pertencem ao Reino Fungi. "
+      ],
+      [
+        " ",
+        "os Reinos Protista e Monera englobam, respectivamente, protozoários e algas. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 5,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-ca1ae81f73710e3077d6",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "IFSP",
+    "concurso": "IFSP 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "IFSP-2016",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(IFSP-2016) Na tabela a seguir, estão marcadas a presença (+) ou a ausência (–) de componentes celulares (organelas) encontradas em cinco tipos de células de diferentes espécies de seres vivos (A, B, C, D, E). \n\n Assinale a alternativa com a associação INCORRETA.",
+    "opcoes": [
+      "Um organismo eucarioto e heterótrofo está em A.",
+      "Um organismo procarioto e autótrofo está em B.",
+      "Um organismo eucarioto e autótrofo está em D.",
+      "Um organismo eucarioto e autótrofo está em C.",
+      "Um organismo eucarioto e autótrofo está em E."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(IFSP-2016) Na tabela a seguir, estão marcadas a presença (+) ou a ausência (–) de componentes celulares (organelas) encontradas em cinco tipos de células de diferentes espécies de seres vivos (A, B, C, D, E). "
+        ]
+      },
+      {
+        "tag": "img",
+        "src": "/acervo/estudo-biologia-taxonomia/5edbbb9495c62486476c.jpg",
+        "alt": "Figura da questão",
+        "children": []
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Assinale a alternativa com a associação ",
+          {
+            "tag": "strong",
+            "children": [
+              "INCORRETA"
+            ]
+          },
+          ". "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "Um organismo eucarioto e heterótrofo está em A. "
+      ],
+      [
+        " ",
+        "Um organismo procarioto e autótrofo está em B. "
+      ],
+      [
+        " ",
+        "Um organismo eucarioto e autótrofo está em D. "
+      ],
+      [
+        " ",
+        "Um organismo eucarioto e autótrofo está em C. "
+      ],
+      [
+        " ",
+        "Um organismo eucarioto e autótrofo está em E. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 6,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-f9adaf21933533d0fd71",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "UFRGS",
+    "concurso": "UFRGS 2017",
+    "ano": 2017,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFRGS-2017",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UFRGS-2017) Observe a tira a seguir. \n\n BECK, A. Armandinho. Zero Hora. 10 ago. 2015. \n\n A biologia como ciência começou a ser estruturada no século XIX. Assinale com V (verdadeiro) ou F (falso) as afirmações a seguir, referentes a essa área de conhecimento. \n\n As células são unidades estruturais básicas que provêm de células preexistentes. \n\n Os seres vivos são geneticamente relacionados e capazes de evoluir. \n\n A maioria das reações químicas que mantêm os organismos vivos ocorre no ambiente extracelular. \n\n Conclusões obtidas a partir de um determinado organismo não podem servir de base para investigações em outros seres vivos. \n\n A sequência correta de preenchimento dos parênteses, de cima para baixo, é",
+    "opcoes": [
+      "V – V – F – F.",
+      "V – F – V – F.",
+      "V – F – F – V.",
+      "F – F – V – F.",
+      "F – V – V – V."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UFRGS-2017) Observe a tira a seguir. "
+        ]
+      },
+      {
+        "tag": "img",
+        "src": "/acervo/estudo-biologia-taxonomia/d99f64a9f4053a9141d2.jpg",
+        "alt": "Figura da questão",
+        "children": []
+      },
+      {
+        "tag": "p",
+        "children": [
+          " BECK, A. ",
+          {
+            "tag": "strong",
+            "children": [
+              "Armandinho"
+            ]
+          },
+          ". Zero Hora. 10 ago. 2015. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " A biologia como ciência começou a ser estruturada no século XIX. Assinale com ",
+          {
+            "tag": "strong",
+            "children": [
+              "V"
+            ]
+          },
+          " (verdadeiro) ou ",
+          {
+            "tag": "strong",
+            "children": [
+              "F"
+            ]
+          },
+          " (falso) as afirmações a seguir, referentes a essa área de conhecimento. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " As células são unidades estruturais básicas que provêm de células preexistentes. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Os seres vivos são geneticamente relacionados e capazes de evoluir. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " A maioria das reações químicas que mantêm os organismos vivos ocorre no ambiente extracelular. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Conclusões obtidas a partir de um determinado organismo não podem servir de base para investigações em outros seres vivos. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " A sequência correta de preenchimento dos parênteses, de cima para baixo, é "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "V – V – F – F. "
+      ],
+      [
+        " ",
+        "V – F – V – F. "
+      ],
+      [
+        " ",
+        "V – F – F – V. "
+      ],
+      [
+        " ",
+        "F – F – V – F. "
+      ],
+      [
+        " ",
+        "F – V – V – V. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 7,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-1620c5b4e540391fa043",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "Insper",
+    "concurso": "INSPER 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "INSPER-2018",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(INSPER-2018) Os cladogramas são representações gráficas do processo evolutivo de grupos de seres vivos. O cladograma a seguir ilustra a complexa relação evolutiva entre as tartarugas, os lagartos, as cobras, as aves, os dinossauros não aviários e os crocodilianos. \n\n http://www.ib.usp.br/evosite/evo101/IIDClassification.shtml \n\n A interpretação do cladograma permite afirmar que evolutivamente",
+    "opcoes": [
+      "os dinossauros não aviários são mais próximos das cobras do que dos lagartos.",
+      "a proximidade entre as aves e os crocodilianos é maior que a proximidade entre as tartarugas e os lagartos.",
+      "os crocodilianos e as tartarugas compartilham um ancestral comum que não é ancestral das aves.",
+      "os lagartos e os crocodilianos compartilham um ancestral comum que não é ancestral das cobras.",
+      "as cobras são mais próximas das aves do que dos crocodilianos."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(INSPER-2018) Os cladogramas são representações gráficas do processo evolutivo de grupos de seres vivos. O cladograma a seguir ilustra a complexa relação evolutiva entre as tartarugas, os lagartos, as cobras, as aves, os dinossauros não aviários e os crocodilianos. "
+        ]
+      },
+      {
+        "tag": "img",
+        "src": "/acervo/estudo-biologia-taxonomia/c6b93abc868b7a1919df.jpg",
+        "alt": "Figura da questão",
+        "children": []
+      },
+      {
+        "tag": "p",
+        "children": [
+          " http://www.ib.usp.br/evosite/evo101/IIDClassification.shtml "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " A interpretação do cladograma permite afirmar que evolutivamente "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "os dinossauros não aviários são mais próximos das cobras do que dos lagartos. "
+      ],
+      [
+        " ",
+        "a proximidade entre as aves e os crocodilianos é maior que a proximidade entre as tartarugas e os lagartos. "
+      ],
+      [
+        " ",
+        "os crocodilianos e as tartarugas compartilham um ancestral comum que não é ancestral das aves. "
+      ],
+      [
+        " ",
+        "os lagartos e os crocodilianos compartilham um ancestral comum que não é ancestral das cobras. "
+      ],
+      [
+        " ",
+        "as cobras são mais próximas das aves do que dos crocodilianos. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 8,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-6aa495b37fc85741cd6a",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "Insper",
+    "concurso": "INSPER 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "INSPER-2019",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(INSPER-2019) Analise a organização dos seguintes grupos animais. \n\nClasse: Aves\n\nFamília: Psittacidae\n\n Espécie: Anodorhynchus hyacinthinus (arara-azul-grande) \n\n Espécie: Anodorhynchus glaucus (arara-azul-pequena) \n\n Espécie: Ara ararauna (arara-canindé) \n\nEspécie: Ara macao (araracanga)\n\n Espécie: Amazona aestiva (papagaio verdadeiro) \n\n Espécie: Amazona brasiliensis (papagaio-da-cara-roxa) \n\n A taxonomia dos grupos listados compreende",
+    "opcoes": [
+      "três gêneros e seis espécies, pertencentes à mesma Ordem.",
+      "dois gêneros e seis espécies, pertencentes à mesma Família.",
+      "três gêneros e seis espécies, pertencentes a Filos diferentes.",
+      "três gêneros, três espécies e seis subespécies, pertencentes à mesma Classe.",
+      "dois gêneros e três espécies, pertencentes a subespécies diferentes."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(INSPER-2019) Analise a organização dos seguintes grupos animais. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Classe: Aves"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Família: Psittacidae"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Espécie: ",
+          {
+            "tag": "em",
+            "children": [
+              "Anodorhynchus hyacinthinus "
+            ]
+          },
+          "(arara-azul-grande) "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Espécie: ",
+          {
+            "tag": "em",
+            "children": [
+              "Anodorhynchus glaucus"
+            ]
+          },
+          " (arara-azul-pequena) "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Espécie: ",
+          {
+            "tag": "em",
+            "children": [
+              "Ara ararauna"
+            ]
+          },
+          " (arara-canindé) "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Espécie: ",
+          {
+            "tag": "em",
+            "children": [
+              "Ara macao"
+            ]
+          },
+          " (araracanga)"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Espécie: ",
+          {
+            "tag": "em",
+            "children": [
+              "Amazona aestiva"
+            ]
+          },
+          " (papagaio verdadeiro) "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Espécie: ",
+          {
+            "tag": "em",
+            "children": [
+              "Amazona brasiliensis"
+            ]
+          },
+          " (papagaio-da-cara-roxa) "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " A taxonomia dos grupos listados compreende "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "três gêneros e seis espécies, pertencentes à mesma Ordem. "
+      ],
+      [
+        " ",
+        "dois gêneros e seis espécies, pertencentes à mesma Família. "
+      ],
+      [
+        " ",
+        "três gêneros e seis espécies, pertencentes a Filos diferentes. "
+      ],
+      [
+        " ",
+        "três gêneros, três espécies e seis subespécies, pertencentes à mesma Classe. "
+      ],
+      [
+        " ",
+        "dois gêneros e três espécies, pertencentes a subespécies diferentes. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 9,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-edd8bd9d0f0dae3dd708",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "UECE",
+    "concurso": "UECE 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2019",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UECE-2019) Estima-se que até 100 milhões de diferentes espécies vivas dividem este mundo com você. Toda essa diversidade é classificada em categorias taxonômicas hierárquicas. Assinale a opção que corresponde às principais categorias taxonômicas em ordem decrescente de hierarquia.",
+    "opcoes": [
+      "domínio – reino – filo – ordem – classe – família – gênero – espécie",
+      "espécie – gênero – família – classe – ordem – filo – reino – domínio",
+      "domínio – reino – filo – classe – ordem – família – gênero – espécie",
+      "espécie – gênero – família – ordem – classe – filo – reino – domínio"
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UECE-2019) Estima-se que até 100 milhões de diferentes espécies vivas dividem este mundo com você. Toda essa diversidade é classificada em categorias taxonômicas hierárquicas. Assinale a opção que corresponde às principais categorias taxonômicas em ordem decrescente de hierarquia. "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "domínio – reino – filo – ordem – classe – família – gênero – espécie "
+      ],
+      [
+        " ",
+        "espécie – gênero – família – classe – ordem – filo – reino – domínio "
+      ],
+      [
+        " ",
+        "domínio – reino – filo – classe – ordem – família – gênero – espécie "
+      ],
+      [
+        " ",
+        "espécie – gênero – família – ordem – classe – filo – reino – domínio "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 10,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-8e4f415f3e5c499423ed",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "CPS",
+    "concurso": "CPS 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "CPS-2018",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(CPS-2018) Para estudar as principais características das células, o professor de Ciências solicitou que os alunos examinassem e citassem as principais estruturas de quatro tipos de células diferentes observadas em desenhos esquemáticos: uma bactéria, um fungo, uma célula de um pedaço de folha retirado de uma roseira e uma célula de um pedaço de músculo retirado de um mamífero. Entre as estruturas citadas pelos alunos destacaram-se: mitocôndrias, cloroplastos, parede celular e membrana nuclear. \n\n Considerando os quatro tipos de células observadas é correto afirmar que:",
+    "opcoes": [
+      "a célula vegetal possui apenas a membrana nuclear e os cloroplastos das estruturas citadas.",
+      "a célula animal possui apenas os cloroplastos e as mitocôndrias das estruturas citadas.",
+      "a bactéria e a célula vegetal possuem todas as estruturas citadas.",
+      "o fungo e a célula animal não possuem as estruturas citadas.",
+      "a célula vegetal possui todas as estruturas citadas."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(CPS-2018) Para estudar as principais características das células, o professor de Ciências solicitou que os alunos examinassem e citassem as principais estruturas de quatro tipos de células diferentes observadas em desenhos esquemáticos: uma bactéria, um fungo, uma célula de um pedaço de folha retirado de uma roseira e uma célula de um pedaço de músculo retirado de um mamífero. Entre as estruturas citadas pelos alunos destacaram-se: mitocôndrias, cloroplastos, parede celular e membrana nuclear. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Considerando os quatro tipos de células observadas é correto afirmar que: "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "a célula vegetal possui apenas a membrana nuclear e os cloroplastos das estruturas citadas. "
+      ],
+      [
+        " ",
+        "a célula animal possui apenas os cloroplastos e as mitocôndrias das estruturas citadas. "
+      ],
+      [
+        " ",
+        "a bactéria e a célula vegetal possuem todas as estruturas citadas. "
+      ],
+      [
+        " ",
+        "o fungo e a célula animal não possuem as estruturas citadas. "
+      ],
+      [
+        " ",
+        "a célula vegetal possui todas as estruturas citadas. "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 13,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-bf746247d9a3e99dacc7",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "FUVEST",
+    "concurso": "Fuvest 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Fuvest-2016",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Fuvest-2016) Atualmente, os seres vivos são classificados em três domínios: Bacteria, Archaea e Eukarya. Todos os eucariotos estão incluídos no domínio Eukarya, e os procariotos estão distribuídos entre os domínios Bacteria e Archaea. Estudos do DNA ribossômico mostraram que os procariotos do domínio Archaea compartilham, com os eucariotos, sequências de bases nitrogenadas, que não estão presentes nos procariotos do domínio Bacteria. Esses resultados apoiam as relações evolutivas representadas na árvore",
+    "opcoes": [
+      "Diagrama da alternativa A",
+      "Diagrama da alternativa B",
+      "Diagrama da alternativa C",
+      "Diagrama da alternativa D",
+      "Diagrama da alternativa E"
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Fuvest-2016) Atualmente, os seres vivos são classificados em três domínios: Bacteria, Archaea e Eukarya. Todos os eucariotos estão incluídos no domínio Eukarya, e os procariotos estão distribuídos entre os domínios Bacteria e Archaea. Estudos do DNA ribossômico mostraram que os procariotos do domínio Archaea compartilham, com os eucariotos, sequências de bases nitrogenadas, que não estão presentes nos procariotos do domínio Bacteria. Esses resultados apoiam as relações evolutivas representadas na árvore "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        {
+          "tag": "img",
+          "src": "/acervo/estudo-biologia-taxonomia/8a2593a578866630c05c.jpg",
+          "alt": "Figura da questão",
+          "children": []
+        },
+        " "
+      ],
+      [
+        " ",
+        " ",
+        {
+          "tag": "img",
+          "src": "/acervo/estudo-biologia-taxonomia/127bdf2b3c03037269a9.jpg",
+          "alt": "Figura da questão",
+          "children": []
+        },
+        " "
+      ],
+      [
+        " ",
+        " ",
+        {
+          "tag": "img",
+          "src": "/acervo/estudo-biologia-taxonomia/c0c8684758fd8decff73.jpg",
+          "alt": "Figura da questão",
+          "children": []
+        },
+        " "
+      ],
+      [
+        " ",
+        " ",
+        {
+          "tag": "img",
+          "src": "/acervo/estudo-biologia-taxonomia/1364ca85f37487f930f3.jpg",
+          "alt": "Figura da questão",
+          "children": []
+        },
+        " "
+      ],
+      [
+        " ",
+        " ",
+        {
+          "tag": "img",
+          "src": "/acervo/estudo-biologia-taxonomia/56c45a8144912d21b5c8.jpg",
+          "alt": "Figura da questão",
+          "children": []
+        },
+        " "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 14,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-ef2ad0e9ac2ea7b45124",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "UFRGS",
+    "concurso": "UFRGS 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFRGS-2016",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UFRGS-2016) Em relação à classificação dos seres vivos, assinale com V (verdadeiro) ou F (falso) as afirmações abaixo. \n\n Plantas que pertencem ao mesmo gênero pertencem também à mesma espécie. \n\n Categorias taxonômicas são utilizadas em sistemas de classificação de animais. \n\n Organismos classificados dentro da mesma classe têm maior semelhança entre si do que os classificados dentro da mesma família. \n\n Zea mays, na nomenclatura biológica, é o nome genérico do milho. \n\n A sequência correta de preenchimento dos parênteses, de cima para baixo, é",
+    "opcoes": [
+      "F – F – V – F.",
+      "V – V – F – V.",
+      "F – V – F – F.",
+      "V – V – F – F.",
+      "F – F – V – V."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "",
+          {
+            "tag": "span",
+            "children": [
+              "(UFRGS-2016) "
+            ]
+          },
+          "Em relação à classificação dos seres vivos, assinale com ",
+          {
+            "tag": "span",
+            "children": [
+              "V "
+            ]
+          },
+          "(verdadeiro) ou ",
+          {
+            "tag": "span",
+            "children": [
+              "F "
+            ]
+          },
+          "(falso) as afirmações abaixo. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Plantas que pertencem ao mesmo gênero pertencem também à mesma espécie. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Categorias taxonômicas são utilizadas em sistemas de classificação de animais. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Organismos classificados dentro da mesma classe têm maior semelhança entre si do que os classificados dentro da mesma família. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "em",
+            "children": [
+              " Zea mays"
+            ]
+          },
+          ", na nomenclatura biológica, é o nome genérico do milho. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " A sequência correta de preenchimento dos parênteses, de cima para baixo, é "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "F – F – V – F. "
+      ],
+      [
+        " ",
+        "V – V – F – V. "
+      ],
+      [
+        " ",
+        "F – V – F – F. "
+      ],
+      [
+        " ",
+        "V – V – F – F. "
+      ],
+      [
+        " ",
+        "F – F – V – V. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 15,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-21caa2b8ccea94b46919",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "ENEM",
+    "concurso": "Enem 2014",
+    "ano": 2014,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Enem-2014",
+    "adaptada": false,
+    "dificuldade": "Não informada",
+    "enunciado": "(Enem-2014) A reprodução é uma característica atribuída a todos os seres vivos, unicelulares ou pluricelulares, de qualquer espécie. \n\n Em condições naturais, a importância dessa característica reside no fato de permitir o(a)",
+    "opcoes": [
+      "transferência de características básicas entre indivíduos de espécies diferentes.",
+      "duplicação da quantidade de DNA nas células da espécie ao longo das gerações.",
+      "cruzamento entre indivíduos de espécies diferentes, gerando descendentes férteis.",
+      "aumento da quantidade de células dos seres vivos, para que se tornem pluricelulares.",
+      "perpetuação da espécie e conservação de suas características ao longo das gerações."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "",
+          {
+            "tag": "span",
+            "children": [
+              "(Enem-2014) "
+            ]
+          },
+          "A reprodução é uma característica atribuída a todos os seres vivos, unicelulares ou pluricelulares, de qualquer espécie. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Em condições naturais, a importância dessa característica reside no fato de permitir o(a) "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "transferência de características básicas entre indivíduos de espécies diferentes. "
+      ],
+      [
+        " ",
+        "duplicação da quantidade de DNA nas células da espécie ao longo das gerações. "
+      ],
+      [
+        " ",
+        "cruzamento entre indivíduos de espécies diferentes, gerando descendentes férteis. "
+      ],
+      [
+        " ",
+        "aumento da quantidade de células dos seres vivos, para que se tornem pluricelulares. "
+      ],
+      [
+        " ",
+        "perpetuação da espécie e conservação de suas características ao longo das gerações. "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 16,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-854f16d93860979ca259",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "UFTM",
+    "concurso": "UFTM 2012",
+    "ano": 2012,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFTM-2012",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UFTM-2012) Considere algumas características que podem ser encontradas em diferentes seres vivos. \n\n I.Parede celular de quitina e digestão extracorpórea. \n\n II.Material genético disperso no citoplasma e presença de plasmídeos dispersos no citosol. \n\n III.Cápsula proteica envolvendo o material genético, podendo ser DNA ou RNA. \n\n IV.Multicelulares, presença de tecidos e autótrofos. \n\n Vírus, bactérias, vegetais e fungos apresentam, respectivamente, as características",
+    "opcoes": [
+      "I, II, III e IV.",
+      "II, IV, III e I.",
+      "III, I, II e IV.",
+      "II, I, IV e III.",
+      "III, II, IV e I."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "",
+          {
+            "tag": "span",
+            "children": [
+              "(UFTM-2012) Considere"
+            ]
+          },
+          " algumas características que podem ser encontradas em diferentes seres vivos. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "I."
+            ]
+          },
+          "Parede celular de quitina e digestão extracorpórea. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "II."
+            ]
+          },
+          "Material genético disperso no citoplasma e presença de plasmídeos dispersos no citosol. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "III."
+            ]
+          },
+          "Cápsula proteica envolvendo o material genético, podendo ser DNA ou RNA. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "IV."
+            ]
+          },
+          "Multicelulares, presença de tecidos e autótrofos. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Vírus, bactérias, vegetais e fungos apresentam, respectivamente, as características "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "I, II, III e IV. "
+      ],
+      [
+        " ",
+        "II, IV, III e I. "
+      ],
+      [
+        " ",
+        "III, I, II e IV. "
+      ],
+      [
+        " ",
+        "II, I, IV e III. "
+      ],
+      [
+        " ",
+        "III, II, IV e I. "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 17,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-2ea01dce093e0d77294e",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "COTUCA",
+    "concurso": "COTUCA 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "COTUCA-2019",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(COTUCA-2019) Tinha cara de cachorro, corpo de jacaré, vivia na região onde hoje é o Rio Grande do Sul e, até então, era desconhecido dos cientistas. Uma nova espécie de cinodonte – animal que está no grupo dos ancestrais dos mamíferos – foi identificada a partir de fósseis de 230 milhões de anos atrás. O bicho foi denominado Siriusgnathus niemeyerorum, em referência à estrela Sirius, a mais brilhante da constelação de Cão Maior, e ao bruxo Sirius Black, da série de livros “Harry Potter”, que se transformava em cachorro. Esses animais eram caracterizados por grandes dentes, lembrando os caninos de cachorros (“cinodontes” refere-se a “cão” e “odontes”, a “dentes”). A equipe de paleontólogos da Universidade Federal de Santa Maria (RS) encontrou crânios e mandíbulas de quatro exemplares do bicho. \n\n Adaptado de: https://noticias.uol.com.br/ciencia/ultimas-noticias/redacao/2018/08/31/fossil-de-bichocom-corpo-de-reptil-e-porte-de-cachorro-e-encontrado-no-rs.htm. Acesso em: 30 ago. 2018. \n\n Considerando as informações contidas no texto e seus conhecimentos sobre evolução, assinale a alternativa correta.",
+    "opcoes": [
+      "Considerando a descrição do animal, podemos afirmar que, seguramente, esse animal é ancestral dos cachorros atuais.",
+      "Se considerarmos que o animal descrito possuía corpo de réptil e porte de cachorro, é razoável imaginar que ele possui um ancestral comum aos répteis e aos mamíferos.",
+      "Com certeza, trata-se de um animal que, durante sua evolução, ao utilizar mais os dentes para predar, desenvolveu-os até ficarem grandes.",
+      "Por se tratar de um animal que evoluiu de um réptil, em ambiente mais frio, foi desenvolvendo pelos, devido à necessidade de gerar calor nesse ambiente, até se tornar um mamífero.",
+      "A espécie considerada não pode ter tido um ancestral réptil, pois répteis só surgiram no planeta depois dos mamíferos."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(COTUCA-2019) Tinha cara de cachorro, corpo de jacaré, vivia na região onde hoje é o Rio Grande do Sul e, até então, era desconhecido dos cientistas. Uma nova espécie de cinodonte – animal que está no grupo dos ancestrais dos mamíferos – foi identificada a partir de fósseis de 230 milhões de anos atrás. O bicho foi denominado ",
+          {
+            "tag": "em",
+            "children": [
+              "Siriusgnathus niemeyerorum"
+            ]
+          },
+          ", em referência à estrela Sirius, a mais brilhante da constelação de Cão Maior, e ao bruxo Sirius Black, da série de livros “Harry Potter”, que se transformava em cachorro. Esses animais eram caracterizados por grandes dentes, lembrando os caninos de cachorros (“cinodontes” refere-se a “cão” e “odontes”, a “dentes”). A equipe de paleontólogos da Universidade Federal de Santa Maria (RS) encontrou crânios e mandíbulas de quatro exemplares do bicho. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Adaptado de: https://noticias.uol.com.br/ciencia/ultimas-noticias/redacao/2018/08/31/fossil-de-bichocom-corpo-de-reptil-e-porte-de-cachorro-e-encontrado-no-rs.htm. Acesso em: 30 ago. 2018. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Considerando as informações contidas no texto e seus conhecimentos sobre evolução, assinale a alternativa correta. "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "Considerando a descrição do animal, podemos afirmar que, seguramente, esse animal é ancestral dos cachorros atuais. "
+      ],
+      [
+        " ",
+        "Se considerarmos que o animal descrito possuía corpo de réptil e porte de cachorro, é razoável imaginar que ele possui um ancestral comum aos répteis e aos mamíferos. "
+      ],
+      [
+        " ",
+        "Com certeza, trata-se de um animal que, durante sua evolução, ao utilizar mais os dentes para predar, desenvolveu-os até ficarem grandes. "
+      ],
+      [
+        " ",
+        "Por se tratar de um animal que evoluiu de um réptil, em ambiente mais frio, foi desenvolvendo pelos, devido à necessidade de gerar calor nesse ambiente, até se tornar um mamífero. "
+      ],
+      [
+        " ",
+        "A espécie considerada não pode ter tido um ancestral réptil, pois répteis só surgiram no planeta depois dos mamíferos. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 18,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-4d95ea172ae896232244",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "UNICAMP",
+    "concurso": "Unicamp 2017",
+    "ano": 2017,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Unicamp-2017",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(Unicamp-2017) O cladograma a seguir representa relações evolutivas entre membros da Superfamília Hominoidea, onde se observa que",
+    "opcoes": [
+      "homens e gibões (Hylobatidae) não possuem ancestral comum.",
+      "homens, gorilas (Gorilla) e orangotangos (Pongo) pertencem a famílias diferentes.",
+      "homens, gibões e chimpanzés (Pan) possuem um ancestral comum.",
+      "homens, orangotangos (Pongo) e gibões (Hylobatidae) são primatas pertencentes à mesma família."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Unicamp-2017) O cladograma a seguir representa relações evolutivas entre membros da Superfamília Hominoidea, onde se observa que "
+        ]
+      },
+      {
+        "tag": "img",
+        "src": "/acervo/estudo-biologia-taxonomia/b0d7d308b49b4bdcee9f.jpg",
+        "alt": "Figura da questão",
+        "children": []
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "homens e gibões (Hylobatidae) não possuem ancestral comum. "
+      ],
+      [
+        " ",
+        "homens, gorilas (Gorilla) e orangotangos (Pongo) pertencem a famílias diferentes. "
+      ],
+      [
+        " ",
+        "homens, gibões e chimpanzés (Pan) possuem um ancestral comum. "
+      ],
+      [
+        " ",
+        "homens, orangotangos (Pongo) e gibões (Hylobatidae) são primatas pertencentes à mesma família. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 19,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-4f2d7963a7cda44fbb2c",
+    "materia": "Biologia",
+    "conteudo": "Taxonomia e classificação dos seres vivos",
+    "banca": "PUCRS",
+    "concurso": "PUCRS 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "PUCRS-2018",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(PUCRS-2018) Considere a matriz binária representada abaixo, na qual “0” significa ausência e “1” presença de determinadas características (c1, c2, c3 e c4) em cinco espécies hipotéticas (E1, E2, E3, E4 e E5). \n\n Assinale a alternativa que mostra o cladograma que melhor representa o grau de similaridade entre as espécies E1, E2, E3, E4 e E5.",
+    "opcoes": [
+      "Diagrama da alternativa A",
+      "Diagrama da alternativa B",
+      "Diagrama da alternativa C",
+      "Diagrama da alternativa D"
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(PUCRS-2018) Considere a matriz binária representada abaixo, na qual “0” significa ausência e “1” presença de determinadas características (c1, c2, c3 e c4) em cinco espécies hipotéticas (E",
+          {
+            "tag": "sub",
+            "children": [
+              "1"
+            ]
+          },
+          ", E",
+          {
+            "tag": "sub",
+            "children": [
+              "2"
+            ]
+          },
+          ", E",
+          {
+            "tag": "sub",
+            "children": [
+              "3"
+            ]
+          },
+          ", E",
+          {
+            "tag": "sub",
+            "children": [
+              "4"
+            ]
+          },
+          " e E",
+          {
+            "tag": "sub",
+            "children": [
+              "5"
+            ]
+          },
+          "). "
+        ]
+      },
+      {
+        "tag": "img",
+        "src": "/acervo/estudo-biologia-taxonomia/99bbb79c7e3e2762c484.jpg",
+        "alt": "Figura da questão",
+        "children": []
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Assinale a alternativa que mostra o cladograma que melhor representa o grau de similaridade entre as espécies E",
+          {
+            "tag": "sub",
+            "children": [
+              "1"
+            ]
+          },
+          ", E",
+          {
+            "tag": "sub",
+            "children": [
+              "2"
+            ]
+          },
+          ", E",
+          {
+            "tag": "sub",
+            "children": [
+              "3"
+            ]
+          },
+          ", E",
+          {
+            "tag": "sub",
+            "children": [
+              "4"
+            ]
+          },
+          " e E",
+          {
+            "tag": "sub",
+            "children": [
+              "5"
+            ]
+          },
+          ". "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        {
+          "tag": "img",
+          "src": "/acervo/estudo-biologia-taxonomia/0ad86dcadc8c36aa1c46.png",
+          "alt": "Figura da questão",
+          "children": []
+        },
+        " "
+      ],
+      [
+        " ",
+        " ",
+        {
+          "tag": "img",
+          "src": "/acervo/estudo-biologia-taxonomia/3075a487fae9fa723fb1.png",
+          "alt": "Figura da questão",
+          "children": []
+        },
+        " "
+      ],
+      [
+        " ",
+        " ",
+        {
+          "tag": "img",
+          "src": "/acervo/estudo-biologia-taxonomia/c70bf93903675712469e.png",
+          "alt": "Figura da questão",
+          "children": []
+        },
+        " "
+      ],
+      [
+        " ",
+        " ",
+        {
+          "tag": "img",
+          "src": "/acervo/estudo-biologia-taxonomia/28e2ae6a406ff1b948ff.png",
+          "alt": "Figura da questão",
+          "children": []
+        },
+        " "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6dd",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Seres vivos e taxonomia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-seres-vivos-e-taxonomia-3pvZ_",
+      "titulo_documento": "EXT26_3_BIO_L1_A_01",
+      "numero": 20,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  }
+]

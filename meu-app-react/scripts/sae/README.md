@@ -27,3 +27,13 @@ Dos 39 exercícios capturados neste capítulo, oito permanecem em quarentena (ci
 Os recortes antigos de `tmp/sae-importacao/paginas` apresentaram desalinhamento entre coordenadas e captura. Não os publicar sem nova conferência. Este lote usa os elementos e recursos originais preservados em `assets`, não esses recortes.
 
 Reconstrução auditável: `node scripts/sae/publicar-modelos-atomicos.mjs` (exige os dados intermediários locais). Validação do resultado publicado: `node --test scripts/sae-lote-modelos.test.mjs`.
+
+## Lote de Biologia: Seres vivos e taxonomia
+
+`public/acervo/estudo-biologia-taxonomia/questoes.json` contém 18 questões revisadas, com 15 recursos visuais, inclusive cladogramas separados em cada alternativa. Dos 23 exercícios capturados no capítulo, quatro ficaram em quarentena (três sem resposta objetiva única e um com marcação incompatível com a grafia das alternativas) e uma cópia ENEM já publicada foi excluída. Auditoria: `docs/acervo/estudo-biologia-taxonomia.json`.
+
+O formato `blocos_enunciado`/`blocos_opcoes` preserva a ordem dos parágrafos, imagens, ênfases, subscritos, sobrescritos e tabelas com células mescladas. A normalização elimina controles, links de resolução e atributos de marcação do gabarito. O site renderiza somente elementos de uma lista permitida, sem HTML executável, scripts ou imagens externas. Texto simples continua presente para busca e deduplicação; alternativas compostas apenas de diagramas recebem rótulos acessíveis.
+
+Os quatro capítulos da primeira frente do Volume 1 de Biologia foram capturados (98 exercícios, 76 marcações únicas de gabarito). Esta publicação cobre apenas o primeiro capítulo. Vírus e fungos, bactérias e arqueas, algas e protozoários ainda precisam de revisão. Não confundir captura com publicação.
+
+Reconstrução: `node scripts/sae/publicar-taxonomia.mjs`. Testes: `node --test scripts/sae-taxonomia.test.mjs`.

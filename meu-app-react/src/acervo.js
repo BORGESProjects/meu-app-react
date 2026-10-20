@@ -1,6 +1,7 @@
 import esa2025 from './data/esa2025.json' with { type: 'json' }
 import enem2022 from './data/enem2022.json' with { type: 'json' }
 import { BANCA_ASSIMILACAO, normalizarBanca, normalizarMateria } from './filtros.js'
+import {blocosValidos,temApoioEmBlocos} from './blocosQuestao.js'
 
 export const acervo = [...esa2025, ...enem2022]
 
@@ -114,6 +115,7 @@ function semTextoDeApoio(questao) {
   const referenciaOutroTexto = /(?:according to|de acordo com|conforme|segundo) (?:the |o |a )?(?:text|texto|trecho|poema|tirinha|charge|cartum)/iu.test(enunciado)
   const referenciaVisualAusente = /(?:figura|imagem|gráfico|mapa|infográfico|diagrama|esquema|charge|tirinha|cartum|fotografia|quadro|tabela)\s+(?:a seguir|abaixo|acima|ao lado)|(?:observe|analise|considere|com base n[oa])\s+(?:a |o )?(?:figura|imagem|gráfico|mapa|infográfico|diagrama|esquema|charge|tirinha|cartum|fotografia|quadro|tabela)/iu.test(enunciado)
   const temApoio = Boolean(String(questao.texto_apoio ?? '').trim())
+    || temApoioEmBlocos(questao.blocos_enunciado)
     || Boolean(questao.imagem_original || questao.pagina_imagem)
     || (Array.isArray(questao.apoio) && questao.apoio.length > 0)
   return (referenciaOutroTexto || referenciaVisualAusente) && !temApoio
@@ -185,6 +187,8 @@ export function corrigirQuestaoConferida(questao) {
 }
 
 export function questaoPublicavel(questao) {
+  if (questao?.blocos_enunciado && !blocosValidos(questao.blocos_enunciado)) return false
+  if (questao?.blocos_opcoes && (!Array.isArray(questao.blocos_opcoes) || questao.blocos_opcoes.length !== questao.opcoes?.length || !questao.blocos_opcoes.every(blocosValidos))) return false
   if (!questao || String(questao.enunciado ?? '').trim().length < 12) return false
   if (!Array.isArray(questao.opcoes) || questao.opcoes.length < 2 || questao.opcoes.length > 5) return false
 
