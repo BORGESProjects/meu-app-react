@@ -1,48 +1,65 @@
 # Importação do pacote Teorema Militar
 
-## Lote 1 — 19/10/2026
+## Material recebido
 
-O pacote recebido contém 2.345 registros de 154 PDFs distintos referenciados no
-CSV completo, além de 717 imagens. O relatório de origem declara 180 PDFs
-recebidos e 179 únicos processados; esses números não equivalem à quantidade
-de arquivos com questões efetivamente presentes no CSV.
+O CSV contém 2.345 registros vinculados a 154 nomes de PDFs, além de 717
+imagens antigas. O relatório de origem declara 180 PDFs recebidos e 179 únicos;
+nem todos produziram registros neste CSV. Os 154 PDFs referenciados foram
+localizados. Os arquivos originais foram preservados.
 
-A importação direta do script fornecido no pacote foi descartada: há questões
-misturadas, respostas divergentes do gabarito e recortes de coluna que cortam
-texto ao meio. Os arquivos originais do pacote permanecem intactos.
+A importação direta fornecida no pacote foi descartada por misturar questões,
+alternativas e gabaritos. As imagens publicadas foram reconstruídas dos PDFs,
+com enunciado separado das alternativas, na quantidade original de quatro ou
+cinco opções. Nenhuma chave de serviço ou senha foi adicionada à publicação.
 
-Foram localizados de forma única 152 dos 154 PDFs referenciados, em uma pasta
-local do usuário. Nenhuma chave de serviço foi solicitada ou enviada ao site.
+## Primeiro lote — 19/10/2026
 
-### Publicação
+Foram publicadas 102 questões de Geografia, com 602 imagens, 20 gabaritos do
+CSV corrigidos e 11 questões de assimilação. Commits f775bf10 e f0f8027d.
+O lote permanece preservado, incluindo seus identificadores e progresso.
 
-- 102 questões de Geografia reconstruídas a partir dos PDFs originais.
-- 602 imagens WebP: enunciado separado de cada alternativa; quantidade original
-  de quatro ou cinco alternativas preservada.
-- 20 respostas do CSV corrigidas pelo gabarito do material. Não se afirma que
-  esses gabaritos de apostila foram todos confrontados com provas oficiais.
-- 11 questões sem identificação agrupadas em “Questões de assimilação”, sem
-  ano fictício; as demais mantêm a instituição e somente o ano explicitado.
-- Uma questão semelhante já existente não foi adicionada.
-- Nove identificações de banca divergentes permanecem para conferência.
+## Revisão dos 2.242 pendentes — 20/10/2026
 
-Os recortes foram conferidos visualmente, inclusive continuações entre páginas,
-mapas, tabelas, fontes e alternativas. O lote é servido junto ao acervo estático
-existente, em `public/acervo/teorema-180/questoes.json`; não foi inserido novamente
-na tabela Supabase, evitando duas cópias do mesmo lote.
+- 2.053 novas questões aprovadas e incorporadas ao acervo público.
+- 22 registros repetidos não adicionados.
+- 167 registros retidos para revisão individual; não foram publicados.
+- 1.018 respostas divergentes do CSV corrigidas pelo gabarito do material.
+- 309 novas questões sem instituição identificada agrupadas como questões de assimilação, sem ano fictício.
+- 11.964 novas imagens WebP verificadas; total do lote público: 2.155 questões.
 
-### Pendências — não publicar automaticamente
+Foram conferidos a associação entre CSV e PDF por texto e alternativas,
+numerações repetidas por nível, respostas, quantidade de opções, arquivos
+visuais e aceitação pela interface. Fórmulas, gráficos, tabelas e textos-base
+são preservados em recortes. Houve amostragem visual, incluindo frações,
+potências, raízes, estruturas químicas, continuações entre colunas e páginas.
+Limites visuais não comprovados continuam retidos. Essa conferência estrutural
+não equivale à leitura manual integral de todos os itens nem à validação de
+cada resposta em um gabarito oficial externo: a referência é o gabarito do
+material fornecido.
 
-Dos 2.345 registros, 2.233 não passaram pela reconstrução conservadora de coluna
-única. Precisam de extração específica para colunas, textos compartilhados,
-alternativas na mesma linha ou gabaritos em outros formatos. Somados às nove
-identificações pendentes, são 2.242 registros ainda em revisão; a duplicata é
-contabilizada separadamente. Não presumir que todos sejam defeituosos: o
-extrator deliberadamente rejeita estruturas que não consegue comprovar.
+A camada com identificação pessoal encontrada em um PDF foi removida de uma
+cópia local antes da renderização, preservando o conteúdo das questões. Os
+originais não foram alterados. PDFs completos e arquivos privados não fazem
+parte da publicação.
 
-O diagnóstico detalhado, as fontes locais, o CSV e as imagens de conferência
-ficam em `tmp/teorema-180-revisao/`, fora da publicação. Scripts de conferência:
-`scripts/teorema/auditar_pacote.py` e `scripts/teorema/preparar_lote.py`.
+O resultado de cada registro está no relatório local
+`output/revisao-2242-teorema.csv`. O resumo e os casos retidos estão em
+`docs/teorema-revisao-2242.json`. Os arquivos intermediários ficam em
+`tmp/teorema-180-revisao/`, fora da publicação.
 
-Reexecutar a preparação exige nova revisão visual antes de substituir o lote
-público; a geração de imagens por si só não autoriza sua publicação.
+## Integração e continuidade
+
+O lote está em `public/acervo/teorema-180/questoes.json`, carregado junto aos
+demais arquivos do acervo. Não houve inserção duplicada na tabela Supabase.
+O carregamento exige a contagem completa do lote e a união distingue fórmulas
+visualmente diferentes, mesmo quando seu texto auxiliar é igual.
+
+Os scripts novos em `scripts/teorema/` separam extração, reconciliação,
+renderização, validação e preparação da publicação. Dependências locais:
+pdfplumber, pypdf, pypdfium2, Pillow e NumPy. Os scripts antigos de coluna
+única são históricos; não devem substituir o lote público atual.
+
+Uma continuação deve partir dos 167 registros retidos, sem refazer as questões
+publicadas. A reconciliação preserva identificadores já vinculados aos registros
+CSV. Nova publicação exige revisão e testes; gerar imagens por si só não
+aprova um registro. A automação antiga de ampliação do acervo segue pausada.

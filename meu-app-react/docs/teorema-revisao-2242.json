@@ -1,0 +1,1363 @@
+{
+  "data": "2026-10-20",
+  "registros_revisados": 2242,
+  "resultados": {
+    "Adicionada": 2053,
+    "Retida": 167,
+    "Duplicata": 22
+  },
+  "questoes_novas": 2053,
+  "primeiro_lote_preservado": 102,
+  "total_lote_publico": 2155,
+  "novas_imagens": 11964,
+  "gabaritos_corrigidos_novas": 1018,
+  "assimilacao_novas": 309,
+  "materias": {
+    "Geografia": 229,
+    "Inglês": 140,
+    "Matemática": 454,
+    "Português": 111,
+    "Física": 602,
+    "História": 124,
+    "Química": 393
+  },
+  "retidas": [
+    {
+      "registro_csv": 137,
+      "resultado": "Retida",
+      "arquivo": "09 Lista de Exercícios População - EsPCEx.pdf",
+      "numero_pdf": 7,
+      "motivo": "identificação institucional não reconhecida: IDABE",
+      "id": "teorema-899071bd6e384b13"
+    },
+    {
+      "registro_csv": 205,
+      "resultado": "Retida",
+      "arquivo": "12 Lista de Exercícios Industrialização - EsPCEx.pdf",
+      "numero_pdf": 19,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 221,
+      "resultado": "Retida",
+      "arquivo": "13 Lista de Exercícios Transportes - EsPCEx.pdf",
+      "numero_pdf": 12,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-f6c77567c96f3561"
+    },
+    {
+      "registro_csv": 226,
+      "resultado": "Retida",
+      "arquivo": "13 Lista de Exercícios Transportes - EsPCEx.pdf",
+      "numero_pdf": 12,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 288,
+      "resultado": "Retida",
+      "arquivo": "17 Lista de Exercícios Globalização - EsPCEx.pdf",
+      "numero_pdf": 10,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 387,
+      "resultado": "Retida",
+      "arquivo": "LISTA  2 - INGLÊS - VOCABULARY.pdf",
+      "numero_pdf": 13,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 396,
+      "resultado": "Retida",
+      "arquivo": "LISTA  2 - INGLÊS - VOCABULARY.pdf",
+      "numero_pdf": 34,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-d01a150c3fe43a68"
+    },
+    {
+      "registro_csv": 400,
+      "resultado": "Retida",
+      "arquivo": "LISTA  2 - INGLÊS - VOCABULARY.pdf",
+      "numero_pdf": 38,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-e14dc08606948215"
+    },
+    {
+      "registro_csv": 401,
+      "resultado": "Retida",
+      "arquivo": "LISTA  2 - INGLÊS - VOCABULARY.pdf",
+      "numero_pdf": 39,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-f97d660727326879"
+    },
+    {
+      "registro_csv": 417,
+      "resultado": "Retida",
+      "arquivo": "LISTA  2 - INGLÊS - VOCABULARY.pdf",
+      "numero_pdf": 3,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 451,
+      "resultado": "Retida",
+      "arquivo": "LISTA  36 -FRENTE A - ARCO DUPLO E ARCO METADE.pdf",
+      "numero_pdf": 10,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-0952089878fb17cb"
+    },
+    {
+      "registro_csv": 452,
+      "resultado": "Retida",
+      "arquivo": "LISTA  36 -FRENTE A - ARCO DUPLO E ARCO METADE.pdf",
+      "numero_pdf": 11,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-4708ce42d552dc09"
+    },
+    {
+      "registro_csv": 502,
+      "resultado": "Retida",
+      "arquivo": "LISTA 02 – ESTRUTURA DO PERIODO SIMPLES.pdf",
+      "numero_pdf": 15,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-b4f59d928a83b13c"
+    },
+    {
+      "registro_csv": 549,
+      "resultado": "Retida",
+      "arquivo": "LISTA 03 – ESTRUTURA DO PERIODO COMPOSTO.pdf",
+      "numero_pdf": 24,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 552,
+      "resultado": "Retida",
+      "arquivo": "LISTA 03 – ESTRUTURA DO PERIODO COMPOSTO.pdf",
+      "numero_pdf": 21,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 569,
+      "resultado": "Retida",
+      "arquivo": "LISTA 07 – PONTUAÇÃO.pdf",
+      "numero_pdf": "",
+      "motivo": "nenhum bloco completo com gabarito no PDF",
+      "id": ""
+    },
+    {
+      "registro_csv": 570,
+      "resultado": "Retida",
+      "arquivo": "LISTA 08 – CRASE.pdf",
+      "numero_pdf": 1,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-50c6a135f055b456"
+    },
+    {
+      "registro_csv": 580,
+      "resultado": "Retida",
+      "arquivo": "LISTA 08 – CRASE.pdf",
+      "numero_pdf": 13,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-f4499cc095d47ab3"
+    },
+    {
+      "registro_csv": 601,
+      "resultado": "Retida",
+      "arquivo": "LISTA 1 FRENTE 2 SEQUENCIAS CORRIGIDA.pdf",
+      "numero_pdf": 3,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-2597e6120afab620"
+    },
+    {
+      "registro_csv": 603,
+      "resultado": "Retida",
+      "arquivo": "LISTA 1 FRENTE 2 SEQUENCIAS CORRIGIDA.pdf",
+      "numero_pdf": 6,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-7d153e06b09bff7f"
+    },
+    {
+      "registro_csv": 623,
+      "resultado": "Retida",
+      "arquivo": "LISTA 10  -  FIGURAS DE LINGUAGEM.pdf",
+      "numero_pdf": 9,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 632,
+      "resultado": "Retida",
+      "arquivo": "LISTA 10 - FORÇAS DE ATRITO.pdf",
+      "numero_pdf": 1,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-01f4780575f90f5a"
+    },
+    {
+      "registro_csv": 642,
+      "resultado": "Retida",
+      "arquivo": "LISTA 10 - FORÇAS DE ATRITO.pdf",
+      "numero_pdf": 4,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 710,
+      "resultado": "Retida",
+      "arquivo": "LISTA 10 – Segunda Guerra e Guerra Fria (conflitos).pdf",
+      "numero_pdf": 14,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 713,
+      "resultado": "Retida",
+      "arquivo": "LISTA 10 – Segunda Guerra e Guerra Fria (conflitos).pdf",
+      "numero_pdf": 13,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 762,
+      "resultado": "Retida",
+      "arquivo": "LISTA 11 - MOVIMENTO HARMÔNICO SIMPLES.pdf",
+      "numero_pdf": 11,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-51986f3d0c059884"
+    },
+    {
+      "registro_csv": 765,
+      "resultado": "Retida",
+      "arquivo": "LISTA 11 - MOVIMENTO HARMÔNICO SIMPLES.pdf",
+      "numero_pdf": 14,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-d653ee53da003196"
+    },
+    {
+      "registro_csv": 766,
+      "resultado": "Retida",
+      "arquivo": "LISTA 11 - MOVIMENTO HARMÔNICO SIMPLES.pdf",
+      "numero_pdf": 15,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 779,
+      "resultado": "Retida",
+      "arquivo": "LISTA 11 - RELAÇÕES MÉTRICAS NO TRIÂNGULO RETÂNGULO.pdf",
+      "numero_pdf": 5,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 780,
+      "resultado": "Retida",
+      "arquivo": "LISTA 11 - RELAÇÕES MÉTRICAS NO TRIÂNGULO RETÂNGULO.pdf",
+      "numero_pdf": 7,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 838,
+      "resultado": "Retida",
+      "arquivo": "LISTA 12 - TRABALHO.pdf",
+      "numero_pdf": 1,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 850,
+      "resultado": "Retida",
+      "arquivo": "LISTA 12 - TRABALHO.pdf",
+      "numero_pdf": 19,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-9ce9c16de9b23c63"
+    },
+    {
+      "registro_csv": 869,
+      "resultado": "Retida",
+      "arquivo": "LISTA 13 - CAMPOS MAGNÉTICOS.pdf",
+      "numero_pdf": 5,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-bd7f64ccfe8e37ce"
+    },
+    {
+      "registro_csv": 871,
+      "resultado": "Retida",
+      "arquivo": "LISTA 13 - CAMPOS MAGNÉTICOS.pdf",
+      "numero_pdf": 8,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-407359d12fdce92b"
+    },
+    {
+      "registro_csv": 885,
+      "resultado": "Retida",
+      "arquivo": "LISTA 13 - ENERGIA.pdf",
+      "numero_pdf": 7,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-5f47c2a8a3f5f9b0"
+    },
+    {
+      "registro_csv": 891,
+      "resultado": "Retida",
+      "arquivo": "LISTA 13 - ENERGIA.pdf",
+      "numero_pdf": 14,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-d470b7639a633c81"
+    },
+    {
+      "registro_csv": 892,
+      "resultado": "Retida",
+      "arquivo": "LISTA 13 - ENERGIA.pdf",
+      "numero_pdf": 15,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-6816d43961856376"
+    },
+    {
+      "registro_csv": 893,
+      "resultado": "Retida",
+      "arquivo": "LISTA 13 - ENERGIA.pdf",
+      "numero_pdf": 16,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 921,
+      "resultado": "Retida",
+      "arquivo": "LISTA 14 - FORÇA MAGNÉTICA.pdf",
+      "numero_pdf": 3,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-486e1bce4bcb3781"
+    },
+    {
+      "registro_csv": 935,
+      "resultado": "Retida",
+      "arquivo": "LISTA 14 - FORÇA MAGNÉTICA.pdf",
+      "numero_pdf": 8,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 936,
+      "resultado": "Retida",
+      "arquivo": "LISTA 14 - FORÇA MAGNÉTICA.pdf",
+      "numero_pdf": 20,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-e270e9a64a66a074"
+    },
+    {
+      "registro_csv": 948,
+      "resultado": "Retida",
+      "arquivo": "LISTA 14 - IMPULSO E QUANTIDADE DE MOVIMENTO.pdf",
+      "numero_pdf": 12,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-63916de4746b3ecc"
+    },
+    {
+      "registro_csv": 951,
+      "resultado": "Retida",
+      "arquivo": "LISTA 14 - IMPULSO E QUANTIDADE DE MOVIMENTO.pdf",
+      "numero_pdf": 15,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 963,
+      "resultado": "Retida",
+      "arquivo": "LISTA 14 - ÁREAS.pdf",
+      "numero_pdf": 4,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-2e094b346aefb2b8"
+    },
+    {
+      "registro_csv": 964,
+      "resultado": "Retida",
+      "arquivo": "LISTA 14 - ÁREAS.pdf",
+      "numero_pdf": 4,
+      "motivo": "recorte sem conteúdo visível",
+      "id": "teorema-3a8d6d509308d645"
+    },
+    {
+      "registro_csv": 979,
+      "resultado": "Retida",
+      "arquivo": "LISTA 15 - GRAVITAÇÃO UNIVERSAL.pdf",
+      "numero_pdf": 9,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1011,
+      "resultado": "Retida",
+      "arquivo": "LISTA 16 - BASES.pdf",
+      "numero_pdf": 3,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1038,
+      "resultado": "Retida",
+      "arquivo": "LISTA 16 - EQUILÍBRIO DE PONTO MATERIAL.pdf",
+      "numero_pdf": 7,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1055,
+      "resultado": "Retida",
+      "arquivo": "LISTA 16 -INEQUAÇÃO DO 1º GRAU.pdf",
+      "numero_pdf": 4,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-de3b29944434a237"
+    },
+    {
+      "registro_csv": 1056,
+      "resultado": "Retida",
+      "arquivo": "LISTA 16 -INEQUAÇÃO DO 1º GRAU.pdf",
+      "numero_pdf": 5,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-c2c1dc8da4089fb8"
+    },
+    {
+      "registro_csv": 1057,
+      "resultado": "Retida",
+      "arquivo": "LISTA 16 -INEQUAÇÃO DO 1º GRAU.pdf",
+      "numero_pdf": 6,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-75ab6807ce5904b1"
+    },
+    {
+      "registro_csv": 1060,
+      "resultado": "Retida",
+      "arquivo": "LISTA 16 -INEQUAÇÃO DO 1º GRAU.pdf",
+      "numero_pdf": 9,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-cc24cfaaa8d7e941"
+    },
+    {
+      "registro_csv": 1063,
+      "resultado": "Retida",
+      "arquivo": "LISTA 16 -INEQUAÇÃO DO 1º GRAU.pdf",
+      "numero_pdf": 12,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-02cbae7196696d06"
+    },
+    {
+      "registro_csv": 1064,
+      "resultado": "Retida",
+      "arquivo": "LISTA 16 -INEQUAÇÃO DO 1º GRAU.pdf",
+      "numero_pdf": 13,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-09ec082bb06f3471"
+    },
+    {
+      "registro_csv": 1067,
+      "resultado": "Retida",
+      "arquivo": "LISTA 17 - PRISMAS.pdf",
+      "numero_pdf": 3,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1072,
+      "resultado": "Retida",
+      "arquivo": "LISTA 17 - PRISMAS.pdf",
+      "numero_pdf": 2,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1084,
+      "resultado": "Retida",
+      "arquivo": "LISTA 17 - RELATIVIDADE ESPECIAL.pdf",
+      "numero_pdf": 11,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1109,
+      "resultado": "Retida",
+      "arquivo": "LISTA 17 -INEQUAÇÃO DO 2º GRAU.pdf",
+      "numero_pdf": 16,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-b99d238fb6cef0eb"
+    },
+    {
+      "registro_csv": 1110,
+      "resultado": "Retida",
+      "arquivo": "LISTA 17 -INEQUAÇÃO DO 2º GRAU.pdf",
+      "numero_pdf": 17,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-023b44c65cae3e53"
+    },
+    {
+      "registro_csv": 1127,
+      "resultado": "Retida",
+      "arquivo": "LISTA 17- EQUILÍBRIO DE CORPOS EXTENSOS.pdf",
+      "numero_pdf": 11,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-276d4577c0ed5dbe"
+    },
+    {
+      "registro_csv": 1147,
+      "resultado": "Retida",
+      "arquivo": "LISTA 18 - FÍSICA QUÂNTICA.pdf",
+      "numero_pdf": 5,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1180,
+      "resultado": "Retida",
+      "arquivo": "LISTA 18 - ÓXIDOS.pdf",
+      "numero_pdf": 8,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1181,
+      "resultado": "Retida",
+      "arquivo": "LISTA 18 - ÓXIDOS.pdf",
+      "numero_pdf": 20,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1229,
+      "resultado": "Retida",
+      "arquivo": "LISTA 19- MÓDULO E EQUAÇÃO MODULAR.pdf",
+      "numero_pdf": 3,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-f8397ad1019b63b1"
+    },
+    {
+      "registro_csv": 1243,
+      "resultado": "Retida",
+      "arquivo": "LISTA 2 - FORÇA ELÉTRICA.pdf",
+      "numero_pdf": 11,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-392bd8d2a29114ae"
+    },
+    {
+      "registro_csv": 1249,
+      "resultado": "Retida",
+      "arquivo": "LISTA 2 - FORÇA ELÉTRICA.pdf",
+      "numero_pdf": 19,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-e33be8f53b3d0423"
+    },
+    {
+      "registro_csv": 1270,
+      "resultado": "Retida",
+      "arquivo": "LISTA 2 SOCIEDADE FEUDAL -BAIXA IDADE MEDIA.pdf",
+      "numero_pdf": 2,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1271,
+      "resultado": "Retida",
+      "arquivo": "LISTA 2 SOCIEDADE FEUDAL -BAIXA IDADE MEDIA.pdf",
+      "numero_pdf": 3,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1273,
+      "resultado": "Retida",
+      "arquivo": "LISTA 2 SOCIEDADE FEUDAL -BAIXA IDADE MEDIA.pdf",
+      "numero_pdf": 3,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1274,
+      "resultado": "Retida",
+      "arquivo": "LISTA 2 SOCIEDADE FEUDAL -BAIXA IDADE MEDIA.pdf",
+      "numero_pdf": 1,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1276,
+      "resultado": "Retida",
+      "arquivo": "LISTA 2 SOCIEDADE FEUDAL -BAIXA IDADE MEDIA.pdf",
+      "numero_pdf": 1,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1322,
+      "resultado": "Retida",
+      "arquivo": "LISTA 20 - INEQUAÇÕES MODULARES0 CORRIGIDA.pdf",
+      "numero_pdf": 6,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-1fbfe81edae24fb4"
+    },
+    {
+      "registro_csv": 1326,
+      "resultado": "Retida",
+      "arquivo": "LISTA 20 - INEQUAÇÕES MODULARES0 CORRIGIDA.pdf",
+      "numero_pdf": 9,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1327,
+      "resultado": "Retida",
+      "arquivo": "LISTA 20 - INEQUAÇÕES MODULARES0 CORRIGIDA.pdf",
+      "numero_pdf": 8,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1372,
+      "resultado": "Retida",
+      "arquivo": "LISTA 22 - MASSA ATÔMICA E MASSA MOLAR.pdf",
+      "numero_pdf": 11,
+      "motivo": "identificação institucional não reconhecida: U. ANÁPOLIS-GO",
+      "id": "teorema-0f8829cb3e8045c3"
+    },
+    {
+      "registro_csv": 1374,
+      "resultado": "Retida",
+      "arquivo": "LISTA 22 - MASSA ATÔMICA E MASSA MOLAR.pdf",
+      "numero_pdf": 12,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1384,
+      "resultado": "Retida",
+      "arquivo": "LISTA 24 - INEQUAÇÕES EXPONENCIAIS - atual.pdf",
+      "numero_pdf": 1,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-a962810e162d497e"
+    },
+    {
+      "registro_csv": 1386,
+      "resultado": "Retida",
+      "arquivo": "LISTA 24 - INEQUAÇÕES EXPONENCIAIS - atual.pdf",
+      "numero_pdf": 3,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-74b72ff160d0462f"
+    },
+    {
+      "registro_csv": 1391,
+      "resultado": "Retida",
+      "arquivo": "LISTA 26 - LOGARÍTMOS.pdf",
+      "numero_pdf": 2,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1394,
+      "resultado": "Retida",
+      "arquivo": "LISTA 26 - LOGARÍTMOS.pdf",
+      "numero_pdf": 8,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-dcc2ed3a6eb43a97"
+    },
+    {
+      "registro_csv": 1399,
+      "resultado": "Retida",
+      "arquivo": "LISTA 26 - LOGARÍTMOS.pdf",
+      "numero_pdf": 15,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-8998f4e528271b58"
+    },
+    {
+      "registro_csv": 1403,
+      "resultado": "Retida",
+      "arquivo": "LISTA 26 - LOGARÍTMOS.pdf",
+      "numero_pdf": 21,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-9873af2309ecdf4d"
+    },
+    {
+      "registro_csv": 1406,
+      "resultado": "Retida",
+      "arquivo": "LISTA 26 - LOGARÍTMOS.pdf",
+      "numero_pdf": 4,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-b24b905843077c8c"
+    },
+    {
+      "registro_csv": 1414,
+      "resultado": "Retida",
+      "arquivo": "LISTA 26 - LOGARÍTMOS.pdf",
+      "numero_pdf": 12,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-97e94991836ac1bf"
+    },
+    {
+      "registro_csv": 1424,
+      "resultado": "Retida",
+      "arquivo": "LISTA 30 - LOGARÍTMO NATURAL.pdf",
+      "numero_pdf": 1,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-67a90a434bb9915e"
+    },
+    {
+      "registro_csv": 1427,
+      "resultado": "Retida",
+      "arquivo": "LISTA 31 - RAZÕES TRIGONOMÉTRICAS NO TRIÂNGULO RETÂNGULO.pdf",
+      "numero_pdf": 3,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-e73870a9ced1946e"
+    },
+    {
+      "registro_csv": 1459,
+      "resultado": "Retida",
+      "arquivo": "LISTA 33 - RELAÇÕES TRIGONOMÉTRICAS.pdf",
+      "numero_pdf": 4,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1465,
+      "resultado": "Retida",
+      "arquivo": "LISTA 33 - RELAÇÕES TRIGONOMÉTRICAS.pdf",
+      "numero_pdf": 10,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-b233d6619216b1c5"
+    },
+    {
+      "registro_csv": 1470,
+      "resultado": "Retida",
+      "arquivo": "LISTA 34 - REDUÇÃO AO 1º QUADRANTE.pdf",
+      "numero_pdf": 1,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-fac6fd57c42079e3"
+    },
+    {
+      "registro_csv": 1476,
+      "resultado": "Retida",
+      "arquivo": "LISTA 35 - ADIÇÃO E SUBTRAÇÃO DE ARCOS.pdf",
+      "numero_pdf": 1,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-2c596e65c3b4cd88"
+    },
+    {
+      "registro_csv": 1479,
+      "resultado": "Retida",
+      "arquivo": "LISTA 35 - ADIÇÃO E SUBTRAÇÃO DE ARCOS.pdf",
+      "numero_pdf": 2,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1484,
+      "resultado": "Retida",
+      "arquivo": "LISTA 35 - ADIÇÃO E SUBTRAÇÃO DE ARCOS.pdf",
+      "numero_pdf": 2,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1525,
+      "resultado": "Retida",
+      "arquivo": "LISTA 5 - PROPAGAÇÃO DE CALOR.pdf",
+      "numero_pdf": 3,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-bc9b5ca1bd0d9a80"
+    },
+    {
+      "registro_csv": 1528,
+      "resultado": "Retida",
+      "arquivo": "LISTA 5 - PROPAGAÇÃO DE CALOR.pdf",
+      "numero_pdf": 6,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-c8402245407ceded"
+    },
+    {
+      "registro_csv": 1558,
+      "resultado": "Retida",
+      "arquivo": "LISTA 50 -COMPLEXOS - FORMA TRIGONOMÉTRICA E FÓRMULAS DE MOIVRE.pdf",
+      "numero_pdf": 12,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1570,
+      "resultado": "Retida",
+      "arquivo": "LISTA 51 - POLINÔMIOS.pdf",
+      "numero_pdf": 6,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1585,
+      "resultado": "Retida",
+      "arquivo": "LISTA 6 - CINEMÁTICA VETORIAL.pdf",
+      "numero_pdf": 24,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1600,
+      "resultado": "Retida",
+      "arquivo": "LISTA 6 - PORTUGUÊS - PRONOMES.pdf",
+      "numero_pdf": 1,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-65d5708b5fbfe276"
+    },
+    {
+      "registro_csv": 1601,
+      "resultado": "Retida",
+      "arquivo": "LISTA 6 - PORTUGUÊS - PRONOMES.pdf",
+      "numero_pdf": 1,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1605,
+      "resultado": "Retida",
+      "arquivo": "LISTA 6 - PORTUGUÊS - PRONOMES.pdf",
+      "numero_pdf": 14,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1608,
+      "resultado": "Retida",
+      "arquivo": "LISTA 6 - PORTUGUÊS - PRONOMES.pdf",
+      "numero_pdf": 13,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1658,
+      "resultado": "Retida",
+      "arquivo": "LISTA 6 REFORMA PROTESTANTE E CONTRARREFORMA.pdf",
+      "numero_pdf": 7,
+      "motivo": "identificação institucional não reconhecida: FAC-SP",
+      "id": "teorema-97c9d9ca68272891"
+    },
+    {
+      "registro_csv": 1668,
+      "resultado": "Retida",
+      "arquivo": "LISTA 6 REVOLTAS NATIVISTAS E SEPARATISTAS.pdf",
+      "numero_pdf": 7,
+      "motivo": "identificação institucional não reconhecida: Pitágoras",
+      "id": "teorema-e3ecf1807ec8e07b"
+    },
+    {
+      "registro_csv": 1701,
+      "resultado": "Retida",
+      "arquivo": "LISTA 7 -  PERIODO JOANINO.pdf",
+      "numero_pdf": 12,
+      "motivo": "identificação institucional não reconhecida: PITÁGORAS",
+      "id": "teorema-b2c4ec518fb7f5e3"
+    },
+    {
+      "registro_csv": 1702,
+      "resultado": "Retida",
+      "arquivo": "LISTA 7 -  PERIODO JOANINO.pdf",
+      "numero_pdf": 13,
+      "motivo": "identificação institucional não reconhecida: PITÁGORAS",
+      "id": "teorema-7808a6a104983d75"
+    },
+    {
+      "registro_csv": 1741,
+      "resultado": "Retida",
+      "arquivo": "LISTA 7 - REVOLUÇÃO FRANCESA ERA NAPOLEONICA CONGRESSO DE VIENA.pdf",
+      "numero_pdf": 13,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1779,
+      "resultado": "Retida",
+      "arquivo": "LISTA 7 – DISTRIBUIÇÃO ELETRÔNICA.pdf",
+      "numero_pdf": 6,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1795,
+      "resultado": "Retida",
+      "arquivo": "LISTA 8 - CIRCUNFERÊNCIA.pdf",
+      "numero_pdf": 10,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1796,
+      "resultado": "Retida",
+      "arquivo": "LISTA 8 - CIRCUNFERÊNCIA.pdf",
+      "numero_pdf": 11,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1797,
+      "resultado": "Retida",
+      "arquivo": "LISTA 8 - CIRCUNFERÊNCIA.pdf",
+      "numero_pdf": 12,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1798,
+      "resultado": "Retida",
+      "arquivo": "LISTA 8 - CIRCUNFERÊNCIA.pdf",
+      "numero_pdf": 10,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1799,
+      "resultado": "Retida",
+      "arquivo": "LISTA 8 - CIRCUNFERÊNCIA.pdf",
+      "numero_pdf": 12,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1800,
+      "resultado": "Retida",
+      "arquivo": "LISTA 8 - CIRCUNFERÊNCIA.pdf",
+      "numero_pdf": 9,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1863,
+      "resultado": "Retida",
+      "arquivo": "LISTA 8 – TABELA PERIÓDICA.pdf",
+      "numero_pdf": 5,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-89190d4fbe733f43"
+    },
+    {
+      "registro_csv": 1888,
+      "resultado": "Retida",
+      "arquivo": "LISTA 9 - BINÔMIO DE NEWTON.pdf",
+      "numero_pdf": 6,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1891,
+      "resultado": "Retida",
+      "arquivo": "LISTA 9 - BINÔMIO DE NEWTON.pdf",
+      "numero_pdf": 3,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-ea4a024f9e684682"
+    },
+    {
+      "registro_csv": 1898,
+      "resultado": "Retida",
+      "arquivo": "LISTA 9 - BINÔMIO DE NEWTON.pdf",
+      "numero_pdf": 12,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-4885de9b08ac03d2"
+    },
+    {
+      "registro_csv": 1899,
+      "resultado": "Retida",
+      "arquivo": "LISTA 9 - BINÔMIO DE NEWTON.pdf",
+      "numero_pdf": 13,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-8885ebb771739394"
+    },
+    {
+      "registro_csv": 1905,
+      "resultado": "Retida",
+      "arquivo": "LISTA 9 - BINÔMIO DE NEWTON.pdf",
+      "numero_pdf": 19,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-125f2745b8473af2"
+    },
+    {
+      "registro_csv": 1907,
+      "resultado": "Retida",
+      "arquivo": "LISTA 9 - BINÔMIO DE NEWTON.pdf",
+      "numero_pdf": 21,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-18f7828cbc4d30c0"
+    },
+    {
+      "registro_csv": 1908,
+      "resultado": "Retida",
+      "arquivo": "LISTA 9 - BINÔMIO DE NEWTON.pdf",
+      "numero_pdf": 22,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-0208abc8f9df64e6"
+    },
+    {
+      "registro_csv": 1911,
+      "resultado": "Retida",
+      "arquivo": "LISTA 9 - BINÔMIO DE NEWTON.pdf",
+      "numero_pdf": 27,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-1f26d782b7e6c2d0"
+    },
+    {
+      "registro_csv": 1938,
+      "resultado": "Retida",
+      "arquivo": "LISTA 9 - PRIMEIRA GUERRA CRISE DE 29 e NAZI-FASCISMOS.pdf",
+      "numero_pdf": 7,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1942,
+      "resultado": "Retida",
+      "arquivo": "LISTA 9 - PRIMEIRA REPÚBLICA.pdf",
+      "numero_pdf": 4,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1943,
+      "resultado": "Retida",
+      "arquivo": "LISTA 9 - PRIMEIRA REPÚBLICA.pdf",
+      "numero_pdf": 10,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1964,
+      "resultado": "Retida",
+      "arquivo": "LISTA 9 - REFRAÇÃO LUMINOSA.pdf",
+      "numero_pdf": 4,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 1974,
+      "resultado": "Retida",
+      "arquivo": "LISTA 9 - REFRAÇÃO LUMINOSA.pdf",
+      "numero_pdf": 15,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-875649b1ae231ea9"
+    },
+    {
+      "registro_csv": 2016,
+      "resultado": "Retida",
+      "arquivo": "Lista 09 - PROPRIEDADES PERIÓDICAS.pdf",
+      "numero_pdf": 25,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2029,
+      "resultado": "Retida",
+      "arquivo": "Lista 09 - PROPRIEDADES PERIÓDICAS.pdf",
+      "numero_pdf": 7,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2044,
+      "resultado": "Retida",
+      "arquivo": "Lista 11 - LIGAÇÕES IÔNICAS.pdf",
+      "numero_pdf": 9,
+      "motivo": "identificação institucional não reconhecida: Liceu 2011",
+      "id": "teorema-db019e218a81ea2e"
+    },
+    {
+      "registro_csv": 2049,
+      "resultado": "Retida",
+      "arquivo": "Lista 11 - LIGAÇÕES IÔNICAS.pdf",
+      "numero_pdf": 14,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-6850385b721501dd"
+    },
+    {
+      "registro_csv": 2094,
+      "resultado": "Retida",
+      "arquivo": "Listão 01 - Aprofundamento - Idade Média e Idade Moderna.pdf",
+      "numero_pdf": 23,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-17b7d766c369504c"
+    },
+    {
+      "registro_csv": 2123,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 34 - REAÇÕES ORGÂNICAS II.pdf",
+      "numero_pdf": "",
+      "motivo": "revisão visual: exercícios discursivos 2–4 mesclados em alternativas inexistentes; sem gabarito de múltipla escolha",
+      "id": ""
+    },
+    {
+      "registro_csv": 2124,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 34 - REAÇÕES ORGÂNICAS II.pdf",
+      "numero_pdf": 12,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2127,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 35 - ISOMERIA.pdf",
+      "numero_pdf": 19,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2146,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 35 - ISOMERIA.pdf",
+      "numero_pdf": 23,
+      "motivo": "identificação institucional não reconhecida: Unipa-MG",
+      "id": "teorema-0bc2985e1186caa1"
+    },
+    {
+      "registro_csv": 2162,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 36 - POLÍMEROS.pdf",
+      "numero_pdf": 13,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-0dd420bc5b4ea61b"
+    },
+    {
+      "registro_csv": 2180,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 41 - PROPRIEDADES COLIGATIVAS.pdf",
+      "numero_pdf": 6,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2210,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 48 - EQULÍBRIO QUÍMICO IV.pdf",
+      "numero_pdf": 3,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2217,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 48 - EQULÍBRIO QUÍMICO IV.pdf",
+      "numero_pdf": 20,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-28a06a550594442f"
+    },
+    {
+      "registro_csv": 2247,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 49 - ELETROQUÍMICA.pdf",
+      "numero_pdf": 32,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2261,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 50 - REVISÃO.pdf",
+      "numero_pdf": 24,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2263,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 50 - REVISÃO.pdf",
+      "numero_pdf": 9,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2267,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 50 - REVISÃO.pdf",
+      "numero_pdf": 2,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2270,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 50 - REVISÃO.pdf",
+      "numero_pdf": 2,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2271,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 50 - REVISÃO.pdf",
+      "numero_pdf": 11,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2272,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 50 - REVISÃO.pdf",
+      "numero_pdf": 19,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2275,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 50 - REVISÃO.pdf",
+      "numero_pdf": 1,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2276,
+      "resultado": "Retida",
+      "arquivo": "PDF - LISTA 50 - REVISÃO.pdf",
+      "numero_pdf": 13,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2289,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 6,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2291,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 10,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2294,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 7,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2296,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 6,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2297,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 10,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-688ec6d22150f9b8"
+    },
+    {
+      "registro_csv": 2298,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 11,
+      "motivo": "limite visual sem faixa branca; exige conferência individual",
+      "id": "teorema-ba6b584ab6a5626d"
+    },
+    {
+      "registro_csv": 2299,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 11,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2300,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 6,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2301,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 7,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2302,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 8,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2303,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 7,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2304,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 2,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2305,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 2,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2306,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 5,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2307,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 02 - Conjunções.pdf",
+      "numero_pdf": 2,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2310,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 03 - Vocabulário.pdf",
+      "numero_pdf": 3,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2326,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 04 - Adjetivos e Pronomes.pdf",
+      "numero_pdf": 15,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    },
+    {
+      "registro_csv": 2334,
+      "resultado": "Retida",
+      "arquivo": "PDF - Lista 04 - Adjetivos e Pronomes.pdf",
+      "numero_pdf": 13,
+      "motivo": "correspondência entre CSV e PDF ambígua",
+      "id": ""
+    }
+  ],
+  "metodo": "Conferência estrutural de todos os registros, gabaritos do material, limites por geometria e imagem; amostragem visual; limites não comprovados permanecem retidos. Não equivale a confrontar cada resposta com gabaritos oficiais externos."
+}

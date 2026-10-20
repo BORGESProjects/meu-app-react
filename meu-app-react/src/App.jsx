@@ -444,7 +444,7 @@ export default function App() {
       const r = await fetch('/acervo/teorema-180/questoes.json', {signal:AbortSignal.timeout(30000)})
       if (!r.ok) throw new Error('Questões revisadas indisponíveis')
       const data = await r.json()
-      if (!Array.isArray(data) || data.length !== 102) throw new Error('Lote de questões revisadas incompleto')
+      if (!Array.isArray(data) || data.length !== 2155) throw new Error('Lote de questões revisadas incompleto')
       return data
     })
     const federaisRevisadas = tentarLeitura(async () => {

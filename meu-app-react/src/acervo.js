@@ -120,6 +120,14 @@ function semTextoDeApoio(questao) {
 }
 
 function identidadeConteudo(questao) {
+  // Fórmulas distintas podem produzir o mesmo texto auxiliar na extração.
+  // O digest inclui os recortes de enunciado, alternativas e texto-base.
+  if (/^teorema-[a-f0-9]{16}$/.test(questao.id || '')
+      && questao.extracao_visual_verificada === true
+      && /^[a-f0-9]{64}$/.test(questao.identidade_visual || '')
+      && String(questao.imagem_original || '').startsWith('/acervo/teorema-180/')) {
+    return `teorema-visual:${questao.identidade_visual}`
+  }
   // C/E curtos podem ter o mesmo texto, mas depender de casos distintos.
   if (questao.tipo_resposta === 'certo_errado' && questao.chave_oficial && /^(?:PF|PRF)$/.test(questao.banca) && /^https:\/\/(?:www\.gov\.br\/pf\/|cdn\.cebraspe\.org\.br\/concursos\/)/.test(questao.fonte_pdf || '')) {
     return `cebraspe-oficial:${questao.chave_oficial}`
