@@ -23,8 +23,8 @@ function EnunciadoQuestao({ questao: q }) {
       </a>)}
     </section>}
     {q.imagem_original ? <>
-      <a href={q.imagem_original} target="_blank" rel="noreferrer" className="block" aria-label={`Ampliar questão ${q.numero_original}`}>
-        <img src={q.imagem_original} alt={q.texto_extraido_corrompido ? `Questão ${q.numero_original} da prova` : q.enunciado} loading="lazy" className="w-full h-auto rounded-lg bg-white" />
+      <a href={q.imagem_original} target="_blank" rel="noreferrer" className="block" aria-label={q.numero_original ? `Ampliar questão ${q.numero_original}` : 'Ampliar enunciado'}>
+        <img src={q.imagem_original} alt={q.texto_extraido_corrompido ? (q.numero_original ? `Questão ${q.numero_original} da prova` : 'Enunciado da questão') : q.enunciado} loading="lazy" className="w-full h-auto rounded-lg bg-white" />
       </a>
       <p className="text-xs text-slate-400">Clique na imagem para ampliar.{!q.anulada && ' Selecione sua resposta abaixo.'}</p>
       {!q.texto_extraido_corrompido && <details className="text-sm text-slate-300"><summary className="cursor-pointer">Ler texto extraído</summary>
