@@ -23,6 +23,7 @@ import RevisaoSimulado from './components/RevisaoSimulado'
 
 const DIAS_SEMANA = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo']
 const Redacao = lazy(() => import('./components/Redacao'))
+const CentralRevisao = lazy(() => import('./components/CentralRevisao'))
 const ImportarPdf = lazy(() => import('./components/ImportarPdf'))
 const EditalPlanejador = lazy(() => import('./components/EditalPlanejador'))
 
@@ -128,7 +129,8 @@ export default function App() {
   const focoEstudo = preferenciaFoco.foco
   const questoesDoFoco = useMemo(() => questoes.filter(q => pertenceAoFoco(q, focoEstudo, true)), [questoes, focoEstudo])
   const progresso = useProgressoUsuario(session?.user?.id)
-  const {horas_estudo:horasEstudo, historico_respostas:historicoRespostas, tarefas} = progresso.dados
+  const {horas_estudo:horasEstudo, historico_respostas:historicoRespostas, tarefas:tarefasDaConta} = progresso.dados
+  const tarefas = useMemo(() => tarefasDaConta.filter(t => t.tipo !== 'material_revisao'), [tarefasDaConta])
   const {setHorasEstudo, setHistoricoRespostas, setTarefas, carregado:progressoCarregado,
     status:sincronizacao, erro:erroProgresso} = progresso
 
@@ -695,7 +697,7 @@ export default function App() {
           <span className="bg-gradient-to-tr from-indigo-500 to-violet-500 text-white px-2.5 py-1 rounded-xl shadow-lg shadow-indigo-500/20 text-sm">AP</span>
           <span className="text-slate-100">Aprovado</span>
         </div>
-        <div aria-label="Navegação principal" className="mobile-nav flex w-full items-center gap-1.5 overflow-x-auto pb-1 md:w-auto md:pb-0">
+        <div aria-label="Navegação principal" className="mobile-nav flex w-full min-w-0 items-center gap-1.5 overflow-x-auto pb-1 md:w-auto md:pb-0">
           {[
             { id: 'questoes', label: '📚 Questões' },
             { id: 'simulados', label: '📝 Simulados' },
@@ -703,6 +705,7 @@ export default function App() {
             ...(isAdmin ? [{ id: 'cadastrar', label: '➕ Cadastrar' }, { id: 'importar', label: '📄 Importar PDF' }] : []),
             { id: 'edital', label: '📋 Edital' },
             { id: 'redacao', label: '✍️ Redação' },
+            { id: 'revisao', label: '🧠 Revisão' },
             { id: 'tarefas', label: '⚡ Tarefas' },
             { id: 'conta', label: '👤 Minha conta' }
           ].map(tab => (
@@ -1133,6 +1136,9 @@ export default function App() {
         )}
 
         {abaAtiva === 'redacao' && <Suspense fallback={<p role="status">Carregando a oficina de redação…</p>}><Redacao key={session.user.id} session={session} foco={focoEstudo}/></Suspense>}
+        {abaAtiva === 'revisao' && <Suspense fallback={<p role="status">Carregando seus mapas e resumos…</p>}><CentralRevisao key={session.user.id} registros={tarefasDaConta} setRegistros={setTarefas} materias={materiasCronograma} indice={indiceFiltros} onPraticar={material => {
+          limparFiltros(); setFiltrosMateria([material.materia]); setFiltrosConteudo(material.conteudo ? [material.conteudo] : []); setLimiteVisivel(40); setAbaAtiva('questoes')
+        }}/></Suspense>}
 
         {/* ABA: TAREFAS */}
         {abaAtiva === 'tarefas' && (
