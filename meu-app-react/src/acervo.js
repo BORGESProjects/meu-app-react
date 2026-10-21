@@ -2,6 +2,7 @@ import esa2025 from './data/esa2025.json' with { type: 'json' }
 import enem2022 from './data/enem2022.json' with { type: 'json' }
 import { BANCA_ASSIMILACAO, normalizarBanca, normalizarMateria } from './filtros.js'
 import {blocosValidos,temApoioEmBlocos,assinaturaVisualBlocos} from './blocosQuestao.js'
+import {problemasDeIntegridade,separarRodapeEditorial} from './qualidadeQuestao.js'
 
 export const acervo = [...esa2025, ...enem2022]
 
@@ -176,7 +177,7 @@ export function corrigirQuestaoConferida(questao) {
   if (Object.hasOwn(corrigida, 'materia')) corrigida.materia = normalizarMateria(corrigida.materia, corrigida.conteudo)
   corrigida.enunciado = limparMarcadoresExtracao(corrigida.enunciado)
   if (Object.hasOwn(corrigida, 'texto_apoio')) corrigida.texto_apoio = limparMarcadoresExtracao(corrigida.texto_apoio)
-  if (Array.isArray(corrigida.opcoes)) corrigida.opcoes = corrigida.opcoes.map(limparMarcadoresExtracao)
+  if (Array.isArray(corrigida.opcoes)) corrigida.opcoes = corrigida.opcoes.map(opcao=>limparMarcadoresExtracao(separarRodapeEditorial(opcao).texto))
 
   const temImagem = Boolean(corrigida.imagem_original || corrigida.pagina_imagem)
   if (temImagem && textoCorrompido(corrigida.enunciado)) corrigida.texto_extraido_corrompido = true
@@ -193,6 +194,7 @@ export function questaoPublicavel(questao) {
   if (questao?.blocos_opcoes && (!Array.isArray(questao.blocos_opcoes) || questao.blocos_opcoes.length !== questao.opcoes?.length || !questao.blocos_opcoes.every(blocosValidos))) return false
   if (!questao || String(questao.enunciado ?? '').trim().length < 12) return false
   if (!Array.isArray(questao.opcoes) || questao.opcoes.length < 2 || questao.opcoes.length > 5) return false
+  if(problemasDeIntegridade(questao).length)return false
 
   const temImagemEnunciado = Boolean(questao.imagem_original || questao.pagina_imagem)
   if (textoCorrompido(questao.enunciado) && !temImagemEnunciado) return false
