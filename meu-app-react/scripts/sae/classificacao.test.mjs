@@ -49,3 +49,14 @@ test('preserva informação de adaptação', () => {
   assert.equal(resultado.adaptada, true)
   assert.equal(resultado.referencia_original, 'ENEM-2019-adaptada')
 })
+
+test('separa referências desconhecidas com ano sem inventar sua instituição', () => {
+  for (const referencia of ['FCMMG-2017', 'URFR-2018', 'FONTES-2017']) {
+    const resultado = classificarReferencia(`1. (${referencia}) Considere...`)
+    assert.equal(resultado.referencia_pendente, referencia)
+    assert.equal(resultado.banca, ASSIMILACAO)
+    assert.equal(resultado.ano, null)
+  }
+  assert.equal(classificarReferencia('1. (H2O) Analise...').referencia_pendente, undefined)
+  assert.equal(classificarReferencia('1. (FUVEST-2020) Considere...').referencia_pendente, undefined)
+})

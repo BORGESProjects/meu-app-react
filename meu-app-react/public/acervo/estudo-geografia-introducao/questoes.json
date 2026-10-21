@@ -1,0 +1,1660 @@
+[
+  {
+    "id": "sae-f4bfc2c139b7721b11af",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "UNB",
+    "concurso": "UNB",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UNB",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UNB) As ideias que fizeram contraponto à tese de Vidal de La Blache no século XIX estão sistematizadas no pensamento de",
+    "opcoes": [
+      "Karl Marx, que influenciou o desenvolvimento da geografia marxista.",
+      "Milton Santos e seu estudo do espaço em objetos e ações.",
+      "Yves Lacoste e sua geografia a serviço do Estado Maior.",
+      "David Harvey e sua produção capitalista do espaço.",
+      "Friedrich Ratzel, alemão e teórico do determinismo geográfico."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(UNB) As ideias que fizeram contraponto à tese de Vidal de La Blache no século XIX estão sistematizadas no pensamento de "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Karl Marx, que influenciou o desenvolvimento da geografia marxista. "
+      ],
+      [
+        " ",
+        " ",
+        "Milton Santos e seu estudo do espaço em objetos e ações. "
+      ],
+      [
+        " ",
+        " ",
+        "Yves Lacoste e sua geografia a serviço do Estado Maior. "
+      ],
+      [
+        " ",
+        " ",
+        "David Harvey e sua produção capitalista do espaço. "
+      ],
+      [
+        " ",
+        " ",
+        "Friedrich Ratzel, alemão e teórico do determinismo geográfico. "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 2,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-f1e5ec070f3efad637d8",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "UEG",
+    "concurso": "UEG",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UEG",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UEG) Durante a trajetória da Terra em torno do Sol, só há duas ocasiões em que os dois hemisférios são igualmente iluminados pela energia solar. Esse período do ano é conhecido como:",
+    "opcoes": [
+      "equinócio.",
+      "solstício.",
+      "afélio.",
+      "periélio.",
+      "veranico."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(UEG) Durante a trajetória da Terra em torno do Sol, só há duas ocasiões em que os dois hemisférios são igualmente iluminados pela energia solar. Esse período do ano é conhecido como: "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "equinócio. "
+      ],
+      [
+        " ",
+        " ",
+        "solstício. "
+      ],
+      [
+        " ",
+        " ",
+        "afélio. "
+      ],
+      [
+        " ",
+        " ",
+        "periélio. "
+      ],
+      [
+        " ",
+        " ",
+        "veranico. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 3,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-57630018021d298c87ac",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "UFRGS",
+    "concurso": "UFRGS",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFRGS",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UFRGS) A coluna da esquerda abaixo apresenta os movimentos de rotação e translação, responsáveis por diversos fenômenos; a da direita, alguns desses fenômenos. \n\nAssocie adequadamente a coluna da direita à da esquerda.\n\n 1. Rotação\n\n 2. Translação\n\n ( ________ ) Afélio e periélio \n\n ( ________ ) Desvios dos ventos \n\n ( ________ ) Movimento aparente do Sol \n\n ( ________ ) Estações do ano \n\n \n\nA sequência correta de preenchimento dos parênteses, de cima para baixo, é:",
+    "opcoes": [
+      "2 – 1 – 1 – 2.",
+      "1 – 2 – 1 – 2.",
+      "1 – 2 – 2 – 1.",
+      "2 – 2 – 1 – 1.",
+      "1 – 1 – 2 – 2."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(UFRGS) A coluna da esquerda abaixo apresenta os movimentos de rotação e translação, responsáveis por diversos fenômenos; a da direita, alguns desses fenômenos. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Associe adequadamente a coluna da direita à da esquerda."
+        ]
+      },
+      {
+        "tag": "table",
+        "children": [
+          {
+            "tag": "tbody",
+            "children": [
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "span",
+                            "children": [
+                              "1."
+                            ]
+                          },
+                          " Rotação"
+                        ]
+                      },
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "span",
+                            "children": [
+                              "2."
+                            ]
+                          },
+                          " Translação"
+                        ]
+                      },
+                      " "
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " ",
+                          {
+                            "tag": "span",
+                            "children": [
+                              "( ",
+                              {
+                                "tag": "span",
+                                "children": [
+                                  "________"
+                                ]
+                              },
+                              " )"
+                            ]
+                          },
+                          " Afélio e periélio "
+                        ]
+                      },
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " ",
+                          {
+                            "tag": "span",
+                            "children": [
+                              "( ",
+                              {
+                                "tag": "span",
+                                "children": [
+                                  "________"
+                                ]
+                              },
+                              " )"
+                            ]
+                          },
+                          " Desvios dos ventos "
+                        ]
+                      },
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " ",
+                          {
+                            "tag": "span",
+                            "children": [
+                              "( ",
+                              {
+                                "tag": "span",
+                                "children": [
+                                  "________"
+                                ]
+                              },
+                              " )"
+                            ]
+                          },
+                          " Movimento aparente do Sol "
+                        ]
+                      },
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " ",
+                          {
+                            "tag": "span",
+                            "children": [
+                              "( ",
+                              {
+                                "tag": "span",
+                                "children": [
+                                  "________"
+                                ]
+                              },
+                              " )"
+                            ]
+                          },
+                          " Estações do ano "
+                        ]
+                      },
+                      " "
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "A sequência correta de preenchimento dos parênteses, de cima para baixo, é:"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "2 – 1 – 1 – 2. "
+      ],
+      [
+        " ",
+        " ",
+        "1 – 2 – 1 – 2. "
+      ],
+      [
+        " ",
+        " ",
+        "1 – 2 – 2 – 1. "
+      ],
+      [
+        " ",
+        " ",
+        "2 – 2 – 1 – 1. "
+      ],
+      [
+        " ",
+        " ",
+        "1 – 1 – 2 – 2. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 5,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-1ac67449279714e5561f",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "UECE",
+    "concurso": "UECE 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2019",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UECE-2019) A ciência geográfica costuma estudar",
+    "opcoes": [
+      "a diferenciação de áreas com base no uso avançado de geotecnologias.",
+      "a influência que as condições geológicas exercem sobre o homem.",
+      "a morfologia, na paisagem, de diferentes fatores, em especial os climáticos e os ecológicos.",
+      "as relações próprias da natureza, as relações próprias da sociedade e, de forma integrada, as relações entre a sociedade e a natureza."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(UECE-2019) A ciência geográfica costuma estudar "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "a diferenciação de áreas com base no uso avançado de geotecnologias. "
+      ],
+      [
+        " ",
+        " ",
+        "a influência que as condições geológicas exercem sobre o homem. "
+      ],
+      [
+        " ",
+        " ",
+        "a morfologia, na paisagem, de diferentes fatores, em especial os climáticos e os ecológicos. "
+      ],
+      [
+        " ",
+        " ",
+        "as relações próprias da natureza, as relações próprias da sociedade e, de forma integrada, as relações entre a sociedade e a natureza. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 6,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-05fa3c51d51e0f34d7ad",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "UECE",
+    "concurso": "UECE",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UECE) Atente à seguinte descrição: \n\n “Conjunto de correntes que caracterizou a geografia no período que se estende de 1870, aproximadamente, quando a geografia tornou-se uma disciplina institucionalizada nas universidades europeias, à década de 1950, quando se verificou a denominada revolução teorético-quantitativa [...].” \n\nCORRÊA, Roberto Lobato. Espaço: um conceito-chave da Geografia. p. 17. In: Geografia: conceitos e temas. 1995.\n\nEssa descrição se refere ao conceito de geografia",
+    "opcoes": [
+      "tradicional.",
+      "cultural.",
+      "crítica.",
+      "agrária."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(UECE) Atente à seguinte descrição: "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " “Conjunto de correntes que caracterizou a geografia no período que se estende de 1870, aproximadamente, quando a geografia tornou-se uma disciplina institucionalizada nas universidades europeias, à década de 1950, quando se verificou a denominada revolução teorético-quantitativa [...].” "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "CORRÊA, Roberto Lobato. Espaço: um conceito-chave da Geografia. p. 17. In: Geografia: conceitos e temas. 1995."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Essa descrição se refere ao conceito de geografia"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "tradicional. "
+      ],
+      [
+        " ",
+        " ",
+        "cultural. "
+      ],
+      [
+        " ",
+        " ",
+        "crítica. "
+      ],
+      [
+        " ",
+        " ",
+        "agrária. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 7,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-b84e31d45cf5d7b6bcfb",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "UTFPR",
+    "concurso": "UTFPR",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UTFPR",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UTFPR) “A translação, ou órbita da Terra ao redor do Sol, constitui a causa da existência das estações do ano em nosso planeta”. \n\nEssa afirmação está:",
+    "opcoes": [
+      "incompleta, pois a inclinação do eixo terrestre explica a desigualdade de insolação.",
+      "correta, pois, à medida que a Terra completa sua órbita, a posição do Sol se modifica.",
+      "incorreta, já que o movimento de rotação da Terra influencia a altura do Sol no céu.",
+      "incompleta, uma vez que a precessão dos equinócios vai determinar se é verão ou inverno.",
+      "incorreta, porque é a distância que a Terra está do Sol que vai determinar as estações."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(UTFPR) “A translação, ou órbita da Terra ao redor do Sol, constitui a causa da existência das estações do ano em nosso planeta”. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Essa afirmação está:"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "incompleta, pois a inclinação do eixo terrestre explica a desigualdade de insolação. "
+      ],
+      [
+        " ",
+        " ",
+        "correta, pois, à medida que a Terra completa sua órbita, a posição do Sol se modifica. "
+      ],
+      [
+        " ",
+        " ",
+        "incorreta, já que o movimento de rotação da Terra influencia a altura do Sol no céu. "
+      ],
+      [
+        " ",
+        " ",
+        "incompleta, uma vez que a precessão dos equinócios vai determinar se é verão ou inverno. "
+      ],
+      [
+        " ",
+        " ",
+        "incorreta, porque é a distância que a Terra está do Sol que vai determinar as estações. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 8,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-1137741ca69d228af713",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "MACKENZIE",
+    "concurso": "Mackenzie 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Mackenzie-2019",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Mackenzie-2019) “O sonho obriga o homem a pensar” (Milton Santos) \n\n “Milton Santos nasceu em 3 de maio de 1926 em Brotas de Macaúbas, Bahia. Embora formado em Direito, sempre lecionou geografia nas escolas de ensino médio da Bahia. Em 1958, concluiu um doutorado em geografia, na Universidade de Strasbourg, França. Foi colaborador dos jornais A Tarde, de Salvador, e da Folha de S.Paulo. \n\nEsteve sempre envolvido com a política; em 1960 participou do governo, mas em 1964 foi preso em decorrência do golpe militar. Após sua saída da prisão, trabalhou em universidades da França, do Canadá, dos Estados Unidos, da Venezuela e da Tanzânia, na África.\n\n Retornou ao Brasil em 1977, pois queria que seu segundo filho nascesse na Bahia. Em 1978, iniciou sua carreira na Universidade de São Paulo, lecionando na Faculdade de Arquitetura e Urbanismo e posteriormente na Universidade Federal do Rio de Janeiro. Ao voltar para São Paulo, tornou-se professor da Faculdade de Geografia da USP. Recebeu títulos de Doutor Honoris Causa nas universidades de Toulouse, Buenos Aires, Madri e Barcelona e outros no Brasil, destacando o de Professor Emérito da Faculdade de Filosofia, Letras e Ciências Humanas da USP.” \n\n Fonte: https://www.prefeitura.sp.gov.br/cidade/secretarias/cultura/bibliotecas/bibliotecas_bairro/bibliotecas_m_z/miltonsantos/index.php?p=3781 \n\nIdentifique, dentre as alternativas abaixo, a Escola Geográfica que o renomado geógrafo representava no Brasil.",
+    "opcoes": [
+      "Geografia Teorética Quantitativa.",
+      "Geografia Determinista.",
+      "Geografia Crítica.",
+      "Geografia Possibilista.",
+      "Geografia da Percepção."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(Mackenzie-2019) “O sonho obriga o homem a pensar” (Milton Santos) "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " “Milton Santos nasceu em 3 de maio de 1926 em Brotas de Macaúbas, Bahia. Embora formado em Direito, sempre lecionou geografia nas escolas de ensino médio da Bahia. Em 1958, concluiu um doutorado em geografia, na Universidade de Strasbourg, França. Foi colaborador dos jornais ",
+          {
+            "tag": "strong",
+            "children": [
+              "A Tarde"
+            ]
+          },
+          ", de Salvador, e da ",
+          {
+            "tag": "strong",
+            "children": [
+              "Folha de S.Paulo"
+            ]
+          },
+          ". "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Esteve sempre envolvido com a política; em 1960 participou do governo, mas em 1964 foi preso em decorrência do golpe militar. Após sua saída da prisão, trabalhou em universidades da França, do Canadá, dos Estados Unidos, da Venezuela e da Tanzânia, na África."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Retornou ao Brasil em 1977, pois queria que seu segundo filho nascesse na Bahia. Em 1978, iniciou sua carreira na Universidade de São Paulo, lecionando na Faculdade de Arquitetura e Urbanismo e posteriormente na Universidade Federal do Rio de Janeiro. Ao voltar para São Paulo, tornou-se professor da Faculdade de Geografia da USP. Recebeu títulos de Doutor ",
+          {
+            "tag": "strong",
+            "children": [
+              "Honoris Causa"
+            ]
+          },
+          " nas universidades de Toulouse, Buenos Aires, Madri e Barcelona e outros no Brasil, destacando o de Professor Emérito da Faculdade de Filosofia, Letras e Ciências Humanas da USP.” "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Fonte: ",
+          {
+            "tag": "span",
+            "children": [
+              " https://www.prefeitura.sp.gov.br/cidade/secretarias/cultura/bibliotecas/bibliotecas_bairro/bibliotecas_m_z/miltonsantos/index.php?p=3781 "
+            ]
+          },
+          " "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Identifique, dentre as alternativas abaixo, a Escola Geográfica que o renomado geógrafo representava no Brasil."
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Geografia Teorética Quantitativa. "
+      ],
+      [
+        " ",
+        " ",
+        "Geografia Determinista. "
+      ],
+      [
+        " ",
+        " ",
+        "Geografia Crítica. "
+      ],
+      [
+        " ",
+        " ",
+        "Geografia Possibilista. "
+      ],
+      [
+        " ",
+        " ",
+        "Geografia da Percepção. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 9,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-d63556028feecdc0afdd",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "UECE",
+    "concurso": "UECE",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UECE) Atente à seguinte letra de música: \n\n“Por ser de lá do sertão, lá do cerrado\n\nLá do interior do mato\n\nDa caatinga, do roçado\n\nEu quase não saio\n\nEu quase não tenho amigos\n\nEu quase não consigo\n\nFicar na cidade, sem viver contrariado”\n\n(Lamento Sertanejo, Dominguinhos)\n\nA letra da canção acima apresenta elementos que estão associados",
+    "opcoes": [
+      "ao aspecto visível das formas da natureza, considerando principalmente os domínios morfoclimáticos.",
+      "à estrutura social e econômica de uma determinada sociedade.",
+      "aos movimentos migratórios que ensejam transformações socioespaciais.",
+      "ao sentimento de pertencimento e experiência vivida pelo indivíduo."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(UECE) Atente à seguinte letra de música: "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "“Por ser de lá do sertão, lá do cerrado"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Lá do interior do mato"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Da caatinga, do roçado"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Eu quase não saio"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Eu quase não tenho amigos"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Eu quase não consigo"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Ficar na cidade, sem viver contrariado”"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "(Lamento Sertanejo, Dominguinhos)"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "A letra da canção acima apresenta elementos que estão associados"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "ao aspecto visível das formas da natureza, considerando principalmente os domínios morfoclimáticos. "
+      ],
+      [
+        " ",
+        " ",
+        "à estrutura social e econômica de uma determinada sociedade. "
+      ],
+      [
+        " ",
+        " ",
+        "aos movimentos migratórios que ensejam transformações socioespaciais. "
+      ],
+      [
+        " ",
+        " ",
+        "ao sentimento de pertencimento e experiência vivida pelo indivíduo. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 11,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-e93292e03d1b920ae79c",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "UEL",
+    "concurso": "UEL 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UEL-2019",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UEL-2019) Leia o texto a seguir. \n\n Todos os espaços são geográficos porque determinados pelo movimento da sociedade, da produção. Mas tanto a paisagem quanto o espaço resultam de movimentos superficiais e de fundo da sociedade, uma realidade de funcionamento unitário, um mosaico de relações, de formas, funções e sentidos. \n\nSANTOS, M. Metamorfose do Espaço habitado: Fundamentos teóricos e metodológicos da Geografia. São Paulo: EDUSP, 2008, p. 67.\n\nO espaço geográfico é o principal objeto de estudo da Geografia, e, a partir dele, conceitos e categorias de análises compõem a relação sociedade-natureza.\n\nCom base nesses conhecimentos, associe a coluna da esquerda com a coluna da direita. \n\n I. Paisagem\n\n II. Lugar\n\n III. Território\n\n IV. Região\n\n V. Rede\n\n a)Caracteriza-se pela valorização das relações de afetividade desenvolvidas pelos indivíduos em relação ao ambiente, sendo o resultado de significados construídos pela experiência, com referenciais afetivos desenvolvidos ao longo da vida. \n\n \n\n b)Compreende tudo aquilo que nós vemos, o que nossa visão alcança: trata-se do domínio do visível, aquilo que a vista abarca. Forma-se não apenas de volumes, mas também de cores, movimentos, odores, sons etc. \n\n \n\n c)Sistema integrado de fluxos que se constitui por pontos de acesso, arcos de transmissão e nós ou polos de bifurcação, definindo-se pelo grau de acesso que eles oferecem, além de exibirem aspectos materiais, embora seu conteúdo seja imaterial. \n\n \n\n d)Liga-se à formação econômica e social de uma nação, sendo produto do processo de apropriação e domínio social, cotidianamente, inscrevendo-se num campo de poder, de relações socioespaciais, nas quais a natureza exterior do homem está presente de diferentes maneiras. \n\n \n\n e)É uma porção do espaço delimitada a partir do agrupamento de aspectos, em certa medida, homogêneos, seja por um critério físico-natural, socioeconômico, cultural, entre outros, que resulta em uma diferenciação de área. \n\n \n\nAssinale a alternativa que contém a associação correta.",
+    "opcoes": [
+      "I-A, II-B, III-C, IV-E, V-D.",
+      "I-A, II-D, III-C, IV-B, V-E.",
+      "I-B, II-A, III-D, IV-E, V-C.",
+      "I-B, II-D, III-A, IV-C, V-E.",
+      "I-E, II-A, III-B, IV-C, V-D."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(UEL-2019) Leia o texto a seguir. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Todos os espaços são geográficos porque determinados pelo movimento da sociedade, da produção. Mas tanto a paisagem quanto o espaço resultam de movimentos superficiais e de fundo da sociedade, uma realidade de funcionamento unitário, um mosaico de relações, de formas, funções e sentidos. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "SANTOS, M. ",
+          {
+            "tag": "em",
+            "children": [
+              "Metamorfose do Espaço habitado"
+            ]
+          },
+          ": Fundamentos teóricos e metodológicos da Geografia. São Paulo: EDUSP, 2008, p. 67."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "O espaço geográfico é o principal objeto de estudo da Geografia, e, a partir dele, conceitos e categorias de análises compõem a relação sociedade-natureza."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Com base nesses conhecimentos, associe a coluna da esquerda com a coluna da direita. "
+        ]
+      },
+      {
+        "tag": "table",
+        "children": [
+          {
+            "tag": "tbody",
+            "children": [
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "span",
+                            "children": [
+                              "I."
+                            ]
+                          },
+                          " Paisagem"
+                        ]
+                      },
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "span",
+                            "children": [
+                              "II."
+                            ]
+                          },
+                          " Lugar"
+                        ]
+                      },
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "span",
+                            "children": [
+                              "III."
+                            ]
+                          },
+                          " Território"
+                        ]
+                      },
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "span",
+                            "children": [
+                              "IV."
+                            ]
+                          },
+                          " Região"
+                        ]
+                      },
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "span",
+                            "children": [
+                              "V."
+                            ]
+                          },
+                          " Rede"
+                        ]
+                      },
+                      " "
+                    ],
+                    "rowSpan": 5
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " ",
+                          " ",
+                          {
+                            "tag": "span",
+                            "children": [
+                              "a)"
+                            ]
+                          },
+                          "Caracteriza-se pela valorização das relações de afetividade desenvolvidas pelos indivíduos em relação ao ambiente, sendo o resultado de significados construídos pela experiência, com referenciais afetivos desenvolvidos ao longo da vida. "
+                        ]
+                      },
+                      " ",
+                      " "
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " ",
+                          " ",
+                          {
+                            "tag": "span",
+                            "children": [
+                              "b)"
+                            ]
+                          },
+                          "Compreende tudo aquilo que nós vemos, o que nossa visão alcança: trata-se do domínio do visível, aquilo que a vista abarca. Forma-se não apenas de volumes, mas também de cores, movimentos, odores, sons etc. "
+                        ]
+                      },
+                      " ",
+                      " "
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " ",
+                          " ",
+                          {
+                            "tag": "span",
+                            "children": [
+                              "c)"
+                            ]
+                          },
+                          "Sistema integrado de fluxos que se constitui por pontos de acesso, arcos de transmissão e nós ou polos de bifurcação, definindo-se pelo grau de acesso que eles oferecem, além de exibirem aspectos materiais, embora seu conteúdo seja imaterial. "
+                        ]
+                      },
+                      " ",
+                      " "
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " ",
+                          " ",
+                          {
+                            "tag": "span",
+                            "children": [
+                              "d)"
+                            ]
+                          },
+                          "Liga-se à formação econômica e social de uma nação, sendo produto do processo de apropriação e domínio social, cotidianamente, inscrevendo-se num campo de poder, de relações socioespaciais, nas quais a natureza exterior do homem está presente de diferentes maneiras. "
+                        ]
+                      },
+                      " ",
+                      " "
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " ",
+                          " ",
+                          {
+                            "tag": "span",
+                            "children": [
+                              "e)"
+                            ]
+                          },
+                          "É uma porção do espaço delimitada a partir do agrupamento de aspectos, em certa medida, homogêneos, seja por um critério físico-natural, socioeconômico, cultural, entre outros, que resulta em uma diferenciação de área. "
+                        ]
+                      },
+                      " ",
+                      " "
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Assinale a alternativa que contém a associação correta."
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "I-A, II-B, III-C, IV-E, V-D. "
+      ],
+      [
+        " ",
+        " ",
+        "I-A, II-D, III-C, IV-B, V-E. "
+      ],
+      [
+        " ",
+        " ",
+        "I-B, II-A, III-D, IV-E, V-C. "
+      ],
+      [
+        " ",
+        " ",
+        "I-B, II-D, III-A, IV-C, V-E. "
+      ],
+      [
+        " ",
+        " ",
+        "I-E, II-A, III-B, IV-C, V-D. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 13,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-94e51264636003aaefd1",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "UPE",
+    "concurso": "UPE",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UPE",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UPE) A qual princípio da Ciência Geográfica estão relacionadas as características apresentadas no esboço esquemático a seguir?",
+    "opcoes": [
+      "Extensão.",
+      "Analogia.",
+      "Causalidade.",
+      "Atividade.",
+      "Conexidade."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(UPE) A qual princípio da Ciência Geográfica estão relacionadas as características apresentadas no esboço esquemático a seguir? "
+        ]
+      },
+      {
+        "tag": "figure",
+        "children": [
+          " ",
+          {
+            "tag": "img",
+            "src": "/acervo/estudo-geografia-introducao/d61d4fb8419fab7481eb.jpg",
+            "alt": "Figura da questão",
+            "children": []
+          },
+          " "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Extensão. "
+      ],
+      [
+        " ",
+        " ",
+        "Analogia. "
+      ],
+      [
+        " ",
+        " ",
+        "Causalidade. "
+      ],
+      [
+        " ",
+        " ",
+        "Atividade. "
+      ],
+      [
+        " ",
+        " ",
+        "Conexidade. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 14,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-2a473febe61760663474",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "UEPB",
+    "concurso": "UEPB",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UEPB",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UEPB) Título da Música – Meu ________\nSambista Arlindo Cruz \n\n O meu ________ [...] / lá tem samba até de manhã / uma ginga em cada andar / O meu ________ é cercado de luta e suor / esperança num mundo melhor / e cerveja pra comemorar / O meu ________ tem seus mitos e seres de luz [...] / O meu ________ é sorriso, é paz e prazer / O seu nome é doce dizer / Madureira, lá, laiá [...] Ah, que ________ / a saudade me faz relembrar / dos amores que eu tive por lá / é difícil esquecer / doce ________/ que é eterno no meu coração / aos poetas traz inspiração / pra cantar e escrever / Ah, meu ________ / quem não viu tia Eulália dançar / Vó Maria o terreiro benzer [...] / Ah, que ________ / tem mil coisas pra gente dizer / O difícil é saber terminar / Madureira, lá, laiá. [...] \n\nTodos os conceitos abaixo são ferramentas de análise do espaço. De acordo com os seus conhecimentos sobre as categorias geográficas aplicadas ao espaço, identifique a que preenche as lacunas e se enquadra na música do sambista Arlindo Cruz.",
+    "opcoes": [
+      "Lugar.",
+      "Espaço geográfico.",
+      "Território.",
+      "Espaço natural.",
+      "Espaço humanizado."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(UEPB) Título da Música – Meu ",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          {
+            "tag": "br",
+            "children": []
+          },
+          "Sambista Arlindo Cruz "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " O meu ",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          " [...] / lá tem samba até de manhã / uma ginga em cada andar / O meu ",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          " é cercado de luta e suor / esperança num mundo melhor / e cerveja pra comemorar / O meu ",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          " tem seus mitos e seres de luz [...] / O meu ",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          " é sorriso, é paz e prazer / O seu nome é doce dizer / Madureira, lá, laiá [...] Ah, que ",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          " / a saudade me faz relembrar / dos amores que eu tive por lá / é difícil esquecer / doce ",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          "/ que é eterno no meu coração / aos poetas traz inspiração / pra cantar e escrever / Ah, meu ",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          " / quem não viu tia Eulália dançar / Vó Maria o terreiro benzer [...] / Ah, que ",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          " / tem mil coisas pra gente dizer / O difícil é saber terminar / Madureira, lá, laiá. [...] "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Todos os conceitos abaixo são ferramentas de análise do espaço. De acordo com os seus conhecimentos sobre as categorias geográficas aplicadas ao espaço, identifique a que preenche as lacunas e se enquadra na música do sambista Arlindo Cruz."
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Lugar. "
+      ],
+      [
+        " ",
+        " ",
+        "Espaço geográfico. "
+      ],
+      [
+        " ",
+        " ",
+        "Território. "
+      ],
+      [
+        " ",
+        " ",
+        "Espaço natural. "
+      ],
+      [
+        " ",
+        " ",
+        "Espaço humanizado. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 15,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-ac3780ba895eea536c2e",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "ENEM",
+    "concurso": "Enem",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Enem",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(Enem) “O mundo dos fatos geográficos inclui não somente o clima, as propriedades agrícolas, os povoamentos e as nações-estados, mas também os sentimentos, os conceitos e as teorias geográficas.” \n\nTUAN, Y. Geografia Humanista. In: CHRISTOFOLETTI, A. A perspectiva da Geografia. São Paulo: DIFEL, 1955.\n\nO texto apresenta uma perspectiva de análise das mudanças espaciais a partir de outros fatores que não apenas os físicos e sociais, onde",
+    "opcoes": [
+      "a análise do espaço geográfico compreende os aspectos físicos, sociais e simbólicos que incidem sobre a produção das paisagens humanas.",
+      "os aspectos físicos da paisagem, como o clima, revelam a dinâmica dos fatos geográficos compreendidos por uma pluralidade conceitual.",
+      "a dimensão simbólica do espaço, apreendida pelos sentimentos, constitui uma nova percepção espacial no instante em que revelam as propriedades das paisagens.",
+      "para se apreender o espaço geográfico em sua totalidade, é necessário identificar os aspectos físicos da paisagem expressos no clima, povoamento e uso do solo.",
+      "o mundo dos fatos geográficos constitui-se de elementos simbólicos apreendidos pelas teorias e conceitos geográficos que revelam a complexidade da dimensão espacial."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(Enem) “O mundo dos fatos geográficos inclui não somente o clima, as propriedades agrícolas, os povoamentos e as nações-estados, mas também os sentimentos, os conceitos e as teorias geográficas.” "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "TUAN, Y. Geografia Humanista. In: CHRISTOFOLETTI, A. ",
+          {
+            "tag": "em",
+            "children": [
+              "A perspectiva da Geografia"
+            ]
+          },
+          ". São Paulo: DIFEL, 1955."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "O texto apresenta uma perspectiva de análise das mudanças espaciais a partir de outros fatores que não apenas os físicos e sociais, onde"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "a análise do espaço geográfico compreende os aspectos físicos, sociais e simbólicos que incidem sobre a produção das paisagens humanas. "
+      ],
+      [
+        " ",
+        " ",
+        "os aspectos físicos da paisagem, como o clima, revelam a dinâmica dos fatos geográficos compreendidos por uma pluralidade conceitual. "
+      ],
+      [
+        " ",
+        " ",
+        "a dimensão simbólica do espaço, apreendida pelos sentimentos, constitui uma nova percepção espacial no instante em que revelam as propriedades das paisagens. "
+      ],
+      [
+        " ",
+        " ",
+        "para se apreender o espaço geográfico em sua totalidade, é necessário identificar os aspectos físicos da paisagem expressos no clima, povoamento e uso do solo. "
+      ],
+      [
+        " ",
+        " ",
+        "o mundo dos fatos geográficos constitui-se de elementos simbólicos apreendidos pelas teorias e conceitos geográficos que revelam a complexidade da dimensão espacial. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 16,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-e0379d9b339ca4b31fa8",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "UECE",
+    "concurso": "UECE",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UECE) “O mundo estaria se ‘desterritorializando’? Sob o impacto dos processos de globalização que ‘comprimiram’ o espaço e o tempo, [...] o que restaria de nossos ‘territórios’, de nossa ‘geografia’? \n\nFonte: HAESBAERT, Rogério. O mito da desterritorialização – do fim dos territórios à multiterritorialidade. 2. edição. Rio de Janeiro: Bertrand Brasil, 2006. pp. 19 - 20.\n\nNa geografia, o debate contemporâneo sobre territorialização, desterritorialização e reterritorialização conclui acerca",
+    "opcoes": [
+      "de uma tendência ao enfraquecimento dos controles territoriais, em consequência de uma rearticulação das velocidades na sociedade do movimento.",
+      "do predomínio da fluidez sobre a estabilidade, resultando numa sociedade de fluxos sem necessidade de base material.",
+      "do aumento da hibridização cultural e, portanto, de uma multiplicidade de identidades que esvazia o território.",
+      "da formação de uma multiplicidade de territorialidades, que vai dos limites fixos do gueto aos mais flexíveis territórios-rede."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(UECE) “O mundo estaria se ‘desterritorializando’? Sob o impacto dos processos de globalização que ‘comprimiram’ o espaço e o tempo, [...] o que restaria de nossos ‘territórios’, de nossa ‘geografia’? "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Fonte: HAESBAERT, Rogério. O mito da desterritorialização – do fim dos territórios à multiterritorialidade. 2. edição. Rio de Janeiro: Bertrand Brasil, 2006. pp. 19 - 20."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Na geografia, o debate contemporâneo sobre territorialização, desterritorialização e reterritorialização conclui acerca"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "de uma tendência ao enfraquecimento dos controles territoriais, em consequência de uma rearticulação das velocidades na sociedade do movimento. "
+      ],
+      [
+        " ",
+        " ",
+        "do predomínio da fluidez sobre a estabilidade, resultando numa sociedade de fluxos sem necessidade de base material. "
+      ],
+      [
+        " ",
+        " ",
+        "do aumento da hibridização cultural e, portanto, de uma multiplicidade de identidades que esvazia o território. "
+      ],
+      [
+        " ",
+        " ",
+        "da formação de uma multiplicidade de territorialidades, que vai dos limites fixos do gueto aos mais flexíveis territórios-rede. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 18,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-4fa1a7bf421aa5fcd214",
+    "materia": "Geografia",
+    "conteudo": "Introdução à Geografia",
+    "banca": "FUVEST",
+    "concurso": "Fuvest 2022",
+    "ano": 2022,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Fuvest-2022",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(Fuvest-2022) No dia 23 de março de 2021 o mega navio Ever Given, de 220.000 toneladas e 400 m de comprimento, encalhou no Canal de Suez no Egito em rota para o porto de Rotterdam, Holanda, ficando atravessado e preso pelas extremidades. O navio reflutuou no dia 29 do mesmo mês em razão das condições de vento e maré, além da operação promovida por rebocadores. \n\n Disponível em https://www.noaa.gov/, https://edition.cnn.com/ e https://www.tide-forecast.com/. Adaptados. \n\nCom base nos dados fornecidos e em seus conhecimentos, pode-se atribuir o reflutuamento do Ever Given às seguintes condições:",
+    "opcoes": [
+      "Formação de um gradiente de pressão entre Ásia e África, com ventos de Sudoeste e rebaixamento do nível da água do mar pela maré de quadratura.",
+      "Formação de um gradiente de pressão entre Europa e África, com ventos de Noroeste e elevação do nível da água do mar pela maré de sizígia.",
+      "Formação de um gradiente de pressão entre Europa e África, com ventos de Sudeste e elevação do nível da água do mar pela maré de quadratura.",
+      "Formação de um gradiente de pressão entre África e Europa, com ventos de Nordeste e rebaixamento do nível da água do mar pela maré de sizígia.",
+      "Formação de um gradiente de pressão entre Ásia e Europa, com predomínio de calmarias e vazante do nível da água do mar pela maré neutra."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Fuvest-2022) No dia 23 de março de 2021 o mega navio Ever Given, de 220.000 toneladas e 400 m de comprimento, encalhou no Canal de Suez no Egito em rota para o porto de Rotterdam, Holanda, ficando atravessado e preso pelas extremidades. O navio reflutuou no dia 29 do mesmo mês em razão das condições de vento e maré, além da operação promovida por rebocadores. "
+        ]
+      },
+      {
+        "tag": "figure",
+        "children": [
+          {
+            "tag": "img",
+            "src": "/acervo/estudo-geografia-introducao/e5f3b50458703182f8f1.jpg",
+            "alt": "Figura da questão",
+            "children": []
+          }
+        ]
+      },
+      {
+        "tag": "figure",
+        "children": [
+          {
+            "tag": "img",
+            "src": "/acervo/estudo-geografia-introducao/3615306ecfacb1ff0386.jpg",
+            "alt": "Figura da questão",
+            "children": []
+          }
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Disponível em ",
+          {
+            "tag": "span",
+            "children": [
+              "https://www.noaa.gov/"
+            ]
+          },
+          ", ",
+          {
+            "tag": "span",
+            "children": [
+              "https://edition.cnn.com/"
+            ]
+          },
+          " e ",
+          {
+            "tag": "span",
+            "children": [
+              "https://www.tide-forecast.com/"
+            ]
+          },
+          ". Adaptados. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Com base nos dados fornecidos e em seus conhecimentos, pode-se atribuir o reflutuamento do Ever Given às seguintes condições:"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Formação de um gradiente de pressão entre Ásia e África, com ventos de Sudoeste e rebaixamento do nível da água do mar pela maré de quadratura. "
+      ],
+      [
+        " ",
+        " ",
+        "Formação de um gradiente de pressão entre Europa e África, com ventos de Noroeste e elevação do nível da água do mar pela maré de sizígia. "
+      ],
+      [
+        " ",
+        " ",
+        "Formação de um gradiente de pressão entre Europa e África, com ventos de Sudeste e elevação do nível da água do mar pela maré de quadratura. "
+      ],
+      [
+        " ",
+        " ",
+        "Formação de um gradiente de pressão entre África e Europa, com ventos de Nordeste e rebaixamento do nível da água do mar pela maré de sizígia. "
+      ],
+      [
+        " ",
+        " ",
+        "Formação de um gradiente de pressão entre Ásia e Europa, com predomínio de calmarias e vazante do nível da água do mar pela maré neutra. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bce",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à Geografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/geografia/capitulos/1-introducao-a-geografia-dmVDo",
+      "titulo_documento": "EXT26_3_GEO_L1_A_01",
+      "numero": 21,
+      "secao": "Enem e vestibulares + Desafio"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  }
+]

@@ -19,6 +19,9 @@ export function classificarReferencia(enunciado) {
   if (!identificada) return {
     banca: ASSIMILACAO, concurso: ASSIMILACAO, ano: null,
     tipo_origem: 'assimilacao', referencia_original: null, adaptada: false,
+    // Uma sigla ainda desconhecida acompanhada de ano exige revisão humana.
+    // Não transformar erro de reconhecimento em questão autoral publicada.
+    ...(porAno && /\p{L}/u.test(porAno[1]) ? { referencia_pendente: referencia } : {}),
   }
   const base = bancaDeclarada.match(/^((?:UF|UE|IF|UN)[A-Z]{1,18}|PUC(?:RS|PR|RJ|SP|MG|GO|RIO)?|CEFET|USCS|USF)(?:[- /]|$)/iu)?.[1]
   const sigla = (base || bancaDeclarada).toUpperCase()

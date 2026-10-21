@@ -5,6 +5,7 @@ import {classificarReferencia} from './classificacao.mjs'
 import {normalizarBlocos,textoDosBlocos,textoBruto} from './formato-publicacao.mjs'
 import {acervo,questaoPublicavel,unirQuestoes} from '../../src/acervo.js'
 import {assinaturaVisualBlocos} from '../../src/blocosQuestao.js'
+import {recuperarFonteOficial} from './recuperacoes-oficiais.mjs'
 
 
 export function publicarLote({pasta,definicoes,conflitos=new Map(),conteudoPara,apoioIntegradoIds=new Set()}) {
@@ -17,6 +18,14 @@ const norm=t=>String(t).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLower
 const chave=q=>(q.opcoes||[]).map(norm).sort().join('|')+'::'+assinaturaVisualBlocos(q)
 const anteriores=[...acervo]
 for(const dir of fs.readdirSync('public/acervo',{withFileTypes:true}))if(dir.isDirectory()&&dir.name!==pasta){const f=`public/acervo/${dir.name}/questoes.json`;if(fs.existsSync(f))anteriores.push(...JSON.parse(fs.readFileSync(f,'utf8')))}
+const indiceOpcoes=new Map()
+const indexar=q=>{const k=chave(q);if(!indiceOpcoes.has(k))indiceOpcoes.set(k,[]);indiceOpcoes.get(k).push(q)}
+anteriores.forEach(indexar)
+const textoComparavel=q=>{
+ const t=String(q.enunciado||'')
+ return norm(classificarReferencia(t).tipo_origem==='prova_identificada'?t.replace(/^\s*\([^)]{1,100}\)\s*/u,''):t)
+}
+const respostaTexto=q=>{const i=Number.isInteger(q.resposta_correta)?q.resposta_correta:/^[A-E]$/iu.test(String(q.resposta_correta))?String(q.resposta_correta).toUpperCase().charCodeAt(0)-65:-1;return i>=0?norm(q.opcoes?.[i]||''):''}
 for(const cap of capitulos){
  function copiarImagem(url){
   const ar=cap.arquivos.find(a=>a.url===url);if(!ar)throw Error('Figura ausente')
@@ -25,22 +34,28 @@ for(const cap of capitulos){
   const nome=hash.slice(0,20)+ext,imagem='/acervo/'+pasta+'/'+nome
   arquivos.set(imagem,{imagem,sha256:hash,origem:url});fs.writeFileSync(path.join(destino,nome),bytes);return imagem
  }
- for(const q of cap.questoes){
+ for(const original of cap.questoes){
+  let q=original
   const excluir=motivo=>quarentena.push({id:q.id,capitulo:cap.capitulo,numero:q.numero_livro,motivo})
   if(conflitos.has(q.id)){excluir(conflitos.get(q.id));continue}
+  try{q=recuperarFonteOficial(original)}catch(e){excluir('Recuperação oficial pendente: '+e.message);continue}
+  const referencia=classificarReferencia(q.enunciado_blocos.map(textoBruto).join(' '))
+  if(referencia.referencia_pendente){excluir('Referência institucional não reconhecida; conferir antes de classificar: '+referencia.referencia_pendente);continue}
   if(q.tipo_resposta!=='multipla_escolha'||q.resposta_correta===null){excluir('Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta.');continue}
   const normalizadas=q.alternativas.map(a=>norm(a.texto))
   if(normalizadas.length<2||normalizadas.length>5||normalizadas.some(a=>!a)||new Set(normalizadas).size!==normalizadas.length){excluir('Quantidade inválida ou alternativas vazias/repetidas.');continue}
   let blocos_enunciado,blocos_opcoes
   try{blocos_enunciado=normalizarBlocos(q.enunciado_blocos,copiarImagem);blocos_opcoes=q.alternativas.map(a=>normalizarBlocos([a.bloco],copiarImagem,{alternativa:true}))}catch(e){excluir('Formatação ou figura pendente: '+e.message);continue}
   const opcoes=blocos_opcoes.map((b,i)=>textoDosBlocos(b)||`Diagrama da alternativa ${'ABCDE'[i]}`)
-  const referencia=classificarReferencia(q.enunciado_blocos.map(textoBruto).join(' '))
   const dificuldade=q.enunciado_blocos.some(n=>n.attrs?.class?.includes('iconeDificil'))?'Difícil':q.enunciado_blocos.some(n=>n.attrs?.class?.includes('iconeFacil'))?'Fácil':q.enunciado_blocos.some(n=>n.attrs?.class?.includes('iconeMedio'))?'Média':'Não informada'
   const item={id:q.id,materia:cap.materia,conteudo:conteudoPara?.(q,cap)||cap.conteudo,...referencia,dificuldade,enunciado:textoDosBlocos(blocos_enunciado),opcoes,blocos_enunciado,blocos_opcoes,...(apoioIntegradoIds.has(q.id)?{apoio_integrado:true}:{}),resposta_correta:q.resposta_correta,tipo_resposta:'multipla_escolha',origem_livro:{...q.origem_livro,numero:q.numero_livro,secao:q.secao},fonte_gabarito:'Marcação no material autorizado e revisão de consistência do lote'}
-  const ja=[...anteriores,...lote].find(a=>chave(a)===chave(item)&&(norm(a.enunciado).includes(norm(item.enunciado).slice(0,100))||norm(item.enunciado).includes(norm(a.enunciado).slice(0,100))))
-  if(ja){duplicatas.push({id:q.id,existente:ja.id,capitulo:cap.capitulo});continue}
+  if(q.recuperacao_oficial){item.recuperacao_oficial=q.recuperacao_oficial;item.fonte_gabarito=q.recuperacao_oficial.gabarito}
+  const t=textoComparavel(item)
+  const ja=(indiceOpcoes.get(chave(item))||[]).find(a=>{const outro=textoComparavel(a);return Math.min(t.length,outro.length)>=80&&(outro.includes(t.slice(0,100))||t.includes(outro.slice(0,100)))})
+  if(ja){if(respostaTexto(ja)!==respostaTexto(item)){excluir('Conteúdo já existente com resposta divergente: '+ja.id);continue}duplicatas.push({id:q.id,existente:ja.id,capitulo:cap.capitulo});continue}
   if(!questaoPublicavel(item)){excluir('Item recusado pelas validações públicas; conferir campos e texto de apoio.');continue}
   lote.push(item)
+  indexar(item)
  }
 }
 const unido=new Set(unirQuestoes([...anteriores,...lote]).map(q=>String(q.id)))

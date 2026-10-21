@@ -1,0 +1,115 @@
+{
+  "capitulos": [
+    {
+      "id": "695c109158c12211ab3b1bce",
+      "nome": "Introdução à Geografia",
+      "total_extraido": 22,
+      "publicados": [
+        "sae-f4bfc2c139b7721b11af",
+        "sae-f1e5ec070f3efad637d8",
+        "sae-57630018021d298c87ac",
+        "sae-1ac67449279714e5561f",
+        "sae-05fa3c51d51e0f34d7ad",
+        "sae-b84e31d45cf5d7b6bcfb",
+        "sae-1137741ca69d228af713",
+        "sae-d63556028feecdc0afdd",
+        "sae-e93292e03d1b920ae79c",
+        "sae-94e51264636003aaefd1",
+        "sae-2a473febe61760663474",
+        "sae-ac3780ba895eea536c2e",
+        "sae-e0379d9b339ca4b31fa8",
+        "sae-4fa1a7bf421aa5fcd214"
+      ]
+    }
+  ],
+  "total_extraido": 22,
+  "publicados": [
+    "sae-f4bfc2c139b7721b11af",
+    "sae-f1e5ec070f3efad637d8",
+    "sae-57630018021d298c87ac",
+    "sae-1ac67449279714e5561f",
+    "sae-05fa3c51d51e0f34d7ad",
+    "sae-b84e31d45cf5d7b6bcfb",
+    "sae-1137741ca69d228af713",
+    "sae-d63556028feecdc0afdd",
+    "sae-e93292e03d1b920ae79c",
+    "sae-94e51264636003aaefd1",
+    "sae-2a473febe61760663474",
+    "sae-ac3780ba895eea536c2e",
+    "sae-e0379d9b339ca4b31fa8",
+    "sae-4fa1a7bf421aa5fcd214"
+  ],
+  "quarentena": [
+    {
+      "id": "sae-01f646997cba3f668b4b",
+      "capitulo": "Introdução à Geografia",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-707d5d2e06dc0770c8ba",
+      "capitulo": "Introdução à Geografia",
+      "numero": 1,
+      "motivo": "Quantidade inválida ou alternativas vazias/repetidas."
+    },
+    {
+      "id": "sae-410b8fd04dfd318c6bab",
+      "capitulo": "Introdução à Geografia",
+      "numero": 4,
+      "motivo": "Marcação aponta rotação para a diferença espacial de iluminação do trecho de O pequeno príncipe; conferir chave oficial antes de publicar."
+    },
+    {
+      "id": "sae-95d0e35a123819115d49",
+      "capitulo": "Introdução à Geografia",
+      "numero": 10,
+      "motivo": "Quantidade inválida ou alternativas vazias/repetidas."
+    },
+    {
+      "id": "sae-d8061f05e0d95c57d3ab",
+      "capitulo": "Introdução à Geografia",
+      "numero": 12,
+      "motivo": "Referência UEM com quatro alternativas e chave única requer confirmação da atribuição e do formato oficial."
+    },
+    {
+      "id": "sae-f0a52e1ee25267e4e3b0",
+      "capitulo": "Introdução à Geografia",
+      "numero": 17,
+      "motivo": "A ilustração de solstícios está cortada na margem esquerda no próprio arquivo de origem; recuperar versão completa antes de publicar."
+    },
+    {
+      "id": "sae-1a57659f55225be5d4c9",
+      "capitulo": "Introdução à Geografia",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-440d0e7d1847721dd68c",
+      "capitulo": "Introdução à Geografia",
+      "numero": 20,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    }
+  ],
+  "duplicatas": [],
+  "recursos": [
+    {
+      "imagem": "/acervo/estudo-geografia-introducao/d61d4fb8419fab7481eb.jpg",
+      "sha256": "d61d4fb8419fab7481eba11457e889731878f194eb3064161ab87faa6a0c6f9d",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/GEO/3DhQJ7mzfYdFwdy5/resources/image/34.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-geografia-introducao/e5f3b50458703182f8f1.jpg",
+      "sha256": "e5f3b50458703182f8f166d4a590cf88d9b35c55a129ee5b8b3b9b697b447f6f",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/GEO/3DhQJ7mzfYdFwdy5/resources/image/SAE_AT_2024_PV_03_V1_AMAIS_GEO_AL_IMP_I001.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-geografia-introducao/3615306ecfacb1ff0386.jpg",
+      "sha256": "3615306ecfacb1ff0386bd68f67dda80fcfa4a2d42a1c588a8c46afb84e5c081",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/GEO/3DhQJ7mzfYdFwdy5/resources/image/SAE_AT_2024_PV_03_V1_AMAIS_GEO_AL_IMP_I0011.jpg"
+    }
+  ],
+  "observacoes": [
+    "A referência institucional e o gabarito são os declarados pelo material autorizado, sem alegação de conferência oficial independente.",
+    "As questões discursivas, somatórias ou com conflitos não foram convertidas por inferência.",
+    "Preservados textos, tabelas, imagens e quantidade original de alternativas."
+  ]
+}
