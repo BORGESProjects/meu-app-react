@@ -1,0 +1,91 @@
+{
+  "capitulos": [
+    {
+      "id": "695c109158c12211ab3b1bda",
+      "nome": "Introdução à História e Antiguidade Oriental",
+      "total_extraido": 24,
+      "publicados": [
+        "sae-1668147e823e9aa04628",
+        "sae-2c2ea23c192ba6a53d92",
+        "sae-7deae026c33d3893b0cd",
+        "sae-28efa9b9e82a7b630102",
+        "sae-894a1c4f70ca688c5664",
+        "sae-e09a693c787a04ca6a5a",
+        "sae-5cbf21f76e415c87cdf3",
+        "sae-fe3ab9cdab5960c46f42",
+        "sae-267dc3718f70774c0d0b",
+        "sae-c3ec54b6afb7ec0ab4a9",
+        "sae-a2c16886485baf25c3a7",
+        "sae-7992b562c411fc166978",
+        "sae-f88b689fb83b756894e4",
+        "sae-2ec1ce4ab1e775c7f3a9",
+        "sae-80c69d208ff0007b2bbf",
+        "sae-6eb06c51b2f357eb6efb",
+        "sae-1ef27e459ab4688ef041",
+        "sae-893d0d36b5bd05fd6c9a",
+        "sae-cbb98813b58115020c89"
+      ]
+    }
+  ],
+  "total_extraido": 24,
+  "publicados": [
+    "sae-1668147e823e9aa04628",
+    "sae-2c2ea23c192ba6a53d92",
+    "sae-7deae026c33d3893b0cd",
+    "sae-28efa9b9e82a7b630102",
+    "sae-894a1c4f70ca688c5664",
+    "sae-e09a693c787a04ca6a5a",
+    "sae-5cbf21f76e415c87cdf3",
+    "sae-fe3ab9cdab5960c46f42",
+    "sae-267dc3718f70774c0d0b",
+    "sae-c3ec54b6afb7ec0ab4a9",
+    "sae-a2c16886485baf25c3a7",
+    "sae-7992b562c411fc166978",
+    "sae-f88b689fb83b756894e4",
+    "sae-2ec1ce4ab1e775c7f3a9",
+    "sae-80c69d208ff0007b2bbf",
+    "sae-6eb06c51b2f357eb6efb",
+    "sae-1ef27e459ab4688ef041",
+    "sae-893d0d36b5bd05fd6c9a",
+    "sae-cbb98813b58115020c89"
+  ],
+  "quarentena": [
+    {
+      "id": "sae-2417d12cb25c65f8a74e",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-4d8d1c6cb78cd35048f7",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "numero": 1,
+      "motivo": "A chave V-F-F contradiz a sequência dos itens: apitos de trens não antecedem relógios mecânicos e ciclos agrícolas medem passagem do tempo. Conferir prova UFSM 2015."
+    },
+    {
+      "id": "sae-94a61c769f1ca043a23b",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "numero": 19,
+      "motivo": "A alternativa marcada atribui a cavalos os carros do Estandarte de Ur; a identificação dos animais requer conferência da imagem e da redação oficial."
+    },
+    {
+      "id": "sae-6be1eb9e6d99cda65c7e",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "numero": 22,
+      "motivo": "Texto introdutório situa o túmulo de Tutancâmon em uma pirâmide e traz datas que requerem conferência no caderno oficial."
+    }
+  ],
+  "duplicatas": [
+    {
+      "id": "sae-9bf0c3dc938ffde00183",
+      "existente": "ufpr-2023-19",
+      "capitulo": "Introdução à História e Antiguidade Oriental"
+    }
+  ],
+  "recursos": [],
+  "observacoes": [
+    "A referência institucional e o gabarito são os declarados pelo material autorizado, sem alegação de conferência oficial independente.",
+    "As questões discursivas, somatórias ou com conflitos não foram convertidas por inferência.",
+    "Preservados textos, tabelas, imagens e quantidade original de alternativas."
+  ]
+}

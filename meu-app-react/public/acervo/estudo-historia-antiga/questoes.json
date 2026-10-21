@@ -1,0 +1,2020 @@
+[
+  {
+    "id": "sae-1668147e823e9aa04628",
+    "materia": "História",
+    "conteudo": "Civilizações da Antiguidade",
+    "banca": "UECE",
+    "concurso": "UECE 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2019",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UECE-2019) Os dois povos que foram os principais responsáveis pela construção da sociedade mesopotâmica foram os",
+    "opcoes": [
+      "fenícios e os anatólios.",
+      "gregos e os romanos.",
+      "hititas e os egípcios.",
+      "sumérios e os acadianos."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UECE-2019) Os dois povos que foram os principais responsáveis pela construção da sociedade mesopotâmica foram os"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "fenícios e os anatólios. "
+      ],
+      [
+        " ",
+        " ",
+        "gregos e os romanos. "
+      ],
+      [
+        " ",
+        " ",
+        "hititas e os egípcios. "
+      ],
+      [
+        " ",
+        " ",
+        "sumérios e os acadianos. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 2,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-2c2ea23c192ba6a53d92",
+    "materia": "História",
+    "conteudo": "Civilizações da Antiguidade",
+    "banca": "UECE",
+    "concurso": "UECE 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2019",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UECE-2019)No século VIII a.C. os fenícios protagonizaram uma intensa movimentação no Mar Mediterrâneo ao lançarem seus navios para o alto-mar, implementando uma rede de comercialização de ferro, vinho, azeite, ouro, cerâmica e escravos. Os fenícios também são os responsáveis pela criação da",
+    "opcoes": [
+      "literatura.",
+      "escrita alfabética.",
+      "roda.",
+      "matemática."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UECE-2019)",
+          "No século VIII a.C. os fenícios protagonizaram uma intensa movimentação no Mar Mediterrâneo ao lançarem seus navios para o alto-mar, implementando uma rede de comercialização de ferro, vinho, azeite, ouro, cerâmica e escravos. Os fenícios também são os responsáveis pela criação da"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "literatura. "
+      ],
+      [
+        " ",
+        " ",
+        "escrita alfabética. "
+      ],
+      [
+        " ",
+        " ",
+        "roda. "
+      ],
+      [
+        " ",
+        " ",
+        "matemática. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 3,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-7deae026c33d3893b0cd",
+    "materia": "História",
+    "conteudo": "Civilizações da Antiguidade",
+    "banca": "IFSUL",
+    "concurso": "IFSul 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "IFSul-2016",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(IFSul-2016) Este povo destacou-se pela organização e desenvolvimento de uma cultura militar. Encarava a guerra como uma das principais formas de conquistar poder e desenvolver a sociedade. Era extremamente cruel com os povos inimigos que conquistava, impondo aos vencidos castigos e crueldades como forma de manter respeito e espalhar o medo entre os outros povos. \n\nO texto anterior se refere a qual povo da Antiguidade?",
+    "opcoes": [
+      "Caldeus",
+      "Hititas",
+      "Assírios",
+      "Sumérios"
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(IFSul-2016) Este povo destacou-se pela organização e desenvolvimento de uma cultura militar. Encarava a guerra como uma das principais formas de conquistar poder e desenvolver a sociedade. Era extremamente cruel com os povos inimigos que conquistava, impondo aos vencidos castigos e crueldades como forma de manter respeito e espalhar o medo entre os outros povos. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "O texto anterior se refere a qual povo da Antiguidade? "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Caldeus "
+      ],
+      [
+        " ",
+        " ",
+        "Hititas "
+      ],
+      [
+        " ",
+        " ",
+        "Assírios "
+      ],
+      [
+        " ",
+        " ",
+        "Sumérios "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 4,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-28efa9b9e82a7b630102",
+    "materia": "História",
+    "conteudo": "Civilizações da Antiguidade",
+    "banca": "PUC",
+    "concurso": "PUC-SP 2017",
+    "ano": 2017,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "PUC-SP-2017",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(PUC-SP-2017) Após chegarem, descarregam as mercadorias, dispondo-as em ordem na praia, e depois voltam às suas embarcações e fazem sinais de fumaça. Os nativos veem a fumaça e, aproximando-se do mar, colocam ao lado das mercadorias o ouro que oferecem em troca, retirando-se a seguir. Os fenícios retornam e examinam o que os nativos deixaram. Se julgarem que a quantidade do ouro corresponde ao valor das mercadorias, tomam-no e partem, do contrário regressam aos navios e aguardam.\n\nHERÓDOTO. História. Brasília: UnB, 1988, p. 274. Adaptado.\n\nA partir do texto de Heródoto (século V a.C.) e de seus conhecimentos, é CORRETO afirmar que a atividade dos fenícios",
+    "opcoes": [
+      "dependia do aparato militar que acompanhava os comerciantes e impedia a realização de saques e ataques de piratas.",
+      "consistia prioritariamente no comércio, realizado através dos mares e, especialmente, na região mediterrânica.",
+      "permitiu o desenvolvimento de poderosa indústria náutica, depois utilizada para derrotar os romanos nas Guerras Púnicas.",
+      "contribuiu decisivamente para a vitória de Esparta na Guerra do Peloponeso, ao garantir o abastecimento da cidade grega.",
+      "era fortemente associada à religiosidade, dado o caráter monoteísta dessa civilização."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(PUC-SP-2017) Após chegarem, descarregam as mercadorias, dispondo-as em ordem na praia, e depois voltam às suas embarcações e fazem sinais de fumaça. Os nativos veem a fumaça e, aproximando-se do mar, colocam ao lado das mercadorias o ouro que oferecem em troca, retirando-se a seguir. Os fenícios retornam e examinam o que os nativos deixaram. Se julgarem que a quantidade do ouro corresponde ao valor das mercadorias, tomam-no e partem, do contrário regressam aos navios e aguardam."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "HERÓDOTO. ",
+          {
+            "tag": "strong",
+            "children": [
+              "História"
+            ]
+          },
+          ". Brasília: UnB, 1988, p. 274. Adaptado."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "A partir do texto de Heródoto (século V a.C.) e de seus conhecimentos, é ",
+          {
+            "tag": "strong",
+            "children": [
+              "CORRETO"
+            ]
+          },
+          " afirmar que a atividade dos fenícios "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "dependia do aparato militar que acompanhava os comerciantes e impedia a realização de saques e ataques de piratas. "
+      ],
+      [
+        " ",
+        " ",
+        "consistia prioritariamente no comércio, realizado através dos mares e, especialmente, na região mediterrânica. "
+      ],
+      [
+        " ",
+        " ",
+        "permitiu o desenvolvimento de poderosa indústria náutica, depois utilizada para derrotar os romanos nas Guerras Púnicas. "
+      ],
+      [
+        " ",
+        " ",
+        "contribuiu decisivamente para a vitória de Esparta na Guerra do Peloponeso, ao garantir o abastecimento da cidade grega. "
+      ],
+      [
+        " ",
+        " ",
+        "era fortemente associada à religiosidade, dado o caráter monoteísta dessa civilização. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 5,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-894a1c4f70ca688c5664",
+    "materia": "História",
+    "conteudo": "Introdução à História",
+    "banca": "UDESC",
+    "concurso": "UDESC 2015",
+    "ano": 2015,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UDESC-2015",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UDESC-2015) A incompreensão do presente nasce fatalmente da ignorância do passado. Mas talvez não seja menos vão esgotar-se em compreender o passado se nada se sabe do presente. \n\nMarc Bloch. Apologia da história ou o ofício do historiador. Rio de Janeiro: Jorge Zahar, 2001. p. 65. \n\nAssinale a alternativa que contém a definição de História mais coerente com a citação do historiador Marc Bloch.",
+    "opcoes": [
+      "A História é a ciência que resgata o passado para explicar o presente e fazer previsões sobre o futuro.",
+      "A História é uma ciência que visa promover o entretenimento dos expectadores do presente e um conhecimento inútil sobre o passado.",
+      "A História é, tal como a literatura, uma narrativa sobre o passado determinada pela imaginação do historiador.",
+      "A História é a ciência que se refugia no passado para não compreender as questões do presente.",
+      "A História é uma ciência que formula questões sobre o passado a partir de inquietações e experiências vividas no presente."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UDESC-2015) A incompreensão do presente nasce fatalmente da ignorância do passado. Mas talvez não seja menos vão esgotar-se em compreender o passado se nada se sabe do presente. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Marc Bloch. ",
+          {
+            "tag": "strong",
+            "children": [
+              "Apologia da história ou o ofício do historiador"
+            ]
+          },
+          ". Rio de Janeiro: Jorge Zahar, 2001. p. 65. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Assinale a alternativa que contém a definição de História mais coerente com a citação do historiador Marc Bloch. "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "A História é a ciência que resgata o passado para explicar o presente e fazer previsões sobre o futuro. "
+      ],
+      [
+        " ",
+        " ",
+        "A História é uma ciência que visa promover o entretenimento dos expectadores do presente e um conhecimento inútil sobre o passado. "
+      ],
+      [
+        " ",
+        " ",
+        "A História é, tal como a literatura, uma narrativa sobre o passado determinada pela imaginação do historiador. "
+      ],
+      [
+        " ",
+        " ",
+        "A História é a ciência que se refugia no passado para não compreender as questões do presente. "
+      ],
+      [
+        " ",
+        " ",
+        "A História é uma ciência que formula questões sobre o passado a partir de inquietações e experiências vividas no presente. "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 6,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-e09a693c787a04ca6a5a",
+    "materia": "História",
+    "conteudo": "Introdução à História",
+    "banca": "UNB",
+    "concurso": "UNB 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UNB-2016",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UNB-2016) No que se refere à indissociabilidade entre tempo e história, assinale a opção CORRETA.",
+    "opcoes": [
+      "Na Antiguidade Clássica (Grécia e Roma), o tempo era regido pelos deuses, os quais subtraíam dos homens a racionalidade, impedindo-os de conduzir sua história e de se afirmarem como seres pensantes.",
+      "Na Europa medieval, sobretudo no apogeu do feudalismo, prevaleceu a noção de tempo curto, dos acontecimentos que se sucedem, em que as mudanças bruscas derivam do dinamismo acentuado da economia.",
+      "A Idade Moderna é o tempo das permanências: a força do Antigo Regime no mundo ocidental impede transformações relevantes no campo cultural, político, religioso e econômico.",
+      "A Revolução Industrial desvelou a contemporaneidade, impondo ao mundo novas formas de sociabilidade provocadas pela acelerada urbanização e pela consolidação da economia de mercado."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UNB-2016) No que se refere à indissociabilidade entre tempo e história, assinale a opção ",
+          {
+            "tag": "strong",
+            "children": [
+              "CORRETA"
+            ]
+          },
+          ". "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Na Antiguidade Clássica (Grécia e Roma), o tempo era regido pelos deuses, os quais subtraíam dos homens a racionalidade, impedindo-os de conduzir sua história e de se afirmarem como seres pensantes. "
+      ],
+      [
+        " ",
+        " ",
+        "Na Europa medieval, sobretudo no apogeu do feudalismo, prevaleceu a noção de tempo curto, dos acontecimentos que se sucedem, em que as mudanças bruscas derivam do dinamismo acentuado da economia. "
+      ],
+      [
+        " ",
+        " ",
+        "A Idade Moderna é o tempo das permanências: a força do Antigo Regime no mundo ocidental impede transformações relevantes no campo cultural, político, religioso e econômico. "
+      ],
+      [
+        " ",
+        " ",
+        "A Revolução Industrial desvelou a contemporaneidade, impondo ao mundo novas formas de sociabilidade provocadas pela acelerada urbanização e pela consolidação da economia de mercado. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 7,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-5cbf21f76e415c87cdf3",
+    "materia": "História",
+    "conteudo": "Civilizações da Antiguidade",
+    "banca": "UFRGS",
+    "concurso": "UFRGS 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFRGS-2018",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UFRGS-2018) Considere as afirmações seguintes, sobre a história das sociedades antigas.\n\nI.O Egito faraônico caracterizava-se pela estrutura política horizontalizada, pela pouca estratificação social e pela economia centrada na piscicultura devido às cheias do rio Nilo. \n\nII.Os fenícios mantiveram uma estrutura social militarizada e terrestre, que permitiu a conquista de outros povos na região do Oriente Médio, culminando com o fim de rotas comerciais marítimas com a Ásia.\n\nIII.A expansão do Império Persa, durante o governo de Dario I, foi marcada pela unificação dos sistemas tributário e monetário, pela implementação de um código jurídico e por uma rede de estradas e de comunicação.\n\nQuais estão CORRETAS?",
+    "opcoes": [
+      "Apenas I.",
+      "Apenas II.",
+      "Apenas III.",
+      "Apenas II e III.",
+      "I, II e III."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UFRGS-2018) Considere as afirmações seguintes, sobre a história das sociedades antigas."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "I."
+            ]
+          },
+          "O Egito faraônico caracterizava-se pela estrutura política horizontalizada, pela pouca estratificação social e pela economia centrada na piscicultura devido às cheias do rio Nilo. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "II."
+            ]
+          },
+          "Os fenícios mantiveram uma estrutura social militarizada e terrestre, que permitiu a conquista de outros povos na região do Oriente Médio, culminando com o fim de rotas comerciais marítimas com a Ásia."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "III."
+            ]
+          },
+          "A expansão do Império Persa, durante o governo de Dario I, foi marcada pela unificação dos sistemas tributário e monetário, pela implementação de um código jurídico e por uma rede de estradas e de comunicação."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Quais estão ",
+          {
+            "tag": "strong",
+            "children": [
+              "CORRETAS"
+            ]
+          },
+          "?"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Apenas I. "
+      ],
+      [
+        " ",
+        " ",
+        "Apenas II. "
+      ],
+      [
+        " ",
+        " ",
+        "Apenas III. "
+      ],
+      [
+        " ",
+        " ",
+        "Apenas II e III. "
+      ],
+      [
+        " ",
+        " ",
+        "I, II e III. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 8,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-fe3ab9cdab5960c46f42",
+    "materia": "História",
+    "conteudo": "Civilizações da Antiguidade",
+    "banca": "UFRR",
+    "concurso": "UFRR 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFRR-2016",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UFRR-2016) Historicamente, situa-se o surgimento do Estado e da escrita entre as primeiras civilizações surgidas no oriente. Apesar de possuírem culturas muito distintas e terem contribuído com diferentes legados, podemos afirmar que um traço comum entre a religião de Egípcios, Mesopotâmios, Hebreus e Persas era:",
+    "opcoes": [
+      "o exercício de enorme influência sobre a organização política e dos Estados, caracterizados como teocracias.",
+      "a crença em um único deus, conceituada como monoteísmo.",
+      "o culto de diversos deuses com representações antropozoomórficas (meio homem, meio animal).",
+      "a mumificação para garantia de vida após a morte.",
+      "a construção de prédios grandiosos em forma de pirâmide, que serviam ao mesmo tempo como templos para o culto dos fiéis e tumbas para os reis."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UFRR-2016) Historicamente, situa-se o surgimento do Estado e da escrita entre as primeiras civilizações surgidas no oriente. Apesar de possuírem culturas muito distintas e terem contribuído com diferentes legados, podemos afirmar que um traço comum entre a religião de Egípcios, Mesopotâmios, Hebreus e Persas era:"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "o exercício de enorme influência sobre a organização política e dos Estados, caracterizados como teocracias. "
+      ],
+      [
+        " ",
+        " ",
+        "a crença em um único deus, conceituada como monoteísmo. "
+      ],
+      [
+        " ",
+        " ",
+        "o culto de diversos deuses com representações antropozoomórficas (meio homem, meio animal). "
+      ],
+      [
+        " ",
+        " ",
+        "a mumificação para garantia de vida após a morte. "
+      ],
+      [
+        " ",
+        " ",
+        "a construção de prédios grandiosos em forma de pirâmide, que serviam ao mesmo tempo como templos para o culto dos fiéis e tumbas para os reis. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 9,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-267dc3718f70774c0d0b",
+    "materia": "História",
+    "conteudo": "Civilizações da Antiguidade",
+    "banca": "FUVEST",
+    "concurso": "Fuvest 2020",
+    "ano": 2020,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Fuvest-2020",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Fuvest-2020) Ao primeiro brilho da alvorada chegou do horizonte uma nuvem negra, que era conduzida [pelo] senhor da tempestade [...]. Surgiram então os deuses do abismo; Nergal destruiu as barragens que represavam as águas do inferno; Ninurta, o deus da guerra, pôs abaixo os diques [...]. Por seis dias e seis noites os ventos sopraram; enxurradas, inundações e torrentes assolaram o mundo; a tempestade e o dilúvio explodiam em fúria como dois exércitos em guerra. Na alvorada do sétimo dia o temporal [...] amainou [...] o dilúvio serenou [...] toda a humanidade havia virado argila [...]. Na montanha de Nisir o barco ficou preso (...). Na alvorada do sétimo dia eu soltei uma pomba e deixei que se fosse. Ela voou para longe, mas, não encontrando um lugar para pousar, retornou. Então soltei um corvo. A ave viu que as águas haviam abaixado; ela comeu, [...] grasnou e não mais voltou para o barco. Eu então abri todas as portas e janelas, expondo a nave aos quatro ventos. Preparei um sacrifício e derramei vinho sobre o topo da montanha em oferenda aos deuses [...]\n\nA Epopeia de Gilgamesh, São Paulo: Martins Fontes, 2001.\n\nCom base no texto, registrado aproximadamente no século VII a.C. e que se refere a um antigo mito da Mesopotâmia, bem como em seus conhecimentos, é POSSÍVEL dizer que a sociedade descrita era",
+    "opcoes": [
+      "mercantil, pacífica, politeísta e centralizada.",
+      "agrária, militarizada, monoteísta e democrática.",
+      "manufatureira, naval, monoteísta e federalizada.",
+      "mercantil, guerreira, monoteísta e federalizada.",
+      "agrária, guerreira, politeísta e centralizada."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Fuvest-2020) Ao primeiro brilho da alvorada chegou do horizonte uma nuvem negra, que era conduzida [pelo] senhor da tempestade [...]. Surgiram então os deuses do abismo; Nergal destruiu as barragens que represavam as águas do inferno; Ninurta, o deus da guerra, pôs abaixo os diques [...]. Por seis dias e seis noites os ventos sopraram; enxurradas, inundações e torrentes assolaram o mundo; a tempestade e o dilúvio explodiam em fúria como dois exércitos em guerra. Na alvorada do sétimo dia o temporal [...] amainou [...] o dilúvio serenou [...] toda a humanidade havia virado argila [...]. Na montanha de Nisir o barco ficou preso (...). Na alvorada do sétimo dia eu soltei uma pomba e deixei que se fosse. Ela voou para longe, mas, não encontrando um lugar para pousar, retornou. Então soltei um corvo. A ave viu que as águas haviam abaixado; ela comeu, [...] grasnou e não mais voltou para o barco. Eu então abri todas as portas e janelas, expondo a nave aos quatro ventos. Preparei um sacrifício e derramei vinho sobre o topo da montanha em oferenda aos deuses [...]"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "strong",
+            "children": [
+              "A Epopeia de Gilgamesh"
+            ]
+          },
+          ", São Paulo: Martins Fontes, 2001."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Com base no texto, registrado aproximadamente no século VII a.C. e que se refere a um antigo mito da Mesopotâmia, bem como em seus conhecimentos, é ",
+          {
+            "tag": "strong",
+            "children": [
+              "POSSÍVEL "
+            ]
+          },
+          "dizer que a sociedade descrita era "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "mercantil, pacífica, politeísta e centralizada. "
+      ],
+      [
+        " ",
+        " ",
+        "agrária, militarizada, monoteísta e democrática. "
+      ],
+      [
+        " ",
+        " ",
+        "manufatureira, naval, monoteísta e federalizada. "
+      ],
+      [
+        " ",
+        " ",
+        "mercantil, guerreira, monoteísta e federalizada. "
+      ],
+      [
+        " ",
+        " ",
+        "agrária, guerreira, politeísta e centralizada. "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 10,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-c3ec54b6afb7ec0ab4a9",
+    "materia": "História",
+    "conteudo": "Introdução à História",
+    "banca": "ENEM",
+    "concurso": "Enem 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Enem-2019",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Enem-2019) O Instituto Histórico e Geográfico Brasileiro (IHGB) reuniu historiadores, romancistas, poetas, administradores públicos e políticos em torno da investigação a respeito do caráter brasileiro. Em certo sentido, a estrutura dessa instituição, pelo menos como projeto, reproduzia o modelo centralizador imperial. Assim, enquanto na Corte localizava-se a sede, nas províncias deveria haver os respectivos institutos regionais. Estes, por sua vez, enviariam documentos e relatos regionais para a capital.\n\nDEL PRIORE, M.; VENÂNCIO, R. Uma breve história do Brasil. São Paulo: Planeta do Brasil, 2010 (adaptado).\n\nDe acordo com o texto, durante o reinado de D. Pedro II, o referido instituto objetivava:",
+    "opcoes": [
+      "construir uma narrativa de nação.",
+      "debater as desigualdades sociais.",
+      "combater as injustiças coloniais.",
+      "defender a retórica do abolicionismo.",
+      "evidenciar uma diversidade étnica."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Enem-2019) O Instituto Histórico e Geográfico Brasileiro (IHGB) reuniu historiadores, romancistas, poetas, administradores públicos e políticos em torno da investigação a respeito do caráter brasileiro. Em certo sentido, a estrutura dessa instituição, pelo menos como projeto, reproduzia o modelo centralizador imperial. Assim, enquanto na Corte localizava-se a sede, nas províncias deveria haver os respectivos institutos regionais. Estes, por sua vez, enviariam documentos e relatos regionais para a capital."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "DEL PRIORE, M.; VENÂNCIO, R. ",
+          {
+            "tag": "strong",
+            "children": [
+              "Uma breve história do Brasil"
+            ]
+          },
+          ". São Paulo: Planeta do Brasil, 2010 (adaptado)."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "De acordo com o texto, durante o reinado de D. Pedro II, o referido instituto objetivava:"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "construir uma narrativa de nação. "
+      ],
+      [
+        " ",
+        " ",
+        "debater as desigualdades sociais. "
+      ],
+      [
+        " ",
+        " ",
+        "combater as injustiças coloniais. "
+      ],
+      [
+        " ",
+        " ",
+        "defender a retórica do abolicionismo. "
+      ],
+      [
+        " ",
+        " ",
+        "evidenciar uma diversidade étnica. "
+      ]
+    ],
+    "apoio_integrado": true,
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 11,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-a2c16886485baf25c3a7",
+    "materia": "História",
+    "conteudo": "Introdução à História",
+    "banca": "UECE",
+    "concurso": "UECE 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2016",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UECE-2016) Leia atentamente o seguinte excerto:\n\nSe o homem comum não conhece as suas origens ele é como um macaco louco. Ele não conhece ao certo as relações de sua grande família, é como um dragão descomunal. Ele que não conhece as circunstâncias e o curso das ações de seu nobre pai e avô é como um homem que, tendo preparado a dor para seus filhos, joga-os neste mundo.\n\nMOMIGLIANO, A. As raízes clássicas da historiografia moderna. Bauru: EDUSC, 2004, p. 55.\n\nDo trecho anterior, depreendem-se algumas características da escrita da História, quais sejam:",
+    "opcoes": [
+      "conhecimento da natureza, origem das espécies animais e lembrança ancestral.",
+      "conservação da memória do passado, quadro cronológico e interpretação dos acontecimentos.",
+      "dialética socrática, valores teóricos e morais e busca pela verdade intrínseca da origem humana.",
+      "atitude crítica em relação ao registro dos acontecimentos, desinteresse pelo passado e árvore genealógica."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UECE-2016) Leia atentamente o seguinte excerto:"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Se o homem comum não conhece as suas origens ele é como um macaco louco. Ele não conhece ao certo as relações de sua grande família, é como um dragão descomunal. Ele que não conhece as circunstâncias e o curso das ações de seu nobre pai e avô é como um homem que, tendo preparado a dor para seus filhos, joga-os neste mundo."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "MOMIGLIANO, A. ",
+          {
+            "tag": "strong",
+            "children": [
+              "As raízes clássicas da historiografia moderna"
+            ]
+          },
+          ". Bauru: EDUSC, 2004, p. 55."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Do trecho anterior, depreendem-se algumas características da escrita da História, quais sejam: "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "conhecimento da natureza, origem das espécies animais e lembrança ancestral. "
+      ],
+      [
+        " ",
+        " ",
+        "conservação da memória do passado, quadro cronológico e interpretação dos acontecimentos. "
+      ],
+      [
+        " ",
+        " ",
+        "dialética socrática, valores teóricos e morais e busca pela verdade intrínseca da origem humana. "
+      ],
+      [
+        " ",
+        " ",
+        "atitude crítica em relação ao registro dos acontecimentos, desinteresse pelo passado e árvore genealógica. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 12,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-7992b562c411fc166978",
+    "materia": "História",
+    "conteudo": "Introdução à História",
+    "banca": "UPE",
+    "concurso": "UPE 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UPE-2016",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UPE-2016) A Europa é uma criação feita diante do outro. Suas fronteiras são culturais e se opõem em três ao que não é Europa: a Ásia, os Árabes, que assediam a Europa, primeira frente antieuropeia; o ‘leste’ sempre indefinido; e finalmente o Oceano. \n\nFEBVRE, Lucien. A Europa – gênese de uma civilização. Bauru: Edusc, 2004, p. 118-121. (Adaptado).\n\nO trecho anterior representa certa historiografia europeia, que se caracteriza pelo",
+    "opcoes": [
+      "Multiculturalismo - valoriza as contribuições das diversas populações na criação da civilização europeia.",
+      "Orientalismo - entende o Oriente como uma criação pacífica e igualitária do Ocidente.",
+      "Eurocentrismo - entende a Europa como centro da civilização, ameaçada pela barbárie e obrigada a expandir os limites da Humanidade.",
+      "Humanismo - percebe uma mesma essência em todas as manifestações do gênio humano, disfarçada por elementos culturais diversos.",
+      "Materialismo Histórico - privilegia os elementos econômicos sobre os culturais e políticos."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          " ",
+          "(UPE-2016) A Europa é uma criação feita diante do outro. Suas fronteiras são culturais e se opõem em três ao que não é Europa: a Ásia, os Árabes, que assediam a Europa, primeira frente antieuropeia; o ‘leste’ sempre indefinido; e finalmente o Oceano. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "FEBVRE, Lucien. ",
+          {
+            "tag": "strong",
+            "children": [
+              "A Europa"
+            ]
+          },
+          " – gênese de uma civilização. Bauru: Edusc, 2004, p. 118-121. (Adaptado)."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "O trecho anterior representa certa historiografia europeia, que se caracteriza pelo"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Multiculturalismo - valoriza as contribuições das diversas populações na criação da civilização europeia. "
+      ],
+      [
+        " ",
+        " ",
+        "Orientalismo - entende o Oriente como uma criação pacífica e igualitária do Ocidente. "
+      ],
+      [
+        " ",
+        " ",
+        "Eurocentrismo - entende a Europa como centro da civilização, ameaçada pela barbárie e obrigada a expandir os limites da Humanidade. "
+      ],
+      [
+        " ",
+        " ",
+        "Humanismo - percebe uma mesma essência em todas as manifestações do gênio humano, disfarçada por elementos culturais diversos. "
+      ],
+      [
+        " ",
+        " ",
+        "Materialismo Histórico - privilegia os elementos econômicos sobre os culturais e políticos. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 13,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-f88b689fb83b756894e4",
+    "materia": "História",
+    "conteudo": "Civilizações da Antiguidade",
+    "banca": "UEG",
+    "concurso": "UEG 2015",
+    "ano": 2015,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UEG-2015",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UEG-2015) Leia o texto a seguir. \n\nAmanheces formoso no horizonte celeste,\n\nTu, vivente Aton, princípio da vida!\n\nQuando surgiste no horizonte do oriente \n\nInundaste toda a terra com tua beleza. [...]\n\nÓ Deus único, nenhum outro se te iguala!\n\nTu próprio criaste o mundo de acordo com tua vontade,\n\nEnquanto ainda estavas só. \n\nHINO a Aton. PINSKI, Jaime. 100 textos de história antiga. São Paulo: Contexto, 2009. p. 56-57. \n\nO faraó Amenófis IV (1364-1347 a.C.), como parte de uma estratégia política que visava diminuir o poder da classe sacerdotal egípcia, realizou uma reforma religiosa que teve como principal tópico a:",
+    "opcoes": [
+      "adoção do Deus dos hebreus, que se encontravam escravizados no Egito, mas tendo José como um importante membro da corte.",
+      "definição de que o próprio faraó Amenófis IV, que adotou o nome de Akhenaton, seria o deus único dos egípcios.",
+      "imposição de deuses estrangeiros trazidos do Oriente, levados para o Egito por meio das rotas comerciais favorecidas pelo faraó.",
+      "imposição do monoteísmo, adotando o culto oficial a um deus único e proibindo adoração às outras deidades do panteão egípcio."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UEG-2015) Leia o texto a seguir. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Amanheces formoso no horizonte celeste,"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Tu, vivente Aton, princípio da vida!"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Quando surgiste no horizonte do oriente "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Inundaste toda a terra com tua beleza. [...]"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Ó Deus único, nenhum outro se te iguala!"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Tu próprio criaste o mundo de acordo com tua vontade,"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Enquanto ainda estavas só. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "HINO a Aton. PINSKI, Jaime. ",
+          {
+            "tag": "strong",
+            "children": [
+              "100 textos de história antiga"
+            ]
+          },
+          ". São Paulo: Contexto, 2009. p. 56-57. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "O faraó Amenófis IV (1364-1347 a.C.), como parte de uma estratégia política que visava diminuir o poder da classe sacerdotal egípcia, realizou uma reforma religiosa que teve como principal tópico a:"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "adoção do Deus dos hebreus, que se encontravam escravizados no Egito, mas tendo José como um importante membro da corte. "
+      ],
+      [
+        " ",
+        " ",
+        "definição de que o próprio faraó Amenófis IV, que adotou o nome de Akhenaton, seria o deus único dos egípcios. "
+      ],
+      [
+        " ",
+        " ",
+        "imposição de deuses estrangeiros trazidos do Oriente, levados para o Egito por meio das rotas comerciais favorecidas pelo faraó. "
+      ],
+      [
+        " ",
+        " ",
+        "imposição do monoteísmo, adotando o culto oficial a um deus único e proibindo adoração às outras deidades do panteão egípcio. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 14,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-2ec1ce4ab1e775c7f3a9",
+    "materia": "História",
+    "conteudo": "Introdução à História",
+    "banca": "UFRGS",
+    "concurso": "UFRGS 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFRGS-2019",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UFRGS-2019) Leia o texto a seguir:\n\nLinguisticamente, a Europa tornou-se o lar dos ‘arianos’, falantes de línguas indo-europeias advindas da Ásia. A Ásia Ocidental, por outro lado, foi o lar dos povos nativos de línguas semitas, um ramo da família afro-asiática que inclui a língua falada pelos judeus, fenícios, árabes, coptas, berberes, e muitos outros do norte da África e Ásia. Foi essa divisão entre arianos e outros, incorporada mais tarde nas doutrinas nazistas, que, na história popular da Europa, tendeu a encorajar o subsequente menosprezo das contribuições do Oriente para o crescimento da civilização.\n\nGOODY, Jack. O roubo da história. Como os europeus se apropriaram das ideias e invenções do Oriente. São Paulo: Contexto, 2015. p. 38-39.\n\nAssinale a alternativa que indica a visão de mundo aludida no texto.",
+    "opcoes": [
+      "Antropocentrismo.",
+      "Eurocentrismo.",
+      "Paganismo.",
+      "Isolacionismo.",
+      "Humanismo."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UFRGS-2019) Leia o texto a seguir:"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Linguisticamente, a Europa tornou-se o lar dos ‘arianos’, falantes de línguas indo-europeias advindas da Ásia. A Ásia Ocidental, por outro lado, foi o lar dos povos nativos de línguas semitas, um ramo da família afro-asiática que inclui a língua falada pelos judeus, fenícios, árabes, coptas, berberes, e muitos outros do norte da África e Ásia. Foi essa divisão entre arianos e outros, incorporada mais tarde nas doutrinas nazistas, que, na história popular da Europa, tendeu a encorajar o subsequente menosprezo das contribuições do Oriente para o crescimento da civilização."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "GOODY, Jack. ",
+          {
+            "tag": "strong",
+            "children": [
+              "O roubo da história"
+            ]
+          },
+          ". Como os europeus se apropriaram das ideias e invenções do Oriente. São Paulo: Contexto, 2015. p. 38-39."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Assinale a alternativa que indica a visão de mundo aludida no texto. "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Antropocentrismo. "
+      ],
+      [
+        " ",
+        " ",
+        "Eurocentrismo. "
+      ],
+      [
+        " ",
+        " ",
+        "Paganismo. "
+      ],
+      [
+        " ",
+        " ",
+        "Isolacionismo. "
+      ],
+      [
+        " ",
+        " ",
+        "Humanismo. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 15,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-80c69d208ff0007b2bbf",
+    "materia": "História",
+    "conteudo": "Introdução à História",
+    "banca": "UDESC-SC",
+    "concurso": "UDESC-SC 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UDESC-SC-2016",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UDESC-SC-2016) Analise o poema a seguir: \n\nA um historiador \n\nVós que louvais o passado, \n\nque tendes explorado a face exterior, \n\na superfície das gentes, \n\no lado da vida que se exibiu, \n\nque tendes tratado o homem \n\ncomo uma criatura de políticos, \n\nagregados, governantes e pregadores, \n\neu, habitante dos Alegânis, \n\ntratando-o tal como em si mesmo \n\né ele em seus próprios direitos, \n\ntomando o pulso da vida que raramente se exibe \n\n(o fundo orgulho do homem consigo mesmo), \n\nCantor da Pessoa Humana, \n\ndelineando o que ela ainda está por ser, \n\no que eu projeto é a história do futuro. \n\n Whitman, Walt. Folhas de Relva. Seleção e tradução de Geir Campos. Ilustrações de Darcy Penteado. Rio de Janeiro: Ed. Civilização Brasileira, 1964. \n\nAssinale a alternativa CORRETA em relação ao poema “A um historiador”.",
+    "opcoes": [
+      "Whitman associa a história política e a história dos vencedores a uma história da face interior da humanidade.",
+      "Whitman não vê nenhuma diferença entre a história produzida pelo historiador e a história articulada pelo poeta.",
+      "O autor faz uma crítica ao historiador que se dedica somente à história dos vencedores e à dos grandes feitos.",
+      "Whitman faz um elogio ao papel do historiador visto que ele tem se dedicado aos temas fundamentais da história da humanidade.",
+      "Whitman destaca que o compromisso da história e do historiador deve recair nos fatos e acontecimentos do passado que impedem os homens de repetirem os mesmos erros no futuro."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UDESC-SC-2016) Analise o poema a seguir: "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "strong",
+            "children": [
+              "A um historiador "
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Vós que louvais o passado, "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "que tendes explorado a face exterior, "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "a superfície das gentes, "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "o lado da vida que se exibiu, "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "que tendes tratado o homem "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "como uma criatura de políticos, "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "agregados, governantes e pregadores, "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "eu, habitante dos Alegânis, "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "tratando-o tal como em si mesmo "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "é ele em seus próprios direitos, "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "tomando o pulso da vida que raramente se exibe "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "(o fundo orgulho do homem consigo mesmo), "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Cantor da Pessoa Humana, "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "delineando o que ela ainda está por ser, "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "o que eu projeto é a história do futuro. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Whitman, Walt. ",
+          {
+            "tag": "strong",
+            "children": [
+              "Folhas de Relva"
+            ]
+          },
+          ". Seleção e tradução de Geir Campos. Ilustrações de Darcy Penteado. Rio de Janeiro: Ed. Civilização Brasileira, 1964. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Assinale a alternativa ",
+          {
+            "tag": "strong",
+            "children": [
+              "CORRETA "
+            ]
+          },
+          "em relação ao poema “A um historiador”."
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Whitman associa a história política e a história dos vencedores a uma história da face interior da humanidade. "
+      ],
+      [
+        " ",
+        " ",
+        "Whitman não vê nenhuma diferença entre a história produzida pelo historiador e a história articulada pelo poeta. "
+      ],
+      [
+        " ",
+        " ",
+        "O autor faz uma crítica ao historiador que se dedica somente à história dos vencedores e à dos grandes feitos. "
+      ],
+      [
+        " ",
+        " ",
+        "Whitman faz um elogio ao papel do historiador visto que ele tem se dedicado aos temas fundamentais da história da humanidade. "
+      ],
+      [
+        " ",
+        " ",
+        "Whitman destaca que o compromisso da história e do historiador deve recair nos fatos e acontecimentos do passado que impedem os homens de repetirem os mesmos erros no futuro. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 16,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-6eb06c51b2f357eb6efb",
+    "materia": "História",
+    "conteudo": "Introdução à História",
+    "banca": "UFRGS",
+    "concurso": "UFRGS 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFRGS-2019",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UFRGS-2019) Leia as declarações a respeito do incêndio que destruiu o Museu Nacional em setembro de 2018.\n\nO material que estava ali servia de base para pesquisas do nosso povo e de muitos outros povos nativos do Brasil. Era uma forma de ter reconhecida nossa cultura e afirmar nossa existência. Sem eles, é como se fôssemos extintos novamente. [...] É mais uma destruição para a nossa cultura. Temos a destruição das nossas línguas, dos nossos costumes, das nossas terras e até mesmo dos nossos indivíduos. Então, esse incêndio no Museu Nacional parece parte da mesma agressão. É o que a gente sente. \n\nDaniel Tutushamum Puri, historiador e mestre em Educação pela USP.\n\nIsso é a morte da memória dos povos originários, uma negligência com o nosso patrimônio. A memória de todas as línguas da América Latina estava aqui, tínhamos registros sonoros e escritos de povos que já não existem. Estamos vendo a cultura indígena sendo apagada. Uma perda irreparável. \n\nUrutau Guajajara, mestre em Linguística e Língua Indígena pela UFRJ.\n\nZARUR, Camila. É como se fôssemos extintos novamente. Revista Piauí, Disponível em: https://piaui.folha.uol.com.br/e-como-se-fossemos-extintos-novamente/. Acesso em: 10 set. 2018. \n\nCom relação à importância do Museu Nacional para a história e memória indígenas no Brasil, assinale com V (verdadeiro) ou F (falso) as afirmações seguintes.\n\nI.(________)A destruição das coleções que representavam diversas formas culturais de grupos indígenas significou a primeira forma de extinção desses grupos que habitavam o território americano desde antes da chegada de europeus.\n\nII.(________)O Museu abrigava o acervo do Centro de Documentação de Línguas Indígenas (CELIN), onde se encontravam referências linguísticas, cantos e materiais sonoros de diversos grupos indígenas, muitos deles caracterizados pelo predomínio da cultura oral em relação à escrita.\n\nIII.(___________)A preservação da documentação, dos objetos e dos diversos registros fotográficos ali existentes era voltada exclusivamente para a visitação pública, como forma de mostrar o caráter pacífico e harmonioso das relações entre indígenas e não indígenas desde o século XVI.\n\nIV.(________)O resguardo do patrimônio material e da memória dos povos originários da América, feito pela instituição, servia como forma de reconhecimento da relevância social das culturas indígenas e como afirmação de grupos que foram sendo marginalizados ao longo da história brasileira.\n\nA sequência correta de preenchimento dos parênteses, de cima para baixo, é:",
+    "opcoes": [
+      "F – V – F – V.",
+      "V – V – F – F.",
+      "V – F – V – F.",
+      "F – F – V – F.",
+      "F – V – V – V."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UFRGS-2019) Leia as declarações a respeito do incêndio que destruiu o Museu Nacional em setembro de 2018."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "O material que estava ali servia de base para pesquisas do nosso povo e de muitos outros povos nativos do Brasil. Era uma forma de ter reconhecida nossa cultura e afirmar nossa existência. Sem eles, é como se fôssemos extintos novamente. [...] É mais uma destruição para a nossa cultura. Temos a destruição das nossas línguas, dos nossos costumes, das nossas terras e até mesmo dos nossos indivíduos. Então, esse incêndio no Museu Nacional parece parte da mesma agressão. É o que a gente sente. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "em",
+            "children": [
+              "Daniel Tutushamum Puri, historiador e mestre em Educação pela USP."
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Isso é a morte da memória dos povos originários, uma negligência com o nosso patrimônio. A memória de todas as línguas da América Latina estava aqui, tínhamos registros sonoros e escritos de povos que já não existem. Estamos vendo a cultura indígena sendo apagada. Uma perda irreparável. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "em",
+            "children": [
+              "Urutau Guajajara, mestre em Linguística e Língua Indígena pela UFRJ."
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "ZARUR, Camila. É como se fôssemos extintos novamente. ",
+          {
+            "tag": "strong",
+            "children": [
+              "Revista Piauí"
+            ]
+          },
+          ", Disponível em: https://piaui.folha.uol.com.br/e-como-se-fossemos-extintos-novamente/. Acesso em: 10 set. 2018. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Com relação à importância do Museu Nacional para a história e memória indígenas no Brasil, assinale com ",
+          {
+            "tag": "strong",
+            "children": [
+              "V"
+            ]
+          },
+          " (",
+          {
+            "tag": "strong",
+            "children": [
+              "verdadeiro"
+            ]
+          },
+          ") ou ",
+          {
+            "tag": "strong",
+            "children": [
+              "F"
+            ]
+          },
+          " (",
+          {
+            "tag": "strong",
+            "children": [
+              "falso"
+            ]
+          },
+          ") as afirmações seguintes."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "I.(",
+              {
+                "tag": "span",
+                "children": [
+                  {
+                    "tag": "span",
+                    "children": [
+                      "________"
+                    ]
+                  }
+                ]
+              },
+              ")"
+            ]
+          },
+          "A destruição das coleções que representavam diversas formas culturais de grupos indígenas significou a primeira forma de extinção desses grupos que habitavam o território americano desde antes da chegada de europeus."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "II.(",
+              {
+                "tag": "span",
+                "children": [
+                  {
+                    "tag": "span",
+                    "children": [
+                      "________"
+                    ]
+                  }
+                ]
+              },
+              ")"
+            ]
+          },
+          "O Museu abrigava o acervo do Centro de Documentação de Línguas Indígenas (CELIN), onde se encontravam referências linguísticas, cantos e materiais sonoros de diversos grupos indígenas, muitos deles caracterizados pelo predomínio da cultura oral em relação à escrita."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "III.(",
+              {
+                "tag": "span",
+                "children": [
+                  "_",
+                  {
+                    "tag": "span",
+                    "children": [
+                      "________"
+                    ]
+                  },
+                  "__"
+                ]
+              },
+              ")"
+            ]
+          },
+          "A preservação da documentação, dos objetos e dos diversos registros fotográficos ali existentes era voltada exclusivamente para a visitação pública, como forma de mostrar o caráter pacífico e harmonioso das relações entre indígenas e não indígenas desde o século XVI."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "IV.(",
+              {
+                "tag": "span",
+                "children": [
+                  {
+                    "tag": "span",
+                    "children": [
+                      "________"
+                    ]
+                  }
+                ]
+              },
+              ")"
+            ]
+          },
+          "O resguardo do patrimônio material e da memória dos povos originários da América, feito pela instituição, servia como forma de reconhecimento da relevância social das culturas indígenas e como afirmação de grupos que foram sendo marginalizados ao longo da história brasileira."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "A sequência correta de preenchimento dos parênteses, de cima para baixo, é:"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "F – V – F – V. "
+      ],
+      [
+        " ",
+        " ",
+        "V – V – F – F. "
+      ],
+      [
+        " ",
+        " ",
+        "V – F – V – F. "
+      ],
+      [
+        " ",
+        " ",
+        "F – F – V – F. "
+      ],
+      [
+        " ",
+        " ",
+        "F – V – V – V. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 17,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-1ef27e459ab4688ef041",
+    "materia": "História",
+    "conteudo": "Civilizações da Antiguidade",
+    "banca": "UFRGS",
+    "concurso": "UFRGS 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFRGS-2016",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UFRGS-2016) Com relação à história dos grupos sociais da Antiguidade, assinale a alternativa CORRETA.",
+    "opcoes": [
+      "Os povos etruscos habitavam uma zona fluvial de inundações periódicas, no vale entre os rios Tigre e Eufrates, e tinham economia baseada em produtos agrícolas que dependiam dos períodos de cheias dos rios.",
+      "A difusão da escrita cuneiforme pelos gregos, no século VIII a.C., permitiu o registro dos fatos memoráveis do passado, criando as condições propícias para o desenvolvimento da tragédia grega que teve em Homero seu principal precursor.",
+      "A ausência de uma codificação jurídica que permitisse a unificação das diversas regiões da Mesopotâmia, sob o domínio dos reis babilônicos, está entre as principais causas da queda do Império da Babilônia.",
+      "A civilização hebraica caracterizou-se por uma estrutura matriarcal de sociedade, pelo politeísmo como crença religiosa e pela recusa do uso do trabalho escravo.",
+      "O reino de Kush, com forte influência egípcia, serviu como elo entre a África central e o mundo mediterrâneo, além de estabelecer rotas comerciais entre o baixo e o alto vale do Nilo."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UFRGS-2016) Com relação à história dos grupos sociais da Antiguidade, assinale a alternativa ",
+          {
+            "tag": "strong",
+            "children": [
+              "CORRETA"
+            ]
+          },
+          "."
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Os povos etruscos habitavam uma zona fluvial de inundações periódicas, no vale entre os rios Tigre e Eufrates, e tinham economia baseada em produtos agrícolas que dependiam dos períodos de cheias dos rios. "
+      ],
+      [
+        " ",
+        " ",
+        "A difusão da escrita cuneiforme pelos gregos, no século VIII a.C., permitiu o registro dos fatos memoráveis do passado, criando as condições propícias para o desenvolvimento da tragédia grega que teve em Homero seu principal precursor. "
+      ],
+      [
+        " ",
+        " ",
+        "A ausência de uma codificação jurídica que permitisse a unificação das diversas regiões da Mesopotâmia, sob o domínio dos reis babilônicos, está entre as principais causas da queda do Império da Babilônia. "
+      ],
+      [
+        " ",
+        " ",
+        "A civilização hebraica caracterizou-se por uma estrutura matriarcal de sociedade, pelo politeísmo como crença religiosa e pela recusa do uso do trabalho escravo. "
+      ],
+      [
+        " ",
+        " ",
+        "O reino de Kush, com forte influência egípcia, serviu como elo entre a África central e o mundo mediterrâneo, além de estabelecer rotas comerciais entre o baixo e o alto vale do Nilo. "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 18,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-893d0d36b5bd05fd6c9a",
+    "materia": "História",
+    "conteudo": "Civilizações da Antiguidade",
+    "banca": "UECE",
+    "concurso": "UECE 2020",
+    "ano": 2020,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2020",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UECE-2020) Associe corretamente os povos da mesopotâmia, apresentados a seguir, com suas respectivas características e/ou realizações, numerando a Coluna II de acordo com a Coluna I:\n\nColuna I\n\nSumérios\n\nBabilônios\n\nAssírios\n\nCaldeus\n\nColuna II\n\nAtingiram seu apogeu em 587 a.C., quando Nabucodonosor conquistou Jerusalém.\n\nEram excelentes construtores de canais de irrigação e desenvolveram a escrita cuneiforme.\n\nDesenvolveram um calendário preciso e registraram um código de leis.\n\nConsideravam a guerra a principal força social e desenvolveram uma cultura militar.\n\nA sequência correta, de cima para baixo, é:",
+    "opcoes": [
+      "2, 3, 4, 1.",
+      "1, 2, 3, 4.",
+      "3, 4, 1, 2.",
+      "4, 1, 2, 3."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          "(UECE-2020) Associe corretamente os povos da mesopotâmia, apresentados a seguir, com suas respectivas características e/ou realizações, numerando a Coluna II de acordo com a Coluna I:"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Coluna I"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Sumérios"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Babilônios"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Assírios"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Caldeus"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Coluna II"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Atingiram seu apogeu em 587 a.C., quando Nabucodonosor conquistou Jerusalém."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Eram excelentes construtores de canais de irrigação e desenvolveram a escrita cuneiforme."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Desenvolveram um calendário preciso e registraram um código de leis."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Consideravam a guerra a principal força social e desenvolveram uma cultura militar."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "A sequência correta, de cima para baixo, é:"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "2, 3, 4, 1. "
+      ],
+      [
+        " ",
+        " ",
+        "1, 2, 3, 4. "
+      ],
+      [
+        " ",
+        " ",
+        "3, 4, 1, 2. "
+      ],
+      [
+        " ",
+        " ",
+        "4, 1, 2, 3. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 20,
+      "secao": "Enem e vestibulares + Desafio"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-cbb98813b58115020c89",
+    "materia": "História",
+    "conteudo": "Civilizações da Antiguidade",
+    "banca": "ACAFE",
+    "concurso": "ACAFE 2022",
+    "ano": 2022,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "ACAFE-2022",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(ACAFE-2022) “Especialmente no vale mesopotâmico, floresceram inúmeras civilizações que consolidaram instituições sociais, políticas e culturais por meio do domínio sobre as águas dos rios Tigre e Eufrates. As populações, que se desenvolveram na região, encontraram os mecanismos necessários para a prática sistemática da produção agrícola, o que permitiu, a longo prazo, o surgimento de cidades e reinos com estruturas sociais diversificadas.” (CORRÊA, Maria Isabelle P. G., 2003)\n\nAcerca das informações contidas no texto acima e dos conhecimentos relacionados ao tema, marque V para verdadeira e F para falsa.\n\n(________)Os Sumérios estabeleceram-se no sul da Mesopotâmia e formaram importantes cidades, como Ur, Uruk e Eridu. Cada uma das cidades possuía um governo próprio e independente, por isso são chamadas de cidades-Estado.\n\n(________)Os assírios dominaram a Mesopotâmia e fizeram da cidade de Nínive sua capital. Criaram táticas de guerra e possuíam um exército poderoso e, deste modo, conquistaram terras e povos formando um grande império.\n\n(________)Sob o comando do rei Hamurabi, os caldeus constituíram um estado unificado e fundaram o Primeiro Império Caldeu. Além disso, criaram um dos primeiros códigos de leis escritas da história: o Código de Hamurabi.\n\n(________)Sobre a sociedade mesopotâmica, sacerdotes, nobres e chefes militares ocupavam os cargos mais altos do governo, exercendo forte influência na política e na economia.\n\n(________)Os povos da Mesopotâmia dedicavam-se à agricultura, à pecuária e ao artesanato, mas o comércio com outras regiões era escasso.\n\nAssinale a alternativa que contém a resposta CORRETA, observando a sequência de cima para baixo.",
+    "opcoes": [
+      "V - F - F - F - V.",
+      "V - V - F - V - F.",
+      "F - F - V - V - F.",
+      "F - V - V - F - F."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          "(ACAFE-2022) “Especialmente no vale mesopotâmico, floresceram inúmeras civilizações que consolidaram instituições sociais, políticas e culturais por meio do domínio sobre as águas dos rios Tigre e Eufrates. As populações, que se desenvolveram na região, encontraram os mecanismos necessários para a prática sistemática da produção agrícola, o que permitiu, a longo prazo, o surgimento de cidades e reinos com estruturas sociais diversificadas.” (CORRÊA, Maria Isabelle P. G., 2003)"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Acerca das informações contidas no texto acima e dos conhecimentos relacionados ao tema, marque V para verdadeira e F para falsa."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          "Os Sumérios estabeleceram-se no sul da Mesopotâmia e formaram importantes cidades, como Ur, Uruk e Eridu. Cada uma das cidades possuía um governo próprio e independente, por isso são chamadas de cidades-Estado."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          "Os assírios dominaram a Mesopotâmia e fizeram da cidade de Nínive sua capital. Criaram táticas de guerra e possuíam um exército poderoso e, deste modo, conquistaram terras e povos formando um grande império."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          "Sob o comando do rei Hamurabi, os caldeus constituíram um estado unificado e fundaram o Primeiro Império Caldeu. Além disso, criaram um dos primeiros códigos de leis escritas da história: o Código de Hamurabi."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          "Sobre a sociedade mesopotâmica, sacerdotes, nobres e chefes militares ocupavam os cargos mais altos do governo, exercendo forte influência na política e na economia."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          "Os povos da Mesopotâmia dedicavam-se à agricultura, à pecuária e ao artesanato, mas o comércio com outras regiões era escasso."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Assinale a alternativa que contém a resposta CORRETA, observando a sequência de cima para baixo."
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "V - F - F - F - V. "
+      ],
+      [
+        " ",
+        " ",
+        "V - V - F - V - F. "
+      ],
+      [
+        " ",
+        " ",
+        "F - F - V - V - F. "
+      ],
+      [
+        " ",
+        " ",
+        "F - V - V - F - F. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c109158c12211ab3b1bda",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Introdução à História e Antiguidade Oriental",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-introducao-a-historia-e-antiguid-gsmWR",
+      "titulo_documento": "EXT26_3_HIS_L1_A_01",
+      "numero": 23,
+      "secao": "Enem e vestibulares + Desafio"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  }
+]

@@ -1,7 +1,7 @@
 import esa2025 from './data/esa2025.json' with { type: 'json' }
 import enem2022 from './data/enem2022.json' with { type: 'json' }
 import { BANCA_ASSIMILACAO, normalizarBanca, normalizarMateria } from './filtros.js'
-import {blocosValidos,temApoioEmBlocos} from './blocosQuestao.js'
+import {blocosValidos,temApoioEmBlocos,assinaturaVisualBlocos} from './blocosQuestao.js'
 
 export const acervo = [...esa2025, ...enem2022]
 
@@ -116,6 +116,7 @@ function semTextoDeApoio(questao) {
   const referenciaVisualAusente = /(?:figura|imagem|gráfico|mapa|infográfico|diagrama|esquema|charge|tirinha|cartum|fotografia|quadro|tabela)\s+(?:a seguir|abaixo|acima|ao lado)|(?:observe|analise|considere|com base n[oa])\s+(?:a |o )?(?:figura|imagem|gráfico|mapa|infográfico|diagrama|esquema|charge|tirinha|cartum|fotografia|quadro|tabela)/iu.test(enunciado)
   const temApoio = Boolean(String(questao.texto_apoio ?? '').trim())
     || temApoioEmBlocos(questao.blocos_enunciado)
+    || (questao.apoio_integrado === true && blocosValidos(questao.blocos_enunciado) && enunciado.length >= 200 && questao.blocos_enunciado.filter(n => n?.tag === 'p').length >= 3)
     || Boolean(questao.imagem_original || questao.pagina_imagem)
     || (Array.isArray(questao.apoio) && questao.apoio.length > 0)
   return (referenciaOutroTexto || referenciaVisualAusente) && !temApoio
@@ -139,7 +140,8 @@ function identidadeConteudo(questao) {
   if (questao.banca === 'UEM' && questao.texto_extraido_corrompido && questao.imagem_original && /^https:\/\/(?:www\.)?vestibular\.uem\.br\/provas\//.test(questao.fonte_pdf || '')) {
     return ['uem-oficial', questao.fonte_pdf, questao.numero_original, questao.idioma || '', questao.bloco_especifico || ''].join('|')
   }
-  return `${normalizarConteudo(questao.enunciado)}::${(questao.opcoes || []).map(normalizarConteudo).join('|')}`
+  const visual=assinaturaVisualBlocos(questao)
+  return `${normalizarConteudo(questao.enunciado)}::${(questao.opcoes || []).map(normalizarConteudo).join('|')}${visual?'::blocos:'+visual:''}`
 }
 
 function pontuarQualidade(questao) {
