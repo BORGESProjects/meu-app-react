@@ -20,6 +20,12 @@ test('menções legítimas a comentários, resolução e gabaritos não são cen
  const q={...base,opcoes:['Houve alguns comentários sobre você.','A resolução de conflitos envolve diálogo.','O narrador insere um comentário no trecho.','À zero hora seria divulgado o gabarito das provas.']}
  assert.deepEqual(problemasDeIntegridade(q),[]);assert.equal(questaoPublicavel(q),true)
 })
+test('rótulos de alternativas não substituem conteúdo quando falta o recorte',()=>{
+ const q={...base,opcoes:['Alternativa A — consulte o recorte original.','Alternativa B — consulte o recorte original.','Alternativa C — consulte o recorte original.','Alternativa D — consulte o recorte original.']}
+ assert.equal(questaoPublicavel(q),false)
+ assert.equal(questaoPublicavel({...q,opcoes_imagens:['/a.webp','/b.webp','/c.webp','/d.webp']}),true)
+ assert.equal(questaoPublicavel({...q,opcoes_imagens:['/a.webp','/b.webp','/c.webp']}),false)
+})
 test('limpeza remove somente cabeçalho editorial vazio no fim da opção',()=>{
  const original={...base,opcoes:[...base.opcoes.slice(0,3),'Quarta opção.\n__________________\n\n7.1 Gabarito']}
  assert.equal(corrigirQuestaoConferida(original).opcoes[3],'Quarta opção.')
@@ -61,4 +67,30 @@ test('EsPCEx 2024 questão 36 conserva a terceira alternativa e o final do enunc
  assert.equal(q.opcoes[2],'Calvinismo (ou Reforma Calvinista).');assert.equal(q.resposta_correta,2)
  assert.match(q.opcoes_imagens[2],/revisada-C\.webp$/u)
  assert.ok(fs.statSync('public'+q.opcoes_imagens[2]).size>1000)
+})
+
+test('UFRGS 2022 questão 49 restaura logaritmo, frações e potência em opções separadas',()=>{
+ const q=JSON.parse(fs.readFileSync('public/acervo/ufrgs-2022/questoes.json')).find(q=>q.id==='ufrgs-2022-d1-49')
+ assert.equal(questaoPublicavel(q),true)
+ assert.equal(q.enunciado,'Se log₂ x + (log₂ x)² = 12, então o valor de x é')
+ assert.deepEqual(q.opcoes,['8 ou 1/16.','1/8 ou 16.','−4 ou 3.','4 ou −3.','2¹².'])
+ assert.equal(q.resposta_correta,0)
+ assert.equal(q.imagem_sem_alternativas,true)
+ assert.equal(q.opcoes_imagens.length,5)
+ for(const imagem of [q.imagem_original,...q.opcoes_imagens])assert.ok(fs.statSync('public'+imagem).size>500)
+})
+
+test('EsPCEx 2024 questões 38 e 44 têm o conteúdo real de todas as alternativas',()=>{
+ const lote=JSON.parse(fs.readFileSync('public/acervo/espcex-2017-2026/questoes.json'))
+ for(const n of [38,44]){
+  const q=lote.find(q=>q.id===`espcex-2024-d2-${n}`)
+  assert.equal(questaoPublicavel(q),true)
+  assert.equal(q.opcoes.length,5)
+  assert.equal(q.opcoes.some(o=>/consulte o recorte/u.test(o)),false)
+  assert.equal(q.imagem_sem_alternativas,true)
+  assert.equal(q.resposta_correta,2)
+  assert.ok(fs.statSync('public'+q.imagem_original).size>1000)
+ }
+ assert.equal(lote.find(q=>q.id==='espcex-2024-d2-38').opcoes[2],'Pacto Colonial.')
+ assert.match(lote.find(q=>q.id==='espcex-2024-d2-44').enunciado,/IV – O termo “Queremismo”/u)
 })

@@ -20,6 +20,8 @@ export function problemasDeIntegridade(q) {
  q.opcoes.forEach((opcao,indice)=>{
   const blocos=Array.isArray(q.blocos_opcoes?.[indice])?q.blocos_opcoes[indice]:[]
   const texto=String(opcao??'')+'\n'+blocos.map(textoBlocos).join('\n')
+  const temRepresentacao=n=>n&&typeof n==='object'&&(['img','math'].includes(n.tag)||(Array.isArray(n.children)&&n.children.some(temRepresentacao)))
+  if(/^\s*(?:alternativa|diagrama da alternativa)\s+[a-e](?:\s*[—–-]\s*consulte o recorte original\.)?\s*$/iu.test(String(opcao))&&!q.opcoes_imagens?.[indice]&&!blocos.some(temRepresentacao))problemas.push({codigo:'conteudo_da_alternativa_ausente',indice})
   if(comentario.test(texto))problemas.push({codigo:'comentario_na_alternativa',indice})
   if(chaveVazada.test(texto)||listaGabarito.test(texto))problemas.push({codigo:'gabarito_na_alternativa',indice})
   if(comandoComoOpcao.test(texto.trim()))problemas.push({codigo:'comando_no_lugar_da_alternativa',indice})

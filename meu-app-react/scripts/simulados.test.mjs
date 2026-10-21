@@ -31,7 +31,11 @@ test('coleções pequenas ou com nome de concurso não viram provas oficiais', (
 test('cada card inicia exatamente o número prometido e respeita idioma e específicas', () => {
   for(const idioma of ['Inglês','Espanhol','Francês']) for(const especificas of [['Biologia','Química'],['Matemática','História']]) {
     const provas = listarProvasCompletas(questoes,idioma,especificas)
-    assert.ok(provas.length>75)
+    assert.ok(provas.some(p=>p.id===cfn.id), 'A prova completa de referência deve continuar disponível')
+    const pendentes = new Set(JSON.parse(fs.readFileSync('docs/acervo/espcex-alternativas-pendentes.json','utf8')).map(q=>q.id))
+    for (const registro of catalogo.filter(p=>p.itens.some(([id])=>pendentes.has(id)))) {
+      assert.ok(!provas.some(p=>p.id===registro.id), `Prova com alternativas ausentes: ${registro.prova}`)
+    }
     assert.equal(new Set(provas.map(p=>p.id)).size,provas.length)
     for(const prova of provas) {
       const itens = questoesDaProva(questoes,prova.id,idioma,especificas)

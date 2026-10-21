@@ -1,16 +1,18 @@
-# Revisão de integridade — 20/10/2026
+# Revisão de integridade — 21/10/2026
 
 Foram percorridos 25.594 registros: 15.100 do Supabase, 908 da central de importações e os arquivos publicados com o frontend. Há cópias e sobreposições entre fontes; esse número não é o total de questões distintas do site.
 
 ## Alterações
 
 - Bloqueio, no carregamento comum de todo o site, de resoluções e gabaritos vazados nas alternativas, comandos extraídos como alternativas, respostas explicativas no lugar das opções e apoios/destaques necessários ausentes.
-- 534 questões antes exibidas passam a ficar fora do acervo selecionável e dos novos simulados. Os registros originais permanecem armazenados: não foram apagados nem receberam gabaritos presumidos.
+- 657 questões antes exibidas passam a ficar fora do acervo selecionável e dos novos simulados. A união das fontes auditadas resulta em 19.198 questões exibíveis, contra 19.855 sem essa proteção. Os registros originais permanecem armazenados: não foram apagados nem receberam gabaritos presumidos.
+- Bloqueio adicional de alternativas representadas apenas por rótulos como “consulte o recorte original”, sem uma imagem ou representação matemática correspondente. Restam 123 registros da EsPCEx nessa condição, identificados em `espcex-alternativas-pendentes.json`. Os simulados com posições pendentes não são oferecidos como provas completas.
 - 22 ocorrências de títulos editoriais isolados no final das alternativas são removidas somente na representação usada pelo site. Não são cortadas resoluções para disfarçar questões ou respostas possivelmente deslocadas.
 - Recuperação visual de duas questões de Física da UFRGS 2023 (26 e 27 do segundo dia), com circuito, tabela e trajetória. Os dados da tabela da questão 26 foram retirados da última alternativa da questão 27.
 - Recuperação de 18 questões da EsPCEx com destaques tipográficos perdidos. Enunciados e alternativas foram recortados separadamente nos cadernos existentes; gabaritos preservados.
 - Recuperação integral da questão 36 do segundo dia da EsPCEx 2024, cujo enunciado estava truncado e cuja alternativa C tinha imagem vazia. Restaurados o final do enunciado e as cinco opções no caderno.
-- 32.519 imagens locais referidas pelo acervo verificadas quanto à existência e assinatura de formato; oito imagens públicas da API responderam corretamente. A verificação de decodificação dos pixels é registrada separadamente no relatório.
+- Recuperação da questão 49 do primeiro dia da UFRGS 2022: fórmula logarítmica e cinco alternativas com frações e potência, em recortes separados conferidos visualmente. Recuperação das questões 38 e 44 do segundo dia da EsPCEx 2024: enunciados sem as alternativas no recorte e opções reais selecionáveis, preservando o gabarito armazenado.
+- 32.524 imagens locais referidas pelo acervo verificadas quanto à existência, formato e decodificação integral dos pixels, sem arquivos inválidos; oito imagens públicas da API responderam corretamente. Isso não comprova, por si só, que cada recorte contenha toda a informação necessária: essa conferência depende do documento original.
 
 ## Limites e continuidade necessária
 

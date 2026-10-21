@@ -13,16 +13,17 @@
     }
   ],
   "total_registros": 25594,
-  "registros_publicaveis": 21848,
-  "total_apos_uniao": 19321,
-  "recursos_locais_verificados": 32519,
+  "registros_publicaveis": 21725,
+  "total_apos_uniao": 19198,
+  "recursos_locais_verificados": 32524,
   "problemas_por_tipo": {
     "destaque_tipografico_ausente": 338,
     "gabarito_na_alternativa": 54,
     "comentario_na_alternativa": 1439,
     "comando_no_lugar_da_alternativa": 2,
     "resolucao_no_lugar_das_alternativas": 5,
-    "apoio_visual_ausente": 117
+    "apoio_visual_ausente": 117,
+    "conteudo_da_alternativa_ausente": 123
   },
   "problemas": [
     {
@@ -20953,6 +20954,3327 @@
           "codigo": "destaque_tipografico_ausente"
         }
       ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2017-d1-24",
+      "sha256": "1c46ca802bd5044569aba62772dc5b8354a8b2102192d5c98ae72232a90c2a23",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2017-d2-01",
+      "sha256": "bb35b7d36cbad4c261420b44da883b8ba1f7a3a0db19044cbd7a39cf810ceb03",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2017-d2-03",
+      "sha256": "f2d40f4a1a1f6973b1af3c58fae3e0fa811244c700fec669ac28aaf63a4cad2f",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2017-d2-08",
+      "sha256": "2409c49bb2eb537a4e844c62c5d2ac5c7ae652a35134daaa9082f26e64523139",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2017-d2-14",
+      "sha256": "799be81f2f672b8debc327927da4917ffa7d1136ae6d76df06d6cb7485d4f255",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2017-d2-18",
+      "sha256": "de302cbd48bf3a657b0da55e87226d733840d631b3424b3a432b3e882422b266",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2018-d1-24",
+      "sha256": "7bf58eb8510800138269d4e0f416ad2e927bf2a5dd0fafceb9c6f9b756c560f2",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2018-d1-25",
+      "sha256": "543801ceb9ec82b212c09bcde66bb17d66d5b12e6cd7270f0234b636448162d7",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2018-d1-28",
+      "sha256": "e7a3d6b2d24de7519e00a2e621dac77b445de358eb5407832663bfdf18196b87",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2018-d2-05",
+      "sha256": "0743c54f2ac624f918c7854ac6c8d808205cb47ad6c6c08fb02cbe722feb25d3",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2018-d2-07",
+      "sha256": "f63fc79ade176a25ff9fe8d3bd2d98cacfb0e169c7d6e35630bac7c872bf610b",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2018-d2-08",
+      "sha256": "4ec091f892162b67d13bf401aeccd299da8753eb87a507fbd4e055333a6e0c39",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2018-d2-09",
+      "sha256": "1eb627ab08fea0e8063b2215f5d845e88f2a4f6ee861419ac27671e3012c1032",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2018-d2-11",
+      "sha256": "acb45f9615eb73e614641928970187c2b998c840f2b500890e6a6ffade99a2e7",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2018-d2-12",
+      "sha256": "6562dda78dd76deea4d496b066166261c582b2fc1ecc7a24854fb1afe8eaba57",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2018-d2-15",
+      "sha256": "2aa374f18125ba971622c331470c19c58751f9aeb3c137ecb33a2fc1319f87ce",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2018-d2-16",
+      "sha256": "aa822d72eac8aea76bb0a77995168cadb4d2ffce205bad51403828e620a88cf9",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2019-d1-24",
+      "sha256": "be15371b578ae15e9365117605f9bf68fa1ee12801bdcc35d8e9c1c2d2ca1171",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2019-d1-27",
+      "sha256": "75e17a987e7bc878bd76b904286482fef6668f6adc6c87d8b46d8f195e52b2a1",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2019-d1-31",
+      "sha256": "29b83064493f3a403c495e70c6fac050f5d26cfa4b289204fdfde7d528a8881e",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2019-d1-32",
+      "sha256": "162d6fe35f14bf8cf7f1d3813e542aa51ec3f34d099bc9a6a454c19aa2d258b2",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2019-d2-03",
+      "sha256": "9200ce7db9201bb6d6c37c7280c93a1c86679d0b33c93348b47f03c3aba2a93b",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2019-d2-04",
+      "sha256": "e68700c269c4aa3dad3845b8ccea78b58aea9a21ffc55727cf99584f37742a3f",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2019-d2-20",
+      "sha256": "03ff949b408ccd625bec37a840a46fa65d0c0c57e599f3ecb20a1b7adf76a513",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2019-d2-21",
+      "sha256": "5a8378621b2f9f336b901f2f2bc0b3b74cf656575728ff1c893c94e0e8ebb84e",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2020-d1-24",
+      "sha256": "06efabd16ad4fcb258c490571c3dc8123f4ffe8e2bd771ae152e169783b95ce0",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2020-d1-25",
+      "sha256": "52a95f12b0b3de7084d4bd4208478bc475d9cc5e568cefa313b51d38bcbf8dc5",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2020-d1-32",
+      "sha256": "643ecf60d0860d40d1c08caaa0c9f23f21b42477702b16a4b96ae67da3633446",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2020-d2-07",
+      "sha256": "83d76d802a4e30e5de39229ae1a8a1da721a74a9cc025cf24dd2823f3f00d684",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2020-d2-11",
+      "sha256": "e5bff7aafeb00f1a6e07233ab303c43bd14610dc142aac4c943d64b201de2ddf",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2020-d2-14",
+      "sha256": "dbfb7cabb73dc3c194d85f6270b9aafcd3d7f85c0804e328b48857f8d18e0b35",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2020-d2-15",
+      "sha256": "2be1d664c4cdb31b30ea2602b02b67ef74f0f9b1fa1850ed7f0dc809e5c29a17",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2020-d2-16",
+      "sha256": "fd68f01e74dfed8c9c33e5849cfe410626f06aeca81fd717b9bb0046867770f6",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2020-d2-17",
+      "sha256": "006545e7e003de3cc6fe26635eedc30a5c8a8d4c7afa7fb35408de8bfbb6da69",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2021-d2-05",
+      "sha256": "4826bb2760e99a0b9d40473db19b8b3e3c1b0aaa65fafaaf937631e4da57ac21",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2021-d2-27",
+      "sha256": "0112dbc7aedf17e61896d6fab9befad6786267e3addb9cbaf0f88b05c9e04741",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2021-d2-29",
+      "sha256": "ebff3bfa6053717f10c662f4430af52d730e3bd38183bb2d64446db931801115",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2021-d2-30",
+      "sha256": "9785953cc1da68dec98f6bc09d736c389c4d52ebf1a6e3a76a23ae0e711525c0",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2021-d2-31",
+      "sha256": "1d1a06e50c1568caeebea62bdf223a48f44f614452855259f199eba256730609",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2021-d2-32",
+      "sha256": "50837ec31e54f6c9a30c9feba79ecc08b510d3c452a04412a5d2536b83cc6cdf",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2022-d1-29",
+      "sha256": "32421088515c5c8e025bd9d7f231a370eaef74ca8b9c1aa1e70b37078d9ae7f5",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2022-d1-40",
+      "sha256": "d22b04246f1eb4ac42d7659ff58d268cb497fb63ba1357b53224a8d7a9168ffb",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2022-d2-14",
+      "sha256": "a19619fd3ad957f491b218c57f53336e6de822a2efb7c2690084a5a6e42367ef",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d1-21",
+      "sha256": "ee0f7052cfad404aea826759de31b173719e43e7ea7a505d2b44d0f31c578e33",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d1-23",
+      "sha256": "8b954fda1faee46f76cf7e51c13dde6afe5d7c5e3a461256e40bc950946bcdf7",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d1-25",
+      "sha256": "73d7247b4d107f559db879149102846dba4f8f9fef3a324b77e61f30449a46d7",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d1-26",
+      "sha256": "6d0bb5416c1adf77f3fd2d71f4c6b914c0506a411953b047a0d55c5b730de4a3",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d1-27",
+      "sha256": "cb706b757e11ed27c3da206131dd9590a123c77e332f8028ac1c6352f6f8943e",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d1-30",
+      "sha256": "6a64d8db8e10723bfef952b59c186f5e168c074b4275a554781d127e1ced68bc",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d1-31",
+      "sha256": "82ff3a7739a8ceab66913cf95908831efdc2ea860cf106933917d427954a0b05",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d1-32",
+      "sha256": "16235f8f9aa4a69683932de41bcf9da6d16166028e9a92a81ea0cb768bc2a29e",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d1-34",
+      "sha256": "2d82c5cfa798f21d4560b302052cfdda0f2785814577be75ee08fbc358afb476",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d1-37",
+      "sha256": "d2d3aed8cac05789c78756b9a898b8d1da7b40597d6195c4aaa9f6cfb085da49",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d1-38",
+      "sha256": "986ff395cd760f0a21639d3a334fa1770a4766472db97a6b0b41fa025b1c58c1",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d1-43",
+      "sha256": "e1c0e78da6ba731b9d4b0eff4d182155d6d0b5b827b3508c7f64a0333143b993",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-02",
+      "sha256": "816ec24683251a85a8e32f7f1445dd958f266809f706b44937c022a15ab5523b",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-04",
+      "sha256": "a0d82fae8d68a02320842f2d16928466b5088d51a56fcfc88375d7c1e15eafe0",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-06",
+      "sha256": "43474e2f8b75f546909d6b0c32e0a1cef58cb632abf7f5c2f9dbb9d50c0469e1",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-10",
+      "sha256": "cdc43419ee4fbea895259a0a2638aecdf7b40cd3641610d4a90e68d1aa9cb60d",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-11",
+      "sha256": "7901d78c0a1be5abc1556894e048c151af4d71016c38af7691c1229029821030",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-12",
+      "sha256": "984cfed982928fb97ca31f7205e9fda16c0430be5b23a829c321ecb0cb8e0edc",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-13",
+      "sha256": "1c7dd771ec2e679a2bb2b41a68f17047aba8ac37ddc3bd6d66dc3d3d9dd7ab49",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-14",
+      "sha256": "415b208119cccee0b109bebdb18eeecd634c7ad60cf49d94e7491f58b1666e48",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-15",
+      "sha256": "e61f0c414d12b4fff83c797286a0fe6c8fca7d4cc4de53e4bb49a9e256baad4e",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-20",
+      "sha256": "c6e3d236359524fdddc8412a3ad8ea78c77eda04b1f76c5cbff13504a4fde6e6",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-21",
+      "sha256": "954148f72a33077dc48b563c122bc9169c5377fdb7860bcb88ef2f8c33d985f0",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-23",
+      "sha256": "b3da6d33a2add837a7c0d581f28733b4718bd442d47c902b86ae4d4b0f51addb",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-28",
+      "sha256": "29fb63e0e7c7757dc6e3e3d409683efda195578f5077d59a4d4ed9084a00c671",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-31",
+      "sha256": "faef50c85633e65c47039f938292c935c32838161c2051309fd2aba1fb76c218",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-33",
+      "sha256": "f8afc926442d7ec584a53407b3d55c232b56bdbbb3ac64a13a8a877f58d553e5",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-34",
+      "sha256": "11c95e344bb2efdb27817b1599b818643a59def0d13c5890ecf86c36a2fdc179",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-35",
+      "sha256": "23658addfe817d0c6df4e82dda6fe6b6c06c3c96529c0ebd523a35ca8c96fff6",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-37",
+      "sha256": "bc29cf058eadb9b8dddb4d95839574b0645437906c44448cae5f49942f555cce",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-38",
+      "sha256": "07a52967652ad4dd0af1818d63122d09a4918eb55589d44e4cc0d45369a7e409",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-39",
+      "sha256": "1ca14358a4ad42daef598db4864616ceebc3267451dcb07be4e8f99e2141cb8c",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-40",
+      "sha256": "d463a88059ec7c16801a436ea416781b0f13a6bd72960c44c2da256594c1399d",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-42",
+      "sha256": "6105fdc1a34056c97b1a45886a2ca31891f70fd5c6632aa7f63714f826336bc1",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-43",
+      "sha256": "283cd729fa128d19345219c12b20fed92d1c15586b28842df093eac2820dc03a",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-44",
+      "sha256": "9b60d7fa8208d392cb78af39f5c465dc49c98f9cd44d6a5485a1c0a858e8bdd8",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-46",
+      "sha256": "f43058bee06f6e454f9163a47f0ca8e9bc67e6c95b25f2201ca52d9908079758",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-47",
+      "sha256": "b360a51640994ad2e366f956580c37a98c85c1ca3a2c10f1ea3d32df29811f1b",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-50",
+      "sha256": "9934248e838aad1defd0ce6f8ac40450844450faf90fa550f5f56354413f0da8",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-52",
+      "sha256": "5b8bfd1fe2aa21f6e5516b025b49831f4f78c82b77256d1de7164e4725d88e0d",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-54",
+      "sha256": "d96402c02fb4a77eaa4b0959c00783248a86768ff6d46c1586f81e261dee2940",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2023-d2-56",
+      "sha256": "dee5621f07b13eea20ae663adcc8ddcef0f09dd5d2bb23bfe80f34cd68a7d1a9",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-01",
+      "sha256": "ed49058c6660265bc5970123c3d2c47e2de29e64ea1d3a9ecc4ef01343562997",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-03",
+      "sha256": "db5aef345247bbd0c8fafb8e550e09a89c793f544cbe93fd069b24435bc4aeb9",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-08",
+      "sha256": "5d45b5f4d6d9f00cd4812015e2aa1109355225089b9011ba8f56eceaa4ad9a3f",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-10",
+      "sha256": "b9f5eed9c15751666774c6921bd3e6d0398d26f6907cd190a4f6c324ad17a1aa",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-12",
+      "sha256": "72df6767d812892b7d24e33dc7c55e88881676222a71463fba389e6342b909d6",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-14",
+      "sha256": "ee00aa2c00d5843948c515f3376bae77860f457f64b772a21c849baed181b501",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-19",
+      "sha256": "4ebc5aa4d0971ca5e6dca2aaafe8f43d5a6ff2b4dd22de09a0fa4f52056625bb",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-24",
+      "sha256": "06db9350cb312ce07291d19e0e316d7a796748129a7b3133a7c30e86a4ff6f9c",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-25",
+      "sha256": "c0a9167eb2e57fd35c3e5719671d8c8af7145e9c0cad54cd9917870d57731dc4",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-26",
+      "sha256": "8694e73b599d7d0ad58e7760f28dce862fee2db83f8f2f9b4f1309934ed60432",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-27",
+      "sha256": "fa6fb78b0e199bdd93a1bbd50713f1e2519547a158406ba699fa7c11c38820f2",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-28",
+      "sha256": "82a9da31b201606c988e06d10ed0aea634c474398b4c9a4a20bc030d5b422f15",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-29",
+      "sha256": "9f4b6b0e976405e04665d519796e424348fa2a130b494a1bde403f20adec4cfc",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-30",
+      "sha256": "66dc4062cf23caa9a7ff452e6406e3e3fdad30eedba3720a7243ffc70991e770",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-34",
+      "sha256": "22026d46353fddeaa25f9d93a94bc04c07dd36bebbf5512111cf8e061bc2219e",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-36",
+      "sha256": "28d098629abdfd0d8a794817dc95df00aa19eeb58483c38cc4726c87b2081db7",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d1-43",
+      "sha256": "a3fbdc87fed1b8d2667a87c59c974cc6ad3901db0311b15d62ef45a7c24b206d",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-01",
+      "sha256": "4c3460f72ab3ac4ba8607c3d88f9cf419fa17bfe4676620e2f7efc94038fd8ef",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-02",
+      "sha256": "74ca9f51d32efd5ce67435a43f64eb0ecdfd238143de42f2bc3a38929b681978",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-04",
+      "sha256": "01a44adfc2e2c41fa85c617488f2fb47f38f5c23badb377efbfa845695bb7e56",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-06",
+      "sha256": "c4f08d042501730701e398ab0bc471c96a2f71a9bdd811b41a7fdfe0379beaf5",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-07",
+      "sha256": "fcd61363b7e09447154e21060d5157c6ec3870fa6e54ea1b881b0fef5cd45f09",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-10",
+      "sha256": "37b2c122447ccfdaa5dd031573cd2c9b5ee98def32b9e8f233e7523cf8982fbe",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-18",
+      "sha256": "20b1dedc49be082947519a7976e43e37382478ea8f5b435741171a161b67b3b8",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-23",
+      "sha256": "fd129b8cb85a011b4cdad8bce46382d36ccf59c5e4d0721c41db5ef4863ca480",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-31",
+      "sha256": "c1c140502652b834ccd3dcc44e110f539597abd9ca350eef1156777653ac9a2f",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-33",
+      "sha256": "a85e72271e50722ddb84aa12745584cf2a1e403aaaac215338d8b4bf9e1288d0",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-39",
+      "sha256": "e0b2b322e5b6b29d927aeb874b2bdc455fa917c4a27b39f3a531efc2fc5290ed",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-40",
+      "sha256": "f28d53e3c9c5c6663bc773b8c4f7cdc60b15c07a3ffbec77dd366e7ff7ee9e77",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-42",
+      "sha256": "8a8d434f659771b1fc88a02e26b300cb132bc26df49f748cfd4b29c049c27ec1",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-46",
+      "sha256": "07caffd669c78b55ca9e2074686648e86467d537f49cf03ab65ac3128f15ee49",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-54",
+      "sha256": "58d1e7d453a28d5e8f2ed7fa46302266ab3bac19d9c6afaf4a7ec7c7f60ebc7f",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2024-d2-55",
+      "sha256": "5ec10e6adf4127cf3ec54c72269616f47dbc2f37016298fdc719337e8fb512de",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2025-d1-34",
+      "sha256": "1b87072ceaa655df4cb1a17a82cd17b84d7dcf88c3ac8e0a369c75c6b57f1bcc",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2026-d1-06",
+      "sha256": "cbe3f0d8506fdeaac70b6430f514e6002314f6fd57e4ced1b5f075bab8bec53a",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2026-d2-03",
+      "sha256": "0159d96ddc4f63899f46299f87dad3b865f09a3dc4c32d592638c38da4e0b331",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2026-d2-04",
+      "sha256": "b05ea34574f83737a69754f75ba29b312fb9c7ed31ecc77793f145dc18264b0d",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
+    },
+    {
+      "fonte": "public/acervo/espcex-2017-2026/questoes.json",
+      "id": "espcex-2026-d2-15",
+      "sha256": "2575c8363573824b00f945821dc2bcd8a6d56a68887faaf2f4591659548bfe02",
+      "motivos": [
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 0
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 1
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 2
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 3
+        },
+        {
+          "codigo": "conteudo_da_alternativa_ausente",
+          "indice": 4
+        }
+      ]
     }
   ],
   "rodapes_editoriais_limpos": [
@@ -22678,7 +26000,7 @@
   ],
   "comparacao_exibicao": {
     "antes": 19855,
-    "agora": 19321,
+    "agora": 19198,
     "retiradas": [
       {
         "id": "18320",
@@ -24815,12 +28137,504 @@
       {
         "id": "pdf-c23df9ad-576a-438e-851e-bc3a85096d78-46",
         "banca": "ESA"
+      },
+      {
+        "id": "espcex-2017-d1-24",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2017-d2-01",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2017-d2-03",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2017-d2-08",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2017-d2-14",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2017-d2-18",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2018-d1-24",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2018-d1-25",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2018-d1-28",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2018-d2-05",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2018-d2-07",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2018-d2-08",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2018-d2-09",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2018-d2-11",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2018-d2-12",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2018-d2-15",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2018-d2-16",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2019-d1-24",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2019-d1-27",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2019-d1-31",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2019-d1-32",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2019-d2-03",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2019-d2-04",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2019-d2-20",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2019-d2-21",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2020-d1-24",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2020-d1-25",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2020-d1-32",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2020-d2-07",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2020-d2-11",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2020-d2-14",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2020-d2-15",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2020-d2-16",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2020-d2-17",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2021-d2-05",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2021-d2-27",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2021-d2-29",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2021-d2-30",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2021-d2-31",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2021-d2-32",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2022-d1-29",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2022-d1-40",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2022-d2-14",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d1-21",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d1-23",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d1-25",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d1-26",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d1-27",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d1-30",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d1-31",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d1-32",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d1-34",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d1-37",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d1-38",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d1-43",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-02",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-04",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-06",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-10",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-11",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-12",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-13",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-14",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-15",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-20",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-21",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-23",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-28",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-31",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-33",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-34",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-35",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-37",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-38",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-39",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-40",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-42",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-43",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-44",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-46",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-47",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-50",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-52",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-54",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2023-d2-56",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-01",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-03",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-08",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-10",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-12",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-14",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-19",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-24",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-25",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-26",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-27",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-28",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-29",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-30",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-34",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-36",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d1-43",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-01",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-02",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-04",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-06",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-07",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-10",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-18",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-23",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-31",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-33",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-39",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-40",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-42",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-46",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-54",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2024-d2-55",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2025-d1-34",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2026-d1-06",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2026-d2-03",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2026-d2-04",
+        "banca": "EsPCEx"
+      },
+      {
+        "id": "espcex-2026-d2-15",
+        "banca": "EsPCEx"
       }
     ]
   },
   "decodificacao_imagens": {
-    "verificadas": 32519,
-    "manifesto_sha256": "cae3f9d890ffaa64084ba5ab978f4e8906f3ed1349d62bff404b263f84dbdfda",
+    "verificadas": 32524,
+    "manifesto_sha256": "8b2b5338c07b729176c553a17ba764222e9f9972526460005cd81027337112fd",
     "invalidas": [],
     "metodo": "Decodificação integral dos pixels; não é conferência semântica do recorte."
   }

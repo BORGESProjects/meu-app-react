@@ -322,7 +322,7 @@ test('CFN 2020 a 2025 contém 300 questões publicáveis e os seis apoios restau
   }
 })
 
-test('EsPCEx 2017 a 2026 contém as 1.000 questões publicáveis com apoios visuais', async () => {
+test('EsPCEx preserva 1.000 registros e separa os 123 com alternativas ainda ausentes', async () => {
   const arquivo = new URL('../public/acervo/espcex-2017-2026/questoes.json', import.meta.url)
   const espcex = JSON.parse(await (await import('node:fs/promises')).readFile(arquivo, 'utf8'))
 
@@ -336,7 +336,10 @@ test('EsPCEx 2017 a 2026 contém as 1.000 questões publicáveis com apoios visu
   }
 
   const publicaveis = espcex.filter(questao => questaoPublicavel(corrigirQuestaoConferida(questao)))
-  assert.equal(publicaveis.length, 1000)
+  const pendentes=JSON.parse(readFileSync(new URL('../docs/acervo/espcex-alternativas-pendentes.json',import.meta.url),'utf8'))
+  assert.equal(pendentes.length,123)
+  assert.equal(publicaveis.length,877)
+  assert.deepEqual(espcex.filter(q=>!questaoPublicavel(corrigirQuestaoConferida(q))).map(q=>q.id).sort(),pendentes.map(q=>q.id).sort())
   for (const questao of publicaveis) {
     for (const imagem of [questao.imagem_original, ...(questao.opcoes_imagens || []), ...(questao.apoio || []).map(item => item.imagem)].filter(Boolean)) {
       assert.ok(existsSync(new URL('../public' + imagem, import.meta.url)), imagem)
