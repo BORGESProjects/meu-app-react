@@ -19,6 +19,12 @@ Foram percorridos 25.594 registros: 15.100 do Supabase, 908 da central de import
 
 ## Limites e continuidade necessária
 
+### Alternativas em texto — 21/10/2026
+
+As cinco alternativas de 257 questões EsPCEx foram transcritas, totalizando 1.285 opções. A interface usa o texto conferido no banco de questões, nos simulados e na revisão, mantendo os recortes arquivados como evidência. Frações, sinais, expoentes, índices e numeração romana foram conferidos; os destaques necessários de Português são elementos de texto formatado. As nove questões cujas alternativas são gráficos, mapas ou estruturas químicas permanecem visuais. Distratores incorretos e erros impressos do caderno não foram transformados em respostas corretas. A duplicação das alternativas A e E da questão 21 do segundo dia de 2024 foi conservada e registrada como duplicação do original.
+
+O manifesto `espcex-alternativas-transcritas.json` registra as transcrições, os destaques, os hashes dos recortes usados como fonte e o gabarito preservado. `python scripts/aplicar_transcricoes_espcex.py` reaplica somente esse conjunto conferido. Os 206 testes passaram, incluindo preservação das 1.000 questões e das 20 provas completas.
+
 A auditoria estrutural não resolve automaticamente cada questão, não confirma todos os gabaritos e não verifica semanticamente cada recorte. As regras são conservadoras e os motivos ficam registrados em `auditoria-integridade.json`. Há 253 ocorrências adicionais para conferência de contexto/destaque tipográfico; a triagem não prova que todas estejam erradas e não autoriza apagar esses registros.
 
 As questões bloqueadas devem ser recuperadas a partir do documento original e do gabarito confiável. Casos observados incluem resolução inteira como alternativa, uma alternativa ocupada pelo comando e gabarito que contradiz o cálculo ou o próprio comentário. A simples exclusão do comentário não recupera esses itens. Esta entrega não representa conclusão da revisão manual de cada prova do acervo.
