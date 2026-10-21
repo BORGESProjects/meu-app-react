@@ -1,0 +1,301 @@
+{
+  "capitulos": [
+    {
+      "id": "695c1076ba77cf5c87d7e6de",
+      "nome": "Vírus e fungos",
+      "total_extraido": 25,
+      "publicados": [
+        "sae-08b6bd9264df958982b2",
+        "sae-685ac71ff59a8042e416",
+        "sae-1f0db4476c1440e72733",
+        "sae-86e0d1a10d9fe8153518",
+        "sae-00a3202f7520819e47f4",
+        "sae-d38c04cbe7e5ed214d0e",
+        "sae-d3a6f07545a7608429a1",
+        "sae-95fc994e853c13f90219",
+        "sae-907866c025d3e00afbfb",
+        "sae-5fb8bf56d24059a99967",
+        "sae-ba61a913f2ef9ef05aed",
+        "sae-758f0bbfb71d3fdbab8d",
+        "sae-72b37f895f86d1cd0ba7",
+        "sae-20c4c4b014b25dea0018",
+        "sae-56702b0d094660b739ff"
+      ]
+    },
+    {
+      "id": "695c1076ba77cf5c87d7e6df",
+      "nome": "Reino monera: bactérias e arqueas",
+      "total_extraido": 24,
+      "publicados": [
+        "sae-abc2c2bbb0ab9a3ff836",
+        "sae-c0d05d06eaaa0f309f37",
+        "sae-809de7052225222455ab",
+        "sae-80f8ba9917a0fa395fed",
+        "sae-8697eec8f2dfc69690b5",
+        "sae-b455f5aabcdc3943bc48",
+        "sae-ef06396eee9e7e3e57a7",
+        "sae-bb9f8f6db030b95866e6",
+        "sae-1ea80eeec6b40cb693ff",
+        "sae-5ee4bf006a6a70be4486",
+        "sae-3dfbcab1ac16fd2b3e4f",
+        "sae-39a91ece31925b482cbc",
+        "sae-0965e751856c128d83a3",
+        "sae-d59ca95eb2040c194412",
+        "sae-45117a3958b69b586b2d",
+        "sae-10382a6ca118c279ef3e",
+        "sae-01f37cbdbf2cd1163101",
+        "sae-6da43cee63fbb9b4c26c"
+      ]
+    },
+    {
+      "id": "695c1076ba77cf5c87d7e6e0",
+      "nome": "Reino protoctista: algas e protozoários",
+      "total_extraido": 26,
+      "publicados": [
+        "sae-68bd1c4886937bf849f5",
+        "sae-f268b3b8db93c72ea068",
+        "sae-a34e5fabafdfce9faf88",
+        "sae-3d72ae82d4dbd1622ca4",
+        "sae-a6bdc8ff3d17eaa9114c",
+        "sae-2e382fe70394ea532671",
+        "sae-a060822f84ec129dcc04",
+        "sae-2ea76cc13315c360848b",
+        "sae-b43889d76c36fee674d5",
+        "sae-2c9aa5f39803eafd2492",
+        "sae-2128720db7c137803622",
+        "sae-d6752830bc1a4c3d0f22",
+        "sae-b6b70b3c4626b59daadf",
+        "sae-9a7e2ad43766b1635cb0",
+        "sae-b82b5480c5823801c13a"
+      ]
+    }
+  ],
+  "total_extraido": 75,
+  "publicados": [
+    "sae-08b6bd9264df958982b2",
+    "sae-685ac71ff59a8042e416",
+    "sae-1f0db4476c1440e72733",
+    "sae-86e0d1a10d9fe8153518",
+    "sae-00a3202f7520819e47f4",
+    "sae-d38c04cbe7e5ed214d0e",
+    "sae-d3a6f07545a7608429a1",
+    "sae-95fc994e853c13f90219",
+    "sae-907866c025d3e00afbfb",
+    "sae-5fb8bf56d24059a99967",
+    "sae-ba61a913f2ef9ef05aed",
+    "sae-758f0bbfb71d3fdbab8d",
+    "sae-72b37f895f86d1cd0ba7",
+    "sae-20c4c4b014b25dea0018",
+    "sae-56702b0d094660b739ff",
+    "sae-abc2c2bbb0ab9a3ff836",
+    "sae-c0d05d06eaaa0f309f37",
+    "sae-809de7052225222455ab",
+    "sae-80f8ba9917a0fa395fed",
+    "sae-8697eec8f2dfc69690b5",
+    "sae-b455f5aabcdc3943bc48",
+    "sae-ef06396eee9e7e3e57a7",
+    "sae-bb9f8f6db030b95866e6",
+    "sae-1ea80eeec6b40cb693ff",
+    "sae-5ee4bf006a6a70be4486",
+    "sae-3dfbcab1ac16fd2b3e4f",
+    "sae-39a91ece31925b482cbc",
+    "sae-0965e751856c128d83a3",
+    "sae-d59ca95eb2040c194412",
+    "sae-45117a3958b69b586b2d",
+    "sae-10382a6ca118c279ef3e",
+    "sae-01f37cbdbf2cd1163101",
+    "sae-6da43cee63fbb9b4c26c",
+    "sae-68bd1c4886937bf849f5",
+    "sae-f268b3b8db93c72ea068",
+    "sae-a34e5fabafdfce9faf88",
+    "sae-3d72ae82d4dbd1622ca4",
+    "sae-a6bdc8ff3d17eaa9114c",
+    "sae-2e382fe70394ea532671",
+    "sae-a060822f84ec129dcc04",
+    "sae-2ea76cc13315c360848b",
+    "sae-b43889d76c36fee674d5",
+    "sae-2c9aa5f39803eafd2492",
+    "sae-2128720db7c137803622",
+    "sae-d6752830bc1a4c3d0f22",
+    "sae-b6b70b3c4626b59daadf",
+    "sae-9a7e2ad43766b1635cb0",
+    "sae-b82b5480c5823801c13a"
+  ],
+  "quarentena": [
+    {
+      "id": "sae-dd1079481105eb7f6fb3",
+      "capitulo": "Vírus e fungos",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-c811133f41e83e0bcb00",
+      "capitulo": "Vírus e fungos",
+      "numero": 1,
+      "motivo": "A afirmação II generaliza a origem meiótica dos esporos; necessária conferência da redação e da chave na prova."
+    },
+    {
+      "id": "sae-7690ed65d094d407e029",
+      "capitulo": "Vírus e fungos",
+      "numero": 17,
+      "motivo": "Alternativas A e B idênticas no material; conferir caderno original antes de corrigir."
+    },
+    {
+      "id": "sae-58d0d7d78b256dec8ba3",
+      "capitulo": "Vírus e fungos",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-510a5e88edefce779264",
+      "capitulo": "Vírus e fungos",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-db7478d30ecf7f4f6641",
+      "capitulo": "Vírus e fungos",
+      "numero": 20,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-6124bfc93f394d46329b",
+      "capitulo": "Vírus e fungos",
+      "numero": 22,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-0a4292a3f9732c66c6ee",
+      "capitulo": "Vírus e fungos",
+      "numero": 23,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-8aedccb5a1efb78d68c3",
+      "capitulo": "Vírus e fungos",
+      "numero": 24,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-ccfc0b39d9ae9ff5ffdd",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-464e4914e2d039640856",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "numero": 5,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-7bc2a347441167224669",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "numero": 16,
+      "motivo": "Uso de vetor biológico para o rato na leptospirose requer conferência; reservatório e vetor não são equivalentes."
+    },
+    {
+      "id": "sae-52e0372f4559b90e6157",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "numero": 19,
+      "motivo": "O apoio contém o literal undefined; conferir imagens e legendas na fonte original."
+    },
+    {
+      "id": "sae-10bf2291237692fbf879",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "numero": 23,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-03508c61896964089775",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "numero": 24,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-73c53da2df2c8d7bcf4f",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-40a97335ef2753db8582",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "numero": 9,
+      "motivo": "Alternativa marcada menciona fezes do parasita em vez de fezes do inseto vetor."
+    },
+    {
+      "id": "sae-305e105c8991cb83bfe2",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "numero": 11,
+      "motivo": "Hierarquia das vias de transmissão sem data de referência: não publicar como orientação epidemiológica atual."
+    },
+    {
+      "id": "sae-9ad4b56fe2974264891d",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-4f9876669389b879f16e",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-55deb061b05085a0e8d7",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "numero": 20,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-c4b7bc0fec39867a63e9",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "numero": 21,
+      "motivo": "A chave A descreve dinoflagelados; o enunciado pede clorofíceas. Há ainda comando de outro exercício no final."
+    },
+    {
+      "id": "sae-673c61843f714ab555cb",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "numero": 22,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-77a6450486690042502d",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "numero": 23,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-41122fc877accbecc3f2",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "numero": 24,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    },
+    {
+      "id": "sae-948a109062641d2bbec3",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "numero": 25,
+      "motivo": "Sem gabarito objetivo único ou extração de formato não objetivo; não inferir resposta."
+    }
+  ],
+  "duplicatas": [
+    {
+      "id": "sae-4bd71753645afc5a4b27",
+      "existente": "enem-2019-114",
+      "capitulo": "Vírus e fungos"
+    }
+  ],
+  "recursos": [
+    {
+      "imagem": "/acervo/estudo-biologia-microorganismos/2b193c8a66971fd251e5.png",
+      "sha256": "2b193c8a66971fd251e58eb73947f0045af8a6a62e08cebc5eb689a9f29d12e9",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/BIO/tKPIF3AK1eOqpzId/resources/image/faixa.png"
+    }
+  ],
+  "observacoes": [
+    "A referência institucional e o gabarito são os declarados pelo material autorizado, sem alegação de conferência oficial independente.",
+    "As questões discursivas, somatórias ou com conflitos não foram convertidas por inferência.",
+    "Preservados textos, tabelas, imagens e quantidade original de alternativas."
+  ]
+}

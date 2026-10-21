@@ -1,0 +1,4717 @@
+[
+  {
+    "id": "sae-08b6bd9264df958982b2",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "MACKENZIE",
+    "concurso": "Mackenzie 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Mackenzie-2018",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(Mackenzie-2018) A simplicidade bioquímica dos vírus tem levado alguns cientistas a questionar se eles realmente são seres vivos. Para alguns estudiosos, os vírus são a forma de vida mais simples que existe. Mesmo os que não incluem os vírus entre os seres vivos concordam que eles são sistemas biológicos, uma vez que possuem ácidos nucleicos e utilizam o mesmo sistema de codificação genética que todas as formas de vida conhecidas.\n\nAMABIS, J. M.; MARTHO, G. R. Fundamentos da Biologia Moderna. 4. ed. São Paulo: Moderna, 2006. p. 251. \n\nJulgue como verdadeiras (V) ou falsas (F) as afirmativas sobre os vírus.\n\n(________) São acelulares e procariontes.\n\n(________) Seu material genético pode ser DNA ou RNA.\n\n(________) Não possuem metabolismo próprio; por isso, são parasitas intracelulares obrigatórios.\n\n(________) São constituídos por um capsídeo duplo com constituição lipoproteica e por uma molécula de ácido nucleico.\n\n(________) Os retrovírus são portadores de RNA e da enzima transcriptase reversa.\n\nA sequência correta de cima para baixo é",
+    "opcoes": [
+      "V, V, F, F, V.",
+      "V, F, F, V, F.",
+      "F, F, V, V, F.",
+      "V, V, V, F, V.",
+      "F, V, V, F, V."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Mackenzie-2018) A simplicidade bioquímica dos vírus tem levado alguns cientistas a questionar se eles realmente são seres vivos. Para alguns estudiosos, os vírus são a forma de vida mais simples que existe. Mesmo os que não incluem os vírus entre os seres vivos concordam que eles são sistemas biológicos, uma vez que possuem ácidos nucleicos e utilizam o mesmo sistema de codificação genética que todas as formas de vida conhecidas."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "AMABIS, J. M.; MARTHO, G. R. ",
+          {
+            "tag": "strong",
+            "children": [
+              "Fundamentos da Biologia Moderna"
+            ]
+          },
+          ". 4. ed. São Paulo: Moderna, 2006. p. 251. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Julgue como verdadeiras (V) ou falsas (F) as afirmativas sobre os vírus."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          " São acelulares e procariontes."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          " Seu material genético pode ser DNA ou RNA."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          " Não possuem metabolismo próprio; por isso, são parasitas intracelulares obrigatórios."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          " São constituídos por um capsídeo duplo com constituição lipoproteica e por uma molécula de ácido nucleico."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          " Os retrovírus são portadores de RNA e da enzima transcriptase reversa."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "A sequência correta de cima para baixo é"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        "V, V, F, F, V."
+      ],
+      [
+        "V, F, F, V, F."
+      ],
+      [
+        "F, F, V, V, F."
+      ],
+      [
+        "V, V, V, F, V."
+      ],
+      [
+        "F, V, V, F, V."
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 2,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-685ac71ff59a8042e416",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "UECE",
+    "concurso": "UECE 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2019",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UECE-2019) Sobre os bacteriófagos, é correto afirmar que são vírus",
+    "opcoes": [
+      "que usam seu próprio metabolismo para destruir células hospedeiras humanas.",
+      "de DNA ou de RNA que infectam organismos procariotos.",
+      "cuja reprodução ou replicação, diferentemente dos demais vírus, ocorre no exterior de uma célula hospedeira.",
+      "que causam catapora nos humanos e parasitam bactérias."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UECE-2019) Sobre os bacteriófagos, é correto afirmar que são vírus"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        "que usam seu próprio metabolismo para destruir células hospedeiras humanas."
+      ],
+      [
+        "de DNA ou de RNA que infectam organismos procariotos. "
+      ],
+      [
+        "cuja reprodução ou replicação, diferentemente dos demais vírus, ocorre no exterior de uma célula hospedeira."
+      ],
+      [
+        "que causam catapora nos humanos e parasitam bactérias. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 3,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-1f0db4476c1440e72733",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "UECE",
+    "concurso": "UECE 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2016",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UECE-2016) No que diz respeito ao Zica Vírus (ZIKV), assinale a afirmação verdadeira.",
+    "opcoes": [
+      "Pode provocar danos no cérebro, que comprometem a visão, a audição e a coordenação motora, mesmo sem a manifestação da microcefalia.",
+      "Da família Flaviviridae, corresponde a um retrovírus transmitido pelo Aedes aegypti.",
+      "Provoca febre, vômitos, tosse e dores no corpo, sendo o sintoma mais grave a paralisia dos membros inferiores.",
+      "O controle da doença, na população, passa pelo controle dos focos de Aedes aegypti e por campanhas de vacinação voltadas à imunização contra o vírus."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UECE-2016) No que diz respeito ao Zica Vírus (ZIKV), assinale a afirmação verdadeira."
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        "Pode provocar danos no cérebro, que comprometem a visão, a audição e a coordenação motora, mesmo sem a manifestação da microcefalia."
+      ],
+      [
+        "Da família Flaviviridae, corresponde a um retrovírus transmitido pelo ",
+        {
+          "tag": "em",
+          "children": [
+            "Aedes aegypti"
+          ]
+        },
+        "."
+      ],
+      [
+        "Provoca febre, vômitos, tosse e dores no corpo, sendo o sintoma mais grave a paralisia dos membros inferiores."
+      ],
+      [
+        "O controle da doença, na população, passa pelo controle dos focos de ",
+        {
+          "tag": "em",
+          "children": [
+            "Aedes aegypti"
+          ]
+        },
+        " e por campanhas de vacinação voltadas à imunização contra o vírus."
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 4,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-86e0d1a10d9fe8153518",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "PUC",
+    "concurso": "PUC-Campinas",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "PUC-Campinas",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(PUC-Campinas) Os fungos já foram considerados vegetais e, de fato, ambos apresentam algumas características em comum. No entanto, apenas fungos apresentam",
+    "opcoes": [
+      "células com complexo golgiense.",
+      "formação de ATP na cadeia respiratória.",
+      "membrana celular lipoproteica.",
+      "via glicolítica no citoplasma celular.",
+      "glicogênio como reserva energética"
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(PUC-Campinas) Os fungos já foram considerados vegetais e, de fato, ambos apresentam algumas características em comum. No entanto, apenas fungos apresentam"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        "células com complexo golgiense."
+      ],
+      [
+        "formação de ATP na cadeia respiratória."
+      ],
+      [
+        "membrana celular lipoproteica."
+      ],
+      [
+        "via glicolítica no citoplasma celular."
+      ],
+      [
+        "glicogênio como reserva energética"
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 5,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-00a3202f7520819e47f4",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "UEG",
+    "concurso": "UEG",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UEG",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UEG) O ser vivo apresentado como a moradia dos “smurfs” tem diferentes espécies. Popularmente, esta “casinha de cogumelo” pode se referir também às espécies conhecidas como “orelhas-de-pau”, que apresentam um corpo frutífero e, às vezes, com a forma de chapéu, apresentando hifas, que são “mofos”. Esses seres vivos possuem sofisticado conjunto de enzimas, muitas vezes, de interesse da indústria de biorremediação de solos contaminados e tratamento de efluentes. Considerando-se a taxonomia desses seres vivos, verifica-se que eles são considerados",
+    "opcoes": [
+      "zygomycota.",
+      "ascomycota.",
+      "ascomicetos.",
+      "basidiomicetos.",
+      "deuteromicetos."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UEG) O ser vivo apresentado como a moradia dos “smurfs” tem diferentes espécies. Popularmente, esta “casinha de cogumelo” pode se referir também às espécies conhecidas como “orelhas-de-pau”, que apresentam um corpo frutífero e, às vezes, com a forma de chapéu, apresentando hifas, que são “mofos”. Esses seres vivos possuem sofisticado conjunto de enzimas, muitas vezes, de interesse da indústria de biorremediação de solos contaminados e tratamento de efluentes. Considerando-se a taxonomia desses seres vivos, verifica-se que eles são considerados"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        "zygomycota."
+      ],
+      [
+        "ascomycota."
+      ],
+      [
+        "ascomicetos."
+      ],
+      [
+        "basidiomicetos."
+      ],
+      [
+        "deuteromicetos. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 6,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-d38c04cbe7e5ed214d0e",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "FUVEST",
+    "concurso": "Fuvest 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Fuvest-2018",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Fuvest-2018) No grupo dos fungos, são conhecidas perto de 100 mil espécies. Esse grupo tão diverso inclui espécies que",
+    "opcoes": [
+      "são sapróbias, fundamentais na ciclagem dos nutrientes, pois sintetizam açúcares a partir do dióxido de carbono do ar.",
+      "são parasitas, procariontes heterotróficos que absorvem compostos orgânicos produzidos pelos organismos hospedeiros.",
+      "são comestíveis, pertencentes a um grupo de fungos primitivos que não formam corpos de frutificação.",
+      "formam, com as raízes de plantas, associações chamadas micorrizas, mutuamente benéficas, pela troca de nutrientes.",
+      "realizam respiração, na presença de oxigênio, e fotossíntese, na ausência desse gás, sendo, portanto, anaeróbias facultativas."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Fuvest-2018) No grupo dos fungos, são conhecidas perto de 100 mil espécies. Esse grupo tão diverso inclui espécies que"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        "são sapróbias, fundamentais na ciclagem dos nutrientes, pois sintetizam açúcares a partir do dióxido de carbono do ar."
+      ],
+      [
+        "são parasitas, procariontes heterotróficos que absorvem compostos orgânicos produzidos pelos organismos hospedeiros."
+      ],
+      [
+        "são comestíveis, pertencentes a um grupo de fungos primitivos que não formam corpos de frutificação."
+      ],
+      [
+        "formam, com as raízes de plantas, associações chamadas micorrizas, mutuamente benéficas, pela troca de nutrientes."
+      ],
+      [
+        "realizam respiração, na presença de oxigênio, e fotossíntese, na ausência desse gás, sendo, portanto, anaeróbias facultativas."
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 7,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-d3a6f07545a7608429a1",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "UEL",
+    "concurso": "UEL 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UEL-2019",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UEL-2019) Os vírus não pertencem a nenhum dos cinco reinos. Pesquisadores se dividem entre aqueles que não os consideram seres vivos, pois não possuem metabolismo próprio, e os que consideram que a capacidade de replicação, a hereditariedade e a evolução já são suficientes para considerá-los como tais.\n\nCom base nos conhecimentos sobre vírus, considere as afirmativas a seguir.\n\nI.Os vírus são constituídos por uma ou várias moléculas de ácido nucleico, protegidas por uma cápsula de proteína.\n\nII.Os vírus se reproduzem assexuadamente por bipartição, primeiramente duplicando seu material genético e, em seguida, dividindo-se.\n\nIII.O vírus do cólera, doença transmitida pela saliva de seus portadores, causa fraqueza muscular progressiva e lesões na pele e nas mucosas.\n\nIV.Os vírus podem ser combatidos por vacinas fabricadas com agentes infecciosos atenuados, que promovem a reação do organismo ao produzir anticorpos específicos.\n\nAssinale a alternativa correta.",
+    "opcoes": [
+      "Somente as afirmativas I e II são corretas.",
+      "Somente as afirmativas I e IV são corretas.",
+      "Somente as afirmativas III e IV são corretas.",
+      "Somente as afirmativas I, II e III são corretas.",
+      "Somente as afirmativas II, III e IV são corretas."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UEL-2019) Os vírus não pertencem a nenhum dos cinco reinos. Pesquisadores se dividem entre aqueles que não os consideram seres vivos, pois não possuem metabolismo próprio, e os que consideram que a capacidade de replicação, a hereditariedade e a evolução já são suficientes para considerá-los como tais."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Com base nos conhecimentos sobre vírus, considere as afirmativas a seguir."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "I."
+            ]
+          },
+          "Os vírus são constituídos por uma ou várias moléculas de ácido nucleico, protegidas por uma cápsula de proteína."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "II."
+            ]
+          },
+          "Os vírus se reproduzem assexuadamente por bipartição, primeiramente duplicando seu material genético e, em seguida, dividindo-se."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "III."
+            ]
+          },
+          "O vírus do cólera, doença transmitida pela saliva de seus portadores, causa fraqueza muscular progressiva e lesões na pele e nas mucosas."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "IV."
+            ]
+          },
+          "Os vírus podem ser combatidos por vacinas fabricadas com agentes infecciosos atenuados, que promovem a reação do organismo ao produzir anticorpos específicos."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Assinale a alternativa correta."
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        "Somente as afirmativas I e II são corretas."
+      ],
+      [
+        "Somente as afirmativas I e IV são corretas."
+      ],
+      [
+        "Somente as afirmativas III e IV são corretas."
+      ],
+      [
+        "Somente as afirmativas I, II e III são corretas."
+      ],
+      [
+        "Somente as afirmativas II, III e IV são corretas."
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 8,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-95fc994e853c13f90219",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "UNICAMP",
+    "concurso": "Unicamp 2020",
+    "ano": 2020,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Unicamp-2020",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Unicamp-2020) Graças às campanhas de vacinação, a poliomielite foi considerada erradicada no Brasil: o último caso foi registrado em 1989. Contudo, o Ministério da Saúde constatou cobertura vacinal alarmante (abaixo de 50%) em 312 municípios brasileiros em 2018. A vacinação é a única forma de prevenção da poliomielite; é uma questão de responsabilidade social contemplada no Programa Nacional de Imunizações do Ministério da Saúde.\n\nFonte: portalms.saude.gov.br/noticias/agencia-saude/43797-ministerio-da-saude-alerta-parabaixas-coberturas-vacinais-para-polio. \n\nAssinale a alternativa que caracteriza corretamente a poliomielite.",
+    "opcoes": [
+      "É uma doença viral contagiosa, que pode ser transmitida através da ingestão de água ou alimentos contaminados por fezes de doentes.",
+      "A transmissão do vírus ocorre por meio de vetores hematófagos que tenham picado uma pessoa contaminada na fase aguda da doença.",
+      "É uma doença bacteriana transmitida por gotículas de saliva ou de sangue de pessoas contaminadas, com alto risco de contágio.",
+      "A transmissão da bactéria ocorre por meio de vetores artrópodes que tenham picado uma pessoa contaminada na fase crônica da doença."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Unicamp-2020) Graças às campanhas de vacinação, a poliomielite foi considerada erradicada no Brasil: o último caso foi registrado em 1989. Contudo, o Ministério da Saúde constatou cobertura vacinal alarmante (abaixo de 50%) em 312 municípios brasileiros em 2018. A vacinação é a única forma de prevenção da poliomielite; é uma questão de responsabilidade social contemplada no Programa Nacional de Imunizações do Ministério da Saúde."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Fonte: portalms.saude.gov.br/noticias/agencia-saude/43797-ministerio-da-saude-alerta-parabaixas-coberturas-vacinais-para-polio. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Assinale a alternativa que caracteriza corretamente a poliomielite."
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        "É uma doença viral contagiosa, que pode ser transmitida através da ingestão de água ou alimentos contaminados por fezes de doentes."
+      ],
+      [
+        "A transmissão do vírus ocorre por meio de vetores hematófagos que tenham picado uma pessoa contaminada na fase aguda da doença."
+      ],
+      [
+        "É uma doença bacteriana transmitida por gotículas de saliva ou de sangue de pessoas contaminadas, com alto risco de contágio."
+      ],
+      [
+        "A transmissão da bactéria ocorre por meio de vetores artrópodes que tenham picado uma pessoa contaminada na fase crônica da doença."
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 10,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-907866c025d3e00afbfb",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "FUVEST",
+    "concurso": "Fuvest 2020",
+    "ano": 2020,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Fuvest-2020",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Fuvest-2020) Óbitos por cepas de bactérias resistentes a antibióticos vêm crescendo. Um estudo do governo britânico estima que, em escala global, os óbitos por cepas resistentes já cheguem a 700 mil por ano. E as coisas têm piorado. Além das bactérias, já estão surgindo fungos resistentes, como a Candida auris. Qualquer solução passa por um esforço multinacional de ações coordenadas. O crescente número de governos isolacionistas e até antidarwinistas não dá razões para otimismo. Há urgência. O estudo britânico calcula que, se nada for feito, em 2050, as mortes por infecções resistentes chegarão a 10 milhões ao ano. \n\nHélio Schwartsman, “Mortes anunciadas”. Folha de São Paulo, Abril/2019. Adaptado.\n\nVárias espécies do gênero Candida, que pertence ao grupo de fungos unicelulares, reproduzem‐se por brotamento (gemulação), espalhando‐se rapidamente. No grupo dos fungos pluricelulares, a rápida colonização de novos ambientes deve‐se, em grande parte, ao fato de que esse grupo possui",
+    "opcoes": [
+      "esporos haploides que germinam e colonizam o ambiente.",
+      "reprodução assexuada, produzindo descendentes que são genotipicamente diferentes.",
+      "zigotos haploides que crescem aceleradamente com mitoses sucessivas.",
+      "cistos de resistência que encapsulam adultos diploides.",
+      "fases autotróficas, podendo viver sem disponibilidade de alimento externo."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Fuvest-2020) Óbitos por cepas de bactérias resistentes a antibióticos vêm crescendo. Um estudo do governo britânico estima que, em escala global, os óbitos por cepas resistentes já cheguem a 700 mil por ano. E as coisas têm piorado. Além das bactérias, já estão surgindo fungos resistentes, como a Candida auris. Qualquer solução passa por um esforço multinacional de ações coordenadas. O crescente número de governos isolacionistas e até antidarwinistas não dá razões para otimismo. Há urgência. O estudo britânico calcula que, se nada for feito, em 2050, as mortes por infecções resistentes chegarão a 10 milhões ao ano. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Hélio Schwartsman, “Mortes anunciadas”. ",
+          {
+            "tag": "strong",
+            "children": [
+              "Folha de São Paulo"
+            ]
+          },
+          ", Abril/2019. Adaptado."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Várias espécies do gênero Candida, que pertence ao grupo de fungos unicelulares, reproduzem‐se por brotamento (gemulação), espalhando‐se rapidamente. No grupo dos fungos pluricelulares, a rápida colonização de novos ambientes deve‐se, em grande parte, ao fato de que esse grupo possui"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        "esporos haploides que germinam e colonizam o ambiente. "
+      ],
+      [
+        "reprodução assexuada, produzindo descendentes que são genotipicamente diferentes."
+      ],
+      [
+        "zigotos haploides que crescem aceleradamente com mitoses sucessivas."
+      ],
+      [
+        "cistos de resistência que encapsulam adultos diploides. "
+      ],
+      [
+        "fases autotróficas, podendo viver sem disponibilidade de alimento externo."
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 11,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-5fb8bf56d24059a99967",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "UPF",
+    "concurso": "UPF 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UPF-2018",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UPF-2018) Um líquen não é um único organismo, mas sim um emaranhado de organismos radicalmente diferentes: um fungo e microrganismos fotossintéticos. Juntos, os organismos que constituem um líquen podem sobreviver a alguns dos mais severos ambientes na Terra.\n\nPURVES et al. Vida: a ciência da biologia. Porto Alegre: Artmed, 2009.\n\nEm relação aos liquens, assinale a alternativa INCORRETA.",
+    "opcoes": [
+      "O fungo componente do líquen é denominado micobionte, enquanto o componente fotossintetizante é denominado fotobionte.",
+      "O fotobionte é sempre o componente dominante, determinando a forma do corpo do líquen.",
+      "Alguns liquens podem incorporar dois tipos de fotobiontes, ou seja, uma alga verde e uma cianobactéria.",
+      "O corpo dos liquens é denominado talo e não apresenta caule nem folhas.",
+      "Os liquens podem se reproduzir por simples fragmentação e por meio de estruturas especializadas denominadas sorédios."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UPF-2018) Um líquen não é um único organismo, mas sim um emaranhado de organismos radicalmente diferentes: um fungo e microrganismos fotossintéticos. Juntos, os organismos que constituem um líquen podem sobreviver a alguns dos mais severos ambientes na Terra."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "PURVES ",
+          {
+            "tag": "em",
+            "children": [
+              "et al"
+            ]
+          },
+          ". ",
+          {
+            "tag": "strong",
+            "children": [
+              "Vida"
+            ]
+          },
+          ": a ciência da biologia. Porto Alegre: Artmed, 2009."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Em relação aos liquens, assinale a alternativa INCORRETA."
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        "O fungo componente do líquen é denominado micobionte, enquanto o componente fotossintetizante é denominado fotobionte."
+      ],
+      [
+        "O fotobionte é sempre o componente dominante, determinando a forma do corpo do líquen."
+      ],
+      [
+        "Alguns liquens podem incorporar dois tipos de fotobiontes, ou seja, uma alga verde e uma cianobactéria."
+      ],
+      [
+        "O corpo dos liquens é denominado talo e não apresenta caule nem folhas."
+      ],
+      [
+        "Os liquens podem se reproduzir por simples fragmentação e por meio de estruturas especializadas denominadas sorédios."
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 12,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-ba61a913f2ef9ef05aed",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "UECE",
+    "concurso": "UECE 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2018",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UECE-2018) Atente ao que se diz a respeito de vírus, e assinale com V o que for verdadeiro e com F o que for falso.\n\n(________) Um vírus que se aproxima da célula hospedeira injeta seu material genético e multiplica-se com a ajuda das organelas da célula infectada tem ciclo lisogênico.\n\n(________) Todo vírus possui uma cápsula proteica protetora denominada capsídeo que encerra um genoma de DNA ou RNA.\n\n(________) No ciclo lítico, o vírus invade a célula hospedeira e agrega seu material genético ao genoma da mesma.\n\n(________) Apesar de poder ser causada por fungos e bactérias, a pneumonia também pode ter origem viral.\n\nA sequência correta, de cima para baixo, é:",
+    "opcoes": [
+      "V, V, F, F.",
+      "F, V, F, V.",
+      "F, F, V, V.",
+      "V, F, V, F."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UECE-2018) Atente ao que se diz a respeito de vírus, e assinale com V o que for verdadeiro e com F o que for falso."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          " Um vírus que se aproxima da célula hospedeira injeta seu material genético e multiplica-se com a ajuda das organelas da célula infectada tem ciclo lisogênico."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          " Todo vírus possui uma cápsula proteica protetora denominada capsídeo que encerra um genoma de DNA ou RNA."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ") "
+            ]
+          },
+          " No ciclo lítico, o vírus invade a célula hospedeira e agrega seu material genético ao genoma da mesma."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          {
+            "tag": "span",
+            "children": [
+              "(",
+              {
+                "tag": "span",
+                "children": [
+                  "________"
+                ]
+              },
+              ")"
+            ]
+          },
+          " Apesar de poder ser causada por fungos e bactérias, a pneumonia também pode ter origem viral."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "A sequência correta, de cima para baixo, é: "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        "V, V, F, F."
+      ],
+      [
+        "F, V, F, V."
+      ],
+      [
+        "F, F, V, V."
+      ],
+      [
+        "V, F, V, F."
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 13,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-758f0bbfb71d3fdbab8d",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "UNESP",
+    "concurso": "Unesp 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Unesp-2019",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Unesp-2019) A profilaxia pré-exposição (PrEP) ao vírus HIV é um tratamento que consiste no consumo diário do antirretroviral Truvada® e tem como público-alvo pessoas com maior vulnerabilidade a adquirir o vírus. Segundo o Ministério da Saúde, o uso correto do medicamento reduz o risco de infecção por HIV em mais de 90%. Esse uso, porém, não barra a entrada do vírus no organismo, apenas bloqueia a ação da enzima transcriptase reversa.\n\n Visite - G1. Adaptado.\n\nO tratamento com Truvada®",
+    "opcoes": [
+      "é profilático porque combate o agente transmissor da AIDS.",
+      "evita que a célula infectada produza moléculas de DNA viral.",
+      "dispensa o uso de métodos contraceptivos de barreira.",
+      "impede a entrada do vírus em células humanas de defesa.",
+      "pode ser eficaz contra outros vírus constituídos por DNA."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Unesp-2019) A profilaxia pré-exposição (PrEP) ao vírus HIV é um tratamento que consiste no consumo diário do antirretroviral Truvada® e tem como público-alvo pessoas com maior vulnerabilidade a adquirir o vírus. Segundo o Ministério da Saúde, o uso correto do medicamento reduz o risco de infecção por HIV em mais de 90%. Esse uso, porém, não barra a entrada do vírus no organismo, apenas bloqueia a ação da enzima transcriptase reversa."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "Visite - G1"
+            ]
+          },
+          ". Adaptado."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "O tratamento com Truvada® "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " é profilático porque combate o agente transmissor da AIDS."
+      ],
+      [
+        " evita que a célula infectada produza moléculas de DNA viral."
+      ],
+      [
+        " dispensa o uso de métodos contraceptivos de barreira. "
+      ],
+      [
+        " impede a entrada do vírus em células humanas de defesa. "
+      ],
+      [
+        " pode ser eficaz contra outros vírus constituídos por DNA."
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 14,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-72b37f895f86d1cd0ba7",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "FALBE",
+    "concurso": "FALBE 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "FALBE-2018",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(FALBE-2018) Nas plantas de tabaco ocorre uma doença conhecida como mosaico do tabaco, provocada pelo vírus TMV. O TMV tem constituição simples: uma única molécula de RNA encapsulada em um revestimento de proteína. Linhagens diferentes desses vírus são identificáveis pela composição do envoltório proteico. Em um experimento clássico da década de 1950, pesquisadores trabalharam com duas linhagens de TMV. Em cada uma das linhagens, separaram as proteínas do RNA. Em seguida, reuniram as proteínas da linhagem A com o RNA da linhagem B e vice-versa, reconstituindo, assim, vírus completos capazes de infectar as folhas do tabaco. Se uma planta de tabaco fosse infectada com uma linhagem mista de TMV contendo proteínas da linhagem A e RNA da linhagem B, seria esperado encontrar, após algum tempo, nas folhas infectadas,",
+    "opcoes": [
+      "apenas vírus mistos, contendo proteína da linhagem A e RNA da linhagem B.",
+      "apenas vírus mistos, contendo proteína da linhagem B e RNA da linhagem A.",
+      "apenas vírus da linhagem B.",
+      "apenas vírus da linhagem A."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(FALBE-2018) Nas plantas de tabaco ocorre uma doença conhecida como mosaico do tabaco, provocada pelo vírus TMV. O TMV tem constituição simples: uma única molécula de RNA encapsulada em um revestimento de proteína. Linhagens diferentes desses vírus são identificáveis pela composição do envoltório proteico. Em um experimento clássico da década de 1950, pesquisadores trabalharam com duas linhagens de TMV. Em cada uma das linhagens, separaram as proteínas do RNA. Em seguida, reuniram as proteínas da linhagem A com o RNA da linhagem B e vice-versa, reconstituindo, assim, vírus completos capazes de infectar as folhas do tabaco. Se uma planta de tabaco fosse infectada com uma linhagem mista de TMV contendo proteínas da linhagem A e RNA da linhagem B, seria esperado encontrar, após algum tempo, nas folhas infectadas,"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        "apenas vírus mistos, contendo proteína da linhagem A e RNA da linhagem B."
+      ],
+      [
+        "apenas vírus mistos, contendo proteína da linhagem B e RNA da linhagem A."
+      ],
+      [
+        "apenas vírus da linhagem B."
+      ],
+      [
+        "apenas vírus da linhagem A."
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 15,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-20c4c4b014b25dea0018",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "UECE",
+    "concurso": "UECE 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2016",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UECE-2016) Atente ao seguinte excerto: \n\n“[...] Sabe-se que as malformações congênitas, dentre elas a microcefalia, têm etiologia complexa e multifatorial, podendo ocorrer em decorrência de processos infecciosos durante a gestação. As evidências disponíveis até o momento indicam fortemente que o vírus Zika está relacionado à ocorrência de microcefalias. No entanto, não há como afirmar que a presença do vírus Zika durante a gestação leva, inevitavelmente, ao desenvolvimento de microcefalia no feto. A exemplo de outras infecções congênitas, o desenvolvimento dessas anomalias depende de diferentes fatores que podem estar relacionados à carga viral, fatores do hospedeiro, momento da infecção ou presença de outros fatores e condições desconhecidos até o momento. Por isso, é fundamental continuar os estudos para descrever melhor a história natural dessa doença”.\n\nMinistério da Saúde – Protocolo de vigilância e resposta à ocorrência de microcefalia relacionada à infecção pelo vírus Zika, 2015.\n\nSobre a replicação viral, é INCORRETO afirmar que",
+    "opcoes": [
+      "o genoma viral é de DNA ou de RNA.",
+      "na célula hospedeira o genoma viral direciona a síntese dos componentes necessários para a produção de novos virions, que são veículos para transmissão do genoma viral para a próxima célula hospedeira ou organismo.",
+      "todos os genomas virais são parasitas moleculares obrigatórios que somente se tornam funcionais após se replicarem em uma célula.",
+      "todos os vírus devem transcrever o tRNA que será traduzido pelos ribossomos do hospedeiro: então, os vírus são parasitas da maquinaria de síntese proteica da célula."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UECE-2016) Atente ao seguinte excerto: "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "“[...] Sabe-se que as malformações congênitas, dentre elas a microcefalia, têm etiologia complexa e multifatorial, podendo ocorrer em decorrência de processos infecciosos durante a gestação. As evidências disponíveis até o momento indicam fortemente que o vírus Zika está relacionado à ocorrência de microcefalias. No entanto, não há como afirmar que a presença do vírus Zika durante a gestação leva, inevitavelmente, ao desenvolvimento de microcefalia no feto. A exemplo de outras infecções congênitas, o desenvolvimento dessas anomalias depende de diferentes fatores que podem estar relacionados à carga viral, fatores do hospedeiro, momento da infecção ou presença de outros fatores e condições desconhecidos até o momento. Por isso, é fundamental continuar os estudos para descrever melhor a história natural dessa doença”."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Ministério da Saúde – Protocolo de vigilância e resposta à ocorrência de microcefalia relacionada à infecção pelo vírus Zika, 2015."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Sobre a replicação viral, é INCORRETO afirmar que"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        "o genoma viral é de DNA ou de RNA."
+      ],
+      [
+        "na célula hospedeira o genoma viral direciona a síntese dos componentes necessários para a produção de novos virions, que são veículos para transmissão do genoma viral para a próxima célula hospedeira ou organismo."
+      ],
+      [
+        "todos os genomas virais são parasitas moleculares obrigatórios que somente se tornam funcionais após se replicarem em uma célula."
+      ],
+      [
+        "todos os vírus devem transcrever o tRNA que será traduzido pelos ribossomos do hospedeiro: então, os vírus são parasitas da maquinaria de síntese proteica da célula."
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 16,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-56702b0d094660b739ff",
+    "materia": "Biologia",
+    "conteudo": "Vírus e fungos",
+    "banca": "ENEM",
+    "concurso": "ENEM 2024",
+    "ano": 2024,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "ENEM-2024",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(ENEM-2024) As autoridades sanitárias brasileiras têm se preocupado muito nos últimos anos com o aumento da ocorrência de doenças transmitidas por mosquitos, principalmente arboviroses como chikungunya e zika, que se tornaram epidêmicas ou endêmicas em áreas urbanas. Parte de uma análise da relação entre a urbanização e a incidência dessas doenças está representada no fluxograma. \n\n \n\n ALMEIDA, L. S.; COTA, A. L. S.; RODRIGUES, D. F. Saneamento, arboviroses e determinantes ambientais: impactos na saúde urbana. Ciência e Saúde Coletiva , v. 25, n. 10, 2020 (adaptado). \n\nNesse contexto, como a urbanização está causando riscos à saúde humana?",
+    "opcoes": [
+      "Disseminando verminoses.",
+      "Causando a eutrofização de lagoas.",
+      "Aumentando a chance de contato com coliformes.",
+      "Diminuindo a população de predadores aquáticos.",
+      "Aproximando as pessoas das áreas de ocorrência de mosquitos."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " (ENEM-2024) As autoridades sanitárias brasileiras têm se preocupado muito nos últimos anos com o aumento da ocorrência de doenças transmitidas por mosquitos, principalmente arboviroses como chikungunya e zika, que se tornaram epidêmicas ou endêmicas em áreas urbanas. Parte de uma análise da relação entre a urbanização e a incidência dessas doenças está representada no fluxograma. "
+        ]
+      },
+      {
+        "tag": "figure",
+        "children": [
+          " ",
+          {
+            "tag": "img",
+            "src": "/acervo/estudo-biologia-microorganismos/2b193c8a66971fd251e5.png",
+            "alt": "Figura da questão",
+            "children": []
+          },
+          " "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ALMEIDA, L. S.; COTA, A. L. S.; RODRIGUES, D. F. Saneamento, arboviroses e determinantes ambientais: impactos na saúde urbana. ",
+          {
+            "tag": "strong",
+            "children": [
+              "Ciência e Saúde Coletiva"
+            ]
+          },
+          " , v. 25, n. 10, 2020 (adaptado). "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Nesse contexto, como a urbanização está causando riscos à saúde humana?"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Disseminando verminoses. "
+      ],
+      [
+        " ",
+        " ",
+        "Causando a eutrofização de lagoas. "
+      ],
+      [
+        " ",
+        " ",
+        "Aumentando a chance de contato com coliformes. "
+      ],
+      [
+        " ",
+        " ",
+        "Diminuindo a população de predadores aquáticos. "
+      ],
+      [
+        " ",
+        " ",
+        "Aproximando as pessoas das áreas de ocorrência de mosquitos. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6de",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Vírus e fungos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-virus-e-fungos-csa5y",
+      "titulo_documento": "EXT26_3_BIO_L1_A_02",
+      "numero": 21,
+      "secao": "Enem e vestibulares + Desafio"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-abc2c2bbb0ab9a3ff836",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "PUC",
+    "concurso": "PUC-Campinas 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "PUC-Campinas-2018",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(PUC-Campinas-2018) A reciclagem tem sido utilizada com sucesso para reduzir o impacto do acúmulo de lixo no meio ambiente. Caso não receba tratamento adequado, o lixo pode proporcionar a proliferação de organismos transmissores de doenças, tais como",
+    "opcoes": [
+      "sífilis.",
+      "doença de Chagas.",
+      "leptospirose.",
+      "hepatite C.",
+      "caxumba."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(PUC-Campinas-2018) A reciclagem tem sido utilizada com sucesso para reduzir o impacto do acúmulo de lixo no meio ambiente. Caso não receba tratamento adequado, o lixo pode proporcionar a proliferação de organismos transmissores de doenças, tais como "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "sífilis. "
+      ],
+      [
+        " ",
+        "doença de Chagas. "
+      ],
+      [
+        " ",
+        "leptospirose. "
+      ],
+      [
+        " ",
+        "hepatite C. "
+      ],
+      [
+        " ",
+        "caxumba. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 1,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-c0d05d06eaaa0f309f37",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "ENEM",
+    "concurso": "Enem 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Enem-2016",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(Enem-2016) Suponha que uma doença desconhecida esteja dizimando um rebanho bovino de uma cidade e alguns veterinários tenham conseguido isolar o agente causador da doença, verificando que se trata de um ser unicelular e procarionte. \n\n Para combater a doença, os veterinários devem administrar, nos bovinos contaminados,",
+    "opcoes": [
+      "vacinas.",
+      "antivirais.",
+      "fungicidas.",
+      "vermífugos.",
+      "antibióticos."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Enem-2016) Suponha que uma doença desconhecida esteja dizimando um rebanho bovino de uma cidade e alguns veterinários tenham conseguido isolar o agente causador da doença, verificando que se trata de um ser unicelular e procarionte. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Para combater a doença, os veterinários devem administrar, nos bovinos contaminados, "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "vacinas. "
+      ],
+      [
+        " ",
+        "antivirais. "
+      ],
+      [
+        " ",
+        "fungicidas. "
+      ],
+      [
+        " ",
+        "vermífugos. "
+      ],
+      [
+        " ",
+        "antibióticos. "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 2,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-809de7052225222455ab",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "MACKENZIE",
+    "concurso": "Mackenzie 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Mackenzie-2016",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(Mackenzie-2016) As cianobactérias foram, no passado, consideradas como algas, sendo denominadas algas azuis em razão da coloração azulada que muitas possuem. Hoje sabemos que elas têm parentesco muito distante das algas, porque",
+    "opcoes": [
+      "as cianobactérias não têm reprodução assexuada, enquanto as algas possuem.",
+      "as cianobactérias não têm parede celular, enquanto as algas possuem.",
+      "as cianobactérias são procariontes, enquanto as algas são eucariontes.",
+      "as cianobactérias são heterótrofas, enquanto as algas são autótrofas.",
+      "as cianobactérias não possuem clorofila, enquanto as algas possuem."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Mackenzie-2016) As cianobactérias foram, no passado, consideradas como algas, sendo denominadas algas azuis em razão da coloração azulada que muitas possuem. Hoje sabemos que elas têm parentesco muito distante das algas, porque "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "as cianobactérias não têm reprodução assexuada, enquanto as algas possuem. "
+      ],
+      [
+        " ",
+        "as cianobactérias não têm parede celular, enquanto as algas possuem. "
+      ],
+      [
+        " ",
+        "as cianobactérias são procariontes, enquanto as algas são eucariontes. "
+      ],
+      [
+        " ",
+        "as cianobactérias são heterótrofas, enquanto as algas são autótrofas. "
+      ],
+      [
+        " ",
+        "as cianobactérias não possuem clorofila, enquanto as algas possuem. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 3,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-80f8ba9917a0fa395fed",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "UCPEL",
+    "concurso": "UCPeL 2017",
+    "ano": 2017,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UCPeL-2017",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UCPeL-2017) Um rapaz de 32 anos apresentou o seguinte quadro clínico: \n\n paralisia flácida aguda; \n\n preservação do nível de consciência; \n\n visão turva; \n\nboca seca.\n\n Após uma investigação, verificou-se que o rapaz havia consumido produtos enlatados e contaminados durante um acampamento alguns dias antes de manifestar os sintomas. \n\n Com base nisso, o médico pode indicar que o rapaz apresenta:",
+    "opcoes": [
+      "Botulismo",
+      "Amebíase",
+      "Teníase",
+      "Brucelose",
+      "Leptospirose"
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UCPeL-2017) Um rapaz de 32 anos apresentou o seguinte quadro clínico: "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "paralisia flácida aguda; "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "preservação do nível de consciência; "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "visão turva; "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "boca seca."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Após uma investigação, verificou-se que o rapaz havia consumido produtos enlatados e contaminados durante um acampamento alguns dias antes de manifestar os sintomas. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Com base nisso, o médico pode indicar que o rapaz apresenta: "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "Botulismo "
+      ],
+      [
+        " ",
+        "Amebíase "
+      ],
+      [
+        " ",
+        "Teníase "
+      ],
+      [
+        " ",
+        "Brucelose "
+      ],
+      [
+        " ",
+        "Leptospirose "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 4,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-8697eec8f2dfc69690b5",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "UPE",
+    "concurso": "UPE",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UPE",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UPE) Leia o texto a seguir. \n\n “… certos microrganismos continuam a causar preocupação. Um levantamento da Organização Mundial da Saúde em 114 países indicou que a resistência de bactérias a antibióticos é atualmente um fenômeno global. De acordo com o relato, várias espécies, incluindo Escherichia coli, que causa diarreias, Streptococcus pneumonia e Neisseria gonorrhea, adquiriram resistência a antibióticos.” \n\n Disponível em: Visite - Revista pesquisa - Aliança com os microbios . Acesso em: julho 2015. \n\n Assinale a alternativa que apresenta a correta proposição sobre as bactérias e o aumento da variabilidade genética, possibilitando a resistência aos antibióticos.",
+    "opcoes": [
+      "Bactérias doadoras podem transferir DNA para uma receptora por meio de conjugação, na qual ocorre contato celular.",
+      "Bactérias que possuem a capacidade de captar e incorporar DNA disperso no meio sofrem transdução.",
+      "Bactérias têm grande poder de reprodução, pois, em poucas horas, sob condições adequadas, uma única célula pode gerar milhares de clones por mitose.",
+      "Fagos contendo fragmento de DNA bacteriano e resultantes da lise de uma célula podem infectar outra bactéria por transformação, e esta passa a ter nova constituição genética.",
+      "Plasmídeos ou cromossomos são transferidos livremente, entre bactérias, em um ambiente com nutrientes e antibióticos."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UPE) Leia o texto a seguir. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " “… certos microrganismos continuam a causar preocupação. Um levantamento da Organização Mundial da Saúde em 114 países indicou que a resistência de bactérias a antibióticos é atualmente um fenômeno global. De acordo com o relato, várias espécies, incluindo ",
+          {
+            "tag": "em",
+            "children": [
+              "Escherichia coli"
+            ]
+          },
+          ", que causa diarreias, ",
+          {
+            "tag": "em",
+            "children": [
+              "Streptococcus pneumonia"
+            ]
+          },
+          " e ",
+          {
+            "tag": "em",
+            "children": [
+              "Neisseria gonorrhea"
+            ]
+          },
+          ", adquiriram resistência a antibióticos.” "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Disponível em: ",
+          {
+            "tag": "span",
+            "children": [
+              "Visite - Revista pesquisa - Aliança com os microbios"
+            ]
+          },
+          " . Acesso em: julho 2015. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Assinale a alternativa que apresenta a correta proposição sobre as bactérias e o aumento da variabilidade genética, possibilitando a resistência aos antibióticos. "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "Bactérias doadoras podem transferir DNA para uma receptora por meio de conjugação, na qual ocorre contato celular. "
+      ],
+      [
+        " ",
+        "Bactérias que possuem a capacidade de captar e incorporar DNA disperso no meio sofrem transdução. "
+      ],
+      [
+        " ",
+        "Bactérias têm grande poder de reprodução, pois, em poucas horas, sob condições adequadas, uma única célula pode gerar milhares de clones por mitose. "
+      ],
+      [
+        " ",
+        "Fagos contendo fragmento de DNA bacteriano e resultantes da lise de uma célula podem infectar outra bactéria por transformação, e esta passa a ter nova constituição genética. "
+      ],
+      [
+        " ",
+        "Plasmídeos ou cromossomos são transferidos livremente, entre bactérias, em um ambiente com nutrientes e antibióticos. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 7,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-b455f5aabcdc3943bc48",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "ENEM-PPL",
+    "concurso": "Enem-PPL",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Enem-PPL",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Enem-PPL) Para o consumidor, é praticamente impossível identificar a diferença entre a sacola biodegradável e a comum, feita de polietileno – derivado do petróleo. Alguns governos municipais já exigem que os supermercados ofereçam sacolas biodegradáveis em substituição às sacolas comuns. \n\n Disponível em: Visite - Epoca negócios - GLOBO . Acesso em: 1 ago. 2012. \n\n A atitude tomada pelos governos municipais deve-se ao(à)",
+    "opcoes": [
+      "maior resistência que os materiais biodegradáveis apresentam em relação aos comuns.",
+      "escassez das matérias-primas derivadas do petróleo para produção das sacolas comuns.",
+      "custo consideravelmente menor das sacolas biodegradáveis em relação ao das sacolas comuns.",
+      "maior capacidade de produção das sacolas biodegradáveis, já que as fontes podem ser renováveis.",
+      "rápida decomposição das sacolas biodegradáveis pela ação de bactérias, em comparação às sacolas comuns."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Enem-PPL) Para o consumidor, é praticamente impossível identificar a diferença entre a sacola biodegradável e a comum, feita de polietileno – derivado do petróleo. Alguns governos municipais já exigem que os supermercados ofereçam sacolas biodegradáveis em substituição às sacolas comuns. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Disponível em: ",
+          {
+            "tag": "span",
+            "children": [
+              "Visite - Epoca negócios - GLOBO"
+            ]
+          },
+          " . Acesso em: 1 ago. 2012. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " A atitude tomada pelos governos municipais deve-se ao(à) "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "maior resistência que os materiais biodegradáveis apresentam em relação aos comuns. "
+      ],
+      [
+        " ",
+        "escassez das matérias-primas derivadas do petróleo para produção das sacolas comuns. "
+      ],
+      [
+        " ",
+        "custo consideravelmente menor das sacolas biodegradáveis em relação ao das sacolas comuns. "
+      ],
+      [
+        " ",
+        "maior capacidade de produção das sacolas biodegradáveis, já que as fontes podem ser renováveis. "
+      ],
+      [
+        " ",
+        "rápida decomposição das sacolas biodegradáveis pela ação de bactérias, em comparação às sacolas comuns. "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 8,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-ef06396eee9e7e3e57a7",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "UFRGS",
+    "concurso": "UFRGS 2020",
+    "ano": 2020,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFRGS-2020",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UFRGS-2020) Considere as seguintes afirmações sobre as Archea. \n\n I.São organismos que possuem em seu citoplasma organelas envolvidas por membranas. \n\n II.Apresentam ancestral comum mais recente com Eukaria do que com o domínio Bactéria. \n\n III.Utilizam a quimiossíntese como modo de nutrição, processo que usa a luz como fonte principal de energia. \n\nQuais estão corretas?",
+    "opcoes": [
+      "Apenas I.",
+      "Apenas II.",
+      "Apenas III.",
+      "Apenas I e III.",
+      "I, II e III."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UFRGS-2020) Considere as seguintes afirmações sobre as Archea. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "I."
+            ]
+          },
+          "São organismos que possuem em seu citoplasma organelas envolvidas por membranas. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "II."
+            ]
+          },
+          "Apresentam ancestral comum mais recente com Eukaria do que com o domínio Bactéria. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "III."
+            ]
+          },
+          "Utilizam a quimiossíntese como modo de nutrição, processo que usa a luz como fonte principal de energia. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Quais estão corretas?"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "Apenas I. "
+      ],
+      [
+        " ",
+        "Apenas II. "
+      ],
+      [
+        " ",
+        "Apenas III. "
+      ],
+      [
+        " ",
+        "Apenas I e III. "
+      ],
+      [
+        " ",
+        "I, II e III. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 9,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-bb9f8f6db030b95866e6",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "FAMERP",
+    "concurso": "FAMERP",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "FAMERP",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(FAMERP) Os domínios Archaea e Bacteria englobam micro-organismos com características morfológicas bem definidas. Estes seres vivos compartilham semelhanças entre si, tais como",
+    "opcoes": [
+      "membrana plasmática e organelas membranosas.",
+      "inclusões citoplasmáticas e envoltório nuclear.",
+      "moléculas de DNA lineares e plasmídeos.",
+      "material genético disperso e ribossomos.",
+      "citoesqueleto e parede com peptidioglicano."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(FAMERP) Os domínios Archaea e Bacteria englobam micro-organismos com características morfológicas bem definidas. Estes seres vivos compartilham semelhanças entre si, tais como "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "membrana plasmática e organelas membranosas. "
+      ],
+      [
+        " ",
+        "inclusões citoplasmáticas e envoltório nuclear. "
+      ],
+      [
+        " ",
+        "moléculas de DNA lineares e plasmídeos. "
+      ],
+      [
+        " ",
+        "material genético disperso e ribossomos. "
+      ],
+      [
+        " ",
+        "citoesqueleto e parede com peptidioglicano. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 10,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-1ea80eeec6b40cb693ff",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "FUVEST",
+    "concurso": "Fuvest",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Fuvest",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Fuvest) O botulismo provocou a morte de 1,1 mil cabeças de gado, no último mês de agosto, numa fazenda em Mato Grosso do Sul. A suspeita clínica inicial foi confirmada pelo exame das amostras de grãos úmidos de milho fornecidos aos animais, demonstrando a presença da toxina botulínica, que é produzida pela bactéria Clostridium botulinum. \n\n Considerando que a toxina botulínica bloqueia a transmissão neuromuscular, a morte dos animais deve ter sido decorrente de:",
+    "opcoes": [
+      "infecção generalizada.",
+      "hemorragia interna.",
+      "desidratação provocada por diarreia.",
+      "acidente vascular cerebral.",
+      "parada respiratória."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Fuvest) O botulismo provocou a morte de 1,1 mil cabeças de gado, no último mês de agosto, numa fazenda em Mato Grosso do Sul. A suspeita clínica inicial foi confirmada pelo exame das amostras de grãos úmidos de milho fornecidos aos animais, demonstrando a presença da toxina botulínica, que é produzida pela bactéria ",
+          {
+            "tag": "em",
+            "children": [
+              "Clostridium botulinum."
+            ]
+          },
+          " "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Considerando que a toxina botulínica bloqueia a transmissão neuromuscular, a morte dos animais deve ter sido decorrente de: "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "infecção generalizada. "
+      ],
+      [
+        " ",
+        "hemorragia interna. "
+      ],
+      [
+        " ",
+        "desidratação provocada por diarreia. "
+      ],
+      [
+        " ",
+        "acidente vascular cerebral. "
+      ],
+      [
+        " ",
+        "parada respiratória. "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 11,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-5ee4bf006a6a70be4486",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "UNICAMP",
+    "concurso": "Unicamp",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Unicamp",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Unicamp) Em 2016, a Organização Mundial de Saúde (OMS) apresentou novas diretrizes para o tratamento de três doenças sexualmente transmissíveis: sífilis, gonorreia e clamidíase. As três doenças citadas são causadas por",
+    "opcoes": [
+      "microrganismos (bactérias ou vírus), que passaram dos macacos para o ser humano há muitos anos, levando ao surgimento de epidemias e pandemias.",
+      "bactérias, que podem se tornar resistentes a antibióticos, se utilizados em excesso ou de forma inapropriada, dificultando o tratamento.",
+      "bactérias, que podem ser tratadas e eliminadas pelo uso diligente de preservativos (masculinos ou femininos) durante as relações sexuais.",
+      "protozoários, que podem ser tratados e eliminados pelo uso diligente de preservativos (masculinos ou femininos) durante as relações sexuais."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Unicamp) Em 2016, a Organização Mundial de Saúde (OMS) apresentou novas diretrizes para o tratamento de três doenças sexualmente transmissíveis: sífilis, gonorreia e clamidíase. As três doenças citadas são causadas por "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "microrganismos (bactérias ou vírus), que passaram dos macacos para o ser humano há muitos anos, levando ao surgimento de epidemias e pandemias. "
+      ],
+      [
+        " ",
+        "bactérias, que podem se tornar resistentes a antibióticos, se utilizados em excesso ou de forma inapropriada, dificultando o tratamento. "
+      ],
+      [
+        " ",
+        "bactérias, que podem ser tratadas e eliminadas pelo uso diligente de preservativos (masculinos ou femininos) durante as relações sexuais. "
+      ],
+      [
+        " ",
+        "protozoários, que podem ser tratados e eliminados pelo uso diligente de preservativos (masculinos ou femininos) durante as relações sexuais. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 12,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-3dfbcab1ac16fd2b3e4f",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "UNESP",
+    "concurso": "Unesp 2017",
+    "ano": 2017,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Unesp-2017",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(Unesp-2017) As chamadas Doenças Sexualmente Transmissíveis (DSTs) também são transmitidas por outras vias, além da relação sexual. O quadro apresenta algumas DSTs. \n\n DST\n\n Agente infeccioso\n\n Sintomas\n\n \n\n Sífilis\n\n Bactéria Treponema pallidum\n\n Lesões nos órgãos genitais, na pele e nas mucosas. Pode afetar o sistema nervoso. \n\n \n\n Cancro mole (cancro venéreo simples, cavalo) \n\n Bactéria Haemophilus ducreyi\n\n Lesões nos órgãos genitais, mais frequentemente no homem.\n\n \n\n Aids\n\n Vírus da imunodeficiência humana – HIV\n\n Ataque às células do sistema imunitário, ocasionando imunodeficiência e infecções oportunistas. \n\n \n\n Gonorreia\n\n (blenorragia)\n\n Bactéria Neisseria gonorrhoeae\n\n Ardor ao urinar e secreção uretral de cor amarelada. Nos bebês, pode levar à cegueira. \n\n \n\n Condiloma acuminado\n\n (crista de galo, HPV)\n\n Papilomavírus humano – HPV\n\n Lesões em forma de crista nos órgãos genitais. Pode levar ao câncer nos órgãos genitais e no ânus. \n\n \n\n Suponha que Júlio adquiriu uma DST através de transfusão sanguínea, que Paulo adquiriu uma DST ainda no ventre materno e que Adriano teve uma DST que só se adquire por relação sexual. \n\n As DSTs de Júlio, Paulo e Adriano podem ser, respectivamente,",
+    "opcoes": [
+      "cancro mole, Aids e condiloma acuminado.",
+      "condiloma acuminado, gonorreia e sífilis.",
+      "Aids, sífilis e cancro mole.",
+      "gonorreia, condiloma acuminado e Aids.",
+      "sífilis, cancro mole e gonorreia."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Unesp-2017) As chamadas Doenças Sexualmente Transmissíveis (DSTs) também são transmitidas por outras vias, além da relação sexual. O quadro apresenta algumas DSTs. "
+        ]
+      },
+      {
+        "tag": "table",
+        "children": [
+          {
+            "tag": "tbody",
+            "children": [
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "strong",
+                            "children": [
+                              "DST"
+                            ]
+                          }
+                        ]
+                      },
+                      " "
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "strong",
+                            "children": [
+                              "Agente infeccioso"
+                            ]
+                          }
+                        ]
+                      },
+                      " "
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "strong",
+                            "children": [
+                              "Sintomas"
+                            ]
+                          }
+                        ]
+                      },
+                      " "
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "strong",
+                            "children": [
+                              "Sífilis"
+                            ]
+                          }
+                        ]
+                      },
+                      " "
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          "Bactéria ",
+                          {
+                            "tag": "em",
+                            "children": [
+                              "Treponema pallidum"
+                            ]
+                          }
+                        ]
+                      },
+                      " "
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " Lesões nos órgãos genitais, na pele e nas mucosas. Pode afetar o sistema nervoso. "
+                        ]
+                      },
+                      " "
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " ",
+                          {
+                            "tag": "strong",
+                            "children": [
+                              "Cancro mole (cancro venéreo simples, cavalo)"
+                            ]
+                          },
+                          " "
+                        ]
+                      },
+                      " "
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          "Bactéria ",
+                          {
+                            "tag": "em",
+                            "children": [
+                              "Haemophilus ducreyi"
+                            ]
+                          }
+                        ]
+                      },
+                      " "
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          "Lesões nos órgãos genitais, mais frequentemente no homem."
+                        ]
+                      },
+                      " "
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "strong",
+                            "children": [
+                              "Aids"
+                            ]
+                          }
+                        ]
+                      },
+                      " "
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          "Vírus da imunodeficiência humana – HIV"
+                        ]
+                      },
+                      " "
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " Ataque às células do sistema imunitário, ocasionando imunodeficiência e infecções oportunistas. "
+                        ]
+                      },
+                      " "
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "strong",
+                            "children": [
+                              "Gonorreia"
+                            ]
+                          }
+                        ]
+                      },
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "strong",
+                            "children": [
+                              "(blenorragia)"
+                            ]
+                          }
+                        ]
+                      },
+                      " "
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          "Bactéria ",
+                          {
+                            "tag": "em",
+                            "children": [
+                              "Neisseria gonorrhoeae"
+                            ]
+                          }
+                        ]
+                      },
+                      " "
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " Ardor ao urinar e secreção uretral de cor amarelada. Nos bebês, pode levar à cegueira. "
+                        ]
+                      },
+                      " "
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "strong",
+                            "children": [
+                              "Condiloma acuminado"
+                            ]
+                          }
+                        ]
+                      },
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          {
+                            "tag": "strong",
+                            "children": [
+                              "(crista de galo, HPV)"
+                            ]
+                          }
+                        ]
+                      },
+                      " "
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          "Papilomavírus humano – HPV"
+                        ]
+                      },
+                      " "
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " ",
+                      {
+                        "tag": "p",
+                        "children": [
+                          " Lesões em forma de crista nos órgãos genitais. Pode levar ao câncer nos órgãos genitais e no ânus. "
+                        ]
+                      },
+                      " "
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Suponha que Júlio adquiriu uma DST através de transfusão sanguínea, que Paulo adquiriu uma DST ainda no ventre materno e que Adriano teve uma DST que só se adquire por relação sexual. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " As DSTs de Júlio, Paulo e Adriano podem ser, respectivamente, "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "cancro mole, Aids e condiloma acuminado. "
+      ],
+      [
+        " ",
+        "condiloma acuminado, gonorreia e sífilis. "
+      ],
+      [
+        " ",
+        "Aids, sífilis e cancro mole. "
+      ],
+      [
+        " ",
+        "gonorreia, condiloma acuminado e Aids. "
+      ],
+      [
+        " ",
+        "sífilis, cancro mole e gonorreia. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 13,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-39a91ece31925b482cbc",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "FMP",
+    "concurso": "FMP",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "FMP",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(FMP) A leptospirose é uma doença infecciosa influenciada tanto por características ambientais quanto sociais. As favelas são áreas em que o risco de contrair essa infecção é elevado, porque estão sujeitas a alagamentos, e os moradores não têm acesso a saneamento básico. O risco também é maior para indivíduos que trabalham com coleta de lixo ou na construção civil, uma vez que estão mais expostos à lama, ao solo e a outros materiais contaminados. \n\n A infecção descrita no texto é causada por",
+    "opcoes": [
+      "larvas infectantes de asquelmintos que sobrevivem no solo úmido e na água.",
+      "esporos de basidomicetos presentes nas fezes de ratos, pombos e morcegos.",
+      "vírus adquiridos quando o indivíduo não vacinado entra em áreas de transmissão.",
+      "bactérias espiroquetas que se multiplicam nos rins de roedores e de outros mamíferos.",
+      "protozoários flagelados, eliminados junto com a urina de ratos, cães e de outros animais."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(FMP) A leptospirose é uma doença infecciosa influenciada tanto por características ambientais quanto sociais. As favelas são áreas em que o risco de contrair essa infecção é elevado, porque estão sujeitas a alagamentos, e os moradores não têm acesso a saneamento básico. O risco também é maior para indivíduos que trabalham com coleta de lixo ou na construção civil, uma vez que estão mais expostos à lama, ao solo e a outros materiais contaminados. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " A infecção descrita no texto é causada por "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "larvas infectantes de asquelmintos que sobrevivem no solo úmido e na água. "
+      ],
+      [
+        " ",
+        "esporos de basidomicetos presentes nas fezes de ratos, pombos e morcegos. "
+      ],
+      [
+        " ",
+        "vírus adquiridos quando o indivíduo não vacinado entra em áreas de transmissão. "
+      ],
+      [
+        " ",
+        "bactérias espiroquetas que se multiplicam nos rins de roedores e de outros mamíferos. "
+      ],
+      [
+        " ",
+        "protozoários flagelados, eliminados junto com a urina de ratos, cães e de outros animais. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 14,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-0965e751856c128d83a3",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "UNICAMP",
+    "concurso": "Unicamp 2020",
+    "ano": 2020,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Unicamp-2020",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Unicamp-2020) Antibiotic resistance is possible because bacteria are able to exchange genetic material through a process known as bacterial conjugation. In one experiment, resistance to tetracycline (a commonly used antibiotic) was studied in Escherichia coli by introducing a tetracycline-resistant bacterium to a tetracycline-sensitive strain. The resistant bacterium’s genome contained a protein called an “efflux pump”, a polypeptide that localizes to the cell membrane and expels certain small molecules from the cell. \n\n Using fluorescent marking, researchers observed the DNA encoding one specific efflux pump in between a resistant bacterium and a sensitive bacterium. With live-cell microscopy, they tracked the fluorescence to see how the DNA migrated from one cell to another and how it was incorporated and expressed in the recipient bacterium. \n\n Fonte: Sophie Nolivos e outros, Science, Washington, v. 364, n. 6442, p. 778-782, maio 2019. \n\n Com base no texto e em seus conhecimentos, assinale a alternativa correta.",
+    "opcoes": [
+      "A fusão transmembrana do genoma que confere resistência antibiótica é facilitada pela presença da tetraciclina.",
+      "A proteína envolvida na resistência antibiótica à tetraciclina é transferida diretamente por conjugação bacteriana.",
+      "O gene da proteína de resistência antibiótica é transferido através da fusão transmembrana na presença de tetraciclina.",
+      "O DNA codificador da proteína que confere resistência antibiótica à tetraciclina é transferido por conjugação bacteriana."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Unicamp-2020) Antibiotic resistance is possible because bacteria are able to exchange genetic material through a process known as bacterial conjugation. In one experiment, resistance to tetracycline (a commonly used antibiotic) was studied in ",
+          {
+            "tag": "em",
+            "children": [
+              "Escherichia coli"
+            ]
+          },
+          " by introducing a tetracycline-resistant bacterium to a tetracycline-sensitive strain. The resistant bacterium’s genome contained a protein called an “efflux pump”, a polypeptide that localizes to the cell membrane and expels certain small molecules from the cell. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Using fluorescent marking, researchers observed the DNA encoding one specific efflux pump in between a resistant bacterium and a sensitive bacterium. With live-cell microscopy, they tracked the fluorescence to see how the DNA migrated from one cell to another and how it was incorporated and expressed in the recipient bacterium. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Fonte: Sophie Nolivos e outros, ",
+          {
+            "tag": "strong",
+            "children": [
+              "Science"
+            ]
+          },
+          ", Washington, v. 364, n. 6442, p. 778-782, maio 2019. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Com base no texto e em seus conhecimentos, assinale a alternativa correta. "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "A fusão transmembrana do genoma que confere resistência antibiótica é facilitada pela presença da tetraciclina. "
+      ],
+      [
+        " ",
+        "A proteína envolvida na resistência antibiótica à tetraciclina é transferida diretamente por conjugação bacteriana. "
+      ],
+      [
+        " ",
+        "O gene da proteína de resistência antibiótica é transferido através da fusão transmembrana na presença de tetraciclina. "
+      ],
+      [
+        " ",
+        "O DNA codificador da proteína que confere resistência antibiótica à tetraciclina é transferido por conjugação bacteriana. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 15,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-d59ca95eb2040c194412",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "USF",
+    "concurso": "USF",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "USF",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(USF) “O Brasil vive uma nova epidemia de sífilis. O Ministério da Saúde divulgou dados recentes mostrando que o número de pessoas infectadas no Brasil aumentou 32,7% entre 2014 e 2015, chegando a 65.878 casos no ano passado. O aumento é considerado expressivo em todas as faixas etárias...” \n\n Disponível em: Visite - Vestibular.Uol -Brasil vive epidemia de Sifilis . Acesso em: 20 abr. 2017. \n\nA ação que pode prevenir essa doença é",
+    "opcoes": [
+      "uso de preservativo nas relações sexuais.",
+      "vacinação em massa da população.",
+      "exames periódicos e uso contínuo de medicamento.",
+      "não compartilhamento de seringas e agulhas, bem como o uso de antibióticos.",
+      "não compartilhamento de utensílios, como copos e talheres, com pessoas infectadas."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(USF) “O Brasil vive uma nova epidemia de sífilis. O Ministério da Saúde divulgou dados recentes mostrando que o número de pessoas infectadas no Brasil aumentou 32,7% entre 2014 e 2015, chegando a 65.878 casos no ano passado. O aumento é considerado expressivo em todas as faixas etárias...” "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Disponível em: ",
+          {
+            "tag": "span",
+            "children": [
+              "Visite - Vestibular.Uol -Brasil vive epidemia de Sifilis"
+            ]
+          },
+          " . Acesso em: 20 abr. 2017. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "A ação que pode prevenir essa doença é"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "uso de preservativo nas relações sexuais. "
+      ],
+      [
+        " ",
+        "vacinação em massa da população. "
+      ],
+      [
+        " ",
+        "exames periódicos e uso contínuo de medicamento. "
+      ],
+      [
+        " ",
+        "não compartilhamento de seringas e agulhas, bem como o uso de antibióticos. "
+      ],
+      [
+        " ",
+        "não compartilhamento de utensílios, como copos e talheres, com pessoas infectadas. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 17,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-45117a3958b69b586b2d",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "UNIOESTE",
+    "concurso": "Unioeste",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Unioeste",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Unioeste) A sífilis é uma doença infectocontagiosa que tem causado grande preocupação nos últimos anos devido ao aumento no número de casos diagnosticados em todas as regiões do Brasil. Dados do Ministério da Saúde mostram que o número de casos notificados da sífilis adquirida saltou de 1.249 em 2010, para 65.878 em 2015, um aumento de mais de 5.000%. \n\n Fonte: adaptado de Visite - Sifilis volta a se uma epidemia no Brasil apesar do tratamento rápido. Acesso: 24 ago. 2017. \n\nSobre esta doença, é CORRETO afirmar que",
+    "opcoes": [
+      "é causada pela bactéria Treponema pallidum, pode ser prevenida por vacinação e tratada com antibióticos à base de penicilina.",
+      "é uma doença sexualmente transmissível que pode ser transmitida também da mãe para o feto durante a gravidez (sífilis congênita).",
+      "é uma doença que não tem cura e a maneira de se evitar é pela utilização de preservativos durante as relações sexuais.",
+      "nas fases em que a doença encontra-se latente no organismo, o indivíduo infectado apresenta sintomas, tais como lesões na pele e nas mucosas, mas não transmite a doença.",
+      "o estágio inicial, denominado sífilis primária, é caracterizado por alterações no sistema nervoso central, demência, paralisia e cegueira."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Unioeste) A sífilis é uma doença infectocontagiosa que tem causado grande preocupação nos últimos anos devido ao aumento no número de casos diagnosticados em todas as regiões do Brasil. Dados do Ministério da Saúde mostram que o número de casos notificados da sífilis adquirida saltou de 1.249 em 2010, para 65.878 em 2015, um aumento de mais de 5.000%. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Fonte: adaptado de ",
+          {
+            "tag": "span",
+            "children": [
+              "Visite - Sifilis volta a se uma epidemia no Brasil apesar do tratamento rápido"
+            ]
+          },
+          ". Acesso: 24 ago. 2017. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Sobre esta doença, é CORRETO afirmar que"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "é causada pela bactéria ",
+        {
+          "tag": "em",
+          "children": [
+            "Treponema pallidum"
+          ]
+        },
+        ", pode ser prevenida por vacinação e tratada com antibióticos à base de penicilina. "
+      ],
+      [
+        " ",
+        "é uma doença sexualmente transmissível que pode ser transmitida também da mãe para o feto durante a gravidez (sífilis congênita). "
+      ],
+      [
+        " ",
+        "é uma doença que não tem cura e a maneira de se evitar é pela utilização de preservativos durante as relações sexuais. "
+      ],
+      [
+        " ",
+        "nas fases em que a doença encontra-se latente no organismo, o indivíduo infectado apresenta sintomas, tais como lesões na pele e nas mucosas, mas não transmite a doença. "
+      ],
+      [
+        " ",
+        "o estágio inicial, denominado sífilis primária, é caracterizado por alterações no sistema nervoso central, demência, paralisia e cegueira. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 18,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-10382a6ca118c279ef3e",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "ACAFE",
+    "concurso": "ACAFE",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "ACAFE",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(ACAFE) \n\n OMS alerta para falta de novos antibióticos e pede mais investimentos \n\n Organização Mundial da Saúde (OMS) alertou sobre a “séria escassez” de novos antibióticos para combater bactérias cada vez mais resistentes, e defendeu redobrar os investimentos diante desta “crescente ameaça” à saúde mundial. A tuberculose resistente, a cada ano, mata 250 mil pessoas no planeta. A OMS publicou em fevereiro uma lista de 12 famílias de “superbactérias”, contra as quais considera urgente desenvolver novos medicamentos, a exemplo de enterobactérias como Klebsiella e E. coli. \n\n Fonte: g1.globo, 22 set. 2017. Adaptado. Disponível em: Visite - G1 . \n\n Considerando as informações contidas no texto e os conhecimentos relacionados ao tema, é correto afirmar, exceto:",
+    "opcoes": [
+      "Bactérias são micro-organismos unicelulares, procariontes, desprovidos de envoltório nuclear e organelas membranosas, pertencentes ao Reino Monera.",
+      "A tuberculose, a difteria, a brucelose e a coqueluche são doenças infecciosas transmitidas principalmente pelo contato direto com o doente e por gotículas de secreção respiratória eliminadas por tosse, espirro ou ao falar.",
+      "Plasmídeos são moléculas de DNA extracromossomais, capazes de se reproduzirem independentemente do DNA cromossômico. Eles possuem variadas funções de acordo com os seus tipos como, por exemplo, a resistência a antibióticos.",
+      "A tuberculose é uma doença infecciosa e transmissível que afeta prioritariamente os pulmões. Alguns grupos populacionais possuem maior vulnerabilidade a essa doença devido às condições de saúde e de vida a que estão expostos."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(ACAFE) "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "strong",
+            "children": [
+              "OMS alerta para falta de novos antibióticos e pede mais investimentos "
+            ]
+          },
+          " "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Organização Mundial da Saúde (OMS) alertou sobre a “séria escassez” de novos antibióticos para combater bactérias cada vez mais resistentes, e defendeu redobrar os investimentos diante desta “crescente ameaça” à saúde mundial. A tuberculose resistente, a cada ano, mata 250 mil pessoas no planeta. A OMS publicou em fevereiro uma lista de 12 famílias de “superbactérias”, contra as quais considera urgente desenvolver novos medicamentos, a exemplo de enterobactérias como ",
+          {
+            "tag": "em",
+            "children": [
+              "Klebsiella"
+            ]
+          },
+          " e ",
+          {
+            "tag": "em",
+            "children": [
+              "E. coli"
+            ]
+          },
+          ". "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Fonte: g1.globo, 22 set. 2017. Adaptado. Disponível em: ",
+          {
+            "tag": "span",
+            "children": [
+              "Visite - G1"
+            ]
+          },
+          " . "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Considerando as informações contidas no texto e os conhecimentos relacionados ao tema, é correto afirmar, exceto: "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "Bactérias são micro-organismos unicelulares, procariontes, desprovidos de envoltório nuclear e organelas membranosas, pertencentes ao Reino Monera. "
+      ],
+      [
+        " ",
+        "A tuberculose, a difteria, a brucelose e a coqueluche são doenças infecciosas transmitidas principalmente pelo contato direto com o doente e por gotículas de secreção respiratória eliminadas por tosse, espirro ou ao falar. "
+      ],
+      [
+        " ",
+        "Plasmídeos são moléculas de DNA extracromossomais, capazes de se reproduzirem independentemente do DNA cromossômico. Eles possuem variadas funções de acordo com os seus tipos como, por exemplo, a resistência a antibióticos. "
+      ],
+      [
+        " ",
+        "A tuberculose é uma doença infecciosa e transmissível que afeta prioritariamente os pulmões. Alguns grupos populacionais possuem maior vulnerabilidade a essa doença devido às condições de saúde e de vida a que estão expostos. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 20,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-01f37cbdbf2cd1163101",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "UFGD",
+    "concurso": "UFGD 2022",
+    "ano": 2022,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFGD-2022",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UFGD-2022) Na Semana Mundial de Conscientização sobre o Uso dos Antimicrobianos que começou em 18 de novembro de 2021, as autoridades de saúde chamaram a atenção para a resistência antimicrobiana, um grave problema de saúde pública que pode ser agravado com a pandemia da Covid-19. As bactérias podem adquirir resistência aos antibióticos e, assim, não morrerem na presença desses medicamentos. \n\n Disponível em: Visite - Brasil El Pais. Acesso em: 22 nov. 2021 (adaptado). \n\n Considerando os mecanismos biológicos responsáveis pela emergência de bactérias resistentes aos antibióticos, é correto afirmar que",
+    "opcoes": [
+      "os plasmídeos são estruturas genéticas móveis presentes em bactérias, que podem carrear genes de resistência e transferi-los diretamente para outras bactérias durante o evento genético chamado de transdução.",
+      "alterações no material genético podem causar resistência aos antibióticos, como é o caso de mutações que provocam alteração na permeabilidade da membrana plasmática de bactérias.",
+      "a transferência ou troca de material genético entre as bactérias ocorre somente na presença de antibióticos, devido à pressão seletiva exercida por eles.",
+      "as bactérias são organismos procariotos; algumas possuem genes de resistência em seu cromossomo, resultado do uso limitado de antibióticos.",
+      "os bacteriófagos são ferramentas biológicas importantes utilizadas em diferentes áreas como a biorremediação. No entanto, devido à ampla utilização no meio ambiente eles passaram a carrear vários mecanismos de resistência bacteriana."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          "(UFGD-2022) Na Semana Mundial de Conscientização sobre o Uso dos Antimicrobianos que começou em 18 de novembro de 2021, as autoridades de saúde chamaram a atenção para a resistência antimicrobiana, um grave problema de saúde pública que pode ser agravado com a pandemia da Covid-19. As bactérias podem adquirir resistência aos antibióticos e, assim, não morrerem na presença desses medicamentos. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Disponível em: ",
+          {
+            "tag": "span",
+            "children": [
+              "Visite - Brasil El Pais"
+            ]
+          },
+          ". Acesso em: 22 nov. 2021 (adaptado). "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Considerando os mecanismos biológicos responsáveis pela emergência de bactérias resistentes aos antibióticos, é correto afirmar que "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        "os plasmídeos são estruturas genéticas móveis presentes em bactérias, que podem carrear genes de resistência e transferi-los diretamente para outras bactérias durante o evento genético chamado de transdução. "
+      ],
+      [
+        " ",
+        "alterações no material genético podem causar resistência aos antibióticos, como é o caso de mutações que provocam alteração na permeabilidade da membrana plasmática de bactérias. "
+      ],
+      [
+        " ",
+        "a transferência ou troca de material genético entre as bactérias ocorre somente na presença de antibióticos, devido à pressão seletiva exercida por eles. "
+      ],
+      [
+        " ",
+        "as bactérias são organismos procariotos; algumas possuem genes de resistência em seu cromossomo, resultado do uso limitado de antibióticos. "
+      ],
+      [
+        " ",
+        "os bacteriófagos são ferramentas biológicas importantes utilizadas em diferentes áreas como a biorremediação. No entanto, devido à ampla utilização no meio ambiente eles passaram a carrear vários mecanismos de resistência bacteriana. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 21,
+      "secao": "Enem e vestibulares + Desafio"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-6da43cee63fbb9b4c26c",
+    "materia": "Biologia",
+    "conteudo": "Bactérias e arqueas",
+    "banca": "FMP",
+    "concurso": "FMP 2023",
+    "ano": 2023,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "FMP-2023",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(FMP-2023) Considere o calendário de vacinação nacional para adolescentes em 2022.\n\n Calendário de Vacinação do Adolescente \n\nIDADEVACINASDOSESDOENÇAS EVITADAS \n\n 11 a 19 anos Hepatite B – a depender da situação vacinal3 dosesHepatite B\n\nDupla adulto (dT) – a depender da situação vacinal3 doses ou reforçoDifteria e tétano\n\nTríplice viral (SCR) – a depender da situação vacinal2 dosesSarampo, caxumba e rubéola\n\nFebre amarela – a depender da situação vacinalDose únicaFebre amarela\n\n11 a 14 anos\n(meninos)HPV quadrivalente2 dosesInfecções Papilomavírus Humano 6, 11, 15 e 18.\n\n11 e 12 anosVacina meningocócica ACWY (conjugada)Dose única Doenças invasivas causadas por Neisseria meningitidis dos sorotipos A, C, W e Y. \n\nDe 12 a 17 anosCovid-192 dosesCovid-19\n\nDisponível em: Visite - Saúde GOV . Acesso em: 20 jul. 2022. Adaptado.\n\nAs seguintes vacinas são profilaxias contra doenças bacterianas:",
+    "opcoes": [
+      "Covid-19 e Hepatite B",
+      "Febre amarela e Covid-19",
+      "Dupla adulto e Febre amarela",
+      "Hepatite B e Vacina meningococica",
+      "Vacina meningocócica e Dupla adulto"
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          "(FMP-2023) Considere o calendário de vacinação nacional para adolescentes em 2022."
+        ]
+      },
+      {
+        "tag": "table",
+        "children": [
+          {
+            "tag": "thead",
+            "children": [
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "th",
+                    "children": [
+                      " Calendário de Vacinação do Adolescente "
+                    ],
+                    "colSpan": 4
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "th",
+                    "children": [
+                      "IDADE"
+                    ]
+                  },
+                  {
+                    "tag": "th",
+                    "children": [
+                      "VACINAS"
+                    ]
+                  },
+                  {
+                    "tag": "th",
+                    "children": [
+                      "DOSES"
+                    ]
+                  },
+                  {
+                    "tag": "th",
+                    "children": [
+                      "DOENÇAS EVITADAS "
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "tbody",
+            "children": [
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      " 11 a 19 anos "
+                    ],
+                    "rowSpan": 4
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Hepatite B – a depender da situação vacinal"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "3 doses"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Hepatite B"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Dupla adulto (dT) – a depender da situação vacinal"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "3 doses ou reforço"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Difteria e tétano"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Tríplice viral (SCR) – a depender da situação vacinal"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "2 doses"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Sarampo, caxumba e rubéola"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Febre amarela – a depender da situação vacinal"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Dose única"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Febre amarela"
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      "11 a 14 anos",
+                      {
+                        "tag": "br",
+                        "children": []
+                      },
+                      "(meninos)"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "HPV quadrivalente"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "2 doses"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Infecções Papilomavírus Humano 6, 11, 15 e 18."
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      "11 e 12 anos"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Vacina meningocócica ACWY (conjugada)"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Dose única"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      " Doenças invasivas causadas por ",
+                      {
+                        "tag": "em",
+                        "children": [
+                          "Neisseria meningitidis"
+                        ]
+                      },
+                      " dos sorotipos A, C, W e Y. "
+                    ]
+                  }
+                ]
+              },
+              {
+                "tag": "tr",
+                "children": [
+                  {
+                    "tag": "td",
+                    "children": [
+                      "De 12 a 17 anos"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Covid-19"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "2 doses"
+                    ]
+                  },
+                  {
+                    "tag": "td",
+                    "children": [
+                      "Covid-19"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Disponível em: ",
+          {
+            "tag": "span",
+            "children": [
+              "Visite - Saúde GOV"
+            ]
+          },
+          " . Acesso em: 20 jul. 2022. Adaptado."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "As seguintes vacinas são profilaxias contra doenças bacterianas:"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Covid-19 e Hepatite B "
+      ],
+      [
+        " ",
+        " ",
+        "Febre amarela e Covid-19 "
+      ],
+      [
+        " ",
+        " ",
+        "Dupla adulto e Febre amarela "
+      ],
+      [
+        " ",
+        " ",
+        "Hepatite B e Vacina meningococica "
+      ],
+      [
+        " ",
+        " ",
+        "Vacina meningocócica e Dupla adulto "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6df",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino monera: bactérias e arqueas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-reino-monera-bacterias-e-arqueas-HyjWJ",
+      "titulo_documento": "EXT26_3_BIO_L1_A_03",
+      "numero": 22,
+      "secao": "Enem e vestibulares + Desafio"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-68bd1c4886937bf849f5",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "UTFPR",
+    "concurso": "UTFPR 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UTFPR-2018",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UTFPR-2018) A água, os alimentos e o ar podem ser importantes veículos de transmissão de doenças, porém algumas doenças precisam de vetores para transmiti-las. Assinale a alternativa que apresenta doenças cujas medidas profiláticas sejam a eliminação do vetor.",
+    "opcoes": [
+      "diabetes e amebíase.",
+      "dengue e tétano.",
+      "gripe e febre amarela.",
+      "malária e hepatite.",
+      "malária e dengue."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UTFPR-2018) A água, os alimentos e o ar podem ser importantes veículos de transmissão de doenças, porém algumas doenças precisam de vetores para transmiti-las. Assinale a alternativa que apresenta doenças cujas medidas profiláticas sejam a eliminação do vetor. "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "diabetes e amebíase. "
+      ],
+      [
+        " ",
+        " ",
+        "dengue e tétano. "
+      ],
+      [
+        " ",
+        " ",
+        "gripe e febre amarela. "
+      ],
+      [
+        " ",
+        " ",
+        "malária e hepatite. "
+      ],
+      [
+        " ",
+        " ",
+        "malária e dengue. "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 1,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-f268b3b8db93c72ea068",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "IFPE",
+    "concurso": "IFPE 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "IFPE-2019",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(IFPE-2019) Muitas algas, ou ervas marinhas, fazem parte das PANCs (plantas alimentícias não convencionais) e quem está habituado com a culinária japonesa já deve ter provado pelo menos uma, dos 7 tipos de algas comestíveis, como a Nori, aquela que envolve o sushi. Ela pode ser a mais famosa para nós, mas não é a única em sabor e nutrientes. Ao contrário do que se imagina, as algas têm pouco sal, além de serem pobres em calorias e gorduras. Menos de 6% do peso da alga seca é gordura e 50% dessa gordura é ômega 3 e 6. \n\n FRANZONI, Michele. Algas na alimentação: tipos, benefícios e como incluir no cardápio. Disponível em: Visite - Algas na alimentção tipos beneficios e como incluir no cardapio . Acesso em: 6 maio 2019. Adaptado. \n\n O texto acima apresenta um equívoco ao classificar as algas como plantas, pois as algas, apesar de apresentarem semelhanças com as plantas, pertencem a um outro reino. Assinale a alternativa que corresponde ao reino em que as algas estão inseridas.",
+    "opcoes": [
+      "Fungi.",
+      "Protoctista.",
+      "Monera.",
+      "Archaea.",
+      "Animmalia."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(IFPE-2019) Muitas algas, ou ervas marinhas, fazem parte das PANCs (plantas alimentícias não convencionais) e quem está habituado com a culinária japonesa já deve ter provado pelo menos uma, dos 7 tipos de algas comestíveis, como a Nori, aquela que envolve o sushi. Ela pode ser a mais famosa para nós, mas não é a única em sabor e nutrientes. Ao contrário do que se imagina, as algas têm pouco sal, além de serem pobres em calorias e gorduras. Menos de 6% do peso da alga seca é gordura e 50% dessa gordura é ômega 3 e 6. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " FRANZONI, Michele. Algas na alimentação: tipos, benefícios e como incluir no cardápio. Disponível em: ",
+          {
+            "tag": "span",
+            "children": [
+              "Visite - Algas na alimentção tipos beneficios e como incluir no cardapio"
+            ]
+          },
+          " . Acesso em: 6 maio 2019. Adaptado. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " O texto acima apresenta um equívoco ao classificar as algas como plantas, pois as algas, apesar de apresentarem semelhanças com as plantas, pertencem a um outro reino. Assinale a alternativa que corresponde ao reino em que as algas estão inseridas. "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Fungi. "
+      ],
+      [
+        " ",
+        " ",
+        "Protoctista. "
+      ],
+      [
+        " ",
+        " ",
+        "Monera. "
+      ],
+      [
+        " ",
+        " ",
+        "Archaea. "
+      ],
+      [
+        " ",
+        " ",
+        "Animmalia. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 2,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-a34e5fabafdfce9faf88",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "UECE",
+    "concurso": "UECE 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2016",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UECE-2016) Analise as afirmações a seguir. \n\n I.Algas são seres fotossintéticos, conhecidos como plantas do mar e por esse motivo pertencem ao Reino Plantae. \n\n II.As algas são responsáveis pela maior parte do gás oxigênio liberado diariamente na biosfera. \n\n III.Quando há um desequilíbrio dos fatores ambientais, as algas podem se multiplicar descontroladamente por meio de florações. \n\nEstá correto o que se afirma em:",
+    "opcoes": [
+      "I e II apenas.",
+      "II e III apenas.",
+      "I e III apenas.",
+      "I, II e III."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UECE-2016) Analise as afirmações a seguir. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "I."
+            ]
+          },
+          "Algas são seres fotossintéticos, conhecidos como plantas do mar e por esse motivo pertencem ao Reino Plantae. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "II."
+            ]
+          },
+          "As algas são responsáveis pela maior parte do gás oxigênio liberado diariamente na biosfera. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "III."
+            ]
+          },
+          "Quando há um desequilíbrio dos fatores ambientais, as algas podem se multiplicar descontroladamente por meio de florações. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Está correto o que se afirma em:"
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "I e II apenas. "
+      ],
+      [
+        " ",
+        " ",
+        "II e III apenas. "
+      ],
+      [
+        " ",
+        " ",
+        "I e III apenas. "
+      ],
+      [
+        " ",
+        " ",
+        "I, II e III. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 3,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-3d72ae82d4dbd1622ca4",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "ENEM-PPL",
+    "concurso": "Enem-PPL 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Enem-PPL-2019",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(Enem-PPL-2019) As algas são uma opção sustentável na produção de biocombustível, pois possuem estrutura simples e se reproduzem mais rapidamente que os vegetais, além da grande capacidade de absorverem dióxido de carbono. Esses organismos não são constituídos por tecidos heterogêneos, entretanto, assim como os vegetais, possuem parede celular. Algas podem substituir metade do petróleo e inaugurar química verde (Agência Fapesp, 16/08/2010). \n\n Disponível em: www.inovacaotecnologica.com.br. Acesso em: 1 ago. 2012. Adaptado. \n\n Para obtenção de biocombustível a partir de algas e vegetais, é necessário utilizar no processo a enzima",
+    "opcoes": [
+      "amilase.",
+      "maltase.",
+      "celulase.",
+      "fosfatase.",
+      "quitinase."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Enem-PPL-2019) As algas são uma opção sustentável na produção de biocombustível, pois possuem estrutura simples e se reproduzem mais rapidamente que os vegetais, além da grande capacidade de absorverem dióxido de carbono. Esses organismos não são constituídos por tecidos heterogêneos, entretanto, assim como os vegetais, possuem parede celular. Algas podem substituir metade do petróleo e inaugurar química verde (Agência Fapesp, 16/08/2010). "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Disponível em: www.inovacaotecnologica.com.br. Acesso em: 1 ago. 2012. Adaptado. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Para obtenção de biocombustível a partir de algas e vegetais, é necessário utilizar no processo a enzima "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "amilase. "
+      ],
+      [
+        " ",
+        " ",
+        "maltase. "
+      ],
+      [
+        " ",
+        " ",
+        "celulase. "
+      ],
+      [
+        " ",
+        " ",
+        "fosfatase. "
+      ],
+      [
+        " ",
+        " ",
+        "quitinase. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 4,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-a6bdc8ff3d17eaa9114c",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "UECE",
+    "concurso": "UECE 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2019",
+    "adaptada": false,
+    "dificuldade": "Fácil",
+    "enunciado": "(UECE-2019) Quanto à locomoção dos protozoários, é correto afirmar que",
+    "opcoes": [
+      "as amebas utilizam flagelos para locomoção.",
+      "os esporozoários se locomovem através de pseudópodes.",
+      "os rizópodes não se locomovem.",
+      "os paramécios locomovem-se através de cílios."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UECE-2019) Quanto à locomoção dos protozoários, é correto afirmar que "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "as amebas utilizam flagelos para locomoção. "
+      ],
+      [
+        " ",
+        " ",
+        "os esporozoários se locomovem através de pseudópodes. "
+      ],
+      [
+        " ",
+        " ",
+        "os rizópodes não se locomovem. "
+      ],
+      [
+        " ",
+        " ",
+        "os paramécios locomovem-se através de cílios. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 5,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-2e382fe70394ea532671",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "ACAFE",
+    "concurso": "ACAFE 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "ACAFE-2019",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(ACAFE-2019) \n\n Maré vermelha traz microalga incomum e com potencial tóxico ao litoral de São Paulo \n\n Pesquisadores do Centro de Biologia Marinha (Cebimar) da USP identificaram uma floração de microalgas do gênero Margalefidinium no Canal de São Sebastião no final deste verão. A floração de microalgas é um fenômeno conhecido como maré vermelha e, nesse caso, surpreendeu os cientistas, porque as espécies desse gênero não são comuns no litoral de São Paulo. Além disso, são potencialmente tóxicas para peixes e outros organismos que compõem o ecossistema marinho. \n\n Fonte: Jornal da USP, 11/04/2019. Disponível em: Visite - Jornal USP . \n\n Acerca das informações contidas no texto e nos conhecimentos relacionados ao tema, assinale a alternativa INCORRETA.",
+    "opcoes": [
+      "A maré vermelha é um exemplo de amensalismo. Nesse tipo de relação ecológica, um organismo libera substâncias tóxicas que inibem o crescimento ou a reprodução de outros organismos.",
+      "O fenômeno maré vermelha é resultante da excessiva proliferação da população de certas algas tóxicas, como por exemplo, as algas pirrófitas dinoflageladas.",
+      "Entre as causas relacionadas ao fenômeno da maré vermelha estão: alteração na salinidade, oscilação térmica da água e excesso de compostos orgânicos decorrentes do escoamento de esgoto doméstico.",
+      "O aumento do número de marés vermelhas em termos de quantidade, intensidade e dispersão geográfica está relacionado, exclusivamente, à ação humana, como por exemplo, escoamento de esgoto doméstico nas águas marinhas, ocasionando a eutrofização."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(ACAFE-2019) "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "strong",
+            "children": [
+              "Maré vermelha traz microalga incomum e com potencial tóxico ao litoral de São Paulo"
+            ]
+          },
+          " "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Pesquisadores do Centro de Biologia Marinha (Cebimar) da USP identificaram uma floração de microalgas do gênero ",
+          {
+            "tag": "em",
+            "children": [
+              "Margalefidinium"
+            ]
+          },
+          " no Canal de São Sebastião no final deste verão. A floração de microalgas é um fenômeno conhecido como maré vermelha e, nesse caso, surpreendeu os cientistas, porque as espécies desse gênero não são comuns no litoral de São Paulo. Além disso, são potencialmente tóxicas para peixes e outros organismos que compõem o ecossistema marinho. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Fonte: Jornal da USP, 11/04/2019. Disponível em: ",
+          {
+            "tag": "span",
+            "children": [
+              "Visite - Jornal USP"
+            ]
+          },
+          " . "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Acerca das informações contidas no texto e nos conhecimentos relacionados ao tema, assinale a alternativa",
+          {
+            "tag": "strong",
+            "children": [
+              " INCORRETA"
+            ]
+          },
+          ". "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "A maré vermelha é um exemplo de amensalismo. Nesse tipo de relação ecológica, um organismo libera substâncias tóxicas que inibem o crescimento ou a reprodução de outros organismos. "
+      ],
+      [
+        " ",
+        " ",
+        "O fenômeno maré vermelha é resultante da excessiva proliferação da população de certas algas tóxicas, como por exemplo, as algas pirrófitas dinoflageladas. "
+      ],
+      [
+        " ",
+        " ",
+        "Entre as causas relacionadas ao fenômeno da maré vermelha estão: alteração na salinidade, oscilação térmica da água e excesso de compostos orgânicos decorrentes do escoamento de esgoto doméstico. "
+      ],
+      [
+        " ",
+        " ",
+        "O aumento do número de marés vermelhas em termos de quantidade, intensidade e dispersão geográfica está relacionado, exclusivamente, à ação humana, como por exemplo, escoamento de esgoto doméstico nas águas marinhas, ocasionando a eutrofização. "
+      ]
+    ],
+    "resposta_correta": 3,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 6,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-a060822f84ec129dcc04",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "UFRGS",
+    "concurso": "UFRGS 2019",
+    "ano": 2019,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UFGRS-2019",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UFGRS-2019) Um surto de toxoplasmose foi registrado, em 2018, na cidade de Santa Maria (RS). Sobre a toxoplasmose, é correto afirmar que",
+    "opcoes": [
+      "tem um caramujo de água doce como hospedeiro intermediário do verme causador da doença.",
+      "pode ser transmitida entre humanos por insetos hemípteros (barbeiros) que defecam ao sugar o sangue.",
+      "é causada por um protozoário transmitido através da ingestão de carne mal cozida ou de alimentos contaminados com fezes de gatos.",
+      "provoca lesões de bordas avermelhadas, de difícil cicatrização, na pele e nas mucosas.",
+      "causa perfurações nas paredes do intestino que levam à perda de sangue e à anemia, gerando palidez, também chamada de amarelão."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UFGRS-2019) Um surto de toxoplasmose foi registrado, em 2018, na cidade de Santa Maria (RS). Sobre a toxoplasmose, é correto afirmar que "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "tem um caramujo de água doce como hospedeiro intermediário do verme causador da doença. "
+      ],
+      [
+        " ",
+        " ",
+        "pode ser transmitida entre humanos por insetos hemípteros (barbeiros) que defecam ao sugar o sangue. "
+      ],
+      [
+        " ",
+        " ",
+        "é causada por um protozoário transmitido através da ingestão de carne mal cozida ou de alimentos contaminados com fezes de gatos. "
+      ],
+      [
+        " ",
+        " ",
+        "provoca lesões de bordas avermelhadas, de difícil cicatrização, na pele e nas mucosas. "
+      ],
+      [
+        " ",
+        " ",
+        "causa perfurações nas paredes do intestino que levam à perda de sangue e à anemia, gerando palidez, também chamada de amarelão. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 7,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-2ea76cc13315c360848b",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "UECE",
+    "concurso": "UECE 2016",
+    "ano": 2016,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UECE-2016",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(UECE-2016) Analise as seguintes descrições dos organismos unicelulares pertencentes ao Reino Protista: \n\n I.algas cujos flagelos – um longo e outro curto – são localizados no polo anterior da célula, em uma depressão que recebe o nome de reservatório; \n\n II. microrganismos dotados de uma carapaça protetora formada de sílica, que geralmente se reproduzem por cissiparidade; \n\n III.seres dotados de dois flagelos, geralmente marinhos, com coloração esverdeada ou parda; em alguns casos, são capazes de realizar o fenômeno conhecido como bioluminescência. \n\n As descrições acima correspondem, respectivamente, às",
+    "opcoes": [
+      "pirrófitas, euglenófitas e diatomáceas.",
+      "euglenófitas, bacilariófitas e pirrófitas.",
+      "euglenas, dinoflageladas e diatomáceas.",
+      "clorófitas, pirrófitas e rodófitas."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UECE-2016) Analise as seguintes descrições dos organismos unicelulares pertencentes ao Reino Protista: "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "I."
+            ]
+          },
+          "algas cujos flagelos – um longo e outro curto – são localizados no polo anterior da célula, em uma depressão que recebe o nome de reservatório; "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "II."
+            ]
+          },
+          " microrganismos dotados de uma carapaça protetora formada de sílica, que geralmente se reproduzem por cissiparidade; "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          {
+            "tag": "span",
+            "children": [
+              "III."
+            ]
+          },
+          "seres dotados de dois flagelos, geralmente marinhos, com coloração esverdeada ou parda; em alguns casos, são capazes de realizar o fenômeno conhecido como bioluminescência. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " As descrições acima correspondem, respectivamente, às "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "pirrófitas, euglenófitas e diatomáceas. "
+      ],
+      [
+        " ",
+        " ",
+        "euglenófitas, bacilariófitas e pirrófitas. "
+      ],
+      [
+        " ",
+        " ",
+        "euglenas, dinoflageladas e diatomáceas. "
+      ],
+      [
+        " ",
+        " ",
+        "clorófitas, pirrófitas e rodófitas. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 8,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-b43889d76c36fee674d5",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "MACKENZIE",
+    "concurso": "Mackenzie 2017",
+    "ano": 2017,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Mackenzie-2017",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Mackenzie-2017) Muitas pessoas confundem as doenças Malária, Amarelão e Febre Amarela, pensando que são nomes de uma mesma doença. Assinale a alternativa correta.",
+    "opcoes": [
+      "essas doenças são bem diferentes porque apresentam causadores e transmissores diferentes.",
+      "essas doenças são diferentes quanto aos transmissores e não quanto aos causadores.",
+      "essas doenças são diferentes quanto aos causadores e não quanto aos transmissores.",
+      "essas doenças são semelhantes quanto aos sintomas, pois todas provocam hemorragia.",
+      "essas doenças são todas possíveis de serem evitadas por vacinação."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Mackenzie-2017) Muitas pessoas confundem as doenças Malária, Amarelão e Febre Amarela, pensando que são nomes de uma mesma doença. Assinale a alternativa correta. "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "essas doenças são bem diferentes porque apresentam causadores e transmissores diferentes. "
+      ],
+      [
+        " ",
+        " ",
+        "essas doenças são diferentes quanto aos transmissores e não quanto aos causadores. "
+      ],
+      [
+        " ",
+        " ",
+        "essas doenças são diferentes quanto aos causadores e não quanto aos transmissores. "
+      ],
+      [
+        " ",
+        " ",
+        "essas doenças são semelhantes quanto aos sintomas, pois todas provocam hemorragia. "
+      ],
+      [
+        " ",
+        " ",
+        "essas doenças são todas possíveis de serem evitadas por vacinação. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 10,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-2c9aa5f39803eafd2492",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "FUVEST",
+    "concurso": "Fuvest 2017",
+    "ano": 2017,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Fuvest-2017",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Fuvest-2017) \n\nProcurando bem\n\nTodo mundo tem pereba\n\nMarca de bexiga ou vacina\n\nE tem piriri, tem lombriga, tem ameba\n\nSó a bailarina que não tem\n\n Edu Lobo e Chico Buarque, Ciranda da bailarina. \n\n A bailarina dos versos não contrai as doenças causadas por dois parasitas de importância para a saúde pública: a lombriga (Ascaris lumbricoides) e a ameba (Entamoeba histolytica). Todo mundo, porém, pode se prevenir contra essas parasitoses, quando",
+    "opcoes": [
+      "não nada em lagos em que haja caramujos e possibilidade de contaminação com esgoto.",
+      "lava muito bem vegetais e frutas antes de ingeri-los crus.",
+      "utiliza calçados ao andar sobre solos em que haja possibilidade de contaminação com esgoto.",
+      "evita picada de artrópodes que transmitem esses parasitas.",
+      "não ingere carne bovina ou suína contaminada pelos ovos da lombriga e da ameba."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Fuvest-2017) "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Procurando bem"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Todo mundo tem pereba"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Marca de bexiga ou vacina"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "E tem piriri, tem lombriga, tem ameba"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Só a bailarina que não tem"
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Edu Lobo e Chico Buarque, Ciranda da bailarina. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " A bailarina dos versos não contrai as doenças causadas por dois parasitas de importância para a saúde pública: a lombriga (",
+          {
+            "tag": "em",
+            "children": [
+              "Ascaris lumbricoides"
+            ]
+          },
+          ") e a ameba (",
+          {
+            "tag": "em",
+            "children": [
+              "Entamoeba histolytica"
+            ]
+          },
+          "). Todo mundo, porém, pode se prevenir contra essas parasitoses, quando "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "não nada em lagos em que haja caramujos e possibilidade de contaminação com esgoto. "
+      ],
+      [
+        " ",
+        " ",
+        "lava muito bem vegetais e frutas antes de ingeri-los crus. "
+      ],
+      [
+        " ",
+        " ",
+        "utiliza calçados ao andar sobre solos em que haja possibilidade de contaminação com esgoto. "
+      ],
+      [
+        " ",
+        " ",
+        "evita picada de artrópodes que transmitem esses parasitas. "
+      ],
+      [
+        " ",
+        " ",
+        "não ingere carne bovina ou suína contaminada pelos ovos da lombriga e da ameba. "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 12,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-2128720db7c137803622",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "UNIOESTE",
+    "concurso": "Unioeste",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Unioeste",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Unioeste) A malária é uma parasitose que afeta mais de 200 milhões de pessoas em todo o Planeta, principalmente nas regiões tropicais. Com relação à malária e ao parasito causador desta endemia, assinale a alternativa CORRETA com relação aos tipos de reprodução do parasito ao longo de seu ciclo.",
+    "opcoes": [
+      "Reprodução assexuada no interior das hemácias humanas; reprodução sexuada no estômago do mosquito; reprodução assexuada no interior dos cistos presentes na parede gástrica do inseto.",
+      "Reprodução sexuada no interior das hemácias humanas; reprodução assexuada no estômago do mosquito; reprodução assexuada no interior dos cistos presentes na parede gástrica do inseto.",
+      "Reprodução sexuada no interior das hemácias humanas; reprodução sexuada no estômago do mosquito; reprodução assexuada no interior dos cistos presentes na parede gástrica do inseto.",
+      "Reprodução assexuada no interior das hemácias humanas; reprodução sexuada no estômago do mosquito; reprodução sexuada no interior dos cistos presentes na parede gástrica do inseto.",
+      "Reprodução assexuada no interior das hemácias humanas; reprodução assexuada no estômago do mosquito; reprodução sexuada no interior dos cistos presentes na parede gástrica do inseto."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Unioeste) A malária é uma parasitose que afeta mais de 200 milhões de pessoas em todo o Planeta, principalmente nas regiões tropicais. Com relação à malária e ao parasito causador desta endemia, assinale a alternativa CORRETA com relação aos tipos de reprodução do parasito ao longo de seu ciclo. "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Reprodução assexuada no interior das hemácias humanas; reprodução sexuada no estômago do mosquito; reprodução assexuada no interior dos cistos presentes na parede gástrica do inseto. "
+      ],
+      [
+        " ",
+        " ",
+        "Reprodução sexuada no interior das hemácias humanas; reprodução assexuada no estômago do mosquito; reprodução assexuada no interior dos cistos presentes na parede gástrica do inseto. "
+      ],
+      [
+        " ",
+        " ",
+        "Reprodução sexuada no interior das hemácias humanas; reprodução sexuada no estômago do mosquito; reprodução assexuada no interior dos cistos presentes na parede gástrica do inseto. "
+      ],
+      [
+        " ",
+        " ",
+        "Reprodução assexuada no interior das hemácias humanas; reprodução sexuada no estômago do mosquito; reprodução sexuada no interior dos cistos presentes na parede gástrica do inseto. "
+      ],
+      [
+        " ",
+        " ",
+        "Reprodução assexuada no interior das hemácias humanas; reprodução assexuada no estômago do mosquito; reprodução sexuada no interior dos cistos presentes na parede gástrica do inseto. "
+      ]
+    ],
+    "resposta_correta": 0,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 13,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-d6752830bc1a4c3d0f22",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "UNESP",
+    "concurso": "Unesp 2013",
+    "ano": 2013,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Unesp-2013",
+    "adaptada": false,
+    "dificuldade": "Média",
+    "enunciado": "(Unesp-2013) Em determinada região do nosso país, o sistema de saúde verificou um crescente número de mortes por problemas cardíacos, sobretudo em pessoas na faixa etária de 40 a 50 anos. Tais mortes não estavam relacionadas a históricos de sobrepeso ou hipertensão. Investigado o problema, verificou-se que há décadas a população não contava com condições adequadas de moradia. Muitas das casas eram de pau a pique e estavam infestadas de insetos. Segundo os sanitaristas, as mortes deviam-se a uma parasitose endêmica na região. \n\n Pode-se afirmar que, mais provavelmente, a parasitose em questão é causada por organismos da espécie",
+    "opcoes": [
+      "Plasmodium vivax.",
+      "Trypanosoma cruzi.",
+      "Triatoma infestans.",
+      "Taenia solium.",
+      "Schistosoma mansoni."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Unesp-2013) Em determinada região do nosso país, o sistema de saúde verificou um crescente número de mortes por problemas cardíacos, sobretudo em pessoas na faixa etária de 40 a 50 anos. Tais mortes não estavam relacionadas a históricos de sobrepeso ou hipertensão. Investigado o problema, verificou-se que há décadas a população não contava com condições adequadas de moradia. Muitas das casas eram de pau a pique e estavam infestadas de insetos. Segundo os sanitaristas, as mortes deviam-se a uma parasitose endêmica na região. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Pode-se afirmar que, mais provavelmente, a parasitose em questão é causada por organismos da espécie "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        {
+          "tag": "em",
+          "children": [
+            "Plasmodium vivax."
+          ]
+        },
+        " "
+      ],
+      [
+        " ",
+        " ",
+        {
+          "tag": "em",
+          "children": [
+            "Trypanosoma cruzi."
+          ]
+        },
+        " "
+      ],
+      [
+        " ",
+        " ",
+        {
+          "tag": "em",
+          "children": [
+            "Triatoma infestans."
+          ]
+        },
+        " "
+      ],
+      [
+        " ",
+        " ",
+        {
+          "tag": "em",
+          "children": [
+            "Taenia solium."
+          ]
+        },
+        " "
+      ],
+      [
+        " ",
+        " ",
+        {
+          "tag": "em",
+          "children": [
+            "Schistosoma mansoni."
+          ]
+        },
+        " "
+      ]
+    ],
+    "resposta_correta": 1,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 15,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-b6b70b3c4626b59daadf",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "UDESC",
+    "concurso": "UDESC",
+    "ano": null,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UDESC",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UDESC) Assinale a alternativa correta quanto aos protozoários.",
+    "opcoes": [
+      "Os protozoários de água doce possuem vacúolos pulsáteis ou contráteis, que permitem a digestão através da clasmocitose.",
+      "As amebas são protozoários do filo Sarcodina e se movimentam por meio de cílios.",
+      "Os protozoários são unicelulares, eucariontes e heterotróficos. Vivem na água ou no solo, livres ou em associações com outros seres vivos. Sua digestão é intracelular.",
+      "A reprodução assexuada das amebas ocorre por esquizogonia, originando duas células filhas.",
+      "Os paramécios são protozoários do filo Mastigophora e se locomovem por meio de cílios."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UDESC) Assinale a alternativa correta quanto aos protozoários. "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "Os protozoários de água doce possuem vacúolos pulsáteis ou contráteis, que permitem a digestão através da clasmocitose. "
+      ],
+      [
+        " ",
+        " ",
+        "As amebas são protozoários do filo Sarcodina e se movimentam por meio de cílios. "
+      ],
+      [
+        " ",
+        " ",
+        "Os protozoários são unicelulares, eucariontes e heterotróficos. Vivem na água ou no solo, livres ou em associações com outros seres vivos. Sua digestão é intracelular. "
+      ],
+      [
+        " ",
+        " ",
+        "A reprodução assexuada das amebas ocorre por esquizogonia, originando duas células filhas. "
+      ],
+      [
+        " ",
+        " ",
+        "Os paramécios são protozoários do filo Mastigophora e se locomovem por meio de cílios. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 16,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-9a7e2ad43766b1635cb0",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "MACKENZIE",
+    "concurso": "Mackenzie 2011",
+    "ano": 2011,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "Mackenzie-2011",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(Mackenzie-2011) Planta encontrada no sapato de suspeito. Esse foi o título de uma reportagem publicada em um jornal. O texto dizia que o sapato foi levado a um especialista do Instituto de Botânica, que identificou a amostra como sendo uma alga clorofícea (verde). \n\n Atualmente as algas não são consideradas como plantas verdadeiras porque",
+    "opcoes": [
+      "não possuem organelas membranosas em suas células.",
+      "não possuem os mesmos pigmentos que as plantas.",
+      "não apresentam tecidos especializados.",
+      "não usam água como matéria prima para a fotossíntese.",
+      "não possuem flores."
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(Mackenzie-2011) Planta encontrada no sapato de suspeito. Esse foi o título de uma reportagem publicada em um jornal. O texto dizia que o sapato foi levado a um especialista do Instituto de Botânica, que identificou a amostra como sendo uma alga clorofícea (verde). "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Atualmente as algas não são consideradas como plantas verdadeiras porque "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "não possuem organelas membranosas em suas células. "
+      ],
+      [
+        " ",
+        " ",
+        "não possuem os mesmos pigmentos que as plantas. "
+      ],
+      [
+        " ",
+        " ",
+        "não apresentam tecidos especializados. "
+      ],
+      [
+        " ",
+        " ",
+        "não usam água como matéria prima para a fotossíntese. "
+      ],
+      [
+        " ",
+        " ",
+        "não possuem flores. "
+      ]
+    ],
+    "resposta_correta": 2,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 17,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  },
+  {
+    "id": "sae-b82b5480c5823801c13a",
+    "materia": "Biologia",
+    "conteudo": "Algas e protozoários",
+    "banca": "UDESC",
+    "concurso": "UDESC 2018",
+    "ano": 2018,
+    "tipo_origem": "prova_identificada",
+    "referencia_original": "UDESC-2018",
+    "adaptada": false,
+    "dificuldade": "Difícil",
+    "enunciado": "(UDESC-2018) “Os protozoários apresentam dimensões predominantemente microscópicas. Sua denominação deriva do grego protos e zoon, que significam, respectivamente, ‘primeiro’ e ‘animal’. Atualmente, o termo protozoário diz respeito a protistas heterotróficos unicelulares (na maioria) e que obtém seus alimentos por ingestão ou absorção.” \n\nFonte: RUPPERT & BARNES, 2005.\n\n Analise as proposições em relação aos protozoários e assinale (V) para verdadeira e (F) para falsa. \n\n (________) A maioria dos protozoários é microscópica, no entanto, alguns podem ser vistos a olho nu, como é o caso do Spirostomum, um ciliado de água doce, que alcança 3 mm de comprimento, e o Globigerina, um sarcodíneo marinho, que vive em suspensão na água do mar. \n\n (________) Os protozoários marinhos, assim como os parasitas, não possuem vacúolo pulsátil uma vez que são isotônicos em relação ao meio, ou seja, a sua concentração é semelhante à da água salgada. \n\n (________) Há espécies de protozoários de vida livre que vivem na água doce, no mar e em regiões úmidas, e também espécies simbióticas. Ainda não foram identificadas espécies de protozoários parasitas. \n\n (________) Os protozoários podem utilizar diferentes estruturas para a obtenção de alimentos como pseudópodos, cílios e flagelos, incorporando os alimentos por absorção ou por ingestão, alimentando-se de matéria orgânica morta e também de micro-organismos como bactérias, algas e outros protozoários. \n\n (________) A Malária é uma doença causada pelo protozoário Plasmodium, que parasita as células sanguíneas e as células hepáticas dos seres humanos, causando acessos febris conhecidos como “tremedeira” ou “batedeira”. \n\n Assinale a alternativa correta, de cima para baixo.",
+    "opcoes": [
+      "F – F – V – F – F",
+      "V – F – V – F – V",
+      "V – F – F – F – V",
+      "F – V – V – V – F",
+      "V – V – F – V – V"
+    ],
+    "blocos_enunciado": [
+      {
+        "tag": "p",
+        "children": [
+          " ",
+          "(UDESC-2018) “Os protozoários apresentam dimensões predominantemente microscópicas. Sua denominação deriva do grego protos e zoon, que significam, respectivamente, ‘primeiro’ e ‘animal’. Atualmente, o termo protozoário diz respeito a protistas heterotróficos unicelulares (na maioria) e que obtém seus alimentos por ingestão ou absorção.” "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          "Fonte: RUPPERT & BARNES, 2005."
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Analise as proposições em relação aos protozoários e assinale (V) para verdadeira e (F) para falsa. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " (",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          ") A maioria dos protozoários é microscópica, no entanto, alguns podem ser vistos a olho nu, como é o caso do ",
+          {
+            "tag": "em",
+            "children": [
+              "Spirostomum"
+            ]
+          },
+          ", um ciliado de água doce, que alcança 3 mm de comprimento, e o ",
+          {
+            "tag": "em",
+            "children": [
+              "Globigerina"
+            ]
+          },
+          ", um sarcodíneo marinho, que vive em suspensão na água do mar. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " (",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          ") Os protozoários marinhos, assim como os parasitas, não possuem vacúolo pulsátil uma vez que são isotônicos em relação ao meio, ou seja, a sua concentração é semelhante à da água salgada. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " (",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          ") Há espécies de protozoários de vida livre que vivem na água doce, no mar e em regiões úmidas, e também espécies simbióticas. Ainda não foram identificadas espécies de protozoários parasitas. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " (",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          ") Os protozoários podem utilizar diferentes estruturas para a obtenção de alimentos como pseudópodos, cílios e flagelos, incorporando os alimentos por absorção ou por ingestão, alimentando-se de matéria orgânica morta e também de micro-organismos como bactérias, algas e outros protozoários. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " (",
+          {
+            "tag": "span",
+            "children": [
+              "________"
+            ]
+          },
+          ") A Malária é uma doença causada pelo protozoário ",
+          {
+            "tag": "em",
+            "children": [
+              "Plasmodium"
+            ]
+          },
+          ", que parasita as células sanguíneas e as células hepáticas dos seres humanos, causando acessos febris conhecidos como “tremedeira” ou “batedeira”. "
+        ]
+      },
+      {
+        "tag": "p",
+        "children": [
+          " Assinale a alternativa correta, de cima para baixo. "
+        ]
+      }
+    ],
+    "blocos_opcoes": [
+      [
+        " ",
+        " ",
+        "F – F – V – F – F "
+      ],
+      [
+        " ",
+        " ",
+        "V – F – V – F – V "
+      ],
+      [
+        " ",
+        " ",
+        "V – F – F – F – V "
+      ],
+      [
+        " ",
+        " ",
+        "F – V – V – V – F "
+      ],
+      [
+        " ",
+        " ",
+        "V – V – F – V – V "
+      ]
+    ],
+    "resposta_correta": 4,
+    "tipo_resposta": "multipla_escolha",
+    "origem_livro": {
+      "id_capitulo": "695c1076ba77cf5c87d7e6e0",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Reino protoctista: algas e protozoários",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-reino-protoctista-algas-e-protoz-SQxTO",
+      "titulo_documento": "EXT26_3_BIO_L1_A_04",
+      "numero": 18,
+      "secao": "Enem e vestibulares"
+    },
+    "fonte_gabarito": "Marcação no material autorizado e revisão de consistência do lote"
+  }
+]

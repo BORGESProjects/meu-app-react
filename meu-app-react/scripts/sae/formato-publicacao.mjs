@@ -11,6 +11,8 @@ export function normalizarBlocos(originais,copiarImagem,{alternativa=false}={}) 
   }
   if(!n)return null
   const texto=textoBruto(n).trim(),classe=n.attrs?.class||''
+  // Colunas vazias especificam só a largura; a estrutura semântica está nas células.
+  if(n.tag==='colgroup'&&(n.children||[]).every(c=>typeof c==='string'?!c.trim():c.tag==='col'&&!(c.children||[]).length))return null
   if(n.tag==='label'||classe.split(/\s+/).includes('numeracao')||n.tag==='a'&&texto==='Resolução'||alternativa&&n.tag==='span'&&/^[a-e]\)$/iu.test(texto))return null
   if(['script','style','svg','math'].includes(n.tag))throw Error('Fórmula ou bloco exige conferência visual específica')
   const tag=n.tag==='a'||n.tag==='lacuna'?'span':n.tag==='i'?'em':n.tag==='b'?'strong':/^h[1-6]$/.test(n.tag)?'strong':n.tag==='div'?'p':n.tag

@@ -37,3 +37,11 @@ O formato `blocos_enunciado`/`blocos_opcoes` preserva a ordem dos parágrafos, i
 Os quatro capítulos da primeira frente do Volume 1 de Biologia foram capturados (98 exercícios, 76 marcações únicas de gabarito). Esta publicação cobre apenas o primeiro capítulo. Vírus e fungos, bactérias e arqueas, algas e protozoários ainda precisam de revisão. Não confundir captura com publicação.
 
 Reconstrução: `node scripts/sae/publicar-taxonomia.mjs`. Testes: `node --test scripts/sae-taxonomia.test.mjs`.
+
+## Lote de Biologia: microrganismos
+
+`public/acervo/estudo-biologia-microorganismos/questoes.json` reúne 48 questões: 15 de Vírus e fungos, 18 de Bactérias e arqueas e 15 de Algas e protozoários. Dos 75 registros, 26 ficam em quarentena e uma questão ENEM já existente é excluída como duplicata. A auditoria registra todos os IDs e os motivos, inclusive mistura de exercícios, alternativas repetidas, erros no gabarito e formatos não objetivos. Não inferir chaves ou apagar essas pendências.
+
+O fluxograma do ENEM 2024 é recurso original local, com hash conferido. Tabelas mantêm células, linhas, subscritos e textos; `colgroup` vazio de conteúdo, que define apenas larguras, pode ser descartado sem eliminar dados. UTFPR, UCPel, ACAFE, FMP e FALBE são reconhecidas a partir da identificação explícita no exercício. O gabarito continua atribuído ao material de estudo autorizado, sem falsa alegação de validação em caderno oficial.
+
+Reconstrução: `node scripts/sae/publicar-microorganismos.mjs`. Testes: `node --test scripts/sae-microorganismos.test.mjs`. Os quatro capítulos da Frente A / Volume 1 de Biologia ficam contabilizados: 98 registros, 66 publicados, 30 em quarentena e dois duplicados. Isso não conclui os demais volumes e matérias do escopo.
