@@ -65,7 +65,7 @@ test('EsPCEx 2024 questão 36 conserva a terceira alternativa e o final do enunc
  const q=JSON.parse(fs.readFileSync('public/acervo/espcex-2017-2026/questoes.json')).find(q=>q.id==='espcex-2024-d2-36')
  assert.match(q.enunciado,/presbiterianos \(na Escócia\)/u)
  assert.equal(q.opcoes[2],'Calvinismo (ou Reforma Calvinista).');assert.equal(q.resposta_correta,2)
- assert.match(q.opcoes_imagens[2],/revisada-C\.webp$/u)
+ assert.match(q.opcoes_imagens[2],/integral-C\.webp$/u)
  assert.ok(fs.statSync('public'+q.opcoes_imagens[2]).size>1000)
 })
 

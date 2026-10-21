@@ -124,6 +124,14 @@ function semTextoDeApoio(questao) {
 }
 
 function identidadeConteudo(questao) {
+  // Nas digitalizações conferidas, o texto auxiliar não é o enunciado real.
+  // Duas questões com rótulos iguais podem conter fórmulas e figuras distintas.
+  if (/^espcex-20\d{2}-d[12]-\d{2}$/u.test(String(questao.id || ''))
+      && questao.banca === 'EsPCEx' && questao.extracao_visual_verificada === true
+      && /^[a-f0-9]{64}$/u.test(questao.identidade_visual || '')
+      && String(questao.imagem_original || '').startsWith('/acervo/espcex-2017-2026/imagens/reparadas/')) {
+    return `espcex-visual:${questao.identidade_visual}`
+  }
   // Fórmulas distintas podem produzir o mesmo texto auxiliar na extração.
   // O digest inclui os recortes de enunciado, alternativas e texto-base.
   if (/^teorema-[a-f0-9]{16}$/.test(questao.id || '')
