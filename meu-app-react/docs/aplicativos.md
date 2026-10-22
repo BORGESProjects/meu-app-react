@@ -8,7 +8,7 @@ O pacote inicial contém 25.495 questões, 38.654 referências visuais verificad
 
 O manifesto está em `native/acervo/manifesto.json`; os dados, em `native/acervo/questoes.json`. O aplicativo só abre o pacote se a assinatura e a contagem conferirem. O empacotamento verifica cada imagem e interrompe se algum recurso faltar. Os PDFs completos acessados por links de consulta continuam externos; os recortes e textos usados para resolver as questões estão incluídos.
 
-As edições iniciais incluem todo o acervo, não apenas uma janela remota do site. Novas questões publicadas posteriormente exigem uma nova edição do pacote. Esta versão ainda não tem atualização incremental por matéria.
+As edições iniciais incluem todo o acervo, não apenas uma janela remota do site. O botão **Atualizar questões online** busca novas publicações do banco e da central de importações, e a publicação administrativa também atualiza a lista. Novas questões posteriores à edição instalada ficam disponíveis online; para incorporá-las à cópia offline é necessário gerar uma nova edição do pacote. Esta versão ainda não tem download incremental por matéria.
 
 ## Com e sem internet
 

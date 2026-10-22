@@ -15,7 +15,7 @@ permissions:
   contents: read
 concurrency:
   group: aplicativos-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 defaults:
   run:
     working-directory: meu-app-react
@@ -31,6 +31,10 @@ jobs:
           cache: npm
           cache-dependency-path: meu-app-react/package-lock.json
       - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: meu-app-react/src-tauri -> target
+          cache-on-failure: true
       - run: npm ci
       - run: npm run app:testar
       - run: npm run app:windows
@@ -70,6 +74,10 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           targets: aarch64-linux-android
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: meu-app-react/src-tauri -> target
+          cache-on-failure: true
       - run: npm ci
       - run: npm run app:testar
       - run: npm run app:android:iniciar

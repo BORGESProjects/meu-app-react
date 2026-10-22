@@ -1,7 +1,16 @@
 export const aplicativoNativo = import.meta.env?.VITE_APP_NATIVE === 'true'
 let mapaRecursos = Object.create(null)
-export function configurarRecursos(mapa) { mapaRecursos = mapa || Object.create(null) }
-export function recursoLocal(url) { return aplicativoNativo ? (mapaRecursos[url] || url) : url }
+let recursosInstalados = new Set()
+export function configurarRecursos(mapa,recursos=[]) {mapaRecursos = mapa || Object.create(null);recursosInstalados=new Set(recursos.map(r=>r.url))}
+export function resolverRecurso(url,{nativo=aplicativoNativo,mapa=mapaRecursos,locais=recursosInstalados}={}) {
+  if(!nativo)return url
+  if(mapa[url] || locais.has(url))return mapa[url] || url
+  // Questões publicadas depois da edição instalada continuam disponíveis online.
+  if(typeof url==='string' && url.startsWith('/acervo/'))return 'https://apaprovado.vercel.app'+url
+  if(typeof url==='string' && url.startsWith('/api/'))return 'https://aprovado-api.onrender.com'+url
+  return url
+}
+export const recursoLocal = url=>resolverRecurso(url)
 export async function carregarAcervoInstalado(requisitar = fetch) {
   const [m,q] = await Promise.all([requisitar('/offline/manifesto.json'),requisitar('/offline/questoes.json')])
   if (!m.ok || !q.ok) throw Error('Não foi possível abrir o acervo instalado.')
@@ -10,7 +19,7 @@ export async function carregarAcervoInstalado(requisitar = fetch) {
   if (manifesto.versao !== 1 || hash !== manifesto.sha256) throw Error('O acervo instalado não passou na verificação de integridade.')
   const questoes = JSON.parse(new TextDecoder().decode(bytes))
   if (!Array.isArray(questoes) || questoes.length !== manifesto.questoes) throw Error('O acervo instalado está incompleto.')
-  configurarRecursos(manifesto.mapa)
+  configurarRecursos(manifesto.mapa,manifesto.recursos)
   return {questoes,manifesto}
 }
 const chaveConta = 'ap-aprovado:conta-offline:v1'

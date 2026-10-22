@@ -3,7 +3,7 @@ import assert from 'node:assert/strict'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import {sha256,raiz,caminhoPublico,recursosQuestoes} from './empacotar-acervo.mjs'
-import {carregarAcervoInstalado,lembrarConta,contaOffline,esquecerConta} from '../src/plataforma.js'
+import {carregarAcervoInstalado,lembrarConta,contaOffline,esquecerConta,resolverRecurso} from '../src/plataforma.js'
 import {criarEditaisOffline} from '../src/editaisOffline.js'
 import {criarControleProgresso} from '../src/progressoUsuario.js'
 import {unirQuestoes} from '../src/acervo.js'
@@ -36,6 +36,14 @@ test('o carregamento rejeita pacote adulterado ou contagem divergente',async()=>
   assert.equal((await carregarAcervoInstalado(requisitar)).questoes.length,1)
   m.questoes=2;await assert.rejects(carregarAcervoInstalado(requisitar),/incompleto/)
   m.sha256='alterado';await assert.rejects(carregarAcervoInstalado(requisitar),/integridade/)
+})
+test('figuras instaladas ficam locais; imagens de novas publicações usam a origem correta',()=>{
+  const op={nativo:true,mapa:{'https://enem.dev/figura.png':'/native-media/conferida.png'},locais:new Set(['/acervo/prova/figura.webp'])}
+  assert.equal(resolverRecurso('/acervo/prova/figura.webp',op),'/acervo/prova/figura.webp')
+  assert.equal(resolverRecurso('https://enem.dev/figura.png',op),'/native-media/conferida.png')
+  assert.equal(resolverRecurso('/acervo/nova-prova/figura.webp',op),'https://apaprovado.vercel.app/acervo/nova-prova/figura.webp')
+  assert.equal(resolverRecurso('/api/acervo/novo/paginas/2',op),'https://aprovado-api.onrender.com/api/acervo/novo/paginas/2')
+  assert.equal(resolverRecurso('/acervo/nova-prova/figura.webp',{...op,nativo:false}),'/acervo/nova-prova/figura.webp')
 })
 test('a conta offline não ganha token ou privilégios e sair remove a identificação',()=>{
   const s=storage();lembrarConta({access_token:'nao-copiar',user:{id:'a',email:'a@example.test',app_metadata:{role:'admin'},user_metadata:{foco_estudo:'vestibulares',role:'admin'}}},s)

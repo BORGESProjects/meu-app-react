@@ -83,6 +83,7 @@ export default function App() {
   const processamentoAcervo = useRef(null)
   const [carregandoAcervo, setCarregandoAcervo] = useState(true)
   const [falhasAcervo, setFalhasAcervo] = useState([])
+  const [avisoAcervoNativo,setAvisoAcervoNativo] = useState('')
   const [limiteVisivel, setLimiteVisivel] = useState(40)
   const [respostasSelecionadas, setRespostasSelecionadas] = useState({})
   const [feedbacks, setFeedbacks] = useState({})
@@ -158,7 +159,7 @@ export default function App() {
 
   useEffect(() => {
     if (!session?.user?.id || !progressoCarregado) return
-    buscarQuestoes()
+    buscarQuestoes(false)
     const controle = requisicaoAcervo
     return () => { controle.current++; processamentoAcervo.current?.cancelar() }
   }, [session?.user?.id, progressoCarregado])
@@ -181,10 +182,11 @@ export default function App() {
     if (authReady && !checkingAdmin && !isAdmin && ['cadastrar', 'importar'].includes(abaAtiva)) setAbaAtiva('conta')
   }, [authReady, checkingAdmin, isAdmin, abaAtiva])
 
-  async function buscarQuestoes() {
+  async function buscarQuestoes(atualizarNativo = true) {
     const requisicao = ++requisicaoAcervo.current
     setCarregandoAcervo(true)
     setFalhasAcervo([])
+    setAvisoAcervoNativo('')
     processamentoAcervo.current ||= criarProcessadorAcervo()
     async function preparar(itens) {
       if (requisicao !== requisicaoAcervo.current) return
@@ -192,7 +194,24 @@ export default function App() {
       if (requisicao === requisicaoAcervo.current) setAcervoPreparado(resultado)
     }
     if (aplicativoNativo) {
-      try {const {questoes:instaladas} = await carregarAcervoInstalado();await preparar(instaladas)}
+      try {
+        const {questoes:instaladas} = await carregarAcervoInstalado();await preparar(instaladas)
+        if(atualizarNativo) {
+          if(!navigator.onLine || session?.offline) {setAvisoAcervoNativo('A cópia instalada está disponível. Reconecte sua conta para buscar novas questões.');return}
+          try {
+            const [bancoAtual,importadasAtuais]=await Promise.all([
+              (async()=>{const itens=[];for(let inicio=0;;inicio+=500){
+                const {data,error}=await supabase.from('questoes').select('*').order('id',{ascending:false}).range(inicio,inicio+499).abortSignal(AbortSignal.timeout(30000))
+                if(error)throw error
+                itens.push(...(data||[]));if(!data || data.length<500)return itens
+              }})(),
+              (async()=>{const r=await fetchApi(`${API_URL}/api/acervo`,{signal:AbortSignal.timeout(90000)});if(!r.ok)throw Error();const q=await r.json();if(!Array.isArray(q))throw Error();return q})(),
+            ])
+            await preparar([...instaladas,...bancoAtual,...importadasAtuais])
+            if(requisicao===requisicaoAcervo.current)setAvisoAcervoNativo('Atualizações online carregadas. As 25.495 questões da edição instalada continuam disponíveis sem internet; novas adições entram no próximo pacote offline.')
+          } catch(e) {if(e.name!=='AbortError' && requisicao===requisicaoAcervo.current)setAvisoAcervoNativo('Não foi possível buscar atualizações online. A cópia instalada foi preservada e continua disponível.')}
+        }
+      }
       catch(e) {if (e.name !== 'AbortError' && requisicao === requisicaoAcervo.current) setFalhasAcervo([e.message])}
       finally {if (requisicao === requisicaoAcervo.current) setCarregandoAcervo(false)}
       return
@@ -805,6 +824,7 @@ export default function App() {
                 : 'Escolha os filtros abaixo para exibir as questões que deseja estudar.'}</p>
               {carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Carregando o restante do acervo… A quantidade acima ainda é parcial.</p>}
               {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Acervo carregado: {questoesDoFoco.length.toLocaleString('pt-BR')} questões neste foco.</p>}
+              {aplicativoNativo && <div className="mt-3 text-sm"><button className="rounded-xl border border-indigo-500 px-4 py-2 text-indigo-200 disabled:opacity-50" disabled={carregandoAcervo} onClick={()=>buscarQuestoes(true)}>Atualizar questões online</button>{avisoAcervoNativo && <p role="status" className="mt-2 text-slate-300">{avisoAcervoNativo}</p>}</div>}
               {falhasAcervo.length > 0 && <div role="alert" className="text-amber-300 text-sm mt-2">Não foi possível carregar: {falhasAcervo.join(' e ')}. A lista pode estar incompleta. <button className="underline font-semibold" onClick={buscarQuestoes} disabled={carregandoAcervo}>Tentar carregar novamente</button></div>}
               <div className="flex flex-wrap gap-4 mt-3 text-sm text-indigo-300">
                 <a href="/acervo/esa-2025/prova-original.pdf" target="_blank" rel="noreferrer">ESA 2025: prova completa e proposta de redação ↗</a>
