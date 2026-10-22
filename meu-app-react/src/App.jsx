@@ -12,6 +12,7 @@ import { supabase } from './supabaseClient'
 import { tentarLeitura, carregarEmEtapas } from './carregarAcervo'
 import catalogoLivros from './data/livrosComplementares.json'
 import { carregarLoteLivro } from './livrosAcervo'
+import { criarProcessadorAcervo } from './processarAcervo'
 import { opcoesFiltro } from './filtros'
 import { indexarFiltros, filtrarIndice, opcoesRelacionadas, atualizarFiltrosRelacionados } from './indiceFiltros'
 import { ESPECIFICAS_UEM } from './uem'
@@ -76,7 +77,9 @@ export default function App() {
   const [checkingAdmin, setCheckingAdmin] = useState(false)
 
   // Estados das Questões
-  const [questoes, setQuestoes] = useState(() => unirQuestoes())
+  const [acervoPreparado, setAcervoPreparado] = useState(() => ({questoes: unirQuestoes(), indice: null}))
+  const {questoes} = acervoPreparado
+  const processamentoAcervo = useRef(null)
   const [carregandoAcervo, setCarregandoAcervo] = useState(true)
   const [falhasAcervo, setFalhasAcervo] = useState([])
   const [limiteVisivel, setLimiteVisivel] = useState(40)
@@ -149,7 +152,7 @@ export default function App() {
     if (!session?.user?.id || !progressoCarregado) return
     buscarQuestoes()
     const controle = requisicaoAcervo
-    return () => { controle.current++ }
+    return () => { controle.current++; processamentoAcervo.current?.cancelar() }
   }, [session?.user?.id, progressoCarregado])
 
   useEffect(() => {
@@ -174,6 +177,12 @@ export default function App() {
     const requisicao = ++requisicaoAcervo.current
     setCarregandoAcervo(true)
     setFalhasAcervo([])
+    processamentoAcervo.current ||= criarProcessadorAcervo()
+    async function preparar(itens) {
+      if (requisicao !== requisicaoAcervo.current) return
+      const resultado = await processamentoAcervo.current.preparar(itens)
+      if (requisicao === requisicaoAcervo.current) setAcervoPreparado(resultado)
+    }
     const banco = tentarLeitura(async () => {
       const todas = []
       for (let inicio = 0; ; inicio += 500) {
@@ -457,13 +466,19 @@ export default function App() {
     const resultados = await carregarEmEtapas([banco,importadas,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2026,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,ifpr2020,ifpr2019,uem2025,uem2025Inverno,uemHistorico,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina,federaisRevisadas,teoremaRevisadas,modelosAtomicos,taxonomiaBiologia,microorganismosBiologia,historiaAntigaRevisada,geografiaIntroducaoRevisada,...leiturasLivros], estaticas => {
       if (requisicao !== requisicaoAcervo.current) return
       const parciais = estaticas.flatMap(r => r.status === 'fulfilled' && Array.isArray(r.value) ? r.value : [])
-      setQuestoes(unirQuestoes(parciais))
+      void preparar(parciais).catch(() => { /* A etapa final confirma ou informa a falha. */ })
     })
     if (requisicao !== requisicaoAcervo.current) return
     const carregadas = resultados.flatMap(resultado => resultado.status === 'fulfilled' && Array.isArray(resultado.value) ? resultado.value : [])
-    setQuestoes(unirQuestoes(carregadas))
-    setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
-    setCarregandoAcervo(false)
+    try {
+      await preparar(carregadas)
+      if (requisicao !== requisicaoAcervo.current) return
+      setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
+    } catch (erro) {
+      if (erro.name !== 'AbortError' && requisicao === requisicaoAcervo.current) setFalhasAcervo(['organização do acervo'])
+    } finally {
+      if (requisicao === requisicaoAcervo.current) setCarregandoAcervo(false)
+    }
   }
 
   function registarHoras(e) {
@@ -651,7 +666,9 @@ export default function App() {
     .filter(valores => valores.length > 0).length
   const temFiltrosAtivos = totalFiltrosAtivos > 0
 
-  const indiceFiltros = useMemo(() => indexarFiltros(questoesDoFoco), [questoesDoFoco])
+  const indiceFiltros = useMemo(() => acervoPreparado.indice
+    ? acervoPreparado.indice.filter(item => pertenceAoFoco(item.questao, focoEstudo, true))
+    : indexarFiltros(questoesDoFoco), [acervoPreparado.indice, questoesDoFoco, focoEstudo])
   const filtrosAtuais = useMemo(() => ({ano:filtrosAno,materia:filtrosMateria,conteudo:filtrosConteudo,banca:filtrosBanca,dificuldade:filtrosDificuldade}), [filtrosAno,filtrosMateria,filtrosConteudo,filtrosBanca,filtrosDificuldade])
   const opcoesAtuais = useMemo(() => opcoesRelacionadas(indiceFiltros,filtrosAtuais), [indiceFiltros,filtrosAtuais])
   const questoesFiltradas = useMemo(() => filtrarIndice(indiceFiltros,filtrosAtuais), [indiceFiltros,filtrosAtuais])

@@ -16,6 +16,22 @@ BEGIN
 END $$;
 
 -- Every authenticated account owns exactly one private progress record.
+-- Legacy rows are shared templates, not private student progress. Block direct
+-- REST writes too; protecting only the Java endpoints does not protect PostgREST.
+DO $$
+BEGIN
+    IF to_regclass('public.edital_itens') IS NOT NULL THEN
+        REVOKE INSERT, UPDATE, DELETE, TRUNCATE ON TABLE public.edital_itens FROM anon, authenticated;
+        GRANT SELECT ON TABLE public.edital_itens TO anon, authenticated;
+        ALTER TABLE public.edital_itens ENABLE ROW LEVEL SECURITY;
+        IF NOT EXISTS (SELECT 1 FROM pg_policies WHERE schemaname='public'
+            AND tablename='edital_itens' AND policyname='edital_itens_shared_read') THEN
+            CREATE POLICY edital_itens_shared_read ON public.edital_itens
+                FOR SELECT TO anon, authenticated USING (true);
+        END IF;
+    END IF;
+END $$;
+
 CREATE TABLE IF NOT EXISTS public.progresso_usuario (
     user_id uuid PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
     horas_estudo jsonb NOT NULL DEFAULT '[]'::jsonb,

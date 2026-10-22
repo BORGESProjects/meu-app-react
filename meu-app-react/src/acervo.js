@@ -266,7 +266,9 @@ export function unirQuestoes(cadastradas = []) {
     .filter(questaoPublicavel)
     .forEach(q => mapa.set(origem(q), q))
   const porConteudo = new Map()
-  for (const questao of [...mapa.values()].filter(questaoPublicavel)) {
+  // Só entram no mapa registros já validados. Repetir a validação aqui
+  // percorria novamente todos os blocos, tabelas e fórmulas do acervo inteiro.
+  for (const questao of mapa.values()) {
     const chave = identidadeConteudo(questao)
     if (!porConteudo.has(chave)) porConteudo.set(chave, [])
     porConteudo.get(chave).push(questao)
