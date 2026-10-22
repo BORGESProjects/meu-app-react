@@ -1,5 +1,5 @@
 import {useEffect,useRef,useState} from 'react'
-import {API_URL} from '../api'
+import {API_URL,fetchApi} from '../api'
 import {supabase} from '../supabaseClient'
 import {temasRedacao,bancasRedacao} from '../data/temasRedacao'
 import {PERFIS_REDACAO,assinaturaRedacao,estatisticasRedacao,validarRedacao,solicitarCorrecao,lerRascunho,salvarRascunho,textoRelatorio} from '../redacao'
@@ -38,7 +38,7 @@ export default function Redacao({session,foco}) {
   try {
    const {data,error}=await supabase.auth.getSession()
    if(error||data.session?.user?.id!==userId)throw new Error('Entre novamente para corrigir. Seu rascunho foi mantido.')
-   const resposta=await solicitarCorrecao({url:API_URL+'/api/ia/corrigir-redacao',redacao:copia,token:data.session.access_token,chave:import.meta.env.VITE_SUPABASE_ANON_KEY,signal:controle.signal})
+   const resposta=await solicitarCorrecao({fetcher:fetchApi,url:API_URL+'/api/ia/corrigir-redacao',redacao:copia,token:data.session.access_token,chave:import.meta.env.VITE_SUPABASE_ANON_KEY,signal:controle.signal})
    if(token!==versao.current)return
    const item={id:crypto.randomUUID(),criadaEm:new Date().toISOString(),redacao:copia,resultado:resposta}
    const atualizados=[item,...historico.filter(h=>assinaturaRedacao(h.redacao)!==chave)].slice(0,5)

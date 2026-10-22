@@ -1,14 +1,13 @@
 import { useRef, useState } from 'react'
 import { mensagemErroCadastro } from '../errosAutenticacao'
-import { supabase } from '../supabaseClient'
-import {aplicativoNativo,esquecerConta} from '../plataforma'
+import { supabase, sairDaConta } from '../supabaseClient'
 
 const field = 'w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30'
 const button = 'rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-600/20 disabled:cursor-not-allowed disabled:opacity-50'
 
 export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, totais }) {
   const enviando = useRef(false)
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState(session?.user?.email || '')
   const [senha, setSenha] = useState('')
   const [modo, setModo] = useState('entrar')
   const [busy, setBusy] = useState(false)
@@ -51,8 +50,9 @@ export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, 
       <span className={`rounded-full px-3 py-1 text-xs font-bold ${isAdmin ? 'bg-emerald-900 text-emerald-200' : 'bg-slate-800 text-slate-300'}`}>
         {checkingAdmin ? 'Verificando acesso…' : isAdmin ? 'Administrador' : 'Usuário'}
       </span>
-      <button className="text-sm font-semibold text-indigo-300 hover:text-indigo-200" onClick={() => {if(aplicativoNativo)esquecerConta();void supabase.auth.signOut({scope:'local'})}}>Sair da conta</button>
+      <button className="text-sm font-semibold text-indigo-300 hover:text-indigo-200" onClick={() => sairDaConta()}>Sair da conta</button>
     </div>
+    {session.offline && <form onSubmit={enviar} className="mt-5 space-y-3"><p className="text-sm text-amber-200">Você está estudando com sua conta local. Para renovar o acesso e sincronizar, conecte-se à internet e entre novamente.</p><label className="block">Senha<input type="password" autoComplete="current-password" value={senha} onChange={e=>setSenha(e.target.value)} required minLength={8} className={field}/></label><button disabled={busy} className={button}>Reconectar à conta</button>{erro && <p role="alert">{erro}</p>}</form>}
     {isAdmin && <p className="mt-5 text-sm text-slate-400">As áreas Cadastrar e Importar PDF estão liberadas no menu para esta conta.</p>}
   </section>
 

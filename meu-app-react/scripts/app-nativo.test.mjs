@@ -7,6 +7,7 @@ import {carregarAcervoInstalado,lembrarConta,contaOffline,esquecerConta} from '.
 import {criarEditaisOffline} from '../src/editaisOffline.js'
 import {criarControleProgresso} from '../src/progressoUsuario.js'
 import {unirQuestoes} from '../src/acervo.js'
+import {destinoApiPermitido,transportarApi} from '../src/transporteApi.js'
 function storage() {
   const dados=new Map()
   return {getItem:k=>dados.get(k)||null,setItem:(k,v)=>dados.set(k,v),removeItem:k=>dados.delete(k),key:i=>[...dados.keys()][i],get length(){return dados.size}}
@@ -94,4 +95,14 @@ test('permissões nativas não autorizam arquivos arbitrários ou shell',async()
   assert.ok(!/shell|allow-execute|fs:default|\$HOME|\*\*/u.test(t))
   assert.ok(c.permissions.includes('dialog:allow-save'));assert.ok(c.permissions.includes('fs:allow-write-file'))
   assert.equal(c.remote,undefined)
+})
+test('o transporte nativo preserva autenticação e restringe os destinos',async()=>{
+  const url='https://aprovado-api.onrender.com/api/redacoes/corrigir',sinal=new AbortController().signal
+  let chamada
+  const opcoes={method:'POST',headers:{Authorization:'Bearer exemplo'},signal:sinal,body:'teste'}
+  await transportarApi(url,opcoes,{nativo:true,carregar:async()=>({fetch:async(...args)=>{chamada=args;return new Response('ok')}})})
+  assert.equal(chamada[0],url);assert.equal(chamada[1].headers.Authorization,'Bearer exemplo');assert.equal(chamada[1].signal,sinal);assert.equal(chamada[1].body,'teste');assert.equal(chamada[1].maxRedirections,0)
+  for(const u of ['http://127.0.0.1/api/a','https://aprovado-api.onrender.com.evil.test/api/a','https://aprovado-api.onrender.com/privado','file:///etc/passwd']) {
+    assert.equal(destinoApiPermitido(u),false);await assert.rejects(transportarApi(u,{}, {nativo:true}),/não autorizado/)
+  }
 })

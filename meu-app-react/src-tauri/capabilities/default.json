@@ -9,6 +9,7 @@
     "core:default",
     "dialog:allow-save",
     "fs:allow-write-file",
+    {"identifier":"http:default","allow":[{"url":"https://aprovado-api.onrender.com/api/*"}]},
     {"identifier":"opener:allow-open-url","allow":[{"url":"https://*"},{"url":"http://*"}]}
   ]
 }

@@ -1,7 +1,7 @@
 import { mensagemErroCadastro } from '../errosAutenticacao'
 import { useEffect, useRef, useState } from 'react'
-import { supabase } from '../supabaseClient'
-import { API_URL } from '../api'
+import { supabase, sairDaConta } from '../supabaseClient'
+import { API_URL, fetchApi } from '../api'
 
 const field = 'w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100'
 const button = 'rounded-xl bg-indigo-600 px-4 py-2 font-semibold text-sm text-white disabled:opacity-40 disabled:cursor-not-allowed'
@@ -26,7 +26,7 @@ function gerarSql(job) {
 async function api(path, options = {}) {
   const { data } = await supabase.auth.getSession()
   if (!data.session) throw new Error('Entre com sua conta de administrador.')
-  const response = await fetch(`${API_URL}/api/importacoes${path}`, {
+  const response = await fetchApi(`${API_URL}/api/importacoes${path}`, {
     ...options,
     headers: { Authorization: `Bearer ${data.session.access_token}`, 'X-Supabase-Key': import.meta.env.VITE_SUPABASE_ANON_KEY, ...options.headers },
     signal: AbortSignal.timeout(90000),
@@ -244,7 +244,7 @@ export default function ImportarPdf({ onPublicado }) {
       <label className="block">Senha<input className={field} type="password" required autoComplete="current-password" value={senha} onChange={e=>setSenha(e.target.value)} /></label>
       <button className={button} disabled={busy}>{busy?'Aguarde…':'Entrar'}</button>
       <button type="button" className="block text-sm text-indigo-300" disabled={busy} onClick={criarAcesso}>Primeiro acesso: criar minha conta</button>
-    </form> : <div className="flex flex-wrap items-center gap-4 text-sm"><span>{session.user.email}</span><button onClick={()=>run(()=>supabase.auth.signOut())} disabled={busy} className="text-indigo-300">Sair da conta</button>{!autorizado && (checkingAccess ? <span className="text-slate-400">Validando acesso de administrador…</span> : <button className={button} onClick={()=>setAccessAttempt(value=>value+1)}>Tentar conectar novamente</button>)}</div>}
+    </form> : <div className="flex flex-wrap items-center gap-4 text-sm"><span>{session.user.email}</span><button onClick={()=>run(()=>sairDaConta())} disabled={busy} className="text-indigo-300">Sair da conta</button>{!autorizado && (checkingAccess ? <span className="text-slate-400">Validando acesso de administrador…</span> : <button className={button} onClick={()=>setAccessAttempt(value=>value+1)}>Tentar conectar novamente</button>)}</div>}
     {autorizado && <>
       {!job && <form onSubmit={upload} className="space-y-4 rounded-2xl bg-slate-900 border border-slate-800 p-4 sm:p-6">
         <h2 className="text-xl font-bold">1. Enviar documentos</h2>

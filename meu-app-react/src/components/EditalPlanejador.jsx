@@ -1,6 +1,6 @@
 import {lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import {supabase} from '../supabaseClient'
-import {API_URL} from '../api'
+import {API_URL,fetchApi} from '../api'
 import {STATUS_EDITAL, novoIdEdital, lerConteudosEdital, acrescentarConteudos, alterarTopico, resumoEdital, topicoVisivel, identidadeEdital, copiarEditalAntigo} from '../editais'
 import './EditalPlanejador.css'
 import {aplicativoNativo} from '../plataforma'
@@ -139,7 +139,7 @@ export default function EditalPlanejador({userId, client = supabase}) {
   async function carregarAntigos() {
     setLendoAntigos(true); setErro('')
     try {
-      const r = await fetch(`${API_URL}/api/editais`, {signal:AbortSignal.timeout(60000)})
+      const r = await fetchApi(`${API_URL}/api/editais`, {signal:AbortSignal.timeout(60000)})
       if (!r.ok) throw new Error()
       const data = await r.json()
       if (!Array.isArray(data)) throw new Error()

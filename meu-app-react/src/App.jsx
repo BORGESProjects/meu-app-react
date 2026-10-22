@@ -6,9 +6,9 @@ import Conta from './components/Conta'
 import SessaoEstudo from './components/SessaoEstudo'
 import EstadoProgresso from './components/EstadoProgresso'
 import {useProgressoUsuario} from './useProgressoUsuario'
-import { API_URL } from './api'
+import { API_URL, fetchApi } from './api'
 import { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react'
-import { supabase } from './supabaseClient'
+import { supabase, sairDaConta } from './supabaseClient'
 import { tentarLeitura, carregarEmEtapas } from './carregarAcervo'
 import catalogoLivros from './data/livrosComplementares.json'
 import { carregarLoteLivro } from './livrosAcervo'
@@ -143,9 +143,9 @@ export default function App() {
   useEffect(() => {
     const recuperar = current => {
       if (aplicativoNativo && current) {try {lembrarConta(current)} catch { /* Armazenamento cheio não impede o login. */ }}
-      setSession(current || (aplicativoNativo && !navigator.onLine ? contaOffline() : null));setAuthReady(true)
+      setSession(current || (aplicativoNativo ? contaOffline() : null));setAuthReady(true)
     }
-    if(aplicativoNativo && !navigator.onLine)recuperar(null)
+    if(aplicativoNativo)recuperar(null)
     supabase.auth.getSession().then(({data})=>recuperar(data.session)).catch(()=>recuperar(null))
     const { data } = supabase.auth.onAuthStateChange((_event, current) => {
       recuperar(current)
@@ -167,7 +167,7 @@ export default function App() {
     let cancelled = false
     if (!session || session.offline) { setIsAdmin(false); setCheckingAdmin(false); return }
     setCheckingAdmin(true)
-    fetch(`${API_URL}/api/importacoes/acesso`, {
+    fetchApi(`${API_URL}/api/importacoes/acesso`, {
       headers: { Authorization: `Bearer ${session.access_token}`, 'X-Supabase-Key': import.meta.env.VITE_SUPABASE_ANON_KEY },
       signal: AbortSignal.timeout(30000),
     }).then(response => {
@@ -209,7 +209,7 @@ export default function App() {
       }
     })
     const importadas = tentarLeitura(async () => {
-      const r = await fetch(`${API_URL}/api/acervo`, {signal:AbortSignal.timeout(90000)})
+      const r = await fetchApi(`${API_URL}/api/acervo`, {signal:AbortSignal.timeout(90000)})
       if (!r.ok) throw new Error('Acervo indisponível')
       const data = await r.json()
       if (!Array.isArray(data)) throw new Error('Resposta inválida do acervo')
@@ -573,7 +573,7 @@ export default function App() {
     if (!session || !isAdmin) { setAbaAtiva('conta'); return }
     const questaoParaEnviar = { ...novaQuestao, opcoes: [...novaQuestao.opcoes] }
     try {
-      const response = await fetch(`${API_URL}/api/admin/questoes`, {
+      const response = await fetchApi(`${API_URL}/api/admin/questoes`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${session.access_token}`, 'X-Supabase-Key': import.meta.env.VITE_SUPABASE_ANON_KEY },
         body: JSON.stringify(questaoParaEnviar),
@@ -756,7 +756,7 @@ export default function App() {
 
   if (!progressoCarregado) return <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center gap-4 px-6 text-center">
     <p className="text-sm text-indigo-300">Carregando seu progresso…</p>
-    {erroProgresso && <><EstadoProgresso progresso={progresso} /><button className="text-sm text-slate-400" onClick={() => supabase.auth.signOut()}>Voltar ao login</button></>}
+    {erroProgresso && <><EstadoProgresso progresso={progresso} /><button className="text-sm text-slate-400" onClick={() => sairDaConta()}>Voltar ao login</button></>}
   </div>
 
   return (
