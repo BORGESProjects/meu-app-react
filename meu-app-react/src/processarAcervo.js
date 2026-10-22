@@ -1,3 +1,5 @@
+import {conferirAcervoParaLeitura} from './acervoLeitura.js'
+
 // O worker recebe apenas questões públicas, nunca sessão ou dados de progresso.
 export function criarProcessadorAcervo(criarWorker = () => new Worker(new URL('./acervo.worker.js', import.meta.url), {type: 'module'})) {
   let atual
@@ -25,10 +27,16 @@ export function criarProcessadorAcervo(criarWorker = () => new Worker(new URL('.
         if (erro) reject(erro)
         else resolve(resultado)
       }
-      worker.onmessage = ({data}) => {
+      worker.onmessage = async ({data}) => {
+        if (atual !== job) return
         if (data?.erro || !Array.isArray(data?.resultado?.questoes) || !Array.isArray(data?.resultado?.indice)) {
           terminar(new Error('Não foi possível organizar o acervo. Tente carregar novamente.'))
-        } else terminar(null, data.resultado)
+        } else {
+          try {
+            await conferirAcervoParaLeitura(data.resultado.questoes, {ativo: () => atual === job})
+            terminar(null, data.resultado)
+          } catch (erro) { terminar(erro) }
+        }
       }
       worker.onerror = () => terminar(new Error('O carregamento do acervo foi interrompido. Tente novamente.'))
       job.timer = setTimeout(() => terminar(new Error('O acervo demorou para carregar. Tente novamente.')), 90000)

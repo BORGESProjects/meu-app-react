@@ -25,9 +25,11 @@ Medição local sobre 31.531 registros de entrada, usando os mesmos arquivos e c
 
 A redução de aproximadamente 32% se refere à etapa de união nesta medição, não a todo o tempo de abertura do site. Rede, início do servidor gratuito e dispositivo continuam influenciando a carga. A indexação também foi retirada da interface, sem alegação de que ficou 32% mais rápida.
 
+Na conferência pela interface, a abertura de Simulados também apresentou trabalho repetido. O acervo preparado passa por uma confirmação em pequenos intervalos, que cedem tempo à navegação, e seus objetos/alternativas/blocos são congelados recursivamente. Só depois de validar o conteúdo o objeto entra em um cache interno de leitura. Nenhuma flag recebida no JSON libera validação, e os dados congelados não podem ser modificados após a conferência. Simulados e treinos reaproveitam essa verificação. Comparação local da listagem e do conjunto de treino: **2.295 ms antes e 485 ms depois**, com as mesmas 91 provas e 25.495 questões. A confirmação inicial em intervalos levou 3.316 ms nesta medição; portanto não se apresenta esse ganho como redução equivalente de todo o carregamento.
+
 ## Verificações executadas
 
-- **218 testes do site aprovados**, incluindo preservação dos lotes, filtros, simulados, isolamento do progresso, retomada da sincronização e cancelamento/erro do worker.
+- **219 testes do site aprovados**, incluindo preservação dos lotes, filtros, simulados, isolamento do progresso, retomada da sincronização, cancelamento/erro do worker e imutabilidade do cache.
 - **33 testes da API executados**, sem falhas ou erros; um teste foi ignorado por condição de disponibilidade do OCR local. Os demais 32 passaram. As rotas de edição dos templates retornaram HTTP 401 nos testes sem login, sem acessar o banco.
 - Compilação de produção do frontend e compilação/testes da API aprovados. Na verificação local do frontend foi omitida apenas a recópia dos arquivos públicos já existentes; a configuração de publicação permanece a normal.
 - Análise estática sem erros, com dois avisos já existentes sobre atualização de estado em efeitos do App.

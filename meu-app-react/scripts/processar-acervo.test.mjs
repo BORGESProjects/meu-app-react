@@ -4,6 +4,8 @@ import {criarProcessadorAcervo} from '../src/processarAcervo.js'
 import {prepararAcervo} from '../src/prepararAcervo.js'
 import {unirQuestoes} from '../src/acervo.js'
 import {indexarFiltros} from '../src/indiceFiltros.js'
+import {questaoPublicavel} from '../src/acervo.js'
+import {conferirAcervoParaLeitura} from '../src/acervoLeitura.js'
 
 test('worker conserva conteúdo, gabarito, precedência e índice dos filtros',()=>{
  const entrada=[{id:'teste-worker',materia:'Química',banca:'ENEM',ano:2020,enunciado:'Uma solução aquosa em condições normais apresenta as propriedades seguintes.',opcoes:['Primeira opção','Segunda opção'],resposta_correta:1}]
@@ -21,10 +23,24 @@ test('substituição e saída cancelam worker; respostas antigas não atualizam 
  await cancelado
  assert.equal(workers[0].encerrado,true)
  workers[0].onmessage({data:{resultado:{questoes:['velho'],indice:[]}}})
- workers[1].onmessage({data:{resultado:{questoes:['novo'],indice:[]}}})
- assert.deepEqual(await b,{questoes:['novo'],indice:[]})
+ workers[1].onmessage({data:{resultado:{questoes:[],indice:[]}}})
+ assert.deepEqual(await b,{questoes:[],indice:[]})
  assert.equal(workers[1].encerrado,true)
  const d=c.preparar([]);const sair=assert.rejects(d,{name:'AbortError'});c.cancelar();await sair
+})
+
+test('reaproveitamento exige conteúdo validado e impede alterações também nas alternativas',async()=>{
+ const q={id:'imutavel',enunciado:'Uma solução aquosa apresenta as seguintes propriedades.',opcoes:['Primeira opção','Segunda opção'],resposta_correta:1}
+ let intervalos=0
+ await conferirAcervoParaLeitura([q],{intervalo:0,ceder:async()=>{intervalos++}})
+ assert.ok(intervalos>0)
+ assert.equal(questaoPublicavel(q),true)
+ assert.throws(()=>{q.resposta_correta=99},TypeError)
+ assert.throws(()=>{q.opcoes[0]='Comentário: resposta A'},TypeError)
+ const invalida={...q,opcoes:['A','B'],__validado:true}
+ assert.equal(questaoPublicavel(invalida),false)
+ await assert.rejects(conferirAcervoParaLeitura([invalida]),/inválida/)
+ await assert.rejects(conferirAcervoParaLeitura([q],{ativo:()=>false}),{name:'AbortError'})
 })
 
 test('falha do worker preserva o acervo anterior e permite nova tentativa',async()=>{

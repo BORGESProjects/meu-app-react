@@ -197,7 +197,28 @@ export function corrigirQuestaoConferida(questao) {
   return corrigida
 }
 
+const conferidasImutaveis = new WeakSet()
+const objetosCongelados = new WeakSet()
+function congelarLeitura(valor, vistos = new WeakSet()) {
+  if (!valor || typeof valor !== 'object' || objetosCongelados.has(valor) || vistos.has(valor)) return
+  vistos.add(valor)
+  for (const filho of Object.values(valor)) congelarLeitura(filho, vistos)
+  Object.freeze(valor)
+  objetosCongelados.add(valor)
+}
 export function questaoPublicavel(questao) {
+  return conferidasImutaveis.has(questao) || validarQuestaoPublicavel(questao)
+}
+// O cache não aceita flags vindas do JSON. Só registra objetos após validar
+// seu conteúdo e tornar imutáveis também alternativas, fórmulas e metadados.
+export function fixarQuestaoParaLeitura(questao) {
+  if (!questao || typeof questao !== 'object' || ![Object.prototype, null].includes(Object.getPrototypeOf(questao))) throw new Error('Questão inválida no acervo preparado')
+  if (!questaoPublicavel(questao)) throw new Error('Questão inválida no acervo preparado')
+  congelarLeitura(questao)
+  conferidasImutaveis.add(questao)
+  return questao
+}
+function validarQuestaoPublicavel(questao) {
   if (questao?.blocos_enunciado && !blocosValidos(questao.blocos_enunciado)) return false
   if (questao?.blocos_opcoes && (!Array.isArray(questao.blocos_opcoes) || questao.blocos_opcoes.length !== questao.opcoes?.length || !questao.blocos_opcoes.every(blocosValidos))) return false
   if (!questao || String(questao.enunciado ?? '').trim().length < 12) return false
