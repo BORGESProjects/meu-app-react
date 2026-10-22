@@ -21,7 +21,9 @@ tauri-build = { version = "2.7.4", features = [] }
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 log = "0.4"
-tauri = { version = "2.12.5", features = [] }
+# As imagens já são compactadas; o instalador/APK compacta o pacote final.
+# Evita recomprimir individualmente 38 mil recursos com Brotli na compilação.
+tauri = { version = "2.12.5", default-features = false, features = ["wry", "common-controls-v6", "dynamic-acl", "x11", "dbus"] }
 tauri-plugin-log = "2"
 tauri-plugin-opener = "2"
 tauri-plugin-dialog = "2"

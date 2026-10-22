@@ -15,7 +15,7 @@ permissions:
   contents: read
 concurrency:
   group: aplicativos-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 defaults:
   run:
     working-directory: meu-app-react
