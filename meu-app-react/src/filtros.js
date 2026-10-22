@@ -13,6 +13,10 @@ export function chaveFiltro(valor) {
 }
 
 const BANCAS_CANONICAS = new Map([
+  ['enem ppl', 'ENEM-PPL'], ['enem-ppl', 'ENEM-PPL'],
+  ['espcex-aman', 'EsPCEx'], ['espcex/aman', 'EsPCEx'],
+  ['pucpr', 'PUC-PR'], ['puc-pr', 'PUC-PR'], ['pucmg', 'PUC-MG'], ['puc-mg', 'PUC-MG'], ['puc minas', 'PUC-MG'],
+  ['pucsp', 'PUC-SP'], ['puc-sp', 'PUC-SP'], ['puc-campinas', 'PUC-Campinas'],
   ['acafe', 'ACAFE'], ['afa', 'AFA'], ['cfn', 'CFN'], ['cftce', 'CFTCE'], ['cftmg', 'CFTMG'],
   ['cm', 'Colégio Militar'], ['cmrj', 'CMRJ'],
   ['colegio naval', 'Colégio Naval'], ['cpor', 'CPOR'], ['cpor/sp', 'CPOR'], ['cpor-sp', 'CPOR'], ['cpor sp', 'CPOR'],
