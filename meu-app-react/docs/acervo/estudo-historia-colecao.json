@@ -1,0 +1,4334 @@
+{
+  "capitulos": [
+    {
+      "id": "695c109158c12211ab3b1bdb",
+      "nome": "Antiguidade Clássica – Grécia Antiga",
+      "total_extraido": 23,
+      "publicados": [
+        "sae-3c109441f4f4a06b8372",
+        "sae-d263eecc8191408d8e36",
+        "sae-f114ace9de9dc5fa14f1",
+        "sae-70481492f3f328c2b59c",
+        "sae-973b2b3a344b09b015ab",
+        "sae-61e73f22b73154be7f3f",
+        "sae-c87b47da0512586bb590",
+        "sae-fb4082206daf086c0698",
+        "sae-ce18e8202c27f778ed4c",
+        "sae-b0c80d756e0b3257a107",
+        "sae-4dd458a4e8129eda3684",
+        "sae-ace7696ca9f992814b5a",
+        "sae-f027df47746103bdc97a",
+        "sae-b06f893c52132960eee7",
+        "sae-be41ceadd541418fbee6",
+        "sae-60af19ed190071a7056f"
+      ]
+    },
+    {
+      "id": "695c109158c12211ab3b1bdc",
+      "nome": "Antiguidade Clássica – Grécia e Roma",
+      "total_extraido": 20,
+      "publicados": [
+        "sae-f2abd94f7b238cb53d55",
+        "sae-617d6e01f7bfbb865f14",
+        "sae-3768a6f3bd1ff00bbbc0",
+        "sae-44d3e3b892a23f424168",
+        "sae-f8f8369d3fd027ee611e",
+        "sae-b47f68dc1082eec9aa20",
+        "sae-0705d71433cc373a0eaf",
+        "sae-d3b5cf6e227d98547a8b",
+        "sae-e6db3a3839786397d795",
+        "sae-227e4121b41ab76c6782",
+        "sae-97ebf9cd440f74bbc342",
+        "sae-0e3368afaaa0dad5c234",
+        "sae-758d34f0ceecb1ec00df",
+        "sae-f13f1c56563a5e291d3f",
+        "sae-db58478382b5d1f65d2e",
+        "sae-3c2047d5b8d075f6ed67",
+        "sae-df3f20314bc3aab9f338"
+      ]
+    },
+    {
+      "id": "695c109158c12211ab3b1bdd",
+      "nome": "Antiguidade Clássica – Roma Antiga",
+      "total_extraido": 22,
+      "publicados": [
+        "sae-0f0dbc6932750710c44c",
+        "sae-58fdca75863936160c34",
+        "sae-83814f3ee0237c3c1de1",
+        "sae-5353ab1272d169a0fcf1",
+        "sae-2ba82417e78d6df2e717",
+        "sae-aa78c7c00793f38e2495",
+        "sae-150e57b332e204116b96",
+        "sae-02742191483519953e5c",
+        "sae-fa664de001887b79221e",
+        "sae-8f5548ed163f53aa2db4",
+        "sae-37761830c265307eae1c",
+        "sae-d370b8f925cf670b55a8",
+        "sae-38f9c590ae59f551db14",
+        "sae-b7dcd81a3f1a3aae5ebc",
+        "sae-f214ed6c588c97a36fc1",
+        "sae-b5cd9976d6b0cc25030a",
+        "sae-853faecdac926301833a",
+        "sae-a9c529ed0e5dbec24f8d",
+        "sae-74e3d1ef9092bf3028be"
+      ]
+    },
+    {
+      "id": "695c109158c12211ab3b1bde",
+      "nome": "Idade Média",
+      "total_extraido": 23,
+      "publicados": [
+        "sae-a23a49218d2bf81ea434",
+        "sae-10dc4bc2310b96e59ac1",
+        "sae-35196d03bb9be57cafbf",
+        "sae-06291847a02d609b6480",
+        "sae-04f447ca7d041a8e1045",
+        "sae-6cb700a376bd8327e87b",
+        "sae-0c239d165f6e2c98e56b",
+        "sae-5077f478eed2230e409b",
+        "sae-69ee04eab775b191ed12",
+        "sae-98339e031e6f1fa7a9b3",
+        "sae-cf7fc10d1bdb41173244",
+        "sae-b280d86a7419e6d19dfe",
+        "sae-c0ec8b2dac5b8e8cfe4d",
+        "sae-dae915675f7845c1956f",
+        "sae-0bdc38e4bf630ea8a864",
+        "sae-bf8015402db3226a01aa",
+        "sae-30c886c39c91cf65aed7",
+        "sae-6ec7645eec15ab758c38",
+        "sae-9c164721140a6667e92f"
+      ]
+    },
+    {
+      "id": "695c109158c12211ab3b1bdf",
+      "nome": "Império Bizantino e Expansão Islâmica",
+      "total_extraido": 22,
+      "publicados": [
+        "sae-d43ecd9621cf99f9ae24",
+        "sae-857138017554a5a08ba3",
+        "sae-2bf72c1d8b36b2b3f7e8",
+        "sae-0da0be9cf02176eb04f5",
+        "sae-6519b2c8ac7b52ba70c8",
+        "sae-641679233113f1066812",
+        "sae-c45a4167bc0f603034ce",
+        "sae-ee1c0c903a1aea8150ad",
+        "sae-01d06db568c0041918dc",
+        "sae-64a37ace088d8034b553",
+        "sae-7147764f046b95134fda",
+        "sae-f3f111750d3f451e7d28",
+        "sae-299531543c7ff424a88d",
+        "sae-abaab6fc5a76eb35cf26",
+        "sae-0ad1c8b43d17d4b83433",
+        "sae-b321edac4be7c253afb9",
+        "sae-e2b77fee0bb8e5210b8c",
+        "sae-09b884a9c2a51eafe740"
+      ]
+    },
+    {
+      "id": "695c109158c12211ab3b1be0",
+      "nome": "África nos séculos VIII a XV",
+      "total_extraido": 21,
+      "publicados": [
+        "sae-461b3f43ae5f2454e342",
+        "sae-6b3d3dd1eaab3372139f",
+        "sae-e3ebd73997ffc0c71a1b",
+        "sae-92ed075bcff10ae5d5d6",
+        "sae-a52531acb795e87bb05d",
+        "sae-49335e0da9eb9d636737",
+        "sae-0cff575a68bd82ca7b37",
+        "sae-985e48226d4574c45be0",
+        "sae-b1fd852b89da988b48e2",
+        "sae-7e19f008b05b7a957def",
+        "sae-c452ae9a7dc423c99062",
+        "sae-2883861bfbc3dc00c900",
+        "sae-f7ce317da63cf3a32959",
+        "sae-7c3c857175658951a6e2",
+        "sae-df70dc9d14d38d601795",
+        "sae-5218384834d92f2d891c",
+        "sae-5b3ae0b2ce7a1b8a7f1c",
+        "sae-37b949577eea0d31bc6c",
+        "sae-c893e4221ccef9fb0596"
+      ]
+    },
+    {
+      "id": "695c109158c12211ab3b1be1",
+      "nome": "Crise do século XIV e Estados Nacionais Modernos",
+      "total_extraido": 25,
+      "publicados": [
+        "sae-ed448a9ae923599b6a68",
+        "sae-2773c26a5c52c2212de3",
+        "sae-6e113bb19c9e52c6b7e6",
+        "sae-2fce177e3cc36a86fa1c",
+        "sae-1a9766203b630ee3a8fb",
+        "sae-8bffaabb74f6d564db88",
+        "sae-9729fa69d98301b4ef0d",
+        "sae-ea83c58762ef7a9f3d50",
+        "sae-1615e15278b782d63a18",
+        "sae-9cb19a5bbec89c8b50ab",
+        "sae-6ca93ae93751aa7209bc",
+        "sae-c2ff0a4b79621628dacf",
+        "sae-2df4a3a1957cef5eec43",
+        "sae-ea87358a35d948b52f4c"
+      ]
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e5e",
+      "nome": "Colonização das Américas Espanhola e Inglesa",
+      "total_extraido": 20,
+      "publicados": [
+        "sae-4725675f1a3b3e2b5dd1",
+        "sae-bacf9cb0162b99002830",
+        "sae-e8cf8b280882a4f33b21",
+        "sae-900e978d856f41458288",
+        "sae-d1dc0317bb829a188c9a",
+        "sae-6b305f5b2eccbdd94ef7",
+        "sae-387c70fd8dc8a5902a8a",
+        "sae-37ee966399d77bcfbc33",
+        "sae-cc0b30b1038d55e57133",
+        "sae-7c02566463a350c6010a",
+        "sae-5179f4fd886e4662bf8d",
+        "sae-c9f3b7a49574e2735f7e",
+        "sae-5d8b9c0966f3978724e6",
+        "sae-efbb5b79c3f95afd79d5",
+        "sae-0c51df5ed38c213079c5",
+        "sae-9e12e519d0d44308158d",
+        "sae-621f3e33869f397fdc4e"
+      ]
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e5f",
+      "nome": "Renascimento",
+      "total_extraido": 22,
+      "publicados": [
+        "sae-c8839812979fa8a5c416",
+        "sae-fa992fbc8f712def034b",
+        "sae-092156ffc45751772588",
+        "sae-5a776d965c8fc6f11d79",
+        "sae-5e70ffe2d36859022ce1",
+        "sae-26f9538528998998ee4a",
+        "sae-4bfafea20add8c1ee3ae",
+        "sae-25a5264e44ef0e98652f",
+        "sae-c6b446548f6af8c94370",
+        "sae-e688ce8b9cb85e546fb2",
+        "sae-94435fc9c82059a72b62",
+        "sae-9f90ede4dcb22ddf95b3",
+        "sae-7d463b672d945977658e",
+        "sae-f59d7c719e6dfe0a9f30",
+        "sae-61cedbca092986e884d7",
+        "sae-0915d77487c041509278"
+      ]
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e60",
+      "nome": "Reformas religiosas",
+      "total_extraido": 24,
+      "publicados": [
+        "sae-0b72d3d6c0d35080edb8",
+        "sae-7bcb7b5a1c5bbe48e306",
+        "sae-98fbd0a3a86ae5e10804",
+        "sae-27c5ca5459b7407d016b",
+        "sae-e4178ce869f2bcd8f47c",
+        "sae-adcd5439faa6e6c72306",
+        "sae-938c9dcb29d3f96879b0",
+        "sae-192f585e09dc1c190c86",
+        "sae-59952d44727d7a12488e",
+        "sae-a1a0fb8568b2dacfab3c",
+        "sae-796d842c3c8fc025ccc8",
+        "sae-dee344e8e3ec25c0e57b",
+        "sae-2d44dcc2e91bda81fe81",
+        "sae-5f35aadfab8c50f4dc90",
+        "sae-8b4acb8a6f5d3ab3732f",
+        "sae-25bbcb4e2c9b0c579350",
+        "sae-415fea2e666c87400ae5"
+      ]
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e61",
+      "nome": "Antigo Regime e Absolutismo",
+      "total_extraido": 22,
+      "publicados": [
+        "sae-23f72004f49a860617a8",
+        "sae-d9fbf613b88f8f7da0a2",
+        "sae-7e1919536d112f27385e",
+        "sae-661a9ba775afa16a739b",
+        "sae-d804e7853b1be5a36c6f",
+        "sae-cc12d7725e1e3320aa08",
+        "sae-175665e2d9867b99c4bc",
+        "sae-2fc8ce8cba9b085da19b",
+        "sae-286504aa77a1e85faf04",
+        "sae-fe33abbb56a46790c63f",
+        "sae-2f61e7c08d828d91ac4b",
+        "sae-198f805bb1cc4071be3c"
+      ]
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e62",
+      "nome": "Iluminismo e Independência dos Estados Unidos da América",
+      "total_extraido": 24,
+      "publicados": [
+        "sae-4d8f56969c3ce7c6ef75",
+        "sae-426479775c64087b9295",
+        "sae-69c690cce1dc42afb6cc",
+        "sae-2975b4fa65c32de79b6c",
+        "sae-65e3d3ede88a05262985",
+        "sae-d6677cb1852ed12bbeaf",
+        "sae-b40977363cb8d6173b28",
+        "sae-c1c5730435685641ad7f",
+        "sae-dcbf0ac9bea39cba2d5d",
+        "sae-bc4eb956063d9cfe6c4e",
+        "sae-74330e557d589150ee87",
+        "sae-28ebc3efd54cdbb37a5b",
+        "sae-a9022728c894a835ef60",
+        "sae-752c8bcab7b383eab4e4",
+        "sae-482a862e472d7a174910",
+        "sae-21da6b1c1671b5ddd484",
+        "sae-6150347cbfd238821654",
+        "sae-0b4674cedf4d89648fee",
+        "sae-01faa4bdac55b136a73c"
+      ]
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e63",
+      "nome": "Revolução Francesa",
+      "total_extraido": 21,
+      "publicados": [
+        "sae-ac08fe606d566738e1c8",
+        "sae-599e6103303c5609d15f",
+        "sae-b07347bd0283557325d9",
+        "sae-e29e1ccdff9e60bfc9d2",
+        "sae-245cfb3bc3cede7df6c5",
+        "sae-0c1bd721363788062fb1",
+        "sae-f698c27bb40afc889c0e",
+        "sae-c03eeb6471dddfbe2421",
+        "sae-c5b7daa35826bf707214",
+        "sae-f211ce1a485b21c278ea",
+        "sae-709b758d2e486e0fe776",
+        "sae-172edc682058b39e05c4",
+        "sae-0802503a4c72683cfd3b",
+        "sae-4f5d35491ec0824148e4",
+        "sae-e5272dbe625796267954",
+        "sae-16782764969f7c3a8873",
+        "sae-7d3d20c7ac966be6c45a"
+      ]
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e64",
+      "nome": "Era Napoleônica e movimentos de emancipação na América",
+      "total_extraido": 19,
+      "publicados": [
+        "sae-7250027bdea679bc4f54",
+        "sae-b534a0bdd7324f767c1a",
+        "sae-501e95f2e2152a36d598",
+        "sae-626fa6b03ed11eb6b4a5",
+        "sae-0102e16d4240041568b3",
+        "sae-025dce2b53c7c95e649a",
+        "sae-75460889b928c6c73be5",
+        "sae-939110aa79c479ae860c",
+        "sae-61f7cd63b818a8cb1654",
+        "sae-a54a419f379d35fa5d9c",
+        "sae-692c715a130dfcae536e",
+        "sae-c005711f5531eea9d5bb"
+      ]
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e65",
+      "nome": "Revolução Industrial",
+      "total_extraido": 20,
+      "publicados": [
+        "sae-a730dde79e6010b7beab",
+        "sae-cea29acd5f910798976e",
+        "sae-4d36b4dc535a5acaf5a3",
+        "sae-165273f5f2956705e1e9",
+        "sae-d2241ee3353068cae4af",
+        "sae-4e628930640a3592b10b",
+        "sae-5cffcd73bf5a802bac92",
+        "sae-533c834b270894a522d8",
+        "sae-de4055a49015485cb00c",
+        "sae-1c3e34da748e13c55c2a",
+        "sae-f861cdf7ecb2ccb6d296",
+        "sae-54dd7da03dd6a083d8b0",
+        "sae-6496e2b22e66830dde05",
+        "sae-59f5e3ee1a49386ee92c"
+      ]
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcbf",
+      "nome": "Expansão do capitalismo",
+      "total_extraido": 22,
+      "publicados": [
+        "sae-579df56f8e668bf55389",
+        "sae-7e14b6e97f048cad61e4",
+        "sae-b10e31056c37d2c4f875",
+        "sae-6292e1c6100573dc4147",
+        "sae-a2d2e9fbc776839ab54c",
+        "sae-56732b00e272260c7714",
+        "sae-8daa2a1c695d03ae4d63",
+        "sae-d1bff2a46ae1cdaa050f",
+        "sae-4e5c608abe7b29d84074",
+        "sae-ea20797f78e680aa3741",
+        "sae-0bc3c987ad3136026f13",
+        "sae-b64efd3a936b4fce720c",
+        "sae-22ecd86d4d220e75a1ea",
+        "sae-85ac05fb4d2838cbccec",
+        "sae-e973ec285c7d599992b3",
+        "sae-07ffef68a5b7b9e82d94",
+        "sae-5d32eb7c55fab4d18975",
+        "sae-4d4d7e3d12bcbe421e6f"
+      ]
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc0",
+      "nome": "Antecedentes da Primeira Guerra Mundial",
+      "total_extraido": 20,
+      "publicados": [
+        "sae-f4e5d5510e09b888b860",
+        "sae-888eefa3058355c2c144",
+        "sae-4bb6f35c5f999f5c06e5",
+        "sae-e3d9f9a9ecb454484d92",
+        "sae-b432fc277ab2a7ff0170",
+        "sae-b083702443adc30d8b90",
+        "sae-d140f3d32258f310ae7e",
+        "sae-25adae7f5a862f8a6fe7",
+        "sae-40715961270cdf22dd8f",
+        "sae-c1b949e9ee5ae5b6025c",
+        "sae-d71b4ccd560d951aba59",
+        "sae-d7b36116454589d02bca",
+        "sae-d58144b393c57366db64",
+        "sae-9b39428938e657fc6d69"
+      ]
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc1",
+      "nome": "Primeira Guerra Mundial e Revolução Russa",
+      "total_extraido": 22,
+      "publicados": [
+        "sae-2bca945aeb473a863c19",
+        "sae-5a6f9191bb6d856b33eb",
+        "sae-1a812267a98298b0a051",
+        "sae-62a65342fac0daa15448",
+        "sae-e1413a760e293c9eba0c",
+        "sae-2bc05d8a94a6b79e6bae",
+        "sae-a7b10da58ccea79e8899",
+        "sae-367a0a34709685504b1f",
+        "sae-72118741c31e51f84a94",
+        "sae-b002a57f2c92ddbe342d",
+        "sae-60311b5e605c1118ca2e",
+        "sae-92458ddc8c1759896d3a",
+        "sae-9faabd45cdb0e92313f6",
+        "sae-16f0632901f0d7695315",
+        "sae-2628d8ca4f7d270322a8",
+        "sae-30126a5a03bc86f3b878",
+        "sae-66dc6152deae79e025df",
+        "sae-b125a79f2262cb803aeb",
+        "sae-b52e26b8a626825907a8"
+      ]
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc2",
+      "nome": "Entreguerras - Crise de 1929 e Fascismos",
+      "total_extraido": 20,
+      "publicados": [
+        "sae-45758692e663408aef5e",
+        "sae-e77d5345a1956c94ac95",
+        "sae-7d71136f1cb331134c31",
+        "sae-dda3ce8046583766a98c",
+        "sae-92d71a95e2a8bc0b5194",
+        "sae-0ffeffa718c2a60f8206",
+        "sae-72eb795547f7c6d5feda",
+        "sae-1333f75fd2dbdfbbaac9",
+        "sae-a1e92591af868368402d",
+        "sae-41e08e1b187f23bc5547",
+        "sae-5de2d7bd19330a303186",
+        "sae-56f566973a6b40497010",
+        "sae-5ba371616375c23e7cec",
+        "sae-fe06d493c8c59c8805c6",
+        "sae-b3751607e08a64221b10",
+        "sae-10e46dd9fed51e21b2f7",
+        "sae-78e5f30ebc1bf733a5a6"
+      ]
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc3",
+      "nome": "Autoritarismo",
+      "total_extraido": 19,
+      "publicados": [
+        "sae-e5255f2d64d7805b222c",
+        "sae-56bafcef92c7b9497d45",
+        "sae-94f2803c0bfef2e897a6",
+        "sae-e2c7cdc1d9cb2b0bcb0f",
+        "sae-34c51c7f671d3f7d73c3",
+        "sae-6513f4b14be7585782c5",
+        "sae-1baeb7078af27ddadb24",
+        "sae-6695980d46878377a362",
+        "sae-2b71a3e0bb1eb41bba1b",
+        "sae-c50f4dcc0bb58da042f7",
+        "sae-0c0334bd33f4489bd81a",
+        "sae-840a6e14fbc2a5c54948",
+        "sae-cb2ddcdca38d7a8f6d15",
+        "sae-a3dce9e5dbc86b0a9827",
+        "sae-a81ebe3aa0680afc61bf"
+      ]
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc4",
+      "nome": "Segunda Guerra Mundial",
+      "total_extraido": 18,
+      "publicados": [
+        "sae-f8a342746183cb1869bc",
+        "sae-db40ede53e4d420960f3",
+        "sae-4515f160e48ba1538dd8",
+        "sae-98cbda16ca9713082bf5",
+        "sae-ed217323e20165c3ed5b",
+        "sae-39d53edac6ad430c1ced",
+        "sae-b103364b59d15b721f87",
+        "sae-437d438d354b5a2a1e54",
+        "sae-bc5ffa1d3ba9d6c0e27d",
+        "sae-9df557e7dafccc2ee3bd",
+        "sae-b945231de17cf1b87e38",
+        "sae-157291018b7b1a328c89",
+        "sae-10c31729ef5546014353",
+        "sae-67771c3a1b74b650d0a9",
+        "sae-3ab85bc677c99ef0a1f9"
+      ]
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc5",
+      "nome": "Pós-guerra",
+      "total_extraido": 19,
+      "publicados": [
+        "sae-3b67d3a82bc48978de51",
+        "sae-41e1ba08cfa37b9061ce",
+        "sae-7c17d6fc83ec8251599e",
+        "sae-97a0eddd2872581f13a6",
+        "sae-6f5f525407331b65c637",
+        "sae-863f9960785a3625907f",
+        "sae-fde2f224f16bd9996605",
+        "sae-b03e3861374c7b7c163a",
+        "sae-f3705e4665558304b075",
+        "sae-cdbd2968d3aecc773581",
+        "sae-5b2ebf4b03912a6aa46e",
+        "sae-2f390c8c259f6f228769",
+        "sae-e650bbbce42958d15c86",
+        "sae-8e0ba01bc1c7a310c409",
+        "sae-bee51015c2156e889929",
+        "sae-a0d2713cf551165098b7"
+      ]
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc6",
+      "nome": "América no século XX",
+      "total_extraido": 17,
+      "publicados": [
+        "sae-c2821a7e11a49b8cce72",
+        "sae-1fb390d00f0e8e9843b9",
+        "sae-85fba230a6a4b38a64c3",
+        "sae-60de8ebe9622c1ddf6f3",
+        "sae-475da53a19c454e06f4a",
+        "sae-0cb2738a299c1ae61ddf",
+        "sae-c8ecbb7dbb220b0d2b3f",
+        "sae-2a7adb73ac49ec0a1103",
+        "sae-ba41c78278b54c9752d4",
+        "sae-aee696eb8dd69cb4c82b",
+        "sae-61d12628ff269d58b983",
+        "sae-06eab3e82589c603c882",
+        "sae-399051f5e6508425d3dd",
+        "sae-2d9933df35e366e1ed90",
+        "sae-b8d74757d3d3b88cc26c"
+      ]
+    },
+    {
+      "id": "6a56498212ce367173ed3187",
+      "nome": "Revoluções socialistas",
+      "total_extraido": 22,
+      "publicados": [
+        "sae-842147848c6bff6b3597",
+        "sae-4039908388c0c438259d",
+        "sae-e73c8a61ad5f455352c7",
+        "sae-c1e42c4bc2d258711fed",
+        "sae-175952a4d5173e29b2af",
+        "sae-475b4c92eb6da312a979",
+        "sae-a2093d2dd5799f84b789",
+        "sae-ad420a38e7e925287d45",
+        "sae-3fba2d591cb2199f584f",
+        "sae-9931f0debf01a8d604c7",
+        "sae-db5ecf00c58587cd6d74",
+        "sae-e80c60d16a66a1e4d5b7",
+        "sae-009dcf5b5f49e653b3d8",
+        "sae-2b6a9515ecaee942b8e5",
+        "sae-edd0a7ac6518e7540ba7",
+        "sae-ed10674f1823f06c1398",
+        "sae-b576ae67c8a25c344d23",
+        "sae-ac9839fb0c97d6dca707"
+      ]
+    },
+    {
+      "id": "6a56498212ce367173ed3188",
+      "nome": "Conflitos no Oriente Médio",
+      "total_extraido": 19,
+      "publicados": [
+        "sae-af5f4977392fdb799265",
+        "sae-d9928733f745e7465c1a",
+        "sae-fda227f3840461616ed6",
+        "sae-ee66d77b786d3e8832da",
+        "sae-11fd6086896a9ebb1be7",
+        "sae-bd74cd7cda5d0101ba05",
+        "sae-c84f4e606962d99fb54b",
+        "sae-e923729df242d7fc0533",
+        "sae-413f149c75c6a6dea999",
+        "sae-34f7ca62df4fb7a44546",
+        "sae-3fb52b6766c900d37fb2",
+        "sae-41344234c1c080d5be53",
+        "sae-3d494771efa3be8c7dd4",
+        "sae-8838f2c2b394f5a65561",
+        "sae-044061101232d05bec96",
+        "sae-1501a965844a25fce152",
+        "sae-403fea31ff1ff35690d2"
+      ]
+    },
+    {
+      "id": "6a56498212ce367173ed3189",
+      "nome": "Guerra Fria e Globalização",
+      "total_extraido": 18,
+      "publicados": [
+        "sae-5f0f62c7843f9f0b6918",
+        "sae-6f7ee6aa51b93b26aad3",
+        "sae-cffdb3e834ec235bb77b",
+        "sae-2275d8b291c83f525fbf",
+        "sae-dddd40f49b194ee37038",
+        "sae-d5f4434293537a5db87d",
+        "sae-704c85ecb3de6484e7ed",
+        "sae-c4b8d6450d99db52f762",
+        "sae-54ca548fef76d47db82d",
+        "sae-690cfd8c33dc9c7948f7",
+        "sae-de99d9ff56945193f0f0",
+        "sae-05e90ddaecb3ba56b5e8",
+        "sae-0df9c3d5b17d7d90fefb",
+        "sae-e356900ce732d7f274c1",
+        "sae-5071c0a7f09b75d3eb94",
+        "sae-35096db526cd972bc439"
+      ]
+    },
+    {
+      "id": "6a56498212ce367173ed318a",
+      "nome": "Século XXI",
+      "total_extraido": 19,
+      "publicados": [
+        "sae-eaf17f887178b0ac3571",
+        "sae-44a63eeebc674af7f319",
+        "sae-95a96c04b227addaac5e",
+        "sae-c82b61842d9d9f8e5cea",
+        "sae-b0faebc1162a9da099af",
+        "sae-159d1d30a27b5b7fdf63",
+        "sae-4f2fe903cb0afdffed7d",
+        "sae-c41c4a05a8c93e30c43d",
+        "sae-8bbc50886eeb65410eb7",
+        "sae-697db1e8cf3dd34a245e",
+        "sae-710b600ca49bffaab3e8",
+        "sae-2b44a3f3c8c98202c70e",
+        "sae-9f9d3f49366d2c8fade0"
+      ]
+    },
+    {
+      "id": "6a564a108544ad3192fa06e0",
+      "nome": "História antiga",
+      "total_extraido": 14,
+      "publicados": [
+        "sae-b6fc1671de167cd15414",
+        "sae-a0419519ef3ae411d0b4"
+      ]
+    },
+    {
+      "id": "6a564a108544ad3192fa06e1",
+      "nome": "História Medieval – História Moderna",
+      "total_extraido": 15,
+      "publicados": []
+    },
+    {
+      "id": "6a564a108544ad3192fa06e2",
+      "nome": "História Contemporânea I",
+      "total_extraido": 14,
+      "publicados": []
+    },
+    {
+      "id": "6a564ac409165d3dddc3b5f2",
+      "nome": "História Contemporânea II",
+      "total_extraido": 14,
+      "publicados": []
+    },
+    {
+      "id": "695c109158c12211ab3b1be2",
+      "nome": "Expansões Marítimas Europeias",
+      "total_extraido": 21,
+      "publicados": [
+        "sae-d99afa7501edd1877bfb",
+        "sae-51f7a15d606504540461",
+        "sae-3a8199b35b9422bf22ea",
+        "sae-37dfdc6e3ee6363a6e06",
+        "sae-5e5ff1f8d0fb6f69ec8c",
+        "sae-9e1ee2d1ca7cfe48c0c7",
+        "sae-a6b57c141488bccd21c1",
+        "sae-56111aedc47d6cb44ad9",
+        "sae-864be11b739a2089d207",
+        "sae-1c8db33a33f94a0b8830",
+        "sae-2b2a16dcff78563ddeb5",
+        "sae-0eaf1f447c8311367588",
+        "sae-9713d5fd328027dac03b",
+        "sae-b8992de8508e36497981"
+      ]
+    },
+    {
+      "id": "695c109158c12211ab3b1be3",
+      "nome": "Civilizações pré-colombianas e indígenas",
+      "total_extraido": 22,
+      "publicados": [
+        "sae-49d4bb3ff8c17de4c361",
+        "sae-7e75026e01e67dd4fe1b",
+        "sae-b64802b65f00cc6d5a3d",
+        "sae-5b6ab4316bff5f9bc97f",
+        "sae-06674fb50543dc68bb7a",
+        "sae-9d606595f758c2db08ee",
+        "sae-2fe53439c1167c18227f",
+        "sae-9f21d418b6a98c5f4049",
+        "sae-8f165fe8d9a093890532",
+        "sae-47e99db0f916d5460abd",
+        "sae-34682bcb0346d23aa49f",
+        "sae-8e4f5736f261c051c3dd",
+        "sae-6d6d266121ecaff80983",
+        "sae-229ca4e4b253d02b1196",
+        "sae-3ad1c77940bfa4c69218",
+        "sae-ac9ee29d4c3105a229cc",
+        "sae-e4850d8baf1c01ea6d20",
+        "sae-9ddad700dfaa52dbc80e",
+        "sae-7af59f9e09459b0dc617",
+        "sae-83354208938abdc1468e"
+      ]
+    },
+    {
+      "id": "695c109158c12211ab3b1be4",
+      "nome": "Colonização portuguesa na América",
+      "total_extraido": 23,
+      "publicados": [
+        "sae-236a61d0f3dfe880689a",
+        "sae-eb8ce9aa50af558949cc",
+        "sae-6127687d2be215dea6b2",
+        "sae-8aa55f0eb30a1ea5f26a",
+        "sae-01b8d64ccd20a9cd2d92",
+        "sae-6b60b47292306f21199a",
+        "sae-f22d1f90087898073bd2",
+        "sae-127e0f282060a24545fa",
+        "sae-0895dd4aa33459be34b2",
+        "sae-eaa686eaaee276afab2f",
+        "sae-51318e08a92ba8c1b078",
+        "sae-6845ed761a632b391da2",
+        "sae-332a5c59f0a9cbfc7340",
+        "sae-ab85f362b728075619b8",
+        "sae-e22b15d4ac0299a99de4",
+        "sae-327a23b4f7fc77bb313f",
+        "sae-5a5590938c6bbba80561"
+      ]
+    },
+    {
+      "id": "695c109158c12211ab3b1be5",
+      "nome": "Brasil Colonial: sociedade açucareira",
+      "total_extraido": 19,
+      "publicados": [
+        "sae-05c2293463b49041c615",
+        "sae-5a77fc7edb64727363fa",
+        "sae-7d230bd679a988eee1b3",
+        "sae-97add70ff7e08df525a2",
+        "sae-e1e0cefdbcc444a2bdd9",
+        "sae-d0e3bbba1625dbd217df",
+        "sae-56c69e362dc8e3aec816",
+        "sae-7bb5ee94e2483dc92e20",
+        "sae-e6ba5a88567cb67f2c54",
+        "sae-a4fb0184d9f1661a3065",
+        "sae-bc7d116f7771d695efe8",
+        "sae-f5231800c3222004050b",
+        "sae-4c123a1de99937c82dc6",
+        "sae-7e7fb25b469d8e4f0d3d",
+        "sae-b2a2bc1db46135230c4b",
+        "sae-29fb3a78afbbbe450a13",
+        "sae-ddaf28765f6bd3f248f6"
+      ]
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e66",
+      "nome": "Brasil Colonial - sociedade mineradora",
+      "total_extraido": 21,
+      "publicados": [
+        "sae-ad2d31850ecfffce7e2d",
+        "sae-3f936c4c318362e06b4f",
+        "sae-55a7317671cef18d3337",
+        "sae-d314616d8d84e4a842a8",
+        "sae-edecfc71ce4b8a5cb032",
+        "sae-d1d36c808dcef040850c",
+        "sae-331a115936ae29b8cc15",
+        "sae-de4735a49b5ecab39f37",
+        "sae-de7bcbc63cfc4471d878",
+        "sae-452ca8816857365af1f6",
+        "sae-5425d5cda77a001c6389",
+        "sae-e9b069f7300a0230d576",
+        "sae-c13baee69daa77e40920",
+        "sae-d904c22eb7975e14c39e",
+        "sae-861bde5ac0e72994cb92",
+        "sae-e03f3c929d3db462810e",
+        "sae-a32189c3dc47296bc24a",
+        "sae-b35a14bb7596fe6ad9a8",
+        "sae-34be2b493032e979f48a"
+      ]
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e67",
+      "nome": "Sociedade colonial e revoltas",
+      "total_extraido": 21,
+      "publicados": [
+        "sae-67266bb550f8d48c306c",
+        "sae-08e51814afa09cf8d881",
+        "sae-0c5d16a7833b25e74672",
+        "sae-06a72990f5eee1e89598",
+        "sae-467e3c88f220135bdb23",
+        "sae-c62f856b54127ad8fb4f",
+        "sae-d13a9e264acc97ebff2e",
+        "sae-bed271c9792a6a8e9340",
+        "sae-31a1966a3f6a51280dfc",
+        "sae-e3bbd7a3906772e11197",
+        "sae-04b325b7565e793c58c8",
+        "sae-2338b463fa8a38e8503e",
+        "sae-4f25b7d98c0c0f115a63",
+        "sae-0fc4e326745427edc5ca"
+      ]
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e68",
+      "nome": "Emancipação política do Brasil",
+      "total_extraido": 24,
+      "publicados": [
+        "sae-17411ccad2a2fb495832",
+        "sae-ce487601557def44ab7c",
+        "sae-f7a77b882fdddf1f7841",
+        "sae-788d386c258e3c5f9eb1",
+        "sae-a50783566feec3000aba",
+        "sae-99bf71bb366640af531e",
+        "sae-02337b3cd57251c9931d",
+        "sae-c89d4d60d4289b756d4e",
+        "sae-ccbad40ac277f4a6b0ea",
+        "sae-1babd27f98c95eb3cd5e",
+        "sae-a8f68d9c525584666309",
+        "sae-bdd3e14227b821dd4c39",
+        "sae-b0ae61d25e9c594c32db",
+        "sae-a33c43e074b6821c2aaf",
+        "sae-a11eab47f12e7876dc6e"
+      ]
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e69",
+      "nome": "Primeiro Reinado e Período Regencial",
+      "total_extraido": 20,
+      "publicados": [
+        "sae-cc547e2a08fdab49eb79",
+        "sae-7693b2e43127bad60561",
+        "sae-4759ab4cd3d0a16528fc",
+        "sae-3e24ccdcc677f5660bfa",
+        "sae-e77dbf45d1894943af2e",
+        "sae-2cc8982b01dfe90254a8",
+        "sae-2e4706d43e2b581a282f",
+        "sae-6136a6a3d71186483bb0",
+        "sae-b49c400499e723b541c2",
+        "sae-23e8c98b787a658205e9",
+        "sae-c40a4e367ab5e61beb9a",
+        "sae-8f5d2638a9178b5ae05c",
+        "sae-a878f59608fa88acb459",
+        "sae-11c38ed6b9b2a189efa3",
+        "sae-4bd1cec8f7e2dca2ba16",
+        "sae-3ef1c74829d93829f678",
+        "sae-40200cbdd9893e7f4a6a"
+      ]
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc7",
+      "nome": "Segundo Reinado",
+      "total_extraido": 21,
+      "publicados": [
+        "sae-463d5b27cc4edfdebb7e",
+        "sae-e2135d102a47891033bf",
+        "sae-f407f61d533676b39d05",
+        "sae-b9038dad87d1a9ab0110",
+        "sae-b0b573b34b0a655f2ebf",
+        "sae-8a4f70f91e631834c160",
+        "sae-f86fc19498dd585fdd64",
+        "sae-631cf1d8d7288d4833be",
+        "sae-3122de5eabdfcdbe304d",
+        "sae-41098001cb3a929ffe47",
+        "sae-9cb71f427374a3452404",
+        "sae-1686fac88507af5d222a",
+        "sae-403a88824b2f5d8f8da6",
+        "sae-f4bd46a6ed1de4a741a4",
+        "sae-d209e9dc9b798a28a241"
+      ]
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc8",
+      "nome": "República Velha",
+      "total_extraido": 21,
+      "publicados": [
+        "sae-063dba93d1cc22b95a3f",
+        "sae-21748b227de7c480f6f3",
+        "sae-a3a7ea028fa7e47dba7a",
+        "sae-81b8287c3af7c3943ee1",
+        "sae-15d2507100fca7778667",
+        "sae-6fda8a7a300904b6364b",
+        "sae-b4fd98eefd10a6b976e8",
+        "sae-939ad5d3b21457b0dae4",
+        "sae-c983e115305a1fc905a8",
+        "sae-29e848c1a580004cca28",
+        "sae-114d22c1ed6f306d609a",
+        "sae-671c7ea7ba2ded6d6712",
+        "sae-c394dc229b35be495339",
+        "sae-5836877a7ea799071983"
+      ]
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc9",
+      "nome": "Era Vargas e populismo",
+      "total_extraido": 21,
+      "publicados": [
+        "sae-5ada0af5b0899d8b899a",
+        "sae-0ceaedbe3ad3f3bdc54d",
+        "sae-41cc9364d830c7f67be3",
+        "sae-e63692ce805fcb859a86",
+        "sae-c1ecc4fb8e601d1fc6a7",
+        "sae-3543caf588648f60ccd3",
+        "sae-5a0f0eb3658675fe3e11",
+        "sae-a4d3ed7034fa981fdc28",
+        "sae-18fe7b6da87f75aa8824",
+        "sae-8444dd04469aa0775b88",
+        "sae-3b60e0b2a1ad2d109c9b",
+        "sae-0113a523cc2ff3e326df",
+        "sae-ce6b2cc8dddbe5f76027",
+        "sae-c0e03d07aca6494310a9"
+      ]
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcca",
+      "nome": "Ditadura civil-militar",
+      "total_extraido": 21,
+      "publicados": [
+        "sae-78e3392d9109b0c03822",
+        "sae-b0010768c2c58aae9b8f",
+        "sae-521fe9ed27dda042a7e9",
+        "sae-c1e973dd2e243d8920d2",
+        "sae-b37aafbf65b6fb40b994",
+        "sae-42653686d699a499e5c4",
+        "sae-e902a81700e041a6068a",
+        "sae-e331cbe68744072bdafa",
+        "sae-61e2f4a98835596ec4a4",
+        "sae-e77aebeb89638c55bda0",
+        "sae-c2044a1460dced4297a4",
+        "sae-162fee5ae050ca22cb80",
+        "sae-f60a658331e07bfe70c9",
+        "sae-c708daa00d3d09d81f94",
+        "sae-f0792761005df656793a",
+        "sae-915d761b9f36bf4f49c6",
+        "sae-be38c3e178e3d74e0515"
+      ]
+    },
+    {
+      "id": "6a56498212ce367173ed318b",
+      "nome": "Abertura política",
+      "total_extraido": 21,
+      "publicados": [
+        "sae-3448cefa10242fae3414",
+        "sae-b95cd3e6fee85a69b57b",
+        "sae-c8798fcb4c4a128d54a4",
+        "sae-1c930b3bf4febd662b14",
+        "sae-28afdd7b458ca875b361",
+        "sae-f579716e8749f7438e4a",
+        "sae-7f4b850f64f0d459f6e2",
+        "sae-0a30c1ae878508993a53",
+        "sae-72255f2ae3c4b78acbc2",
+        "sae-d6893ed28c0535c919aa",
+        "sae-7544a66aa15c1b78088a",
+        "sae-40307605c3f2653a892f",
+        "sae-30456abfd63759ba80d7",
+        "sae-c1f1ea7eaf104cca5ef8",
+        "sae-3b70ecc61776f1652f48",
+        "sae-ebd3e54fd0f4ba2ef6d4",
+        "sae-ecae687900738038a2c9"
+      ]
+    },
+    {
+      "id": "6a56498212ce367173ed318c",
+      "nome": "Século XXI",
+      "total_extraido": 17,
+      "publicados": [
+        "sae-0ade98f7122ef64738a0",
+        "sae-eec606c32a7e50e7fe2a",
+        "sae-e5fe5b492cb558a3e77d",
+        "sae-dda25a0f8a6034e2b101",
+        "sae-c297cca3c0e4163bd4bd",
+        "sae-d2d12cba4945ef5851d0",
+        "sae-6c3496d8d705951fbbe3",
+        "sae-571359fffd145f3cb46c",
+        "sae-3b57e1693d240b3675fc",
+        "sae-75d0d7f2c94ad8614493",
+        "sae-c8a8cea6bc86c4a635ec",
+        "sae-1ef97022af9b4c4bcca5",
+        "sae-945681f5b86578e51525",
+        "sae-c678d0945ff051cf6b92",
+        "sae-ab985764eb2207e3f595"
+      ]
+    },
+    {
+      "id": "6a564ac409165d3dddc3b5f3",
+      "nome": "Brasil Colônia e Brasil Império",
+      "total_extraido": 16,
+      "publicados": []
+    },
+    {
+      "id": "6a564ac409165d3dddc3b5f4",
+      "nome": "Brasil República e Brasil Contemporâneo",
+      "total_extraido": 16,
+      "publicados": []
+    }
+  ],
+  "total_extraido": 945,
+  "publicados": [
+    "sae-3c109441f4f4a06b8372",
+    "sae-d263eecc8191408d8e36",
+    "sae-f114ace9de9dc5fa14f1",
+    "sae-70481492f3f328c2b59c",
+    "sae-973b2b3a344b09b015ab",
+    "sae-61e73f22b73154be7f3f",
+    "sae-c87b47da0512586bb590",
+    "sae-fb4082206daf086c0698",
+    "sae-ce18e8202c27f778ed4c",
+    "sae-b0c80d756e0b3257a107",
+    "sae-4dd458a4e8129eda3684",
+    "sae-ace7696ca9f992814b5a",
+    "sae-f027df47746103bdc97a",
+    "sae-b06f893c52132960eee7",
+    "sae-be41ceadd541418fbee6",
+    "sae-60af19ed190071a7056f",
+    "sae-f2abd94f7b238cb53d55",
+    "sae-617d6e01f7bfbb865f14",
+    "sae-3768a6f3bd1ff00bbbc0",
+    "sae-44d3e3b892a23f424168",
+    "sae-f8f8369d3fd027ee611e",
+    "sae-b47f68dc1082eec9aa20",
+    "sae-0705d71433cc373a0eaf",
+    "sae-d3b5cf6e227d98547a8b",
+    "sae-e6db3a3839786397d795",
+    "sae-227e4121b41ab76c6782",
+    "sae-97ebf9cd440f74bbc342",
+    "sae-0e3368afaaa0dad5c234",
+    "sae-758d34f0ceecb1ec00df",
+    "sae-f13f1c56563a5e291d3f",
+    "sae-db58478382b5d1f65d2e",
+    "sae-3c2047d5b8d075f6ed67",
+    "sae-df3f20314bc3aab9f338",
+    "sae-0f0dbc6932750710c44c",
+    "sae-58fdca75863936160c34",
+    "sae-83814f3ee0237c3c1de1",
+    "sae-5353ab1272d169a0fcf1",
+    "sae-2ba82417e78d6df2e717",
+    "sae-aa78c7c00793f38e2495",
+    "sae-150e57b332e204116b96",
+    "sae-02742191483519953e5c",
+    "sae-fa664de001887b79221e",
+    "sae-8f5548ed163f53aa2db4",
+    "sae-37761830c265307eae1c",
+    "sae-d370b8f925cf670b55a8",
+    "sae-38f9c590ae59f551db14",
+    "sae-b7dcd81a3f1a3aae5ebc",
+    "sae-f214ed6c588c97a36fc1",
+    "sae-b5cd9976d6b0cc25030a",
+    "sae-853faecdac926301833a",
+    "sae-a9c529ed0e5dbec24f8d",
+    "sae-74e3d1ef9092bf3028be",
+    "sae-a23a49218d2bf81ea434",
+    "sae-10dc4bc2310b96e59ac1",
+    "sae-35196d03bb9be57cafbf",
+    "sae-06291847a02d609b6480",
+    "sae-04f447ca7d041a8e1045",
+    "sae-6cb700a376bd8327e87b",
+    "sae-0c239d165f6e2c98e56b",
+    "sae-5077f478eed2230e409b",
+    "sae-69ee04eab775b191ed12",
+    "sae-98339e031e6f1fa7a9b3",
+    "sae-cf7fc10d1bdb41173244",
+    "sae-b280d86a7419e6d19dfe",
+    "sae-c0ec8b2dac5b8e8cfe4d",
+    "sae-dae915675f7845c1956f",
+    "sae-0bdc38e4bf630ea8a864",
+    "sae-bf8015402db3226a01aa",
+    "sae-30c886c39c91cf65aed7",
+    "sae-6ec7645eec15ab758c38",
+    "sae-9c164721140a6667e92f",
+    "sae-d43ecd9621cf99f9ae24",
+    "sae-857138017554a5a08ba3",
+    "sae-2bf72c1d8b36b2b3f7e8",
+    "sae-0da0be9cf02176eb04f5",
+    "sae-6519b2c8ac7b52ba70c8",
+    "sae-641679233113f1066812",
+    "sae-c45a4167bc0f603034ce",
+    "sae-ee1c0c903a1aea8150ad",
+    "sae-01d06db568c0041918dc",
+    "sae-64a37ace088d8034b553",
+    "sae-7147764f046b95134fda",
+    "sae-f3f111750d3f451e7d28",
+    "sae-299531543c7ff424a88d",
+    "sae-abaab6fc5a76eb35cf26",
+    "sae-0ad1c8b43d17d4b83433",
+    "sae-b321edac4be7c253afb9",
+    "sae-e2b77fee0bb8e5210b8c",
+    "sae-09b884a9c2a51eafe740",
+    "sae-461b3f43ae5f2454e342",
+    "sae-6b3d3dd1eaab3372139f",
+    "sae-e3ebd73997ffc0c71a1b",
+    "sae-92ed075bcff10ae5d5d6",
+    "sae-a52531acb795e87bb05d",
+    "sae-49335e0da9eb9d636737",
+    "sae-0cff575a68bd82ca7b37",
+    "sae-985e48226d4574c45be0",
+    "sae-b1fd852b89da988b48e2",
+    "sae-7e19f008b05b7a957def",
+    "sae-c452ae9a7dc423c99062",
+    "sae-2883861bfbc3dc00c900",
+    "sae-f7ce317da63cf3a32959",
+    "sae-7c3c857175658951a6e2",
+    "sae-df70dc9d14d38d601795",
+    "sae-5218384834d92f2d891c",
+    "sae-5b3ae0b2ce7a1b8a7f1c",
+    "sae-37b949577eea0d31bc6c",
+    "sae-c893e4221ccef9fb0596",
+    "sae-ed448a9ae923599b6a68",
+    "sae-2773c26a5c52c2212de3",
+    "sae-6e113bb19c9e52c6b7e6",
+    "sae-2fce177e3cc36a86fa1c",
+    "sae-1a9766203b630ee3a8fb",
+    "sae-8bffaabb74f6d564db88",
+    "sae-9729fa69d98301b4ef0d",
+    "sae-ea83c58762ef7a9f3d50",
+    "sae-1615e15278b782d63a18",
+    "sae-9cb19a5bbec89c8b50ab",
+    "sae-6ca93ae93751aa7209bc",
+    "sae-c2ff0a4b79621628dacf",
+    "sae-2df4a3a1957cef5eec43",
+    "sae-ea87358a35d948b52f4c",
+    "sae-4725675f1a3b3e2b5dd1",
+    "sae-bacf9cb0162b99002830",
+    "sae-e8cf8b280882a4f33b21",
+    "sae-900e978d856f41458288",
+    "sae-d1dc0317bb829a188c9a",
+    "sae-6b305f5b2eccbdd94ef7",
+    "sae-387c70fd8dc8a5902a8a",
+    "sae-37ee966399d77bcfbc33",
+    "sae-cc0b30b1038d55e57133",
+    "sae-7c02566463a350c6010a",
+    "sae-5179f4fd886e4662bf8d",
+    "sae-c9f3b7a49574e2735f7e",
+    "sae-5d8b9c0966f3978724e6",
+    "sae-efbb5b79c3f95afd79d5",
+    "sae-0c51df5ed38c213079c5",
+    "sae-9e12e519d0d44308158d",
+    "sae-621f3e33869f397fdc4e",
+    "sae-c8839812979fa8a5c416",
+    "sae-fa992fbc8f712def034b",
+    "sae-092156ffc45751772588",
+    "sae-5a776d965c8fc6f11d79",
+    "sae-5e70ffe2d36859022ce1",
+    "sae-26f9538528998998ee4a",
+    "sae-4bfafea20add8c1ee3ae",
+    "sae-25a5264e44ef0e98652f",
+    "sae-c6b446548f6af8c94370",
+    "sae-e688ce8b9cb85e546fb2",
+    "sae-94435fc9c82059a72b62",
+    "sae-9f90ede4dcb22ddf95b3",
+    "sae-7d463b672d945977658e",
+    "sae-f59d7c719e6dfe0a9f30",
+    "sae-61cedbca092986e884d7",
+    "sae-0915d77487c041509278",
+    "sae-0b72d3d6c0d35080edb8",
+    "sae-7bcb7b5a1c5bbe48e306",
+    "sae-98fbd0a3a86ae5e10804",
+    "sae-27c5ca5459b7407d016b",
+    "sae-e4178ce869f2bcd8f47c",
+    "sae-adcd5439faa6e6c72306",
+    "sae-938c9dcb29d3f96879b0",
+    "sae-192f585e09dc1c190c86",
+    "sae-59952d44727d7a12488e",
+    "sae-a1a0fb8568b2dacfab3c",
+    "sae-796d842c3c8fc025ccc8",
+    "sae-dee344e8e3ec25c0e57b",
+    "sae-2d44dcc2e91bda81fe81",
+    "sae-5f35aadfab8c50f4dc90",
+    "sae-8b4acb8a6f5d3ab3732f",
+    "sae-25bbcb4e2c9b0c579350",
+    "sae-415fea2e666c87400ae5",
+    "sae-23f72004f49a860617a8",
+    "sae-d9fbf613b88f8f7da0a2",
+    "sae-7e1919536d112f27385e",
+    "sae-661a9ba775afa16a739b",
+    "sae-d804e7853b1be5a36c6f",
+    "sae-cc12d7725e1e3320aa08",
+    "sae-175665e2d9867b99c4bc",
+    "sae-2fc8ce8cba9b085da19b",
+    "sae-286504aa77a1e85faf04",
+    "sae-fe33abbb56a46790c63f",
+    "sae-2f61e7c08d828d91ac4b",
+    "sae-198f805bb1cc4071be3c",
+    "sae-4d8f56969c3ce7c6ef75",
+    "sae-426479775c64087b9295",
+    "sae-69c690cce1dc42afb6cc",
+    "sae-2975b4fa65c32de79b6c",
+    "sae-65e3d3ede88a05262985",
+    "sae-d6677cb1852ed12bbeaf",
+    "sae-b40977363cb8d6173b28",
+    "sae-c1c5730435685641ad7f",
+    "sae-dcbf0ac9bea39cba2d5d",
+    "sae-bc4eb956063d9cfe6c4e",
+    "sae-74330e557d589150ee87",
+    "sae-28ebc3efd54cdbb37a5b",
+    "sae-a9022728c894a835ef60",
+    "sae-752c8bcab7b383eab4e4",
+    "sae-482a862e472d7a174910",
+    "sae-21da6b1c1671b5ddd484",
+    "sae-6150347cbfd238821654",
+    "sae-0b4674cedf4d89648fee",
+    "sae-01faa4bdac55b136a73c",
+    "sae-ac08fe606d566738e1c8",
+    "sae-599e6103303c5609d15f",
+    "sae-b07347bd0283557325d9",
+    "sae-e29e1ccdff9e60bfc9d2",
+    "sae-245cfb3bc3cede7df6c5",
+    "sae-0c1bd721363788062fb1",
+    "sae-f698c27bb40afc889c0e",
+    "sae-c03eeb6471dddfbe2421",
+    "sae-c5b7daa35826bf707214",
+    "sae-f211ce1a485b21c278ea",
+    "sae-709b758d2e486e0fe776",
+    "sae-172edc682058b39e05c4",
+    "sae-0802503a4c72683cfd3b",
+    "sae-4f5d35491ec0824148e4",
+    "sae-e5272dbe625796267954",
+    "sae-16782764969f7c3a8873",
+    "sae-7d3d20c7ac966be6c45a",
+    "sae-7250027bdea679bc4f54",
+    "sae-b534a0bdd7324f767c1a",
+    "sae-501e95f2e2152a36d598",
+    "sae-626fa6b03ed11eb6b4a5",
+    "sae-0102e16d4240041568b3",
+    "sae-025dce2b53c7c95e649a",
+    "sae-75460889b928c6c73be5",
+    "sae-939110aa79c479ae860c",
+    "sae-61f7cd63b818a8cb1654",
+    "sae-a54a419f379d35fa5d9c",
+    "sae-692c715a130dfcae536e",
+    "sae-c005711f5531eea9d5bb",
+    "sae-a730dde79e6010b7beab",
+    "sae-cea29acd5f910798976e",
+    "sae-4d36b4dc535a5acaf5a3",
+    "sae-165273f5f2956705e1e9",
+    "sae-d2241ee3353068cae4af",
+    "sae-4e628930640a3592b10b",
+    "sae-5cffcd73bf5a802bac92",
+    "sae-533c834b270894a522d8",
+    "sae-de4055a49015485cb00c",
+    "sae-1c3e34da748e13c55c2a",
+    "sae-f861cdf7ecb2ccb6d296",
+    "sae-54dd7da03dd6a083d8b0",
+    "sae-6496e2b22e66830dde05",
+    "sae-59f5e3ee1a49386ee92c",
+    "sae-579df56f8e668bf55389",
+    "sae-7e14b6e97f048cad61e4",
+    "sae-b10e31056c37d2c4f875",
+    "sae-6292e1c6100573dc4147",
+    "sae-a2d2e9fbc776839ab54c",
+    "sae-56732b00e272260c7714",
+    "sae-8daa2a1c695d03ae4d63",
+    "sae-d1bff2a46ae1cdaa050f",
+    "sae-4e5c608abe7b29d84074",
+    "sae-ea20797f78e680aa3741",
+    "sae-0bc3c987ad3136026f13",
+    "sae-b64efd3a936b4fce720c",
+    "sae-22ecd86d4d220e75a1ea",
+    "sae-85ac05fb4d2838cbccec",
+    "sae-e973ec285c7d599992b3",
+    "sae-07ffef68a5b7b9e82d94",
+    "sae-5d32eb7c55fab4d18975",
+    "sae-4d4d7e3d12bcbe421e6f",
+    "sae-f4e5d5510e09b888b860",
+    "sae-888eefa3058355c2c144",
+    "sae-4bb6f35c5f999f5c06e5",
+    "sae-e3d9f9a9ecb454484d92",
+    "sae-b432fc277ab2a7ff0170",
+    "sae-b083702443adc30d8b90",
+    "sae-d140f3d32258f310ae7e",
+    "sae-25adae7f5a862f8a6fe7",
+    "sae-40715961270cdf22dd8f",
+    "sae-c1b949e9ee5ae5b6025c",
+    "sae-d71b4ccd560d951aba59",
+    "sae-d7b36116454589d02bca",
+    "sae-d58144b393c57366db64",
+    "sae-9b39428938e657fc6d69",
+    "sae-2bca945aeb473a863c19",
+    "sae-5a6f9191bb6d856b33eb",
+    "sae-1a812267a98298b0a051",
+    "sae-62a65342fac0daa15448",
+    "sae-e1413a760e293c9eba0c",
+    "sae-2bc05d8a94a6b79e6bae",
+    "sae-a7b10da58ccea79e8899",
+    "sae-367a0a34709685504b1f",
+    "sae-72118741c31e51f84a94",
+    "sae-b002a57f2c92ddbe342d",
+    "sae-60311b5e605c1118ca2e",
+    "sae-92458ddc8c1759896d3a",
+    "sae-9faabd45cdb0e92313f6",
+    "sae-16f0632901f0d7695315",
+    "sae-2628d8ca4f7d270322a8",
+    "sae-30126a5a03bc86f3b878",
+    "sae-66dc6152deae79e025df",
+    "sae-b125a79f2262cb803aeb",
+    "sae-b52e26b8a626825907a8",
+    "sae-45758692e663408aef5e",
+    "sae-e77d5345a1956c94ac95",
+    "sae-7d71136f1cb331134c31",
+    "sae-dda3ce8046583766a98c",
+    "sae-92d71a95e2a8bc0b5194",
+    "sae-0ffeffa718c2a60f8206",
+    "sae-72eb795547f7c6d5feda",
+    "sae-1333f75fd2dbdfbbaac9",
+    "sae-a1e92591af868368402d",
+    "sae-41e08e1b187f23bc5547",
+    "sae-5de2d7bd19330a303186",
+    "sae-56f566973a6b40497010",
+    "sae-5ba371616375c23e7cec",
+    "sae-fe06d493c8c59c8805c6",
+    "sae-b3751607e08a64221b10",
+    "sae-10e46dd9fed51e21b2f7",
+    "sae-78e5f30ebc1bf733a5a6",
+    "sae-e5255f2d64d7805b222c",
+    "sae-56bafcef92c7b9497d45",
+    "sae-94f2803c0bfef2e897a6",
+    "sae-e2c7cdc1d9cb2b0bcb0f",
+    "sae-34c51c7f671d3f7d73c3",
+    "sae-6513f4b14be7585782c5",
+    "sae-1baeb7078af27ddadb24",
+    "sae-6695980d46878377a362",
+    "sae-2b71a3e0bb1eb41bba1b",
+    "sae-c50f4dcc0bb58da042f7",
+    "sae-0c0334bd33f4489bd81a",
+    "sae-840a6e14fbc2a5c54948",
+    "sae-cb2ddcdca38d7a8f6d15",
+    "sae-a3dce9e5dbc86b0a9827",
+    "sae-a81ebe3aa0680afc61bf",
+    "sae-f8a342746183cb1869bc",
+    "sae-db40ede53e4d420960f3",
+    "sae-4515f160e48ba1538dd8",
+    "sae-98cbda16ca9713082bf5",
+    "sae-ed217323e20165c3ed5b",
+    "sae-39d53edac6ad430c1ced",
+    "sae-b103364b59d15b721f87",
+    "sae-437d438d354b5a2a1e54",
+    "sae-bc5ffa1d3ba9d6c0e27d",
+    "sae-9df557e7dafccc2ee3bd",
+    "sae-b945231de17cf1b87e38",
+    "sae-157291018b7b1a328c89",
+    "sae-10c31729ef5546014353",
+    "sae-67771c3a1b74b650d0a9",
+    "sae-3ab85bc677c99ef0a1f9",
+    "sae-3b67d3a82bc48978de51",
+    "sae-41e1ba08cfa37b9061ce",
+    "sae-7c17d6fc83ec8251599e",
+    "sae-97a0eddd2872581f13a6",
+    "sae-6f5f525407331b65c637",
+    "sae-863f9960785a3625907f",
+    "sae-fde2f224f16bd9996605",
+    "sae-b03e3861374c7b7c163a",
+    "sae-f3705e4665558304b075",
+    "sae-cdbd2968d3aecc773581",
+    "sae-5b2ebf4b03912a6aa46e",
+    "sae-2f390c8c259f6f228769",
+    "sae-e650bbbce42958d15c86",
+    "sae-8e0ba01bc1c7a310c409",
+    "sae-bee51015c2156e889929",
+    "sae-a0d2713cf551165098b7",
+    "sae-c2821a7e11a49b8cce72",
+    "sae-1fb390d00f0e8e9843b9",
+    "sae-85fba230a6a4b38a64c3",
+    "sae-60de8ebe9622c1ddf6f3",
+    "sae-475da53a19c454e06f4a",
+    "sae-0cb2738a299c1ae61ddf",
+    "sae-c8ecbb7dbb220b0d2b3f",
+    "sae-2a7adb73ac49ec0a1103",
+    "sae-ba41c78278b54c9752d4",
+    "sae-aee696eb8dd69cb4c82b",
+    "sae-61d12628ff269d58b983",
+    "sae-06eab3e82589c603c882",
+    "sae-399051f5e6508425d3dd",
+    "sae-2d9933df35e366e1ed90",
+    "sae-b8d74757d3d3b88cc26c",
+    "sae-842147848c6bff6b3597",
+    "sae-4039908388c0c438259d",
+    "sae-e73c8a61ad5f455352c7",
+    "sae-c1e42c4bc2d258711fed",
+    "sae-175952a4d5173e29b2af",
+    "sae-475b4c92eb6da312a979",
+    "sae-a2093d2dd5799f84b789",
+    "sae-ad420a38e7e925287d45",
+    "sae-3fba2d591cb2199f584f",
+    "sae-9931f0debf01a8d604c7",
+    "sae-db5ecf00c58587cd6d74",
+    "sae-e80c60d16a66a1e4d5b7",
+    "sae-009dcf5b5f49e653b3d8",
+    "sae-2b6a9515ecaee942b8e5",
+    "sae-edd0a7ac6518e7540ba7",
+    "sae-ed10674f1823f06c1398",
+    "sae-b576ae67c8a25c344d23",
+    "sae-ac9839fb0c97d6dca707",
+    "sae-af5f4977392fdb799265",
+    "sae-d9928733f745e7465c1a",
+    "sae-fda227f3840461616ed6",
+    "sae-ee66d77b786d3e8832da",
+    "sae-11fd6086896a9ebb1be7",
+    "sae-bd74cd7cda5d0101ba05",
+    "sae-c84f4e606962d99fb54b",
+    "sae-e923729df242d7fc0533",
+    "sae-413f149c75c6a6dea999",
+    "sae-34f7ca62df4fb7a44546",
+    "sae-3fb52b6766c900d37fb2",
+    "sae-41344234c1c080d5be53",
+    "sae-3d494771efa3be8c7dd4",
+    "sae-8838f2c2b394f5a65561",
+    "sae-044061101232d05bec96",
+    "sae-1501a965844a25fce152",
+    "sae-403fea31ff1ff35690d2",
+    "sae-5f0f62c7843f9f0b6918",
+    "sae-6f7ee6aa51b93b26aad3",
+    "sae-cffdb3e834ec235bb77b",
+    "sae-2275d8b291c83f525fbf",
+    "sae-dddd40f49b194ee37038",
+    "sae-d5f4434293537a5db87d",
+    "sae-704c85ecb3de6484e7ed",
+    "sae-c4b8d6450d99db52f762",
+    "sae-54ca548fef76d47db82d",
+    "sae-690cfd8c33dc9c7948f7",
+    "sae-de99d9ff56945193f0f0",
+    "sae-05e90ddaecb3ba56b5e8",
+    "sae-0df9c3d5b17d7d90fefb",
+    "sae-e356900ce732d7f274c1",
+    "sae-5071c0a7f09b75d3eb94",
+    "sae-35096db526cd972bc439",
+    "sae-eaf17f887178b0ac3571",
+    "sae-44a63eeebc674af7f319",
+    "sae-95a96c04b227addaac5e",
+    "sae-c82b61842d9d9f8e5cea",
+    "sae-b0faebc1162a9da099af",
+    "sae-159d1d30a27b5b7fdf63",
+    "sae-4f2fe903cb0afdffed7d",
+    "sae-c41c4a05a8c93e30c43d",
+    "sae-8bbc50886eeb65410eb7",
+    "sae-697db1e8cf3dd34a245e",
+    "sae-710b600ca49bffaab3e8",
+    "sae-2b44a3f3c8c98202c70e",
+    "sae-9f9d3f49366d2c8fade0",
+    "sae-b6fc1671de167cd15414",
+    "sae-a0419519ef3ae411d0b4",
+    "sae-d99afa7501edd1877bfb",
+    "sae-51f7a15d606504540461",
+    "sae-3a8199b35b9422bf22ea",
+    "sae-37dfdc6e3ee6363a6e06",
+    "sae-5e5ff1f8d0fb6f69ec8c",
+    "sae-9e1ee2d1ca7cfe48c0c7",
+    "sae-a6b57c141488bccd21c1",
+    "sae-56111aedc47d6cb44ad9",
+    "sae-864be11b739a2089d207",
+    "sae-1c8db33a33f94a0b8830",
+    "sae-2b2a16dcff78563ddeb5",
+    "sae-0eaf1f447c8311367588",
+    "sae-9713d5fd328027dac03b",
+    "sae-b8992de8508e36497981",
+    "sae-49d4bb3ff8c17de4c361",
+    "sae-7e75026e01e67dd4fe1b",
+    "sae-b64802b65f00cc6d5a3d",
+    "sae-5b6ab4316bff5f9bc97f",
+    "sae-06674fb50543dc68bb7a",
+    "sae-9d606595f758c2db08ee",
+    "sae-2fe53439c1167c18227f",
+    "sae-9f21d418b6a98c5f4049",
+    "sae-8f165fe8d9a093890532",
+    "sae-47e99db0f916d5460abd",
+    "sae-34682bcb0346d23aa49f",
+    "sae-8e4f5736f261c051c3dd",
+    "sae-6d6d266121ecaff80983",
+    "sae-229ca4e4b253d02b1196",
+    "sae-3ad1c77940bfa4c69218",
+    "sae-ac9ee29d4c3105a229cc",
+    "sae-e4850d8baf1c01ea6d20",
+    "sae-9ddad700dfaa52dbc80e",
+    "sae-7af59f9e09459b0dc617",
+    "sae-83354208938abdc1468e",
+    "sae-236a61d0f3dfe880689a",
+    "sae-eb8ce9aa50af558949cc",
+    "sae-6127687d2be215dea6b2",
+    "sae-8aa55f0eb30a1ea5f26a",
+    "sae-01b8d64ccd20a9cd2d92",
+    "sae-6b60b47292306f21199a",
+    "sae-f22d1f90087898073bd2",
+    "sae-127e0f282060a24545fa",
+    "sae-0895dd4aa33459be34b2",
+    "sae-eaa686eaaee276afab2f",
+    "sae-51318e08a92ba8c1b078",
+    "sae-6845ed761a632b391da2",
+    "sae-332a5c59f0a9cbfc7340",
+    "sae-ab85f362b728075619b8",
+    "sae-e22b15d4ac0299a99de4",
+    "sae-327a23b4f7fc77bb313f",
+    "sae-5a5590938c6bbba80561",
+    "sae-05c2293463b49041c615",
+    "sae-5a77fc7edb64727363fa",
+    "sae-7d230bd679a988eee1b3",
+    "sae-97add70ff7e08df525a2",
+    "sae-e1e0cefdbcc444a2bdd9",
+    "sae-d0e3bbba1625dbd217df",
+    "sae-56c69e362dc8e3aec816",
+    "sae-7bb5ee94e2483dc92e20",
+    "sae-e6ba5a88567cb67f2c54",
+    "sae-a4fb0184d9f1661a3065",
+    "sae-bc7d116f7771d695efe8",
+    "sae-f5231800c3222004050b",
+    "sae-4c123a1de99937c82dc6",
+    "sae-7e7fb25b469d8e4f0d3d",
+    "sae-b2a2bc1db46135230c4b",
+    "sae-29fb3a78afbbbe450a13",
+    "sae-ddaf28765f6bd3f248f6",
+    "sae-ad2d31850ecfffce7e2d",
+    "sae-3f936c4c318362e06b4f",
+    "sae-55a7317671cef18d3337",
+    "sae-d314616d8d84e4a842a8",
+    "sae-edecfc71ce4b8a5cb032",
+    "sae-d1d36c808dcef040850c",
+    "sae-331a115936ae29b8cc15",
+    "sae-de4735a49b5ecab39f37",
+    "sae-de7bcbc63cfc4471d878",
+    "sae-452ca8816857365af1f6",
+    "sae-5425d5cda77a001c6389",
+    "sae-e9b069f7300a0230d576",
+    "sae-c13baee69daa77e40920",
+    "sae-d904c22eb7975e14c39e",
+    "sae-861bde5ac0e72994cb92",
+    "sae-e03f3c929d3db462810e",
+    "sae-a32189c3dc47296bc24a",
+    "sae-b35a14bb7596fe6ad9a8",
+    "sae-34be2b493032e979f48a",
+    "sae-67266bb550f8d48c306c",
+    "sae-08e51814afa09cf8d881",
+    "sae-0c5d16a7833b25e74672",
+    "sae-06a72990f5eee1e89598",
+    "sae-467e3c88f220135bdb23",
+    "sae-c62f856b54127ad8fb4f",
+    "sae-d13a9e264acc97ebff2e",
+    "sae-bed271c9792a6a8e9340",
+    "sae-31a1966a3f6a51280dfc",
+    "sae-e3bbd7a3906772e11197",
+    "sae-04b325b7565e793c58c8",
+    "sae-2338b463fa8a38e8503e",
+    "sae-4f25b7d98c0c0f115a63",
+    "sae-0fc4e326745427edc5ca",
+    "sae-17411ccad2a2fb495832",
+    "sae-ce487601557def44ab7c",
+    "sae-f7a77b882fdddf1f7841",
+    "sae-788d386c258e3c5f9eb1",
+    "sae-a50783566feec3000aba",
+    "sae-99bf71bb366640af531e",
+    "sae-02337b3cd57251c9931d",
+    "sae-c89d4d60d4289b756d4e",
+    "sae-ccbad40ac277f4a6b0ea",
+    "sae-1babd27f98c95eb3cd5e",
+    "sae-a8f68d9c525584666309",
+    "sae-bdd3e14227b821dd4c39",
+    "sae-b0ae61d25e9c594c32db",
+    "sae-a33c43e074b6821c2aaf",
+    "sae-a11eab47f12e7876dc6e",
+    "sae-cc547e2a08fdab49eb79",
+    "sae-7693b2e43127bad60561",
+    "sae-4759ab4cd3d0a16528fc",
+    "sae-3e24ccdcc677f5660bfa",
+    "sae-e77dbf45d1894943af2e",
+    "sae-2cc8982b01dfe90254a8",
+    "sae-2e4706d43e2b581a282f",
+    "sae-6136a6a3d71186483bb0",
+    "sae-b49c400499e723b541c2",
+    "sae-23e8c98b787a658205e9",
+    "sae-c40a4e367ab5e61beb9a",
+    "sae-8f5d2638a9178b5ae05c",
+    "sae-a878f59608fa88acb459",
+    "sae-11c38ed6b9b2a189efa3",
+    "sae-4bd1cec8f7e2dca2ba16",
+    "sae-3ef1c74829d93829f678",
+    "sae-40200cbdd9893e7f4a6a",
+    "sae-463d5b27cc4edfdebb7e",
+    "sae-e2135d102a47891033bf",
+    "sae-f407f61d533676b39d05",
+    "sae-b9038dad87d1a9ab0110",
+    "sae-b0b573b34b0a655f2ebf",
+    "sae-8a4f70f91e631834c160",
+    "sae-f86fc19498dd585fdd64",
+    "sae-631cf1d8d7288d4833be",
+    "sae-3122de5eabdfcdbe304d",
+    "sae-41098001cb3a929ffe47",
+    "sae-9cb71f427374a3452404",
+    "sae-1686fac88507af5d222a",
+    "sae-403a88824b2f5d8f8da6",
+    "sae-f4bd46a6ed1de4a741a4",
+    "sae-d209e9dc9b798a28a241",
+    "sae-063dba93d1cc22b95a3f",
+    "sae-21748b227de7c480f6f3",
+    "sae-a3a7ea028fa7e47dba7a",
+    "sae-81b8287c3af7c3943ee1",
+    "sae-15d2507100fca7778667",
+    "sae-6fda8a7a300904b6364b",
+    "sae-b4fd98eefd10a6b976e8",
+    "sae-939ad5d3b21457b0dae4",
+    "sae-c983e115305a1fc905a8",
+    "sae-29e848c1a580004cca28",
+    "sae-114d22c1ed6f306d609a",
+    "sae-671c7ea7ba2ded6d6712",
+    "sae-c394dc229b35be495339",
+    "sae-5836877a7ea799071983",
+    "sae-5ada0af5b0899d8b899a",
+    "sae-0ceaedbe3ad3f3bdc54d",
+    "sae-41cc9364d830c7f67be3",
+    "sae-e63692ce805fcb859a86",
+    "sae-c1ecc4fb8e601d1fc6a7",
+    "sae-3543caf588648f60ccd3",
+    "sae-5a0f0eb3658675fe3e11",
+    "sae-a4d3ed7034fa981fdc28",
+    "sae-18fe7b6da87f75aa8824",
+    "sae-8444dd04469aa0775b88",
+    "sae-3b60e0b2a1ad2d109c9b",
+    "sae-0113a523cc2ff3e326df",
+    "sae-ce6b2cc8dddbe5f76027",
+    "sae-c0e03d07aca6494310a9",
+    "sae-78e3392d9109b0c03822",
+    "sae-b0010768c2c58aae9b8f",
+    "sae-521fe9ed27dda042a7e9",
+    "sae-c1e973dd2e243d8920d2",
+    "sae-b37aafbf65b6fb40b994",
+    "sae-42653686d699a499e5c4",
+    "sae-e902a81700e041a6068a",
+    "sae-e331cbe68744072bdafa",
+    "sae-61e2f4a98835596ec4a4",
+    "sae-e77aebeb89638c55bda0",
+    "sae-c2044a1460dced4297a4",
+    "sae-162fee5ae050ca22cb80",
+    "sae-f60a658331e07bfe70c9",
+    "sae-c708daa00d3d09d81f94",
+    "sae-f0792761005df656793a",
+    "sae-915d761b9f36bf4f49c6",
+    "sae-be38c3e178e3d74e0515",
+    "sae-3448cefa10242fae3414",
+    "sae-b95cd3e6fee85a69b57b",
+    "sae-c8798fcb4c4a128d54a4",
+    "sae-1c930b3bf4febd662b14",
+    "sae-28afdd7b458ca875b361",
+    "sae-f579716e8749f7438e4a",
+    "sae-7f4b850f64f0d459f6e2",
+    "sae-0a30c1ae878508993a53",
+    "sae-72255f2ae3c4b78acbc2",
+    "sae-d6893ed28c0535c919aa",
+    "sae-7544a66aa15c1b78088a",
+    "sae-40307605c3f2653a892f",
+    "sae-30456abfd63759ba80d7",
+    "sae-c1f1ea7eaf104cca5ef8",
+    "sae-3b70ecc61776f1652f48",
+    "sae-ebd3e54fd0f4ba2ef6d4",
+    "sae-ecae687900738038a2c9",
+    "sae-0ade98f7122ef64738a0",
+    "sae-eec606c32a7e50e7fe2a",
+    "sae-e5fe5b492cb558a3e77d",
+    "sae-dda25a0f8a6034e2b101",
+    "sae-c297cca3c0e4163bd4bd",
+    "sae-d2d12cba4945ef5851d0",
+    "sae-6c3496d8d705951fbbe3",
+    "sae-571359fffd145f3cb46c",
+    "sae-3b57e1693d240b3675fc",
+    "sae-75d0d7f2c94ad8614493",
+    "sae-c8a8cea6bc86c4a635ec",
+    "sae-1ef97022af9b4c4bcca5",
+    "sae-945681f5b86578e51525",
+    "sae-c678d0945ff051cf6b92",
+    "sae-ab985764eb2207e3f595"
+  ],
+  "quarentena": [
+    {
+      "id": "sae-b980b123b8f3dfbafd61",
+      "capitulo": "Antiguidade Clássica – Grécia Antiga",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2a5edfd2c638edb61557",
+      "capitulo": "Antiguidade Clássica – Grécia Antiga",
+      "numero": 9,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-d11deb782af6c9d6ad30",
+      "capitulo": "Antiguidade Clássica – Grécia Antiga",
+      "numero": 10,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-9943539ac9c819bdbe28",
+      "capitulo": "Antiguidade Clássica – Grécia Antiga",
+      "numero": 21,
+      "motivo": "Formatação ou figura pendente: Figura ausente"
+    },
+    {
+      "id": "sae-c8c60c61f2bd2278db67",
+      "capitulo": "Antiguidade Clássica – Grécia Antiga",
+      "numero": 22,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-fbe4a49736a32b24f24c",
+      "capitulo": "Antiguidade Clássica – Grécia e Roma",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-6e43e71d9e55115f45be",
+      "capitulo": "Antiguidade Clássica – Grécia e Roma",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-0ea5f0c67f7d645336b3",
+      "capitulo": "Antiguidade Clássica – Roma Antiga",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-8613246e3ac013258d54",
+      "capitulo": "Antiguidade Clássica – Roma Antiga",
+      "numero": 21,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2cc5f478d544af558f06",
+      "capitulo": "Idade Média",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-68521e8e745eed2a6384",
+      "capitulo": "Idade Média",
+      "numero": 10,
+      "motivo": "Conteúdo já existente com resposta divergente: enem-2017-070"
+    },
+    {
+      "id": "sae-ac4a330d5fe4ec6ae469",
+      "capitulo": "Idade Média",
+      "numero": 22,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-e9dd093019d686a1e0be",
+      "capitulo": "Império Bizantino e Expansão Islâmica",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-9c43079cf2397dd6be1f",
+      "capitulo": "Império Bizantino e Expansão Islâmica",
+      "numero": 21,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2db84a30ffef18a9fa59",
+      "capitulo": "África nos séculos VIII a XV",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-7f59e53e946d46075055",
+      "capitulo": "Crise do século XIV e Estados Nacionais Modernos",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-20dddae315121b5e0f14",
+      "capitulo": "Crise do século XIV e Estados Nacionais Modernos",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b6a4fb390a074e6e5714",
+      "capitulo": "Crise do século XIV e Estados Nacionais Modernos",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ad00e8ed74f1d56dad69",
+      "capitulo": "Crise do século XIV e Estados Nacionais Modernos",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-8c374a9b1411a74004ca",
+      "capitulo": "Crise do século XIV e Estados Nacionais Modernos",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-6e21fb1b523282bdd442",
+      "capitulo": "Crise do século XIV e Estados Nacionais Modernos",
+      "numero": 20,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b824ba2fe19fb15d0bed",
+      "capitulo": "Crise do século XIV e Estados Nacionais Modernos",
+      "numero": 21,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-8da96d0709c4b56fd7c4",
+      "capitulo": "Crise do século XIV e Estados Nacionais Modernos",
+      "numero": 22,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-24a6883a4f5e52387f8b",
+      "capitulo": "Crise do século XIV e Estados Nacionais Modernos",
+      "numero": 23,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2f55caede230f9545691",
+      "capitulo": "Crise do século XIV e Estados Nacionais Modernos",
+      "numero": 24,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2083b8d46ce286f3d132",
+      "capitulo": "Colonização das Américas Espanhola e Inglesa",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b63dfd46653c47c22d81",
+      "capitulo": "Renascimento",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-17e9c84b733fece20a40",
+      "capitulo": "Renascimento",
+      "numero": 7,
+      "motivo": "Formatação ou figura pendente: Figura ausente"
+    },
+    {
+      "id": "sae-58c55245a47425184daa",
+      "capitulo": "Renascimento",
+      "numero": 21,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-751f74dc66c1f7d878d4",
+      "capitulo": "Reformas religiosas",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-c8068ed1e86ad920136c",
+      "capitulo": "Reformas religiosas",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-6e13aacd56032bd0d318",
+      "capitulo": "Reformas religiosas",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b0710e01084f5c11957a",
+      "capitulo": "Reformas religiosas",
+      "numero": 20,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-d751e1b631d0b9759309",
+      "capitulo": "Reformas religiosas",
+      "numero": 23,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-87e195d7a0849c7fb84f",
+      "capitulo": "Antigo Regime e Absolutismo",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-339487d15280eb5dbd93",
+      "capitulo": "Antigo Regime e Absolutismo",
+      "numero": 1,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: Fasa-2018"
+    },
+    {
+      "id": "sae-11873115564227ad3afb",
+      "capitulo": "Antigo Regime e Absolutismo",
+      "numero": 9,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-f269db54fb3f91fc35e0",
+      "capitulo": "Antigo Regime e Absolutismo",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-bcf644c84645dd7dbd7e",
+      "capitulo": "Antigo Regime e Absolutismo",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-eda039e1613907a8da93",
+      "capitulo": "Antigo Regime e Absolutismo",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-179e8fac6dc42d2654f2",
+      "capitulo": "Antigo Regime e Absolutismo",
+      "numero": 20,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-1559ad7560ebd09c897d",
+      "capitulo": "Antigo Regime e Absolutismo",
+      "numero": 21,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-fc75b2a3501c25310dfe",
+      "capitulo": "Iluminismo e Independência dos Estados Unidos da América",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-310789da8ba720e703b1",
+      "capitulo": "Iluminismo e Independência dos Estados Unidos da América",
+      "numero": 5,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: UVA-2017"
+    },
+    {
+      "id": "sae-a6746541af5806ba6a55",
+      "capitulo": "Iluminismo e Independência dos Estados Unidos da América",
+      "numero": 23,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ac194be6cd69c24c4d4c",
+      "capitulo": "Revolução Francesa",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-f491902d2724dbc7cc57",
+      "capitulo": "Revolução Francesa",
+      "numero": 4,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: UVA-2016"
+    },
+    {
+      "id": "sae-387b8877d48ed6a568e7",
+      "capitulo": "Revolução Francesa",
+      "numero": 20,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-155b801e4d19906d8d71",
+      "capitulo": "Era Napoleônica e movimentos de emancipação na América",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-8c4193567205598da69c",
+      "capitulo": "Era Napoleônica e movimentos de emancipação na América",
+      "numero": 2,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: UVA-2017"
+    },
+    {
+      "id": "sae-0bd00a2a16ce620c8ee7",
+      "capitulo": "Era Napoleônica e movimentos de emancipação na América",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-0dd9d5eef7b0ca6b293e",
+      "capitulo": "Era Napoleônica e movimentos de emancipação na América",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-799c39b77c1a48e4e97e",
+      "capitulo": "Revolução Industrial",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-89b500c223abdc491323",
+      "capitulo": "Revolução Industrial",
+      "numero": 13,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-ff832d9b54c0d929c3be",
+      "capitulo": "Revolução Industrial",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-a23692eeae8a9260f9cf",
+      "capitulo": "Expansão do capitalismo",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-d2b02ae3be6f2d4dfe11",
+      "capitulo": "Expansão do capitalismo",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-eff366b2fd3bdca39bd9",
+      "capitulo": "Expansão do capitalismo",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ef78247a068c52adaa33",
+      "capitulo": "Antecedentes da Primeira Guerra Mundial",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-63d3b9dc114d162dd315",
+      "capitulo": "Antecedentes da Primeira Guerra Mundial",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-7d3da7732a265a41afaf",
+      "capitulo": "Antecedentes da Primeira Guerra Mundial",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-4f3397c69301ec4aab64",
+      "capitulo": "Antecedentes da Primeira Guerra Mundial",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-5f43d74f702892139152",
+      "capitulo": "Antecedentes da Primeira Guerra Mundial",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-9191acd31481276985eb",
+      "capitulo": "Primeira Guerra Mundial e Revolução Russa",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-656085677a51b747e230",
+      "capitulo": "Primeira Guerra Mundial e Revolução Russa",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-a458388faf250c1bb3e1",
+      "capitulo": "Primeira Guerra Mundial e Revolução Russa",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-1d6027704e8b5cb549bf",
+      "capitulo": "Entreguerras - Crise de 1929 e Fascismos",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-d48061608d6f1aeb9b9a",
+      "capitulo": "Entreguerras - Crise de 1929 e Fascismos",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-7d9251968482128f5515",
+      "capitulo": "Entreguerras - Crise de 1929 e Fascismos",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-a977dd536e38a463bdb9",
+      "capitulo": "Autoritarismo",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-320fc36d1d40adf2821c",
+      "capitulo": "Autoritarismo",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-13a97c7380aa5241aa02",
+      "capitulo": "Autoritarismo",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-40e1f8cacbec14ecde6b",
+      "capitulo": "Segunda Guerra Mundial",
+      "numero": 16,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-77b7f12abbd8518523b1",
+      "capitulo": "Pós-guerra",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-3939c280a4070d4db67e",
+      "capitulo": "América no século XX",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-518aa60a76a28752b61a",
+      "capitulo": "América no século XX",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2283d96be9a6c59eeaa2",
+      "capitulo": "Revoluções socialistas",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-f20aaf629f1c91dc688d",
+      "capitulo": "Revoluções socialistas",
+      "numero": 8,
+      "motivo": "Conteúdo já existente com resposta divergente: enem-2018-055"
+    },
+    {
+      "id": "sae-5d8f69866f40f88bffba",
+      "capitulo": "Revoluções socialistas",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2ce0bb732a5012b74ef8",
+      "capitulo": "Revoluções socialistas",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b0ad6d5f114661738578",
+      "capitulo": "Conflitos no Oriente Médio",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-3add00ff260e42d4aae7",
+      "capitulo": "Conflitos no Oriente Médio",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-47b502a14edf9e42c742",
+      "capitulo": "Guerra Fria e Globalização",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-644cafe7aca7cd22e46c",
+      "capitulo": "Guerra Fria e Globalização",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-bb15076561cef1d91122",
+      "capitulo": "Século XXI",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ed885f789d5931503235",
+      "capitulo": "Século XXI",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-51bf7fb9a3d527988297",
+      "capitulo": "Século XXI",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-dcec98bb40ca917fce44",
+      "capitulo": "História antiga",
+      "numero": 3,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-136a627b304e1f9b5abb",
+      "capitulo": "História antiga",
+      "numero": 4,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-eec7bd51941c0cca86fb",
+      "capitulo": "História antiga",
+      "numero": 5,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-42b7e0621ff527d51981",
+      "capitulo": "História antiga",
+      "numero": 6,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-a94317e44be914c3da94",
+      "capitulo": "História antiga",
+      "numero": 7,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-133e84439b73c2b1f32a",
+      "capitulo": "História antiga",
+      "numero": 8,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-c7dd293e3b0ae671433c",
+      "capitulo": "História antiga",
+      "numero": 9,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-93867dae89cd1d7e21ea",
+      "capitulo": "História antiga",
+      "numero": 10,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-a4e5b7f44709b9f4210c",
+      "capitulo": "História antiga",
+      "numero": 11,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-be22320e5ee6e35ad07c",
+      "capitulo": "História antiga",
+      "numero": 12,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-caa32a6ec9aa82012afe",
+      "capitulo": "História antiga",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-6707d811f0ab8a0122e6",
+      "capitulo": "História antiga",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-1a84bf1a734aca5b07c8",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-bcfc0a66143069da808a",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 2,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-c187540d5bb2ccbc54f1",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 3,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-934bf986c05558a75db7",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 4,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-df36c00d82709ea94e94",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 5,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-7762bf066f17624bdc94",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 6,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b5a42dcaefa4041d451b",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 7,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-935539392c53f2e88d6b",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 8,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-cb731c738f549669cf6f",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 9,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-c525688e81c84cb72c81",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 10,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-e11fe6456b1cb9ed582d",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 11,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-728ebfc80fc7a8bccbb4",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 12,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-4240fd7276f10568704f",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-6247a4a10cd7a227e70a",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-e703e760174a9a93ff10",
+      "capitulo": "História Medieval – História Moderna",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b232432c900a7cd45deb",
+      "capitulo": "História Contemporânea I",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-053a6e08af47178902d3",
+      "capitulo": "História Contemporânea I",
+      "numero": 2,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-d66c45aee68d0e002687",
+      "capitulo": "História Contemporânea I",
+      "numero": 3,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-679df4ec6af0cf6856b2",
+      "capitulo": "História Contemporânea I",
+      "numero": 4,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-3b04f4a4c0a3e4b40a30",
+      "capitulo": "História Contemporânea I",
+      "numero": 5,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-185cbe51b2e02e8eb46a",
+      "capitulo": "História Contemporânea I",
+      "numero": 6,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-003c872b7ec6d35abc2a",
+      "capitulo": "História Contemporânea I",
+      "numero": 7,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-07546b5191dd843a2ea8",
+      "capitulo": "História Contemporânea I",
+      "numero": 8,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-346b861f8705175338f3",
+      "capitulo": "História Contemporânea I",
+      "numero": 9,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2967120fbd26b6b9eacd",
+      "capitulo": "História Contemporânea I",
+      "numero": 10,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-3efd9ddcf6f4492a6a41",
+      "capitulo": "História Contemporânea I",
+      "numero": 11,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-35d75891c29d21fdb1cd",
+      "capitulo": "História Contemporânea I",
+      "numero": 12,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-bb62f4b01b89540565cd",
+      "capitulo": "História Contemporânea I",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-520ba5144814355f956a",
+      "capitulo": "História Contemporânea I",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-e5cd0113ced53457d202",
+      "capitulo": "História Contemporânea II",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-7c8652f70c4626826db6",
+      "capitulo": "História Contemporânea II",
+      "numero": 2,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2b3936e8a6784b9136a4",
+      "capitulo": "História Contemporânea II",
+      "numero": 3,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-3a47af8e384d8ed67f3f",
+      "capitulo": "História Contemporânea II",
+      "numero": 4,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ce22f49dd845e860e581",
+      "capitulo": "História Contemporânea II",
+      "numero": 5,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ae3320c81ba9f1eaa8ea",
+      "capitulo": "História Contemporânea II",
+      "numero": 6,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-58bbb7c5c1f26be1b4fe",
+      "capitulo": "História Contemporânea II",
+      "numero": 7,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-d9c55e57d70a8cc1aaee",
+      "capitulo": "História Contemporânea II",
+      "numero": 8,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-862ae6ab1f5413241ce7",
+      "capitulo": "História Contemporânea II",
+      "numero": 9,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-c35bd6933f67d39eebd6",
+      "capitulo": "História Contemporânea II",
+      "numero": 10,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-9307f2cbb6bedcb4aba6",
+      "capitulo": "História Contemporânea II",
+      "numero": 11,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-dfd5c636fe822e161cb3",
+      "capitulo": "História Contemporânea II",
+      "numero": 12,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-84d059f717cbdc4cdc92",
+      "capitulo": "História Contemporânea II",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-f6104e9c08d5cdd338aa",
+      "capitulo": "História Contemporânea II",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-00cfee0b4f56d5f9f5de",
+      "capitulo": "Expansões Marítimas Europeias",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b1d68ca00c9193468202",
+      "capitulo": "Expansões Marítimas Europeias",
+      "numero": 12,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-e25186425995e4cf0e91",
+      "capitulo": "Expansões Marítimas Europeias",
+      "numero": 15,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-ed70378e21ab17262e12",
+      "capitulo": "Expansões Marítimas Europeias",
+      "numero": 20,
+      "motivo": "Formatação ou figura pendente: Figura ausente"
+    },
+    {
+      "id": "sae-2433c5e74e2281741eb2",
+      "capitulo": "Expansões Marítimas Europeias",
+      "numero": 21,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-c64d38cd271dc0af12b5",
+      "capitulo": "Civilizações pré-colombianas e indígenas",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-1f3bfd9efa2640c95b84",
+      "capitulo": "Colonização portuguesa na América",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ebec1d0484862da1975b",
+      "capitulo": "Colonização portuguesa na América",
+      "numero": 2,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: AMAN-2019"
+    },
+    {
+      "id": "sae-bd8d2a60ac1ebfd0b54d",
+      "capitulo": "Colonização portuguesa na América",
+      "numero": 3,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: AMAN-2017"
+    },
+    {
+      "id": "sae-417f74ccaae5ef54cf18",
+      "capitulo": "Brasil Colonial: sociedade açucareira",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ddc0744b29002a565b1f",
+      "capitulo": "Brasil Colonial - sociedade mineradora",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-d89d57de61e660b7a976",
+      "capitulo": "Sociedade colonial e revoltas",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-1d86316af4fb5d9247f2",
+      "capitulo": "Sociedade colonial e revoltas",
+      "numero": 10,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-c71e97586844332179c7",
+      "capitulo": "Sociedade colonial e revoltas",
+      "numero": 20,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ef31428acd29f5ccdd95",
+      "capitulo": "Emancipação política do Brasil",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b633b7b645878f2228f7",
+      "capitulo": "Emancipação política do Brasil",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ee4d3d50990682bb6548",
+      "capitulo": "Emancipação política do Brasil",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-78c65e6e56d377455a28",
+      "capitulo": "Emancipação política do Brasil",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-56379ddd6864f381b762",
+      "capitulo": "Emancipação política do Brasil",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-6709c112aa678c217c53",
+      "capitulo": "Emancipação política do Brasil",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-468a2c61840e0f79934f",
+      "capitulo": "Emancipação política do Brasil",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-229b92c6e088c252e81e",
+      "capitulo": "Emancipação política do Brasil",
+      "numero": 20,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-60a8a0ec36910f8a009b",
+      "capitulo": "Primeiro Reinado e Período Regencial",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-4703fad5bdf1a1f933b7",
+      "capitulo": "Primeiro Reinado e Período Regencial",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-a58bf3df8b2fcdfbebe6",
+      "capitulo": "Primeiro Reinado e Período Regencial",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-01099dd5a2c7edd5b76b",
+      "capitulo": "Segundo Reinado",
+      "numero": 5,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-96117df85572c1d49218",
+      "capitulo": "Segundo Reinado",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-508a5b19596275d53d0b",
+      "capitulo": "Segundo Reinado",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-046324ce5742e5a91b60",
+      "capitulo": "Segundo Reinado",
+      "numero": 20,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-a3d0304d5e679a82d19b",
+      "capitulo": "Segundo Reinado",
+      "numero": 21,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-45cdbd43da45b8501d8a",
+      "capitulo": "República Velha",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-31cb65bb71d4c3d47eea",
+      "capitulo": "República Velha",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-1f8aa0643c14605993d9",
+      "capitulo": "República Velha",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-851c3f2fc2c489312827",
+      "capitulo": "República Velha",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-a66a4c86c96b2e59eaa9",
+      "capitulo": "República Velha",
+      "numero": 20,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-219725374bb74696ee08",
+      "capitulo": "Era Vargas e populismo",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-77199ab1d11b5635b0e7",
+      "capitulo": "Era Vargas e populismo",
+      "numero": 5,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-fe61126f09f9d09618cb",
+      "capitulo": "Era Vargas e populismo",
+      "numero": 12,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-6faa699ca5ca33524889",
+      "capitulo": "Era Vargas e populismo",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ed16dba952f50b268ef1",
+      "capitulo": "Era Vargas e populismo",
+      "numero": 20,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-89ec2e2b6f5bc0066692",
+      "capitulo": "Ditadura civil-militar",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-fa9db9fe20f6093c3305",
+      "capitulo": "Abertura política",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-da015ae8c953712f0122",
+      "capitulo": "Abertura política",
+      "numero": 6,
+      "motivo": "Formatação ou figura pendente: Figura ausente"
+    },
+    {
+      "id": "sae-a4dde3ee792975d3bba4",
+      "capitulo": "Século XXI",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-8130609d72ccea0bc31a",
+      "capitulo": "Século XXI",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-61efc8a2e213b162f462",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-0862a20f5ce7488094f6",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 2,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-0abf3f3480308b264dcf",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 3,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-bdcabda6741074db5404",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 4,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b6bc8a3ca6a3811edd7f",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 5,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-387cfb96e2f4650e24f1",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 6,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-a6c98364544a7f0c7efc",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 7,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-1f9f559cb7e8eb4348ca",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 8,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-3d10ead9ad0053e1602c",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 9,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-845e115681c157b68717",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 10,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-a0b3a5dc5ed58699a16f",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 11,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-6b1a209f7c2695e22a3b",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 12,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-3dbcd8f0835902e12e40",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-e51dd52bc5746c2e1251",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-e16c4da2fc87bb56e4ec",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-c98ed46affec4d6a4a01",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-c721af2198317218dd9a",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-7535d2cf1974d28fdc56",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 2,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-eeeaf666c7ba4a1fd852",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 3,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-de38aee375889a588154",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 4,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-74fb564ce946d480a428",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 5,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b0c699ce31444463d6b6",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 6,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2576edcd92f22be3d6d5",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 7,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-52a9331c868ed68d13e2",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 8,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-a418b7c8cdbee910ad84",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 9,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-aab663c61083d8727788",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 10,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-486214ae4aac8b745a9e",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 11,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-73ae4d939b770467e10e",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 12,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2d4e2805e33c78b782b5",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-f5fe6b50529f0354cfa6",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-9605e08046668ddfe653",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-9f5e1e581fd0a4e2632a",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    }
+  ],
+  "duplicatas": [
+    {
+      "id": "sae-f56e2f3573407cd9eda7",
+      "existente": "enem-2019-079",
+      "capitulo": "Antiguidade Clássica – Grécia Antiga"
+    },
+    {
+      "id": "sae-0a49dd2d2941dfd31465",
+      "existente": 6333,
+      "capitulo": "Antiguidade Clássica – Grécia Antiga"
+    },
+    {
+      "id": "sae-1902ded50e390e3d16cc",
+      "existente": "enem-2017-079",
+      "capitulo": "Antiguidade Clássica – Grécia e Roma"
+    },
+    {
+      "id": "sae-2580a80634d09d679d00",
+      "existente": 9222,
+      "capitulo": "Antiguidade Clássica – Roma Antiga"
+    },
+    {
+      "id": "sae-76b3a8353263fb3ae9c0",
+      "existente": "enem-2018-047",
+      "capitulo": "Idade Média"
+    },
+    {
+      "id": "sae-ff47401ddaef60da5efd",
+      "existente": 9692,
+      "capitulo": "Império Bizantino e Expansão Islâmica"
+    },
+    {
+      "id": "sae-75b6b3fc71318e3c9c16",
+      "existente": "ufrgs-2023-d1-32",
+      "capitulo": "Império Bizantino e Expansão Islâmica"
+    },
+    {
+      "id": "sae-c555b7bbd91cc9ad3f5e",
+      "existente": "enem-2017-046",
+      "capitulo": "África nos séculos VIII a XV"
+    },
+    {
+      "id": "sae-c7c92bc509ebda10fb97",
+      "existente": 9908,
+      "capitulo": "Crise do século XIV e Estados Nacionais Modernos"
+    },
+    {
+      "id": "sae-e06aaa487b93288fd287",
+      "existente": "enem-2019-086",
+      "capitulo": "Colonização das Américas Espanhola e Inglesa"
+    },
+    {
+      "id": "sae-a7ddbd16591f478bc48c",
+      "existente": "enem-2018-068",
+      "capitulo": "Colonização das Américas Espanhola e Inglesa"
+    },
+    {
+      "id": "sae-0b3a192098dbccede82c",
+      "existente": "teorema-45302bf3c6a648eb",
+      "capitulo": "Renascimento"
+    },
+    {
+      "id": "sae-db9b136e2339fd49c47b",
+      "existente": 9228,
+      "capitulo": "Renascimento"
+    },
+    {
+      "id": "sae-75577218632c981a6fb3",
+      "existente": "teorema-e59bd05e6dd2a0df",
+      "capitulo": "Renascimento"
+    },
+    {
+      "id": "sae-5561bfc1faac9488c8d1",
+      "existente": 5241,
+      "capitulo": "Reformas religiosas"
+    },
+    {
+      "id": "sae-a84c3d2d3cce3b20fad2",
+      "existente": "sae-ea87358a35d948b52f4c",
+      "capitulo": "Reformas religiosas"
+    },
+    {
+      "id": "sae-c2269a86be1a354c3d76",
+      "existente": 9265,
+      "capitulo": "Antigo Regime e Absolutismo"
+    },
+    {
+      "id": "sae-a68431231a9756833ad2",
+      "existente": "enem-2019-065",
+      "capitulo": "Antigo Regime e Absolutismo"
+    },
+    {
+      "id": "sae-7e7d0308922c7ac2a933",
+      "existente": "enem-2018-066",
+      "capitulo": "Iluminismo e Independência dos Estados Unidos da América"
+    },
+    {
+      "id": "sae-40fe37214570d3680513",
+      "existente": "enem-2019-063",
+      "capitulo": "Iluminismo e Independência dos Estados Unidos da América"
+    },
+    {
+      "id": "sae-2fe70a6b2f44571bc8aa",
+      "existente": 10415,
+      "capitulo": "Revolução Francesa"
+    },
+    {
+      "id": "sae-37e62bdc568132fce501",
+      "existente": "teorema-786520424bcaff34",
+      "capitulo": "Era Napoleônica e movimentos de emancipação na América"
+    },
+    {
+      "id": "sae-81b335003eca21b09786",
+      "existente": 9448,
+      "capitulo": "Era Napoleônica e movimentos de emancipação na América"
+    },
+    {
+      "id": "sae-4032f598f2766974f7be",
+      "existente": 9224,
+      "capitulo": "Era Napoleônica e movimentos de emancipação na América"
+    },
+    {
+      "id": "sae-b98afa582ebe1931eae2",
+      "existente": "enem-2019-054",
+      "capitulo": "Revolução Industrial"
+    },
+    {
+      "id": "sae-d5fb1dabd0dbb92769c2",
+      "existente": 9226,
+      "capitulo": "Revolução Industrial"
+    },
+    {
+      "id": "sae-efce4dae2f61a718fefc",
+      "existente": 9501,
+      "capitulo": "Revolução Industrial"
+    },
+    {
+      "id": "sae-45e1c88929772382d201",
+      "existente": "enem-2022-d1-c1-073",
+      "capitulo": "Expansão do capitalismo"
+    },
+    {
+      "id": "sae-0145214061731379be42",
+      "existente": 9872,
+      "capitulo": "Antecedentes da Primeira Guerra Mundial"
+    },
+    {
+      "id": "sae-5030b08dd1755f44d65e",
+      "existente": "enem-2017-078",
+      "capitulo": "Autoritarismo"
+    },
+    {
+      "id": "sae-cbd2c535522ebdf32885",
+      "existente": 9299,
+      "capitulo": "Segunda Guerra Mundial"
+    },
+    {
+      "id": "sae-a590adf1689863e94005",
+      "existente": "enem-2017-047",
+      "capitulo": "Segunda Guerra Mundial"
+    },
+    {
+      "id": "sae-262cfd647433efb055c0",
+      "existente": "teorema-6f5247dbd05b1736",
+      "capitulo": "Pós-guerra"
+    },
+    {
+      "id": "sae-369844646a4bbc18dc1d",
+      "existente": 9498,
+      "capitulo": "Pós-guerra"
+    },
+    {
+      "id": "sae-a510581385890929266a",
+      "existente": 17240,
+      "capitulo": "Século XXI"
+    },
+    {
+      "id": "sae-adfd114ec1eae987457d",
+      "existente": "enem-2018-060",
+      "capitulo": "Século XXI"
+    },
+    {
+      "id": "sae-24b0fbd38d8bf9328137",
+      "existente": "ufrgs-2022-d1-44",
+      "capitulo": "Século XXI"
+    },
+    {
+      "id": "sae-747e98b79ed8db4b497c",
+      "existente": 17095,
+      "capitulo": "Expansões Marítimas Europeias"
+    },
+    {
+      "id": "sae-d929f03a2568e0d708d8",
+      "existente": 5248,
+      "capitulo": "Expansões Marítimas Europeias"
+    },
+    {
+      "id": "sae-72e06a1280fc17aa6cb7",
+      "existente": "enem-2017-050",
+      "capitulo": "Civilizações pré-colombianas e indígenas"
+    },
+    {
+      "id": "sae-e4368b935ce0831b65bf",
+      "existente": 17141,
+      "capitulo": "Colonização portuguesa na América"
+    },
+    {
+      "id": "sae-601b7b1ed3f48fde705b",
+      "existente": "enem-2018-054",
+      "capitulo": "Colonização portuguesa na América"
+    },
+    {
+      "id": "sae-d36dff594237e38b3e0d",
+      "existente": 761,
+      "capitulo": "Colonização portuguesa na América"
+    },
+    {
+      "id": "sae-9cfe4f63c77342eb8984",
+      "existente": "enem-2019-063",
+      "capitulo": "Brasil Colonial: sociedade açucareira"
+    },
+    {
+      "id": "sae-589f53e9e23fa9fb829c",
+      "existente": 9225,
+      "capitulo": "Brasil Colonial - sociedade mineradora"
+    },
+    {
+      "id": "sae-05ef552ed57d32c1d207",
+      "existente": 5119,
+      "capitulo": "Sociedade colonial e revoltas"
+    },
+    {
+      "id": "sae-df68f6495050f228f518",
+      "existente": 17102,
+      "capitulo": "Sociedade colonial e revoltas"
+    },
+    {
+      "id": "sae-d5ad10e9ebc37dd8b814",
+      "existente": "enem-2017-082",
+      "capitulo": "Sociedade colonial e revoltas"
+    },
+    {
+      "id": "sae-013d72a47de1ca230b66",
+      "existente": 9167,
+      "capitulo": "Sociedade colonial e revoltas"
+    },
+    {
+      "id": "sae-fe56eec7d289fc20aa82",
+      "existente": "ufrgs-2022-d1-36",
+      "capitulo": "Emancipação política do Brasil"
+    },
+    {
+      "id": "sae-153f956a92e0d808787d",
+      "existente": 17126,
+      "capitulo": "Segundo Reinado"
+    },
+    {
+      "id": "sae-4a18ed9198e2d648a669",
+      "existente": "enem-2019-080",
+      "capitulo": "República Velha"
+    },
+    {
+      "id": "sae-10b7313631ac36a2053b",
+      "existente": "enem-2018-076",
+      "capitulo": "República Velha"
+    },
+    {
+      "id": "sae-c337f67335de5140d92e",
+      "existente": "enem-2018-078",
+      "capitulo": "Era Vargas e populismo"
+    },
+    {
+      "id": "sae-816828507a34731f8bff",
+      "existente": "enem-2017-081",
+      "capitulo": "Era Vargas e populismo"
+    },
+    {
+      "id": "sae-6458f86488130e6b2104",
+      "existente": 9223,
+      "capitulo": "Ditadura civil-militar"
+    },
+    {
+      "id": "sae-3c7ea3fcf2c8e5078a26",
+      "existente": "enem-2017-083",
+      "capitulo": "Ditadura civil-militar"
+    },
+    {
+      "id": "sae-1eeaf848bf097112967c",
+      "existente": 9018,
+      "capitulo": "Ditadura civil-militar"
+    },
+    {
+      "id": "sae-e06d2c4e1a87876693da",
+      "existente": 5247,
+      "capitulo": "Abertura política"
+    },
+    {
+      "id": "sae-5024abf46daa0d970eb3",
+      "existente": 6308,
+      "capitulo": "Abertura política"
+    }
+  ],
+  "recursos": [
+    {
+      "imagem": "/acervo/estudo-historia-colecao/39b57af60f6c3f2b5eeb.jpg",
+      "sha256": "39b57af60f6c3f2b5eebe424dabe01a96ef4cf2ac5d477ec856695fc6fe8cd6c",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/pCVpZ0DLLrsCOMYW/resources/image/150702225151_consulta.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/93223fee7fa26e3cf208.jpg",
+      "sha256": "93223fee7fa26e3cf208232e5a3e9a13874ee092e4744544d46fae24c90b6837",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Px_QyMY4gcKqF74w/resources/image/EXT21_1_HIS_A_03_001.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/da2e56de463a2a90cf4e.jpg",
+      "sha256": "da2e56de463a2a90cf4eb292315720e5f6de3d9c7b18228c42ca53612c213278",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Px_QyMY4gcKqF74w/resources/image/EXT21_1_HIS_A_03_002.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/6753af9dd0e7cf202cd0.jpg",
+      "sha256": "6753af9dd0e7cf202cd02fba1f0abc829155e9b18d7f5e3f7b7185b6943c2a8a",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/1Sh69-GgVxvRlFle/resources/image/EXT21_1_HIS_A_04_001.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/5f7d406a23a6659e1d7f.jpg",
+      "sha256": "5f7d406a23a6659e1d7fc27b37bb9d11b3da6ea6a0481d5b903c53a340a2d7da",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/1Sh69-GgVxvRlFle/resources/image/EXT21_1_HIS_A_04_002.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/37a63a471e38cfa19e64.jpg",
+      "sha256": "37a63a471e38cfa19e646ac94ddc9e0fdd3fa1d35cc914bd6dcaa15b5d54834f",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/1Sh69-GgVxvRlFle/resources/image/12.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/e041e6ad724e65a70b94.jpg",
+      "sha256": "e041e6ad724e65a70b943767ccdb2faab337988fafc08e74682c811a5a417580",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/crcFf3GE7WXy7rOb/resources/image/enem-2015-questao-11-1.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/d6d8f280cc8178ea025d.jpg",
+      "sha256": "d6d8f280cc8178ea025dae87efca6f745021840bef705e1df20a4ffcabecd930",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/crcFf3GE7WXy7rOb/resources/image/chevalier-table-ronde.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/3e0055b77a73aba9a307.jpg",
+      "sha256": "3e0055b77a73aba9a30764186afe76fe313b493f73e7227e0b45de2acabf08de",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/uEhRC4ooPhbNzBti/resources/image/questao_032_268_15764_1004309_.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/5fd9287cfcb61471858a.jpg",
+      "sha256": "5fd9287cfcb61471858a6a3df10da98a6f97ba41f9f1a5b5ce085a71d8a23186",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/uEhRC4ooPhbNzBti/resources/image/Clasm_Chludov.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/e7506118e2f6bfc23417.jpg",
+      "sha256": "e7506118e2f6bfc23417b8dfc2e16ff5e78afa881acf418c730ddaf6ffb1bb26",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/8uDAJMsyZZX6gOY0/resources/image/Eric_Wolf,_A_Europa_e_os_Povos_sem_Hist_ria_(trad.)._S_o_Paulo_Edusp,_2005.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/84be9a20059c33eaf77b.jpg",
+      "sha256": "84be9a20059c33eaf77b89fe7b083fcf506dfb8b4416e2b41e24e6b6ba32d720",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/D8g92oQ4EO7Oiqm2/resources/image/EXT21_1_HIS_A_08_001.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/3025992ade69a7dafbcd.jpg",
+      "sha256": "3025992ade69a7dafbcd3ab2806124f7949cdcb84f2134bdd95af3a4980792a2",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Qvo7tLmpphSPkSzk/resources/image/9.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/19a8ff8327f401aac14b.jpg",
+      "sha256": "19a8ff8327f401aac14b3c51102f4ced7702706662a855e4b7a58d47a4e17d5a",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Qvo7tLmpphSPkSzk/resources/image/10.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/387d3d9b21e23ca09ae3.jpg",
+      "sha256": "387d3d9b21e23ca09ae39f333c1906a2acb43feab3d875aa893e13fd2c095ff7",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Qvo7tLmpphSPkSzk/resources/image/SAE_AT_2024_PV_03_V2_LDIDA_HIS_AL_IMP_I001.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/c5974786bb6e18ab2302.jpg",
+      "sha256": "c5974786bb6e18ab2302a69bfc286e765789bd66b62b65cf64daa760169e39b3",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Qvo7tLmpphSPkSzk/resources/image/SAE_AT_2024_PV_03_V2_LDIDA_HIS_AL_IMP_I002.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/2cba21e92b7b5dc164d1.jpg",
+      "sha256": "2cba21e92b7b5dc164d1f9ce074e74688fa133dbe0f7410faf081b5cfe7c8061",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/34ZqSHQVd8Kx10KZ/resources/image/Ativ_01.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/dcb81b9b772457dbd291.jpg",
+      "sha256": "dcb81b9b772457dbd291b923f1a41cb83d4f86072b93024c2c7a3733e43f7c4f",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/34ZqSHQVd8Kx10KZ/resources/image/Ativ_09.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/12381d83ecfe176b38e3.jpg",
+      "sha256": "12381d83ecfe176b38e3fc2d86ce0faa5410548858e3b09dc3f4065004d9a469",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/34ZqSHQVd8Kx10KZ/resources/image/Ativ_16.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/e79756cee042040b5f3e.jpg",
+      "sha256": "e79756cee042040b5f3e00686d718fc16f7b01ceed1e6100cbc99e0ec62ea75a",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/34ZqSHQVd8Kx10KZ/resources/image/Ativ_17.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/8d2a6818bd949c44951a.jpg",
+      "sha256": "8d2a6818bd949c44951aafe25ae6ab2886fd7c0ec29de15fc70bbbc848680cfc",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/34ZqSHQVd8Kx10KZ/resources/image/SAE_AT_2024_PV_03_V2_LDIDA_HIS_AL_IMP_I003.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/eda7de3512f93d2dc50e.jpg",
+      "sha256": "eda7de3512f93d2dc50e29f7ced084690b846c54755e1c06858c52e4ac52148d",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/6LUzhWIGBv1OV2VB/resources/image/louis_xiv_maastricht.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/2450e47dfbfc8d30ceb6.jpg",
+      "sha256": "2450e47dfbfc8d30ceb6d902efe9e6bfe5ec8b12782a886755a66496dbde0fac",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/H3durnLUSse4XAYj/resources/image/9.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/278c194726254b9bf099.jpg",
+      "sha256": "278c194726254b9bf099358dbdedcdbed50470e20fb90f5b28a234c67ef33475",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/PRJZEzG5uo0Eaw1H/resources/image/Ativ._8.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/b0bdd35b5b774c375bff.jpg",
+      "sha256": "b0bdd35b5b774c375bff622f251acf42a697aba68d121f56519df7843cf043f6",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/PRJZEzG5uo0Eaw1H/resources/image/7.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/8dff506259964296cc1d.jpg",
+      "sha256": "8dff506259964296cc1ddde2504311857db421541ad2d1b864e11fa832499ce7",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/PRJZEzG5uo0Eaw1H/resources/image/Ativi._13.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/aeb67aeeacbafa3880f7.jpg",
+      "sha256": "aeb67aeeacbafa3880f715a15c97f97948ed3e936a48004ee0f64b20ef5fec13",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/PRJZEzG5uo0Eaw1H/resources/image/Ativ._14.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/a86be493e5fbc6565a4a.jpg",
+      "sha256": "a86be493e5fbc6565a4aa17a1fe109df57e6f4e58582781b6723f6893fd715cc",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Y6qlIaF6nUUZoK_p/resources/image/Ativ_7.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/e9be837b10fce94a3338.jpg",
+      "sha256": "e9be837b10fce94a33383cc96b94dd91315f53a1318d55a5e05c4377d4e0f9d3",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Y6qlIaF6nUUZoK_p/resources/image/Ativ_13.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/354236e93e6d8a2ce98e.jpg",
+      "sha256": "354236e93e6d8a2ce98e80cb848571233bc6cb2a3cbf89174dd91bff148ebb1d",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Y6qlIaF6nUUZoK_p/resources/image/Ativ_13b.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/cb5bbe561c5affb289e3.jpg",
+      "sha256": "cb5bbe561c5affb289e341f1b82086bd3c66c944443fe2b29a369845635b47f2",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Y6qlIaF6nUUZoK_p/resources/image/Ativ_20.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/2716706cb9e140897c9d.jpg",
+      "sha256": "2716706cb9e140897c9d486dfcf92d22692ece4ed1e171696f43ffa48b5b305c",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Y6qlIaF6nUUZoK_p/resources/image/SAE_AT_2024_PV_03_V2_LDIDA_HIS_AL_IMP_I004.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/1c2c3156d2d3a401c876.jpg",
+      "sha256": "1c2c3156d2d3a401c8761f365920798cc16b0791dbf58bf73898987dd7f95b3d",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/E3KB68SVJPTJuNt6/resources/image/EXT21_3_HIS_A_17_001.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/23b33cd487aeab7547ae.jpg",
+      "sha256": "23b33cd487aeab7547ae0f87082acda25e8baff787d5fd88d300b025458a6a70",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/E3KB68SVJPTJuNt6/resources/image/EXT21_3_HIS_A_17_002.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/958eff52a87e79659810.jpg",
+      "sha256": "958eff52a87e79659810c89ee32b21bba6599a822923c6e19b78cfea60bf8494",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/E3KB68SVJPTJuNt6/resources/image/EXT21_3_HIS_A_17_003.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/690c07d4daad151c969b.jpg",
+      "sha256": "690c07d4daad151c969b99bcbb031daa31c1ef793104a4ead1d1376b4eddbe00",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/E3KB68SVJPTJuNt6/resources/image/EXT21_3_HIS_A_17_004.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/e2fe8f963252786278e1.png",
+      "sha256": "e2fe8f963252786278e1b05659199c9e484e5585d5a59eac705d839d09c9cd8c",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/h5EBT4EyIuxXDKyY/resources/image/p10.png"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/d9ae8ef0411320c77410.png",
+      "sha256": "d9ae8ef0411320c77410aa2bcfbeb1dc28712af3c05d8e10e84d1b624e103424",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/h5EBT4EyIuxXDKyY/resources/image/p14.png"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/c116b3808422537dc900.jpg",
+      "sha256": "c116b3808422537dc90023c014e18eb5c88266c92b53b4cde8cbc8bddfeb9b75",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/oG4ntc56Fhd9WiY3/resources/image/q-6.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/58653f4bd83dde475e93.jpg",
+      "sha256": "58653f4bd83dde475e93f16ef4117eca7c090dca15ff6adaf12c9ed50b3ade7a",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/oG4ntc56Fhd9WiY3/resources/image/16.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/39131522bf2cbffb2c8d.jpg",
+      "sha256": "39131522bf2cbffb2c8d13014ad4468fc15ae32c3cc7f0a31fa23e5e4249df64",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/oG4ntc56Fhd9WiY3/resources/image/17dba8152329159c83c9.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/e0bf02ac67451161d272.jpg",
+      "sha256": "e0bf02ac67451161d272e75b20ae9af39e8918e8a056ae2fd02ed5cb277cc9b2",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/oG4ntc56Fhd9WiY3/resources/image/unicamp2021_1fase_1dia_indagacao_73.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/11d8020b2f22f04367b9.jpg",
+      "sha256": "11d8020b2f22f04367b92b5ca307ebc6c3dc0aa4de84a27aec5365b736d6cc00",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/YupFb7PMA5M8Or_-/resources/image/q-14.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/293c2681ae1578388c4d.jpg",
+      "sha256": "293c2681ae1578388c4ddce8a8a1b3f54ffbf277ddb2bd38161df0945f9b1e56",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/YupFb7PMA5M8Or_-/resources/image/q-15.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/7cec6be887aeaad800dc.jpg",
+      "sha256": "7cec6be887aeaad800dcfc0fccdabb18dfe72e61ae1a01d6aaa081165a15a601",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/3ASEwylly4WGtUkL/resources/image/A98n40hb_rxa029_8mg.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/7d5e07433dfc624f118b.jpg",
+      "sha256": "7d5e07433dfc624f118b6d80e053e2c25d8cbbeea36e2c343823fb4742e140b9",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/3ASEwylly4WGtUkL/resources/image/A9576hg2_rxa00l_8mg.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/01c1eec3cff23adc58a4.jpg",
+      "sha256": "01c1eec3cff23adc58a48819edb389ccce6f83af8948b73d5d2fd8a1ca12add1",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/3ASEwylly4WGtUkL/resources/image/unnamed.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/70c734a96a422e702200.jpg",
+      "sha256": "70c734a96a422e7022007f8c41830d0061093ca0dfd1335d201b9073b124f958",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/3ASEwylly4WGtUkL/resources/image/A9m6z1nf_rxa021_8mg.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/bf52489e0eb0bf7ea8c2.png",
+      "sha256": "bf52489e0eb0bf7ea8c2b6da5513015b8fbf9376a4f8271cea0c10f38334dc0b",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/3ASEwylly4WGtUkL/resources/image/enem-4.png"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/56d74a32c0668ff7f256.png",
+      "sha256": "56d74a32c0668ff7f256496b9fa09717b3ef58565fdfbb94d2baff159ed93848",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/3ASEwylly4WGtUkL/resources/image/enem-5.png"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/425a5f672a704f6c8950.jpg",
+      "sha256": "425a5f672a704f6c8950ad583dc046a9386ffa72d4befb6b49bcbee923c72f82",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Z4RLFn6aS7f31GfC/resources/image/6.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/e8427c654cd0d4b95b62.jpg",
+      "sha256": "e8427c654cd0d4b95b62ad67fd235ffbb66db0e2dcf54360febced91bbd5f55f",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Z4RLFn6aS7f31GfC/resources/image/Q_pucsp2018_prova.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/10ef7f1cc9de3d2abb9e.jpg",
+      "sha256": "10ef7f1cc9de3d2abb9e2903d3abab2f448294b00abb3504bbebfdba77670309",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Z4RLFn6aS7f31GfC/resources/image/Salvador_Dali-The_Face_Of_War.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/44e1793ec5c34e99044f.jpg",
+      "sha256": "44e1793ec5c34e99044f47f85b95551cb6878ec40830dc093e785f021d178041",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Z4RLFn6aS7f31GfC/resources/image/9301_7061.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/912ba053c13aaed83082.jpg",
+      "sha256": "912ba053c13aaed83082bea11ebcb046b8bb71aadda5f75541f9ff8a4a9d3d6e",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/Z4RLFn6aS7f31GfC/resources/image/captain-america-comics-001-000-anpymgold_orig.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/5baf6160339d6977f007.jpg",
+      "sha256": "5baf6160339d6977f007af53b0ff282ecde8f0207962a79684f9474435f3539a",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/EM8dkNXYsmem8adi/resources/image/EXT21_3_HIS_A_23_001.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/1eac552b2a6202175f98.jpg",
+      "sha256": "1eac552b2a6202175f98ef44f5c34c3afec66450068d146dd06f58f95b9eed6b",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/EM8dkNXYsmem8adi/resources/image/EXT21_3_HIS_A_23_002.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/a5b00671fe5d51d61344.jpg",
+      "sha256": "a5b00671fe5d51d6134453ab5464fe455a01f311096660e34a364cca0c449962",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/EM8dkNXYsmem8adi/resources/image/EXT21_3_HIS_A_23_003.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/a4f7746c966b1a82fbb1.jpg",
+      "sha256": "a4f7746c966b1a82fbb1f394145b938e38e06d32dcc944423ec269f38c594775",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/EM8dkNXYsmem8adi/resources/image/EXT21_3_HIS_A_23_005.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/3c040c2f45c494b54fed.jpg",
+      "sha256": "3c040c2f45c494b54feddae28850bbd61f2d63f37d936791cc2a4eafba8b9ce6",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/EM8dkNXYsmem8adi/resources/image/EXT21_3_HIS_A_23_004.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/b442a089ffc0f472a3a0.png",
+      "sha256": "b442a089ffc0f472a3a0cbd115125d39fb0869fbfe3855a94ced295453e58e7f",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/EM8dkNXYsmem8adi/resources/image/enem-2.png"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/c9b79af12da9b6c1cdea.jpg",
+      "sha256": "c9b79af12da9b6c1cdea4b9af73d9e2ee16cd7b56594396fe2e5d9063184e4f6",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/ge2bv9pMZAoP05Kc/resources/image/A94bhqp4_tc2eto_9j0.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/bf6d11bd3cf742881d6d.jpg",
+      "sha256": "bf6d11bd3cf742881d6d70f83de193b8dd8eaa28055927b039d41804d4848f4c",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/5wAgvqbv7U7fwO5P/resources/image/A91p8l9rr_wdwwu_gbk.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/c185a156d896fa574581.jpg",
+      "sha256": "c185a156d896fa57458188750c4edd6750c8381bff17a8a3b603ff6c566f01c1",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/5wAgvqbv7U7fwO5P/resources/image/A94np89b_wdwx6_gbk.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/e8c69c04fde9bf72ddba.jpg",
+      "sha256": "e8c69c04fde9bf72ddbaea9fa83ffc567a0a005d199162473873c478be426291",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/5wAgvqbv7U7fwO5P/resources/image/A91v8k23a_wdwya_gbk.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/2402bd6544d58cbd2d3c.jpg",
+      "sha256": "2402bd6544d58cbd2d3c29a777f18839576fbcb836ce58cc55244be1f89b5672",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/5wAgvqbv7U7fwO5P/resources/image/A9oulm43_wdwxg_gbk-Aprimorado.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/aa8bcb2daad66f719162.jpg",
+      "sha256": "aa8bcb2daad66f719162280ce3630450a55b493933f7036f8d67c3841d52d00b",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/fCx__LS2o0Ar2vpV/resources/image/A9zlj89h_wdwyj_gbk.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/955ea339f6bbc5026dbc.jpg",
+      "sha256": "955ea339f6bbc5026dbcc2cefe3d09d9a4ff8cbdddcd89a6024c1ca30a2daa58",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/fCx__LS2o0Ar2vpV/resources/image/A9lezerc_wdwyl_gbk.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/0c42d8422387e6009ffd.jpg",
+      "sha256": "0c42d8422387e6009ffd5187f24fbdfbebbfeb7946446bb866e8d2a986ec153d",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/fCx__LS2o0Ar2vpV/resources/image/CAD_ENEM_2016_DIA_1_01_AZUL.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/91b05ac434a296392d66.jpg",
+      "sha256": "91b05ac434a296392d66a7c2e10ce817222e45658308b81bb220eeb3a720f901",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/fCx__LS2o0Ar2vpV/resources/image/EXT_HIS_4_0001.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/6f53fad27d3d67c869b4.jpg",
+      "sha256": "6f53fad27d3d67c869b43003e726e42de26eec973324868dd0c47dfbac1fc203",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/fCx__LS2o0Ar2vpV/resources/image/EXT_HIS_4_0002.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/df38b92657f3ada9a7fb.png",
+      "sha256": "df38b92657f3ada9a7fb3a70fd094819e7468664685a44000cadc047208a107d",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/fCx__LS2o0Ar2vpV/resources/image/enem-1.png"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/094a1a213a26a5af4fc3.jpg",
+      "sha256": "094a1a213a26a5af4fc3b33296749ee2967cd3b3a2cfcc0e6fad820f9c2e8c20",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/WRrw36oiDOO22tFb/resources/image/EXT21_4_HIS_A_27_Q2IFPE2019.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/1f596b98d4e5474bea73.jpg",
+      "sha256": "1f596b98d4e5474bea7381bde1fc3c1113915a1432528f052d25c12711a73957",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/WRrw36oiDOO22tFb/resources/image/EXT21_4_HIS_A_27_Q7.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/ea8de8c52dc9204724b9.jpg",
+      "sha256": "ea8de8c52dc9204724b9dc1d656c15a2376bd23fee5a565b06f92e0653fbcb85",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/WRrw36oiDOO22tFb/resources/image/EXT21_4_HIS_A_27_Q71.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/2fbb013fcadb91a247a1.jpg",
+      "sha256": "2fbb013fcadb91a247a13af172fb0beabf14f07c6dba905b89a6762f92948f99",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/WRrw36oiDOO22tFb/resources/image/8235a3f387a337c09383.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/acb310f4185f1b4bb36f.jpg",
+      "sha256": "acb310f4185f1b4bb36f98cc8b20d20d3dbef6cdbbc033dd7778ddd35515b001",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/WRrw36oiDOO22tFb/resources/image/EXT21_4_HIS_A_27_Q11.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/041186aa178da34d9463.jpg",
+      "sha256": "041186aa178da34d946366df02c1b4b1e278d41d95a1fa930ad90c8d83f339cb",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/N6iR0lxrm7gU3cjJ/resources/image/EXT21_4_HIS_A_28_q4.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/bd5b3e048f2a3be64f3c.jpg",
+      "sha256": "bd5b3e048f2a3be64f3caca19fdc46fe4e3f2ddbacff1ef1cda923d41ac4db7f",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/N6iR0lxrm7gU3cjJ/resources/image/EXT21_4_HIS_A_28_q13.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/3a4f20295b0d5a28a720.jpg",
+      "sha256": "3a4f20295b0d5a28a7203d150b32f23893bed08cccdafb6ddb3a8458f2c61db2",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/N6iR0lxrm7gU3cjJ/resources/image/EXT21_4_HIS_A_28_q131.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/049175509eb26d21e944.jpg",
+      "sha256": "049175509eb26d21e94421936f4aea5c0f9326a9a7de201ac03eaa7325fabe62",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/w4qbhVpOuRyIzXo9/resources/image/ifsul.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/0752c24521f4dabb18bb.jpg",
+      "sha256": "0752c24521f4dabb18bb46152d2b832a743de8b49f5800da15b7c5995b70e58a",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/mC373KvSUEvk8s4i/resources/image/ext21_2_his_b_05_01.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/c280f692c299d0494c78.png",
+      "sha256": "c280f692c299d0494c78bb51e887a80a0e39f6d4138db11baeaff78692c58e0e",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/2jtE1sTKavsVw3Gr/resources/image/952_1.png"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/565461b7bf2788533aae.png",
+      "sha256": "565461b7bf2788533aae2dfdf2dbe8bb0596c167c8e23fdb0b5136abf415b004",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/2jtE1sTKavsVw3Gr/resources/image/952_2.png"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/6f270d26d1bacfb9098e.jpg",
+      "sha256": "6f270d26d1bacfb9098e5c47970ea15342aa44752ddd5bebb29d140e93536374",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/2jtE1sTKavsVw3Gr/resources/image/ext21_2_his_b_06_01.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/4bb9fe2f109105b57a03.jpg",
+      "sha256": "4bb9fe2f109105b57a037dd8b36ad584523ce083728dbd5c02693628a15462a4",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/2jtE1sTKavsVw3Gr/resources/image/ext21_2_his_b_06_02.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/053e2706f45779e948e8.jpg",
+      "sha256": "053e2706f45779e948e8bab3f356b1368b089f4f622c094ce1445212deb9694b",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/cgyIUuZutEXPZVTc/resources/image/31.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/2d03ed09a5a982e0570f.jpg",
+      "sha256": "2d03ed09a5a982e0570f12822648dc099dafe1e5e62503d90474c93810ee84eb",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/75HLEHABpO7xIBYT/resources/image/13-0.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/cf9a2ea888f00cb11c0d.jpg",
+      "sha256": "cf9a2ea888f00cb11c0d3a9b068753333b28b82da6483f3b5381d05af8dd1af0",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/75HLEHABpO7xIBYT/resources/image/questao36.enem2015.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/4b85dcc36af07971f0d9.jpg",
+      "sha256": "4b85dcc36af07971f0d94c36d86cba40a119c5c69b61564aa473c6854d721ee9",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/75HLEHABpO7xIBYT/resources/image/16.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/33c85b4b6e3c43a035e8.jpg",
+      "sha256": "33c85b4b6e3c43a035e8e3fe19cb0dffbf31e6c8c2eed90307aec6a09a25b989",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/3CJthq2Cxt0ZbCwM/resources/image/fuvest_2019_primeira_fase.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/6bc98e26b127f8d3dddb.jpg",
+      "sha256": "6bc98e26b127f8d3dddbb2f9368d8a19f691883c9e6e35449e9fe42d83facd2a",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/3CJthq2Cxt0ZbCwM/resources/image/PS2017_conhecimentos_gerais.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/f76355fcb6f08bbc803d.jpg",
+      "sha256": "f76355fcb6f08bbc803d6ed8af58044c694370c73fd06a6254aed9b2cdf12df1",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/1DloaKqFiGHV2Qf-/resources/image/vunesp-2016-unesp-vestibular-primeiro-semestre-prova-15.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/4f7dedca3f8dc0f0d7a3.jpg",
+      "sha256": "4f7dedca3f8dc0f0d7a394f593e84276e104e379ffe1dac4b86044c623320134",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/1DloaKqFiGHV2Qf-/resources/image/001_PrObjetiva-Cad1-Manha_036_1-29.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/64bd12d25dadd29cd9f3.jpg",
+      "sha256": "64bd12d25dadd29cd9f3987b9ffdf91e15ea6de2149444365b777be43442c16e",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/SNbUC7GD-8SWq69e/resources/image/EXT21_3_HIS_B_12_001.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/594a0f40e6d19733a1f3.jpg",
+      "sha256": "594a0f40e6d19733a1f3506c4e814aa8d23df214ece5474a2e8c0bcd4c4b400e",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/SNbUC7GD-8SWq69e/resources/image/EXT21_3_HIS_B_12_002.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/1cbbcc33890825339db0.png",
+      "sha256": "1cbbcc33890825339db04c96df388c32f9d1894a431e79d6296f1672b047ca98",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/SNbUC7GD-8SWq69e/resources/image/enem-2.png"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/b913e765a2240ddec2d1.jpg",
+      "sha256": "b913e765a2240ddec2d1314488d891500780b962e74624fd80c00d6dc1f09400",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/7nCuQo6zb3pVV8Ij/resources/image/Da-luta-Fora-Collor-a-resistencia-anti-Bolsonaro-900x506.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/a944c06309583cb60b2a.jpg",
+      "sha256": "a944c06309583cb60b2af2869e1a53e43207916a3e8acf484cebb82887c94831",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/JF_KCvBiE6Bqia55/resources/image/0_50b7f1d52131bd902e35d0c4ff93db67_1122615.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/342292fac8aaf1cb6a37.jpg",
+      "sha256": "342292fac8aaf1cb6a377cff60b4806aa21a8b546507e4e7c25c809b21084c01",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/JF_KCvBiE6Bqia55/resources/image/uerj-questao-57.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/e1c6c710abe944e14271.jpg",
+      "sha256": "e1c6c710abe944e14271df48a10066491f93558aa15955381982558ad9359c39",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/JF_KCvBiE6Bqia55/resources/image/f7fb49737a1105dba285.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-historia-colecao/a32dfcb17544f48a92c8.png",
+      "sha256": "a32dfcb17544f48a92c83c1eee60e797292055fb5267915322173737d338fddf",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/HIS/JF_KCvBiE6Bqia55/resources/image/enem-1.png"
+    }
+  ],
+  "observacoes": [
+    "A referência institucional e o gabarito são os declarados pelo material autorizado, sem alegação de conferência oficial independente.",
+    "As questões discursivas, somatórias ou com conflitos não foram convertidas por inferência.",
+    "Preservados textos, tabelas, imagens e quantidade original de alternativas."
+  ],
+  "fontes": [
+    {
+      "id": "695c109158c12211ab3b1bdb",
+      "materia": "História",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Antiguidade Clássica – Grécia Antiga",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/historia/capitulos/2-antiguidade-classica-grecia-anti-SyaP4",
+      "sha256": "cfdc9fab7a52f0488c1aa85c8a763d8382b57bda196aa31747b2eb14156f136b",
+      "registros": 23,
+      "gabaritos": 21,
+      "imagens_pendentes": 1
+    },
+    {
+      "id": "695c109158c12211ab3b1bdc",
+      "materia": "História",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Antiguidade Clássica – Grécia e Roma",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-antiguidade-classica-grecia-e-ro-cfqer",
+      "sha256": "11053b35e06c43fbf6098032c45b26ad7e0f5f931642efe603e23760ad575ee5",
+      "registros": 20,
+      "gabaritos": 18,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "695c109158c12211ab3b1bdd",
+      "materia": "História",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Antiguidade Clássica – Roma Antiga",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-antiguidade-classica-roma-antiga-uKyTh",
+      "sha256": "53bcc4927045ba643c72a12775d935baf6e4e02fbb0c3897029d826a5ee1bf7f",
+      "registros": 22,
+      "gabaritos": 20,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "695c109158c12211ab3b1bde",
+      "materia": "História",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Idade Média",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/5-idade-media-3GUQv",
+      "sha256": "05f3f41741a773067bc6ac22adc4622ab93acb38550cbaa5cc51eac1de0c4e90",
+      "registros": 23,
+      "gabaritos": 21,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "695c109158c12211ab3b1bdf",
+      "materia": "História",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Império Bizantino e Expansão Islâmica",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/6-imperio-bizantino-e-expansao-isl-TRA4J",
+      "sha256": "f25e164538c438daf2c90b77e8479ca1415e00869dafb192650d208e57810af7",
+      "registros": 22,
+      "gabaritos": 20,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "695c109158c12211ab3b1be0",
+      "materia": "História",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "África nos séculos VIII a XV",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/7-africa-nos-seculos-viii-a-xv-1Tor3",
+      "sha256": "f4bf546c4a8c4bd7167e63757fa311bfa1c3cac9bcda06b2a120e936be2f877b",
+      "registros": 21,
+      "gabaritos": 20,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "695c109158c12211ab3b1be1",
+      "materia": "História",
+      "grupo": "Frente A - Volume 1",
+      "capitulo": "Crise do século XIV e Estados Nacionais Modernos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/8-crise-do-seculo-xiv-e-estados-na-Pp4Sp",
+      "sha256": "101fa9a3d0e38dee42e84c2ca98e060845e6c2763da46fd64de1b9f2050486da",
+      "registros": 25,
+      "gabaritos": 15,
+      "imagens_pendentes": 2
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e5e",
+      "materia": "História",
+      "grupo": "Frente A - Volume 2",
+      "capitulo": "Colonização das Américas Espanhola e Inglesa",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/historia/capitulos/9-colonizacao-das-americas-espanho-ktTP6",
+      "sha256": "f5d0867d399de1cf5f2dd8ee9479aba03b7106cef705a3aa8aa04283d80d33b7",
+      "registros": 20,
+      "gabaritos": 19,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e5f",
+      "materia": "História",
+      "grupo": "Frente A - Volume 2",
+      "capitulo": "Renascimento",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/historia/capitulos/10-renascimento-e-0a5",
+      "sha256": "4968d49e42b421485294bcd2dcf04374a23ecc007acd7dedb476a7e81766e23c",
+      "registros": 22,
+      "gabaritos": 20,
+      "imagens_pendentes": 1
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e60",
+      "materia": "História",
+      "grupo": "Frente A - Volume 2",
+      "capitulo": "Reformas religiosas",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/historia/capitulos/11-reformas-religiosas-KAKi5",
+      "sha256": "263a8f7d458a1ccac4e404ad3ebad87e53570467e9e3c254f2addd874cf1043f",
+      "registros": 24,
+      "gabaritos": 19,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e61",
+      "materia": "História",
+      "grupo": "Frente A - Volume 2",
+      "capitulo": "Antigo Regime e Absolutismo",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/historia/capitulos/12-antigo-regime-e-absolutismo-tFHG-",
+      "sha256": "34c44b08a358ef198a25dc2ef8c02141bc79e150f80372a7d9bb4ab5859b98ee",
+      "registros": 22,
+      "gabaritos": 16,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e62",
+      "materia": "História",
+      "grupo": "Frente A - Volume 2",
+      "capitulo": "Iluminismo e Independência dos Estados Unidos da América",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/historia/capitulos/13-iluminismo-e-independencia-dos--gYki-",
+      "sha256": "34628a5763c32f8d9e56a2f25f92690bea51d222ed78b47818667a42ee0d6eeb",
+      "registros": 24,
+      "gabaritos": 22,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e63",
+      "materia": "História",
+      "grupo": "Frente A - Volume 2",
+      "capitulo": "Revolução Francesa",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/historia/capitulos/14-revolucao-francesa-u1UGf",
+      "sha256": "a18514830a52529478d07c498bcc144e6679c344fdb9aea946d1d99eba30396c",
+      "registros": 21,
+      "gabaritos": 19,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e64",
+      "materia": "História",
+      "grupo": "Frente A - Volume 2",
+      "capitulo": "Era Napoleônica e movimentos de emancipação na América",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/historia/capitulos/15-era-napoleonica-e-movimentos-de-c4hRj",
+      "sha256": "3b8a4f18d446405e4963d2ee9d4ac67278fd4e580af73c15576e0bcb7cda3496",
+      "registros": 19,
+      "gabaritos": 16,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e65",
+      "materia": "História",
+      "grupo": "Frente A - Volume 2",
+      "capitulo": "Revolução Industrial",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/historia/capitulos/16-revolucao-industrial-zXMY1",
+      "sha256": "9e85ec5a1b729affdff1dff2940d2a4c225998ffe5c208263d99a2edc5d1317b",
+      "registros": 20,
+      "gabaritos": 18,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcbf",
+      "materia": "História",
+      "grupo": "Frente A - Volume 3",
+      "capitulo": "Expansão do capitalismo",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/historia/capitulos/17-expansao-do-capitalismo-_gSVC",
+      "sha256": "fd9635544b340a1e51af3b25ed08711dbe8a0e998e47d73112b8231c94d30028",
+      "registros": 22,
+      "gabaritos": 19,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc0",
+      "materia": "História",
+      "grupo": "Frente A - Volume 3",
+      "capitulo": "Antecedentes da Primeira Guerra Mundial",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/historia/capitulos/18-antecedentes-da-primeira-guerra-Jd33e",
+      "sha256": "ec39bb42ced0e22c164c4fbb9d685ad6bca90eac1bffc0af4838ae7e850d3234",
+      "registros": 20,
+      "gabaritos": 15,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc1",
+      "materia": "História",
+      "grupo": "Frente A - Volume 3",
+      "capitulo": "Primeira Guerra Mundial e Revolução Russa",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/historia/capitulos/19-primeira-guerra-mundial-e-revol-6kfa7",
+      "sha256": "8d8485676e47bd89399fd56a9677ef50c76e6b7ea37b7d227903bc15ede52a56",
+      "registros": 22,
+      "gabaritos": 19,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc2",
+      "materia": "História",
+      "grupo": "Frente A - Volume 3",
+      "capitulo": "Entreguerras - Crise de 1929 e Fascismos",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/historia/capitulos/20-entreguerras-crise-de-1929-e-fa-oCVHc",
+      "sha256": "13267702ef909bf00dfbf69367a664d2361e9dd8487247c5032c9183e8cef993",
+      "registros": 20,
+      "gabaritos": 17,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc3",
+      "materia": "História",
+      "grupo": "Frente A - Volume 3",
+      "capitulo": "Autoritarismo",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/historia/capitulos/21-autoritarismo-beHJj",
+      "sha256": "31afa4d59b9fb8a9f15067e2bc94a46d2bd08f9f062c1284ca7a0837f50eb22d",
+      "registros": 19,
+      "gabaritos": 16,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc4",
+      "materia": "História",
+      "grupo": "Frente A - Volume 3",
+      "capitulo": "Segunda Guerra Mundial",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/historia/capitulos/22-segunda-guerra-mundial-UKMc3",
+      "sha256": "08de779f3206a07114fa6ff99502600803fb798781bcd95e1f84fe95d066e934",
+      "registros": 18,
+      "gabaritos": 18,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc5",
+      "materia": "História",
+      "grupo": "Frente A - Volume 3",
+      "capitulo": "Pós-guerra",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/historia/capitulos/23-pos-guerra-BcjGg",
+      "sha256": "dc02a21fd9f43cc41d98948abdb0c4a37ec144158bb185126527cf1d41982aff",
+      "registros": 19,
+      "gabaritos": 18,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc6",
+      "materia": "História",
+      "grupo": "Frente A - Volume 3",
+      "capitulo": "América no século XX",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/historia/capitulos/24-america-no-seculo-xx-wkOgo",
+      "sha256": "72c81c174727be6a2434a316dd46b4f54e748f6875c6da583907323a74d21d45",
+      "registros": 17,
+      "gabaritos": 15,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a56498212ce367173ed3187",
+      "materia": "História",
+      "grupo": "Frente A - Volume 4",
+      "capitulo": "Revoluções socialistas",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-17/componentes/historia/capitulos/25-revolucoes-socialistas-2Kz3X",
+      "sha256": "15a6b030e27cccda5a15af767fe1cbe1b94259b656c99a88c0f5f65f98edbf7e",
+      "registros": 22,
+      "gabaritos": 19,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a56498212ce367173ed3188",
+      "materia": "História",
+      "grupo": "Frente A - Volume 4",
+      "capitulo": "Conflitos no Oriente Médio",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-17/componentes/historia/capitulos/26-conflitos-no-oriente-medio-DacgU",
+      "sha256": "49878e772c00ea46a1e9de8c9623eba0c27355d2f7c60b3a90963c863dcc5a59",
+      "registros": 19,
+      "gabaritos": 17,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a56498212ce367173ed3189",
+      "materia": "História",
+      "grupo": "Frente A - Volume 4",
+      "capitulo": "Guerra Fria e Globalização",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-17/componentes/historia/capitulos/27-guerra-fria-e-globalizacao-a7efT",
+      "sha256": "e6c1d9c4d166fea7237b1513a531420afd5969cff39830431e913817802afa37",
+      "registros": 18,
+      "gabaritos": 16,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a56498212ce367173ed318a",
+      "materia": "História",
+      "grupo": "Frente A - Volume 4",
+      "capitulo": "Século XXI",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-17/componentes/historia/capitulos/28-seculo-xxi-F_IIk",
+      "sha256": "d71db4c7aa2343ff2b431823b7f4fc0c4b4ac7d8d6b3d99a2e638777c726818c",
+      "registros": 19,
+      "gabaritos": 16,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a564a108544ad3192fa06e0",
+      "materia": "História",
+      "grupo": "Frente A - Revisional",
+      "capitulo": "História antiga",
+      "url": "https://livrodigital.sae.digital/livros/livro-rev-3a-serie-aprova-17/componentes/historia/capitulos/29-historia-antiga-yHDsv",
+      "sha256": "ac81ecffe132d78599e491d1d2f0a9d299f50809f6119f5ca61565d227ca2acd",
+      "registros": 14,
+      "gabaritos": 2,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a564a108544ad3192fa06e1",
+      "materia": "História",
+      "grupo": "Frente A - Revisional",
+      "capitulo": "História Medieval – História Moderna",
+      "url": "https://livrodigital.sae.digital/livros/livro-rev-3a-serie-aprova-17/componentes/historia/capitulos/30-historia-medieval-historia-mode-ItvKW",
+      "sha256": "57fb127c785d87de49d97f990ff7b15b19a8668c4ab3640e277d39b883427dc1",
+      "registros": 15,
+      "gabaritos": 0,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a564a108544ad3192fa06e2",
+      "materia": "História",
+      "grupo": "Frente A - Revisional",
+      "capitulo": "História Contemporânea I",
+      "url": "https://livrodigital.sae.digital/livros/livro-rev-3a-serie-aprova-17/componentes/historia/capitulos/31-historia-contemporanea-i-lEpTL",
+      "sha256": "a4c46298424658721b990b832b0b4229573bba06a9eee06179d5545c1b89c29e",
+      "registros": 14,
+      "gabaritos": 0,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a564ac409165d3dddc3b5f2",
+      "materia": "História",
+      "grupo": "Frente A - Revisional",
+      "capitulo": "História Contemporânea II",
+      "url": "https://livrodigital.sae.digital/livros/livro-rev-3a-serie-aprova-17/componentes/historia/capitulos/32-historia-contemporanea-ii-dhnaU",
+      "sha256": "304e13d52fa226925de3c36ebcc446f7d9b310aaf61d7a271809634fa679e3e8",
+      "registros": 14,
+      "gabaritos": 0,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "695c109158c12211ab3b1be2",
+      "materia": "História",
+      "grupo": "Frente B - Volume 1",
+      "capitulo": "Expansões Marítimas Europeias",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-expansoes-maritimas-europeias-yYyiM",
+      "sha256": "9cd67dbe21da3024faa9b468a01cf0a56b238a0f350797d73d58278d220b9483",
+      "registros": 21,
+      "gabaritos": 18,
+      "imagens_pendentes": 1
+    },
+    {
+      "id": "695c109158c12211ab3b1be3",
+      "materia": "História",
+      "grupo": "Frente B - Volume 1",
+      "capitulo": "Civilizações pré-colombianas e indígenas",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-civilizacoes-pre-colombianas-e-i-lGhU8",
+      "sha256": "05a0e56e2077d08ff4274747b8f3a2c792e6c01734e0878dbaf395fd82190425",
+      "registros": 22,
+      "gabaritos": 21,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "695c109158c12211ab3b1be4",
+      "materia": "História",
+      "grupo": "Frente B - Volume 1",
+      "capitulo": "Colonização portuguesa na América",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-colonizacao-portuguesa-na-americ-COMwY",
+      "sha256": "a8521c91951618bd2eacb0ce4976acb8fbe1dc82ffde8c87aaa36372819b7128",
+      "registros": 23,
+      "gabaritos": 22,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "695c109158c12211ab3b1be5",
+      "materia": "História",
+      "grupo": "Frente B - Volume 1",
+      "capitulo": "Brasil Colonial: sociedade açucareira",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/componentes/historia/capitulos/4-brasil-colonia-sociedade-acucare-XLeWM",
+      "sha256": "5dc82454eac58e13480e5b5139b51755c056909cd9bc9781c4a1c9a48413ea71",
+      "registros": 19,
+      "gabaritos": 18,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e66",
+      "materia": "História",
+      "grupo": "Frente B - Volume 2",
+      "capitulo": "Brasil Colonial - sociedade mineradora",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/historia/capitulos/5-brasil-colonial-sociedade-minera-1khkc",
+      "sha256": "e39c4a1ecc511801609c01c9343577db7f658c7a0004daeef87c02055d9d72a7",
+      "registros": 21,
+      "gabaritos": 20,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e67",
+      "materia": "História",
+      "grupo": "Frente B - Volume 2",
+      "capitulo": "Sociedade colonial e revoltas",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/historia/capitulos/6-sociedade-colonial-e-revoltas-CgLx2",
+      "sha256": "e0558c481c96621b168c57618c829191c7540d02938cc1f0422ec2bea815cd93",
+      "registros": 21,
+      "gabaritos": 19,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e68",
+      "materia": "História",
+      "grupo": "Frente B - Volume 2",
+      "capitulo": "Emancipação política do Brasil",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/historia/capitulos/7-emancipacao-politica-do-brasil-ZUHD4",
+      "sha256": "92d95b3f5c7ff5290d6b0f68e84ea6f3b5abc60746b94d341f35da2bc291004d",
+      "registros": 24,
+      "gabaritos": 16,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e2284ea2f80bff351e69",
+      "materia": "História",
+      "grupo": "Frente B - Volume 2",
+      "capitulo": "Primeiro Reinado e Período Regencial",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/historia/capitulos/8-primeiro-reinado-e-periodo-regen-g02WJ",
+      "sha256": "6b0ad2502004dd48938ee778599c85a065d5680dc25c75001afe6526e0793bdf",
+      "registros": 20,
+      "gabaritos": 17,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc7",
+      "materia": "História",
+      "grupo": "Frente B - Volume 3",
+      "capitulo": "Segundo Reinado",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/historia/capitulos/9-segundo-reinado-_JBSJ",
+      "sha256": "9f2dbe973968a877d9a71fe4130ee35ae63e6f322a7eb16af14d49c8baf660e7",
+      "registros": 21,
+      "gabaritos": 17,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc8",
+      "materia": "História",
+      "grupo": "Frente B - Volume 3",
+      "capitulo": "República Velha",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/historia/capitulos/10-republica-velha-k8uJK",
+      "sha256": "b44eb9ff063edae94116541f3a6e73e06cb9903f5aab4ed6fd0155ec452c3158",
+      "registros": 21,
+      "gabaritos": 16,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcc9",
+      "materia": "História",
+      "grupo": "Frente B - Volume 3",
+      "capitulo": "Era Vargas e populismo",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/historia/capitulos/11-era-vargas-e-populismo-f9UR7",
+      "sha256": "0caa1595d86cb27e2d050ab5bfe50006191f9e1aec2523472ff1dc0308d7c3b6",
+      "registros": 21,
+      "gabaritos": 18,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f0f92b20c61e6666dcca",
+      "materia": "História",
+      "grupo": "Frente B - Volume 3",
+      "capitulo": "Ditadura civil-militar",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/historia/capitulos/12-ditadura-civil-militar-nynyS",
+      "sha256": "420d8b1ca9ff4a3330da2b5642fe754b3b3d71e2bc29ccbbddfbd504556e4a2b",
+      "registros": 21,
+      "gabaritos": 20,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a56498212ce367173ed318b",
+      "materia": "História",
+      "grupo": "Frente B - Volume 4",
+      "capitulo": "Abertura política",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-17/componentes/historia/capitulos/13-abertura-politica-9pGXs",
+      "sha256": "6f9efe87a1cee9fa2cc060685301129d71849723f3b93f4319261b2f432ab9a8",
+      "registros": 21,
+      "gabaritos": 20,
+      "imagens_pendentes": 1
+    },
+    {
+      "id": "6a56498212ce367173ed318c",
+      "materia": "História",
+      "grupo": "Frente B - Volume 4",
+      "capitulo": "Século XXI",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-17/componentes/historia/capitulos/14-seculo-xxi-4fU7H",
+      "sha256": "97774ea14d6e653d18bc05cf5c2968429fae65cdfdb3f965854ce6bbabd90d79",
+      "registros": 17,
+      "gabaritos": 15,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a564ac409165d3dddc3b5f3",
+      "materia": "História",
+      "grupo": "Frente B - Revisional",
+      "capitulo": "Brasil Colônia e Brasil Império",
+      "url": "https://livrodigital.sae.digital/livros/livro-rev-3a-serie-aprova-17/componentes/historia/capitulos/15-brasil-colonia-e-brasil-imperio-9v2c3",
+      "sha256": "c6c78891b3ea08e2c6f2905cd79cd55f79ce45dc2e4627876cb52f4a3fc8f2e5",
+      "registros": 16,
+      "gabaritos": 0,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a564ac409165d3dddc3b5f4",
+      "materia": "História",
+      "grupo": "Frente B - Revisional",
+      "capitulo": "Brasil República e Brasil Contemporâneo",
+      "url": "https://livrodigital.sae.digital/livros/livro-rev-3a-serie-aprova-17/componentes/historia/capitulos/16-brasil-republica-e-brasil-conte-d3gRc",
+      "sha256": "4b28f70b7478f42c0d3c0067033cb60655faa4b26fd3eb22de38e111028e8434",
+      "registros": 16,
+      "gabaritos": 0,
+      "imagens_pendentes": 0
+    }
+  ],
+  "validacao": {
+    "metodo": "Conferência estrutural contra a captura original, marcação única do gabarito, resolução explícita quando disponível, recursos locais, referências e deduplicação. Não equivale à resolução independente de cada exercício.",
+    "snapshots": [
+      {
+        "arquivo": "banco-auditoria.json",
+        "sha256": "2b852692fc91033533ec02f5410772f4afb614fa6326472a3b9e8f65841f1a31"
+      },
+      {
+        "arquivo": "acervo-publico-auditoria.json",
+        "sha256": "cd99fdc73579baa51062b0fade43f25333ec50e34c3f9e7b91ab802b8b165d21"
+      }
+    ],
+    "capitulos_ja_processados": [
+      "695c109158c12211ab3b1bda"
+    ]
+  },
+  "capturas_indisponiveis": []
+}

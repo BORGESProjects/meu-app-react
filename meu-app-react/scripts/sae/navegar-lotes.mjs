@@ -57,6 +57,9 @@ export async function avancarFila({ browser, materialTab, inventario, outDir, co
     if(atualizarProgresso)await relatorioProgresso(outDir)
   }
   for (const grupo of inventario) for (const cap of grupo.capitulos) {
+    // Somente falhas de origem já conferidas pelo operador; nunca substituir
+    // um capítulo por outro apenas para fazer a fila avançar.
+    if (estado.indisponiveis?.[cap.id]) continue
     try {
       const anterior = JSON.parse(await fs.readFile(path.join(outDir, 'capitulos', `${cap.id}.json`), 'utf8'))
       // Uma pendência do material de origem segue para revisão; não prende a fila em repetição.

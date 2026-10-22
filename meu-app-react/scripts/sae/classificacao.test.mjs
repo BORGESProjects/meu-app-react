@@ -13,6 +13,11 @@ test('recupera referências reais após número e competências do livro', () =>
     ['14. (USCS-Medicina-2016) Os humanos...', 'USCS', 2016],
     ['1. (CFTRJ-2020) A tabela...', 'CFTRJ', 2020],
     ['15. 5:H17 (FATEC-2016) Experiência...', 'FATEC', 2016],
+    ['1. (PUC-PR-2024) Considere...', 'PUC-PR', 2024],
+    ['1. (PUC-MG-2020) Considere...', 'PUC-MG', 2020],
+    ['1. (FAMEMA-2023) Considere...', 'FAMEMA', 2023],
+    ['1. (EPCAr-2019) Considere...', 'EPCAR', 2019],
+    ['1. (Vunesp-2020) Considere...', 'VUNESP', 2020],
   ]) {
     const resultado = classificarReferencia(texto)
     assert.equal(resultado.banca, banca)

@@ -1,0 +1,2158 @@
+{
+  "capitulos": [
+    {
+      "id": "695c104becbef344fb874304",
+      "nome": "Comunicação e expressividade",
+      "total_extraido": 19,
+      "publicados": [
+        "sae-382072ff27ce7713f1cd",
+        "sae-cea07e9b1215bbb0c57f",
+        "sae-86e792f7c9b4fe0606cf",
+        "sae-278d631e9cb0fdd43e6c",
+        "sae-6a9c7f6fd32ccc69c16c",
+        "sae-17b89d97d30da0fc3fb5",
+        "sae-0f4ad09c00d186d46e70",
+        "sae-1b7491791641597f1299",
+        "sae-5101f9c7f24d455ea1a0",
+        "sae-7744280cdcc2cadd9539",
+        "sae-f6022c7704fbcf5ae956",
+        "sae-b2a19aaef581419e3ee7",
+        "sae-986aa7f833b7ce8b3fbb",
+        "sae-deca7a83d26678fcd2f0"
+      ]
+    },
+    {
+      "id": "695c104becbef344fb874305",
+      "nome": "Fonologia e Ortografia",
+      "total_extraido": 22,
+      "publicados": [
+        "sae-5507622315c1a085b66e",
+        "sae-4ceb875bb1ffeb9bc163",
+        "sae-842e54680128f6704968",
+        "sae-1a84ebb3e7580e5b0fbc",
+        "sae-2458be9a4cf9d711a129",
+        "sae-109905566c34153cee32",
+        "sae-c73dffaa1fc8b0f81cc5",
+        "sae-39acb69f955f82640da8",
+        "sae-229a827595749490edb8",
+        "sae-8791ad20eb5229fcee60",
+        "sae-927697a3d01407559dc1",
+        "sae-55db43fdabcef5f6b8ec",
+        "sae-50b37f8a28445dc28b80",
+        "sae-2b69c251aebf6ecdb114",
+        "sae-bd563e8bb466b083b54f"
+      ]
+    },
+    {
+      "id": "695c104becbef344fb874306",
+      "nome": "Acentuação e Morfologia I",
+      "total_extraido": 16,
+      "publicados": [
+        "sae-096008b79f304de4bc3d",
+        "sae-4df51bcb87a8256b8d55",
+        "sae-4a51178187302ae44dc7",
+        "sae-8f3e2686d465daea368d",
+        "sae-8f4272d1f8559f0f4786",
+        "sae-f48fc8a77f8480bd3604",
+        "sae-dcf5a8e746b93eb7c768",
+        "sae-e65cd330945607842531",
+        "sae-969d973b0f2a7ad8f3d8",
+        "sae-06a2f1490cef0a0499b5",
+        "sae-16c1c9ebac6ae120c498",
+        "sae-c5b7e3968af73d9b978b",
+        "sae-4fb6d99c4f7cc21de24e",
+        "sae-d9f3a9208498d12ed8f9"
+      ]
+    },
+    {
+      "id": "695c104becbef344fb874307",
+      "nome": "Morfologia II",
+      "total_extraido": 24,
+      "publicados": [
+        "sae-c3c09e0b3fe666d8741d",
+        "sae-dd52916f1ed8a34f6f03",
+        "sae-81a21f8791e2a954c0d2",
+        "sae-823d00d1ae110d0be10a",
+        "sae-07f24979aad31b2cddbd",
+        "sae-d3841db7832f4b597c6c",
+        "sae-f00233ad115e8bd5618e",
+        "sae-e82f498b81901b037347",
+        "sae-79d191c571dd0ec5ee58",
+        "sae-e4ba8f34bc7377148b8e",
+        "sae-bbb7802214bc06c6c932",
+        "sae-f2e13d9be00ec84397e2",
+        "sae-008229460d208e874dff",
+        "sae-4352f11a0f4b159b1549",
+        "sae-d5c79786d44b9e786219",
+        "sae-28f20370f9610f00bb3b",
+        "sae-702ed0994ba7355f327a",
+        "sae-e2b4434f38313679c27c",
+        "sae-ad2f3699b5ea9fdec3fb",
+        "sae-445a3ce0aee5bf548704",
+        "sae-9acc84b2edf4587d1b0f"
+      ]
+    },
+    {
+      "id": "695c104becbef344fb874308",
+      "nome": "Palavras e sentidos",
+      "total_extraido": 17,
+      "publicados": [
+        "sae-6c5e55c7ba1837f14058",
+        "sae-f82f326b01abf0b851e0",
+        "sae-ba3bd5b74318f5562c55",
+        "sae-8eda5adb6e81e671d08b",
+        "sae-59854ec0eda0d94bee1a",
+        "sae-04288e41c86c3d0201ff",
+        "sae-c11d0d46b1d0026e45a9",
+        "sae-bb05d46008e34677bf5d",
+        "sae-6f1289b7fe99925b49ac",
+        "sae-7e723c919bce377728f4",
+        "sae-adab570110a876b72c24"
+      ]
+    },
+    {
+      "id": "695c104becbef344fb874309",
+      "nome": "Morfologia III",
+      "total_extraido": 17,
+      "publicados": [
+        "sae-a7c1c1fda1ecd8cbf7d7",
+        "sae-fbd23573f333c35122c6",
+        "sae-929b86177248bb8e3857",
+        "sae-e0b9d014bc15563cc042",
+        "sae-40d13b9b9a22cfc12cdc",
+        "sae-a9856d9519d85a031cd3",
+        "sae-f2615dbc2bc4b86bec90",
+        "sae-b7d5d605834f9b4b5ba5",
+        "sae-e20a05e1207d7448a6ab"
+      ]
+    },
+    {
+      "id": "69a5e215c63b7a6876f5bb00",
+      "nome": "Morfologia IV",
+      "total_extraido": 20,
+      "publicados": [
+        "sae-39be181eba506eb49532",
+        "sae-fb9dd060d6f5c9667947",
+        "sae-3d80cc3eb7aa6e96b942",
+        "sae-7271fa4c951dbc68c5d8",
+        "sae-0ccd07e6252868daefa5",
+        "sae-f70ff2df4151739721a2",
+        "sae-f8a61e502eaf3ddfa51f",
+        "sae-140ff583f4c4f3d8cc15",
+        "sae-24b4f90b71f210e39993",
+        "sae-4c25049d288343672045",
+        "sae-14b5cec59c7f57b8bc8f",
+        "sae-7ef4cc0db98fb4f32bac"
+      ]
+    },
+    {
+      "id": "69a5e215c63b7a6876f5bb01",
+      "nome": "Morfologia V",
+      "total_extraido": 18,
+      "publicados": [
+        "sae-8509c9ed23afc35025c4",
+        "sae-6ede7faf6cd238409568",
+        "sae-615193baee1a77dbaa1f",
+        "sae-c7bb39b98ca42bf72ad2",
+        "sae-d8a4ba25d3c4263261ac",
+        "sae-c924284645516f31c415",
+        "sae-f2f0f715eb709d76a007",
+        "sae-0a05f656cb46c3ba179d",
+        "sae-163513bd35e7463e130e",
+        "sae-dd45aa29a9289cc7ac92",
+        "sae-3472c000befaa0c65faa",
+        "sae-a9c26a5988de8396491b",
+        "sae-1b40130fb772f70cca67"
+      ]
+    },
+    {
+      "id": "69a5e215c63b7a6876f5bb02",
+      "nome": "Sintaxe: introdução",
+      "total_extraido": 18,
+      "publicados": [
+        "sae-2993f6e261edde8efe25",
+        "sae-71195674e73fd8145a91",
+        "sae-eaf9427596bb702a0a2b",
+        "sae-f71c29846181100c90f6",
+        "sae-89d5114cb9bd09737204",
+        "sae-3906616538dd34a46334",
+        "sae-33175d2a961dd54b848b",
+        "sae-e8b06b187e1b6ea2965f"
+      ]
+    },
+    {
+      "id": "69a5e215c63b7a6876f5bb03",
+      "nome": "Termos relacionados a verbos e a nomes",
+      "total_extraido": 15,
+      "publicados": [
+        "sae-3acb2c6311b8a437925a",
+        "sae-5e768c6eb36b71a58b8b",
+        "sae-3debcab45f681ad1f09c",
+        "sae-ae608486d336f4bda88b",
+        "sae-c11ce38f5d738b0db490",
+        "sae-516cca02dca636b8b883",
+        "sae-6ec5714ab77a4f90e9c9",
+        "sae-e3d4fb18b82aed251763",
+        "sae-837e8152c2d1f1e986a9",
+        "sae-36111980d6c7d1f42ebb"
+      ]
+    },
+    {
+      "id": "69a5e215c63b7a6876f5bb04",
+      "nome": "Período composto por subordinação I",
+      "total_extraido": 19,
+      "publicados": [
+        "sae-552330fcf31e9cd9948e",
+        "sae-10d1b645cd7f3919f9ba",
+        "sae-bce6328686c7a5f147a7",
+        "sae-668209c9fac59d20884e",
+        "sae-866a77bcaad4404dcfeb",
+        "sae-1debd011616c964e10ee",
+        "sae-139cdde0eabf0d737168",
+        "sae-7752a9f1bd45dac613f4",
+        "sae-d276bcabb215f7c3459a",
+        "sae-0428183a0f92f69d142c",
+        "sae-5287982f1a53764591ea",
+        "sae-c303aa783247c889560c",
+        "sae-be8eb8c60dc58a64c706",
+        "sae-e7c56bddc88d3111e8fe"
+      ]
+    },
+    {
+      "id": "69a5e215c63b7a6876f5bb05",
+      "nome": "Período composto por subordinação II",
+      "total_extraido": 17,
+      "publicados": [
+        "sae-22b265d136a741a7216f",
+        "sae-8c4e8ac7f4ec290b3c6e",
+        "sae-ba1aba1eb7e6b730fce3",
+        "sae-b4e424de294defc78aaa",
+        "sae-84d379fbd00cd0efcd23",
+        "sae-91239bf4905f866109d2",
+        "sae-479cbafa36c0a56b28b2",
+        "sae-ac3e3539e79d5174ee0d",
+        "sae-843f262876be7fd7836e",
+        "sae-bb3e0674a0cb56fda498",
+        "sae-ac1979631b691d25bae1"
+      ]
+    },
+    {
+      "id": "6a16f1092b20c61e6666dd4f",
+      "nome": "Período composto por subordinação III",
+      "total_extraido": 38,
+      "publicados": [
+        "sae-e93ac1227985fd2aa2e0",
+        "sae-a059d434094472bc31a0",
+        "sae-6ace12720c7b0fba3bbd",
+        "sae-10870283406f69f39e82",
+        "sae-af084e1a4e399875c6c2",
+        "sae-9742ec3ebde546aa0c10",
+        "sae-6d1889f80530817fbb2e",
+        "sae-0979e136e3ecfa46264d",
+        "sae-fff8de1c444ebed85ec1",
+        "sae-05e8534387ad6d46b882",
+        "sae-d0e7379a592ff34dfdea"
+      ]
+    },
+    {
+      "id": "6a16f1092b20c61e6666dd50",
+      "nome": "Período composto por subordinação IV",
+      "total_extraido": 14,
+      "publicados": [
+        "sae-b9355cb83b0e755412ad",
+        "sae-dd66932d83a900470680",
+        "sae-67fc560d0b24357c7c18",
+        "sae-ebbb82813171703f3a6f",
+        "sae-03f4f37a03bcf6ecb0c8",
+        "sae-a928094d0aacacd8065c",
+        "sae-bd84ca95828255d6d00a",
+        "sae-8e9dbf01638187107249",
+        "sae-f3654cc8ec9b8a1c3a3f",
+        "sae-07a496bb6d04a301b0d1",
+        "sae-34402618d96cb47b011a",
+        "sae-c1a9efa140011f0b5a97"
+      ]
+    },
+    {
+      "id": "6a16f1092b20c61e6666dd51",
+      "nome": "Períodos compostos por coordenação e subordinação",
+      "total_extraido": 17,
+      "publicados": [
+        "sae-93efa943bf6dc59e21b1",
+        "sae-d12b42b36dbeca1657c6",
+        "sae-1255d47c05759e1c9d3c",
+        "sae-76618e568d38bb045c23",
+        "sae-b3b2dc4e196c93232b0e",
+        "sae-72c47f82097b6ed4274c",
+        "sae-6f2d26a351e9fa4bacb3",
+        "sae-5ff8fd3f631773a7b544",
+        "sae-cdb909e2614bb7993edc",
+        "sae-9882af55a26b6c8c5ac6",
+        "sae-04c81a79058286e76cad",
+        "sae-e54dfead3cdc8f06bccf",
+        "sae-1e37e4403c25cf74e36c",
+        "sae-4ee1c33d697a0bdf148d"
+      ]
+    },
+    {
+      "id": "6a16f1092b20c61e6666dd52",
+      "nome": "Pontuação e Concordância I",
+      "total_extraido": 20,
+      "publicados": [
+        "sae-219fccda6b0b2fd06e97",
+        "sae-1efecdfa282311ab34b4",
+        "sae-bb3e32299a16ad1d9a49",
+        "sae-d1fce94d08a142049332",
+        "sae-690eedb4e2d6599ecc1f",
+        "sae-58403a982dd65897455b",
+        "sae-1a99efc1cad245c4344e",
+        "sae-fa239da394ead7c6568f",
+        "sae-eebb8edf195787e591bc",
+        "sae-4f3f5d8fe4738215b9d9",
+        "sae-2c659ed2ffb34ba74ac2",
+        "sae-9bd38366ce4a3ef8c47c",
+        "sae-f10e741a2aa1d36229b9",
+        "sae-6e2a0ab59db08cc6f6b5"
+      ]
+    },
+    {
+      "id": "6a16f1092b20c61e6666dd53",
+      "nome": "Concordância II",
+      "total_extraido": 15,
+      "publicados": [
+        "sae-f2e5f19b76ac9abdc1ec",
+        "sae-c0529cbfc10636b92d78",
+        "sae-68522711c85995933c16",
+        "sae-37b7e0e658f88708c71b",
+        "sae-b3ff87e055815c31ab69",
+        "sae-c5c5af5022d536229b42",
+        "sae-795607896d4dfbd4dd60",
+        "sae-1cb7237a702454b4b3ea",
+        "sae-4583782830cdfff53a6e",
+        "sae-66fcb1a69e51506c85ff",
+        "sae-9ab394dc16a202b19ab5",
+        "sae-ea83f63a8c05f268e6b4",
+        "sae-303dcedaa5d51fe05632"
+      ]
+    },
+    {
+      "id": "6a16f1092b20c61e6666dd54",
+      "nome": "Regência",
+      "total_extraido": 16,
+      "publicados": [
+        "sae-c2235e6e63b10bccde0a",
+        "sae-72701aac44380d18f32b",
+        "sae-5b356df313dfbd16eae4",
+        "sae-66f7e8fa18b09d6d453a",
+        "sae-7a8c4e9a3cba0772454e",
+        "sae-54f3698a272f8f4dee0e",
+        "sae-ea73ca69acd906e81a72",
+        "sae-0d1dae2b051233c300ea",
+        "sae-86ef668d14cdffbe6258"
+      ]
+    },
+    {
+      "id": "6a56498212ce367173ed3193",
+      "nome": "Semântica",
+      "total_extraido": 18,
+      "publicados": [
+        "sae-3dcda5cb62661486e47a",
+        "sae-5f4047b6443ac208bcc1",
+        "sae-2c4c20431bc1925f3147",
+        "sae-3a676a989e3c3568caea",
+        "sae-ae1f20efde635faab264",
+        "sae-325c0e651e2211491dd0",
+        "sae-2a60fe6ca132dcd61b8e",
+        "sae-d3c0d0bde2982545c9bb",
+        "sae-7b16111ba6a14b73b1b9",
+        "sae-77c85096f3dbdc485122",
+        "sae-76c5079f2dad8c1aa7c1"
+      ]
+    },
+    {
+      "id": "6a56498212ce367173ed3194",
+      "nome": "Expressividade na Língua I",
+      "total_extraido": 16,
+      "publicados": [
+        "sae-e920c415203aa8395907",
+        "sae-faf0a143e4d7b488593b",
+        "sae-1ba006521c02a62bcdd7",
+        "sae-39f0dd2616f9e88eb4a3",
+        "sae-9a65cfc5526a62a7b805",
+        "sae-41898c3278068dfa8b46",
+        "sae-4b3ce2db7273ed7fee88",
+        "sae-574b01074daef6780fef",
+        "sae-871f42a8bcf3522888e8",
+        "sae-6b31853817b9b1b44115",
+        "sae-0033b48a738a4d4b9bcd",
+        "sae-567e8b44061b3d8fc8a6",
+        "sae-21c86259981589a2b0de"
+      ]
+    },
+    {
+      "id": "6a56498212ce367173ed3195",
+      "nome": "Expressividade na Língua II",
+      "total_extraido": 17,
+      "publicados": [
+        "sae-2542a4118b38f6da9f7d",
+        "sae-fe5d28bf7851bcec9a9f",
+        "sae-69c8c4855a8aeae4fe61",
+        "sae-dd218a85800682d80c04",
+        "sae-7020c8a042f19497abb3",
+        "sae-15027772b9ae14d0eeae",
+        "sae-93f12661b5893da7ccf6",
+        "sae-ce87133316ab2933693f",
+        "sae-daa8cf4b634805d21d14",
+        "sae-996c38cb355d1918b42b",
+        "sae-d92068f0363aca00ad4a",
+        "sae-d1c56286b5dcce923a47",
+        "sae-37ad43f563176c5a3ac4"
+      ]
+    },
+    {
+      "id": "6a56498212ce367173ed3196",
+      "nome": "Expressividade na Língua III",
+      "total_extraido": 17,
+      "publicados": [
+        "sae-76aac951c894cd4a4564",
+        "sae-38051cba910d78d9aa7c",
+        "sae-6d8324bcd4252b187144",
+        "sae-4f26786c8583a454c340",
+        "sae-c411ac2e44f9fcfebb49",
+        "sae-749e8a88d5ab81e59166",
+        "sae-368d31b5041073b3c2a6",
+        "sae-74a96cbfeb01d664c97e",
+        "sae-0ada045801c03d6072c9",
+        "sae-34c98d7c30fc52b2d6c5",
+        "sae-664777e6d94c099b5523",
+        "sae-959d60b5968a52dffe05",
+        "sae-09742e3bcf647bec54c5"
+      ]
+    },
+    {
+      "id": "6a564ac409165d3dddc3b5fd",
+      "nome": "Variação linguística",
+      "total_extraido": 11,
+      "publicados": [
+        "sae-c1015e1185ff7275ed57",
+        "sae-33890251e3d3d6cbabc2",
+        "sae-1857aaea17c57421dac9",
+        "sae-3615a211e0c771d4aaa5",
+        "sae-8e490fcc8ad18e0eae0d",
+        "sae-8d91ab2dd649fbdeb8f6",
+        "sae-f81b5e7bafb96dbb8115",
+        "sae-368459ae805d65f87155",
+        "sae-60b60f1b529b460e7644"
+      ]
+    },
+    {
+      "id": "6a564ac409165d3dddc3b5fe",
+      "nome": "Acentuação e morfologia",
+      "total_extraido": 11,
+      "publicados": [
+        "sae-1a8d4fbcadb2b53ad39a",
+        "sae-f98f95b49fc058ac6eda",
+        "sae-847be475236471ce9f0c",
+        "sae-be0d0c680738c64e8ac5",
+        "sae-3b81063e8ec4c6fb7eef",
+        "sae-b32e7c61a11e9fe2f881",
+        "sae-f9fa3298f6007c1c5518",
+        "sae-47d1b781cf93ec481079"
+      ]
+    },
+    {
+      "id": "6a564ac409165d3dddc3b5ff",
+      "nome": "Concordâncias nominal e verbal",
+      "total_extraido": 11,
+      "publicados": [
+        "sae-cc70f227ba9cfff478ab",
+        "sae-0c6f619228ae45767e42",
+        "sae-14ed742a231fdcebf409",
+        "sae-5c6898badacfa2b9433f"
+      ]
+    },
+    {
+      "id": "6a564ac409165d3dddc3b600",
+      "nome": "Expressividade na língua",
+      "total_extraido": 12,
+      "publicados": [
+        "sae-9c6209d4fc5485b94d61",
+        "sae-007d6abd1654572f9133",
+        "sae-0d5c75953b30d4ba3eee",
+        "sae-303a28e819861dd33ab3",
+        "sae-8f74a7d48fd4ae051cb7",
+        "sae-b52ef7bd8d598f8c1033",
+        "sae-2915e6401c15797af03c",
+        "sae-c17f846944581101d533"
+      ]
+    }
+  ],
+  "total_extraido": 455,
+  "publicados": [
+    "sae-382072ff27ce7713f1cd",
+    "sae-cea07e9b1215bbb0c57f",
+    "sae-86e792f7c9b4fe0606cf",
+    "sae-278d631e9cb0fdd43e6c",
+    "sae-6a9c7f6fd32ccc69c16c",
+    "sae-17b89d97d30da0fc3fb5",
+    "sae-0f4ad09c00d186d46e70",
+    "sae-1b7491791641597f1299",
+    "sae-5101f9c7f24d455ea1a0",
+    "sae-7744280cdcc2cadd9539",
+    "sae-f6022c7704fbcf5ae956",
+    "sae-b2a19aaef581419e3ee7",
+    "sae-986aa7f833b7ce8b3fbb",
+    "sae-deca7a83d26678fcd2f0",
+    "sae-5507622315c1a085b66e",
+    "sae-4ceb875bb1ffeb9bc163",
+    "sae-842e54680128f6704968",
+    "sae-1a84ebb3e7580e5b0fbc",
+    "sae-2458be9a4cf9d711a129",
+    "sae-109905566c34153cee32",
+    "sae-c73dffaa1fc8b0f81cc5",
+    "sae-39acb69f955f82640da8",
+    "sae-229a827595749490edb8",
+    "sae-8791ad20eb5229fcee60",
+    "sae-927697a3d01407559dc1",
+    "sae-55db43fdabcef5f6b8ec",
+    "sae-50b37f8a28445dc28b80",
+    "sae-2b69c251aebf6ecdb114",
+    "sae-bd563e8bb466b083b54f",
+    "sae-096008b79f304de4bc3d",
+    "sae-4df51bcb87a8256b8d55",
+    "sae-4a51178187302ae44dc7",
+    "sae-8f3e2686d465daea368d",
+    "sae-8f4272d1f8559f0f4786",
+    "sae-f48fc8a77f8480bd3604",
+    "sae-dcf5a8e746b93eb7c768",
+    "sae-e65cd330945607842531",
+    "sae-969d973b0f2a7ad8f3d8",
+    "sae-06a2f1490cef0a0499b5",
+    "sae-16c1c9ebac6ae120c498",
+    "sae-c5b7e3968af73d9b978b",
+    "sae-4fb6d99c4f7cc21de24e",
+    "sae-d9f3a9208498d12ed8f9",
+    "sae-c3c09e0b3fe666d8741d",
+    "sae-dd52916f1ed8a34f6f03",
+    "sae-81a21f8791e2a954c0d2",
+    "sae-823d00d1ae110d0be10a",
+    "sae-07f24979aad31b2cddbd",
+    "sae-d3841db7832f4b597c6c",
+    "sae-f00233ad115e8bd5618e",
+    "sae-e82f498b81901b037347",
+    "sae-79d191c571dd0ec5ee58",
+    "sae-e4ba8f34bc7377148b8e",
+    "sae-bbb7802214bc06c6c932",
+    "sae-f2e13d9be00ec84397e2",
+    "sae-008229460d208e874dff",
+    "sae-4352f11a0f4b159b1549",
+    "sae-d5c79786d44b9e786219",
+    "sae-28f20370f9610f00bb3b",
+    "sae-702ed0994ba7355f327a",
+    "sae-e2b4434f38313679c27c",
+    "sae-ad2f3699b5ea9fdec3fb",
+    "sae-445a3ce0aee5bf548704",
+    "sae-9acc84b2edf4587d1b0f",
+    "sae-6c5e55c7ba1837f14058",
+    "sae-f82f326b01abf0b851e0",
+    "sae-ba3bd5b74318f5562c55",
+    "sae-8eda5adb6e81e671d08b",
+    "sae-59854ec0eda0d94bee1a",
+    "sae-04288e41c86c3d0201ff",
+    "sae-c11d0d46b1d0026e45a9",
+    "sae-bb05d46008e34677bf5d",
+    "sae-6f1289b7fe99925b49ac",
+    "sae-7e723c919bce377728f4",
+    "sae-adab570110a876b72c24",
+    "sae-a7c1c1fda1ecd8cbf7d7",
+    "sae-fbd23573f333c35122c6",
+    "sae-929b86177248bb8e3857",
+    "sae-e0b9d014bc15563cc042",
+    "sae-40d13b9b9a22cfc12cdc",
+    "sae-a9856d9519d85a031cd3",
+    "sae-f2615dbc2bc4b86bec90",
+    "sae-b7d5d605834f9b4b5ba5",
+    "sae-e20a05e1207d7448a6ab",
+    "sae-39be181eba506eb49532",
+    "sae-fb9dd060d6f5c9667947",
+    "sae-3d80cc3eb7aa6e96b942",
+    "sae-7271fa4c951dbc68c5d8",
+    "sae-0ccd07e6252868daefa5",
+    "sae-f70ff2df4151739721a2",
+    "sae-f8a61e502eaf3ddfa51f",
+    "sae-140ff583f4c4f3d8cc15",
+    "sae-24b4f90b71f210e39993",
+    "sae-4c25049d288343672045",
+    "sae-14b5cec59c7f57b8bc8f",
+    "sae-7ef4cc0db98fb4f32bac",
+    "sae-8509c9ed23afc35025c4",
+    "sae-6ede7faf6cd238409568",
+    "sae-615193baee1a77dbaa1f",
+    "sae-c7bb39b98ca42bf72ad2",
+    "sae-d8a4ba25d3c4263261ac",
+    "sae-c924284645516f31c415",
+    "sae-f2f0f715eb709d76a007",
+    "sae-0a05f656cb46c3ba179d",
+    "sae-163513bd35e7463e130e",
+    "sae-dd45aa29a9289cc7ac92",
+    "sae-3472c000befaa0c65faa",
+    "sae-a9c26a5988de8396491b",
+    "sae-1b40130fb772f70cca67",
+    "sae-2993f6e261edde8efe25",
+    "sae-71195674e73fd8145a91",
+    "sae-eaf9427596bb702a0a2b",
+    "sae-f71c29846181100c90f6",
+    "sae-89d5114cb9bd09737204",
+    "sae-3906616538dd34a46334",
+    "sae-33175d2a961dd54b848b",
+    "sae-e8b06b187e1b6ea2965f",
+    "sae-3acb2c6311b8a437925a",
+    "sae-5e768c6eb36b71a58b8b",
+    "sae-3debcab45f681ad1f09c",
+    "sae-ae608486d336f4bda88b",
+    "sae-c11ce38f5d738b0db490",
+    "sae-516cca02dca636b8b883",
+    "sae-6ec5714ab77a4f90e9c9",
+    "sae-e3d4fb18b82aed251763",
+    "sae-837e8152c2d1f1e986a9",
+    "sae-36111980d6c7d1f42ebb",
+    "sae-552330fcf31e9cd9948e",
+    "sae-10d1b645cd7f3919f9ba",
+    "sae-bce6328686c7a5f147a7",
+    "sae-668209c9fac59d20884e",
+    "sae-866a77bcaad4404dcfeb",
+    "sae-1debd011616c964e10ee",
+    "sae-139cdde0eabf0d737168",
+    "sae-7752a9f1bd45dac613f4",
+    "sae-d276bcabb215f7c3459a",
+    "sae-0428183a0f92f69d142c",
+    "sae-5287982f1a53764591ea",
+    "sae-c303aa783247c889560c",
+    "sae-be8eb8c60dc58a64c706",
+    "sae-e7c56bddc88d3111e8fe",
+    "sae-22b265d136a741a7216f",
+    "sae-8c4e8ac7f4ec290b3c6e",
+    "sae-ba1aba1eb7e6b730fce3",
+    "sae-b4e424de294defc78aaa",
+    "sae-84d379fbd00cd0efcd23",
+    "sae-91239bf4905f866109d2",
+    "sae-479cbafa36c0a56b28b2",
+    "sae-ac3e3539e79d5174ee0d",
+    "sae-843f262876be7fd7836e",
+    "sae-bb3e0674a0cb56fda498",
+    "sae-ac1979631b691d25bae1",
+    "sae-e93ac1227985fd2aa2e0",
+    "sae-a059d434094472bc31a0",
+    "sae-6ace12720c7b0fba3bbd",
+    "sae-10870283406f69f39e82",
+    "sae-af084e1a4e399875c6c2",
+    "sae-9742ec3ebde546aa0c10",
+    "sae-6d1889f80530817fbb2e",
+    "sae-0979e136e3ecfa46264d",
+    "sae-fff8de1c444ebed85ec1",
+    "sae-05e8534387ad6d46b882",
+    "sae-d0e7379a592ff34dfdea",
+    "sae-b9355cb83b0e755412ad",
+    "sae-dd66932d83a900470680",
+    "sae-67fc560d0b24357c7c18",
+    "sae-ebbb82813171703f3a6f",
+    "sae-03f4f37a03bcf6ecb0c8",
+    "sae-a928094d0aacacd8065c",
+    "sae-bd84ca95828255d6d00a",
+    "sae-8e9dbf01638187107249",
+    "sae-f3654cc8ec9b8a1c3a3f",
+    "sae-07a496bb6d04a301b0d1",
+    "sae-34402618d96cb47b011a",
+    "sae-c1a9efa140011f0b5a97",
+    "sae-93efa943bf6dc59e21b1",
+    "sae-d12b42b36dbeca1657c6",
+    "sae-1255d47c05759e1c9d3c",
+    "sae-76618e568d38bb045c23",
+    "sae-b3b2dc4e196c93232b0e",
+    "sae-72c47f82097b6ed4274c",
+    "sae-6f2d26a351e9fa4bacb3",
+    "sae-5ff8fd3f631773a7b544",
+    "sae-cdb909e2614bb7993edc",
+    "sae-9882af55a26b6c8c5ac6",
+    "sae-04c81a79058286e76cad",
+    "sae-e54dfead3cdc8f06bccf",
+    "sae-1e37e4403c25cf74e36c",
+    "sae-4ee1c33d697a0bdf148d",
+    "sae-219fccda6b0b2fd06e97",
+    "sae-1efecdfa282311ab34b4",
+    "sae-bb3e32299a16ad1d9a49",
+    "sae-d1fce94d08a142049332",
+    "sae-690eedb4e2d6599ecc1f",
+    "sae-58403a982dd65897455b",
+    "sae-1a99efc1cad245c4344e",
+    "sae-fa239da394ead7c6568f",
+    "sae-eebb8edf195787e591bc",
+    "sae-4f3f5d8fe4738215b9d9",
+    "sae-2c659ed2ffb34ba74ac2",
+    "sae-9bd38366ce4a3ef8c47c",
+    "sae-f10e741a2aa1d36229b9",
+    "sae-6e2a0ab59db08cc6f6b5",
+    "sae-f2e5f19b76ac9abdc1ec",
+    "sae-c0529cbfc10636b92d78",
+    "sae-68522711c85995933c16",
+    "sae-37b7e0e658f88708c71b",
+    "sae-b3ff87e055815c31ab69",
+    "sae-c5c5af5022d536229b42",
+    "sae-795607896d4dfbd4dd60",
+    "sae-1cb7237a702454b4b3ea",
+    "sae-4583782830cdfff53a6e",
+    "sae-66fcb1a69e51506c85ff",
+    "sae-9ab394dc16a202b19ab5",
+    "sae-ea83f63a8c05f268e6b4",
+    "sae-303dcedaa5d51fe05632",
+    "sae-c2235e6e63b10bccde0a",
+    "sae-72701aac44380d18f32b",
+    "sae-5b356df313dfbd16eae4",
+    "sae-66f7e8fa18b09d6d453a",
+    "sae-7a8c4e9a3cba0772454e",
+    "sae-54f3698a272f8f4dee0e",
+    "sae-ea73ca69acd906e81a72",
+    "sae-0d1dae2b051233c300ea",
+    "sae-86ef668d14cdffbe6258",
+    "sae-3dcda5cb62661486e47a",
+    "sae-5f4047b6443ac208bcc1",
+    "sae-2c4c20431bc1925f3147",
+    "sae-3a676a989e3c3568caea",
+    "sae-ae1f20efde635faab264",
+    "sae-325c0e651e2211491dd0",
+    "sae-2a60fe6ca132dcd61b8e",
+    "sae-d3c0d0bde2982545c9bb",
+    "sae-7b16111ba6a14b73b1b9",
+    "sae-77c85096f3dbdc485122",
+    "sae-76c5079f2dad8c1aa7c1",
+    "sae-e920c415203aa8395907",
+    "sae-faf0a143e4d7b488593b",
+    "sae-1ba006521c02a62bcdd7",
+    "sae-39f0dd2616f9e88eb4a3",
+    "sae-9a65cfc5526a62a7b805",
+    "sae-41898c3278068dfa8b46",
+    "sae-4b3ce2db7273ed7fee88",
+    "sae-574b01074daef6780fef",
+    "sae-871f42a8bcf3522888e8",
+    "sae-6b31853817b9b1b44115",
+    "sae-0033b48a738a4d4b9bcd",
+    "sae-567e8b44061b3d8fc8a6",
+    "sae-21c86259981589a2b0de",
+    "sae-2542a4118b38f6da9f7d",
+    "sae-fe5d28bf7851bcec9a9f",
+    "sae-69c8c4855a8aeae4fe61",
+    "sae-dd218a85800682d80c04",
+    "sae-7020c8a042f19497abb3",
+    "sae-15027772b9ae14d0eeae",
+    "sae-93f12661b5893da7ccf6",
+    "sae-ce87133316ab2933693f",
+    "sae-daa8cf4b634805d21d14",
+    "sae-996c38cb355d1918b42b",
+    "sae-d92068f0363aca00ad4a",
+    "sae-d1c56286b5dcce923a47",
+    "sae-37ad43f563176c5a3ac4",
+    "sae-76aac951c894cd4a4564",
+    "sae-38051cba910d78d9aa7c",
+    "sae-6d8324bcd4252b187144",
+    "sae-4f26786c8583a454c340",
+    "sae-c411ac2e44f9fcfebb49",
+    "sae-749e8a88d5ab81e59166",
+    "sae-368d31b5041073b3c2a6",
+    "sae-74a96cbfeb01d664c97e",
+    "sae-0ada045801c03d6072c9",
+    "sae-34c98d7c30fc52b2d6c5",
+    "sae-664777e6d94c099b5523",
+    "sae-959d60b5968a52dffe05",
+    "sae-09742e3bcf647bec54c5",
+    "sae-c1015e1185ff7275ed57",
+    "sae-33890251e3d3d6cbabc2",
+    "sae-1857aaea17c57421dac9",
+    "sae-3615a211e0c771d4aaa5",
+    "sae-8e490fcc8ad18e0eae0d",
+    "sae-8d91ab2dd649fbdeb8f6",
+    "sae-f81b5e7bafb96dbb8115",
+    "sae-368459ae805d65f87155",
+    "sae-60b60f1b529b460e7644",
+    "sae-1a8d4fbcadb2b53ad39a",
+    "sae-f98f95b49fc058ac6eda",
+    "sae-847be475236471ce9f0c",
+    "sae-be0d0c680738c64e8ac5",
+    "sae-3b81063e8ec4c6fb7eef",
+    "sae-b32e7c61a11e9fe2f881",
+    "sae-f9fa3298f6007c1c5518",
+    "sae-47d1b781cf93ec481079",
+    "sae-cc70f227ba9cfff478ab",
+    "sae-0c6f619228ae45767e42",
+    "sae-14ed742a231fdcebf409",
+    "sae-5c6898badacfa2b9433f",
+    "sae-9c6209d4fc5485b94d61",
+    "sae-007d6abd1654572f9133",
+    "sae-0d5c75953b30d4ba3eee",
+    "sae-303a28e819861dd33ab3",
+    "sae-8f74a7d48fd4ae051cb7",
+    "sae-b52ef7bd8d598f8c1033",
+    "sae-2915e6401c15797af03c",
+    "sae-c17f846944581101d533"
+  ],
+  "quarentena": [
+    {
+      "id": "sae-85fcf29e3cbbdeb3718e",
+      "capitulo": "Comunicação e expressividade",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-eca409cadd735fe218a1",
+      "capitulo": "Fonologia e Ortografia",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-d88d3e66998b6c9c8726",
+      "capitulo": "Fonologia e Ortografia",
+      "numero": 13,
+      "motivo": "Alternativas vazias ou repetidas, considerando também fórmulas e figuras."
+    },
+    {
+      "id": "sae-894a315886bab285e8e4",
+      "capitulo": "Fonologia e Ortografia",
+      "numero": 17,
+      "motivo": "Alternativas vazias ou repetidas, considerando também fórmulas e figuras."
+    },
+    {
+      "id": "sae-4b4d5c7918392ecf1387",
+      "capitulo": "Fonologia e Ortografia",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-55acd7a763f3df4698a8",
+      "capitulo": "Fonologia e Ortografia",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-f3bbdad74efa386a325d",
+      "capitulo": "Acentuação e Morfologia I",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-a8c67646eb7d58314f8c",
+      "capitulo": "Acentuação e Morfologia I",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-f368dba0d8c57393093b",
+      "capitulo": "Morfologia II",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b64a542808677254bd10",
+      "capitulo": "Morfologia II",
+      "numero": 16,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-91d1d1a894fd244a17d2",
+      "capitulo": "Morfologia II",
+      "numero": 17,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: COPESE-UFJF-2018"
+    },
+    {
+      "id": "sae-bd940c0b3ba5ab6f4faf",
+      "capitulo": "Palavras e sentidos",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-54f630e7649c06d9f2c8",
+      "capitulo": "Palavras e sentidos",
+      "numero": 8,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-87407bc53f5f3a09d7e0",
+      "capitulo": "Palavras e sentidos",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-39b20075e66f34702ec0",
+      "capitulo": "Palavras e sentidos",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-d6802a9841b85484a18c",
+      "capitulo": "Palavras e sentidos",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-dd3e1772ba58f0858e0d",
+      "capitulo": "Morfologia III",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-e39fe5e6e7f1404ef4c3",
+      "capitulo": "Morfologia III",
+      "numero": 11,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-59f0672be85744c0fa36",
+      "capitulo": "Morfologia III",
+      "numero": 12,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-370c56b0cb24e86da223",
+      "capitulo": "Morfologia III",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-c1f519a52bfa361e9260",
+      "capitulo": "Morfologia III",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-15ab52f2c8a4d981924a",
+      "capitulo": "Morfologia III",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-9cc9459897482efab146",
+      "capitulo": "Morfologia IV",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-dd51087ae3b6025ad0d7",
+      "capitulo": "Morfologia IV",
+      "numero": 10,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: EsPECx-2018"
+    },
+    {
+      "id": "sae-5b929499c3ae2962d811",
+      "capitulo": "Morfologia IV",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-5ab55db7920f6e74cccd",
+      "capitulo": "Morfologia IV",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-187f3d773c7e1be48719",
+      "capitulo": "Morfologia IV",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-6ed09d02a0500604f3a0",
+      "capitulo": "Morfologia IV",
+      "numero": 19,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: FCMFCSP-2023"
+    },
+    {
+      "id": "sae-3b0cdf7d2a3c26468e1e",
+      "capitulo": "Morfologia V",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2b9045152d3ca5920116",
+      "capitulo": "Morfologia V",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-15cd396d97c111dc1927",
+      "capitulo": "Morfologia V",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-618bd2f709e4ebd07d6d",
+      "capitulo": "Sintaxe: introdução",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-e4fa2d40567c088a3b13",
+      "capitulo": "Sintaxe: introdução",
+      "numero": 12,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-cd9e56dd174c74d7301f",
+      "capitulo": "Sintaxe: introdução",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-1c403b3c830b15136774",
+      "capitulo": "Sintaxe: introdução",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2d46cc7e6ba9e061d23c",
+      "capitulo": "Sintaxe: introdução",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-0085fd8a112e9eb2466f",
+      "capitulo": "Sintaxe: introdução",
+      "numero": 16,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: FMC-2022"
+    },
+    {
+      "id": "sae-f83a8eadae22fde9e6e3",
+      "capitulo": "Sintaxe: introdução",
+      "numero": 17,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: FMC-2022"
+    },
+    {
+      "id": "sae-f18cd7a51bd7a1aea146",
+      "capitulo": "Termos relacionados a verbos e a nomes",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-aede9319ba0b0b573329",
+      "capitulo": "Termos relacionados a verbos e a nomes",
+      "numero": 9,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: CECIERJ-2019"
+    },
+    {
+      "id": "sae-2d13768ee41229936413",
+      "capitulo": "Termos relacionados a verbos e a nomes",
+      "numero": 12,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-d99dcaec0f9834dd56e0",
+      "capitulo": "Termos relacionados a verbos e a nomes",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-63c006a143c2bf9578e5",
+      "capitulo": "Termos relacionados a verbos e a nomes",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-d495b1a2629a1150d771",
+      "capitulo": "Período composto por subordinação I",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-65261b612f6d01947d14",
+      "capitulo": "Período composto por subordinação I",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2e940ce9ee5fe84cb2c2",
+      "capitulo": "Período composto por subordinação II",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-3e90ec4c273b960d04e6",
+      "capitulo": "Período composto por subordinação II",
+      "numero": 12,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-d156a0aa52a618835544",
+      "capitulo": "Período composto por subordinação II",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2dcbec009f52c95b4699",
+      "capitulo": "Período composto por subordinação II",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ad72549423fbcb97331c",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-3c76c0c3a0a8bff2dbcd",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 11,
+      "motivo": "Conteúdo já existente com resposta divergente: 5515"
+    },
+    {
+      "id": "sae-df16a26f6f17e785769c",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-cd8b9a5c4e2ba37bba1a",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-250f1a9bb9f80ff6de5e",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 2,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-881b5554ea5d10d446ae",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 3,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ebec4626f1d4ca552cd8",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 4,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-4c2ad6d2fb48f33e7d2b",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 5,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-62806d50c8a8a7a49f7f",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 6,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2d4bdf1ea6c17c906976",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 8,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-501af0f476e2122f17ec",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 9,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-077bbc1ce97be33a618f",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 10,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-eba55e72a1ed9865ef5b",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 11,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-e41405e05f37b9436f30",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 12,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-c57b56e90d9f6de9dedf",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-789aa150992942f8245a",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 14,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-97cc23c2c1b28d76db7a",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-66d2fa9ed0762c4ef343",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-6a617773096a4f5f06b6",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-273e102192d2baffae5c",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 18,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-0e3e9d33c10f555e317f",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 19,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-1ea4eba08861f4515ea7",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 20,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-61ab536ca2b2057765e5",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 21,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-8cdd673cf820966c9128",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 22,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-1797667c1e043c656882",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 23,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-5f6cd8d896d1b046d6f4",
+      "capitulo": "Período composto por subordinação III",
+      "numero": 24,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-e19780ba2fcde6ab5ce8",
+      "capitulo": "Período composto por subordinação IV",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-069b5c1d2aef6e9d862f",
+      "capitulo": "Período composto por subordinação IV",
+      "numero": 13,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-d25c90b1caebd12fb6c3",
+      "capitulo": "Períodos compostos por coordenação e subordinação",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-2aa973df57140b55a7cf",
+      "capitulo": "Períodos compostos por coordenação e subordinação",
+      "numero": 7,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: CEDERJ-2011"
+    },
+    {
+      "id": "sae-73a779d958c9822a8438",
+      "capitulo": "Pontuação e Concordância I",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-f5b4b370d74e2305a5dd",
+      "capitulo": "Pontuação e Concordância I",
+      "numero": 6,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-342906de614f4202fa5d",
+      "capitulo": "Pontuação e Concordância I",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-5dc7c6fea0da078042d0",
+      "capitulo": "Pontuação e Concordância I",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b1cf28abc1681ab61850",
+      "capitulo": "Pontuação e Concordância I",
+      "numero": 5,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-376bbcfd5808b6b27a5f",
+      "capitulo": "Pontuação e Concordância I",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-c86f80d271d2e8ea44bb",
+      "capitulo": "Concordância II",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-476322775a6a79d55138",
+      "capitulo": "Concordância II",
+      "numero": 3,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: MULTIVIX-2019"
+    },
+    {
+      "id": "sae-474c41b9cc1c08beadb8",
+      "capitulo": "Regência",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-0bf33d52e41bf5b4b4e5",
+      "capitulo": "Regência",
+      "numero": 1,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: MULTIVIX-2020"
+    },
+    {
+      "id": "sae-ff11b8a6e1c49ab990e0",
+      "capitulo": "Regência",
+      "numero": 2,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-dd5ea83307dd27c9252b",
+      "capitulo": "Regência",
+      "numero": 3,
+      "motivo": "Alternativas vazias ou repetidas, considerando também fórmulas e figuras."
+    },
+    {
+      "id": "sae-e49370592696559da895",
+      "capitulo": "Regência",
+      "numero": 9,
+      "motivo": "Alternativas vazias ou repetidas, considerando também fórmulas e figuras."
+    },
+    {
+      "id": "sae-cc70b056b15af6c6febc",
+      "capitulo": "Regência",
+      "numero": 10,
+      "motivo": "Alternativas vazias ou repetidas, considerando também fórmulas e figuras."
+    },
+    {
+      "id": "sae-58573baa4acf6b384d3f",
+      "capitulo": "Regência",
+      "numero": 15,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: CPACN-2020"
+    },
+    {
+      "id": "sae-9507b7f336faea0ed8aa",
+      "capitulo": "Semântica",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-462c4f584d0fcee8507b",
+      "capitulo": "Semântica",
+      "numero": 1,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-615f862f45d211c8669e",
+      "capitulo": "Semântica",
+      "numero": 9,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: IMTSP-2020"
+    },
+    {
+      "id": "sae-93327ca0cda641cec9ce",
+      "capitulo": "Semântica",
+      "numero": 10,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: IMTSP-2020"
+    },
+    {
+      "id": "sae-550225f51c361a70e618",
+      "capitulo": "Semântica",
+      "numero": 11,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: IMTSP-2020"
+    },
+    {
+      "id": "sae-623411af5be0cc45905c",
+      "capitulo": "Semântica",
+      "numero": 12,
+      "motivo": "Alternativas vazias ou repetidas, considerando também fórmulas e figuras."
+    },
+    {
+      "id": "sae-6812f84658fbd4f93cb4",
+      "capitulo": "Semântica",
+      "numero": 17,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ad40c592401431aa25ff",
+      "capitulo": "Expressividade na Língua I",
+      "numero": 5,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: IMTSP-2020"
+    },
+    {
+      "id": "sae-fe4c0dc992aafcd8cea3",
+      "capitulo": "Expressividade na Língua I",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-f230ed8f1b81b7021e5e",
+      "capitulo": "Expressividade na Língua I",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-05689f93e1d5132bedcc",
+      "capitulo": "Expressividade na Língua II",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-6267582bec5f2598ae83",
+      "capitulo": "Expressividade na Língua II",
+      "numero": 13,
+      "motivo": "Referência institucional não reconhecida; conferir antes de classificar: CEDERJ-2019"
+    },
+    {
+      "id": "sae-78f7be403c9a5399f8ad",
+      "capitulo": "Expressividade na Língua II",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-a18af07f40a9148b582b",
+      "capitulo": "Expressividade na Língua II",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-0b4249134bc56b75977d",
+      "capitulo": "Expressividade na Língua III",
+      "numero": 1,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-8e83418a22c94383cb20",
+      "capitulo": "Expressividade na Língua III",
+      "numero": 12,
+      "motivo": "Item recusado pelas validações públicas; conferir campos e texto de apoio."
+    },
+    {
+      "id": "sae-e7fedf07f59103450b9d",
+      "capitulo": "Expressividade na Língua III",
+      "numero": 15,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-e36ee297cf6fb14f1887",
+      "capitulo": "Expressividade na Língua III",
+      "numero": 16,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-f8362fda7d7b2ab6c914",
+      "capitulo": "Variação linguística",
+      "numero": 11,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-53c1fbb8113563224c43",
+      "capitulo": "Acentuação e morfologia",
+      "numero": 9,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-5a5fd1e1f56287c6f560",
+      "capitulo": "Acentuação e morfologia",
+      "numero": 10,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-7529485edf542beabcbf",
+      "capitulo": "Acentuação e morfologia",
+      "numero": 11,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-26524e1ba4fb7f5ef29c",
+      "capitulo": "Concordâncias nominal e verbal",
+      "numero": 2,
+      "motivo": "Alternativas vazias ou repetidas, considerando também fórmulas e figuras."
+    },
+    {
+      "id": "sae-f7dbd3bfb8c126fb554a",
+      "capitulo": "Concordâncias nominal e verbal",
+      "numero": 5,
+      "motivo": "Alternativas vazias ou repetidas, considerando também fórmulas e figuras."
+    },
+    {
+      "id": "sae-ab50db3e2df9ace61f4b",
+      "capitulo": "Concordâncias nominal e verbal",
+      "numero": 7,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-ee12f8126e4bc4966af3",
+      "capitulo": "Concordâncias nominal e verbal",
+      "numero": 8,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-51030ded1668a077d2c6",
+      "capitulo": "Concordâncias nominal e verbal",
+      "numero": 9,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-02da025158c6dff6f2d5",
+      "capitulo": "Concordâncias nominal e verbal",
+      "numero": 10,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-cd3f3678ea9e57558f78",
+      "capitulo": "Concordâncias nominal e verbal",
+      "numero": 11,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-acc400084336322af014",
+      "capitulo": "Expressividade na língua",
+      "numero": 5,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-edd01dc9272347fbf85a",
+      "capitulo": "Expressividade na língua",
+      "numero": 10,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-50ab6bd4937f2869ce17",
+      "capitulo": "Expressividade na língua",
+      "numero": 11,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    },
+    {
+      "id": "sae-b34890b600f171b40ca1",
+      "capitulo": "Expressividade na língua",
+      "numero": 12,
+      "motivo": "Sem gabarito objetivo único; não inferir resposta."
+    }
+  ],
+  "duplicatas": [
+    {
+      "id": "sae-591def29826116e34db9",
+      "existente": "enem-2017-039",
+      "capitulo": "Comunicação e expressividade"
+    },
+    {
+      "id": "sae-11cbf67e1b26acd2a112",
+      "existente": "enem-2018-021",
+      "capitulo": "Comunicação e expressividade"
+    },
+    {
+      "id": "sae-63907a5b89ebf33ffc0b",
+      "existente": "enem-2017-015",
+      "capitulo": "Comunicação e expressividade"
+    },
+    {
+      "id": "sae-8bd68a91e062b435fd7d",
+      "existente": "enem-2022-d1-c1-006",
+      "capitulo": "Comunicação e expressividade"
+    },
+    {
+      "id": "sae-bec98e8b632bce43a8fa",
+      "existente": 17385,
+      "capitulo": "Fonologia e Ortografia"
+    },
+    {
+      "id": "sae-4c304a51e461988d472e",
+      "existente": "enem-2022-d1-c1-017",
+      "capitulo": "Fonologia e Ortografia"
+    },
+    {
+      "id": "sae-25889d89ae6661e15b0b",
+      "existente": 9569,
+      "capitulo": "Palavras e sentidos"
+    },
+    {
+      "id": "sae-783be46e5f03cad8d503",
+      "existente": "enem-2019-044",
+      "capitulo": "Morfologia III"
+    },
+    {
+      "id": "sae-169e226177b7c040b89a",
+      "existente": "enem-2021-022",
+      "capitulo": "Morfologia III"
+    },
+    {
+      "id": "sae-2e1255a736409438bc94",
+      "existente": "sae-6f1289b7fe99925b49ac",
+      "capitulo": "Morfologia IV"
+    },
+    {
+      "id": "sae-1065fce1f93fd3920beb",
+      "existente": 5140,
+      "capitulo": "Morfologia IV"
+    },
+    {
+      "id": "sae-8aab344c6e8dd48fe5ac",
+      "existente": "enem-2018-018",
+      "capitulo": "Morfologia V"
+    },
+    {
+      "id": "sae-ef694615cde71f80f0a8",
+      "existente": 6272,
+      "capitulo": "Morfologia V"
+    },
+    {
+      "id": "sae-14d4b5ca125f95176be8",
+      "existente": "enem-2018-038",
+      "capitulo": "Sintaxe: introdução"
+    },
+    {
+      "id": "sae-07791ab6e2c20cb42f5a",
+      "existente": "sae-f8a61e502eaf3ddfa51f",
+      "capitulo": "Sintaxe: introdução"
+    },
+    {
+      "id": "sae-ddc5711af1eeb059c13a",
+      "existente": "teorema-39f175bbd7b260ed",
+      "capitulo": "Sintaxe: introdução"
+    },
+    {
+      "id": "sae-f531302cc8e54688a265",
+      "existente": "teorema-473784e1a41381e6",
+      "capitulo": "Período composto por subordinação I"
+    },
+    {
+      "id": "sae-607fc25e48feed8ca6bb",
+      "existente": "sae-e20a05e1207d7448a6ab",
+      "capitulo": "Período composto por subordinação I"
+    },
+    {
+      "id": "sae-3339922d819e47589fb3",
+      "existente": "pdf-a323ce77-62fb-4594-b867-31cfea6d7c31-11",
+      "capitulo": "Período composto por subordinação I"
+    },
+    {
+      "id": "sae-800e69ac5c649b796020",
+      "existente": "pdf-a323ce77-62fb-4594-b867-31cfea6d7c31-47",
+      "capitulo": "Período composto por subordinação II"
+    },
+    {
+      "id": "sae-3ddf3e86063e0d768ff5",
+      "existente": "pdf-a323ce77-62fb-4594-b867-31cfea6d7c31-44",
+      "capitulo": "Período composto por subordinação II"
+    },
+    {
+      "id": "sae-3cea280029e034c90ef1",
+      "existente": "pdf-a323ce77-62fb-4594-b867-31cfea6d7c31-48",
+      "capitulo": "Período composto por subordinação III"
+    },
+    {
+      "id": "sae-43c3aa22bf1397333899",
+      "existente": 5514,
+      "capitulo": "Períodos compostos por coordenação e subordinação"
+    },
+    {
+      "id": "sae-896c6dc0cd170e5e07d7",
+      "existente": "sae-8eda5adb6e81e671d08b",
+      "capitulo": "Variação linguística"
+    }
+  ],
+  "recursos": [
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/c3808c9258cf7a6ddf28.jpg",
+      "sha256": "c3808c9258cf7a6ddf28ff4edc8bcdd4d175e5751e9cec111c3442e0a7a67b63",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/Q4TOt4rEcsYN40Zu/resources/image/F009-Reciclagem-de-lampadas.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/6c9132a53cc90707eb29.jpg",
+      "sha256": "6c9132a53cc90707eb2941ea8fbe3b8392b26221b6de84bf2a916fd67e571c68",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/Q4TOt4rEcsYN40Zu/resources/image/EXT21_1_POR_A_01_001.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/355fdf46109a40422b97.jpg",
+      "sha256": "355fdf46109a40422b97355926369f4c20e9b74d97e3fd4c214ac91b3388e690",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/Q4TOt4rEcsYN40Zu/resources/image/QE_POR_2019_008.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/e5c272bcc4082835f800.jpg",
+      "sha256": "e5c272bcc4082835f800e0f217a5d7479cbea6a2ed68c5280ed5313393961d44",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/Q4TOt4rEcsYN40Zu/resources/image/EXT21_1_POR_A_01_002.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/50c3a638b519f3b83499.jpg",
+      "sha256": "50c3a638b519f3b83499f6c3d8ebd4afd4da525d812ea30232d3c60a023dce8a",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/KB9K3uQ_GxxxgoKs/resources/image/EXT21_1_POR_A_02_UENP_ATV_5_1.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/d9d8bde5860ed92ed758.jpg",
+      "sha256": "d9d8bde5860ed92ed75860283f3a8577851df3c6981352ece5f39dd1b8e2b797",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/KB9K3uQ_GxxxgoKs/resources/image/EXT21_1_POR_A_02_002_1.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/a6572692d9c8c698a745.jpg",
+      "sha256": "a6572692d9c8c698a7450f31e466383dbaa34025ed706c7b98bf3ebf4822f946",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/kBuxWAIZUyNO6GUn/resources/image/Ensino_T_cnico_Integrado_2019-1_(prova)-3_1.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/8b4836e9ffeced6a7abc.jpg",
+      "sha256": "8b4836e9ffeced6a7abc698d7ade97afe45926a8aef3b2725e939ab8934c6c3e",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/kBuxWAIZUyNO6GUn/resources/image/EXT21_1_POR_A_03_Q12_1.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/e55a45fdbb99eb418aea.jpg",
+      "sha256": "e55a45fdbb99eb418aea848364bcbc11fcb8767aac22c9a96526fe268c5d55ca",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/gt6sYAPnT_KFiuEO/resources/image/a568426307c59082fc0ae9cc34882c7b_1.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/21e704670a25842d219f.jpg",
+      "sha256": "21e704670a25842d219f66ac4f880d27e5495010ee5d971f992eb39dd7d21f16",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/wGSF7PInmM2veGBG/resources/image/IFNMG-2016_1.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/1e4f03b023a7216834c0.jpg",
+      "sha256": "1e4f03b023a7216834c0d83682296a9fb04c31f07c43b171b5e8c4bbc019de19",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/wGSF7PInmM2veGBG/resources/image/25.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/08219604b9b378f18de8.jpg",
+      "sha256": "08219604b9b378f18de8d0f3cd113469f35196b4e03805c86698e345b96b7ffc",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/6HpjadxwOxtoEc46/resources/image/copese-uft-2019-uft-vestibular-segundo-semestre-lingua-portuguesa-ingles-e-matematica-prova.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/cec25bb66b1fa989ab47.jpg",
+      "sha256": "cec25bb66b1fa989ab4759878521376575eb9719eb7cd3d70a5f86f80937d011",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/9lns0aY_bD2cYQ5L/resources/image/Tirinha_Sensacionalismo.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/e475ac8be46f58af2337.jpg",
+      "sha256": "e475ac8be46f58af2337e5bc72a7fb1b4373ccd51eb4458e57fba48a5fce0b73",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/9lns0aY_bD2cYQ5L/resources/image/unicamp-2018-questao-47-01.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/c9e48d59a2fe036c6bfd.jpg",
+      "sha256": "c9e48d59a2fe036c6bfd627b1861ef4d366ef8d4d29651b9f7b21d433a7ba0ac",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/gqeZ0U8acC2JD4FK/resources/image/PROVA_IFPE_-_portugu_s_-_Copia.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/a8857ece0634380aff83.jpg",
+      "sha256": "a8857ece0634380aff839fe8749303510e8a2a7d2997805daeef0d1811718541",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/wzm8UvzZt5CBk9Dh/resources/image/12.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/aa9c52762ab14a6121fa.jpg",
+      "sha256": "aa9c52762ab14a6121faac1e5c12822bda864e6ca920cfaa20692dd60a34e80d",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/KvrByfCRJ9TDhNyX/resources/image/6.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/3ea2321f31af124aec7c.jpg",
+      "sha256": "3ea2321f31af124aec7c682e0e49ef7721b4eab9885927a76648151da7269905",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/GWsX5L3S23X6LbpX/resources/image/POR_A_13_atv-02.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/32cd4569178eed3cab2f.jpg",
+      "sha256": "32cd4569178eed3cab2f926138b3c26174c2dea1d8d80c05089fdc047ff89846",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/p2YmU4t6SE8kPs2W/resources/image/POR_A_14_atv-10.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/036009db6973f51a3f66.jpg",
+      "sha256": "036009db6973f51a3f66e3e773c48056d38129bbbadd77c56b8993eaa8c30dad",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/9w10-UDQvUTDGgbB/resources/image/POR_A_15_atv-12.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/cf253c23cdba8a19e55e.jpg",
+      "sha256": "cf253c23cdba8a19e55e410fe1ac8758a197b2c593bfed0728682d553a263961",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/XoTm_8f6h5gtoi2l/resources/image/Q-4.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/2b0c492f308df6c545a0.jpg",
+      "sha256": "2b0c492f308df6c545a0e43cc605c17f9379f7abf6775e7567e1c1b6687ecf78",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/-KUSIPidFxB4hPhb/resources/image/charge.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/25a44f72b31b9ec0a061.jpg",
+      "sha256": "25a44f72b31b9ec0a061336651dbad15a4000f6dd036c7c6a65dde713336547d",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/Ruvxai8wflfCqe_a/resources/image/CMI-Brasil_baners_4.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/cea282d006c39bc7628a.jpg",
+      "sha256": "cea282d006c39bc7628a20a3ce81b3f458e54e9b7cb63b5570ef37eed14e5a2f",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/SCet-iX5JMysRTkA/resources/image/EXT214PORA19Q05.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/57ab4db3313c54ecb818.jpg",
+      "sha256": "57ab4db3313c54ecb81886ddb5f785f2a20537b7b5830e8f263aa5b0b20bdfa4",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/SCet-iX5JMysRTkA/resources/image/EXT214PORA19Q06.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/86d9a0202c9b346a6a70.jpg",
+      "sha256": "86d9a0202c9b346a6a7040491f61f93080a7019dcabe7a0e44a1ebf7bf38512d",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/SCet-iX5JMysRTkA/resources/image/EXT214PORA19Q14.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/07697316595b6ecff9df.png",
+      "sha256": "07697316595b6ecff9dfac62ab4534b9f60a004e6295a3ca11ce050f64129cc3",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/SCet-iX5JMysRTkA/resources/image/questao16.png"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/a3f4898216694a9cc302.jpg",
+      "sha256": "a3f4898216694a9cc302e1361aec850415b619e12631a6f14f69979f949a8798",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/rBq8YaZvGvCRwFgg/resources/image/10-14._ENEM-2016_q.107-125.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/05610e7fe11aae9d87dc.jpg",
+      "sha256": "05610e7fe11aae9d87dcef95347f63b2d957281e8f8b99557c2fd8da91e9ad7a",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/jYsEQ47MlZOqH0Xv/resources/image/questao1.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/0853a8693786d47df08a.jpg",
+      "sha256": "0853a8693786d47df08a40401d41c038e4396b9c75eae5db493e3070c0e31c53",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/jYsEQ47MlZOqH0Xv/resources/image/questao7.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/b2c786a27542f10003db.jpg",
+      "sha256": "b2c786a27542f10003db86b31701fb0b1e395469d57dfc864b9457b3baf74895",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/iPgmBIy95oaSP0R5/resources/image/EXT21RP24_001.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/c209d9e18f26ce122733.jpg",
+      "sha256": "c209d9e18f26ce1227333b2bc7218c9e1080c0b243c8b9033cad9ff260e9bec7",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/dpZIK6eCdcOWh5-q/resources/image/q_8.jpg"
+    },
+    {
+      "imagem": "/acervo/estudo-portugues-colecao/fc9238667236ce9c6ddb.jpg",
+      "sha256": "fc9238667236ce9c6ddb1799c5b08d997b67485da2aa09ee5436a08d0d1a5db1",
+      "origem": "https://livrodigital.sae.digital/@mount/LD_2022/online/EXT26/3/POR/epD2zy4tNFxWPDGM/resources/image/24_Q_04.jpg"
+    }
+  ],
+  "observacoes": [
+    "A referência institucional e o gabarito são os declarados pelo material autorizado, sem alegação de conferência oficial independente.",
+    "As questões discursivas, somatórias ou com conflitos não foram convertidas por inferência.",
+    "Preservados textos, tabelas, imagens e quantidade original de alternativas."
+  ],
+  "fontes": [
+    {
+      "id": "695c104becbef344fb874304",
+      "materia": "Português",
+      "grupo": "Volume 1",
+      "capitulo": "Comunicação e expressividade",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/1-comunicacao-e-expressividade-ypttX",
+      "sha256": "d3a70b7c464bce716ec508785edbdfc824015a47302ca435981efef5579cb9a6",
+      "registros": 19,
+      "gabaritos": 18,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "695c104becbef344fb874305",
+      "materia": "Português",
+      "grupo": "Volume 1",
+      "capitulo": "Fonologia e Ortografia",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/2-fonologia-e-ortografia-2Gckc",
+      "sha256": "6048dce3c033886827d4d22f5a5af36aa90403bbfe820bebc7ad53ce892663a0",
+      "registros": 22,
+      "gabaritos": 19,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "695c104becbef344fb874306",
+      "materia": "Português",
+      "grupo": "Volume 1",
+      "capitulo": "Acentuação e Morfologia I",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/3-acentuacao-e-morfologia-i-nJisY",
+      "sha256": "b099c35eede82833b2e07f2d7c58c969942bb1dad38fc85f86a6d00a1d369b33",
+      "registros": 16,
+      "gabaritos": 14,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "695c104becbef344fb874307",
+      "materia": "Português",
+      "grupo": "Volume 1",
+      "capitulo": "Morfologia II",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/4-morfologia-ii-48vcw",
+      "sha256": "af101b38f576044f574db1b38e259eef99a04db37496ef7b98c67463b13b0bd9",
+      "registros": 24,
+      "gabaritos": 23,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "695c104becbef344fb874308",
+      "materia": "Português",
+      "grupo": "Volume 1",
+      "capitulo": "Palavras e sentidos",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/5-palavras-e-sentidos-FZ7tA",
+      "sha256": "026f1c634c150254f514b38893196d7e7d9038bdc8edfff7c4d63e9398a629c1",
+      "registros": 17,
+      "gabaritos": 13,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "695c104becbef344fb874309",
+      "materia": "Português",
+      "grupo": "Volume 1",
+      "capitulo": "Morfologia III",
+      "url": "https://livrodigital.sae.digital/livros/livro-1-3a-serie-aprova-14/capitulos/6-morfologia-iii-8sKNR",
+      "sha256": "ec69a8cc4d95f7348f396f770810f3bb790897cb134e1f22befec9d94452db66",
+      "registros": 17,
+      "gabaritos": 11,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e215c63b7a6876f5bb00",
+      "materia": "Português",
+      "grupo": "Volume 2",
+      "capitulo": "Morfologia IV",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/portugues/capitulos/7-morfologia-iv-ICsfN",
+      "sha256": "f7ef2fccbfa1896c66416e7ec062d112ec99e1192a550959bc52dae38c9d9d34",
+      "registros": 20,
+      "gabaritos": 15,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e215c63b7a6876f5bb01",
+      "materia": "Português",
+      "grupo": "Volume 2",
+      "capitulo": "Morfologia V",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/portugues/capitulos/8-morfologia-v-_WQH8",
+      "sha256": "f91932a48675c2c06e94cd7e2afef6e6d99f94b59fbd84eb92aa5552a11ccc0b",
+      "registros": 18,
+      "gabaritos": 15,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e215c63b7a6876f5bb02",
+      "materia": "Português",
+      "grupo": "Volume 2",
+      "capitulo": "Sintaxe: introdução",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/portugues/capitulos/9-sintaxe-introducao-nvsnn",
+      "sha256": "64fd2ea247de771d14568fef731591a9e6b8d193c9f31004be6df2ecd11843ad",
+      "registros": 18,
+      "gabaritos": 13,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e215c63b7a6876f5bb03",
+      "materia": "Português",
+      "grupo": "Volume 2",
+      "capitulo": "Termos relacionados a verbos e a nomes",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/portugues/capitulos/10-termos-relacionados-a-verbos-e--Ixmg8",
+      "sha256": "9528740d7771791facf852dea9cd42225d50c9e48e1e6784da2860127707d2f4",
+      "registros": 15,
+      "gabaritos": 12,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e215c63b7a6876f5bb04",
+      "materia": "Português",
+      "grupo": "Volume 2",
+      "capitulo": "Período composto por subordinação I",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/portugues/capitulos/11-periodo-composto-por-subordinac-Z8J5P",
+      "sha256": "a671d12fc761a8b8fd28275d5cd0265f3f05187a48858d6ced9b3b8f9efe8ea4",
+      "registros": 19,
+      "gabaritos": 17,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "69a5e215c63b7a6876f5bb05",
+      "materia": "Português",
+      "grupo": "Volume 2",
+      "capitulo": "Período composto por subordinação II",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-15/componentes/portugues/capitulos/12-periodo-composto-por-subordinac-7B8Bi",
+      "sha256": "a8eecb5045a019cc4c369231e5b599c15113f6ff4dbe5da43ddd45aeed4f5cb1",
+      "registros": 17,
+      "gabaritos": 13,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f1092b20c61e6666dd4f",
+      "materia": "Português",
+      "grupo": "Volume 3",
+      "capitulo": "Período composto por subordinação III",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/portugues/capitulos/13-periodo-composto-por-subordinac-_ZnI5",
+      "sha256": "64df7073eded4c98b41a33365705411471c64bae787073d88e0d15a0f140d20b",
+      "registros": 38,
+      "gabaritos": 13,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f1092b20c61e6666dd50",
+      "materia": "Português",
+      "grupo": "Volume 3",
+      "capitulo": "Período composto por subordinação IV",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/portugues/capitulos/14-periodo-composto-por-subordinac-0i8Bs",
+      "sha256": "25656e72c3c238931a3e4255c7531c3f7facd957b6a750e3f191acf1a4b9204a",
+      "registros": 14,
+      "gabaritos": 12,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f1092b20c61e6666dd51",
+      "materia": "Português",
+      "grupo": "Volume 3",
+      "capitulo": "Períodos compostos por coordenação e subordinação",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/portugues/capitulos/15-periodos-compostos-por-coordena-5nzza",
+      "sha256": "bc97bf49b6beb4980ee4e7ad5e1a34d521e03ca412052a5f0385b351f67c71ed",
+      "registros": 17,
+      "gabaritos": 16,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f1092b20c61e6666dd52",
+      "materia": "Português",
+      "grupo": "Volume 3",
+      "capitulo": "Pontuação e Concordância I",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/portugues/capitulos/16-pontuacao-e-concordancia-i-jTgoT",
+      "sha256": "076a780062d2a9696ef41f2b4d64366ee2b5aa9fe83e165e3f31fc40b02c8765",
+      "registros": 20,
+      "gabaritos": 15,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f1092b20c61e6666dd53",
+      "materia": "Português",
+      "grupo": "Volume 3",
+      "capitulo": "Concordância II",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/portugues/capitulos/17-concordancia-ii-I6E0a",
+      "sha256": "c1be9d9d1c1a2e97ec9ff0af1d5ea541ce5704c6cef75bef0eb30458a62e3043",
+      "registros": 15,
+      "gabaritos": 14,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a16f1092b20c61e6666dd54",
+      "materia": "Português",
+      "grupo": "Volume 3",
+      "capitulo": "Regência",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-16/componentes/portugues/capitulos/18-regencia-gIel3",
+      "sha256": "c8629dbe100d97598bd0de658be5e248864b9bb6f43bfc7e321bd0013fd37713",
+      "registros": 16,
+      "gabaritos": 15,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a56498212ce367173ed3193",
+      "materia": "Português",
+      "grupo": "Volume 4",
+      "capitulo": "Semântica",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-17/componentes/portugues/capitulos/19-semantica-MCHsG",
+      "sha256": "ce02f1a0f176734f6b30fc67edfafa32af836f033029f4d8dcc076c70c103d40",
+      "registros": 18,
+      "gabaritos": 16,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a56498212ce367173ed3194",
+      "materia": "Português",
+      "grupo": "Volume 4",
+      "capitulo": "Expressividade na Língua I",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-17/componentes/portugues/capitulos/20-expressividade-na-lingua-i-OdIpX",
+      "sha256": "f911b4ce52d011bf1b46e6545fc3e82a7196077311ead7d6834cca5bd0579535",
+      "registros": 16,
+      "gabaritos": 14,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a56498212ce367173ed3195",
+      "materia": "Português",
+      "grupo": "Volume 4",
+      "capitulo": "Expressividade na Língua II",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-17/componentes/portugues/capitulos/21-expressividade-na-lingua-ii-S2xBa",
+      "sha256": "cc1e7f036e43e862ec43a7667d8374948bbd638f80af28e4e1b0cdaeb4b0359b",
+      "registros": 17,
+      "gabaritos": 14,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a56498212ce367173ed3196",
+      "materia": "Português",
+      "grupo": "Volume 4",
+      "capitulo": "Expressividade na Língua III",
+      "url": "https://livrodigital.sae.digital/livros/livro-3a-serie-aprova-17/componentes/portugues/capitulos/22-expressividade-na-lingua-iii-7thhV",
+      "sha256": "5ebe877c94b5c02cf0e7f225684acac76353e9b5a3802b3d983d27939185c275",
+      "registros": 17,
+      "gabaritos": 14,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a564ac409165d3dddc3b5fd",
+      "materia": "Português",
+      "grupo": "Revisional",
+      "capitulo": "Variação linguística",
+      "url": "https://livrodigital.sae.digital/livros/livro-rev-3a-serie-aprova-17/componentes/portugues/capitulos/23-variacao-linguistica-P4AK6",
+      "sha256": "1389c5f265858f2600cbdfc4e11ca88cd9b1a1a2f56f257814c4405487211739",
+      "registros": 11,
+      "gabaritos": 10,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a564ac409165d3dddc3b5fe",
+      "materia": "Português",
+      "grupo": "Revisional",
+      "capitulo": "Acentuação e morfologia",
+      "url": "https://livrodigital.sae.digital/livros/livro-rev-3a-serie-aprova-17/componentes/portugues/capitulos/24-acentuacao-e-morfologia-YxA0u",
+      "sha256": "10c3d146ddec204c999c2ee09598df0c2ec825c8f56e496d6912a2822839ba00",
+      "registros": 11,
+      "gabaritos": 8,
+      "imagens_pendentes": 0
+    },
+    {
+      "id": "6a564ac409165d3dddc3b5ff",
+      "materia": "Português",
+      "grupo": "Revisional",
+      "capitulo": "Concordâncias nominal e verbal",
+      "url": "https://livrodigital.sae.digital/livros/livro-rev-3a-serie-aprova-17/componentes/portugues/capitulos/25-concordancias-nominal-e-verbal-x5oHV",
+      "sha256": "f1e80eabc09337eab3b7b604d7539c14e09f5ee5a788abb021800432b47f7d8d",
+      "registros": 11,
+      "gabaritos": 6,
+      "imagens_pendentes": 1
+    },
+    {
+      "id": "6a564ac409165d3dddc3b600",
+      "materia": "Português",
+      "grupo": "Revisional",
+      "capitulo": "Expressividade na língua",
+      "url": "https://livrodigital.sae.digital/livros/livro-rev-3a-serie-aprova-17/componentes/portugues/capitulos/26-expressividade-na-lingua-JrQ9b",
+      "sha256": "7b5bc3b0619a91979f03a8b70add495c4f3077f44053037e100df692242a9033",
+      "registros": 12,
+      "gabaritos": 8,
+      "imagens_pendentes": 0
+    }
+  ],
+  "validacao": {
+    "metodo": "Conferência estrutural contra a captura original, marcação única do gabarito, resolução explícita quando disponível, recursos locais, referências e deduplicação. Não equivale à resolução independente de cada exercício.",
+    "snapshots": [
+      {
+        "arquivo": "banco-auditoria.json",
+        "sha256": "2b852692fc91033533ec02f5410772f4afb614fa6326472a3b9e8f65841f1a31"
+      },
+      {
+        "arquivo": "acervo-publico-auditoria.json",
+        "sha256": "cd99fdc73579baa51062b0fade43f25333ec50e34c3f9e7b91ab802b8b165d21"
+      }
+    ],
+    "capitulos_ja_processados": []
+  },
+  "capturas_indisponiveis": []
+}

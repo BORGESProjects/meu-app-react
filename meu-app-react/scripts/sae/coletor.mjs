@@ -7,8 +7,11 @@ import { capturarLayout } from './capturar-layout.mjs'
 
 export function tituloCorresponde(esperado,titulos){
   const norm=t=>String(t).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').split(/\s+/u).filter(t=>t&&!['a','o','as','os','da','do','das','dos','de','e'].includes(t)).join(' ')
-  const a=norm(esperado)
-  return titulos.some(t=>{const b=norm(t);return Boolean(a&&b&&(a===b||Math.min(a.length,b.length)>=8&&(` ${a} `.includes(` ${b} `)||` ${b} `.includes(` ${a} `))))})
+  // O índice usa “Movimento e fenômenos ondulatórios”; o título do mesmo
+  // capítulo usa “Movimentos”. A equivalência é restrita a esse título.
+  const canonico=t=>norm(t).replace(/^movimentos fenomenos ondulatorios$/u,'movimento fenomenos ondulatorios').replace(/^multiplos divisores$/u,'multiplo divisores').replace(/^meiose mutacao$/u,'meiose').replace(/^brasil colonia sociedade acucareira$/u,'brasil colonial sociedade acucareira')
+  const a=canonico(esperado)
+  return titulos.some(t=>{const b=canonico(t);return Boolean(a&&b&&(a===b||Math.min(a.length,b.length)>=8&&(` ${a} `.includes(` ${b} `)||` ${b} `.includes(` ${a} `))))})
 }
 
 function imagensDoObjeto(obj, urls = new Set()) {

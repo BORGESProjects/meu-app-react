@@ -1,0 +1,44 @@
+[
+  {
+    "materia": "Química",
+    "url": "/acervo/estudo-quimica-colecao/questoes.json",
+    "quantidade": 966,
+    "sha256": "7d422031eb036424f9167c0a1c590c29a771a5c4a1850c8b6f5277b24185ee85"
+  },
+  {
+    "materia": "Biologia",
+    "url": "/acervo/estudo-biologia-colecao/questoes.json",
+    "quantidade": 886,
+    "sha256": "16e088001ff72eb3b4cdf7ea1f0d229fc9a05e0971dab290777e0926ee0ec4d3"
+  },
+  {
+    "materia": "Física",
+    "url": "/acervo/estudo-fisica-colecao/questoes.json",
+    "quantidade": 1059,
+    "sha256": "160346a52e483b95b39a4b68f07aee8b6e10e37965404cd3d5d04608cc4f10e3"
+  },
+  {
+    "materia": "Matemática",
+    "url": "/acervo/estudo-matematica-colecao/questoes.json",
+    "quantidade": 1662,
+    "sha256": "edce225ec251c4aabd82fa9fd5a145f0f8ab5cef7d005eb53e9ac8ac1cbb4519"
+  },
+  {
+    "materia": "História",
+    "url": "/acervo/estudo-historia-colecao/questoes.json",
+    "quantidade": 666,
+    "sha256": "a9458100173476a12d688675cac61515c91ee413680de767a131136fc90cb1d6"
+  },
+  {
+    "materia": "Geografia",
+    "url": "/acervo/estudo-geografia-colecao/questoes.json",
+    "quantidade": 629,
+    "sha256": "c1a8601b9ec4237fd27566eea118c9acbab6eb90024e379a99c51043fb8fcbd6"
+  },
+  {
+    "materia": "Português",
+    "url": "/acervo/estudo-portugues-colecao/questoes.json",
+    "quantidade": 304,
+    "sha256": "a1724ad28f77e6d66ae185bfdb1d808807c276848cf687059ecc003a95e9fbd5"
+  }
+]

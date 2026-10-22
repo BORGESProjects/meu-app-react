@@ -14,11 +14,20 @@ export function capturarCapituloDom(main) {
       escolha_unica: n.matches('p.alternativaLetra') && Boolean(n.querySelector('input[type="radio"]')),
       children: [...n.childNodes].map(ler).filter(v => v !== null) }
   }
+  // Alguns livros repetem a classe do enunciado no link interno da mesma
+  // questão. Contar somente o marcador externo, sem perder uma questão que
+  // esteja dentro de um contêiner malformado cujo texto não comece por número.
+  const marcadores = [...main.querySelectorAll('.enunciadoNumero')].filter(n => visivel(n) && !n.closest('.gabarito') && /^\s*\d+\s*[.)](?!\d)/u.test(n.innerText.replace(/^\s*Resolução\s*/iu, '')))
+  const candidatos = new Set(marcadores)
+  const inicios = marcadores.filter(n => {
+    for (let pai = n.parentElement; pai && pai !== main; pai = pai.parentElement) if (candidatos.has(pai)) return false
+    return true
+  })
   // Fragmentos rasos evitam os limites de profundidade e de tamanho por string do transporte.
   const json = JSON.stringify({
     titulo_documento: main.ownerDocument.title,
     conteudo: ler(main),
-    quantidade_inicios: [...main.querySelectorAll('.enunciadoNumero')].filter(n => visivel(n) && !n.closest('.gabarito') && /^\s*\d+\s*[.)](?!\d)/u.test(n.innerText.replace(/^\s*Resolução\s*/iu, ''))).length,
+    quantidade_inicios: inicios.length,
     imagens: [...main.querySelectorAll('img')].filter(visivel).map(n => ({ src: n.src, alt: n.alt, carregada: n.complete && n.naturalWidth > 0 })),
     respostas_destacadas: [...main.querySelectorAll('.respostaCerta')].filter(visivel).length,
     gabaritos_visiveis: [...main.querySelectorAll('.gabarito')].filter(n => visivel(n) && n.tagName !== 'BUTTON').length,
