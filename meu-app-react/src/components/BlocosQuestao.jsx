@@ -1,3 +1,4 @@
+import {recursoLocal} from '../plataforma'
 import {createElement} from 'react'
 import {blocosValidos} from '../blocosQuestao'
 export default function BlocosQuestao({blocos,inline=false}) {
@@ -7,7 +8,7 @@ export default function BlocosQuestao({blocos,inline=false}) {
   const props={key:i}
   const classes={p:'my-3 leading-relaxed',em:'italic',strong:'font-semibold',u:'underline',figure:'my-4',figcaption:'mt-2 text-xs text-slate-400',td:'border border-slate-600 p-2 align-top',th:'border border-slate-600 bg-slate-800 p-2 text-left',ul:'list-disc pl-5',ol:'list-decimal pl-5'}
   props.className=classes[n.tag]||undefined
-  if(n.tag==='img')return <img key={i} src={n.src} alt={n.alt||'Figura da questão'} loading="lazy" className={n.inline?'inline-block h-auto w-auto max-w-full align-middle bg-white':'mx-auto h-auto w-auto max-w-full rounded-lg bg-white'}/>
+  if(n.tag==='img')return <img key={i} src={recursoLocal(n.src)} alt={n.alt||'Figura da questão'} loading="lazy" className={n.inline?'inline-block h-auto w-auto max-w-full align-middle bg-white':'mx-auto h-auto w-auto max-w-full rounded-lg bg-white'}/>
   if(n.tag==='math'){props.display=n.display||'inline';props.className='text-lg'}
   if(n.mathvariant)props.mathvariant=n.mathvariant
   if(n.colSpan)props.colSpan=n.colSpan

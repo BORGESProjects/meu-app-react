@@ -3,6 +3,8 @@ import {supabase} from '../supabaseClient'
 import {API_URL} from '../api'
 import {STATUS_EDITAL, novoIdEdital, lerConteudosEdital, acrescentarConteudos, alterarTopico, resumoEdital, topicoVisivel, identidadeEdital, copiarEditalAntigo} from '../editais'
 import './EditalPlanejador.css'
+import {aplicativoNativo} from '../plataforma'
+import {criarEditaisOffline} from '../editaisOffline'
 
 const vazio = {titulo:'', edicao:'', unidade:'', data_prova:''}
 const exemplo = 'Português:\nInterpretação de textos\nConcordância verbal e nominal\n\nMatemática:\nEquações do primeiro e segundo grau\nGeometria plana'
@@ -14,6 +16,7 @@ function Progresso({materias}) {
 }
 
 export default function EditalPlanejador({userId, client = supabase}) {
+  const repositorioLocal=useMemo(()=>aplicativoNativo?criarEditaisOffline({client,userId,storage:window.localStorage}):null,[client,userId])
   const [editais,setEditais] = useState([])
   const [selecionado,setSelecionado] = useState('')
   const [carregando,setCarregando] = useState(true)
@@ -41,6 +44,11 @@ export default function EditalPlanejador({userId, client = supabase}) {
   const carregar = useCallback(async (cancelado = () => false) => {
     setCarregando(true); setErro('')
     try {
+      if(repositorioLocal) {
+        const {rows,aviso:mensagem}=await repositorioLocal.listar()
+        if(cancelado())return
+        setEditais(rows);setAviso(mensagem);setSelecionado(atual=>rows.some(e=>e.id===atual)?atual:rows[0]?.id||'');return
+      }
       const {data,error} = await client.from('editais_usuario').select('*').eq('user_id',userId).order('created_at',{ascending:true})
       if (error) throw error
       if (cancelado()) return
@@ -49,19 +57,25 @@ export default function EditalPlanejador({userId, client = supabase}) {
     } catch {
       if (!cancelado()) setErro('Não foi possível carregar seus editais. Verifique a conexão e tente novamente. Seus conteúdos não foram alterados.')
     } finally { if (!cancelado()) setCarregando(false) }
-  }, [userId, client])
+  }, [userId, client, repositorioLocal])
 
   useEffect(() => {
     let cancelado = false
     // eslint-disable-next-line react/set-state-in-effect -- Account-scoped network synchronization.
     carregar(() => cancelado)
-    return () => {cancelado = true}
-  }, [carregar])
+    const reconectar=()=>{if(!cancelado)void carregar(()=>cancelado)}
+    if(repositorioLocal)window.addEventListener('online',reconectar)
+    return () => {cancelado = true;window.removeEventListener('online',reconectar)}
+  }, [carregar,repositorioLocal])
 
   async function gravar(edital, novo = false) {
     if (bloqueio.current) return false
     bloqueio.current = true; setSalvando(true); setErro(''); setAviso('')
     try {
+      if(repositorioLocal) {
+        const {row,aviso:mensagem}=await repositorioLocal.gravar(edital,novo)
+        setEditais(atuais=>[...atuais.filter(e=>e.id!==row.id),row]);setSelecionado(row.id);setAviso(mensagem);return true
+      }
       const payload = {titulo:edital.titulo.trim(), edicao:edital.edicao.trim(), unidade:edital.unidade.trim(), data_prova:edital.data_prova || null, materias:edital.materias, updated_at:new Date().toISOString()}
       const query = novo
         ? client.from('editais_usuario').insert({...payload,id:edital.id,user_id:userId})

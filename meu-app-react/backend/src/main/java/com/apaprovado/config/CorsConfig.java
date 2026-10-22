@@ -13,7 +13,10 @@ public class CorsConfig {
     @Bean
     public CorsFilter corsFilter(@Value("${app.cors.allowed-origins}") String origins) {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Arrays.stream(origins.split(",")).map(String::trim).toList());
+        config.setAllowedOrigins(java.util.stream.Stream.concat(
+            Arrays.stream(origins.split(",")).map(String::trim),
+            java.util.stream.Stream.of("tauri://localhost", "http://tauri.localhost", "https://tauri.localhost")
+        ).distinct().toList());
         config.setAllowedHeaders(Arrays.asList("Content-Type", "Authorization", "X-Supabase-Key"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PATCH", "DELETE", "OPTIONS"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

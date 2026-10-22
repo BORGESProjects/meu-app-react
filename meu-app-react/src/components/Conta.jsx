@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react'
 import { mensagemErroCadastro } from '../errosAutenticacao'
 import { supabase } from '../supabaseClient'
+import {aplicativoNativo,esquecerConta} from '../plataforma'
 
 const field = 'w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30'
 const button = 'rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-600/20 disabled:cursor-not-allowed disabled:opacity-50'
@@ -50,7 +51,7 @@ export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, 
       <span className={`rounded-full px-3 py-1 text-xs font-bold ${isAdmin ? 'bg-emerald-900 text-emerald-200' : 'bg-slate-800 text-slate-300'}`}>
         {checkingAdmin ? 'Verificando acesso…' : isAdmin ? 'Administrador' : 'Usuário'}
       </span>
-      <button className="text-sm font-semibold text-indigo-300 hover:text-indigo-200" onClick={() => supabase.auth.signOut()}>Sair da conta</button>
+      <button className="text-sm font-semibold text-indigo-300 hover:text-indigo-200" onClick={() => {if(aplicativoNativo)esquecerConta();void supabase.auth.signOut({scope:'local'})}}>Sair da conta</button>
     </div>
     {isAdmin && <p className="mt-5 text-sm text-slate-400">As áreas Cadastrar e Importar PDF estão liberadas no menu para esta conta.</p>}
   </section>

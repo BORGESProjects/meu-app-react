@@ -31,3 +31,9 @@ dist-ssr
 public/leitura-editais/core/
 public/leitura-editais/pdf/
 public/leitura-editais/worker.min.js
+
+# Saídas e ferramentas das versões nativas. Fontes e manifesto são versionados.
+dist-native/
+native/toolchains/
+src-tauri/gen/android/
+src-tauri/gen/apple/

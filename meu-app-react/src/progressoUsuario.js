@@ -78,7 +78,7 @@ export function criarRepositorioProgresso(client) {
   }
 }
 
-export function criarControleProgresso({userId, repositorio, storage, id = () => crypto.randomUUID(), agendar = setTimeout, cancelar = clearTimeout}) {
+export function criarControleProgresso({userId, repositorio, storage, permitirInicioLocal = false, id = () => crypto.randomUUID(), agendar = setTimeout, cancelar = clearTimeout}) {
   const prefixo = `ap-aprovado:progresso:${userId}:`
   const chaveCache = prefixo + 'cache'
   const prefixoOp = prefixo + 'op:'
@@ -115,6 +115,8 @@ export function criarControleProgresso({userId, repositorio, storage, id = () =>
   } catch { /* Uma cópia indisponível não substitui o progresso do servidor por zeros. */ }
   lerPendentes()
   if (pendentes.length) carregado = true
+  // Primeiro estudo local entra na fila; não substitui dados remotos por zeros.
+  if (permitirInicioLocal && !carregado) {carregado = true;cache()}
   emitir(carregado ? 'pendente' : 'carregando')
   function marcarTentativa(atraso) {
     cancelar(timer)

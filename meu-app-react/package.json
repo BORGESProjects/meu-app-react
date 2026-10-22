@@ -9,10 +9,22 @@
     "prebuild": "node scripts/preparar-leitor-edital.mjs",
     "build": "vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "app:acervo": "node scripts/empacotar-acervo.mjs",
+    "app:preparar": "node scripts/preparar-app.mjs",
+    "app:dev": "npm run app:preparar && vite preview --outDir dist-native --host 127.0.0.1 --port 1420 --strictPort",
+    "app:windows": "tauri build --bundles nsis",
+    "app:android:iniciar": "tauri android init --ci",
+    "app:android": "tauri android build --apk --target aarch64",
+    "app:testar": "node --test scripts/app-nativo.test.mjs",
+    "tauri": "tauri"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.1",
+    "@tauri-apps/api": "^2.12.4",
+    "@tauri-apps/plugin-dialog": "^2.8.3",
+    "@tauri-apps/plugin-fs": "^2.7.1",
+    "@tauri-apps/plugin-opener": "^2.7.2",
     "axios": "^1.20.0",
     "pdfjs-dist": "^6.4.299",
     "react": "^19.2.8",
@@ -21,6 +33,7 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",
+    "@tauri-apps/cli": "^2.12.4",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.7",
     "@vitejs/plugin-react": "^6.1.1",

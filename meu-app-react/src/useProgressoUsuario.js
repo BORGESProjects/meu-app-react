@@ -1,6 +1,7 @@
 import {useEffect, useMemo, useSyncExternalStore} from 'react'
 import {supabase} from './supabaseClient'
 import {criarControleProgresso, criarRepositorioProgresso} from './progressoUsuario'
+import {aplicativoNativo} from './plataforma'
 
 const storageSeguro = {
   get length(){return window.localStorage.length},
@@ -9,7 +10,7 @@ const storageSeguro = {
 }
 export function useProgressoUsuario(userId, dependencias) {
   const controle = useMemo(()=>criarControleProgresso({userId:userId || 'sem-conta',
-    repositorio:dependencias?.repositorio || criarRepositorioProgresso(supabase),storage:dependencias?.storage || storageSeguro}),[userId,dependencias])
+    repositorio:dependencias?.repositorio || criarRepositorioProgresso(supabase),storage:dependencias?.storage || storageSeguro,permitirInicioLocal:aplicativoNativo}),[userId,dependencias])
   const estado = useSyncExternalStore(controle.subscribe,controle.getSnapshot)
   useEffect(()=>{
     if (!userId) return

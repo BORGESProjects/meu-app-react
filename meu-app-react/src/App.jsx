@@ -13,6 +13,7 @@ import { tentarLeitura, carregarEmEtapas } from './carregarAcervo'
 import catalogoLivros from './data/livrosComplementares.json'
 import { carregarLoteLivro } from './livrosAcervo'
 import { criarProcessadorAcervo } from './processarAcervo'
+import {aplicativoNativo, carregarAcervoInstalado, lembrarConta, contaOffline} from './plataforma'
 import { opcoesFiltro } from './filtros'
 import { indexarFiltros, filtrarIndice, opcoesRelacionadas, atualizarFiltrosRelacionados } from './indiceFiltros'
 import { ESPECIFICAS_UEM } from './uem'
@@ -140,12 +141,19 @@ export default function App() {
     status:sincronizacao, erro:erroProgresso} = progresso
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => { setSession(data.session); setAuthReady(true) })
+    const recuperar = current => {
+      if (aplicativoNativo && current) {try {lembrarConta(current)} catch { /* Armazenamento cheio não impede o login. */ }}
+      setSession(current || (aplicativoNativo && !navigator.onLine ? contaOffline() : null));setAuthReady(true)
+    }
+    if(aplicativoNativo && !navigator.onLine)recuperar(null)
+    supabase.auth.getSession().then(({data})=>recuperar(data.session)).catch(()=>recuperar(null))
     const { data } = supabase.auth.onAuthStateChange((_event, current) => {
-      setSession(current); setAuthReady(true)
+      recuperar(current)
       if (!current) setIsAdmin(false)
     })
-    return () => data.subscription.unsubscribe()
+    const reconectar=()=>{void supabase.auth.getSession().then(({data})=>recuperar(data.session)).catch(()=>{})}
+    if(aplicativoNativo)window.addEventListener('online',reconectar)
+    return () => {data.subscription.unsubscribe();window.removeEventListener('online',reconectar)}
   }, [])
 
   useEffect(() => {
@@ -157,7 +165,7 @@ export default function App() {
 
   useEffect(() => {
     let cancelled = false
-    if (!session) { setIsAdmin(false); setCheckingAdmin(false); return }
+    if (!session || session.offline) { setIsAdmin(false); setCheckingAdmin(false); return }
     setCheckingAdmin(true)
     fetch(`${API_URL}/api/importacoes/acesso`, {
       headers: { Authorization: `Bearer ${session.access_token}`, 'X-Supabase-Key': import.meta.env.VITE_SUPABASE_ANON_KEY },
@@ -182,6 +190,12 @@ export default function App() {
       if (requisicao !== requisicaoAcervo.current) return
       const resultado = await processamentoAcervo.current.preparar(itens)
       if (requisicao === requisicaoAcervo.current) setAcervoPreparado(resultado)
+    }
+    if (aplicativoNativo) {
+      try {const {questoes:instaladas} = await carregarAcervoInstalado();await preparar(instaladas)}
+      catch(e) {if (e.name !== 'AbortError' && requisicao === requisicaoAcervo.current) setFalhasAcervo([e.message])}
+      finally {if (requisicao === requisicaoAcervo.current) setCarregandoAcervo(false)}
+      return
     }
     const banco = tentarLeitura(async () => {
       const todas = []

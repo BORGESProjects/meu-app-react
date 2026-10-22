@@ -1,0 +1,76 @@
+name: Aplicativos AP Aprovado
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'meu-app-react/native/**'
+      - 'meu-app-react/src-tauri/**'
+      - '.github/workflows/aplicativos.yml'
+permissions:
+  contents: read
+concurrency:
+  group: aplicativos-${{ github.ref }}
+  cancel-in-progress: true
+defaults:
+  run:
+    working-directory: meu-app-react
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: meu-app-react/package-lock.json
+      - uses: dtolnay/rust-toolchain@stable
+      - run: npm ci
+      - run: npm run app:testar
+      - run: npm run app:windows
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AP-Aprovado-Windows
+          path: meu-app-react/src-tauri/target/release/bundle/nsis/*-setup.exe
+          if-no-files-found: error
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: versoes-Rust-Windows
+          path: meu-app-react/src-tauri/Cargo.lock
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: meu-app-react/package-lock.json
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+      - name: Preparar ferramentas Android
+        run: |
+          sdkmanager 'platform-tools' 'platforms;android-36' 'build-tools;36.0.0' 'ndk;29.0.14206865'
+          echo "NDK_HOME=$ANDROID_HOME/ndk/29.0.14206865" >> "$GITHUB_ENV"
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android
+      - run: npm ci
+      - run: npm run app:testar
+      - run: npm run app:android:iniciar
+      # APK de teste assinado pelo Android SDK. Não se passa por edição de loja.
+      - run: npm run tauri -- android build --debug --apk --target aarch64 --ci
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AP-Aprovado-Android-teste
+          path: meu-app-react/src-tauri/gen/android/app/build/outputs/apk/**/*.apk
+          if-no-files-found: error
+          retention-days: 30

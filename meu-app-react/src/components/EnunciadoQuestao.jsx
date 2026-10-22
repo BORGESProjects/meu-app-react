@@ -1,3 +1,4 @@
+import {recursoLocal} from '../plataforma'
 import { anoDaQuestao } from '../acervo'
 import { API_URL } from '../api'
 import { memo } from 'react'
@@ -16,19 +17,19 @@ function EnunciadoQuestao({ questao: q }) {
     {q.anulada && <p role="status" className="text-amber-300 font-semibold">Anulada no gabarito definitivo — disponível para consulta e excluída dos simulados.</p>}
     {q.fonte_pdf && <a href={`${q.fonte_pdf}#page=${q.pagina}`} target="_blank" rel="noreferrer" className="block text-xs text-indigo-300">Conferir no caderno original · página {q.pagina} ↗</a>}
     {q.texto_apoio && <section aria-label="Texto de apoio" className="border-l-2 border-indigo-500 pl-4"><h3 className="font-semibold mb-2">Texto de apoio</h3><p className="whitespace-pre-wrap leading-relaxed">{q.texto_apoio}</p></section>}
-    {q.pagina_imagem && <a href={`${API_URL}${q.pdf_original}#page=${q.pagina}`} target="_blank" rel="noreferrer" className="block"><p className="text-xs text-indigo-300 mb-2">Página original com figuras — clique para ampliar no PDF</p><img src={`${API_URL}${q.pagina_imagem}`} alt={`Página ${q.pagina} da prova, com as figuras da questão ${q.numero_original}`} loading="lazy" className="w-full rounded-lg bg-white" /></a>}
+    {q.pagina_imagem && <a href={`${API_URL}${q.pdf_original}#page=${q.pagina}`} target="_blank" rel="noreferrer" className="block"><p className="text-xs text-indigo-300 mb-2">Página original com figuras — clique para ampliar no PDF</p><img src={recursoLocal(`${API_URL}${q.pagina_imagem}`)} alt={`Página ${q.pagina} da prova, com as figuras da questão ${q.numero_original}`} loading="lazy" className="w-full rounded-lg bg-white" /></a>}
     {q.pdf_original && <a href={`${API_URL}${q.pdf_original}#page=${q.pagina}`} target="_blank" rel="noreferrer" className="block text-xs text-indigo-300">Conferir questão no PDF original · página {q.pagina} ↗</a>}
     {q.blocos_enunciado && <BlocosQuestao blocos={q.blocos_enunciado}/>}
     {!q.blocos_enunciado && q.enunciado_antes_apoio && <p className="whitespace-pre-wrap leading-relaxed">{q.enunciado_antes_apoio}</p>}
     {q.apoio?.length > 0 && <section aria-label="Texto de apoio" className="space-y-3">
       <h3 className="text-sm font-semibold">Texto de apoio</h3>
-      {q.apoio.map((apoio, i) => <a key={apoio.imagem} href={apoio.imagem} target="_blank" rel="noreferrer" className="block">
-        <img src={apoio.imagem} alt={`Texto de apoio, parte ${i+1}: ${apoio.texto}`} loading="lazy" className="mx-auto max-w-full w-auto h-auto rounded-lg bg-white" />
+      {q.apoio.map((apoio, i) => <a key={apoio.imagem} href={recursoLocal(apoio.imagem)} target="_blank" rel="noreferrer" className="block">
+        <img src={recursoLocal(apoio.imagem)} alt={`Texto de apoio, parte ${i+1}: ${apoio.texto}`} loading="lazy" className="mx-auto max-w-full w-auto h-auto rounded-lg bg-white" />
       </a>)}
     </section>}
     {q.imagem_original ? <>
-      <a href={q.imagem_original} target="_blank" rel="noreferrer" className="block" aria-label={q.numero_original ? `Ampliar questão ${q.numero_original}` : 'Ampliar enunciado'}>
-        <img src={q.imagem_original} alt={q.texto_extraido_corrompido ? (q.numero_original ? `Questão ${q.numero_original} da prova` : 'Enunciado da questão') : q.enunciado} loading="lazy" className="w-full h-auto rounded-lg bg-white" />
+      <a href={recursoLocal(q.imagem_original)} target="_blank" rel="noreferrer" className="block" aria-label={q.numero_original ? `Ampliar questão ${q.numero_original}` : 'Ampliar enunciado'}>
+        <img src={recursoLocal(q.imagem_original)} alt={q.texto_extraido_corrompido ? (q.numero_original ? `Questão ${q.numero_original} da prova` : 'Enunciado da questão') : q.enunciado} loading="lazy" className="w-full h-auto rounded-lg bg-white" />
       </a>
       <p className="text-xs text-slate-400">Clique na imagem para ampliar.{!q.anulada && ' Selecione sua resposta abaixo.'}</p>
       {!q.texto_extraido_corrompido && <details className="text-sm text-slate-300"><summary className="cursor-pointer">Ler texto extraído</summary>
