@@ -6,6 +6,10 @@ on:
     paths:
       - 'meu-app-react/native/**'
       - 'meu-app-react/src-tauri/**'
+      - 'meu-app-react/src/**'
+      - 'meu-app-react/package*.json'
+      - 'meu-app-react/vite.native.config.js'
+      - 'meu-app-react/scripts/preparar-app.mjs'
       - '.github/workflows/aplicativos.yml'
 permissions:
   contents: read

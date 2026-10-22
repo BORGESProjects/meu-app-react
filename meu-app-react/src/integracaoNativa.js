@@ -12,6 +12,10 @@ export function iniciarIntegracaoNativa() {
       return
     }
     const url = new URL(a.href,location.href)
+    if(url.origin === location.origin && /\.pdf$/iu.test(url.pathname)) {
+      const {openUrl}=await import('@tauri-apps/plugin-opener')
+      await openUrl('https://apaprovado.vercel.app'+url.pathname+url.search+url.hash);return
+    }
     if (url.origin !== location.origin && ['https:','http:'].includes(url.protocol)) {
       const {openUrl} = await import('@tauri-apps/plugin-opener');await openUrl(url.href);return
     }
