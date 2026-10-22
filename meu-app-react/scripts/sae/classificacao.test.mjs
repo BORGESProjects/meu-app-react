@@ -18,6 +18,7 @@ test('recupera referências reais após número e competências do livro', () =>
     ['1. (FAMEMA-2023) Considere...', 'FAMEMA', 2023],
     ['1. (EPCAr-2019) Considere...', 'EPCAR', 2019],
     ['1. (Vunesp-2020) Considere...', 'VUNESP', 2020],
+    ['1. (Fuvest 2017) Considere...', 'FUVEST', 2017],
   ]) {
     const resultado = classificarReferencia(texto)
     assert.equal(resultado.banca, banca)
