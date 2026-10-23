@@ -240,8 +240,10 @@ public class R2AcervoStorage {
                 throw new ResponseStatusException(HttpStatus.BAD_GATEWAY,
                     "Cloudflare R2 recusou a gravação (HTTP " + s3.statusCode() + ", código " + code + ").", s3);
             }
-            LOG.warn("Falha no envio ao Cloudflare R2: causa {}.", cause.getClass().getSimpleName());
-            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "O envio ao armazenamento falhou. O lote pode ser reenviado com segurança.");
+            String detalhe = detalheSeguro(cause.getMessage());
+            LOG.warn("Falha no envio ao Cloudflare R2: causa={}, detalhe={}", cause.getClass().getSimpleName(), detalhe);
+            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE,
+                "Falha no envio ao Cloudflare R2 (" + cause.getClass().getSimpleName() + "): " + detalhe);
         }
     }
 
@@ -254,8 +256,12 @@ public class R2AcervoStorage {
             .contentLength(file.getSize())
             .contentType(contentTypeFor(key, file.getContentType()))
             .build();
-        try (var input = file.getInputStream()) {
-            client.putObject(put, RequestBody.fromInputStream(input, file.getSize()));
+        try {
+            byte[] contents = file.getBytes();
+            if (contents.length != file.getSize()) {
+                throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "A leitura do arquivo enviado não correspondeu ao tamanho original.");
+            }
+            client.putObject(put, RequestBody.fromBytes(contents));
             long storedBytes = client.headObject(HeadObjectRequest.builder().bucket(bucket).key(key).build()).contentLength();
             if (storedBytes != file.getSize()) {
                 throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "A verificação do arquivo enviado não correspondeu ao tamanho original.");
@@ -263,6 +269,16 @@ public class R2AcervoStorage {
         } catch (IOException | SdkException e) {
             throw new CompletionException(e);
         }
+    }
+
+    private static String detalheSeguro(String mensagem) {
+        if (mensagem == null || mensagem.isBlank()) return "sem detalhe adicional";
+        String detalhe = mensagem
+            .replaceAll("(?i)(authorization|access[_-]?key|secret[_-]?key|credential|signature|token)(\\s*[:=]\\s*)[^\\s,;]+", "$1$2[redigido]")
+            .replaceAll("https?://[^\\s]+", "[endpoint]")
+            .replaceAll("[\\r\\n\\t]+", " ")
+            .trim();
+        return detalhe.length() <= 220 ? detalhe : detalhe.substring(0, 220);
     }
 
     private void ensureConfigured() {
