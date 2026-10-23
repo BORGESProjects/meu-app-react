@@ -2,7 +2,7 @@ import {useEffect,useRef,useState} from 'react'
 import {API_URL,fetchApi} from '../api'
 import {supabase} from '../supabaseClient'
 import {temasRedacao,bancasRedacao} from '../data/temasRedacao'
-import {PERFIS_REDACAO,assinaturaRedacao,estatisticasRedacao,validarRedacao,solicitarCorrecao,lerRascunho,salvarRascunho,textoRelatorio} from '../redacao'
+import {PERFIS_REDACAO,assinaturaRedacao,estatisticasRedacao,validarRedacao,solicitarCorrecao,verificarServicoRedacao,lerRascunho,salvarRascunho,textoRelatorio} from '../redacao'
 const campo='mt-2 w-full min-w-0 rounded-xl border border-slate-700 bg-slate-950/70 p-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 disabled:opacity-60'
 const botao='rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-50'
 export default function Redacao({session,foco}) {
@@ -38,6 +38,7 @@ export default function Redacao({session,foco}) {
   try {
    const {data,error}=await supabase.auth.getSession()
    if(error||data.session?.user?.id!==userId)throw new Error('Entre novamente para corrigir. Seu rascunho foi mantido.')
+   await verificarServicoRedacao({url:API_URL+'/api/ia/redacao/status',fetcher:fetchApi,signal:controle.signal})
    const resposta=await solicitarCorrecao({fetcher:fetchApi,url:API_URL+'/api/ia/corrigir-redacao',redacao:copia,token:data.session.access_token,chave:import.meta.env.VITE_SUPABASE_ANON_KEY,signal:controle.signal})
    if(token!==versao.current)return
    const item={id:crypto.randomUUID(),criadaEm:new Date().toISOString(),redacao:copia,resultado:resposta}
@@ -48,8 +49,8 @@ export default function Redacao({session,foco}) {
  }
  function cancelar(){versao.current++;requisicao.current?.abort();requisicao.current=null;setOcupado(false);setErro('Espera cancelada. Seu texto está preservado. Uma análise já enviada pode continuar no servidor.')}
  const relatorio=resultado?.resultado.relatorio,desatualizado=resultado&&assinaturaRedacao(resultado.redacao)!==assinaturaRedacao(rascunho)
- return <div className="mx-auto max-w-4xl space-y-6">
-  <header><h1 className="text-2xl font-extrabold sm:text-3xl">✍️ Oficina de redação</h1><p className="mt-2 text-sm text-slate-400">Escreva, receba um diagnóstico por critério e revise os pontos que mais precisam de atenção.</p></header>
+ return <div className="redacao-oficina mx-auto max-w-4xl space-y-6">
+  <header className="redacao-hero"><div className="redacao-emblema" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7"><path d="m16 3 5 5-12 12H4v-5L16 3ZM13 6l5 5M4 21h16"/></svg></div><div><p className="mb-2 text-xs font-semibold uppercase tracking-widest text-indigo-300">Escrita e evolução</p><h1 className="text-2xl font-bold sm:text-3xl">Oficina de redação</h1><p className="mt-2 text-sm leading-relaxed text-slate-300">Transforme seu texto em um plano de melhoria, com análise por critério e orientações práticas.</p><div className="redacao-etapas"><span><b>1</b> Escolha o tema</span><span><b>2</b> Escreva seu texto</span><span><b>3</b> Revise com a IA</span></div></div></header>
   <section className="rounded-3xl border border-slate-800 bg-slate-900/60 p-4 sm:p-6">
    <div className="grid gap-4 sm:grid-cols-2">
     <label className="text-sm font-semibold">Correção para<select className={campo} disabled={ocupado} value={rascunho.banca} onChange={e=>editar({banca:e.target.value,temaId:'',ano:null})}>{Object.entries(PERFIS_REDACAO).map(([id,p])=><option key={id} value={id}>{p.nome}</option>)}</select></label>

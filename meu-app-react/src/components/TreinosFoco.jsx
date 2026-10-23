@@ -3,11 +3,12 @@ import { gerarTreinoCpor } from '../simulados'
 import { gerarSimuladoPersonalizado, gerarTreinoVestibular, materiaCanonica, nomeFoco, planoRevisao, questoesParaTreino } from '../focoEstudo'
 const campo='mt-2 block w-full rounded-xl border border-slate-700 bg-slate-950 p-3 text-sm text-slate-100'
 const botao='rounded-xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-50'
-export default function TreinosFoco({questoes,foco,historico,onIniciar}) {
+export default function TreinosFoco({questoes,foco,historico,onIniciar,configuracoes=[],onSalvarConfig,onExcluirConfig}) {
   const [materias,setMaterias]=useState([]),[banca,setBanca]=useState(''),[quantidade,setQuantidade]=useState(40),[modo,setModo]=useState('equilibrado'),[aviso,setAviso]=useState('')
   const pool=useMemo(()=>questoesParaTreino(questoes,foco),[questoes,foco])
   const plano=useMemo(()=>planoRevisao(pool,historico),[pool,historico])
   const bancas=useMemo(()=>[...new Set(pool.map(q=>q.banca))].sort((a,b)=>a.localeCompare(b,'pt-BR')),[pool])
+  const configuracoesAtivas=configuracoes.filter(item=>item.foco===foco)
   const opcoesMaterias=useMemo(()=>[...new Set(pool.filter(q=>!banca||q.banca===banca).map(materiaCanonica))].sort((a,b)=>a.localeCompare(b,'pt-BR')),[pool,banca])
   const config={foco,banca,materias,quantidade,modo,historico}
   const perfil=foco==='vestibulares'?'Vestibulares':foco==='militares'?'Concursos militares':foco==='concursos'?'Concursos públicos':'Seu objetivo'
@@ -25,6 +26,17 @@ export default function TreinosFoco({questoes,foco,historico,onIniciar}) {
     const resultado=gerarSimuladoPersonalizado(questoes,{foco,quantidade:total,modo:tipo,historico})
     if(resultado.erro) {setAviso(resultado.erro);return}
     iniciar(resultado.itens,tipo==='erros'?'Caderno de erros — nova tentativa':'Revisão espaçada — recuperar da memória')
+  }
+  function salvarConfiguracao() {
+    const nomeMateria = materias.length ? materias.slice(0, 2).join(', ') + (materias.length > 2 ? '…' : '') : 'todas as matérias'
+    onSalvarConfig?.({ foco, banca, materias: [...materias], quantidade, modo, nome: `${perfil} · ${nomeMateria} · ${quantidade} questões` })
+  }
+  function aplicarConfiguracao(item) {
+    setBanca(item.banca || '')
+    setMaterias(Array.isArray(item.materias) ? item.materias : [])
+    setQuantidade(Math.min(120, Math.max(1, Number(item.quantidade) || 40)))
+    setModo(item.modo || 'equilibrado')
+    setAviso(`Configuração “${item.nome}” carregada. Revise os filtros e gere o treino.`)
   }
   return <div className="mb-8 space-y-5">
     <section aria-labelledby="criador-titulo" className="rounded-3xl border border-indigo-500/40 bg-indigo-950/30 p-5 sm:p-6">
@@ -48,9 +60,19 @@ export default function TreinosFoco({questoes,foco,historico,onIniciar}) {
           <fieldset><legend className="text-sm font-semibold">Matérias <span className="font-normal text-slate-400">· nenhuma marcada = todas disponíveis</span></legend>
             <div className="mt-3 grid max-h-60 grid-cols-1 gap-2 overflow-y-auto rounded-xl border border-slate-700 p-3 sm:grid-cols-2 lg:grid-cols-3">{opcoesMaterias.map(m=><label key={m} className="flex min-w-0 items-start gap-2 rounded-lg p-2 text-sm hover:bg-slate-800"><input type="checkbox" className="mt-1 shrink-0" checked={materias.includes(m)} onChange={()=>setMaterias(atuais=>atuais.includes(m)?atuais.filter(v=>v!==m):[...atuais,m])}/><span className="min-w-0 break-words">{m}</span></label>)}</div>
           </fieldset>
-          <button className={botao} type="submit" disabled={!pool.length}>Gerar simulado personalizado</button>
+          <div className="flex flex-wrap gap-2">
+            <button className={botao} type="submit" disabled={!pool.length}>Gerar simulado personalizado</button>
+            <button className="rounded-xl border border-slate-700 px-4 py-3 text-sm font-semibold text-slate-200 hover:border-indigo-400/50 disabled:opacity-50" type="button" onClick={salvarConfiguracao}>Salvar esta configuração</button>
+          </div>
         </form>
       </details>
+      {configuracoesAtivas.length > 0 && <div className="mt-5 border-t border-indigo-400/15 pt-4">
+        <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">Configurações salvas</h3>
+        <div className="mt-2 flex flex-wrap gap-2">{configuracoesAtivas.map(item => <div key={item.id} className="flex max-w-full items-center gap-1 rounded-xl border border-slate-700 bg-slate-950/50 p-1">
+          <button type="button" onClick={() => aplicarConfiguracao(item)} title={item.nome} className="max-w-64 truncate rounded-lg px-3 py-2 text-xs font-semibold text-indigo-200 hover:bg-indigo-500/10">{item.nome}</button>
+          <button type="button" aria-label={`Excluir configuração ${item.nome}`} onClick={() => onExcluirConfig?.(item.id)} className="rounded-lg px-2 py-2 text-xs text-slate-500 hover:bg-rose-500/10 hover:text-rose-300">×</button>
+        </div>)}</div>
+      </div>}
       {aviso&&<p role="alert" className="mt-4 rounded-xl border border-amber-500/40 bg-amber-950/30 p-3 text-sm text-amber-200">{aviso}</p>}
     </section>
     <section aria-labelledby="revisoes-titulo" className="rounded-3xl border border-slate-800 bg-slate-900/60 p-5 sm:p-6">

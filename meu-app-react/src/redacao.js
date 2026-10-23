@@ -36,11 +36,12 @@ export async function solicitarCorrecao({url,redacao,token,chave,signal,fetcher=
  const timer=setTimeout(()=>{expirou=true;controle.abort()},prazo)
  try {
   const response=await fetcher(url,{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+token,'X-Supabase-Key':chave},body:JSON.stringify(redacao),signal:controle.signal})
-  let data;try{data=await response.json()}catch{throw new Error('O servidor não devolveu um relatório válido. Seu rascunho está preservado.')}
   if(!response.ok) {
-   const mensagens={400:'Confira o tema, o texto e os limites do formulário.',401:'Sua sessão expirou. Entre novamente; seu rascunho está preservado.',429:'O limite de correções foi atingido ou já há uma correção em andamento. Aguarde antes de tentar novamente.',503:'A IA está temporariamente indisponível. Tente novamente mais tarde; seu rascunho está preservado.',504:'A IA demorou além do prazo. Seu rascunho está preservado.'}
+   const mensagens={400:'Confira o tema, o texto e os limites do formulário.',401:'Sua sessão expirou. Entre novamente; seu rascunho está preservado.',404:'O serviço de redação precisa ser atualizado no servidor. Seu rascunho está preservado.',429:'O limite de correções foi atingido ou já há uma correção em andamento. Aguarde antes de tentar novamente.',502:'O serviço de correção não conseguiu concluir a análise. Seu rascunho está preservado; tente mais tarde.',503:'A IA está temporariamente indisponível. Tente novamente mais tarde; seu rascunho está preservado.',504:'A IA demorou além do prazo. Seu rascunho está preservado.'}
    throw new Error(mensagens[response.status]||'Não foi possível concluir a correção. Seu texto está preservado.')
   }
+  let data;try{data=await response.json()}catch{throw new Error('O serviço enviou uma resposta incompatível. A correção precisa ser verificada no servidor; seu rascunho está preservado.')}
+  if(!data || typeof data!=='object')throw new Error('O serviço enviou uma resposta vazia. Seu rascunho está preservado.')
   if(data.relatorio) {
    if(!relatorioValido(data.relatorio,redacao.banca,redacao.texto))throw new Error('O relatório está incompleto ou contém notas inconsistentes. Tente novamente mais tarde.')
    return {relatorio:data.relatorio,reutilizada:Boolean(data.reutilizada),modelo:typeof data.modelo==='string'?data.modelo:''}
@@ -53,6 +54,14 @@ export async function solicitarCorrecao({url,redacao,token,chave,signal,fetcher=
   if(e instanceof TypeError)throw new Error('Não foi possível conectar ao serviço. Confira sua conexão e tente novamente.')
   throw e
  } finally {clearTimeout(timer);signal?.removeEventListener('abort',cancelar)}
+}
+export async function verificarServicoRedacao({url,fetcher=fetch,signal}) {
+ const resposta=await fetcher(url,{signal,cache:'no-store'})
+ if(resposta.status===404)throw new Error('A correção aguarda atualização do servidor. Você pode escrever e baixar seu rascunho normalmente.')
+ if(!resposta.ok)throw new Error('O serviço de correção está indisponível no momento. Seu rascunho continua salvo.')
+ let dados;try{dados=await resposta.json()}catch{throw new Error('O servidor de correção está respondendo em formato incompatível.')}
+ if(dados?.versao!==2 || dados.formato!=='relatorio_v1')throw new Error('A versão do serviço de correção precisa ser atualizada.')
+ return dados
 }
 export function chaveRascunho(userId) {if(!userId)throw new Error('Conta necessária');return 'ap-aprovado:redacao:v1:'+userId}
 export function lerRascunho(storage,userId) {

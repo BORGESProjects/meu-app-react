@@ -31,3 +31,18 @@ test('cancelamento e prazo encerram a espera sem nova chamada',async()=>{
  await assert.rejects(solicitarCorrecao({redacao,fetcher,prazo:10}),/tempo de espera/)
  const c=new AbortController();c.abort();await assert.rejects(solicitarCorrecao({redacao,signal:c.signal}),{name:'AbortError'})
 })
+import {verificarServicoRedacao} from '../src/redacao.js'
+test('erros HTTP em HTML mantêm diagnóstico correto sem tentar ler JSON',async()=>{
+ for(const [status,mensagem] of [[401,/sessão/],[429,/limite/],[502,/concluir/],[503,/indisponível/],[504,/prazo/]]) {
+  let leu=false
+  await assert.rejects(solicitarCorrecao({redacao,fetcher:async()=>({ok:false,status,json:async()=>{leu=true;throw Error('HTML')}})}),mensagem)
+  assert.equal(leu,false)
+ }
+})
+test('identifica API antiga antes do envio e rejeita resposta vazia',async()=>{
+ await assert.rejects(verificarServicoRedacao({fetcher:async()=>({status:404,ok:false})}),/atualização/)
+ await assert.rejects(verificarServicoRedacao({fetcher:async()=>({ok:true,json:async()=>({versao:1})})}),/atualizada/)
+ assert.equal((await verificarServicoRedacao({fetcher:async()=>({ok:true,json:async()=>({versao:2,formato:'relatorio_v1'})})})).versao,2)
+ await assert.rejects(solicitarCorrecao({redacao,fetcher:async()=>({ok:true,json:async()=>null})}),/vazia/)
+ await assert.rejects(solicitarCorrecao({redacao,fetcher:async()=>({ok:true,json:async()=>{throw Error('HTML')}})}),/incompatível/)
+})

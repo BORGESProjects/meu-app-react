@@ -32,6 +32,9 @@ public/leitura-editais/core/
 public/leitura-editais/pdf/
 public/leitura-editais/worker.min.js
 
+# O acervo extraído é publicado no Supabase Storage, não dentro do repositório.
+public/acervo-extraido/
+
 # Saídas e ferramentas das versões nativas. Fontes e manifesto são versionados.
 dist-native/
 output/aplicativos/

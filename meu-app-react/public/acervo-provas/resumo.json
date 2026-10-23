@@ -1,0 +1,118 @@
+{
+  "dataColeta": "2026-10-22",
+  "periodoConsultado": "1996–2026",
+  "pdfs": 27017,
+  "bancasComArquivos": 8,
+  "texto": {
+    "comTexto": 26621,
+    "parciais": 1,
+    "semTextoPesquisavel": 283,
+    "falhas": 112,
+    "observacao": "Extração de texto incorporado ao PDF. PDFs somente imagem não recebem OCR nesta etapa.",
+    "porStatus": {
+      "extraído": 26621,
+      "sem texto pesquisável": 283,
+      "extraído parcialmente": 1,
+      "falha de leitura": 112
+    }
+  },
+  "bancas": [
+    {
+      "banca": "Cebraspe",
+      "slug": "cebraspe",
+      "pdfs": 10872,
+      "concursosListados": 499,
+      "itensPendentes": 42,
+      "observacao": "Anexos identificados em 424 eventos; 34 páginas de detalhe sem resposta válida."
+    },
+    {
+      "banca": "CESGRANRIO",
+      "slug": "cesgranrio",
+      "pdfs": 0,
+      "concursosListados": 35,
+      "itensPendentes": 0,
+      "observacao": "API oficial listou concursos, mas não expôs PDFs de prova/gabarito nas páginas consultadas."
+    },
+    {
+      "banca": "Exército Brasileiro",
+      "slug": "exercito-brasileiro",
+      "pdfs": 196,
+      "concursosListados": 1,
+      "itensPendentes": 0,
+      "observacao": "Somente IME CFG; não inclui ESA, EsPCEx ou outros processos militares."
+    },
+    {
+      "banca": "FGV",
+      "slug": "fgv",
+      "pdfs": 3111,
+      "concursosListados": 186,
+      "itensPendentes": 352,
+      "observacao": "Portal de conhecimento; links de 352 registros de concurso analisados."
+    },
+    {
+      "banca": "FUNATEC",
+      "slug": "funatec",
+      "pdfs": 74,
+      "concursosListados": 22,
+      "itensPendentes": 0,
+      "observacao": "O índice expôs 229 links candidatos; coletas posteriores expiraram antes de criar um manifesto completo."
+    },
+    {
+      "banca": "FUNDEP",
+      "slug": "fundep",
+      "pdfs": 0,
+      "concursosListados": 0,
+      "itensPendentes": 0,
+      "observacao": "FAQ oficial diz que a banca não mantém arquivo após homologação."
+    },
+    {
+      "banca": "FUVEST",
+      "slug": "fuvest",
+      "pdfs": 388,
+      "concursosListados": 31,
+      "itensPendentes": 1,
+      "observacao": "Acervo histórico e provas anuais 1996–2026."
+    },
+    {
+      "banca": "IBFC",
+      "slug": "ibfc",
+      "pdfs": 8229,
+      "concursosListados": 350,
+      "itensPendentes": 989,
+      "observacao": "Anexos PDF e ZIP; os pacotes ZIP foram extraídos quando baixáveis."
+    },
+    {
+      "banca": "IDECAN",
+      "slug": "idecan",
+      "pdfs": 0,
+      "concursosListados": 0,
+      "itensPendentes": 2,
+      "observacao": "Portal atual retornou HTTP 403 e o portal legado está desativado."
+    },
+    {
+      "banca": "INEP",
+      "slug": "inep",
+      "pdfs": 3466,
+      "concursosListados": 0,
+      "itensPendentes": 0,
+      "observacao": "ENEM, ENCCEJA, ENADE, REVALIDA, SAEB, ENAMED e PND; alguns programas só liberam parte dos cadernos."
+    },
+    {
+      "banca": "UFRJ",
+      "slug": "ufrj",
+      "pdfs": 681,
+      "concursosListados": 65,
+      "itensPendentes": 26,
+      "observacao": "Listagem de concursos concluídos; dois registros baixados não ficaram no diretório final."
+    },
+    {
+      "banca": "VUNESP",
+      "slug": "vunesp",
+      "pdfs": 0,
+      "concursosListados": 0,
+      "itensPendentes": 1,
+      "observacao": "Listagem de encerrados retornou HTTP 403."
+    }
+  ],
+  "nota": "O catálogo contém metadados e links de origem. Os PDFs e textos completos permanecem no pacote local e não são enviados ao site."
+}

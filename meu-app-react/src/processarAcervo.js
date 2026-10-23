@@ -34,7 +34,7 @@ export function criarProcessadorAcervo(criarWorker = () => new Worker(new URL('.
         } else {
           try {
             await conferirAcervoParaLeitura(data.resultado.questoes, {ativo: () => atual === job})
-            terminar(null, data.resultado)
+          terminar(null, data.opcoesBase ? { ...data.resultado, opcoesBase: data.opcoesBase } : data.resultado)
           } catch (erro) { terminar(erro) }
         }
       }

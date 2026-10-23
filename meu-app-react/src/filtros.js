@@ -47,6 +47,10 @@ export function normalizarBanca(valor, concurso = '') {
   const chave = chaveFiltro(original)
   const chaveConcurso = chaveFiltro(concurso)
   if (!chave || BANCAS_INVALIDAS.has(chave) || BANCAS_ASSIMILACAO.has(chave)) return BANCA_ASSIMILACAO
+  if (/^(?:cespe|cebraspe)(?:$|[- /])/.test(chave)) return 'CEBRASPE'
+  if (/^fgv(?:$|[- /])/.test(chave)) return 'FGV'
+  if (/^fuvest(?:$|[- /])/.test(chave)) return 'FUVEST'
+  if (/^vunesp(?:$|[- /])/.test(chave)) return 'VUNESP'
   if (chave === 'marinha' && /\bsmv\b/.test(chaveConcurso)) return 'SMV'
   if (chave === 'estrategia militares') {
     if (/espcex/.test(chaveConcurso)) return 'EsPCEx'

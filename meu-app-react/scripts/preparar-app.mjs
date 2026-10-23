@@ -32,7 +32,10 @@ for (const r of manifesto.recursos) {
   const para = path.join(destino,r.url.slice(1))
   await fs.mkdir(path.dirname(para),{recursive:true});await fs.writeFile(para,bytes)
 }
-for (const nome of ['favicon.svg','leitura-editais']) await fs.cp(path.join(raiz,'public',nome),path.join(destino,nome),{recursive:true})
+for (const nome of ['favicon.svg','leitura-editais','acervo-provas']) {
+  try { await fs.cp(path.join(raiz,'public',nome),path.join(destino,nome),{recursive:true}) }
+  catch (erro) { if (erro.code !== 'ENOENT') throw erro }
+}
 // As fontes do sistema funcionam offline; não faz requisição a fontes externas.
 const html=await fs.readFile(path.join(destino,'index.html'),'utf8')
 await fs.writeFile(path.join(destino,'index.html'),html.replace(/<link[^>]+fonts\.googleapis\.com[^>]+>/gu,''))

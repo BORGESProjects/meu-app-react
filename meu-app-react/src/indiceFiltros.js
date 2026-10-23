@@ -1,5 +1,22 @@
 import { anoDaQuestao } from './acervo.js'
-import { chaveCampoFiltro, grupoConteudo, normalizarMateria, normalizarBanca, opcoesFiltro } from './filtros.js'
+import { chaveCampoFiltro, chaveFiltro, grupoConteudo, normalizarMateria, normalizarBanca, opcoesFiltro } from './filtros.js'
+
+const textoBuscaPorQuestao = new WeakMap()
+
+function textoBuscaQuestao(questao) {
+  if (!questao || typeof questao !== 'object') return ''
+  if (textoBuscaPorQuestao.has(questao)) return textoBuscaPorQuestao.get(questao)
+  const partes = [
+    questao.id, questao.codigo, questao.enunciado, questao.texto, questao.texto_base,
+    questao.materia, questao.conteudo, questao.banca, questao.concurso,
+    questao.comentario, questao.resolucao, questao.explicacao, questao.resposta_comentada,
+    ...(Array.isArray(questao.opcoes) ? questao.opcoes : []),
+    ...(Array.isArray(questao.alternativas) ? questao.alternativas : []),
+  ]
+  const texto = chaveFiltro(partes.filter(valor => typeof valor === 'string' || typeof valor === 'number').join(' '))
+  textoBuscaPorQuestao.set(questao, texto)
+  return texto
+}
 
 // Classificação textual custa caro: calcular uma vez por versão do acervo.
 export function indexarFiltros(questoes) {
@@ -9,14 +26,18 @@ export function indexarFiltros(questoes) {
       materia: chaveCampoFiltro('materia', normalizarMateria(questao.materia, questao.conteudo)),
       banca: chaveCampoFiltro('banca', normalizarBanca(questao.banca, questao.concurso)),
       dificuldade: chaveCampoFiltro('dificuldade', questao.dificuldade),
-      conteudo: grupo.value, grupo }
+      conteudo: grupo.value, grupo, busca: textoBuscaQuestao(questao) }
   })
 }
 
-export function filtrarIndice(indice, filtros) {
+export function filtrarIndice(indice, filtros, termoBusca = '', idsPermitidos = null) {
   const ativos = Object.entries(filtros).filter(([, valores]) => valores.length).map(([campo, valores]) => [campo, new Set(valores)])
-  if (!ativos.length) return []
-  return indice.filter(item => ativos.every(([campo, valores]) => valores.has(item[campo]))).map(item => item.questao)
+  const termo = chaveFiltro(termoBusca)
+  if (!ativos.length && !termo && !idsPermitidos) return []
+  return indice.filter(item => ativos.every(([campo, valores]) => valores.has(item[campo]))
+    && (!idsPermitidos || idsPermitidos.has(String(item.questao.id)))
+    && (!termo || (item.busca || textoBuscaQuestao(item.questao)).includes(termo)))
+    .map(item => item.questao)
 }
 
 export function conteudosDoIndice(indice, materias) {
@@ -62,9 +83,13 @@ export function contarOpcoesRelacionadas(indice, filtros={}) {
   }
   return contagens
 }
-export function opcoesRelacionadas(indice, filtros={}) {
-  const contagens=contarOpcoesRelacionadas(indice,filtros), bases=basesDoIndice(indice)
-  return Object.fromEntries(CAMPOS_FILTRO.map(c=>[c,bases[c].filter(o=>contagens[c].has(o.value)).map(o=>c==='conteudo'?{...o,label:o.label+' ('+contagens[c].get(o.value)+')'}:o)]))
+export function opcoesRelacionadas(indice, filtros={}, basesPreparadas=null) {
+  const contagens=contarOpcoesRelacionadas(indice,filtros), bases=basesPreparadas || basesDoIndice(indice)
+  return Object.fromEntries(CAMPOS_FILTRO.map(c=>[c,bases[c].filter(o=>contagens[c].has(o.value)).map(o=>['conteudo','banca','ano'].includes(c)?{...o,label:o.label+' ('+contagens[c].get(o.value)+')'}:o)]))
+}
+
+export function prepararBasesFiltro(indice) {
+  return basesDoIndice(indice)
 }
 export function atualizarFiltrosRelacionados(indice, filtros, campoAlterado, valores) {
   if(!CAMPOS_FILTRO.includes(campoAlterado)) throw new Error('Campo de filtro inválido')

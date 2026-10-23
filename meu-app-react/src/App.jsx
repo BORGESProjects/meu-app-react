@@ -18,18 +18,24 @@ import { opcoesFiltro } from './filtros'
 import { indexarFiltros, filtrarIndice, opcoesRelacionadas, atualizarFiltrosRelacionados } from './indiceFiltros'
 import { ESPECIFICAS_UEM } from './uem'
 import { questoesDaProva, listarProvasCompletas, gerarTreinoCpor } from './simulados'
-import { pertenceAoFoco, nomeFoco } from './focoEstudo'
+import { pertenceAoFoco, nomeFoco, ultimasTentativas } from './focoEstudo'
 import { useFocoEstudo } from './useFocoEstudo'
 import SeletorFoco from './components/SeletorFoco'
 import TreinosFoco from './components/TreinosFoco'
 import TempoSimulado from './components/TempoSimulado'
 import RevisaoSimulado from './components/RevisaoSimulado'
+import CadernosPessoais from './components/CadernosPessoais'
+import { useEstudoPessoal } from './useEstudoPessoal'
+import { analisarDesempenho } from './analiseDesempenho'
 
 const DIAS_SEMANA = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo']
 const Redacao = lazy(() => import('./components/Redacao'))
 const CentralRevisao = lazy(() => import('./components/CentralRevisao'))
 const ImportarPdf = lazy(() => import('./components/ImportarPdf'))
+const AcervoR2Uploader = lazy(() => import('./components/AcervoR2Uploader'))
 const EditalPlanejador = lazy(() => import('./components/EditalPlanejador'))
+const AcervoProvas = lazy(() => import('./components/AcervoProvas'))
+const QuestoesExtraidas = lazy(() => import('./components/QuestoesExtraidas'))
 
 function formatarDuracaoPlanejada(minutos) {
   const total = Number(minutos) || 0
@@ -69,8 +75,18 @@ function avaliarSelecao(questao, selecionada) {
   return { respondida: selecionada !== undefined, acertou: selecionada === correta, escolhida: selecionada, correta }
 }
 
+function explicacaoQuestao(questao) {
+  return [questao?.explicacao, questao?.resolucao, questao?.resposta_comentada, questao?.comentario]
+    .find(valor => typeof valor === 'string' && valor.trim()) || ''
+}
+
+function questaoTemImagem(questao) {
+  return Boolean(questao?.imagem_original || questao?.pagina_imagem || (Array.isArray(questao?.apoio) && questao.apoio.some(item => item?.imagem)) || questao?.texto_apoio_imagem)
+}
+
 export default function App() {
   const requisicaoAcervo = useRef(0)
+  const campoEdicaoQuestao = useRef(null)
   const [abaAtiva, setAbaAtiva] = useState('questoes')
   const [session, setSession] = useState(null)
   const [authReady, setAuthReady] = useState(false)
@@ -95,6 +111,15 @@ export default function App() {
   const [filtrosConteudo, setFiltrosConteudo] = useState([])
   const [filtrosBanca, setFiltrosBanca] = useState([])
   const [filtrosDificuldade, setFiltrosDificuldade] = useState([])
+  const [termoBusca, setTermoBusca] = useState('')
+  const [filtroSituacaoQuestao, setFiltroSituacaoQuestao] = useState('todas')
+  const [somenteComentadas, setSomenteComentadas] = useState(false)
+  const [somenteComImagem, setSomenteComImagem] = useState(false)
+  const [excluirQuestaoEmCadernos, setExcluirQuestaoEmCadernos] = useState(false)
+  const [cadernoAtivoId, setCadernoAtivoId] = useState(null)
+  const [cadernoDestinoId, setCadernoDestinoId] = useState('')
+  const [dialogoPessoal, setDialogoPessoal] = useState(null)
+  const [nomeRascunhoPessoal, setNomeRascunhoPessoal] = useState('')
   const [avisoFiltros, setAvisoFiltros] = useState('')
 
   // Estado do Formulário de Cadastro de Questão
@@ -118,6 +143,7 @@ export default function App() {
   // Estados de Simulados organizados por edição completa da prova
   const [filtroAnoSimulado, setFiltroAnoSimulado] = useState('Todos')
   const [filtroProvaSimulado, setFiltroProvaSimulado] = useState('Todos')
+  const [buscaHistoricoSimulado, setBuscaHistoricoSimulado] = useState('')
   const [simuladoAtivo, setSimuladoAtivo] = useState(null) // Guarda o objeto do simulado selecionado
   const [idiomaSimulado, setIdiomaSimulado] = useState('Inglês')
   const [especificasUem, setEspecificasUem] = useState(['Biologia', 'Química'])
@@ -136,6 +162,8 @@ export default function App() {
   const focoEstudo = preferenciaFoco.foco
   const questoesDoFoco = useMemo(() => questoes.filter(q => pertenceAoFoco(q, focoEstudo, true)), [questoes, focoEstudo])
   const progresso = useProgressoUsuario(session?.user?.id)
+  const estudoPessoal = useEstudoPessoal(session?.user?.id, !session?.offline)
+  const {filtros:filtrosSalvos,cadernos,questoes:marcacoesPessoais,simulados:historicoSimulados,configuracoes:configuracoesSimulado} = estudoPessoal.dados
   const {horas_estudo:horasEstudo, historico_respostas:historicoRespostas, tarefas:tarefasDaConta} = progresso.dados
   const tarefas = useMemo(() => tarefasDaConta.filter(t => t.tipo !== 'material_revisao'), [tarefasDaConta])
   const {setHorasEstudo, setHistoricoRespostas, setTarefas, carregado:progressoCarregado,
@@ -179,7 +207,7 @@ export default function App() {
   }, [session])
 
   useEffect(() => {
-    if (authReady && !checkingAdmin && !isAdmin && ['cadastrar', 'importar'].includes(abaAtiva)) setAbaAtiva('conta')
+    if (authReady && !checkingAdmin && !isAdmin && ['cadastrar', 'importar', 'r2-upload'].includes(abaAtiva)) setAbaAtiva('conta')
   }, [authReady, checkingAdmin, isAdmin, abaAtiva])
 
   async function buscarQuestoes(atualizarNativo = true) {
@@ -646,6 +674,7 @@ export default function App() {
       setHistoricoRespostas(prev => [...prev, {
         id: crypto.randomUUID(), questaoId, acertou: avaliacao.acertou,
         materia: questaoAtual.materia, conteudo: questaoAtual.conteudo,
+        banca: questaoAtual.banca || '', concurso: questaoAtual.concurso || '', ano: questaoAtual.ano || '',
         respostaSelecionada: avaliacao.escolhida, respostaCorreta: avaliacao.correta,
         tipo: 'questao', respondidaEm: new Date().toISOString(),
       }])
@@ -681,8 +710,9 @@ export default function App() {
         novasRespostas.push({
           id: crypto.randomUUID(), questaoId: q.id, acertou: avaliacao.acertou,
           materia: q.materia, conteudo: q.conteudo,
+          banca: q.banca || '', concurso: q.concurso || simuladoAtivo.concurso || '', ano: q.ano || '',
           respostaSelecionada: avaliacao.escolhida, respostaCorreta: avaliacao.correta,
-          tipo: 'simulado', concurso: simuladoAtivo.concurso, foco: simuladoAtivo.foco,
+          tipo: 'simulado', foco: simuladoAtivo.foco,
           respondidaEm: new Date().toISOString(),
         })
       } else {
@@ -692,24 +722,66 @@ export default function App() {
     })
 
     if (novasRespostas.length > 0) setHistoricoRespostas(prev => [...prev, ...novasRespostas])
-    setResultadoSimuladoFinal({ acertos, erros, total: questoesSimulado.length, detalhes, duracaoSegundos: Math.max(0, Math.floor((Date.now() - simuladoAtivo.inicio) / 1000)) })
+    const duracaoSegundos = Math.max(0, Math.floor((Date.now() - simuladoAtivo.inicio) / 1000))
+    const concluidoEm = new Date().toISOString()
+    const resultado = { acertos, erros, total: questoesSimulado.length, detalhes, duracaoSegundos }
+    const resumoSalvo = {
+      id: crypto.randomUUID(), titulo: simuladoAtivo.prova || 'Simulado', banca: simuladoAtivo.banca || '',
+      tipo: simuladoAtivo.tipo || 'prova', foco: simuladoAtivo.foco, acertos, erros,
+      respondidas: detalhes.filter(item => !item.nãoRespondida).length,
+      total: questoesSimulado.length, duracaoSegundos, concluidoEm,
+      itens: detalhes.map(item => ({ id: String(item.id), acertou: item.acertou, escolhida: item.escolhida, correta: item.correta, naoRespondida: Boolean(item.nãoRespondida) })),
+    }
+    estudoPessoal.atualizar(dados => ({ ...dados, simulados: [resumoSalvo, ...dados.simulados].slice(0, 50) }))
+    setResultadoSimuladoFinal(resultado)
   }
 
   const totalFiltrosAtivos = [filtrosAno, filtrosMateria, filtrosConteudo, filtrosBanca, filtrosDificuldade]
     .filter(valores => valores.length > 0).length
-  const temFiltrosAtivos = totalFiltrosAtivos > 0
+  const quantidadeFiltrosAtivos = totalFiltrosAtivos + (termoBusca.trim() ? 1 : 0) + (filtroSituacaoQuestao !== 'todas' ? 1 : 0) + Number(somenteComentadas) + Number(somenteComImagem) + Number(excluirQuestaoEmCadernos) + (cadernoAtivoId ? 1 : 0)
+  const temFiltrosAtivos = quantidadeFiltrosAtivos > 0
 
   const indiceFiltros = useMemo(() => acervoPreparado.indice
     ? acervoPreparado.indice.filter(item => pertenceAoFoco(item.questao, focoEstudo, true))
     : indexarFiltros(questoesDoFoco), [acervoPreparado.indice, questoesDoFoco, focoEstudo])
+  const indiceCompleto = useMemo(() => acervoPreparado.indice || indexarFiltros(questoes), [acervoPreparado.indice, questoes])
+  const indiceBaseFiltro = useMemo(() => cadernoAtivoId ? indiceCompleto : indiceFiltros, [cadernoAtivoId, indiceCompleto, indiceFiltros])
   const filtrosAtuais = useMemo(() => ({ano:filtrosAno,materia:filtrosMateria,conteudo:filtrosConteudo,banca:filtrosBanca,dificuldade:filtrosDificuldade}), [filtrosAno,filtrosMateria,filtrosConteudo,filtrosBanca,filtrosDificuldade])
-  const opcoesAtuais = useMemo(() => opcoesRelacionadas(indiceFiltros,filtrosAtuais), [indiceFiltros,filtrosAtuais])
-  const questoesFiltradas = useMemo(() => filtrarIndice(indiceFiltros,filtrosAtuais), [indiceFiltros,filtrosAtuais])
+  const ultimasRespostasPorQuestao = useMemo(() => ultimasTentativas(historicoRespostas), [historicoRespostas])
+  const idsPermitidosNasQuestoes = useMemo(() => {
+    if (!cadernoAtivoId && filtroSituacaoQuestao === 'todas' && !somenteComentadas && !somenteComImagem && !excluirQuestaoEmCadernos) return null
+    const caderno = cadernos.find(item => item.id === cadernoAtivoId)
+    const idsCaderno = cadernoAtivoId ? new Set(caderno?.questoes || []) : null
+    const idsTodosCadernos = excluirQuestaoEmCadernos ? new Set(cadernos.flatMap(item => item.questoes)) : null
+    const permitidos = new Set()
+    for (const item of indiceBaseFiltro) {
+      const id = String(item.questao.id)
+      if (idsCaderno && !idsCaderno.has(id)) continue
+      if (idsTodosCadernos?.has(id)) continue
+      if (somenteComentadas && !explicacaoQuestao(item.questao)) continue
+      if (somenteComImagem && !questaoTemImagem(item.questao)) continue
+      const tentativa = ultimasRespostasPorQuestao.get(id)
+      const favorita = marcacoesPessoais[id]?.favorita === true
+      const corresponde = filtroSituacaoQuestao === 'todas'
+        || filtroSituacaoQuestao === 'nao-resolvidas' && !tentativa
+        || filtroSituacaoQuestao === 'resolvidas' && Boolean(tentativa)
+        || filtroSituacaoQuestao === 'acertadas' && tentativa?.acertou === true
+        || filtroSituacaoQuestao === 'erradas' && tentativa?.acertou === false
+        || filtroSituacaoQuestao === 'favoritas' && favorita
+      if (corresponde) permitidos.add(id)
+    }
+    return permitidos
+  }, [cadernoAtivoId,cadernos,filtroSituacaoQuestao,indiceBaseFiltro,ultimasRespostasPorQuestao,marcacoesPessoais,somenteComentadas,somenteComImagem,excluirQuestaoEmCadernos])
+  const indiceParaFiltro = useMemo(() => idsPermitidosNasQuestoes
+    ? indiceBaseFiltro.filter(item => idsPermitidosNasQuestoes.has(String(item.questao.id)))
+    : indiceBaseFiltro, [indiceBaseFiltro,idsPermitidosNasQuestoes])
+  const opcoesAtuais = useMemo(() => opcoesRelacionadas(indiceParaFiltro,filtrosAtuais,acervoPreparado.opcoesBase), [indiceParaFiltro,filtrosAtuais,acervoPreparado.opcoesBase])
+  const questoesFiltradas = useMemo(() => filtrarIndice(indiceParaFiltro,filtrosAtuais,termoBusca,idsPermitidosNasQuestoes), [indiceParaFiltro,filtrosAtuais,termoBusca,idsPermitidosNasQuestoes])
   function chaveDoFiltro(campo) {
     return focoEstudo+':'+campo+':'+JSON.stringify(Object.entries(filtrosAtuais).filter(([outro])=>outro!==campo))
   }
   function alterarFiltro(campo,valores) {
-    const {filtros,removidos}=atualizarFiltrosRelacionados(indiceFiltros,filtrosAtuais,campo,valores)
+    const {filtros,removidos}=atualizarFiltrosRelacionados(indiceParaFiltro,filtrosAtuais,campo,valores)
     setFiltrosAno(filtros.ano); setFiltrosMateria(filtros.materia); setFiltrosConteudo(filtros.conteudo)
     setFiltrosBanca(filtros.banca); setFiltrosDificuldade(filtros.dificuldade); setLimiteVisivel(40)
     setAvisoFiltros(removidos.length ? 'Seleções sem questões compatíveis foram removidas para acompanhar sua última escolha.' : '')
@@ -741,13 +813,154 @@ export default function App() {
     [simuladoAtivo])
   function limparFiltros() {
     setFiltrosAno([]); setFiltrosMateria([]); setFiltrosConteudo([])
-    setFiltrosBanca([]); setFiltrosDificuldade([]); setLimiteVisivel(40); setAvisoFiltros('')
+    setFiltrosBanca([]); setFiltrosDificuldade([]); setTermoBusca(''); setFiltroSituacaoQuestao('todas'); setCadernoAtivoId(null); setLimiteVisivel(40); setAvisoFiltros('')
+    setSomenteComentadas(false); setSomenteComImagem(false); setExcluirQuestaoEmCadernos(false)
+  }
+
+  function inserirSimboloQuestao(simbolo) {
+    const campo = campoEdicaoQuestao.current
+    if (!campo) {
+      setNovaQuestao(atual => ({ ...atual, enunciado: atual.enunciado + simbolo }))
+      return
+    }
+    const elemento = campo.elemento
+    const valorAtual = campo.tipo === 'enunciado' ? novaQuestao.enunciado : novaQuestao.opcoes[campo.indice]
+    const inicio = Number.isInteger(elemento.selectionStart) ? elemento.selectionStart : valorAtual.length
+    const fim = Number.isInteger(elemento.selectionEnd) ? elemento.selectionEnd : inicio
+    const valor = valorAtual.slice(0, inicio) + simbolo + valorAtual.slice(fim)
+    setNovaQuestao(atual => campo.tipo === 'enunciado'
+      ? { ...atual, enunciado: valor }
+      : { ...atual, opcoes: atual.opcoes.map((opcao, indice) => indice === campo.indice ? valor : opcao) })
+    requestAnimationFrame(() => {
+      elemento.focus()
+      elemento.setSelectionRange(inicio + simbolo.length, inicio + simbolo.length)
+    })
+  }
+
+  function abrirDialogoPessoal(tipo, questoesParaSalvar = []) {
+    const sufixo = tipo === 'filtro' ? 'Busca salva' : 'Meu caderno'
+    setNomeRascunhoPessoal(`${sufixo} ${new Date().toLocaleDateString('pt-BR')}`)
+    setDialogoPessoal({ tipo, questoes: [...new Set(questoesParaSalvar.map(String))] })
+  }
+
+  function confirmarDialogoPessoal(evento) {
+    evento.preventDefault()
+    const nome = nomeRascunhoPessoal.trim()
+    if (!nome || !dialogoPessoal) return
+    if (dialogoPessoal.tipo === 'filtro') {
+      const novoFiltro = {
+        id: crypto.randomUUID(), nome,
+        filtros: Object.fromEntries(Object.entries(filtrosAtuais).map(([campo, valores]) => [campo, [...valores]])),
+        termoBusca, situacao: filtroSituacaoQuestao,
+        extras: { somenteComentadas, somenteComImagem, excluirQuestaoEmCadernos },
+        foco: focoEstudo, criadoEm: new Date().toISOString(),
+      }
+      estudoPessoal.atualizar(dados => ({ ...dados, filtros: [novoFiltro, ...dados.filtros] }))
+    } else {
+      const novoCaderno = { id: crypto.randomUUID(), nome, pasta: '', questoes: dialogoPessoal.questoes, criadoEm: new Date().toISOString() }
+      estudoPessoal.atualizar(dados => ({ ...dados, cadernos: [novoCaderno, ...dados.cadernos] }))
+      setCadernoDestinoId(novoCaderno.id)
+    }
+    setDialogoPessoal(null)
+    setNomeRascunhoPessoal('')
+  }
+
+  function aplicarFiltroSalvo(filtro) {
+    if (filtro.foco && filtro.foco !== focoEstudo) preferenciaFoco.escolher(filtro.foco)
+    const valores = filtro.filtros || {}
+    setFiltrosAno(valores.ano || [])
+    setFiltrosMateria(valores.materia || [])
+    setFiltrosConteudo(valores.conteudo || [])
+    setFiltrosBanca(valores.banca || [])
+    setFiltrosDificuldade(valores.dificuldade || [])
+    setTermoBusca(filtro.termoBusca || '')
+    setFiltroSituacaoQuestao(filtro.situacao || 'todas')
+    setSomenteComentadas(Boolean(filtro.extras?.somenteComentadas))
+    setSomenteComImagem(Boolean(filtro.extras?.somenteComImagem))
+    setExcluirQuestaoEmCadernos(Boolean(filtro.extras?.excluirQuestaoEmCadernos))
+    setCadernoAtivoId(null)
+    setLimiteVisivel(40)
+    setAbaAtiva('questoes')
+  }
+
+  function adicionarQuestaoAoCaderno(questaoId, cadernoId = cadernoDestinoId) {
+    if (!cadernoId) return
+    adicionarQuestoesAoCaderno([questaoId], cadernoId)
+  }
+
+  function adicionarQuestoesAoCaderno(questoesIds, cadernoId = cadernoDestinoId) {
+    if (!cadernoId || !questoesIds.length) return
+    const ids = new Set(questoesIds.map(String))
+    estudoPessoal.atualizar(dados => ({
+      ...dados,
+      cadernos: dados.cadernos.map(caderno => caderno.id === cadernoId
+        ? { ...caderno, questoes: [...new Set([...caderno.questoes, ...ids])] }
+        : caderno),
+    }))
+  }
+
+  function alternarFavorita(questaoId) {
+    const id = String(questaoId)
+    estudoPessoal.atualizar(dados => ({
+      ...dados,
+      questoes: { ...dados.questoes, [id]: { ...dados.questoes[id], favorita: !dados.questoes[id]?.favorita } },
+    }))
+  }
+
+  function salvarNotaPessoal(questaoId, nota) {
+    const id = String(questaoId)
+    estudoPessoal.atualizar(dados => ({
+      ...dados,
+      questoes: { ...dados.questoes, [id]: { ...dados.questoes[id], nota } },
+    }))
+  }
+
+  function estudarCaderno(cadernoId) {
+    setFiltrosAno([]); setFiltrosMateria([]); setFiltrosConteudo([])
+    setFiltrosBanca([]); setFiltrosDificuldade([]); setTermoBusca('')
+    setFiltroSituacaoQuestao('todas'); setCadernoAtivoId(cadernoId); setLimiteVisivel(40)
+    setSomenteComentadas(false); setSomenteComImagem(false); setExcluirQuestaoEmCadernos(false)
+    setAbaAtiva('questoes')
+  }
+
+  function excluirCaderno(cadernoId) {
+    estudoPessoal.atualizar(dados => ({ ...dados, cadernos: dados.cadernos.filter(caderno => caderno.id !== cadernoId) }))
+    if (cadernoAtivoId === cadernoId) setCadernoAtivoId(null)
+    if (cadernoDestinoId === cadernoId) setCadernoDestinoId('')
+  }
+
+  function salvarConfiguracaoSimulado(configuracao) {
+    const registro = { ...configuracao, id: crypto.randomUUID(), criadoEm: new Date().toISOString() }
+    estudoPessoal.atualizar(dados => ({ ...dados, configuracoes: [registro, ...dados.configuracoes].slice(0, 30) }))
+  }
+
+  function retomarSimuladoSalvo(simulado, apenasErros = false) {
+    const ids = (simulado.itens || []).filter(item => !apenasErros || !item.acertou).map(item => item.id)
+    const itens = ids.map(id => questoes.find(questao => String(questao.id) === String(id))).filter(Boolean)
+    if (!itens.length) return
+    iniciarSimulado({
+      tipo: 'personalizado', id: `retomar-${crypto.randomUUID()}`,
+      prova: apenasErros ? `Erros — ${simulado.titulo}` : `Refazer — ${simulado.titulo}`,
+      concurso: simulado.titulo, banca: simulado.banca || 'Treino personalizado', itens,
+    })
+  }
+
+  function praticarDiagnostico(termo) {
+    limparFiltros()
+    setTermoBusca(termo)
+    setAbaAtiva('questoes')
   }
 
   const totalHorasEstudo = horasEstudo.reduce((acc, curr) => acc + (curr.horas || 0), 0)
   const totalQuestoesResolvidas = historicoRespostas.length
   const totalAcertos = historicoRespostas.filter(h => h.acertou).length
   const taxaAcertoGeral = totalQuestoesResolvidas > 0 ? ((totalAcertos / totalQuestoesResolvidas) * 100).toFixed(1) : 0
+  const analiseDesempenho = useMemo(() => analisarDesempenho(historicoRespostas, questoes), [historicoRespostas, questoes])
+  const simuladosSalvosFiltrados = useMemo(() => {
+    const termo = buscaHistoricoSimulado.trim().toLocaleLowerCase('pt-BR')
+    if (!termo) return historicoSimulados
+    return historicoSimulados.filter(item => `${item.titulo} ${item.banca || ''} ${item.foco || ''}`.toLocaleLowerCase('pt-BR').includes(termo))
+  }, [buscaHistoricoSimulado, historicoSimulados])
 
   const tarefasDoCronograma = tarefas.filter(tarefa => DIAS_SEMANA.includes(tarefa.dia))
   const tarefasSemDia = tarefas.filter(tarefa => !DIAS_SEMANA.includes(tarefa.dia))
@@ -773,35 +986,39 @@ export default function App() {
     <Conta session={null} isAdmin={false} checkingAdmin={false} />
   </div>
 
-  if (!progressoCarregado) return <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center gap-4 px-6 text-center">
-    <p className="text-sm text-indigo-300">Carregando seu progresso…</p>
+  if (!progressoCarregado || !estudoPessoal.carregado) return <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center gap-4 px-6 text-center">
+    <p className="text-sm text-indigo-300">Carregando seus dados de estudo…</p>
     {erroProgresso && <><EstadoProgresso progresso={progresso} /><button className="text-sm text-slate-400" onClick={() => sairDaConta()}>Voltar ao login</button></>}
   </div>
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-slate-950 text-slate-100 font-sans selection:bg-indigo-500 selection:text-white">
+    <div className="app-shell min-h-screen text-slate-100 font-sans selection:bg-indigo-500 selection:text-white">
       {/* Barra de Navegação Superior Refinada */}
-      <nav className="sticky top-0 z-50 flex flex-col items-stretch gap-3 border-b border-slate-800/80 bg-slate-950/80 px-3 py-3 backdrop-blur-xl md:flex-row md:items-center md:justify-between md:px-6 md:py-3.5">
-        <div className="flex items-center gap-2.5 px-1 text-lg font-extrabold tracking-tight sm:text-xl">
-          <span className="bg-gradient-to-tr from-indigo-500 to-violet-500 text-white px-2.5 py-1 rounded-xl shadow-lg shadow-indigo-500/20 text-sm">AP</span>
-          <span className="text-slate-100">Aprovado</span>
+      <nav aria-label="Área de estudo" className="app-nav sticky top-0 z-50 flex flex-col items-stretch gap-3 border-b border-slate-800/80 bg-slate-950/80 px-3 py-3 backdrop-blur-xl xl:flex-row xl:items-center xl:justify-between md:px-6 md:py-3.5">
+        <div className="app-brand px-1 text-lg font-bold tracking-tight">
+          <span className="app-brand-mark">AP</span>
+          <span className="text-slate-100">Aprovado<small>SEU ESPAÇO DE ESTUDO</small></span>
         </div>
-        <div aria-label="Navegação principal" className="mobile-nav flex w-full min-w-0 items-center gap-1.5 overflow-x-auto pb-1 md:w-auto md:pb-0">
+        <div aria-label="Navegação principal" className="mobile-nav flex w-full min-w-0 items-center gap-1.5 overflow-x-auto pb-1 xl:w-auto xl:pb-0">
           {[
-            { id: 'questoes', label: '📚 Questões' },
-            { id: 'simulados', label: '📝 Simulados' },
-            { id: 'desempenho', label: '📈 Desempenho' },
-            ...(isAdmin ? [{ id: 'cadastrar', label: '➕ Cadastrar' }, { id: 'importar', label: '📄 Importar PDF' }] : []),
-            { id: 'edital', label: '📋 Edital' },
-            { id: 'redacao', label: '✍️ Redação' },
-            { id: 'revisao', label: '🧠 Revisão' },
-            { id: 'tarefas', label: '⚡ Tarefas' },
-            { id: 'conta', label: '👤 Minha conta' }
+            { id: 'questoes', label: 'Questões' },
+            { id: 'cadernos', label: 'Meus cadernos' },
+            { id: 'simulados', label: 'Simulados' },
+            { id: 'provas', label: 'Acervo de provas' },
+            { id: 'extraidas', label: 'Questões extraídas' },
+            { id: 'desempenho', label: 'Desempenho' },
+            ...(isAdmin ? [{ id: 'cadastrar', label: 'Cadastrar' }, { id: 'importar', label: 'Importar PDF' }, { id: 'r2-upload', label: 'Migrar acervo R2' }] : []),
+            { id: 'edital', label: 'Edital' },
+            { id: 'redacao', label: 'Redação' },
+            { id: 'revisao', label: 'Revisão' },
+            { id: 'tarefas', label: 'Tarefas' },
+            { id: 'conta', label: 'Minha conta' }
           ].map(tab => (
             <button
               key={tab.id}
+              aria-current={abaAtiva === tab.id ? "page" : undefined}
               onClick={() => setAbaAtiva(tab.id)}
-              className={`shrink-0 whitespace-nowrap px-3 py-2 rounded-2xl text-xs md:text-sm font-medium transition-all duration-200 ${abaAtiva === tab.id ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-lg shadow-indigo-600/25 scale-[1.02]' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/80'}`}
+              className={`nav-link shrink-0 whitespace-nowrap px-3 py-2 rounded-2xl text-xs md:text-sm font-medium transition-all duration-200 ${abaAtiva === tab.id ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/80'}`}
             >
               {tab.label}
             </button>
@@ -812,11 +1029,38 @@ export default function App() {
       <main className="mx-auto min-w-0 max-w-5xl p-3 sm:p-6 md:p-8">
         <EstadoProgresso progresso={progresso} />
         <SeletorFoco preferencia={preferenciaFoco} bloqueado={Boolean(simuladoAtivo)} onEscolher={valor => { if(simuladoAtivo) return; preferenciaFoco.escolher(valor); limparFiltros(); setFiltroAnoSimulado('Todos'); setFiltroProvaSimulado('Todos') }} />
+        {estudoPessoal.erro && <p role="status" className="mb-4 rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">{estudoPessoal.erro}</p>}
         {abaAtiva === 'conta' && <Conta session={session} isAdmin={isAdmin} checkingAdmin={checkingAdmin} sincronizacao={sincronizacao} totais={{ horas: totalHorasEstudo, questoes: totalQuestoesResolvidas, acertos: totalAcertos }} />}
+        {abaAtiva === 'provas' && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Abrindo o acervo de provas…</p>}><AcervoProvas /></Suspense>}
+        {abaAtiva === 'extraidas' && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Abrindo as questões extraídas…</p>}><QuestoesExtraidas questoesBanco={questoes.length} aoAbrirAcervo={() => setAbaAtiva('provas')} /></Suspense>}
+        {abaAtiva === 'cadernos' && <CadernosPessoais
+          cadernos={cadernos} questoes={questoes} anotacoes={marcacoesPessoais}
+          sincronizacao={estudoPessoal.sincronizacao} erroSincronizacao={estudoPessoal.erro}
+          onSincronizar={estudoPessoal.sincronizarAgora}
+          onNovo={() => abrirDialogoPessoal('caderno')}
+          onEstudar={estudarCaderno}
+          onExcluir={excluirCaderno}
+          onRenomear={(cadernoId, nome) => {
+            const valor = nome.trim()
+            if (valor) estudoPessoal.atualizar(dados => ({ ...dados, cadernos: dados.cadernos.map(item => item.id === cadernoId ? { ...item, nome: valor } : item) }))
+          }}
+          onMover={(cadernoId, pasta) => estudoPessoal.atualizar(dados => ({ ...dados, cadernos: dados.cadernos.map(item => item.id === cadernoId ? { ...item, pasta: pasta.trim() } : item) }))}
+          onRemoverQuestao={(cadernoId, questaoId) => estudoPessoal.atualizar(dados => ({
+            ...dados,
+            cadernos: dados.cadernos.map(caderno => caderno.id === cadernoId
+              ? { ...caderno, questoes: caderno.questoes.filter(id => id !== String(questaoId)) }
+              : caderno),
+          }))}
+        />}
         {abaAtiva === 'importar' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Carregando importador…</p>}><ImportarPdf onPublicado={buscarQuestoes} /></Suspense>}
+        {abaAtiva === 'r2-upload' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Preparando envio do acervo…</p>}><AcervoR2Uploader isAdmin={isAdmin} /></Suspense>}
         {/* ABA: BANCO DE QUESTÕES */}
         {abaAtiva === 'questoes' && (
           <div>
+            {cadernoAtivoId && <div className="mb-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-indigo-400/30 bg-indigo-950/30 px-4 py-3">
+              <p className="text-sm text-indigo-100">Estudando caderno <strong>{cadernos.find(item => item.id === cadernoAtivoId)?.nome || 'selecionado'}</strong> · {questoesFiltradas.length} questão(ões)</p>
+              <button type="button" onClick={() => setCadernoAtivoId(null)} className="rounded-lg border border-indigo-300/30 px-3 py-2 text-xs font-semibold text-indigo-200 hover:bg-indigo-400/10">Sair do caderno</button>
+            </div>}
             <header className="mb-6">
               <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">Banco de Questões</h1>
               <p className="text-slate-400 text-sm mt-1">{temFiltrosAtivos
@@ -824,6 +1068,24 @@ export default function App() {
                 : 'Escolha os filtros abaixo para exibir as questões que deseja estudar.'}</p>
               {carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Carregando o restante do acervo… A quantidade acima ainda é parcial.</p>}
               {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Acervo carregado: {questoesDoFoco.length.toLocaleString('pt-BR')} questões neste foco.</p>}
+              <details className="mt-3 text-sm text-indigo-300">
+                <summary className="cursor-pointer font-semibold hover:text-indigo-200">Consultar provas nos acervos oficiais ↗</summary>
+                <p className="mt-2 max-w-3xl text-xs leading-5 text-slate-400">Os números entre parênteses nos filtros contam apenas questões já presentes no acervo carregado. Os sites abaixo dão acesso aos cadernos e gabaritos originais; a disponibilidade para consulta não indica, por si só, autorização para republicação.</p>
+                <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2">
+                  <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos" target="_blank" rel="noreferrer">ENEM / Inep ↗</a>
+                  <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade/provas-e-gabaritos" target="_blank" rel="noreferrer">Enade / Inep ↗</a>
+                  <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/encceja/provas-e-gabaritos" target="_blank" rel="noreferrer">Encceja / Inep ↗</a>
+                  <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/documentos-edicoes-antigas" target="_blank" rel="noreferrer">Saeb / Inep ↗</a>
+                  <a href="https://www.fuvest.br/acervo-vestibular/" target="_blank" rel="noreferrer">Fuvest ↗</a>
+                  <a href="https://conhecimento.fgv.br/concursos" target="_blank" rel="noreferrer">FGV Conhecimento ↗</a>
+                  <a href="https://www.cebraspe.org.br/concursos/telebras_25" target="_blank" rel="noreferrer">Cebraspe ↗</a>
+                  <a href="https://www.vunesp.com.br/" target="_blank" rel="noreferrer">Vunesp ↗</a>
+                  <a href="https://puc-rio.br/vestibular/repositorio/" target="_blank" rel="noreferrer">PUC-Rio ↗</a>
+                  <a href="https://www.pucminas.br/formas-ingresso/vestibular/Paginas/provas-e-gabaritos.aspx" target="_blank" rel="noreferrer">PUC Minas ↗</a>
+                  <a href="https://www.espcex.eb.mil.br/" target="_blank" rel="noreferrer">EsPCEx ↗</a>
+                  <a href="https://www.esa.eb.mil.br/" target="_blank" rel="noreferrer">ESA ↗</a>
+                </div>
+              </details>
               {aplicativoNativo && <div className="mt-3 text-sm"><button className="rounded-xl border border-indigo-500 px-4 py-2 text-indigo-200 disabled:opacity-50" disabled={carregandoAcervo} onClick={()=>buscarQuestoes(true)}>Atualizar questões online</button>{avisoAcervoNativo && <p role="status" className="mt-2 text-slate-300">{avisoAcervoNativo}</p>}</div>}
               {falhasAcervo.length > 0 && <div role="alert" className="text-amber-300 text-sm mt-2">Não foi possível carregar: {falhasAcervo.join(' e ')}. A lista pode estar incompleta. <button className="underline font-semibold" onClick={buscarQuestoes} disabled={carregandoAcervo}>Tentar carregar novamente</button></div>}
               <div className="flex flex-wrap gap-4 mt-3 text-sm text-indigo-300">
@@ -843,25 +1105,79 @@ export default function App() {
             </header>
 
             {/* Filtros */}
-            <div className="relative z-20 mb-6 grid grid-cols-1 items-start gap-x-5 gap-y-5 overflow-visible rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-xl backdrop-blur-md sm:mb-8 sm:grid-cols-2 sm:p-6 lg:grid-cols-3">
+            <div className="filter-panel relative z-20 mb-6 grid grid-cols-1 items-start gap-x-5 gap-y-5 overflow-visible rounded-3xl p-4 shadow-xl backdrop-blur-md sm:mb-8 sm:grid-cols-2 sm:p-6 lg:grid-cols-3">
               <div className="sm:col-span-2 lg:col-span-3 flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
                 <div><h2 className="font-bold text-slate-100">Filtrar questões</h2><p className="text-xs text-slate-400 mt-1">Os filtros se ajustam entre si: só aparecem opções com questões disponíveis para sua seleção.</p></div>
-                {totalFiltrosAtivos > 0 && <button type="button" onClick={limparFiltros} className="rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:border-indigo-500 hover:text-indigo-200">Limpar {totalFiltrosAtivos} filtro(s)</button>}
+                {quantidadeFiltrosAtivos > 0 && <button type="button" onClick={limparFiltros} className="rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:border-indigo-500 hover:text-indigo-200">Limpar filtros ({quantidadeFiltrosAtivos})</button>}
               </div>
+              <label className="sm:col-span-2 lg:col-span-3">
+                <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400">Palavra-chave ou código da questão</span>
+                <input
+                  type="search"
+                  value={termoBusca}
+                  onChange={e => { setTermoBusca(e.target.value); setLimiteVisivel(40) }}
+                  placeholder="Ex.: concordância verbal ou Q123456"
+                  className="w-full rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
+                />
+              </label>
               {avisoFiltros && <p role="status" className="sm:col-span-2 lg:col-span-3 text-xs text-indigo-300">{avisoFiltros}</p>}
               <FiltroMultiplo key={chaveDoFiltro('ano')} titulo="Ano" opcoes={anosDisponiveis} selecionados={filtrosAno} aoAlterar={valores => alterarFiltro('ano',valores)} rotuloTodos="Todos os anos" />
               <FiltroMultiplo key={chaveDoFiltro('materia')} titulo={`Matéria (${materiasDisponiveis.length})`} opcoes={materiasDisponiveis} selecionados={filtrosMateria} aoAlterar={valores => alterarFiltro('materia',valores)} rotuloTodos="Todas as matérias" />
               <FiltroMultiplo key={chaveDoFiltro('conteudo')} titulo={`Conteúdo (${conteudosDisponiveis.length} grupos)`} opcoes={conteudosDisponiveis} selecionados={filtrosConteudo} aoAlterar={valores => alterarFiltro('conteudo',valores)} rotuloTodos="Todos os conteúdos" />
               <FiltroMultiplo key={chaveDoFiltro('banca')} titulo={`Banca (${bancasDisponiveis.length})`} opcoes={bancasDisponiveis} selecionados={filtrosBanca} aoAlterar={valores => alterarFiltro('banca',valores)} rotuloTodos="Todas as bancas" />
               <FiltroMultiplo key={chaveDoFiltro('dificuldade')} titulo="Dificuldade" opcoes={dificuldadesDisponiveis} selecionados={filtrosDificuldade} aoAlterar={valores => alterarFiltro('dificuldade',valores)} rotuloTodos="Todas as dificuldades" />
+              <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Minha situação
+                <select value={filtroSituacaoQuestao} onChange={evento => { setFiltroSituacaoQuestao(evento.target.value); setLimiteVisivel(40) }} className="mt-2 w-full rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm font-normal normal-case tracking-normal text-slate-100">
+                  <option value="todas">Todas as questões</option>
+                  <option value="nao-resolvidas">Não resolvidas</option>
+                  <option value="resolvidas">Já resolvidas</option>
+                  <option value="acertadas">Acertei</option>
+                  <option value="erradas">Errei</option>
+                  <option value="favoritas">Favoritas</option>
+                </select>
+              </label>
+              <fieldset className="sm:col-span-2 lg:col-span-3 rounded-2xl border border-slate-800 bg-slate-950/40 p-3">
+                <legend className="px-2 text-xs font-semibold uppercase tracking-wider text-slate-400">Recursos disponíveis no acervo</legend>
+                <div className="grid gap-2 sm:grid-cols-3">
+                  {[
+                    [somenteComentadas, setSomenteComentadas, 'Somente com resolução ou comentário'],
+                    [somenteComImagem, setSomenteComImagem, 'Somente com imagem, gráfico ou texto visual'],
+                    [excluirQuestaoEmCadernos, setExcluirQuestaoEmCadernos, 'Excluir questões já salvas em cadernos'],
+                  ].map(([marcado, alterar, rotulo]) => <label key={rotulo} className="flex min-h-11 items-center gap-2 rounded-xl px-2 py-2 text-xs text-slate-300 hover:bg-slate-900">
+                    <input type="checkbox" checked={marcado} onChange={evento => { alterar(evento.target.checked); setLimiteVisivel(40) }} className="h-4 w-4 shrink-0 rounded border-slate-600 bg-slate-900 text-indigo-500" />
+                    <span>{rotulo}</span>
+                  </label>)}
+                </div>
+              </fieldset>
+              <div className="flex flex-col justify-end gap-2">
+                <button type="button" onClick={() => abrirDialogoPessoal('filtro')} className="w-full rounded-xl border border-indigo-400/30 bg-indigo-500/10 px-3 py-3 text-xs font-bold text-indigo-200 hover:bg-indigo-500/20">Salvar esta busca</button>
+                <button type="button" disabled={!questoesFiltradas.length} onClick={() => abrirDialogoPessoal('caderno', questoesFiltradas.map(q => q.id))} className="w-full rounded-xl border border-slate-700 px-3 py-3 text-xs font-semibold text-slate-200 hover:border-indigo-400/50 disabled:opacity-40">Criar caderno com {questoesFiltradas.length} questões</button>
+              </div>
+              {cadernos.length > 0 && <label className="sm:col-span-2 lg:col-span-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Adicionar questões ao caderno
+                <div className="mt-2 flex flex-col gap-2 sm:flex-row">
+                  <select value={cadernoDestinoId} onChange={evento => setCadernoDestinoId(evento.target.value)} className="min-w-0 flex-1 rounded-xl border border-slate-700 bg-slate-950/80 px-3 py-2.5 text-sm font-normal normal-case tracking-normal text-slate-100">
+                    <option value="">Selecione um caderno</option>{cadernos.map(caderno => <option key={caderno.id} value={caderno.id}>{caderno.nome}</option>)}
+                  </select>
+                  <button type="button" disabled={!cadernoDestinoId || !questoesFiltradas.length} onClick={() => { adicionarQuestoesAoCaderno(questoesFiltradas.map(q => q.id)); setAbaAtiva('cadernos') }} className="rounded-xl border border-slate-700 px-4 py-2.5 text-xs font-semibold text-slate-200 hover:border-indigo-400/50 disabled:opacity-40">Guardar resultados da busca</button>
+                </div>
+              </label>}
+              {filtrosSalvos.length > 0 && <section className="sm:col-span-2 lg:col-span-3 border-t border-slate-800 pt-4" aria-label="Buscas salvas">
+                <div className="mb-2 flex flex-wrap items-center justify-between gap-2"><h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">Minhas buscas salvas</h3><span className="text-xs text-slate-500">{filtrosSalvos.length}</span></div>
+                <div className="flex gap-2 overflow-x-auto pb-1">
+                  {filtrosSalvos.map(filtro => <div key={filtro.id} className="flex shrink-0 items-center gap-1 rounded-xl border border-slate-700 bg-slate-950/60 p-1">
+                    <button type="button" onClick={() => aplicarFiltroSalvo(filtro)} className="max-w-56 truncate rounded-lg px-3 py-2 text-xs font-semibold text-indigo-200 hover:bg-indigo-500/10">{filtro.nome}</button>
+                    <button type="button" aria-label={`Excluir busca ${filtro.nome}`} onClick={() => estudoPessoal.atualizar(dados => ({ ...dados, filtros: dados.filtros.filter(item => item.id !== filtro.id) }))} className="rounded-lg px-2 py-2 text-xs text-slate-500 hover:bg-rose-500/10 hover:text-rose-300">×</button>
+                  </div>)}
+                </div>
+              </section>}
             </div>
 
             <div className="relative z-0 space-y-6">
               {!temFiltrosAtivos ? (
                 <div className="text-center py-16 bg-slate-900/30 rounded-3xl border border-dashed border-slate-700/80">
                   <div className="mb-3 text-3xl" aria-hidden="true">⌕</div>
-                  <p className="font-semibold text-slate-300">Selecione pelo menos um filtro</p>
-                  <p className="mt-1 text-sm text-slate-500">Você pode combinar anos, matérias, conteúdos, bancas e dificuldades.</p>
+                  <p className="font-semibold text-slate-300">Escolha um filtro ou pesquise uma questão</p>
+                  <p className="mt-1 text-sm text-slate-500">Combine ano, matéria, conteúdo, banca e dificuldade, ou busque por palavra-chave/código.</p>
                 </div>
               ) : questoesFiltradas.length === 0 ? (
                 <div className="text-center py-16 bg-slate-900/30 rounded-3xl border border-slate-800/80">
@@ -893,6 +1209,22 @@ export default function App() {
                       {!podeCorrigir(q) && <span className="text-xs font-medium text-amber-300">{q.anulada ? 'Questão anulada: disponível apenas para consulta.' : 'Gabarito ainda não disponível para correção.'}</span>}
                       {feedbacks[q.id] && <span className={`text-sm font-semibold ${feedbacks[q.id].status === 'correto' ? 'text-emerald-400' : 'text-red-400'}`}>{feedbacks[q.id].msg}</span>}
                     </div>
+                    {feedbacks[q.id] && <details className="mt-4 rounded-xl border border-indigo-400/20 bg-indigo-950/20 p-3">
+                      <summary className="cursor-pointer text-sm font-semibold text-indigo-200">Ver explicação do gabarito</summary>
+                      {explicacaoQuestao(q)
+                        ? <p className="mt-3 whitespace-pre-wrap text-sm leading-6 text-slate-200">{explicacaoQuestao(q)}</p>
+                        : <p className="mt-3 text-sm leading-6 text-slate-400">O acervo ainda não tem comentário oficial para esta questão. Registre seu próprio raciocínio em “Minha anotação” para revisar depois.</p>}
+                    </details>}
+                    <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-slate-800 pt-4">
+                      <button type="button" aria-pressed={Boolean(marcacoesPessoais[String(q.id)]?.favorita)} onClick={() => alternarFavorita(q.id)} className={`rounded-xl border px-3 py-2 text-xs font-semibold ${marcacoesPessoais[String(q.id)]?.favorita ? 'border-amber-400/40 bg-amber-400/10 text-amber-200' : 'border-slate-700 text-slate-300 hover:border-amber-400/40 hover:text-amber-200'}`}>
+                        {marcacoesPessoais[String(q.id)]?.favorita ? '★ Favorita' : '☆ Favoritar'}
+                      </button>
+                      {cadernos.length > 0 && <button type="button" disabled={!cadernoDestinoId || cadernos.find(item => item.id === cadernoDestinoId)?.questoes.includes(String(q.id))} onClick={() => adicionarQuestaoAoCaderno(q.id)} className="rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:border-indigo-400/40 hover:text-indigo-200 disabled:opacity-40">{cadernoDestinoId && cadernos.find(item => item.id === cadernoDestinoId)?.questoes.includes(String(q.id)) ? 'Já está no caderno' : '＋ Adicionar ao caderno selecionado'}</button>}
+                      <details className="min-w-0 flex-1 basis-full sm:basis-auto">
+                        <summary className="w-fit rounded-lg px-2 py-2 text-xs font-semibold text-slate-400 hover:text-slate-200">Minha anotação</summary>
+                        <textarea key={`${q.id}:${marcacoesPessoais[String(q.id)]?.nota || ''}`} defaultValue={marcacoesPessoais[String(q.id)]?.nota || ''} onBlur={evento => salvarNotaPessoal(q.id, evento.target.value)} placeholder="Anote uma dúvida, regra ou lembrete para revisar…" rows={3} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950/80 p-3 text-sm leading-6 text-slate-200 placeholder:text-slate-500" />
+                      </details>
+                    </div>
                   </div>
                 ))
               )}
@@ -913,7 +1245,37 @@ export default function App() {
                   </div>
                 </header>
 
-                <TreinosFoco key={focoEstudo} questoes={questoes} foco={focoEstudo} historico={historicoRespostas} onIniciar={iniciarSimulado} />
+                <TreinosFoco
+                  key={focoEstudo} questoes={questoes} foco={focoEstudo} historico={historicoRespostas} onIniciar={iniciarSimulado}
+                  configuracoes={configuracoesSimulado}
+                  onSalvarConfig={salvarConfiguracaoSimulado}
+                  onExcluirConfig={id => estudoPessoal.atualizar(dados => ({ ...dados, configuracoes: dados.configuracoes.filter(item => item.id !== id) }))}
+                />
+                {historicoSimulados.length > 0 && <section className="my-6 rounded-3xl border border-slate-800 bg-slate-900/50 p-4 sm:p-5" aria-labelledby="titulo-historico-simulados">
+                  <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+                    <div><h2 id="titulo-historico-simulados" className="text-lg font-bold text-slate-100">Resultados recentes</h2><p className="mt-1 text-xs text-slate-400">Últimos {historicoSimulados.length} simulados · selecione um resultado para repetir a prova ou retomar os erros.</p></div>
+                    <button type="button" onClick={() => estudoPessoal.atualizar(dados => ({ ...dados, simulados: [] }))} className="rounded-lg px-3 py-2 text-xs font-semibold text-slate-400 hover:bg-rose-500/10 hover:text-rose-300">Limpar histórico</button>
+                  </div>
+                  <label className="mb-3 block text-xs font-semibold text-slate-400">Buscar resultado
+                    <input type="search" value={buscaHistoricoSimulado} onChange={evento => setBuscaHistoricoSimulado(evento.target.value)} placeholder="Nome do simulado ou banca" className="mt-1 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm font-normal text-slate-100 placeholder:text-slate-500" />
+                  </label>
+                  <div className="grid gap-2">
+                    {simuladosSalvosFiltrados.map(item => <article key={item.id} className="flex min-w-0 flex-col justify-between gap-3 rounded-2xl border border-slate-800 bg-slate-950/50 p-3 sm:flex-row sm:items-center">
+                      <div className="min-w-0">
+                        <h3 className="truncate text-sm font-semibold text-slate-200">{item.titulo}</h3>
+                        <p className="mt-1 text-xs text-slate-500">{Number.isFinite(Date.parse(item.concluidoEm || '')) ? new Date(item.concluidoEm).toLocaleDateString('pt-BR') : 'Data indisponível'} · {item.banca || 'Treino personalizado'} · {item.respondidas}/{item.total} respondidas · {Math.floor((item.duracaoSegundos || 0) / 60)} min</p>
+                      </div>
+                      <div className="flex shrink-0 flex-wrap items-center gap-2">
+                        <div className="mr-1 text-right"><p className="text-sm font-extrabold text-emerald-300">{item.acertos}/{item.total}</p><p className="text-[11px] text-slate-500">{item.total ? Math.round(item.acertos / item.total * 100) : 0}%</p></div>
+                        {item.itens?.length > 0 && <>
+                          <button type="button" onClick={() => retomarSimuladoSalvo(item, true)} disabled={!item.itens.some(pergunta => !pergunta.acertou)} className="rounded-lg border border-amber-400/20 px-3 py-2 text-xs font-semibold text-amber-200 hover:bg-amber-500/10 disabled:opacity-40">Retomar erros</button>
+                          <button type="button" onClick={() => retomarSimuladoSalvo(item)} className="rounded-lg border border-indigo-400/20 px-3 py-2 text-xs font-semibold text-indigo-200 hover:bg-indigo-500/10">Refazer prova</button>
+                        </>}
+                      </div>
+                    </article>)}
+                    {!simuladosSalvosFiltrados.length && <p className="rounded-xl border border-dashed border-slate-800 p-5 text-center text-sm text-slate-500">Nenhum resultado corresponde à busca.</p>}
+                  </div>
+                </section>}
                 <h2 className="mb-2 text-xl font-bold text-slate-100">Edições completas</h2>
                 <p className="mb-5 text-sm text-slate-400">Somente cadernos conferidos e integralmente carregados. Anuladas são descontadas da correção; conjuntos parciais continuam disponíveis no banco de questões.</p>
                 <div className="mb-5 grid gap-4 rounded-2xl border border-slate-800 p-4 sm:grid-cols-3">
@@ -1043,7 +1405,7 @@ export default function App() {
                 </div>
                 <button onClick={() => { setSimuladoAtivo(null); setResultadoSimuladoFinal(null); }} className="bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white px-8 py-3.5 rounded-2xl font-medium text-sm transition-all shadow-lg shadow-indigo-600/25">Voltar aos Simulados</button>
               </div>
-                <RevisaoSimulado resultado={resultadoSimuladoFinal} onRepetirErros={itens => iniciarSimulado({tipo:'personalizado', id:'revisar-'+crypto.randomUUID(), prova:'Retomar questões pendentes', concurso:'Retomar questões pendentes', banca:'Treino personalizado', itens})} />
+                <RevisaoSimulado resultado={resultadoSimuladoFinal} anotacoes={marcacoesPessoais} onRepetirErros={itens => iniciarSimulado({tipo:'personalizado', id:'revisar-'+crypto.randomUUID(), prova:'Retomar questões pendentes', concurso:'Retomar questões pendentes', banca:'Treino personalizado', itens})} />
               </div>
             )}
           </div>
@@ -1070,6 +1432,51 @@ export default function App() {
                 </div>
               ))}
             </div>
+
+            <section className="grid gap-4 lg:grid-cols-3" aria-labelledby="titulo-diagnostico">
+              <article className="rounded-3xl border border-slate-800 bg-slate-900/60 p-5 lg:col-span-1">
+                <h2 id="titulo-diagnostico" className="text-lg font-bold">Últimos 7 dias</h2>
+                <p className="mt-1 text-xs text-slate-400">Comparação com os 7 dias anteriores</p>
+                <p className="mt-5 text-3xl font-extrabold text-indigo-200">{analiseDesempenho.recentes}</p>
+                <p className="text-xs text-slate-400">tentativas registradas</p>
+                {analiseDesempenho.acertoRecente == null
+                  ? <p className="mt-4 rounded-xl bg-slate-950/50 p-3 text-sm text-slate-400">Ainda não há respostas neste período.</p>
+                  : <div className="mt-4 rounded-xl bg-slate-950/50 p-3 text-sm">
+                    <p>Acerto nesta semana: <strong className="text-emerald-300">{analiseDesempenho.acertoRecente}%</strong></p>
+                    <p className="mt-1 text-xs text-slate-400">Semana anterior: {analiseDesempenho.acertoSemanaAnterior == null ? 'sem dados' : `${analiseDesempenho.acertoSemanaAnterior}%`}</p>
+                    {analiseDesempenho.variacaoSemanal != null && <p className={`mt-2 text-xs font-semibold ${analiseDesempenho.variacaoSemanal >= 0 ? 'text-emerald-300' : 'text-amber-300'}`}>{analiseDesempenho.variacaoSemanal > 0 ? '+' : ''}{analiseDesempenho.variacaoSemanal} pontos percentuais na comparação semanal</p>}
+                  </div>}
+                <p className="mt-3 text-[11px] leading-5 text-slate-500">São tentativas, incluindo repetições da mesma questão; não representam questões únicas.</p>
+              </article>
+              <article className="rounded-3xl border border-slate-800 bg-slate-900/60 p-5 lg:col-span-1">
+                <h2 className="text-lg font-bold">Por matéria</h2>
+                <p className="mt-1 text-xs text-slate-400">Taxa de acerto e volume de prática</p>
+                {analiseDesempenho.materias.length ? <div className="mt-4 space-y-3">
+                  {analiseDesempenho.materias.slice(0, 5).map(item => <button key={item.nome} type="button" onClick={() => praticarDiagnostico(item.nome)} className="block w-full rounded-xl px-2 py-1 text-left hover:bg-slate-800/70">
+                    <span className="flex justify-between gap-3 text-xs"><span className="truncate text-slate-200">{item.nome}</span><span className="shrink-0 text-slate-400">{item.percentual}% · {item.tentativas}</span></span>
+                    <span className="mt-1 block h-1.5 overflow-hidden rounded-full bg-slate-800"><span className={`block h-full rounded-full ${item.percentual < 60 ? 'bg-amber-400' : 'bg-emerald-400'}`} style={{ width: `${item.percentual}%` }} /></span>
+                  </button>)}
+                </div> : <p className="mt-4 text-sm text-slate-500">Responda questões para gerar este recorte.</p>}
+              </article>
+              <article className="rounded-3xl border border-slate-800 bg-slate-900/60 p-5 lg:col-span-1">
+                <h2 className="text-lg font-bold">Por banca</h2>
+                <p className="mt-1 text-xs text-slate-400">Acertos por instituição nas respostas identificadas</p>
+                {analiseDesempenho.bancas.length ? <div className="mt-4 space-y-3">
+                  {analiseDesempenho.bancas.slice(0, 5).map(item => <button key={item.nome} type="button" onClick={() => praticarDiagnostico(item.nome)} className="flex w-full items-center justify-between gap-3 rounded-xl px-2 py-2 text-left text-xs hover:bg-slate-800/70">
+                    <span className="truncate text-slate-200">{item.nome}</span><span className="shrink-0 text-indigo-200">{item.percentual}% <span className="text-slate-500">({item.tentativas})</span></span>
+                  </button>)}
+                </div> : <p className="mt-4 text-sm text-slate-500">O histórico antigo pode não ter registrado a banca. As novas tentativas passam a guardar esse dado.</p>}
+              </article>
+              <article className="rounded-3xl border border-amber-500/20 bg-amber-950/10 p-5 lg:col-span-3">
+                <div className="flex flex-wrap items-start justify-between gap-2"><div><h2 className="text-lg font-bold text-amber-100">Assuntos que merecem revisão</h2><p className="mt-1 text-xs text-slate-400">Sugestões com pelo menos 3 tentativas e menos de 70% de acerto.</p></div><span className="rounded-full bg-slate-900 px-3 py-1 text-xs text-slate-400">{analiseDesempenho.pontosAtencao.length} assuntos</span></div>
+                {analiseDesempenho.pontosAtencao.length ? <div className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+                  {analiseDesempenho.pontosAtencao.map(item => <div key={item.nome} className="flex min-w-0 items-center justify-between gap-3 rounded-xl border border-slate-800 bg-slate-950/60 p-3">
+                    <div className="min-w-0"><p className="truncate text-sm font-semibold text-slate-200">{item.nome}</p><p className="mt-1 text-xs text-slate-500">{item.erros} erros · {item.tentativas} tentativas · {item.percentual}%</p></div>
+                    <button type="button" onClick={() => praticarDiagnostico(item.nome)} className="shrink-0 rounded-lg bg-indigo-500/15 px-3 py-2 text-xs font-semibold text-indigo-200 hover:bg-indigo-500/25">Praticar</button>
+                  </div>)}
+                </div> : <p className="mt-4 text-sm text-slate-400">Ainda não há assuntos com volume suficiente para uma recomendação confiável.</p>}
+              </article>
+            </section>
 
             <SessaoEstudo key={session.user.id} userId={session.user.id} onConcluir={concluirSessaoEstudo} />
 
@@ -1106,6 +1513,10 @@ export default function App() {
                         <button disabled={!podeCorrigir(q)} onClick={() => validarResposta(q.id, q.resposta_correta)} className="bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-5 py-2 rounded-xl text-xs transition-all shadow-md">Responder</button>
                         {feedbacks[q.id] && <span className={`text-xs font-semibold ${feedbacks[q.id].status === 'correto' ? 'text-emerald-400' : 'text-red-400'}`}>{feedbacks[q.id].msg}</span>}
                       </div>
+                      {feedbacks[q.id] && <details className="mt-3 rounded-xl border border-indigo-400/20 bg-indigo-950/20 p-3">
+                        <summary className="cursor-pointer text-xs font-semibold text-indigo-200">Ver explicação do gabarito</summary>
+                        <p className="mt-2 whitespace-pre-wrap text-sm leading-6 text-slate-200">{explicacaoQuestao(q) || 'Esta questão ainda não tem explicação no acervo.'}</p>
+                      </details>}
                     </div>
                   ))}
                 </div>
@@ -1194,8 +1605,12 @@ export default function App() {
                 <input type="number" min="1900" max="2100" required value={novaQuestao.ano} onChange={(e) => setNovaQuestao({ ...novaQuestao, ano: Number(e.target.value) })} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl px-4 py-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40" />
               </div>
               <div>
-                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Enunciado da Questão</label>
-                <textarea required rows={3} placeholder="Escreva o enunciado..." value={novaQuestao.enunciado} onChange={(e) => setNovaQuestao({ ...novaQuestao, enunciado: e.target.value })} className="w-full bg-slate-950/80 border border-slate-800 rounded-2xl p-4 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 focus:border-indigo-500 transition-all shadow-inner" />
+                <label htmlFor="novo-enunciado" className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400">Enunciado da Questão</label>
+                <div className="mb-2 flex flex-wrap gap-1.5" role="group" aria-label="Inserir símbolo matemático ou físico">
+                  {['½','⅓','¼','¾','⁄','²','³','√','π','∞','±','×','÷','≤','≥','≠','∑','Δ','λ','°','µ','→'].map(simbolo => <button key={simbolo} type="button" title={`Inserir ${simbolo}`} onMouseDown={evento => evento.preventDefault()} onClick={() => inserirSimboloQuestao(simbolo)} className="rounded-lg border border-slate-700 bg-slate-900 px-2.5 py-1.5 text-sm text-slate-200 hover:border-indigo-400/50 hover:bg-indigo-500/10">{simbolo}</button>)}
+                </div>
+                <textarea id="novo-enunciado" required rows={3} placeholder="Escreva o enunciado..." value={novaQuestao.enunciado} onFocus={evento => { campoEdicaoQuestao.current = { tipo: 'enunciado', elemento: evento.currentTarget } }} onChange={(e) => setNovaQuestao({ ...novaQuestao, enunciado: e.target.value })} className="w-full rounded-2xl border border-slate-800 bg-slate-950/80 p-4 text-base leading-relaxed text-slate-100 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/40" />
+                <p className="mt-2 text-xs text-slate-500">Você pode digitar ou inserir frações, potências e símbolos. Conteúdos importados em MathML, imagens e gráficos mantêm a renderização própria.</p>
               </div>
               <div>
                 <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Alternativas (A até E)</label>
@@ -1203,7 +1618,7 @@ export default function App() {
                   {novaQuestao.opcoes.map((opcao, idx) => (
                     <div key={idx} className="flex min-w-0 items-center gap-2 bg-slate-950/40 p-2.5 rounded-2xl border border-slate-800 sm:gap-3">
                       <span className="w-7 text-center text-xs font-bold text-slate-400">{String.fromCharCode(65 + idx)}</span>
-                      <input type="text" required placeholder={`Alternativa ${String.fromCharCode(65 + idx)}`} value={opcao} onChange={(e) => {
+                      <input type="text" required placeholder={`Alternativa ${String.fromCharCode(65 + idx)}`} value={opcao} onFocus={evento => { campoEdicaoQuestao.current = { tipo: 'opcao', indice: idx, elemento: evento.currentTarget } }} onChange={(e) => {
                         const novasOpcoes = [...novaQuestao.opcoes]
                         novasOpcoes[idx] = e.target.value
                         setNovaQuestao({ ...novaQuestao, opcoes: novasOpcoes })
@@ -1324,6 +1739,28 @@ export default function App() {
             </section>}
           </div>
         )}
+
+        {dialogoPessoal && <div className="study-dialog-backdrop" role="presentation" onMouseDown={evento => { if (evento.target === evento.currentTarget) setDialogoPessoal(null) }}>
+          <section role="dialog" aria-modal="true" aria-labelledby="titulo-dialogo-pessoal" className="study-dialog w-full max-w-lg rounded-3xl border border-slate-700 bg-slate-900 p-5 shadow-2xl sm:p-7">
+            <div className="mb-5 flex items-start justify-between gap-4">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[.16em] text-indigo-300">Organização de estudos</p>
+                <h2 id="titulo-dialogo-pessoal" className="mt-1 text-xl font-extrabold text-slate-100">{dialogoPessoal.tipo === 'filtro' ? 'Salvar busca' : 'Criar caderno'}</h2>
+              </div>
+              <button type="button" aria-label="Fechar" onClick={() => setDialogoPessoal(null)} className="rounded-lg px-2 py-1 text-xl text-slate-400 hover:bg-slate-800 hover:text-white">×</button>
+            </div>
+            {dialogoPessoal.tipo === 'caderno' && <p className="mb-4 text-sm leading-6 text-slate-400">{dialogoPessoal.questoes.length ? `${dialogoPessoal.questoes.length.toLocaleString('pt-BR')} questão(ões) da busca serão adicionadas.` : 'O caderno será criado vazio; você poderá adicionar questões enquanto estuda.'}</p>}
+            {dialogoPessoal.tipo === 'filtro' && <p className="mb-4 text-sm leading-6 text-slate-400">Salve a combinação de filtros, busca por texto e situação para reaplicá-la depois.</p>}
+            <form onSubmit={confirmarDialogoPessoal}>
+              <label htmlFor="nome-estudo-pessoal" className="text-xs font-semibold uppercase tracking-wider text-slate-400">Nome</label>
+              <input autoFocus id="nome-estudo-pessoal" maxLength={80} required value={nomeRascunhoPessoal} onChange={evento => setNomeRascunhoPessoal(evento.target.value)} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-100 focus:border-indigo-500" />
+              <div className="mt-5 flex flex-col-reverse justify-end gap-2 sm:flex-row">
+                <button type="button" onClick={() => setDialogoPessoal(null)} className="rounded-xl border border-slate-700 px-4 py-3 text-sm font-semibold text-slate-300 hover:bg-slate-800">Cancelar</button>
+                <button type="submit" disabled={!nomeRascunhoPessoal.trim()} className="rounded-xl bg-indigo-500 px-4 py-3 text-sm font-bold text-white hover:bg-indigo-400 disabled:opacity-50">{dialogoPessoal.tipo === 'filtro' ? 'Salvar busca' : 'Criar caderno'}</button>
+              </div>
+            </form>
+          </section>
+        </div>}
       </main>
     </div>
   )
