@@ -122,6 +122,8 @@ export default function AcervoR2Admin({isAdmin = false}) {
       const conferencia = await preflightDoPacote()
       if (conferencia.projectedBytes > conferencia.current.limitBytes) throw new Error('O pacote completo excederia o limite de 10 GB. Nenhum arquivo foi enviado.')
 
+      setMensagem('Espaço confirmado. Enviando o acervo em lotes…')
+
       const ordenados = [...selecionados].sort((a, b) => {
         const ordem = key => key === 'manifesto.json' ? 2 : key === 'visuais.json' ? 1 : 0
         return ordem(a.key) - ordem(b.key) || a.key.localeCompare(b.key)
@@ -169,8 +171,9 @@ export default function AcervoR2Admin({isAdmin = false}) {
       setSelecionados([])
       await atualizarStatus()
     } catch (error) {
-      setErro(error.message || 'O envio foi interrompido. Os lotes concluídos continuam salvos; escolha a mesma pasta para retomar.')
+      const detalhe = error.message || 'O envio foi interrompido. Os lotes concluídos continuam salvos; escolha a mesma pasta para retomar.'
       await atualizarStatus()
+      setErro(detalhe)
     } finally {
       setEnviando(false)
     }
