@@ -3,6 +3,7 @@ import com.apaprovado.service.*;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.server.ResponseStatusException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Map;
@@ -62,6 +63,11 @@ public class AcervoController {
         admin.require(authorization, publicKey);
         return r2.uploadBatch(files);
     }
+    @ExceptionHandler(ResponseStatusException.class)
+    public ResponseEntity<Map<String, String>> erroAcervo(ResponseStatusException error) {
+        String detalhe = error.getReason() == null ? "Não foi possível concluir a operação do acervo." : error.getReason();
+        return ResponseEntity.status(error.getStatusCode()).body(Map.of("detail", detalhe));
+    }
     @GetMapping("/{id}/prova.pdf") public ResponseEntity<byte[]> pdf(@PathVariable String id) {
         return ResponseEntity.ok().contentType(MediaType.APPLICATION_PDF).header("Content-Disposition","inline; filename=prova.pdf")
             .cacheControl(CacheControl.maxAge(Duration.ofHours(1)).cachePublic()).body(jobs.published(id).prova);
@@ -71,3 +77,4 @@ public class AcervoController {
             .body(files.page(jobs.published(id).prova,page));
     }
 }
+
