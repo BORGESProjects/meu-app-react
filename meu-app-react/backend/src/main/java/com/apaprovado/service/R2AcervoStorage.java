@@ -7,13 +7,16 @@ import java.nio.charset.StandardCharsets;
 import java.time.Duration;
 import java.util.Base64;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -40,7 +43,7 @@ import software.amazon.awssdk.services.s3.presigner.model.GetObjectPresignReques
 public class R2AcervoStorage {
     private static final int MAX_KEYS_PER_REQUEST = 100;
     private static final long MAX_STORAGE_BYTES = 10_000_000_000L;
-    private static final long MAX_UPLOAD_BATCH_BYTES = 10_000_000L;
+    private static final long MAX_UPLOAD_BATCH_BYTES = 3_800_000L;
     private static final Duration URL_TTL = Duration.ofMinutes(30);
     private static final Pattern ALLOWED_KEY = Pattern.compile(
         "(?:manifesto|visuais)\\.json|lotes/[A-Za-z0-9._-]+\\.json\\.gz|paginas/[A-Za-z0-9._-]+\\.webp"
@@ -49,6 +52,8 @@ public class R2AcervoStorage {
     private final String bucket;
     private final S3Client client;
     private final S3Presigner presigner;
+    private final ExecutorService uploadExecutor = Executors.newFixedThreadPool(6);
+    private StorageUsage cachedUsage;
 
     public R2AcervoStorage(
         @Value("${R2_ACCOUNT_ID:}") String accountId,
@@ -114,7 +119,8 @@ public class R2AcervoStorage {
 
     public synchronized StorageStatus storageStatus() {
         ensureConfigured();
-        StorageUsage usage = readStorageUsage();
+        StorageUsage usage = readStorageUsageWithKeys();
+        cachedUsage = usage;
         return toStatus(usage);
     }
 
@@ -137,6 +143,7 @@ public class R2AcervoStorage {
         }
 
         StorageUsage current = readStorageUsageWithKeys();
+        cachedUsage = current;
         if (current.bytes() > MAX_STORAGE_BYTES) {
             throw new ResponseStatusException(HttpStatus.PAYLOAD_TOO_LARGE,
                 "O bucket já está acima de 10 GB. O envio foi bloqueado antes de alterar qualquer arquivo.");
@@ -166,7 +173,6 @@ public class R2AcervoStorage {
         Set<String> keys = new HashSet<>();
         List<PendingObject> pending = new ArrayList<>();
         long incomingBytes = 0L;
-        long replacingBytes = 0L;
         for (MultipartFile file : files) {
             String key = decodeObjectKey(file);
             validateKey(key);
@@ -179,14 +185,26 @@ public class R2AcervoStorage {
             }
             incomingBytes = Math.addExact(incomingBytes, size);
             if (incomingBytes > MAX_UPLOAD_BATCH_BYTES) {
-                throw new ResponseStatusException(HttpStatus.PAYLOAD_TOO_LARGE, "Cada lote deve ter no máximo 10 MB.");
+                throw new ResponseStatusException(HttpStatus.PAYLOAD_TOO_LARGE, "Cada lote deve ter no máximo 3,8 MB.");
             }
-            long existingBytes = existingObjectBytes(key);
-            replacingBytes = Math.addExact(replacingBytes, existingBytes);
-            pending.add(new PendingObject(file, key, existingBytes));
+            pending.add(new PendingObject(file, key, 0L));
         }
 
-        StorageUsage before = readStorageUsage();
+        StorageUsage before = cachedUsage;
+        if (before == null) {
+            before = readStorageUsageWithKeys();
+            cachedUsage = before;
+        }
+        long replacingBytes = 0L;
+        long newObjects = 0L;
+        List<PendingObject> resolved = new ArrayList<>(pending.size());
+        for (PendingObject item : pending) {
+            long existingBytes = before.objectSizes().getOrDefault(item.key(), 0L);
+            replacingBytes = Math.addExact(replacingBytes, existingBytes);
+            if (existingBytes == 0L) newObjects++;
+            resolved.add(new PendingObject(item.file(), item.key(), existingBytes));
+        }
+        pending = resolved;
         if (before.bytes() > MAX_STORAGE_BYTES) {
             throw new ResponseStatusException(HttpStatus.PAYLOAD_TOO_LARGE,
                 "O bucket já está acima de 10 GB. O envio foi bloqueado antes de alterar qualquer arquivo.");
@@ -198,56 +216,47 @@ public class R2AcervoStorage {
         }
 
         try {
-            pending.sort(Comparator
-                .comparingInt((PendingObject item) -> item.key().equals("manifesto.json") ? 1 : 0)
-                .thenComparingLong(item -> item.file().getSize() - item.existingBytes()));
-            for (PendingObject item : pending) {
-                MultipartFile file = item.file();
-                String key = item.key();
-                PutObjectRequest put = PutObjectRequest.builder()
-                    .bucket(bucket)
-                    .key(key)
-                    .contentLength(file.getSize())
-                    .contentType(contentTypeFor(key, file.getContentType()))
-                    .build();
-                try (var input = file.getInputStream()) {
-                    client.putObject(put, RequestBody.fromInputStream(input, file.getSize()));
-                }
-                long storedBytes = client.headObject(HeadObjectRequest.builder().bucket(bucket).key(key).build()).contentLength();
-                if (storedBytes != file.getSize()) {
-                    throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "A verificação do arquivo enviado não correspondeu ao tamanho original.");
-                }
-            }
+            List<CompletableFuture<Void>> writes = pending.stream()
+                .map(item -> CompletableFuture.runAsync(() -> uploadAndVerify(item), uploadExecutor))
+                .toList();
+            CompletableFuture.allOf(writes.toArray(CompletableFuture[]::new)).join();
 
-            StorageUsage after = readStorageUsage();
-            if (after.bytes() > MAX_STORAGE_BYTES) {
-                throw new ResponseStatusException(HttpStatus.PAYLOAD_TOO_LARGE,
-                    "O uso do bucket passou do limite configurado. Interrompi novos envios.");
-            }
+            Map<String, Long> updatedSizes = new HashMap<>(before.objectSizes());
+            for (PendingObject item : pending) updatedSizes.put(item.key(), item.file().getSize());
+            StorageUsage after = new StorageUsage(projectedBytes, before.objects() + newObjects, Map.copyOf(updatedSizes));
+            cachedUsage = after;
             return Map.of("enviados", files.size(), "enviadosBytes", incomingBytes, "armazenamento", toStatus(after));
-        } catch (IOException | SdkException e) {
+        } catch (CompletionException e) {
+            cachedUsage = null;
+            Throwable cause = e.getCause();
+            if (cause instanceof ResponseStatusException responseStatus) throw responseStatus;
             throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "O envio ao armazenamento falhou. O lote pode ser reenviado com segurança.");
+        }
+    }
+
+    private void uploadAndVerify(PendingObject item) {
+        MultipartFile file = item.file();
+        String key = item.key();
+        PutObjectRequest put = PutObjectRequest.builder()
+            .bucket(bucket)
+            .key(key)
+            .contentLength(file.getSize())
+            .contentType(contentTypeFor(key, file.getContentType()))
+            .build();
+        try (var input = file.getInputStream()) {
+            client.putObject(put, RequestBody.fromInputStream(input, file.getSize()));
+            long storedBytes = client.headObject(HeadObjectRequest.builder().bucket(bucket).key(key).build()).contentLength();
+            if (storedBytes != file.getSize()) {
+                throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "A verificação do arquivo enviado não correspondeu ao tamanho original.");
+            }
+        } catch (IOException | SdkException e) {
+            throw new CompletionException(e);
         }
     }
 
     private void ensureConfigured() {
         if (client == null || presigner == null) {
             throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "O armazenamento do acervo ainda não está configurado.");
-        }
-    }
-
-    private StorageUsage readStorageUsage() {
-        try {
-            long bytes = 0L;
-            long objects = 0L;
-            for (S3Object object : client.listObjectsV2Paginator(
-                ListObjectsV2Request.builder().bucket(bucket).build()).contents()) {
-                bytes = Math.addExact(bytes, object.size());
-                objects++;
-            }
-            return new StorageUsage(bytes, objects, Map.of());
-        } catch (SdkException e) {
-            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Não foi possível medir o uso atual do bucket.");
         }
     }
 
@@ -265,17 +274,6 @@ public class R2AcervoStorage {
             return new StorageUsage(bytes, objects, sizes);
         } catch (SdkException e) {
             throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Não foi possível medir o uso atual do bucket.");
-        }
-    }
-
-    private long existingObjectBytes(String key) {
-        try {
-            return client.headObject(HeadObjectRequest.builder().bucket(bucket).key(key).build()).contentLength();
-        } catch (S3Exception e) {
-            if (e.statusCode() == 404) return 0L;
-            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Não foi possível conferir um arquivo já existente no bucket.");
-        } catch (SdkException e) {
-            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Não foi possível conferir um arquivo já existente no bucket.");
         }
     }
 
@@ -317,7 +315,9 @@ public class R2AcervoStorage {
 
     @PreDestroy
     public void close() {
+        uploadExecutor.shutdown();
         if (client != null) client.close();
         if (presigner != null) presigner.close();
     }
 }
+
