@@ -4,7 +4,7 @@ import {supabase} from '../supabaseClient'
 
 const EXPECTED_FILES = 34718
 const EXPECTED_BYTES = 2928448054
-const MAX_BATCH_BYTES = 9500000
+const MAX_BATCH_BYTES = 3800000
 const MAX_BATCH_FILES = 100
 const KEY_ALLOWED = /^(?:manifesto|visuais)\.json$|^lotes\/[A-Za-z0-9._-]+\.json\.gz$|^paginas\/[A-Za-z0-9._-]+\.webp$/
 
@@ -128,10 +128,11 @@ export default function AcervoR2Admin({isAdmin = false}) {
         const ordem = key => key === 'manifesto.json' ? 2 : key === 'visuais.json' ? 1 : 0
         return ordem(a.key) - ordem(b.key) || a.key.localeCompare(b.key)
       })
+      const manifesto = ordenados.find(item => item.key === 'manifesto.json')
       const lotes = []
       let lote = []
       let bytesLote = 0
-      for (const item of ordenados) {
+      for (const item of ordenados.filter(item => item.key !== 'manifesto.json')) {
         if (item.file.size > MAX_BATCH_BYTES) throw new Error(`O arquivo ${item.key} ultrapassa o tamanho seguro por lote.`)
         if (lote.length && (lote.length >= MAX_BATCH_FILES || bytesLote + item.file.size > MAX_BATCH_BYTES)) {
           lotes.push(lote)
@@ -142,6 +143,7 @@ export default function AcervoR2Admin({isAdmin = false}) {
         bytesLote += item.file.size
       }
       if (lote.length) lotes.push(lote)
+      if (manifesto) lotes.push([manifesto])
 
       setProgresso({arquivos: 0, bytes: 0, totalArquivos: ordenados.length, totalBytes, lote: 0, lotes: lotes.length})
       for (let indice = 0; indice < lotes.length; indice++) {
@@ -213,3 +215,4 @@ export default function AcervoR2Admin({isAdmin = false}) {
     {erro && <p role="alert" className="mt-4 rounded-xl border border-amber-300/30 bg-amber-950/25 px-3 py-2 text-sm leading-6 text-amber-100">{erro}</p>}
   </section>
 }
+
