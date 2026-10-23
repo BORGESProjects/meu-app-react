@@ -20,6 +20,8 @@ import java.util.concurrent.Executors;
 import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
@@ -41,6 +43,7 @@ import software.amazon.awssdk.services.s3.presigner.model.GetObjectPresignReques
 
 @Service
 public class R2AcervoStorage {
+    private static final Logger LOG = LoggerFactory.getLogger(R2AcervoStorage.class);
     private static final int MAX_KEYS_PER_REQUEST = 100;
     private static final long MAX_STORAGE_BYTES = 10_000_000_000L;
     private static final long MAX_UPLOAD_BATCH_BYTES = 3_800_000L;
@@ -228,8 +231,16 @@ public class R2AcervoStorage {
             return Map.of("enviados", files.size(), "enviadosBytes", incomingBytes, "armazenamento", toStatus(after));
         } catch (CompletionException e) {
             cachedUsage = null;
-            Throwable cause = e.getCause();
+            Throwable cause = e;
+            while (cause instanceof CompletionException && cause.getCause() != null) cause = cause.getCause();
             if (cause instanceof ResponseStatusException responseStatus) throw responseStatus;
+            if (cause instanceof S3Exception s3) {
+                String code = s3.awsErrorDetails() == null ? "desconhecido" : s3.awsErrorDetails().errorCode();
+                LOG.warn("Cloudflare R2 recusou um objeto: HTTP {}, código {}.", s3.statusCode(), code);
+                throw new ResponseStatusException(HttpStatus.BAD_GATEWAY,
+                    "Cloudflare R2 recusou a gravação (HTTP " + s3.statusCode() + ", código " + code + ").", s3);
+            }
+            LOG.warn("Falha no envio ao Cloudflare R2: causa {}.", cause.getClass().getSimpleName());
             throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "O envio ao armazenamento falhou. O lote pode ser reenviado com segurança.");
         }
     }
