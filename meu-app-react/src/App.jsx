@@ -44,7 +44,7 @@ function combinarOpcoesFiltro(opcoesBase, valoresExtra) {
     const value = String(opcao.value)
     const rotuloBruto = String(opcao.label ?? value)
     const matchContagem = rotuloBruto.match(/\s+\(([\d.,]+)\)$/)
-    const rotulo = rotuloBruto.replace(/\s+\([\d.,]+\)$/, '')
+    const rotulo = value === 'puc' ? 'PUC' : rotuloBruto.replace(/\s+\([\d.,]+\)$/, '')
     const contagemTexto = matchContagem?.[1]?.replace(/[.,]/g, '') || '0'
     const quantidade = Math.max(0, Number(opcao.quantidade) || Number(contagemTexto) || 0)
     const existente = combinadas.get(value)
