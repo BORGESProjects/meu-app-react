@@ -2,7 +2,8 @@ import {useCallback, useEffect, useRef, useState} from 'react'
 import {API_URL} from '../api'
 import {supabase} from '../supabaseClient'
 
-const MAX_BATCH_BYTES = 3800000
+// Small multipart batches stay below the hosting parser's effective request cap.
+const MAX_BATCH_BYTES = 700000
 const MAX_BATCH_FILES = 100
 const KEY_ALLOWED = /^(?:manifesto|visuais)\.json$|^lotes\/[A-Za-z0-9._-]+\.json\.gz$|^paginas\/[A-Za-z0-9._-]+\.webp$/
 
