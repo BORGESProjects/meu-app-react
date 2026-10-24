@@ -64,6 +64,12 @@ export function normalizarBanca(valor, concurso = '') {
   return BANCAS_CANONICAS.get(chave) || original
 }
 
+function normalizarBancaParaFiltro(valor, concurso = '') {
+  const banca = normalizarBanca(valor, concurso)
+  const chave = chaveFiltro(banca)
+  return chave.startsWith('puc') || chave.startsWith('pontificia universidade catolica') ? 'PUC' : banca
+}
+
 export function normalizarMateria(valor, conteudo = '') {
   const original = limparValorFiltro(valor)
   const chave = chaveFiltro(original)
@@ -81,7 +87,7 @@ export function normalizarMateria(valor, conteudo = '') {
 }
 
 export function chaveCampoFiltro(campo, valor) {
-  const chave = chaveFiltro(campo === 'banca' ? normalizarBanca(valor) : valor)
+  const chave = chaveFiltro(campo === 'banca' ? normalizarBancaParaFiltro(valor) : valor)
   if (campo === 'dificuldade' && chave === 'medio') return 'media'
   return chave
 }
@@ -424,6 +430,7 @@ function rotuloPreferido(chave, contagens, campo) {
   const valores = [...contagens.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'pt-BR'))
   if (campo === 'dificuldade') return ({ facil: 'Fácil', media: 'Média', dificil: 'Difícil' })[chave] || valores[0][0]
   if (campo === 'banca') {
+    if (chave === 'puc') return 'PUC'
     const sigla = valores.find(([valor]) => valor.length <= 10 && valor === valor.toLocaleUpperCase('pt-BR'))
     if (sigla) return sigla[0]
   }
