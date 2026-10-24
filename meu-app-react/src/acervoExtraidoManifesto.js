@@ -17,7 +17,7 @@ async function buscarManifesto() {
 
   if (token && chavePublicaSupabase) {
     try {
-      const resposta = await fetch(`${API_URL}/api/acervo/r2/objeto?key=manifesto.json`, {
+      const resposta = await fetch(`${API_URL}/api/acervo/r2/objeto?key=manifesto.json&v=${Date.now()}`, {
         headers: {Authorization: `Bearer ${token}`, 'X-Supabase-Key': chavePublicaSupabase},
         signal,
       })
