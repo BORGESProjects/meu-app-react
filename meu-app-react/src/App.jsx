@@ -9,6 +9,7 @@ import {useProgressoUsuario} from './useProgressoUsuario'
 import { API_URL, fetchApi } from './api'
 import { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react'
 import { supabase, sairDaConta } from './supabaseClient'
+import { carregarManifestoAcervo } from './acervoExtraidoManifesto'
 import { tentarLeitura, carregarEmEtapas } from './carregarAcervo'
 import catalogoLivros from './data/livrosComplementares.json'
 import { carregarLoteLivro } from './livrosAcervo'
@@ -90,6 +91,7 @@ export default function App() {
   const [abaAtiva, setAbaAtiva] = useState('questoes')
   const [acervoExtraidoIniciado, setAcervoExtraidoIniciado] = useState(false)
   const [acervoExtraidoAberto, setAcervoExtraidoAberto] = useState(false)
+  const [questoesExtraidasTotal, setQuestoesExtraidasTotal] = useState(null)
   const [session, setSession] = useState(null)
   const [authReady, setAuthReady] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
@@ -98,6 +100,7 @@ export default function App() {
   // Estados das Questões
   const [acervoPreparado, setAcervoPreparado] = useState(() => ({questoes: unirQuestoes(), indice: null}))
   const {questoes} = acervoPreparado
+  const totalQuestoesCatalogo = questoes.length + (questoesExtraidasTotal || 0)
   const processamentoAcervo = useRef(null)
   const [carregandoAcervo, setCarregandoAcervo] = useState(true)
   const [falhasAcervo, setFalhasAcervo] = useState([])
@@ -186,6 +189,16 @@ export default function App() {
     if(aplicativoNativo)window.addEventListener('online',reconectar)
     return () => {data.subscription.unsubscribe();window.removeEventListener('online',reconectar)}
   }, [])
+
+  useEffect(() => {
+    let ativo = true
+    carregarManifestoAcervo()
+      .then(manifesto => {
+        if (ativo) setQuestoesExtraidasTotal(Number(manifesto?.questoes_extraidas_unicas) || 0)
+      })
+      .catch(() => { if (ativo) setQuestoesExtraidasTotal(null) })
+    return () => { ativo = false }
+  }, [session?.user?.id])
 
   useEffect(() => {
     if (!session?.user?.id || !progressoCarregado) return
@@ -1064,6 +1077,7 @@ export default function App() {
             </div>}
             <header className="mb-6">
               <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">Banco de Questões</h1>
+              <p role="status" aria-live="polite" className="mt-2 inline-flex flex-wrap items-center gap-x-2 rounded-xl border border-indigo-400/20 bg-indigo-950/30 px-3 py-2 text-sm text-indigo-100">Total de questões disponíveis: <strong className="text-base font-extrabold text-white">{totalQuestoesCatalogo.toLocaleString('pt-BR')}</strong>{questoesExtraidasTotal === null && <span className="text-xs text-slate-400">contagem completa em atualização</span>}</p>
               <p className="text-slate-400 text-sm mt-1">{temFiltrosAtivos
                 ? `${questoesFiltradas.length} questão(ões) encontrada(s). ${questoesFiltradas.filter(q => q.anulada).length} anulada(s), disponíveis apenas para consulta.`
                 : 'Escolha os filtros abaixo para exibir as questões que deseja estudar.'}</p>
@@ -1077,37 +1091,19 @@ export default function App() {
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 transition hover:bg-white/[0.03] sm:px-5">
                   <span className="min-w-0">
-                    <span className="block text-sm font-bold text-slate-100">Acervo de questões extraídas</span>
-                    <span className="mt-1 block text-xs leading-5 text-slate-400">Provas e edições anteriores no mesmo espaço. O índice só é carregado ao abrir para agilizar esta página.</span>
+                    <span className="block text-sm font-bold text-slate-100">Questões por prova</span>
+                    <span className="mt-1 block text-xs leading-5 text-slate-400">Filtre por banca, ano e concurso. As questões de cada edição são carregadas quando necessário.</span>
                   </span>
                   <span aria-hidden="true" className="shrink-0 rounded-xl border border-cyan-300/25 bg-cyan-300/10 px-3 py-2 text-xs font-semibold text-cyan-100">{acervoExtraidoAberto ? 'Fechar' : 'Abrir'}</span>
                 </summary>
                 <div className="border-t border-cyan-400/15 p-3 sm:p-4">
-                  <Suspense fallback={<p role="status" className="py-3 text-sm text-cyan-200">Carregando o índice do acervo…</p>}>
-                    {acervoExtraidoIniciado && <QuestoesExtraidas questoesBanco={questoes.length} aoAbrirAcervo={() => setAbaAtiva('provas')} />}
+                  <Suspense fallback={<p role="status" className="py-3 text-sm text-cyan-200">Preparando questões…</p>}>
+                    {acervoExtraidoIniciado && <QuestoesExtraidas aoAbrirAcervo={() => setAbaAtiva('provas')} />}
                   </Suspense>
                 </div>
               </details>
               {carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Carregando o restante do acervo… A quantidade acima ainda é parcial.</p>}
               {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Acervo carregado: {questoesDoFoco.length.toLocaleString('pt-BR')} questões neste foco.</p>}
-              <details className="mt-3 text-sm text-indigo-300">
-                <summary className="cursor-pointer font-semibold hover:text-indigo-200">Consultar provas nos acervos oficiais ↗</summary>
-                <p className="mt-2 max-w-3xl text-xs leading-5 text-slate-400">Os números entre parênteses nos filtros contam apenas questões já presentes no acervo carregado. Os sites abaixo dão acesso aos cadernos e gabaritos originais; a disponibilidade para consulta não indica, por si só, autorização para republicação.</p>
-                <div className="mt-2 flex flex-wrap gap-x-4 gap-y-2">
-                  <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos" target="_blank" rel="noreferrer">ENEM / Inep ↗</a>
-                  <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade/provas-e-gabaritos" target="_blank" rel="noreferrer">Enade / Inep ↗</a>
-                  <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/encceja/provas-e-gabaritos" target="_blank" rel="noreferrer">Encceja / Inep ↗</a>
-                  <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/saeb/documentos-edicoes-antigas" target="_blank" rel="noreferrer">Saeb / Inep ↗</a>
-                  <a href="https://www.fuvest.br/acervo-vestibular/" target="_blank" rel="noreferrer">Fuvest ↗</a>
-                  <a href="https://conhecimento.fgv.br/concursos" target="_blank" rel="noreferrer">FGV Conhecimento ↗</a>
-                  <a href="https://www.cebraspe.org.br/concursos/telebras_25" target="_blank" rel="noreferrer">Cebraspe ↗</a>
-                  <a href="https://www.vunesp.com.br/" target="_blank" rel="noreferrer">Vunesp ↗</a>
-                  <a href="https://puc-rio.br/vestibular/repositorio/" target="_blank" rel="noreferrer">PUC-Rio ↗</a>
-                  <a href="https://www.pucminas.br/formas-ingresso/vestibular/Paginas/provas-e-gabaritos.aspx" target="_blank" rel="noreferrer">PUC Minas ↗</a>
-                  <a href="https://www.espcex.eb.mil.br/" target="_blank" rel="noreferrer">EsPCEx ↗</a>
-                  <a href="https://www.esa.eb.mil.br/" target="_blank" rel="noreferrer">ESA ↗</a>
-                </div>
-              </details>
               {aplicativoNativo && <div className="mt-3 text-sm"><button className="rounded-xl border border-indigo-500 px-4 py-2 text-indigo-200 disabled:opacity-50" disabled={carregandoAcervo} onClick={()=>buscarQuestoes(true)}>Atualizar questões online</button>{avisoAcervoNativo && <p role="status" className="mt-2 text-slate-300">{avisoAcervoNativo}</p>}</div>}
               {falhasAcervo.length > 0 && <div role="alert" className="text-amber-300 text-sm mt-2">Não foi possível carregar: {falhasAcervo.join(' e ')}. A lista pode estar incompleta. <button className="underline font-semibold" onClick={buscarQuestoes} disabled={carregandoAcervo}>Tentar carregar novamente</button></div>}
               <div className="flex flex-wrap gap-4 mt-3 text-sm text-indigo-300">
