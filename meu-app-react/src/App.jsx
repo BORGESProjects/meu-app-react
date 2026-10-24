@@ -89,6 +89,7 @@ export default function App() {
   const campoEdicaoQuestao = useRef(null)
   const [abaAtiva, setAbaAtiva] = useState('questoes')
   const [acervoExtraidoIniciado, setAcervoExtraidoIniciado] = useState(false)
+  const [acervoExtraidoAberto, setAcervoExtraidoAberto] = useState(false)
   const [session, setSession] = useState(null)
   const [authReady, setAuthReady] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
@@ -1068,14 +1069,18 @@ export default function App() {
                 : 'Escolha os filtros abaixo para exibir as questões que deseja estudar.'}</p>
               <details
                 className="mt-4 overflow-hidden rounded-2xl border border-cyan-400/25 bg-gradient-to-br from-slate-900/90 via-slate-950/80 to-cyan-950/20 shadow-lg shadow-cyan-950/10"
-                onToggle={evento => { if (evento.currentTarget.open) setAcervoExtraidoIniciado(true) }}
+                onToggle={evento => {
+                  const aberto = evento.currentTarget.open
+                  setAcervoExtraidoAberto(aberto)
+                  if (aberto) setAcervoExtraidoIniciado(true)
+                }}
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 transition hover:bg-white/[0.03] sm:px-5">
                   <span className="min-w-0">
                     <span className="block text-sm font-bold text-slate-100">Acervo de questões extraídas</span>
                     <span className="mt-1 block text-xs leading-5 text-slate-400">Provas e edições anteriores no mesmo espaço. O índice só é carregado ao abrir para agilizar esta página.</span>
                   </span>
-                  <span aria-hidden="true" className="shrink-0 rounded-xl border border-cyan-300/25 bg-cyan-300/10 px-3 py-2 text-xs font-semibold text-cyan-100">Abrir</span>
+                  <span aria-hidden="true" className="shrink-0 rounded-xl border border-cyan-300/25 bg-cyan-300/10 px-3 py-2 text-xs font-semibold text-cyan-100">{acervoExtraidoAberto ? 'Fechar' : 'Abrir'}</span>
                 </summary>
                 <div className="border-t border-cyan-400/15 p-3 sm:p-4">
                   <Suspense fallback={<p role="status" className="py-3 text-sm text-cyan-200">Carregando o índice do acervo…</p>}>
