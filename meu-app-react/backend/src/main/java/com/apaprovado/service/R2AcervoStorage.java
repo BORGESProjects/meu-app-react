@@ -27,12 +27,14 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+import software.amazon.awssdk.core.ResponseBytes;
 import software.amazon.awssdk.core.exception.SdkException;
 import software.amazon.awssdk.core.sync.RequestBody;
 import software.amazon.awssdk.regions.Region;
 import software.amazon.awssdk.services.s3.S3Client;
 import software.amazon.awssdk.services.s3.S3Configuration;
 import software.amazon.awssdk.services.s3.model.GetObjectRequest;
+import software.amazon.awssdk.services.s3.model.GetObjectResponse;
 import software.amazon.awssdk.services.s3.model.HeadObjectRequest;
 import software.amazon.awssdk.services.s3.model.ListObjectsV2Request;
 import software.amazon.awssdk.services.s3.model.PutObjectRequest;
@@ -118,6 +120,26 @@ public class R2AcervoStorage {
             }
         }
         return signedUrls;
+    }
+
+    public StoredObject readObject(String key) {
+        ensureConfigured();
+        validateKey(key);
+        try {
+            ResponseBytes<GetObjectResponse> object = client.getObjectAsBytes(
+                GetObjectRequest.builder().bucket(bucket).key(key).build()
+            );
+            return new StoredObject(object.asByteArray(), contentTypeFor(key, object.response().contentType()));
+        } catch (S3Exception e) {
+            if (e.statusCode() == 404) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "O arquivo solicitado não está no acervo.");
+            }
+            LOG.warn("Falha ao ler um objeto do acervo: HTTP {}, código {}.", e.statusCode(),
+                e.awsErrorDetails() == null ? "desconhecido" : e.awsErrorDetails().errorCode());
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Não foi possível ler o arquivo no armazenamento.");
+        } catch (SdkException e) {
+            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Não foi possível acessar o armazenamento agora.");
+        }
     }
 
     public synchronized StorageStatus storageStatus() {
@@ -335,6 +357,7 @@ public class R2AcervoStorage {
     }
 
     public record StorageStatus(long usedBytes, long limitBytes, long remainingBytes, long objects) {}
+    public record StoredObject(byte[] bytes, String contentType) {}
     public record UploadFileDescriptor(String key, long bytes) {}
     public record PreflightResult(StorageStatus current, long projectedBytes, long additionalBytes, long files, long packageBytes) {}
     private record StorageUsage(long bytes, long objects, Map<String, Long> objectSizes) {}
