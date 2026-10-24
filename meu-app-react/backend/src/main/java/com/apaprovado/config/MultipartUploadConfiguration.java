@@ -22,9 +22,7 @@ public class MultipartUploadConfiguration {
 
     @Bean
     public WebServerFactoryCustomizer<TomcatServletWebServerFactory> multipartConnectorLimits() {
-        return factory -> factory.addConnectorCustomizers(connector -> {
-            connector.setMaxPostSize(MAX_REQUEST_BYTES);
-            connector.setMaxSwallowSize(MAX_REQUEST_BYTES);
-        });
+        return factory -> factory.addConnectorCustomizers(connector ->
+            connector.setMaxPostSize(MAX_REQUEST_BYTES));
     }
 }
