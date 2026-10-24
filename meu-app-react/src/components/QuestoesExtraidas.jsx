@@ -1,4 +1,5 @@
 import {useCallback, useEffect, useMemo, useState} from 'react'
+import {carregarManifestoAcervo} from '../acervoExtraidoManifesto'
 import {API_URL} from '../api'
 import {supabase} from '../supabaseClient'
 
@@ -167,39 +168,70 @@ function lerRespostaLocal(chave) {
   try { return localStorage.getItem(chave) || '' } catch { return '' }
 }
 
+function limparTextoQuestao(valor) {
+  let texto = String(valor ?? '').normalize('NFC').replace(/\r\n?/gu, '\n')
+  const negacoesLogicas = []
+  texto = texto.replace(/(^|[\s([{=,:;∧∨→↔])¬(?=[ \t]*[A-Za-z](?:_\d+)?\b|[ \t]*\()/gu, (trecho, prefixo) => {
+    const indice = negacoesLogicas.push('¬') - 1
+    return prefixo + '\u0001' + indice + '\u0001'
+  })
+  return texto
+    .replace(/¬/gu, ' ')
+    .replace(/\u0001(\d+)\u0001/gu, (_trecho, indice) => negacoesLogicas[Number(indice)] || '')
+    .replace(/(?:^|\s)#{3,}(?=\s|$)/gu, ' ')
+    .replace(/[ \t]{2,}/gu, ' ')
+    .replace(/[ \t]+(?=\n)/gu, '')
+    .replace(/\n[ \t]+/gu, '\n')
+    .replace(/\n{3,}/gu, '\n\n')
+    .trim()
+}
+
+function temCaractereIrrecuperavel(valor) {
+  return /[\uFFFD\uE000-\uF8FF]/u.test(String(valor ?? ''))
+}
+
+function textoSeguroParaExibicao(valor) {
+  const texto = limparTextoQuestao(valor)
+  return temCaractereIrrecuperavel(texto) ? '' : texto
+}
+
 function CartaoQuestaoExtraida({questao: q, onEstadoResposta}) {
-  const [resposta, setResposta] = useState(() => lerRespostaLocal(`acervo-extraido:${q.id}`))
-  const [rascunho, setRascunho] = useState(() => lerRespostaLocal(`acervo-extraido-texto:${q.id}`))
+  const [resposta, setResposta] = useState(() => lerRespostaLocal('acervo-extraido:' + q.id))
+  const [rascunho, setRascunho] = useState(() => lerRespostaLocal('acervo-extraido-texto:' + q.id))
   const [classificacao, setClassificacao] = useState(() => lerClassificacao(q.id))
   const imagens = useMemo(() => [...new Set(q.imagens_paginas?.length ? q.imagens_paginas : q.pagina_imagem ? [q.pagina_imagem] : [])], [q.imagens_paginas, q.pagina_imagem])
   const [urlsImagens, setUrlsImagens] = useState(null)
   const [carregandoImagens, setCarregandoImagens] = useState(false)
   const [erroImagens, setErroImagens] = useState(false)
-  const precisaConferirOriginal = precisaConferir(q)
+  const textoCampos = [q.enunciado, q.texto_apoio, ...(q.opcoes || []), ...(q.transcricoes_ocr || []).map(item => item.texto)].join('\n')
+  const precisaApoioVisual = precisaConferir(q) || temCaractereIrrecuperavel(textoCampos)
+  const enunciado = textoSeguroParaExibicao(q.enunciado)
+  const textoApoio = textoSeguroParaExibicao(q.texto_apoio)
   const carregarImagens = useCallback(async () => {
     if (!imagens.length || urlsImagens || carregandoImagens) return
     setCarregandoImagens(true)
     try {
       const urls = await obterUrlsImagensAssinadas(imagens)
       if (urls.some(url => !url)) setErroImagens(true)
-      setUrlsImagens(urls.map((url, indice) => url || `${base}${imagens[indice]}`))
+      setUrlsImagens(urls.map((url, indice) => url || base + imagens[indice]))
     } catch {
       setErroImagens(true)
-      setUrlsImagens(imagens.map(imagem => `${base}${imagem}`))
+      setUrlsImagens(imagens.map(imagem => base + imagem))
     } finally { setCarregandoImagens(false) }
   }, [carregandoImagens, imagens, urlsImagens])
   useEffect(() => {
-    if (precisaConferirOriginal) void carregarImagens()
-  }, [carregarImagens, precisaConferirOriginal])
+    if (precisaApoioVisual) void carregarImagens()
+  }, [carregarImagens, precisaApoioVisual])
+
   const marcarResposta = valor => {
     setResposta(valor)
-    try { localStorage.setItem(`acervo-extraido:${q.id}`, valor) } catch { /* A resposta continua selecionada até sair da página. */ }
+    try { localStorage.setItem('acervo-extraido:' + q.id, valor) } catch { /* A resposta continua selecionada até sair da página. */ }
     onEstadoResposta?.(q.id, true)
   }
   const salvarRascunho = valor => {
     const estavaRespondida = Boolean(rascunho.trim())
     setRascunho(valor)
-    try { localStorage.setItem(`acervo-extraido-texto:${q.id}`, valor) } catch { /* O campo continua editável nesta sessão. */ }
+    try { localStorage.setItem('acervo-extraido-texto:' + q.id, valor) } catch { /* O campo continua editável nesta sessão. */ }
     if (estavaRespondida !== Boolean(valor.trim())) onEstadoResposta?.(q.id, Boolean(valor.trim()))
   }
   const salvarClassificacao = evento => {
@@ -216,67 +248,52 @@ function CartaoQuestaoExtraida({questao: q, onEstadoResposta}) {
   return <article className="question-card rounded-2xl p-4 sm:p-5">
     <div className="flex flex-wrap items-center justify-between gap-2">
       <p className="text-xs font-semibold uppercase tracking-wide text-indigo-300">{q.banca} · {q.ano || 'ano não identificado'} · questão {q.numero_original}</p>
-      <div className="flex flex-wrap gap-2">
-        <span className={`rounded-full border px-2.5 py-1 text-[11px] ${precisaConferirOriginal ? 'border-amber-400/40 bg-amber-950/30 text-amber-100' : 'border-lime-300/25 bg-lime-950/20 text-lime-100'}`}>{precisaConferirOriginal ? 'Conferir transcrição' : 'Estrutura sem alerta'}</span>
-        <span className="rounded-full border border-slate-600/70 px-2.5 py-1 text-[11px] text-slate-300">Gabarito não conferido</span>
-      </div>
     </div>
-    {precisaConferirOriginal && <p role="note" className="mt-4 rounded-xl border border-amber-400/35 bg-amber-950/25 px-4 py-3 text-sm leading-6 text-amber-100">Esta transcrição tem um alerta de extração. A página original está aberta abaixo; use-a para ler enunciado, alternativas, textos-base e elementos visuais antes de responder.</p>}
-    {precisaConferirOriginal && imagens.length > 0 && <details open onToggle={evento => { if (evento.currentTarget.open) void carregarImagens() }} className="mt-4 rounded-xl border border-amber-300/30 bg-amber-950/10 p-3">
-      <summary className="cursor-pointer text-xs font-semibold text-amber-100">Página original para conferência · textos, gráficos e imagens ({imagens.length})</summary>
-      {carregandoImagens && <p role="status" className="mt-3 text-xs text-amber-200">Buscando as páginas originais no armazenamento…</p>}
-      {erroImagens && <p role="note" className="mt-3 text-xs leading-5 text-amber-200">Esta página não está armazenada como imagem individual. Se houver um PDF ou pacote de origem, use o link no fim da questão.</p>}
-      <div className="mt-3 space-y-4">{imagens.map((imagem, indice) => <figure key={`${q.id}-${imagem}`}>
-        <a href={urlsImagens?.[indice] || undefined} target="_blank" rel="noreferrer" className="block" aria-label={`Ampliar a página ${q.paginas_origem?.[indice] || q.pagina} da prova`}>
-          {urlsImagens?.[indice] && <img src={urlsImagens[indice]} alt={`Página ${q.paginas_origem?.[indice] || q.pagina} do caderno original, incluindo textos-base, diagramas e imagens`} loading="lazy" onError={evento => { evento.currentTarget.hidden = true; evento.currentTarget.closest('figure')?.querySelector('[data-fallback]')?.classList.remove('hidden') }} className="mx-auto h-auto max-w-full rounded-lg bg-white" />}
-        </a>
-        <p data-fallback className="hidden mt-2 text-center text-xs text-amber-200">A imagem local desta página não está disponível. Use o PDF original no link abaixo.</p>
-        <figcaption className="mt-1 text-center text-[11px] text-slate-500">Página {q.paginas_origem?.[indice] || q.pagina} · clique para ampliar</figcaption>
-      </figure>)}</div>
-    </details>}
-    {!precisaConferirOriginal && q.texto_apoio && <section aria-label="Texto-base ou contexto da página" className="mt-4 rounded-xl border border-lime-300/20 bg-lime-950/15 p-4">
-      <h3 className="mb-2 text-xs font-bold uppercase tracking-wide text-sky-200">Texto-base ou contexto antes da questão</h3>
-      <p className="whitespace-pre-wrap text-sm leading-7 text-slate-200">{q.texto_apoio}</p>
+    {precisaApoioVisual && <p role="note" className="mt-3 rounded-xl border border-cyan-400/25 bg-cyan-950/20 px-4 py-3 text-sm leading-6 text-cyan-100">A imagem desta questão está aberta para completar a leitura de símbolos, fórmulas e trechos com baixa legibilidade.</p>}
+    {q.texto_apoio && <section aria-label="Texto de apoio" className="mt-4 rounded-xl border border-lime-300/20 bg-lime-950/15 p-4">
+      <h3 className="mb-2 text-xs font-bold uppercase tracking-wide text-sky-200">Texto de apoio</h3>
+      <p className="whitespace-pre-wrap text-sm leading-7 text-slate-200">{textoApoio || 'Consulte o conteúdo visual desta questão.'}</p>
     </section>}
-    {!precisaConferirOriginal && <p className="mt-4 whitespace-pre-wrap text-sm leading-7 text-slate-100">{q.enunciado}</p>}
-    {precisaConferirOriginal && <details className="mt-4 rounded-xl border border-slate-700 bg-slate-950/40 p-3">
-      <summary className="cursor-pointer text-xs font-semibold text-slate-300">Ver transcrição automática sem revisão</summary>
-      {q.texto_apoio && <section className="mt-3 rounded-lg border border-slate-800 bg-slate-900/50 p-3"><h3 className="mb-2 text-xs font-bold uppercase tracking-wide text-slate-400">Possível texto-base</h3><p className="whitespace-pre-wrap text-sm leading-6 text-slate-300">{q.texto_apoio}</p></section>}
-      <p className="mt-3 whitespace-pre-wrap text-sm leading-6 text-slate-300">{q.enunciado}</p>
-      {q.transcricoes_ocr?.length > 0 && <div className="mt-3 space-y-3">{q.transcricoes_ocr.map(item => <section key={`${q.id}-ocr-review-${item.pagina}`} className="rounded-lg border border-slate-800 bg-slate-900/50 p-3"><h3 className="mb-2 text-xs font-bold uppercase tracking-wide text-slate-400">OCR complementar · página {item.pagina}</h3><p className="whitespace-pre-wrap text-sm leading-6 text-slate-300">{item.texto}</p></section>)}</div>}
-    </details>}
-    {q.opcoes?.length > 0 && !precisaConferirOriginal && <fieldset className="mt-4 space-y-2">
+    {enunciado
+      ? <p className="mt-4 whitespace-pre-wrap text-sm leading-7 text-slate-100">{enunciado}</p>
+      : <p role="note" className="mt-4 rounded-xl border border-slate-700 bg-slate-950/50 p-3 text-sm leading-6 text-slate-300">Leia o enunciado no conteúdo visual desta questão.</p>}
+    {q.opcoes?.length > 0 && <fieldset className="mt-4 space-y-2">
       <legend className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">Marque sua resposta</legend>
-      {q.opcoes.map((opcao, indice) => <label key={`${q.id}-${indice}`} className={`question-choice flex cursor-pointer gap-3 rounded-xl px-3 py-2.5 text-sm leading-6 transition ${resposta === String(indice) ? 'is-selected text-white' : 'text-slate-200'}`}>
-        <input type="radio" name={`resposta-${q.id}`} checked={resposta === String(indice)} onChange={() => marcarResposta(String(indice))} className="mt-1 accent-indigo-400" />
-        <span className="shrink-0 font-bold text-indigo-300">{q.tipo_extraido === 'certo_errado' ? ['C', 'E'][indice] : String.fromCharCode(65 + indice)}.</span>
-        <span className="whitespace-pre-wrap">{opcao}</span>
-      </label>)}
+      {q.opcoes.map((opcao, indice) => {
+        const texto = textoSeguroParaExibicao(opcao)
+        const rotulo = q.tipo_extraido === 'certo_errado' ? ['C', 'E'][indice] : String.fromCharCode(65 + indice)
+        return <label key={q.id + '-' + indice} className={'question-choice flex cursor-pointer gap-3 rounded-xl px-3 py-2.5 text-sm leading-6 transition ' + (resposta === String(indice) ? 'is-selected text-white' : 'text-slate-200')}>
+          <input type="radio" name={'resposta-' + q.id} checked={resposta === String(indice)} onChange={() => marcarResposta(String(indice))} className="mt-1 accent-indigo-400" />
+          <span className="shrink-0 font-bold text-indigo-300">{rotulo}.</span>
+          <span className="whitespace-pre-wrap">{texto || 'Leia a alternativa ' + rotulo + ' no conteúdo visual da questão.'}</span>
+        </label>
+      })}
     </fieldset>}
-    {(q.tipo_extraido === 'discursiva' || precisaConferirOriginal) && <label className="mt-4 block text-xs font-semibold uppercase tracking-wide text-slate-400">Sua resposta
-      <textarea value={rascunho} onChange={evento => salvarRascunho(evento.target.value)} rows={6} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case leading-6 text-slate-100 placeholder:text-slate-500" placeholder={precisaConferirOriginal ? 'Consulte a página original e registre sua resposta. Ela fica salva neste dispositivo.' : 'Escreva sua resolução. Ela fica salva neste dispositivo.'} />
+    {(q.tipo_extraido === 'discursiva' || !q.opcoes?.length) && <label className="mt-4 block text-xs font-semibold uppercase tracking-wide text-slate-400">Sua resolução
+      <textarea value={rascunho} onChange={evento => salvarRascunho(evento.target.value)} rows={6} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case leading-6 text-slate-100 placeholder:text-slate-500" placeholder="Escreva sua resolução. Ela fica salva neste dispositivo." />
     </label>}
-    {q.opcoes?.length > 0 && <p className="mt-2 text-xs text-slate-400">Sua marcação fica salva neste dispositivo. Ela não recebe nota porque o gabarito ainda não foi conferido.</p>}
-    {!precisaConferirOriginal && q.transcricoes_ocr?.length > 0 && <details className="mt-4 rounded-xl border border-slate-700 bg-slate-950/40 p-3">
-      <summary className="cursor-pointer text-xs font-semibold text-slate-300">Transcrição OCR complementar da página</summary>
-      <div className="mt-3 space-y-4">{q.transcricoes_ocr.map(item => <section key={`${q.id}-ocr-${item.pagina}`}>
-        <h3 className="mb-1 text-xs text-slate-400">Página {item.pagina} · reconhecimento automático</h3>
-        <p className="whitespace-pre-wrap text-sm leading-6 text-slate-300">{item.texto}</p>
-      </section>)}</div>
+    {q.opcoes?.length > 0 && <p className="mt-2 text-xs text-slate-400">Sua resposta fica salva neste dispositivo. Questões sem gabarito associado não recebem correção automática.</p>}
+    {q.transcricoes_ocr?.length > 0 && <details className="mt-4 rounded-xl border border-slate-700 bg-slate-950/40 p-3">
+      <summary className="cursor-pointer text-xs font-semibold text-slate-300">Conteúdo complementar</summary>
+      <div className="mt-3 space-y-4">{q.transcricoes_ocr.map(item => {
+        const texto = textoSeguroParaExibicao(item.texto)
+        return <section key={q.id + '-complemento-' + item.pagina}>
+          <p className="whitespace-pre-wrap text-sm leading-6 text-slate-300">{texto || 'Consulte a imagem da questão para ler este trecho.'}</p>
+        </section>
+      })}</div>
     </details>}
-    {!precisaConferirOriginal && imagens.length > 0 && <details onToggle={evento => { if (evento.currentTarget.open) void carregarImagens() }} className="mt-4 rounded-xl border border-indigo-400/25 bg-indigo-950/10 p-3">
-      <summary className="cursor-pointer text-xs font-semibold text-indigo-200">Ver página original com textos, gráficos e imagens ({imagens.length})</summary>
-      {carregandoImagens && <p role="status" className="mt-3 text-xs text-indigo-200">Buscando as páginas originais no armazenamento…</p>}
-      {erroImagens && <p role="note" className="mt-3 text-xs leading-5 text-amber-200">Esta página não está armazenada como imagem individual. Se houver um PDF ou pacote de origem, use o link no fim da questão.</p>}
-      <div className="mt-3 space-y-4">{imagens.map((imagem, indice) => <figure key={`${q.id}-${imagem}`}>
-        <a href={urlsImagens?.[indice] || undefined} target="_blank" rel="noreferrer" className="block" aria-label={`Ampliar a página ${q.paginas_origem?.[indice] || q.pagina} da prova`}>
-          {urlsImagens?.[indice] && <img src={urlsImagens[indice]} alt={`Página ${q.paginas_origem?.[indice] || q.pagina} do caderno original, incluindo textos-base, diagramas e imagens`} loading="lazy" onError={evento => { evento.currentTarget.hidden = true; evento.currentTarget.closest('figure')?.querySelector('[data-fallback]')?.classList.remove('hidden') }} className="mx-auto h-auto max-w-full rounded-lg bg-white" />}
+    {imagens.length > 0 && <details open={precisaApoioVisual} onToggle={evento => { if (evento.currentTarget.open) void carregarImagens() }} className="mt-4 rounded-xl border border-indigo-400/25 bg-indigo-950/10 p-3">
+      <summary className="cursor-pointer text-xs font-semibold text-indigo-200">Ver imagem e elementos gráficos ({imagens.length})</summary>
+      {carregandoImagens && <p role="status" className="mt-3 text-xs text-indigo-200">Carregando imagem…</p>}
+      {erroImagens && <p role="note" className="mt-3 text-xs leading-5 text-amber-200">A imagem não carregou. O texto e as alternativas continuam disponíveis.</p>}
+      <div className="mt-3 space-y-4">{imagens.map((imagem, indice) => <figure key={q.id + '-' + imagem}>
+        <a href={urlsImagens?.[indice] || undefined} target="_blank" rel="noreferrer" className="block" aria-label="Ampliar imagem e elementos gráficos da questão">
+          {urlsImagens?.[indice] && <img src={urlsImagens[indice]} alt="Imagem e elementos gráficos da questão" loading="lazy" onError={evento => { evento.currentTarget.hidden = true; evento.currentTarget.closest('figure')?.querySelector('[data-fallback]')?.classList.remove('hidden') }} className="mx-auto h-auto max-w-full rounded-lg bg-white" />}
         </a>
-        <p data-fallback className="hidden mt-2 text-center text-xs text-amber-200">A imagem local desta página não está disponível. Use o PDF original no link abaixo.</p>
-        <figcaption className="mt-1 text-center text-[11px] text-slate-500">Página {q.paginas_origem?.[indice] || q.pagina} · clique para ampliar</figcaption>
+        <p data-fallback className="hidden mt-2 text-center text-xs text-amber-200">Imagem indisponível nesta edição.</p>
+        <figcaption className="mt-1 text-center text-[11px] text-slate-500">Clique para ampliar</figcaption>
       </figure>)}</div>
     </details>}
-    {q.tipo_extraido === 'discursiva' && <p className="mt-3 text-xs text-slate-400">Questão discursiva · use o campo de resposta e consulte a página original para fórmulas, figuras e critérios.</p>}
     <details className="mt-4 rounded-xl border border-slate-700/80 bg-slate-950/30 p-3">
       <summary className="cursor-pointer text-xs font-semibold text-slate-300">Classificação pessoal para meus filtros</summary>
       <form onSubmit={salvarClassificacao} className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -286,26 +303,25 @@ function CartaoQuestaoExtraida({questao: q, onEstadoResposta}) {
         <label className="text-xs font-semibold text-slate-400">Assunto
           <input value={classificacao.assunto} onChange={evento => setClassificacao(atual => ({...atual, assunto:evento.target.value}))} maxLength={100} placeholder="Ex.: Funções" className="mt-1.5 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm font-normal text-slate-100 placeholder:text-slate-500" />
         </label>
-        <p className="text-xs leading-5 text-slate-500 sm:col-span-2">Esses rótulos ficam neste dispositivo e alimentam os filtros de disciplina e assunto. O PDF não traz classificação temática estruturada.</p>
+        <p className="text-xs leading-5 text-slate-500 sm:col-span-2">Use rótulos pessoais para organizar suas buscas por disciplina e assunto.</p>
         <button type="submit" className="justify-self-start rounded-lg border border-lime-300/35 bg-lime-950/25 px-3 py-2 text-xs font-semibold text-lime-100 hover:bg-lime-900/40">Salvar classificação</button>
       </form>
     </details>
     <footer className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-800 pt-3">
-      <p className="text-xs text-slate-500">{q.concurso}{q.documento_origem ? ` · ${q.documento_origem}` : ''}{q.pagina ? ` · página ${q.pagina}` : ''}</p>
-      {q.fonte ? <a className="shrink-0 rounded-xl border border-indigo-400/40 px-3 py-2 text-xs font-semibold text-indigo-200 hover:bg-indigo-500/10" href={`${q.fonte}#page=${q.pagina || 1}`} target="_blank" rel="noreferrer">{/\.zip(?:[?#]|$)/iu.test(q.fonte) ? 'Abrir pacote de origem ↗' : 'Abrir no PDF original ↗'}</a> : <span className="text-xs text-slate-500">Link externo não identificado · página renderizada acima</span>}
+      <p className="text-xs text-slate-500">{q.concurso}</p>
+      {q.fonte && <a className="shrink-0 rounded-xl border border-indigo-400/40 px-3 py-2 text-xs font-semibold text-indigo-200 hover:bg-indigo-500/10" href={q.fonte} target="_blank" rel="noreferrer">Ver prova completa ↗</a>}
     </footer>
   </article>
 }
 
-export default function QuestoesExtraidas({aoAbrirAcervo, questoesBanco = 0}) {
+
+export default function QuestoesExtraidas({aoAbrirAcervo}) {
   const [manifesto, setManifesto] = useState(null)
-  const [visuais, setVisuais] = useState(null)
   const [banca, setBanca] = useState('')
   const [ano, setAno] = useState('')
   const [concurso, setConcurso] = useState('')
   const [busca, setBusca] = useState('')
   const [tipoQuestao, setTipoQuestao] = useState('')
-  const [estadoTranscricao, setEstadoTranscricao] = useState('')
   const [estadoEstudo, setEstadoEstudo] = useState('')
   const [materiaPessoal, setMateriaPessoal] = useState('')
   const [assuntoPessoal, setAssuntoPessoal] = useState('')
@@ -320,18 +336,10 @@ export default function QuestoesExtraidas({aoAbrirAcervo, questoesBanco = 0}) {
 
   useEffect(() => {
     let ativo = true
-    buscarArquivoAcervo('manifesto.json', {signal: AbortSignal.timeout(30000)})
-      .then(resposta => { if (!resposta.ok) throw new Error('O índice das questões extraídas não está disponível.'); return resposta.json() })
+    carregarManifestoAcervo()
       .then(dados => { if (ativo) { setManifesto(dados); setCarregandoIndice(false) } })
-      .catch(() => { if (ativo) { setErroIndice('Não foi possível carregar o índice do acervo extraído.'); setCarregandoIndice(false) } })
+      .catch(() => { if (ativo) { setErroIndice('Não foi possível carregar as questões disponíveis.'); setCarregandoIndice(false) } })
     return () => { ativo = false }
-  }, [])
-
-  useEffect(() => {
-    buscarArquivoAcervo('visuais.json', {signal: AbortSignal.timeout(30000)})
-      .then(resposta => resposta.ok ? resposta.json() : null)
-      .then(dados => { if (dados) setVisuais(dados) })
-      .catch(() => {})
   }, [])
 
   const bancas = useMemo(() => [...new Set((manifesto?.lotes || []).map(lote => lote.banca))].sort((a, b) => a.localeCompare(b, 'pt-BR')), [manifesto])
@@ -379,21 +387,17 @@ export default function QuestoesExtraidas({aoAbrirAcervo, questoesBanco = 0}) {
     return questoes.filter(q => {
       const classificacao = classificacoes.get(q.id) || {materia:'', assunto:''}
       if (tipoQuestao && q.tipo_extraido !== tipoQuestao) return false
-      if (estadoTranscricao === 'revisar' && !precisaConferir(q)) return false
-      if (estadoTranscricao === 'sem-alerta' && precisaConferir(q)) return false
       if (estadoEstudo === 'respondidas' && !respostasLocais[q.id]) return false
       if (estadoEstudo === 'pendentes' && respostasLocais[q.id]) return false
       if (materiaPessoal && classificacao.materia !== materiaPessoal) return false
       if (assuntoPessoal && classificacao.assunto !== assuntoPessoal) return false
       if (!termo) return true
-      return normalizar([q.numero_original, q.concurso, q.enunciado, q.texto_apoio, ...(q.transcricoes_ocr || []).map(item => item.texto), ...(q.opcoes || [])].join(' ')).includes(termo)
+      return normalizar([q.numero_original, q.concurso, q.enunciado, q.texto_apoio, ...(q.transcricoes_ocr || []).map(item => item.texto), ...(q.opcoes || [])].map(limparTextoQuestao).join(' ')).includes(termo)
     })
-  }, [assuntoPessoal, busca, classificacoes, estadoEstudo, estadoTranscricao, materiaPessoal, questoes, respostasLocais, tipoQuestao])
+  }, [assuntoPessoal, busca, classificacoes, estadoEstudo, materiaPessoal, questoes, respostasLocais, tipoQuestao])
   const porPagina = 30
   const totalPaginas = Math.max(1, Math.ceil(filtradas.length / porPagina))
   const visiveis = filtradas.slice((pagina - 1) * porPagina, pagina * porPagina)
-  const alertaContagem = useMemo(() => questoes.filter(precisaConferir).length, [questoes])
-  const totalBruto = Number(questoesBanco || 0) + Number(manifesto?.questoes_extraidas_unicas || 0)
   const edicaoPronta = Boolean(lote && arquivoCarregado === lote.arquivo)
   const carregandoEdicao = Boolean(lote && !edicaoPronta && arquivoFalhou !== lote.arquivo)
   const erroLote = Boolean(lote && arquivoFalhou === lote.arquivo && !edicaoPronta)
@@ -402,51 +406,29 @@ export default function QuestoesExtraidas({aoAbrirAcervo, questoesBanco = 0}) {
   const limparFiltrosEdicao = () => {
     setBusca('')
     setTipoQuestao('')
-    setEstadoTranscricao('')
     setEstadoEstudo('')
     setMateriaPessoal('')
     setAssuntoPessoal('')
     setPagina(1)
   }
 
-  if (carregandoIndice && !manifesto) return <p role="status" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm text-indigo-200">Carregando o índice das questões extraídas…</p>
+  if (carregandoIndice && !manifesto) return <p role="status" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm text-indigo-200">Carregando questões…</p>
 
-  return <section className="space-y-6" aria-labelledby="titulo-questoes-extraidas">
+  return <section className="space-y-6" aria-labelledby="titulo-questoes-por-edicao">
     <header className="study-hero gradient-edge rounded-3xl p-5 sm:p-7">
-      <p className="mb-2 text-xs font-bold uppercase tracking-[.18em] text-indigo-300">Acervo na nuvem · questões e páginas originais sob demanda</p>
-      <h1 id="titulo-questoes-extraidas" className="text-2xl font-extrabold text-white sm:text-3xl">Questões extraídas</h1>
-      <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-300">O banco principal mantém {numero(questoesBanco)} questões. Este acervo reúne {numero(manifesto?.questoes_extraidas_unicas)} registros em lotes compactados, carregados conforme a edição escolhida; as páginas originais são buscadas somente quando necessário. O total bruto dos conjuntos é {numero(totalBruto)}, antes de cruzar possíveis duplicatas.</p>
-      <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-300">Use os filtros por banca, edição, prova, tipo e situação. Páginas sem imagem individual no armazenamento continuam disponíveis no PDF ou pacote de origem quando o documento está identificado.</p>
-      <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-6">
-        {[
-          ['Questões extraídas', manifesto?.questoes_extraidas_unicas],
-          ['Documentos com texto', manifesto?.documentos_com_texto],
-          ['Bancas com questões', manifesto?.bancas?.length],
-          ['Provas e edições com questões', manifesto?.lotes?.length],
-          ['Páginas preservadas como imagem no armazenamento', visuais?.paginas_visuais_disponiveis],
-          ['Páginas com OCR útil', visuais?.paginas_ocr_com_transcricao_util],
-        ].map(([rotulo, valor]) => <div key={rotulo} className="study-stat-card rounded-2xl p-4">
-          <p className="text-xs font-semibold text-slate-400">{rotulo}</p>
-          <p className="mt-1 text-xl font-extrabold text-white">{numero(valor)}</p>
-        </div>)}
-      </div>
+      <p className="mb-2 text-xs font-bold uppercase tracking-[.18em] text-indigo-300">Filtros por banca, edição e prova</p>
+      <h2 id="titulo-questoes-por-edicao" className="text-2xl font-extrabold text-white sm:text-3xl">Questões por edição</h2>
+      <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-300">Escolha uma prova para carregar suas questões. Os demais arquivos ficam fora da página até serem necessários.</p>
     </header>
 
     <aside className="rounded-2xl border border-amber-400/25 bg-amber-950/20 px-4 py-3 text-sm leading-6 text-amber-100">
-      Marque alternativas ou redija respostas; tudo fica salvo neste dispositivo. Como os gabaritos oficiais não foram vinculados, o app não atribui nota. Itens com alerta de extração abrem a página de origem e deixam a transcrição automática recolhida para conferência.
+      Suas respostas ficam salvas neste dispositivo. Questões sem gabarito associado não recebem correção automática.
     </aside>
 
-    {manifesto?.documentos_sem_questoes_reconstruiveis > 0 && <aside className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-sky-400/25 bg-sky-950/20 px-4 py-3 text-sm leading-6 text-sky-100">
-      <span>{numero(manifesto.documentos_sem_questoes_reconstruiveis)} documento(s) do pacote não geraram questões estruturadas nesta extração. Consulte os arquivos e as fontes originais no catálogo para encontrar edições que precisem de leitura ou revisão manual.</span>
-      {aoAbrirAcervo && <button type="button" onClick={aoAbrirAcervo} className="shrink-0 rounded-xl border border-sky-300/40 px-3 py-2 text-xs font-semibold text-sky-100 hover:bg-sky-500/10">Abrir catálogo de provas</button>}
-    </aside>}
-
-    {visuais?.paginas_visuais_sem_arquivo > 0 && <aside role="status" className="rounded-2xl border border-amber-400/25 bg-amber-950/20 px-4 py-3 text-sm leading-6 text-amber-100">{numero(visuais.paginas_visuais_sem_arquivo)} página(s) não estão guardadas como imagem individual na nuvem. Quando disponível, abra o PDF ou pacote de origem pelo link da questão.</aside>}
-
     {erroIndice && <p role="alert" className="rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">{erroIndice}</p>}
-    {erroLote && <p role="alert" className="rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">O lote desta edição está indisponível ou incompleto.</p>}
+    {erroLote && <p role="alert" className="rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">Não foi possível abrir esta seleção.</p>}
 
-    <section aria-label="Filtrar questões extraídas" className="filter-panel gradient-edge grid gap-4 rounded-3xl p-4 shadow-xl md:grid-cols-2 lg:grid-cols-4 sm:p-6">
+    <section aria-label="Filtrar questões" className="filter-panel gradient-edge grid gap-4 rounded-3xl p-4 shadow-xl md:grid-cols-2 lg:grid-cols-4 sm:p-6">
       <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Banca ou instituição
         <select value={banca} onChange={evento => { setBanca(evento.target.value); setAno(''); setConcurso(''); limparFiltrosEdicao() }} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case tracking-normal text-slate-100">
           <option value="">Escolha uma banca</option>
@@ -474,13 +456,6 @@ export default function QuestoesExtraidas({aoAbrirAcervo, questoesBanco = 0}) {
           {tiposQuestao.map(item => <option key={item} value={item}>{item === 'certo_errado' ? 'Certo ou errado' : item === 'discursiva' ? 'Discursiva' : 'Múltipla escolha'}</option>)}
         </select>
       </label>
-      <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Conferência da transcrição
-        <select value={estadoTranscricao} onChange={evento => { setEstadoTranscricao(evento.target.value); setPagina(1) }} disabled={!edicaoPronta} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case tracking-normal text-slate-100 disabled:opacity-50">
-          <option value="">Todas</option>
-          <option value="revisar">Conferir página original</option>
-          <option value="sem-alerta">Sem alerta estrutural</option>
-        </select>
-      </label>
       <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Minha situação
         <select value={estadoEstudo} onChange={evento => { setEstadoEstudo(evento.target.value); setPagina(1) }} disabled={!edicaoPronta} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case tracking-normal text-slate-100 disabled:opacity-50">
           <option value="">Todas</option>
@@ -505,19 +480,19 @@ export default function QuestoesExtraidas({aoAbrirAcervo, questoesBanco = 0}) {
       <div className="flex items-end">
         <button type="button" onClick={limparFiltrosEdicao} disabled={!edicaoPronta} className="w-full rounded-xl border border-lime-300/30 bg-lime-950/20 px-3 py-3 text-sm font-semibold text-lime-100 hover:bg-lime-900/35 disabled:opacity-50">Limpar filtros da edição</button>
       </div>
-      <p className="text-xs leading-5 text-slate-500 md:col-span-2 lg:col-span-4">Banca, ano, prova, palavra-chave, tipo e situação são filtros objetivos. Disciplina e assunto são rótulos pessoais: o PDF de origem não contém uma classificação temática estruturada.</p>
+      <p className="text-xs leading-5 text-slate-500 md:col-span-2 lg:col-span-4">Combine banca, ano, prova, palavra-chave, tipo e situação para encontrar questões. Disciplina e assunto são rótulos pessoais que você pode criar.</p>
     </section>
 
     {!banca && <div className="rounded-3xl border border-dashed border-slate-700 bg-slate-900/40 px-5 py-10 text-center">
       <h2 className="font-semibold text-slate-200">Escolha uma banca para abrir as edições</h2>
-      <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-slate-400">Os lotes são carregados sob demanda para que o acervo completo não pese no início do app.</p>
+      <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-slate-400">As questões de uma prova são carregadas quando você seleciona a edição.</p>
     </div>}
-    {banca && !ano && <p className="rounded-2xl border border-slate-800 bg-slate-900/50 p-4 text-sm text-slate-300">Selecione o ano para listar os concursos e provas com questões extraídas.</p>}
+    {banca && !ano && <p className="rounded-2xl border border-slate-800 bg-slate-900/50 p-4 text-sm text-slate-300">Selecione o ano para listar os concursos e provas disponíveis.</p>}
     {banca && ano && !concurso && <p className="rounded-2xl border border-slate-800 bg-slate-900/50 p-4 text-sm text-slate-300">Selecione um concurso ou caderno para abrir as questões.</p>}
     {carregandoEdicao && ano && <p role="status" className="text-sm text-indigo-200">Carregando {banca} {ano}…</p>}
     {lote && edicaoPronta && !erroLote && <>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <p aria-live="polite" className="text-sm text-slate-300">{numero(filtradas.length)} questão(ões) nesta busca · {banca} {ano} · {numero(alertaContagem)} nesta prova com alerta de extração</p>
+        <p aria-live="polite" className="text-sm text-slate-300">{numero(filtradas.length)} questão(ões) nesta busca · {banca} {ano}</p>
         {filtradas.length > porPagina && <div className="flex items-center gap-2 text-sm">
           <button type="button" disabled={pagina <= 1} onClick={() => setPagina(atual => Math.max(1, atual - 1))} className="rounded-lg border border-slate-700 px-3 py-2 text-slate-200 disabled:opacity-40">Anterior</button>
           <span className="text-slate-400">{pagina} / {totalPaginas}</span>
