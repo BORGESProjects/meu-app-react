@@ -6,7 +6,7 @@ const EXPECTED_FILES = 34718
 const EXPECTED_BYTES = 2928448054
 const MAX_BATCH_BYTES = 3500000
 const MAX_SINGLE_FILE_BYTES = 3700000
-const MAX_BATCH_FILES = 100
+const MAX_BATCH_FILES = 40
 const KEY_ALLOWED = /^(?:manifesto|visuais)\.json$|^lotes\/[A-Za-z0-9._-]+\.json\.gz$|^paginas\/[A-Za-z0-9._-]+\.webp$/
 
 const numero = valor => Number(valor || 0).toLocaleString('pt-BR')
