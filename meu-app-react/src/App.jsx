@@ -88,6 +88,8 @@ export default function App() {
   const requisicaoAcervo = useRef(0)
   const campoEdicaoQuestao = useRef(null)
   const [abaAtiva, setAbaAtiva] = useState('questoes')
+  const [acervoExtraidoIniciado, setAcervoExtraidoIniciado] = useState(false)
+  const [acervoExtraidoAberto, setAcervoExtraidoAberto] = useState(false)
   const [session, setSession] = useState(null)
   const [authReady, setAuthReady] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
@@ -741,10 +743,11 @@ export default function App() {
   const quantidadeFiltrosAtivos = totalFiltrosAtivos + (termoBusca.trim() ? 1 : 0) + (filtroSituacaoQuestao !== 'todas' ? 1 : 0) + Number(somenteComentadas) + Number(somenteComImagem) + Number(excluirQuestaoEmCadernos) + (cadernoAtivoId ? 1 : 0)
   const temFiltrosAtivos = quantidadeFiltrosAtivos > 0
 
-  const indiceFiltros = useMemo(() => acervoPreparado.indice
-    ? acervoPreparado.indice.filter(item => pertenceAoFoco(item.questao, focoEstudo, true))
-    : indexarFiltros(questoesDoFoco), [acervoPreparado.indice, questoesDoFoco, focoEstudo])
   const indiceCompleto = useMemo(() => acervoPreparado.indice || indexarFiltros(questoes), [acervoPreparado.indice, questoes])
+  const indiceFiltros = useMemo(
+    () => indiceCompleto.filter(item => pertenceAoFoco(item.questao, focoEstudo, true)),
+    [indiceCompleto, focoEstudo],
+  )
   const indiceBaseFiltro = useMemo(() => cadernoAtivoId ? indiceCompleto : indiceFiltros, [cadernoAtivoId, indiceCompleto, indiceFiltros])
   const filtrosAtuais = useMemo(() => ({ano:filtrosAno,materia:filtrosMateria,conteudo:filtrosConteudo,banca:filtrosBanca,dificuldade:filtrosDificuldade}), [filtrosAno,filtrosMateria,filtrosConteudo,filtrosBanca,filtrosDificuldade])
   const ultimasRespostasPorQuestao = useMemo(() => ultimasTentativas(historicoRespostas), [historicoRespostas])
@@ -1005,7 +1008,6 @@ export default function App() {
             { id: 'cadernos', label: 'Meus cadernos' },
             { id: 'simulados', label: 'Simulados' },
             { id: 'provas', label: 'Acervo de provas' },
-            { id: 'extraidas', label: 'Questões extraídas' },
             { id: 'desempenho', label: 'Desempenho' },
             ...(isAdmin ? [{ id: 'cadastrar', label: 'Cadastrar' }, { id: 'importar', label: 'Importar PDF' }, { id: 'r2-upload', label: 'Migrar acervo R2' }] : []),
             { id: 'edital', label: 'Edital' },
@@ -1032,7 +1034,6 @@ export default function App() {
         {estudoPessoal.erro && <p role="status" className="mb-4 rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">{estudoPessoal.erro}</p>}
         {abaAtiva === 'conta' && <Conta session={session} isAdmin={isAdmin} checkingAdmin={checkingAdmin} sincronizacao={sincronizacao} totais={{ horas: totalHorasEstudo, questoes: totalQuestoesResolvidas, acertos: totalAcertos }} />}
         {abaAtiva === 'provas' && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Abrindo o acervo de provas…</p>}><AcervoProvas /></Suspense>}
-        {abaAtiva === 'extraidas' && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Abrindo as questões extraídas…</p>}><QuestoesExtraidas questoesBanco={questoes.length} aoAbrirAcervo={() => setAbaAtiva('provas')} /></Suspense>}
         {abaAtiva === 'cadernos' && <CadernosPessoais
           cadernos={cadernos} questoes={questoes} anotacoes={marcacoesPessoais}
           sincronizacao={estudoPessoal.sincronizacao} erroSincronizacao={estudoPessoal.erro}
@@ -1066,6 +1067,27 @@ export default function App() {
               <p className="text-slate-400 text-sm mt-1">{temFiltrosAtivos
                 ? `${questoesFiltradas.length} questão(ões) encontrada(s). ${questoesFiltradas.filter(q => q.anulada).length} anulada(s), disponíveis apenas para consulta.`
                 : 'Escolha os filtros abaixo para exibir as questões que deseja estudar.'}</p>
+              <details
+                className="mt-4 overflow-hidden rounded-2xl border border-cyan-400/25 bg-gradient-to-br from-slate-900/90 via-slate-950/80 to-cyan-950/20 shadow-lg shadow-cyan-950/10"
+                onToggle={evento => {
+                  const aberto = evento.currentTarget.open
+                  setAcervoExtraidoAberto(aberto)
+                  if (aberto) setAcervoExtraidoIniciado(true)
+                }}
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 transition hover:bg-white/[0.03] sm:px-5">
+                  <span className="min-w-0">
+                    <span className="block text-sm font-bold text-slate-100">Acervo de questões extraídas</span>
+                    <span className="mt-1 block text-xs leading-5 text-slate-400">Provas e edições anteriores no mesmo espaço. O índice só é carregado ao abrir para agilizar esta página.</span>
+                  </span>
+                  <span aria-hidden="true" className="shrink-0 rounded-xl border border-cyan-300/25 bg-cyan-300/10 px-3 py-2 text-xs font-semibold text-cyan-100">{acervoExtraidoAberto ? 'Fechar' : 'Abrir'}</span>
+                </summary>
+                <div className="border-t border-cyan-400/15 p-3 sm:p-4">
+                  <Suspense fallback={<p role="status" className="py-3 text-sm text-cyan-200">Carregando o índice do acervo…</p>}>
+                    {acervoExtraidoIniciado && <QuestoesExtraidas questoesBanco={questoes.length} aoAbrirAcervo={() => setAbaAtiva('provas')} />}
+                  </Suspense>
+                </div>
+              </details>
               {carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Carregando o restante do acervo… A quantidade acima ainda é parcial.</p>}
               {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Acervo carregado: {questoesDoFoco.length.toLocaleString('pt-BR')} questões neste foco.</p>}
               <details className="mt-3 text-sm text-indigo-300">
