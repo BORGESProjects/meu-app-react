@@ -2,11 +2,8 @@ import {useCallback, useEffect, useRef, useState} from 'react'
 import {API_URL} from '../api'
 import {supabase} from '../supabaseClient'
 
-const EXPECTED_FILES = 34718
-const EXPECTED_BYTES = 2928448054
-const MAX_BATCH_BYTES = 3500000
-const MAX_SINGLE_FILE_BYTES = 3700000
-const MAX_BATCH_FILES = 40
+const MAX_BATCH_BYTES = 3800000
+const MAX_BATCH_FILES = 100
 const KEY_ALLOWED = /^(?:manifesto|visuais)\.json$|^lotes\/[A-Za-z0-9._-]+\.json\.gz$|^paginas\/[A-Za-z0-9._-]+\.webp$/
 
 const numero = valor => Number(valor || 0).toLocaleString('pt-BR')
@@ -74,9 +71,11 @@ export default function AcervoR2Admin({isAdmin = false}) {
     const vistos = new Set()
     const itens = []
     let repetidos = false
+    let foraDoFormato = false
     for (const file of arquivos) {
       const key = chaveDoArquivo(file)
-      if (!KEY_ALLOWED.test(key)) continue
+      if (!key) continue
+      if (!KEY_ALLOWED.test(key)) { foraDoFormato = true; continue }
       if (vistos.has(key)) { repetidos = true; continue }
       vistos.add(key)
       itens.push({key, file})
@@ -85,12 +84,15 @@ export default function AcervoR2Admin({isAdmin = false}) {
     if (repetidos) {
       setSelecionados([])
       setErro('A pasta contém caminhos repetidos. Escolha a pasta acervo-extraido original.')
-    } else if (itens.length !== EXPECTED_FILES || bytes !== EXPECTED_BYTES) {
+    } else if (foraDoFormato) {
       setSelecionados([])
-      setErro(`A pasta selecionada não corresponde ao pacote auditado: encontrei ${numero(itens.length)} arquivos e ${gigabytes(bytes)}. O pacote esperado tem ${numero(EXPECTED_FILES)} arquivos e ${gigabytes(EXPECTED_BYTES)}.`)
+      setErro('A pasta contém arquivos fora do formato permitido. O envio aceita apenas manifesto, referências visuais, lotes de questões e imagens WebP.')
+    } else if (!vistos.has('manifesto.json') || !vistos.has('visuais.json') || !itens.some(item => item.key.startsWith('lotes/') && item.key.endsWith('.json.gz'))) {
+      setSelecionados([])
+      setErro('A pasta está incompleta: selecione acervo-extraido com manifesto, referências visuais e pelo menos um lote de questões.')
     } else {
       setSelecionados(itens)
-      setMensagem(`Pacote conferido: ${numero(itens.length)} arquivos, ${gigabytes(bytes)}.`)
+      setMensagem(`Pasta conferida: ${numero(itens.length)} arquivos válidos, ${gigabytes(bytes)}. O servidor ainda verificará o limite de 10 GB antes do envio.`)
     }
     evento.target.value = ''
   }
@@ -134,7 +136,7 @@ export default function AcervoR2Admin({isAdmin = false}) {
       let lote = []
       let bytesLote = 0
       for (const item of ordenados.filter(item => item.key !== 'manifesto.json')) {
-        if (item.file.size > MAX_SINGLE_FILE_BYTES) throw new Error(`O arquivo ${item.key} ultrapassa o tamanho máximo seguro de 3,7 MB.`)
+        if (item.file.size > MAX_BATCH_BYTES) throw new Error(`O arquivo ${item.key} ultrapassa o tamanho seguro por lote.`)
         if (lote.length && (lote.length >= MAX_BATCH_FILES || bytesLote + item.file.size > MAX_BATCH_BYTES)) {
           lotes.push(lote)
           lote = []
@@ -186,6 +188,7 @@ export default function AcervoR2Admin({isAdmin = false}) {
 
   const porcentagem = status?.limitBytes ? Math.min(100, (status.usedBytes / status.limitBytes) * 100) : 0
   const progressoPorcentagem = progresso.totalBytes ? Math.min(100, (progresso.bytes / progresso.totalBytes) * 100) : 0
+  const bytesSelecionados = selecionados.reduce((soma, item) => soma + item.file.size, 0)
 
   return <section aria-label="Armazenamento do acervo no Cloudflare" className="gradient-edge rounded-3xl border border-slate-700/70 bg-slate-950/80 p-5 shadow-xl sm:p-6">
     <div className="flex flex-wrap items-start justify-between gap-4">
@@ -206,11 +209,11 @@ export default function AcervoR2Admin({isAdmin = false}) {
         Selecionar a pasta acervo-extraido
         <input type="file" multiple ref={elemento => { if (elemento) elemento.setAttribute('webkitdirectory', '') }} onChange={selecionarPasta} className="sr-only" aria-label="Selecionar a pasta acervo-extraido" />
       </label>
-      {selecionados.length > 0 && <button type="button" onClick={() => void enviarAcervo()} disabled={enviando || carregando || !status} className="rounded-xl border border-lime-300/40 bg-lime-950/35 px-4 py-3 text-sm font-semibold text-lime-100 hover:bg-lime-900/45 disabled:opacity-50">Enviar {numero(selecionados.length)} arquivos · {gigabytes(EXPECTED_BYTES)}</button>}
+      {selecionados.length > 0 && <button type="button" onClick={() => void enviarAcervo()} disabled={enviando || carregando || !status} className="rounded-xl border border-lime-300/40 bg-lime-950/35 px-4 py-3 text-sm font-semibold text-lime-100 hover:bg-lime-900/45 disabled:opacity-50">Enviar {numero(selecionados.length)} arquivos · {gigabytes(bytesSelecionados)}</button>}
       {enviando && progresso.lotes > 0 && <button type="button" onClick={() => { pararDepoisDoLote.current = true }} className="rounded-xl border border-amber-300/35 px-4 py-3 text-sm font-semibold text-amber-100 hover:bg-amber-950/35">Parar após o lote atual</button>}
     </div>
 
-    {selecionados.length > 0 && <p className="mt-3 text-xs leading-5 text-slate-400">Pacote conferido: {numero(selecionados.length)} arquivos, {gigabytes(EXPECTED_BYTES)}. Antes do primeiro envio, o app confirma que esse espaço está livre.</p>}
+    {selecionados.length > 0 && <p className="mt-3 text-xs leading-5 text-slate-400">Pasta conferida: {numero(selecionados.length)} arquivos válidos, {gigabytes(bytesSelecionados)}. Antes do primeiro envio, o app verifica no servidor o espaço disponível e bloqueia qualquer envio que passe de 10 GB.</p>}
     {enviando && <div className="mt-4" role="status" aria-live="polite"><div className="flex justify-between gap-2 text-xs text-slate-300"><span>Lote {numero(progresso.lote)} de {numero(progresso.lotes)}</span><span>{numero(progresso.arquivos)} / {numero(progresso.totalArquivos)} arquivos · {gigabytes(progresso.bytes)} / {gigabytes(progresso.totalBytes)}</span></div><div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-700"><div className="h-full rounded-full bg-gradient-to-r from-sky-400 to-lime-300 transition-all" style={{width: `${progressoPorcentagem}%`}} /></div></div>}
     {mensagem && <p role="status" className="mt-4 rounded-xl border border-lime-300/25 bg-lime-950/20 px-3 py-2 text-sm text-lime-100">{mensagem}</p>}
     {erro && <p role="alert" className="mt-4 rounded-xl border border-amber-300/30 bg-amber-950/25 px-3 py-2 text-sm leading-6 text-amber-100">{erro}</p>}
