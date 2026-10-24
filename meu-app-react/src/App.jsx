@@ -91,7 +91,12 @@ export default function App() {
   const [abaAtiva, setAbaAtiva] = useState('questoes')
   const [acervoExtraidoIniciado, setAcervoExtraidoIniciado] = useState(false)
   const [acervoExtraidoAberto, setAcervoExtraidoAberto] = useState(false)
-  const [questoesExtraidasTotal, setQuestoesExtraidasTotal] = useState(null)
+  const [questoesExtraidasTotal, setQuestoesExtraidasTotal] = useState(() => {
+    try {
+      const salvo = Number(localStorage.getItem('aprovado:total-questoes:v1'))
+      return Number.isFinite(salvo) && salvo > 0 ? salvo : null
+    } catch { return null }
+  })
   const [session, setSession] = useState(null)
   const [authReady, setAuthReady] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
@@ -191,12 +196,15 @@ export default function App() {
   }, [])
 
   useEffect(() => {
+    if (!session?.user?.id) return
     let ativo = true
     carregarManifestoAcervo()
       .then(manifesto => {
-        if (ativo) setQuestoesExtraidasTotal(Number(manifesto?.questoes_extraidas_unicas) || 0)
+        const total = Number(manifesto?.questoes_extraidas_unicas) || 0
+        if (ativo) setQuestoesExtraidasTotal(total)
+        try { localStorage.setItem('aprovado:total-questoes:v1', String(total)) } catch { /* A contagem em memória continua disponível. */ }
       })
-      .catch(() => { if (ativo) setQuestoesExtraidasTotal(null) })
+      .catch(() => { /* Mantém a última contagem disponível quando estiver offline. */ })
     return () => { ativo = false }
   }, [session?.user?.id])
 
