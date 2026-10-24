@@ -1,6 +1,8 @@
-import {useCallback, useEffect, useMemo, useState} from 'react'
+import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
+import {pertenceAoFoco} from '../focoEstudo'
 import {carregarManifestoAcervo} from '../acervoExtraidoManifesto'
 import {API_URL} from '../api'
+import {chaveCampoFiltro} from '../filtros'
 import {supabase} from '../supabaseClient'
 
 const base = `${import.meta.env.BASE_URL || '/'}acervo-extraido/`
@@ -315,40 +317,112 @@ function CartaoQuestaoExtraida({questao: q, onEstadoResposta}) {
 }
 
 
-export default function QuestoesExtraidas({aoAbrirAcervo}) {
-  const [manifesto, setManifesto] = useState(null)
-  const [banca, setBanca] = useState('')
-  const [ano, setAno] = useState('')
-  const [concurso, setConcurso] = useState('')
-  const [busca, setBusca] = useState('')
-  const [tipoQuestao, setTipoQuestao] = useState('')
-  const [estadoEstudo, setEstadoEstudo] = useState('')
-  const [materiaPessoal, setMateriaPessoal] = useState('')
-  const [assuntoPessoal, setAssuntoPessoal] = useState('')
+export default function QuestoesExtraidas({
+  manifesto,
+  filtros = {},
+  busca = '',
+  situacao = 'todas',
+  somenteComImagem = false,
+  somenteComentadas = false,
+  excluirIds = [],
+  foco = 'todos',
+  onEstado,
+  onRegistrarMais,
+}) {
   const [questoes, setQuestoes] = useState([])
+  const [chaveQuestaoCarregada, setChaveQuestaoCarregada] = useState('')
   const [classificacoes, setClassificacoes] = useState(new Map())
   const [respostasLocais, setRespostasLocais] = useState({})
-  const [arquivoCarregado, setArquivoCarregado] = useState('')
-  const [arquivoFalhou, setArquivoFalhou] = useState('')
-  const [carregandoIndice, setCarregandoIndice] = useState(true)
-  const [erroIndice, setErroIndice] = useState('')
-  const [pagina, setPagina] = useState(1)
+  const [limitePorLotes, setLimitePorLotes] = useState({chave: '', valor: 2})
+  const [limiteQuestoes, setLimiteQuestoes] = useState({chave: '', valor: 30})
+  const [carregando, setCarregando] = useState(false)
+  const [erro, setErro] = useState(false)
+  const cacheLotes = useRef(new Map())
+  const requisicao = useRef(0)
 
-  useEffect(() => {
-    let ativo = true
-    carregarManifestoAcervo()
-      .then(dados => { if (ativo) { setManifesto(dados); setCarregandoIndice(false) } })
-      .catch(() => { if (ativo) { setErroIndice('Não foi possível carregar as questões disponíveis.'); setCarregandoIndice(false) } })
-    return () => { ativo = false }
+  const bancasSelecionadas = filtros.banca || []
+  const anosSelecionados = filtros.ano || []
+  const materiasSelecionadas = filtros.materia || []
+  const conteudosSelecionados = filtros.conteudo || []
+  const dificuldadesSelecionadas = filtros.dificuldade || []
+  const termo = busca.trim()
+  const filtroExplicito = bancasSelecionadas.length > 0 || anosSelecionados.length > 0
+  const chaveLotes = JSON.stringify([
+    [...bancasSelecionadas].sort(),
+    [...anosSelecionados].sort(),
+    filtroExplicito ? '' : normalizar(termo),
+    foco,
+  ])
+  const limite = limitePorLotes.chave === chaveLotes ? limitePorLotes.valor : 2
+
+  const lotesCorrespondentes = useMemo(() => {
+    if (!manifesto?.lotes) return []
+    const termoMetadado = normalizar(termo)
+    if (!filtroExplicito && termoMetadado.length < 2) return []
+    return manifesto.lotes
+      .filter(lote => {
+        const anoLote = lote.ano ? String(lote.ano) : 'sem-ano'
+        if (bancasSelecionadas.length && !bancasSelecionadas.includes(chaveCampoFiltro('banca', lote.banca))) return false
+        if (anosSelecionados.length && !anosSelecionados.includes(anoLote)) return false
+        if (!filtroExplicito && !normalizar(`${lote.banca} ${lote.concurso} ${anoLote}`).includes(termoMetadado)) return false
+        return true
+      })
+      .sort((a, b) => Number(b.ano || 0) - Number(a.ano || 0)
+        || String(a.banca || '').localeCompare(String(b.banca || ''), 'pt-BR')
+        || String(a.concurso || '').localeCompare(String(b.concurso || ''), 'pt-BR'))
+  }, [manifesto, bancasSelecionadas, anosSelecionados, filtroExplicito, termo])
+
+  const lotesAlvo = useMemo(() => lotesCorrespondentes.slice(0, limite), [lotesCorrespondentes, limite])
+  const questoesCarregadas = chaveQuestaoCarregada === chaveLotes ? questoes : []
+
+  const carregarLote = useCallback(lote => {
+    const chave = caminhoAcervoSeguro(lote.arquivo)
+    if (!cacheLotes.current.has(chave)) {
+      const promessa = buscarArquivoAcervo(chave, {signal: AbortSignal.timeout(90000)})
+        .then(resposta => lerLote(resposta, chave))
+        .then(dados => {
+          if (!Array.isArray(dados) || dados.length !== lote.quantidade) throw new Error('O lote não corresponde ao índice do acervo.')
+          return dados
+        })
+        .catch(falha => {
+          cacheLotes.current.delete(chave)
+          throw falha
+        })
+      cacheLotes.current.set(chave, promessa)
+    }
+    return cacheLotes.current.get(chave)
   }, [])
 
-  const bancas = useMemo(() => [...new Set((manifesto?.lotes || []).map(lote => lote.banca))].sort((a, b) => a.localeCompare(b, 'pt-BR')), [manifesto])
-  const lotesDaBanca = useMemo(() => (manifesto?.lotes || []).filter(lote => !banca || lote.banca === banca), [banca, manifesto])
-  const anos = useMemo(() => [...new Set(lotesDaBanca.map(lote => lote.ano ? String(lote.ano) : 'sem-ano'))]
-    .sort((a, b) => a === 'sem-ano' ? 1 : b === 'sem-ano' ? -1 : Number(b) - Number(a)), [lotesDaBanca])
-  const concursos = useMemo(() => lotesDaBanca.filter(lote => ano && (lote.ano ? String(lote.ano) : 'sem-ano') === ano)
-    .map(lote => lote.concurso).sort((a, b) => a.localeCompare(b, 'pt-BR')), [ano, lotesDaBanca])
-  const lote = useMemo(() => lotesDaBanca.find(item => ano && concurso && (item.ano ? String(item.ano) : 'sem-ano') === ano && item.concurso === concurso), [ano, concurso, lotesDaBanca])
+  useEffect(() => {
+    const id = ++requisicao.current
+    if (!manifesto) {
+      setQuestoes([])
+      setCarregando(true)
+      setErro(false)
+      return () => { requisicao.current++ }
+    }
+    if (!lotesAlvo.length) {
+      setQuestoes([])
+      setChaveQuestaoCarregada(chaveLotes)
+      setCarregando(false)
+      setErro(false)
+      return () => { requisicao.current++ }
+    }
+
+    setCarregando(true)
+    setErro(false)
+    Promise.allSettled(lotesAlvo.map(carregarLote)).then(resultados => {
+      if (id !== requisicao.current) return
+      const carregadas = resultados.filter(item => item.status === 'fulfilled').flatMap(item => item.value)
+      setQuestoes(carregadas)
+      setChaveQuestaoCarregada(chaveLotes)
+      setRespostasLocais(Object.fromEntries(carregadas.map(q => [q.id, possuiRespostaLocal(q)])))
+      setClassificacoes(new Map(carregadas.map(q => [q.id, lerClassificacao(q.id)])))
+      setErro(resultados.some(item => item.status === 'rejected'))
+      setCarregando(false)
+    })
+    return () => { if (requisicao.current === id) requisicao.current++ }
+  }, [manifesto, lotesAlvo, carregarLote])
 
   useEffect(() => {
     const aoClassificar = evento => {
@@ -360,149 +434,72 @@ export default function QuestoesExtraidas({aoAbrirAcervo}) {
     return () => window.removeEventListener('acervo-extraido-classificacao', aoClassificar)
   }, [])
 
-  const materiasPessoais = useMemo(() => [...new Set([...classificacoes.values()].map(item => item.materia.trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt-BR')), [classificacoes])
-  const assuntosPessoais = useMemo(() => [...new Set([...classificacoes.values()].map(item => item.assunto.trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt-BR')), [classificacoes])
-  const tiposQuestao = useMemo(() => [...new Set(questoes.map(q => q.tipo_extraido).filter(Boolean))].sort(), [questoes])
+  const filtradas = useMemo(() => {
+    const buscaNormalizada = normalizar(termo)
+    const excluidas = new Set(excluirIds.map(String))
+    return questoesCarregadas.filter(q => {
+      const classificacao = classificacoes.get(q.id) || lerClassificacao(q.id)
+      const banca = chaveCampoFiltro('banca', q.banca || '')
+      const ano = q.ano ? String(q.ano) : 'sem-ano'
+      if (excluidas.has(String(q.id))) return false
+      if (bancasSelecionadas.length && !bancasSelecionadas.includes(banca)) return false
+      if (anosSelecionados.length && !anosSelecionados.includes(ano)) return false
+      const materia = chaveCampoFiltro('materia', classificacao.materia || q.materia || '')
+      const conteudo = normalizar(classificacao.assunto || q.conteudo || '')
+      const dificuldade = chaveCampoFiltro('dificuldade', q.dificuldade || '')
+      if (materiasSelecionadas.length && !materiasSelecionadas.includes(materia)) return false
+      if (conteudosSelecionadas.length && !conteudosSelecionadas.some(valor => normalizar(valor) === conteudo)) return false
+      if (dificuldadesSelecionadas.length && !dificuldadesSelecionadas.includes(dificuldade)) return false
+      if (foco && foco !== 'todos' && !pertenceAoFoco(q, foco, true)) return false
+      if (somenteComImagem && !(q.imagens_paginas?.length || q.pagina_imagem)) return false
+      if (somenteComentadas && ![q.explicacao, q.resolucao, q.resposta_comentada, q.comentario].some(valor => typeof valor === 'string' && valor.trim())) return false
+      const respondida = Boolean(respostasLocais[q.id])
+      if (situacao === 'resolvidas' && !respondida) return false
+      if (situacao === 'nao-resolvidas' && respondida) return false
+      if (['acertadas', 'erradas', 'favoritas'].includes(situacao)) return false
+      if (!buscaNormalizada) return true
+      return normalizar([
+        q.id, q.numero_original, q.banca, q.ano, q.concurso, q.materia, q.conteudo,
+        q.enunciado, q.texto_apoio, ...(q.transcricoes_ocr || []).map(item => item.texto), ...(q.opcoes || []),
+      ].map(limparTextoQuestao).join(' ')).includes(buscaNormalizada)
+    })
+  }, [
+    busca, bancasSelecionadas, anosSelecionados, materiasSelecionadas, conteudosSelecionados,
+    dificuldadesSelecionadas, questoesCarregadas, classificacoes, respostasLocais, situacao,
+    somenteComImagem, somenteComentadas, excluirIds, foco,
+  ])
+
+  const limiteAtualQuestoes = limiteQuestoes.chave === chaveLotes ? limiteQuestoes.valor : 30
+  const questoesVisiveis = filtradas.slice(0, limiteAtualQuestoes)
+  const maisLotes = lotesCorrespondentes.length > lotesAlvo.length
+  const mais = limiteAtualQuestoes < filtradas.length || maisLotes
 
   useEffect(() => {
-    let ativo = true
-    if (!lote) return () => { ativo = false }
-    buscarArquivoAcervo(lote.arquivo, {signal: AbortSignal.timeout(90000)})
-      .then(resposta => lerLote(resposta, lote.arquivo))
-      .then(dados => {
-        if (!Array.isArray(dados) || dados.length !== lote.quantidade) throw new Error('O lote não corresponde ao índice do acervo.')
-        if (ativo) {
-          setQuestoes(dados)
-          setRespostasLocais(Object.fromEntries(dados.map(q => [q.id, possuiRespostaLocal(q)])))
-          setClassificacoes(new Map(dados.map(q => [q.id, lerClassificacao(q.id)])))
-          setArquivoCarregado(lote.arquivo)
-        }
+    onEstado?.({total: filtradas.length, carregando, mais})
+  }, [onEstado, filtradas.length, carregando, mais])
+
+  useEffect(() => {
+    if (!onRegistrarMais) return undefined
+    onRegistrarMais(() => {
+      setLimiteQuestoes(atual => ({
+        chave: chaveLotes,
+        valor: (atual.chave === chaveLotes ? atual.valor : 30) + 30,
+      }))
+      setLimitePorLotes(atual => {
+        const limiteAtual = atual.chave === chaveLotes ? atual.valor : 2
+        return maisLotes ? {chave: chaveLotes, valor: limiteAtual + 2} : atual
       })
-      .catch(() => { if (ativo) setArquivoFalhou(lote.arquivo) })
-    return () => { ativo = false }
-  }, [lote])
-
-  const filtradas = useMemo(() => {
-    const termo = normalizar(busca.trim())
-    return questoes.filter(q => {
-      const classificacao = classificacoes.get(q.id) || {materia:'', assunto:''}
-      if (tipoQuestao && q.tipo_extraido !== tipoQuestao) return false
-      if (estadoEstudo === 'respondidas' && !respostasLocais[q.id]) return false
-      if (estadoEstudo === 'pendentes' && respostasLocais[q.id]) return false
-      if (materiaPessoal && classificacao.materia !== materiaPessoal) return false
-      if (assuntoPessoal && classificacao.assunto !== assuntoPessoal) return false
-      if (!termo) return true
-      return normalizar([q.numero_original, q.concurso, q.enunciado, q.texto_apoio, ...(q.transcricoes_ocr || []).map(item => item.texto), ...(q.opcoes || [])].map(limparTextoQuestao).join(' ')).includes(termo)
     })
-  }, [assuntoPessoal, busca, classificacoes, estadoEstudo, materiaPessoal, questoes, respostasLocais, tipoQuestao])
-  const porPagina = 30
-  const totalPaginas = Math.max(1, Math.ceil(filtradas.length / porPagina))
-  const visiveis = filtradas.slice((pagina - 1) * porPagina, pagina * porPagina)
-  const edicaoPronta = Boolean(lote && arquivoCarregado === lote.arquivo)
-  const carregandoEdicao = Boolean(lote && !edicaoPronta && arquivoFalhou !== lote.arquivo)
-  const erroLote = Boolean(lote && arquivoFalhou === lote.arquivo && !edicaoPronta)
+    return () => onRegistrarMais(null)
+  }, [onRegistrarMais, chaveLotes, maisLotes])
 
-  const atualizarRespostaLocal = (id, respondida) => setRespostasLocais(atual => ({...atual, [id]: respondida}))
-  const limparFiltrosEdicao = () => {
-    setBusca('')
-    setTipoQuestao('')
-    setEstadoEstudo('')
-    setMateriaPessoal('')
-    setAssuntoPessoal('')
-    setPagina(1)
+  const atualizarRespostaLocal = (id, respondida) => {
+    setRespostasLocais(atual => ({...atual, [id]: respondida}))
   }
 
-  if (carregandoIndice && !manifesto) return <p role="status" className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 text-sm text-indigo-200">Carregando questões…</p>
-
-  return <section className="space-y-6" aria-labelledby="titulo-questoes-por-edicao">
-    <header className="study-hero gradient-edge rounded-3xl p-5 sm:p-7">
-      <p className="mb-2 text-xs font-bold uppercase tracking-[.18em] text-indigo-300">Filtros por banca, edição e prova</p>
-      <h2 id="titulo-questoes-por-edicao" className="text-2xl font-extrabold text-white sm:text-3xl">Questões por edição</h2>
-      <p className="mt-2 max-w-3xl text-sm leading-6 text-slate-300">Escolha uma prova para carregar suas questões. Os demais arquivos ficam fora da página até serem necessários.</p>
-    </header>
-
-    <aside className="rounded-2xl border border-amber-400/25 bg-amber-950/20 px-4 py-3 text-sm leading-6 text-amber-100">
-      Suas respostas ficam salvas neste dispositivo. Questões sem gabarito associado não recebem correção automática.
-    </aside>
-
-    {erroIndice && <p role="alert" className="rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">{erroIndice}</p>}
-    {erroLote && <p role="alert" className="rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">Não foi possível abrir esta seleção.</p>}
-
-    <section aria-label="Filtrar questões" className="filter-panel gradient-edge grid gap-4 rounded-3xl p-4 shadow-xl md:grid-cols-2 lg:grid-cols-4 sm:p-6">
-      <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Banca ou instituição
-        <select value={banca} onChange={evento => { setBanca(evento.target.value); setAno(''); setConcurso(''); limparFiltrosEdicao() }} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case tracking-normal text-slate-100">
-          <option value="">Escolha uma banca</option>
-          {bancas.map(item => <option key={item} value={item}>{item}</option>)}
-        </select>
-      </label>
-      <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Edição
-        <select value={ano} onChange={evento => { setAno(evento.target.value); setConcurso(''); limparFiltrosEdicao() }} disabled={!banca} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case tracking-normal text-slate-100 disabled:opacity-50">
-          <option value="">Escolha o ano</option>
-          {anos.map(item => <option key={item} value={item}>{item === 'sem-ano' ? 'Ano não identificado' : item}</option>)}
-        </select>
-      </label>
-      <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Concurso ou prova
-        <select value={concurso} onChange={evento => { setConcurso(evento.target.value); limparFiltrosEdicao() }} disabled={!ano} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case tracking-normal text-slate-100 disabled:opacity-50">
-          <option value="">Escolha o concurso</option>
-          {concursos.map(item => <option key={item} value={item}>{item}</option>)}
-        </select>
-      </label>
-      <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Buscar nesta edição
-        <input type="search" value={busca} onChange={evento => { setBusca(evento.target.value); setPagina(1) }} placeholder="Enunciado, alternativa ou número…" className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case tracking-normal text-slate-100 placeholder:text-slate-500" />
-      </label>
-      <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Tipo de questão
-        <select value={tipoQuestao} onChange={evento => { setTipoQuestao(evento.target.value); setPagina(1) }} disabled={!edicaoPronta} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case tracking-normal text-slate-100 disabled:opacity-50">
-          <option value="">Todos os tipos</option>
-          {tiposQuestao.map(item => <option key={item} value={item}>{item === 'certo_errado' ? 'Certo ou errado' : item === 'discursiva' ? 'Discursiva' : 'Múltipla escolha'}</option>)}
-        </select>
-      </label>
-      <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Minha situação
-        <select value={estadoEstudo} onChange={evento => { setEstadoEstudo(evento.target.value); setPagina(1) }} disabled={!edicaoPronta} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case tracking-normal text-slate-100 disabled:opacity-50">
-          <option value="">Todas</option>
-          <option value="pendentes">Não respondidas</option>
-          <option value="respondidas">Respondidas neste dispositivo</option>
-        </select>
-      </label>
-      <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Disciplina pessoal
-        <select value={materiaPessoal} onChange={evento => { setMateriaPessoal(evento.target.value); setPagina(1) }} disabled={!edicaoPronta || !materiasPessoais.length} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case tracking-normal text-slate-100 disabled:opacity-50">
-          <option value="">Todas as disciplinas</option>
-          {!materiasPessoais.length && <option value="" disabled>Classifique uma questão para criar opções</option>}
-          {materiasPessoais.map(item => <option key={item} value={item}>{item}</option>)}
-        </select>
-      </label>
-      <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Assunto pessoal
-        <select value={assuntoPessoal} onChange={evento => { setAssuntoPessoal(evento.target.value); setPagina(1) }} disabled={!edicaoPronta || !assuntosPessoais.length} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case tracking-normal text-slate-100 disabled:opacity-50">
-          <option value="">Todos os assuntos</option>
-          {!assuntosPessoais.length && <option value="" disabled>Classifique uma questão para criar opções</option>}
-          {assuntosPessoais.map(item => <option key={item} value={item}>{item}</option>)}
-        </select>
-      </label>
-      <div className="flex items-end">
-        <button type="button" onClick={limparFiltrosEdicao} disabled={!edicaoPronta} className="w-full rounded-xl border border-lime-300/30 bg-lime-950/20 px-3 py-3 text-sm font-semibold text-lime-100 hover:bg-lime-900/35 disabled:opacity-50">Limpar filtros da edição</button>
-      </div>
-      <p className="text-xs leading-5 text-slate-500 md:col-span-2 lg:col-span-4">Combine banca, ano, prova, palavra-chave, tipo e situação para encontrar questões. Disciplina e assunto são rótulos pessoais que você pode criar.</p>
-    </section>
-
-    {!banca && <div className="rounded-3xl border border-dashed border-slate-700 bg-slate-900/40 px-5 py-10 text-center">
-      <h2 className="font-semibold text-slate-200">Escolha uma banca para abrir as edições</h2>
-      <p className="mx-auto mt-2 max-w-xl text-sm leading-6 text-slate-400">As questões de uma prova são carregadas quando você seleciona a edição.</p>
-    </div>}
-    {banca && !ano && <p className="rounded-2xl border border-slate-800 bg-slate-900/50 p-4 text-sm text-slate-300">Selecione o ano para listar os concursos e provas disponíveis.</p>}
-    {banca && ano && !concurso && <p className="rounded-2xl border border-slate-800 bg-slate-900/50 p-4 text-sm text-slate-300">Selecione um concurso ou caderno para abrir as questões.</p>}
-    {carregandoEdicao && ano && <p role="status" className="text-sm text-indigo-200">Carregando {banca} {ano}…</p>}
-    {lote && edicaoPronta && !erroLote && <>
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <p aria-live="polite" className="text-sm text-slate-300">{numero(filtradas.length)} questão(ões) nesta busca · {banca} {ano}</p>
-        {filtradas.length > porPagina && <div className="flex items-center gap-2 text-sm">
-          <button type="button" disabled={pagina <= 1} onClick={() => setPagina(atual => Math.max(1, atual - 1))} className="rounded-lg border border-slate-700 px-3 py-2 text-slate-200 disabled:opacity-40">Anterior</button>
-          <span className="text-slate-400">{pagina} / {totalPaginas}</span>
-          <button type="button" disabled={pagina >= totalPaginas} onClick={() => setPagina(atual => Math.min(totalPaginas, atual + 1))} className="rounded-lg border border-slate-700 px-3 py-2 text-slate-200 disabled:opacity-40">Próxima</button>
-        </div>}
-      </div>
-      <div className="space-y-4">
-        {visiveis.map(q => <CartaoQuestaoExtraida key={q.id} questao={q} onEstadoResposta={atualizarRespostaLocal} />)}
-      </div>
-      {!filtradas.length && <p className="rounded-2xl border border-slate-800 bg-slate-900/50 p-5 text-sm text-slate-400">Nenhuma questão corresponde à busca nesta edição.</p>}
-    </>}
-  </section>
+  return <>
+    {carregando && <p role="status" className="rounded-xl px-1 py-2 text-sm text-slate-400">Carregando mais questões para esta busca…</p>}
+    {erro && <p role="alert" className="rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">Algumas questões não foram carregadas. Tente novamente ajustando os filtros.</p>}
+    {questoesVisiveis.map(q => <CartaoQuestaoExtraida key={q.id} questao={q} onEstadoResposta={atualizarRespostaLocal} />)}
+  </>
 }
