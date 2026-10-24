@@ -35,6 +35,21 @@ public class AcervoController {
         return Map.of("urls", r2.presignExisting(request == null ? null : request.get("keys")));
     }
 
+    @GetMapping("/r2/objeto")
+    public ResponseEntity<byte[]> objetoR2(
+        @RequestHeader(value = "Authorization", required = false) String authorization,
+        @RequestHeader(value = "X-Supabase-Key", required = false) String publicKey,
+        @RequestParam("key") String key
+    ) {
+        sessions.requireAuthenticated(authorization, publicKey);
+        R2AcervoStorage.StoredObject object = r2.readObject(key);
+        return ResponseEntity.ok()
+            .contentType(MediaType.parseMediaType(object.contentType()))
+            .contentLength(object.bytes().length)
+            .cacheControl(CacheControl.maxAge(Duration.ofMinutes(30)).cachePrivate())
+            .body(object.bytes());
+    }
+
     @GetMapping("/r2/status")
     public R2AcervoStorage.StorageStatus statusR2(
         @RequestHeader(value = "Authorization", required = false) String authorization,

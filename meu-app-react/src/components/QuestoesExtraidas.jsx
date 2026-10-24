@@ -87,9 +87,28 @@ async function obterUrlsR2(caminhos) {
   return payload?.urls && typeof payload.urls === 'object' ? payload.urls : {}
 }
 
+async function obterObjetoR2(caminho, opcoes = {}) {
+  const {data: sessao, error: erroSessao} = await supabase.auth.getSession()
+  const token = sessao?.session?.access_token
+  if (erroSessao || !token || !chavePublicaSupabase) return null
+
+  const resposta = await fetch(`${API_URL}/api/acervo/r2/objeto?key=${encodeURIComponent(caminho)}`, {
+    ...opcoes,
+    headers: {
+      ...opcoes.headers,
+      Authorization: `Bearer ${token}`,
+      'X-Supabase-Key': chavePublicaSupabase,
+    },
+  })
+  return resposta.ok ? resposta : null
+}
+
 async function buscarArquivoAcervo(caminho, opcoes = {}) {
   const seguro = caminhoAcervoSeguro(caminho)
   try {
+    const respostaBackend = await obterObjetoR2(seguro, opcoes).catch(() => null)
+    if (respostaBackend) return respostaBackend
+
     const url = await obterUrlAssinada(seguro)
     const resposta = await fetch(url, opcoes)
     if (resposta.ok) return resposta
@@ -114,7 +133,22 @@ async function obterUrlsImagensAssinadas(caminhos) {
     return !salvo || salvo.expira <= Date.now()
   })
   if (faltantes.length) {
-    const urlsR2 = await obterUrlsR2(faltantes).catch(() => ({}))
+    const urlsProxy = await Promise.all(faltantes.map(async caminho => {
+      try {
+        const resposta = await obterObjetoR2(caminho)
+        if (!resposta) return null
+        return URL.createObjectURL(await resposta.blob())
+      } catch { return null }
+    }))
+    faltantes.forEach((caminho, indice) => {
+      if (urlsProxy[indice]) {
+        const anterior = urlsAssinadasCache.get(caminho)?.url
+        if (anterior?.startsWith('blob:')) URL.revokeObjectURL(anterior)
+        urlsAssinadasCache.set(caminho, {url: urlsProxy[indice], expira: Date.now() + 25 * 60 * 1000})
+      }
+    })
+    const aindaFaltantes = faltantes.filter(caminho => !urlsAssinadasCache.has(caminho))
+    const urlsR2 = aindaFaltantes.length ? await obterUrlsR2(aindaFaltantes).catch(() => ({})) : {}
     Object.entries(urlsR2).forEach(([caminho, url]) => {
       if (url) urlsAssinadasCache.set(caminho, {url, expira: Date.now() + 25 * 60 * 1000})
     })
