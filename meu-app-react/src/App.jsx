@@ -21,7 +21,6 @@ import { ESPECIFICAS_UEM } from './uem'
 import { questoesDaProva, listarProvasCompletas, gerarTreinoCpor } from './simulados'
 import { pertenceAoFoco, nomeFoco, ultimasTentativas } from './focoEstudo'
 import { useFocoEstudo } from './useFocoEstudo'
-import SeletorFoco from './components/SeletorFoco'
 import TreinosFoco from './components/TreinosFoco'
 import TempoSimulado from './components/TempoSimulado'
 import RevisaoSimulado from './components/RevisaoSimulado'
@@ -1125,9 +1124,23 @@ export default function App() {
 
       <main className="mx-auto min-w-0 max-w-5xl p-3 sm:p-6 md:p-8">
         <EstadoProgresso progresso={progresso} />
-        <SeletorFoco preferencia={preferenciaFoco} bloqueado={Boolean(simuladoAtivo)} onEscolher={valor => { if(simuladoAtivo) return; preferenciaFoco.escolher(valor); limparFiltros(); setFiltroAnoSimulado('Todos'); setFiltroProvaSimulado('Todos') }} />
         {estudoPessoal.erro && <p role="status" className="mb-4 rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">{estudoPessoal.erro}</p>}
-        {abaAtiva === 'conta' && <Conta session={session} isAdmin={isAdmin} checkingAdmin={checkingAdmin} sincronizacao={sincronizacao} totais={{ horas: totalHorasEstudo, questoes: totalQuestoesResolvidas, acertos: totalAcertos }} />}
+        {abaAtiva === 'conta' && <Conta
+          session={session}
+          isAdmin={isAdmin}
+          checkingAdmin={checkingAdmin}
+          sincronizacao={sincronizacao}
+          totais={{ horas: totalHorasEstudo, questoes: totalQuestoesResolvidas, acertos: totalAcertos }}
+          preferenciaFoco={preferenciaFoco}
+          focoBloqueado={Boolean(simuladoAtivo)}
+          onEscolherFoco={valor => {
+            if (simuladoAtivo) return
+            preferenciaFoco.escolher(valor)
+            limparFiltros()
+            setFiltroAnoSimulado('Todos')
+            setFiltroProvaSimulado('Todos')
+          }}
+        />}
         {abaAtiva === 'cadernos' && <CadernosPessoais
           cadernos={cadernos} questoes={questoes} anotacoes={marcacoesPessoais}
           sincronizacao={estudoPessoal.sincronizacao} erroSincronizacao={estudoPessoal.erro}
