@@ -2,18 +2,105 @@
 
 @theme {
   --font-sans: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --color-indigo-50: #f6f8e9;
-  --color-indigo-100: #e9edcf;
-  --color-indigo-200: #d8e0ae;
-  --color-indigo-300: #c2d18c;
-  --color-indigo-400: #a8bc69;
-  --color-indigo-500: #8fa54a;
-  --color-indigo-600: #71863a;
-  --color-indigo-700: #586b30;
-  --color-indigo-800: #3c4c25;
-  --color-indigo-900: #26351b;
-  --color-indigo-950: #151f12;
-}
+  --color-indigo-50: #f3f4ee;
+  --color-indigo-100: #e7e9e0;
+  --color-indigo-200: #d2d5ca;
+  --color-indigo-300: #b5baac;
+  --color-indigo-400: #93998a;
+  --color-indigo-500: #71786b;
+  --color-indigo-600: #565d50;
+  --color-indigo-700: #3c4438;
+  --color-indigo-800: #252d22;
+  --color-indigo-900: #151b14;
+  --color-indigo-950: #090d09;
+  --color-cyan-50: #f3f4ee;
+  --color-cyan-100: #e7e9e0;
+  --color-cyan-200: #d2d5ca;
+  --color-cyan-300: #b5baac;
+  --color-cyan-400: #93998a;
+  --color-cyan-500: #71786b;
+  --color-cyan-600: #565d50;
+  --color-cyan-700: #3c4438;
+  --color-cyan-800: #252d22;
+  --color-cyan-900: #151b14;
+  --color-cyan-950: #090d09;
+  --color-sky-50: #f3f4ee;
+  --color-sky-100: #e7e9e0;
+  --color-sky-200: #d2d5ca;
+  --color-sky-300: #b5baac;
+  --color-sky-400: #93998a;
+  --color-sky-500: #71786b;
+  --color-sky-600: #565d50;
+  --color-sky-700: #3c4438;
+  --color-sky-800: #252d22;
+  --color-sky-900: #151b14;
+  --color-sky-950: #090d09;
+  --color-blue-50: #f3f4ee;
+  --color-blue-100: #e7e9e0;
+  --color-blue-200: #d2d5ca;
+  --color-blue-300: #b5baac;
+  --color-blue-400: #93998a;
+  --color-blue-500: #71786b;
+  --color-blue-600: #565d50;
+  --color-blue-700: #3c4438;
+  --color-blue-800: #252d22;
+  --color-blue-900: #151b14;
+  --color-blue-950: #090d09;
+  --color-emerald-50: #f6f8e9;
+  --color-emerald-100: #e9edcf;
+  --color-emerald-200: #d8e0ae;
+  --color-emerald-300: #c2d18c;
+  --color-emerald-400: #a8bc69;
+  --color-emerald-500: #8fa54a;
+  --color-emerald-600: #71863a;
+  --color-emerald-700: #586b30;
+  --color-emerald-800: #3c4c25;
+  --color-emerald-900: #26351b;
+  --color-emerald-950: #151f12;
+  --color-green-50: #f6f8e9;
+  --color-green-100: #e9edcf;
+  --color-green-200: #d8e0ae;
+  --color-green-300: #c2d18c;
+  --color-green-400: #a8bc69;
+  --color-green-500: #8fa54a;
+  --color-green-600: #71863a;
+  --color-green-700: #586b30;
+  --color-green-800: #3c4c25;
+  --color-green-900: #26351b;
+  --color-green-950: #151f12;
+  --color-lime-50: #f6f8e9;
+  --color-lime-100: #e9edcf;
+  --color-lime-200: #d8e0ae;
+  --color-lime-300: #c2d18c;
+  --color-lime-400: #a8bc69;
+  --color-lime-500: #8fa54a;
+  --color-lime-600: #71863a;
+  --color-lime-700: #586b30;
+  --color-lime-800: #3c4c25;
+  --color-lime-900: #26351b;
+  --color-lime-950: #151f12;
+  --color-violet-50: #f3f4ef;
+  --color-violet-100: #e4e7dc;
+  --color-violet-200: #cbd2c1;
+  --color-violet-300: #a7b19a;
+  --color-violet-400: #7b876c;
+  --color-violet-500: #293125;
+  --color-violet-600: #1c2118;
+  --color-violet-700: #151a12;
+  --color-violet-800: #10140f;
+  --color-violet-900: #0a0e09;
+  --color-violet-950: #050705;
+  --color-slate-50: #f3f4ee;
+  --color-slate-100: #e7e9e0;
+  --color-slate-200: #d2d5ca;
+  --color-slate-300: #b5baac;
+  --color-slate-400: #93998a;
+  --color-slate-500: #71786b;
+  --color-slate-600: #565d50;
+  --color-slate-700: #3c4438;
+  --color-slate-800: #252d22;
+  --color-slate-900: #151b14;
+  --color-slate-950: #090d09;
 
 :root { color-scheme: dark; font-family: var(--font-sans); background: #090d09; color: #e7eadf; }
 html, body, #root { min-height: 100%; margin: 0; max-width: 100%; }
@@ -39,13 +126,13 @@ input, select, textarea { accent-color: #9aae5a; }
 .app-brand { display: flex; align-items: center; gap: .7rem; flex-shrink: 0; }
 .app-brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid #c3d68caa; background: linear-gradient(145deg, #a3b768, #4b6032); border-radius: 12px; color: #10160d; font-size: 14px; font-weight: 900; box-shadow: inset 0 1px #eff7c84a, 0 5px 16px #0005; }
 .app-brand small { display: block; color: #94a3b8; font-size: 10px; font-weight: 500; letter-spacing: .06em; }
-.mobile-nav { scrollbar-width: thin; scrollbar-color: #475569 transparent; overscroll-behavior-inline: contain; }
+.mobile-nav { scrollbar-width: thin; scrollbar-color: #475146 transparent; overscroll-behavior-inline: contain; }
 .mobile-nav::-webkit-scrollbar { height: 4px; }
-.mobile-nav::-webkit-scrollbar-thumb { background: #475569; border-radius: 6px; }
-.filter-options-scroll { scrollbar-gutter: stable; scrollbar-width: auto; scrollbar-color: #64748b #111827; overscroll-behavior: contain; }
+.mobile-nav::-webkit-scrollbar-thumb { background: #475146; border-radius: 6px; }
+.filter-options-scroll { scrollbar-gutter: stable; scrollbar-width: auto; scrollbar-color: #5f6952 #0f130e; overscroll-behavior: contain; }
 .filter-options-scroll::-webkit-scrollbar { width: 12px; }
-.filter-options-scroll::-webkit-scrollbar-track { background: #111827; }
-.filter-options-scroll::-webkit-scrollbar-thumb { background: #64748b; border: 3px solid #111827; border-radius: 999px; }
+.filter-options-scroll::-webkit-scrollbar-track { background: #0f130e; }
+.filter-options-scroll::-webkit-scrollbar-thumb { background: #5f6952; border: 3px solid #0f130e; border-radius: 999px; }
 
 .study-hero { border: 1px solid transparent; background: radial-gradient(ellipse at 85% 10%, #a6bf5730 0, transparent 34rem), linear-gradient(135deg, #182019, #0d140f 72%) padding-box, linear-gradient(130deg, #d0e29a9c, #70874a80 48%, #d0e29a38) border-box; box-shadow: 0 18px 48px #00000040; }
 .gradient-edge { border: 1px solid transparent; background: linear-gradient(#101710, #101710) padding-box, linear-gradient(130deg, #c9dc91a8, #6176418a 48%, #b6cc7970) border-box; }
@@ -55,7 +142,7 @@ input, select, textarea { accent-color: #9aae5a; }
 .question-choice { border: 1px solid transparent; background: linear-gradient(#101710, #101710) padding-box, linear-gradient(130deg, #819653a8, #34412c 52%, #71864a8a) border-box; }
 .question-choice:hover { background: linear-gradient(#192218, #192218) padding-box, linear-gradient(130deg, #d2e49b, #748c4d 52%, #c5d88e) border-box; }
 .question-choice.is-selected { background: linear-gradient(#23311c, #1a2617) padding-box, linear-gradient(130deg, #e1efac, #9dbb60 52%, #d2e49b) border-box; box-shadow: 0 0 0 1px #d2e49b22, 0 6px 20px #708a3a1c; }
-.study-dialog-backdrop { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; overflow-y: auto; padding: max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom)); background: #020617c9; backdrop-filter: blur(8px); }
+.study-dialog-backdrop { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; overflow-y: auto; padding: max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom)); background: #020402e0; backdrop-filter: blur(8px); }
 .study-dialog { margin: auto; animation: study-dialog-in 160ms ease-out; }
 @keyframes study-dialog-in { from { opacity: 0; transform: translateY(8px) scale(.99); } to { opacity: 1; transform: translateY(0) scale(1); } }
 
@@ -63,7 +150,7 @@ input, select, textarea { accent-color: #9aae5a; }
 .redacao-emblema { display: grid; place-items: center; width: 56px; height: 56px; flex-shrink: 0; border-radius: 16px; background: #a7bd5b1a; border: 1px solid #a7bd5b4d; color: #d8e7a4; }
 .redacao-etapas { display: flex; flex-wrap: wrap; gap: .65rem 1.5rem; margin-top: 1rem; font-size: 12px; color: #cbd5e1; }
 .redacao-etapas span { display: flex; align-items: center; gap: .5rem; }
-.redacao-etapas b { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #334155; font-size: 11px; }
+.redacao-etapas b { display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: #293326; font-size: 11px; }
 .redacao-oficina textarea { line-height: 1.85; }
 .redacao-oficina form { box-shadow: 0 16px 48px #00000018; }
 .questao-renderizavel { content-visibility: auto; contain-intrinsic-size: auto 850px; overflow-wrap: anywhere; }
