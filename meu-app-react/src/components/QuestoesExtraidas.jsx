@@ -448,7 +448,7 @@ export default function QuestoesExtraidas({
       const conteudo = normalizar(classificacao.assunto || q.conteudo || '')
       const dificuldade = chaveCampoFiltro('dificuldade', q.dificuldade || '')
       if (materiasSelecionadas.length && !materiasSelecionadas.includes(materia)) return false
-      if (conteudosSelecionadas.length && !conteudosSelecionadas.some(valor => normalizar(valor) === conteudo)) return false
+      if (conteudosSelecionados.length && !conteudosSelecionados.some(valor => normalizar(valor) === conteudo)) return false
       if (dificuldadesSelecionadas.length && !dificuldadesSelecionadas.includes(dificuldade)) return false
       if (foco && foco !== 'todos' && !pertenceAoFoco(q, foco, true)) return false
       if (somenteComImagem && !(q.imagens_paginas?.length || q.pagina_imagem)) return false
