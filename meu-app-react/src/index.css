@@ -100,7 +100,7 @@
   --color-slate-700: #3c4438;
   --color-slate-800: #252d22;
   --color-slate-900: #151b14;
-  --color-slate-950: #090d09;
+  --color-slate-950: #090d09;}
 
 :root { color-scheme: dark; font-family: var(--font-sans); background: #090d09; color: #e7eadf; }
 html, body, #root { min-height: 100%; margin: 0; max-width: 100%; }
