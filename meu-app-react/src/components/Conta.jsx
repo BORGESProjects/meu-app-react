@@ -1,11 +1,12 @@
 import { useRef, useState } from 'react'
 import { mensagemErroCadastro } from '../errosAutenticacao'
 import { supabase, sairDaConta } from '../supabaseClient'
+import SeletorFoco from './SeletorFoco'
 
 const field = 'w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30'
 const button = 'rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-600/20 disabled:cursor-not-allowed disabled:opacity-50'
 
-export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, totais }) {
+export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, totais, preferenciaFoco, onEscolherFoco, focoBloqueado }) {
   const enviando = useRef(false)
   const [email, setEmail] = useState(session?.user?.email || '')
   const [senha, setSenha] = useState('')
@@ -42,6 +43,11 @@ export default function Conta({ session, isAdmin, checkingAdmin, sincronizacao, 
       <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-3 text-center"><p className="text-xl font-bold text-indigo-300">{(totais?.horas || 0).toFixed(1)}h</p><p className="mt-1 text-xs text-slate-500">Estudo</p></div>
       <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-3 text-center"><p className="text-xl font-bold text-slate-100">{totais?.questoes || 0}</p><p className="mt-1 text-xs text-slate-500">Questões</p></div>
       <div className="rounded-2xl border border-slate-800 bg-slate-950/60 p-3 text-center"><p className="text-xl font-bold text-emerald-400">{totais?.acertos || 0}</p><p className="mt-1 text-xs text-slate-500">Acertos</p></div>
+    </div>
+    <div className="mt-7 border-t border-slate-800 pt-6">
+      <h2 className="mb-1 text-lg font-bold text-slate-100">Preferências de estudo</h2>
+      <p className="mb-4 text-sm text-slate-400">Escolha quais tipos de questões aparecem no seu espaço de estudo.</p>
+      <SeletorFoco preferencia={preferenciaFoco} onEscolher={onEscolherFoco} bloqueado={focoBloqueado} />
     </div>
     <p className={`mt-4 text-xs ${sincronizacao === 'erro' ? 'text-red-300' : 'text-slate-400'}`}>
       {sincronizacao === 'salvo' ? '✓ Progresso sincronizado com sua conta' : sincronizacao === 'erro' ? 'Sincronização pendente. As alterações serão reenviadas automaticamente.' : 'Sincronizando progresso…'}
