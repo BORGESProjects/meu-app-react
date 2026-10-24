@@ -36,8 +36,8 @@ export default function FiltroMultiplo({ titulo, opcoes, selecionados, aoAlterar
         {selecionados.length > 0 && <span className="shrink-0 rounded-full bg-indigo-500/20 px-2 py-0.5 text-[11px] font-bold text-indigo-200">{selecionados.length}</span>}
         <span aria-hidden="true" className="shrink-0 text-xs text-slate-500 transition-transform group-open:rotate-180">▼</span>
       </summary>
-      <div className="overflow-hidden rounded-b-xl border border-t-0 border-slate-700 bg-[#0b0f19] shadow-xl">
-        <div className="border-b border-slate-800 bg-[#0b0f19] p-3">
+      <div className="overflow-hidden rounded-b-xl border border-t-0 border-slate-700 bg-[#0a0d09] shadow-xl">
+        <div className="border-b border-slate-800 bg-[#0a0d09] p-3">
           <div className="flex min-h-8 items-center justify-between gap-3">
             <span className="text-xs leading-4 text-slate-400">Selecione uma ou mais opções</span>
             {selecionados.length > 0 && <button type="button" onClick={() => aoAlterar([])} className="shrink-0 rounded-lg px-2.5 py-1.5 text-xs font-semibold text-indigo-300 hover:bg-slate-800">Limpar</button>}

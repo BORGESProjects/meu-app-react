@@ -10,7 +10,7 @@ export default function AlternativaComEliminacao({ questao, indice, texto, selec
       type="button"
       disabled={eliminada}
       onClick={onSelecionar}
-      className={`min-w-0 w-full text-left border transition-all duration-200 grid grid-cols-[auto_minmax(0,1fr)] items-center ${espacamento} disabled:cursor-not-allowed ${
+      className={`question-choice ${selecionada ? 'is-selected' : ''} min-w-0 w-full text-left border transition-all duration-200 grid grid-cols-[auto_minmax(0,1fr)] items-center ${espacamento} disabled:cursor-not-allowed ${
         selecionada
           ? 'bg-indigo-600/20 border-indigo-500 text-indigo-100 shadow-lg shadow-indigo-500/10'
           : eliminada

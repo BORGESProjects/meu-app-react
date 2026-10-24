@@ -7,7 +7,7 @@ import SessaoEstudo from './components/SessaoEstudo'
 import EstadoProgresso from './components/EstadoProgresso'
 import {useProgressoUsuario} from './useProgressoUsuario'
 import { API_URL, fetchApi } from './api'
-import { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react'
+import { useState, useEffect, useMemo, useRef, useCallback, lazy, Suspense } from 'react'
 import { supabase, sairDaConta } from './supabaseClient'
 import { carregarManifestoAcervo } from './acervoExtraidoManifesto'
 import { tentarLeitura, carregarEmEtapas } from './carregarAcervo'
@@ -15,7 +15,7 @@ import catalogoLivros from './data/livrosComplementares.json'
 import { carregarLoteLivro } from './livrosAcervo'
 import { criarProcessadorAcervo } from './processarAcervo'
 import {aplicativoNativo, carregarAcervoInstalado, lembrarConta, contaOffline} from './plataforma'
-import { opcoesFiltro } from './filtros'
+import { opcoesFiltro, chaveCampoFiltro } from './filtros'
 import { indexarFiltros, filtrarIndice, opcoesRelacionadas, atualizarFiltrosRelacionados } from './indiceFiltros'
 import { ESPECIFICAS_UEM } from './uem'
 import { questoesDaProva, listarProvasCompletas, gerarTreinoCpor } from './simulados'
@@ -35,8 +35,35 @@ const CentralRevisao = lazy(() => import('./components/CentralRevisao'))
 const ImportarPdf = lazy(() => import('./components/ImportarPdf'))
 const AcervoR2Uploader = lazy(() => import('./components/AcervoR2Uploader'))
 const EditalPlanejador = lazy(() => import('./components/EditalPlanejador'))
-const AcervoProvas = lazy(() => import('./components/AcervoProvas'))
 const QuestoesExtraidas = lazy(() => import('./components/QuestoesExtraidas'))
+
+function combinarOpcoesFiltro(opcoesBase, valoresExtra) {
+  const combinadas = new Map()
+  const adicionar = opcao => {
+    if (opcao?.value == null) return
+    const value = String(opcao.value)
+    const rotuloBruto = String(opcao.label ?? value)
+    const matchContagem = rotuloBruto.match(/\s+\(([\d.,]+)\)$/)
+    const rotulo = rotuloBruto.replace(/\s+\([\d.,]+\)$/, '')
+    const contagemTexto = matchContagem?.[1]?.replace(/[.,]/g, '') || '0'
+    const quantidade = Math.max(0, Number(opcao.quantidade) || Number(contagemTexto) || 0)
+    const existente = combinadas.get(value)
+    if (existente) {
+      existente.quantidade += quantidade
+      if (!existente.rotulo && rotulo) existente.rotulo = rotulo
+    } else {
+      combinadas.set(value, {value, rotulo, quantidade})
+    }
+  }
+  for (const opcao of opcoesBase || []) adicionar(opcao)
+  for (const opcao of valoresExtra || []) {
+    if (typeof opcao === 'object' && opcao !== null) adicionar(opcao)
+    else if (opcao != null) adicionar({value: opcao, label: String(opcao) === 'sem-ano' ? 'Ano não identificado' : String(opcao)})
+  }
+  return [...combinadas.values()]
+    .map(({value, rotulo, quantidade}) => ({value, label: quantidade ? rotulo + ' (' + quantidade.toLocaleString('pt-BR') + ')' : rotulo}))
+    .sort((a, b) => a.label.localeCompare(b.label, 'pt-BR', {numeric: true}))
+}
 
 function formatarDuracaoPlanejada(minutos) {
   const total = Number(minutos) || 0
@@ -89,14 +116,15 @@ export default function App() {
   const requisicaoAcervo = useRef(0)
   const campoEdicaoQuestao = useRef(null)
   const [abaAtiva, setAbaAtiva] = useState('questoes')
-  const [acervoExtraidoIniciado, setAcervoExtraidoIniciado] = useState(false)
-  const [acervoExtraidoAberto, setAcervoExtraidoAberto] = useState(false)
   const [questoesExtraidasTotal, setQuestoesExtraidasTotal] = useState(() => {
     try {
       const salvo = Number(localStorage.getItem('aprovado:total-questoes:v1'))
       return Number.isFinite(salvo) && salvo > 0 ? salvo : null
     } catch { return null }
   })
+  const [manifestoAcervoCompleto, setManifestoAcervoCompleto] = useState(null)
+  const [questoesExtraidasEstado, setQuestoesExtraidasEstado] = useState({total: 0, carregando: false, mais: false})
+  const carregarMaisExtraidas = useRef(null)
   const [session, setSession] = useState(null)
   const [authReady, setAuthReady] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
@@ -201,7 +229,10 @@ export default function App() {
     carregarManifestoAcervo()
       .then(manifesto => {
         const total = Number(manifesto?.questoes_extraidas_unicas) || 0
-        if (ativo) setQuestoesExtraidasTotal(total)
+        if (ativo) {
+          setQuestoesExtraidasTotal(total)
+          setManifestoAcervoCompleto(manifesto)
+        }
         try { localStorage.setItem('aprovado:total-questoes:v1', String(total)) } catch { /* A contagem em memória continua disponível. */ }
       })
       .catch(() => { /* Mantém a última contagem disponível quando estiver offline. */ })
@@ -759,6 +790,12 @@ export default function App() {
     setResultadoSimuladoFinal(resultado)
   }
 
+  const atualizarQuestaoExtraidaEstado = useCallback(estado => {
+    setQuestoesExtraidasEstado(estado || {total: 0, carregando: false, mais: false})
+  }, [])
+  const registrarCarregadorExtraido = useCallback(acao => {
+    carregarMaisExtraidas.current = acao
+  }, [])
   const totalFiltrosAtivos = [filtrosAno, filtrosMateria, filtrosConteudo, filtrosBanca, filtrosDificuldade]
     .filter(valores => valores.length > 0).length
   const quantidadeFiltrosAtivos = totalFiltrosAtivos + (termoBusca.trim() ? 1 : 0) + (filtroSituacaoQuestao !== 'todas' ? 1 : 0) + Number(somenteComentadas) + Number(somenteComImagem) + Number(excluirQuestaoEmCadernos) + (cadernoAtivoId ? 1 : 0)
@@ -805,9 +842,22 @@ export default function App() {
     return focoEstudo+':'+campo+':'+JSON.stringify(Object.entries(filtrosAtuais).filter(([outro])=>outro!==campo))
   }
   function alterarFiltro(campo,valores) {
-    const {filtros,removidos}=atualizarFiltrosRelacionados(indiceParaFiltro,filtrosAtuais,campo,valores)
-    setFiltrosAno(filtros.ano); setFiltrosMateria(filtros.materia); setFiltrosConteudo(filtros.conteudo)
-    setFiltrosBanca(filtros.banca); setFiltrosDificuldade(filtros.dificuldade); setLimiteVisivel(40)
+    if (campo === 'ano') {
+      setFiltrosAno(valores)
+      setLimiteVisivel(40)
+      setAvisoFiltros('')
+      return
+    }
+    if (campo === 'banca') {
+      setFiltrosBanca(valores)
+      setLimiteVisivel(40)
+      setAvisoFiltros('')
+      return
+    }
+    const filtrosBase = {...filtrosAtuais, ano: [], banca: []}
+    const {filtros,removidos}=atualizarFiltrosRelacionados(indiceParaFiltro,filtrosBase,campo,valores)
+    setFiltrosMateria(filtros.materia); setFiltrosConteudo(filtros.conteudo)
+    setFiltrosDificuldade(filtros.dificuldade); setLimiteVisivel(40)
     setAvisoFiltros(removidos.length ? 'Seleções sem questões compatíveis foram removidas para acompanhar sua última escolha.' : '')
   }
   const questoesVisiveis = useMemo(() => questoesFiltradas.slice(0, limiteVisivel), [questoesFiltradas, limiteVisivel])
@@ -830,7 +880,32 @@ export default function App() {
   const anosSimuladoDisponiveis = [...new Set(simuladosDisponiveis.map(sim => sim.ano))].sort((a, b) => b.localeCompare(a, 'pt-BR', { numeric: true }))
   const provasSimuladoDisponiveis = simuladosDisponiveis.filter(sim => filtroAnoSimulado === 'Todos' || sim.ano === filtroAnoSimulado)
 
-  const {materia:materiasDisponiveis,banca:bancasDisponiveis,ano:anosDisponiveis,dificuldade:dificuldadesDisponiveis,conteudo:conteudosDisponiveis}=opcoesAtuais
+  const {materia:materiasDisponiveis,dificuldade:dificuldadesDisponiveis,conteudo:conteudosDisponiveis}=opcoesAtuais
+  const lotesManifestoAcervo = manifestoAcervoCompleto?.lotes || []
+  const bancasArquivo = useMemo(() => {
+    const agrupadas = new Map()
+    for (const lote of lotesManifestoAcervo) {
+      if (filtrosAno.length && !filtrosAno.includes(String(lote.ano || 'sem-ano'))) continue
+      const value = chaveCampoFiltro('banca', lote.banca)
+      if (!value) continue
+      const atual = agrupadas.get(value) || {value, label: lote.banca, quantidade: 0}
+      atual.quantidade += Number(lote.quantidade) || 0
+      agrupadas.set(value, atual)
+    }
+    return [...agrupadas.values()]
+  }, [lotesManifestoAcervo, filtrosAno])
+  const anosArquivo = useMemo(() => {
+    const agrupados = new Map()
+    for (const lote of lotesManifestoAcervo) {
+      const banca = chaveCampoFiltro('banca', lote.banca)
+      if (filtrosBanca.length && !filtrosBanca.includes(banca)) continue
+      const value = lote.ano ? String(lote.ano) : 'sem-ano'
+      agrupados.set(value, (agrupados.get(value) || 0) + (Number(lote.quantidade) || 0))
+    }
+    return [...agrupados].map(([value, quantidade]) => ({value, label: value === 'sem-ano' ? 'Ano não identificado' : value, quantidade}))
+  }, [lotesManifestoAcervo, filtrosBanca])
+  const bancasDisponiveis = useMemo(() => combinarOpcoesFiltro(opcoesAtuais.banca, bancasArquivo), [opcoesAtuais.banca, bancasArquivo])
+  const anosDisponiveis = useMemo(() => combinarOpcoesFiltro(opcoesAtuais.ano, anosArquivo), [opcoesAtuais.ano, anosArquivo])
   const materiasCronograma = useMemo(() => opcoesFiltro(questoesDoFoco,'materia'), [questoesDoFoco])
   const questoesSimuladoAtivo = useMemo(() => simuladoAtivo
     ? simuladoAtivo.questoes : [],
@@ -1028,7 +1103,6 @@ export default function App() {
             { id: 'questoes', label: 'Questões' },
             { id: 'cadernos', label: 'Meus cadernos' },
             { id: 'simulados', label: 'Simulados' },
-            { id: 'provas', label: 'Acervo de provas' },
             { id: 'desempenho', label: 'Desempenho' },
             ...(isAdmin ? [{ id: 'cadastrar', label: 'Cadastrar' }, { id: 'importar', label: 'Importar PDF' }, { id: 'r2-upload', label: 'Migrar acervo R2' }] : []),
             { id: 'edital', label: 'Edital' },
@@ -1054,7 +1128,6 @@ export default function App() {
         <SeletorFoco preferencia={preferenciaFoco} bloqueado={Boolean(simuladoAtivo)} onEscolher={valor => { if(simuladoAtivo) return; preferenciaFoco.escolher(valor); limparFiltros(); setFiltroAnoSimulado('Todos'); setFiltroProvaSimulado('Todos') }} />
         {estudoPessoal.erro && <p role="status" className="mb-4 rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">{estudoPessoal.erro}</p>}
         {abaAtiva === 'conta' && <Conta session={session} isAdmin={isAdmin} checkingAdmin={checkingAdmin} sincronizacao={sincronizacao} totais={{ horas: totalHorasEstudo, questoes: totalQuestoesResolvidas, acertos: totalAcertos }} />}
-        {abaAtiva === 'provas' && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Abrindo o acervo de provas…</p>}><AcervoProvas /></Suspense>}
         {abaAtiva === 'cadernos' && <CadernosPessoais
           cadernos={cadernos} questoes={questoes} anotacoes={marcacoesPessoais}
           sincronizacao={estudoPessoal.sincronizacao} erroSincronizacao={estudoPessoal.erro}
@@ -1087,48 +1160,13 @@ export default function App() {
               <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">Banco de Questões</h1>
               <p role="status" aria-live="polite" className="mt-2 inline-flex flex-wrap items-center gap-x-2 rounded-xl border border-indigo-400/20 bg-indigo-950/30 px-3 py-2 text-sm text-indigo-100">Total de questões disponíveis: <strong className="text-base font-extrabold text-white">{totalQuestoesCatalogo.toLocaleString('pt-BR')}</strong>{questoesExtraidasTotal === null && <span className="text-xs text-slate-400">contagem completa em atualização</span>}</p>
               <p className="text-slate-400 text-sm mt-1">{temFiltrosAtivos
-                ? `${questoesFiltradas.length} questão(ões) encontrada(s). ${questoesFiltradas.filter(q => q.anulada).length} anulada(s), disponíveis apenas para consulta.`
+                ? `${(questoesFiltradas.length + questoesExtraidasEstado.total).toLocaleString('pt-BR')} questão(ões) carregada(s) nesta busca.`
                 : 'Escolha os filtros abaixo para exibir as questões que deseja estudar.'}</p>
-              <details
-                className="mt-4 overflow-hidden rounded-2xl border border-cyan-400/25 bg-gradient-to-br from-slate-900/90 via-slate-950/80 to-cyan-950/20 shadow-lg shadow-cyan-950/10"
-                onToggle={evento => {
-                  const aberto = evento.currentTarget.open
-                  setAcervoExtraidoAberto(aberto)
-                  if (aberto) setAcervoExtraidoIniciado(true)
-                }}
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-4 transition hover:bg-white/[0.03] sm:px-5">
-                  <span className="min-w-0">
-                    <span className="block text-sm font-bold text-slate-100">Questões por prova</span>
-                    <span className="mt-1 block text-xs leading-5 text-slate-400">Filtre por banca, ano e concurso. As questões de cada edição são carregadas quando necessário.</span>
-                  </span>
-                  <span aria-hidden="true" className="shrink-0 rounded-xl border border-cyan-300/25 bg-cyan-300/10 px-3 py-2 text-xs font-semibold text-cyan-100">{acervoExtraidoAberto ? 'Fechar' : 'Abrir'}</span>
-                </summary>
-                <div className="border-t border-cyan-400/15 p-3 sm:p-4">
-                  <Suspense fallback={<p role="status" className="py-3 text-sm text-cyan-200">Preparando questões…</p>}>
-                    {acervoExtraidoIniciado && <QuestoesExtraidas aoAbrirAcervo={() => setAbaAtiva('provas')} />}
-                  </Suspense>
-                </div>
-              </details>
-              {carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Carregando as demais questões… O total ainda pode aumentar.</p>}
+{carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Carregando as demais questões… O total ainda pode aumentar.</p>}
               {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Questões carregadas: {questoesDoFoco.length.toLocaleString('pt-BR')} neste foco.</p>}
               {aplicativoNativo && <div className="mt-3 text-sm"><button className="rounded-xl border border-indigo-500 px-4 py-2 text-indigo-200 disabled:opacity-50" disabled={carregandoAcervo} onClick={()=>buscarQuestoes(true)}>Atualizar questões online</button>{avisoAcervoNativo && <p role="status" className="mt-2 text-slate-300">{avisoAcervoNativo}</p>}</div>}
               {falhasAcervo.length > 0 && <div role="alert" className="text-amber-300 text-sm mt-2">Não foi possível carregar: {falhasAcervo.join(' e ')}. A lista pode estar incompleta. <button className="underline font-semibold" onClick={buscarQuestoes} disabled={carregandoAcervo}>Tentar carregar novamente</button></div>}
-              <div className="flex flex-wrap gap-4 mt-3 text-sm text-indigo-300">
-                <a href="/acervo/esa-2025/prova-original.pdf" target="_blank" rel="noreferrer">ESA 2025: prova completa e proposta de redação ↗</a>
-                <a href="/acervo/esa-2025/gabarito-definitivo.pdf" target="_blank" rel="noreferrer">Gabarito definitivo ↗</a>
-              </div>
-              <details className="mt-3 text-sm text-indigo-300">
-                <summary className="cursor-pointer">ENEM 2022 · cadernos e gabaritos oficiais</summary>
-                <p className="text-slate-400 mt-2">185 questões com inglês e espanhol separados. A questão 157 está anulada. Filtre por ano 2022 e banca ENEM.</p>
-                <div className="flex flex-wrap gap-4 mt-2">
-                  {[1, 2].map(dia => <span key={dia} className="flex gap-3">
-                    <a href={`/acervo/enem-2022/prova-dia${dia}.pdf`} target="_blank" rel="noreferrer">Prova do {dia}º dia ↗</a>
-                    <a href={`/acervo/enem-2022/gabarito-dia${dia}.pdf`} target="_blank" rel="noreferrer">Gabarito do {dia}º dia ↗</a>
-                  </span>)}
-                </div>
-              </details>
-            </header>
+</header>
 
             {/* Filtros */}
             <div className="filter-panel relative z-20 mb-6 grid grid-cols-1 items-start gap-x-5 gap-y-5 overflow-visible rounded-3xl p-4 shadow-xl backdrop-blur-md sm:mb-8 sm:grid-cols-2 sm:p-6 lg:grid-cols-3">
@@ -1142,7 +1180,7 @@ export default function App() {
                   type="search"
                   value={termoBusca}
                   onChange={e => { setTermoBusca(e.target.value); setLimiteVisivel(40) }}
-                  placeholder="Ex.: concordância verbal ou Q123456"
+                  placeholder="Ex.: concordância verbal, Cebraspe ou AGU 2015"
                   className="w-full rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/30"
                 />
               </label>
@@ -1203,15 +1241,15 @@ export default function App() {
                 <div className="text-center py-16 bg-slate-900/30 rounded-3xl border border-dashed border-slate-700/80">
                   <div className="mb-3 text-3xl" aria-hidden="true">⌕</div>
                   <p className="font-semibold text-slate-300">Escolha um filtro ou pesquise uma questão</p>
-                  <p className="mt-1 text-sm text-slate-500">Combine ano, matéria, conteúdo, banca e dificuldade, ou busque por palavra-chave/código.</p>
-                </div>
-              ) : questoesFiltradas.length === 0 ? (
-                <div className="text-center py-16 bg-slate-900/30 rounded-3xl border border-slate-800/80">
-                  <p className="text-slate-400">Nenhuma questão encontrada com os filtros selecionados.</p>
+                  <p className="mt-1 text-sm text-slate-500">Combine ano, matéria, conteúdo, banca e dificuldade. Os resultados aparecem aos poucos para manter a navegação rápida.</p>
                 </div>
               ) : (
-                questoesVisiveis.map((q) => (
-                  <div key={q.id} className="questao-renderizavel bg-slate-900/60 border border-slate-800/80 rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md transition-all hover:border-slate-700">
+                <>
+                  {questoesFiltradas.length === 0 && questoesExtraidasEstado.total === 0 && !questoesExtraidasEstado.carregando && !questoesExtraidasEstado.mais && <div className="text-center py-16 bg-slate-900/30 rounded-3xl border border-slate-800/80">
+                    <p className="text-slate-400">Nenhuma questão encontrada com os filtros selecionados.</p>
+                  </div>}
+                  {questoesVisiveis.map((q) => (
+                  <div key={q.id} className="question-card questao-renderizavel rounded-3xl p-4 sm:p-7 shadow-xl backdrop-blur-md transition-all hover:-translate-y-0.5">
                     <div className="flex flex-wrap gap-2.5 mb-5">
                       {q.materia && <span className="bg-slate-800 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium">{q.materia}</span>}
                       {q.conteudo && <span className="bg-slate-800 text-slate-300 px-3.5 py-1 rounded-full text-xs font-medium">{q.conteudo}</span>}
@@ -1252,9 +1290,24 @@ export default function App() {
                       </details>
                     </div>
                   </div>
-                ))
+                ))}
+                </>
               )}
-              {limiteVisivel < questoesFiltradas.length && <button className="mx-auto block rounded-2xl border border-indigo-500/40 bg-indigo-500/10 px-6 py-3 text-sm font-semibold text-indigo-200 hover:bg-indigo-500/20" onClick={() => setLimiteVisivel(value => value + 40)}>Mostrar mais 40 questões</button>}
+              {temFiltrosAtivos && <Suspense fallback={<p role="status" className="py-3 text-sm text-indigo-200">Carregando questões…</p>}>
+                <QuestoesExtraidas
+                  manifesto={manifestoAcervoCompleto}
+                  filtros={{banca:filtrosBanca,ano:filtrosAno,materia:filtrosMateria,conteudo:filtrosConteudo,dificuldade:filtrosDificuldade}}
+                  busca={termoBusca}
+                  situacao={filtroSituacaoQuestao}
+                  somenteComImagem={somenteComImagem}
+                  somenteComentadas={somenteComentadas}
+                  excluirIds={excluirQuestaoEmCadernos ? cadernos.flatMap(item => item.questoes) : []}
+                  foco={focoEstudo}
+                  onEstado={atualizarQuestaoExtraidaEstado}
+                  onRegistrarMais={registrarCarregadorExtraido}
+                />
+              </Suspense>}
+              {(limiteVisivel < questoesFiltradas.length || questoesExtraidasEstado.mais) && <button type="button" className="mx-auto block rounded-2xl border border-indigo-500/40 bg-indigo-500/10 px-6 py-3 text-sm font-semibold text-indigo-100 shadow-lg shadow-black/20 transition hover:bg-indigo-900/40" onClick={() => { if (limiteVisivel < questoesFiltradas.length) setLimiteVisivel(value => value + 40); carregarMaisExtraidas.current?.() }}>Mostrar mais questões</button>}
             </div>
           </div>
         )}

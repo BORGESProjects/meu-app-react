@@ -21,7 +21,7 @@ export function iniciarIntegracaoNativa() {
     }
     if (/\.(?:png|jpe?g|webp|gif)(?:$|[?#])/iu.test(url.href)) {
       const d = document.createElement('dialog'), imagem = document.createElement('img'), fechar = document.createElement('button')
-      d.style.cssText='width:96vw;max-width:1200px;max-height:94vh;background:#111827;color:white;padding:16px;border-radius:12px'
+      d.style.cssText='width:96vw;max-width:1200px;max-height:94vh;background:#0a0d09;color:white;padding:16px;border-radius:12px'
       fechar.textContent='Fechar imagem';fechar.onclick=()=>d.close();imagem.src=recursoLocal(url.pathname);imagem.style.cssText='display:block;max-width:100%;height:auto;margin:12px auto'
       d.append(fechar,imagem);d.onclose=()=>d.remove();document.body.append(d);d.showModal();return
     }
