@@ -7,8 +7,20 @@ function normalizarBusca(valor) {
     .toLocaleLowerCase('pt-BR')
 }
 
-export default function FiltroMultiplo({ titulo, opcoes, selecionados, aoAlterar, rotuloTodos }) {
+const limiteAcervoPequeno = 10
+
+function quantidadeDaOpcao(opcao) {
+  if (opcao.quantidade !== undefined && opcao.quantidade !== null && opcao.quantidade !== '') {
+    const quantidade = Number(opcao.quantidade)
+    return Number.isFinite(quantidade) ? quantidade : null
+  }
+  const contagem = String(opcao.label ?? '').match(/\\(([\\d.,]+)\\)\\s*$/)
+  return contagem ? Number(contagem[1].replace(/\\D/g, '')) : null
+}
+
+export default function FiltroMultiplo({ titulo, opcoes, selecionados, aoAlterar, rotuloTodos, compactarAcervoPequeno = false }) {
   const [busca, setBusca] = useState('')
+  const [mostrarAcervoPequeno, setMostrarAcervoPequeno] = useState(false)
 
   function alternar(valor) {
     aoAlterar(selecionados.includes(valor)
@@ -16,11 +28,24 @@ export default function FiltroMultiplo({ titulo, opcoes, selecionados, aoAlterar
       : [...selecionados, valor])
   }
 
-  const opcoesVisiveis = useMemo(() => {
+  const opcoesFiltradas = useMemo(() => {
     const termo = normalizarBusca(busca.trim())
-    if (!termo) return opcoes
-    return opcoes.filter(opcao => normalizarBusca(opcao.label).includes(termo))
-  }, [busca, opcoes])
+    const comQuantidade = opcoes.map(opcao => ({...opcao, quantidadeFiltro: quantidadeDaOpcao(opcao)}))
+    const filtradas = termo ? comQuantidade.filter(opcao => normalizarBusca(opcao.label).includes(termo)) : comQuantidade
+    if (!compactarAcervoPequeno) return {principais: filtradas, pequenas: []}
+    const principais = filtradas.filter(opcao => opcao.quantidadeFiltro === null || opcao.quantidadeFiltro >= limiteAcervoPequeno)
+    const pequenas = filtradas.filter(opcao => opcao.quantidadeFiltro !== null && opcao.quantidadeFiltro < limiteAcervoPequeno)
+    const ordenarPorQuantidade = (a, b) => (b.quantidadeFiltro ?? -1) - (a.quantidadeFiltro ?? -1) || a.label.localeCompare(b.label, 'pt-BR', {numeric: true})
+    return {principais: principais.sort(ordenarPorQuantidade), pequenas: pequenas.sort(ordenarPorQuantidade)}
+  }, [busca, compactarAcervoPequeno, opcoes])
+
+  const valoresAcervoPequeno = useMemo(() => new Set(opcoes
+    .filter(opcao => {
+      const quantidade = quantidadeDaOpcao(opcao)
+      return quantidade !== null && quantidade < limiteAcervoPequeno
+    }).map(opcao => opcao.value)), [opcoes])
+  const acervoPequenoSelecionado = selecionados.some(valor => valoresAcervoPequeno.has(valor))
+  const abrirAcervoPequeno = mostrarAcervoPequeno || acervoPequenoSelecionado || Boolean(busca.trim() && opcoesFiltradas.pequenas.length)
 
   const resumo = selecionados.length === 0
     ? rotuloTodos
@@ -54,7 +79,7 @@ export default function FiltroMultiplo({ titulo, opcoes, selecionados, aoAlterar
           </label>}
         </div>
         <div className="filter-options-scroll max-h-80 space-y-1 overflow-y-auto overscroll-contain p-2 pr-3">
-          {opcoesVisiveis.map(opcao => {
+          {opcoesFiltradas.principais.map(opcao => {
             const selecionada = selecionados.includes(opcao.value)
             return <button
               key={opcao.value}
@@ -68,7 +93,33 @@ export default function FiltroMultiplo({ titulo, opcoes, selecionados, aoAlterar
               <span className="min-w-0 flex-1 break-words">{opcao.label}</span>
             </button>
           })}
-          {opcoesVisiveis.length === 0 && <p className="px-3 py-6 text-center text-sm text-slate-500">Nenhuma opção encontrada.</p>}
+          {compactarAcervoPequeno && opcoesFiltradas.pequenas.length > 0 && <details
+            name="bancas-com-poucas-questoes"
+            open={abrirAcervoPequeno}
+            onToggle={evento => setMostrarAcervoPequeno(evento.currentTarget.open)}
+            className="mt-2 rounded-xl border border-lime-300/20 bg-lime-950/10 p-2"
+          >
+            <summary className="cursor-pointer rounded-lg px-2 py-2 text-xs font-semibold text-lime-100 hover:bg-lime-950/25">
+              Outras bancas · {opcoesFiltradas.pequenas.length} com menos de {limiteAcervoPequeno} questões
+            </summary>
+            <div className="mt-1 space-y-1">
+              {opcoesFiltradas.pequenas.map(opcao => {
+                const selecionada = selecionados.includes(opcao.value)
+                return <button
+                  key={opcao.value}
+                  type="button"
+                  role="checkbox"
+                  aria-checked={selecionada}
+                  onClick={() => alternar(opcao.value)}
+                  className={`flex min-h-11 w-full cursor-pointer items-start gap-3 rounded-lg px-3 py-2.5 text-left text-sm leading-5 transition-colors ${selecionada ? 'bg-lime-500/15 text-lime-100' : 'text-slate-300 hover:bg-slate-900'}`}
+                >
+                  <span aria-hidden="true" className={`mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded border text-[10px] font-bold ${selecionada ? 'border-lime-500 bg-lime-600 text-white' : 'border-slate-600 bg-slate-900 text-transparent'}`}>✓</span>
+                  <span className="min-w-0 flex-1 break-words">{opcao.label}</span>
+                </button>
+              })}
+            </div>
+          </details>}
+          {opcoesFiltradas.principais.length + opcoesFiltradas.pequenas.length === 0 && <p className="px-3 py-6 text-center text-sm text-slate-500">Nenhuma opção encontrada.</p>}
         </div>
       </div>
     </details>
