@@ -14,8 +14,8 @@ function quantidadeDaOpcao(opcao) {
     const quantidade = Number(opcao.quantidade)
     return Number.isFinite(quantidade) ? quantidade : null
   }
-  const contagem = String(opcao.label ?? '').match(/\\(([\\d.,]+)\\)\\s*$/)
-  return contagem ? Number(contagem[1].replace(/\\D/g, '')) : null
+  const contagem = String(opcao.label ?? '').match(/\(([\d.,]+)\)\s*$/)
+  return contagem ? Number(contagem[1].replace(/\D/g, '')) : null
 }
 
 export default function FiltroMultiplo({ titulo, opcoes, selecionados, aoAlterar, rotuloTodos, compactarAcervoPequeno = false }) {
