@@ -5,6 +5,7 @@ import {supabase} from '../supabaseClient'
 const EXPECTED_FILES = 34718
 const EXPECTED_BYTES = 2928448054
 const MAX_BATCH_BYTES = 3500000
+const MAX_SINGLE_FILE_BYTES = 3700000
 const MAX_BATCH_FILES = 100
 const KEY_ALLOWED = /^(?:manifesto|visuais)\.json$|^lotes\/[A-Za-z0-9._-]+\.json\.gz$|^paginas\/[A-Za-z0-9._-]+\.webp$/
 
@@ -133,7 +134,7 @@ export default function AcervoR2Admin({isAdmin = false}) {
       let lote = []
       let bytesLote = 0
       for (const item of ordenados.filter(item => item.key !== 'manifesto.json')) {
-        if (item.file.size > MAX_BATCH_BYTES) throw new Error(`O arquivo ${item.key} ultrapassa o tamanho seguro por lote.`)
+        if (item.file.size > MAX_SINGLE_FILE_BYTES) throw new Error(`O arquivo ${item.key} ultrapassa o tamanho máximo seguro de 3,7 MB.`)
         if (lote.length && (lote.length >= MAX_BATCH_FILES || bytesLote + item.file.size > MAX_BATCH_BYTES)) {
           lotes.push(lote)
           lote = []
