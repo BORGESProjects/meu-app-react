@@ -1,55 +1,55 @@
-.edital-planejador{max-width:1100px;margin:auto;color:#e2e8f0;min-width:0}
+.edital-planejador{--edital-olive:#91a94d;--edital-olive-light:#c2d98b;--edital-border:#3b472e;max-width:1100px;margin:auto;color:#e7ebdf;min-width:0}
 .edital-planejador h2{font-size:clamp(1.6rem,4vw,2rem);font-weight:800;margin:4px 0 8px}
 .edital-planejador h3{font-size:1.15rem;font-weight:700;margin:0 0 8px}
 .edital-planejador h2,.edital-planejador h3{overflow-wrap:anywhere}
 .edital-linha>div{min-width:0;max-width:100%}
-.edital-planejador p{color:#94a3b8;font-size:.9rem;line-height:1.6;margin:8px 0 14px}
+.edital-planejador p{color:#a0a79a;font-size:.9rem;line-height:1.6;margin:8px 0 14px}
 .edital-cabecalho,.edital-linha{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .edital-cabecalho>div{flex:1;min-width:min(100%,260px)}
-.edital-sobretitulo{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#a5b4fc;font-weight:700}
-.edital-planejador button{padding:10px 14px;min-height:42px;border:1px solid #3a4355;border-radius:10px;background:#202634;font-size:.83rem;cursor:pointer;line-height:1.4;white-space:normal}
-.edital-planejador button:hover{background:#2a3447}
+.edital-sobretitulo{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--edital-olive-light);font-weight:700}
+.edital-planejador button{padding:10px 14px;min-height:42px;border:1px solid var(--edital-border);border-radius:10px;background:#1a2017;font-size:.83rem;cursor:pointer;line-height:1.4;white-space:normal;color:#e7ebdf}
+.edital-planejador button:hover{background:#252d20}
 .edital-planejador button:disabled{opacity:.5;cursor:wait}
-.edital-planejador button:focus-visible,.edital-planejador summary:focus-visible,.edital-planejador input:focus-visible,.edital-planejador select:focus-visible,.edital-planejador textarea:focus-visible{outline:2px solid #a5b4fc;outline-offset:3px}
-.edital-planejador button.edital-primario{background:#4f46e5;border-color:#6366f1;color:white;font-weight:700}
-.edital-planejador button.edital-primario:hover{background:#4338ca}
-.edital-planejador button[aria-pressed=true]{border-color:#818cf8;background:#272c50;color:#c7d2fe}
-.edital-painel{background:#151821;border:1px solid #2b3241;border-radius:14px;margin:18px 0;padding:22px;min-width:0}
-.edital-planejador label{display:flex;flex-direction:column;gap:8px;font-size:.82rem;font-weight:600;min-width:0;color:#cbd5e1}
-.edital-planejador input:not([type=checkbox]),.edital-planejador select,.edital-planejador textarea{width:100%;padding:11px 12px;border:1px solid #3a4355;border-radius:8px;background:#10131a;color:#e2e8f0;font-size:.9rem;line-height:1.5;min-height:44px}
+.edital-planejador button:focus-visible,.edital-planejador summary:focus-visible,.edital-planejador input:focus-visible,.edital-planejador select:focus-visible,.edital-planejador textarea:focus-visible{outline:2px solid var(--edital-olive-light);outline-offset:3px}
+.edital-planejador button.edital-primario{background:linear-gradient(115deg,#596f32 0%,#849b43 58%,#a8bc62 100%);border-color:#a4b75e;color:#10140d;font-weight:800;box-shadow:0 8px 24px #91a94d1c}
+.edital-planejador button.edital-primario:hover{background:linear-gradient(115deg,#6c833d 0%,#94a94e 58%,#b7ca72 100%)}
+.edital-planejador button[aria-pressed=true]{border-color:#8fa64b;background:#252d1d;color:#d8e7ad}
+.edital-painel{background:linear-gradient(145deg,#141811,#0d100d) padding-box,linear-gradient(135deg,#61743a99,#39442c88,#242b1e) border-box;border:1px solid transparent;border-radius:14px;margin:18px 0;padding:22px;min-width:0}
+.edital-planejador label{display:flex;flex-direction:column;gap:8px;font-size:.82rem;font-weight:600;min-width:0;color:#cbd2c0}
+.edital-planejador input:not([type=checkbox]),.edital-planejador select,.edital-planejador textarea{width:100%;padding:11px 12px;border:1px solid #39432e;border-radius:8px;background:#0c100d;color:#e7ebdf;font-size:.9rem;line-height:1.5;min-height:44px}
 .edital-planejador textarea{resize:vertical;min-height:120px;white-space:pre-wrap;overflow-wrap:anywhere}
 .edital-planejador select{appearance:auto}
 .edital-form{display:grid;gap:16px}
 .edital-form>p{margin:0}
 .edital-campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .edital-acoes{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.edital-mensagem{font-size:.85rem;color:#86efac;min-height:24px;margin-top:14px;line-height:1.5}
+.edital-mensagem{font-size:.85rem;color:#bbd77c;min-height:24px;margin-top:14px;line-height:1.5}
 .edital-erro{border:1px solid #9f4141;background:#351e25;border-radius:10px;padding:14px;color:#fecaca;margin:12px 0;font-size:.9rem;line-height:1.6}
 .edital-erro button{margin-left:8px}
 .edital-seletor{display:flex;gap:20px;align-items:end;flex-wrap:wrap;margin:12px 0 24px}
 .edital-seletor label{flex:1;min-width:min(100%,280px);font-size:.9rem}
-.edital-seletor>span{font-size:.8rem;color:#94a3b8;padding-bottom:12px}
+.edital-seletor>span{font-size:.8rem;color:#9ca493;padding-bottom:12px}
 .edital-progresso{margin-top:18px}
 .edital-progresso>div{display:flex;justify-content:space-between;gap:16px;font-size:.8rem;color:#cbd5e1;margin-bottom:9px}
-.edital-progresso strong{color:#a5b4fc}
-.edital-progresso progress{appearance:none;width:100%;height:9px;display:block;border:0;border-radius:8px;overflow:hidden;background:#2b3241}
-.edital-progresso progress::-webkit-progress-bar{background:#2b3241}
-.edital-progresso progress::-webkit-progress-value{background:#818cf8;border-radius:8px}
-.edital-progresso progress::-moz-progress-bar{background:#818cf8;border-radius:8px}
-.edital-indicadores{display:flex;flex-wrap:wrap;gap:14px 30px;margin-top:20px;font-size:.82rem;color:#94a3b8}
-.edital-indicadores strong{color:#e2e8f0}
+.edital-progresso strong{color:var(--edital-olive-light)}
+.edital-progresso progress{appearance:none;width:100%;height:9px;display:block;border:0;border-radius:8px;overflow:hidden;background:#293023}
+.edital-progresso progress::-webkit-progress-bar{background:#293023}
+.edital-progresso progress::-webkit-progress-value{background:linear-gradient(90deg,#607637,#b0c869);border-radius:8px}
+.edital-progresso progress::-moz-progress-bar{background:linear-gradient(90deg,#607637,#b0c869);border-radius:8px}
+.edital-indicadores{display:flex;flex-wrap:wrap;gap:14px 30px;margin-top:20px;font-size:.82rem;color:#a0a79a}
+.edital-indicadores strong{color:#e7ebdf}
 .edital-planejador summary{cursor:pointer;font-weight:700;padding:4px 0;font-size:.95rem;line-height:1.5}
 .edital-inclusao>.edital-form{margin-top:18px}
 .edital-filtros{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr) auto;gap:14px;align-items:end}
 .edital-planejador .edital-materia-titulo{display:flex;justify-content:space-between;gap:20px;width:100%;border:0;padding:0;text-align:left;background:transparent;font-size:1.05rem;font-weight:700;overflow-wrap:anywhere}
-.edital-materia-titulo>span:last-child{font-size:.85rem;white-space:nowrap;color:#a5b4fc}
+.edital-materia-titulo>span:last-child{font-size:.85rem;white-space:nowrap;color:var(--edital-olive-light)}
 .edital-materia .edital-progresso{margin-top:10px}
 .edital-planejador .edital-ajuda{font-size:.8rem;margin:18px 0}
 .edital-topicos{list-style:none;margin:0;padding:0}
-.edital-topicos>li{padding:16px 0;border-top:1px solid #2b3241}
+.edital-topicos>li{padding:16px 0;border-top:1px solid #303a27}
 .edital-topico{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap}
 .edital-planejador .edital-check{flex:1;min-width:min(100%,270px);flex-direction:row;align-items:flex-start;gap:12px;font-size:.92rem;font-weight:500;line-height:1.6;padding:8px 0;cursor:pointer}
-.edital-check input[type=checkbox]{appearance:auto;flex-shrink:0;width:20px;height:20px;margin-top:3px;accent-color:#818cf8;cursor:pointer}
+.edital-check input[type=checkbox]{appearance:auto;flex-shrink:0;width:20px;height:20px;margin-top:3px;accent-color:#91a94d;cursor:pointer}
 .edital-check span{overflow-wrap:anywhere}
 .edital-concluido>.edital-topico .edital-check span{color:#86cba5}
 .edital-topico-acoes{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
@@ -57,18 +57,19 @@
 .edital-topico-acoes button{font-size:.75rem;padding:9px 11px}
 .edital-planejador button.edital-alta{color:#fcd34d;border-color:#7f642f}
 .edital-planejador .edital-nota{margin:10px 0 0 32px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.82rem}
-.edital-edicao{margin-top:18px;border:1px solid #3a4355;border-radius:10px;padding:16px}
+.edital-edicao{margin-top:18px;border:1px solid #39432e;border-radius:10px;padding:16px;background:#10140e}
 .edital-planejador button.edital-perigo{color:#fca5a5}
-.edital-vazio{border:1px dashed #414d65;border-radius:14px;text-align:center;padding:36px 20px;margin:24px 0}
+.edital-vazio{border:1px dashed #52613a;border-radius:14px;text-align:center;padding:36px 20px;margin:24px 0;background:#10140e}
 .edital-vazio p{max-width:570px;margin:8px auto 22px}
 .edital-modelos{display:grid;gap:12px;margin-top:18px}
 .edital-modelos>div{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.9rem}
 .edital-pdf>.edital-form{margin-top:18px}
 .edital-pdf p,.edital-pdf strong{overflow-wrap:anywhere}
 .edital-pdf-pagina{display:block;max-height:650px;width:100%;object-fit:contain;background:white;border-radius:8px;margin-top:16px}
-.edital-pdf-grupo{border:1px solid #3a4355;border-radius:10px;padding:14px}
-.edital-pdf-topico{border-top:1px solid #2b3241;padding:14px 0;margin-top:12px}
+.edital-pdf-grupo{border:1px solid #39432e;border-radius:10px;padding:14px;background:#10140e}
+.edital-pdf-topico{border-top:1px solid #303a27;padding:14px 0;margin-top:12px}
 .edital-pdf-topico textarea{min-height:70px}
 .edital-pdf-avisos{border:1px solid #7f642f;color:#fcd34d;padding:14px;border-radius:10px;font-size:.85rem;line-height:1.6}
 .edital-pdf-avisos ul{padding-left:20px;list-style:disc}
 @media(max-width:700px){.edital-campos,.edital-filtros{grid-template-columns:minmax(0,1fr)}.edital-painel{padding:16px}.edital-topico{gap:8px}.edital-topico-acoes{width:100%;padding-left:32px}.edital-topico-acoes select{flex:1;min-width:120px}.edital-cabecalho{gap:12px}.edital-cabecalho>.edital-primario{width:100%}.edital-seletor{gap:6px}.edital-seletor>span{padding:0}.edital-materia-titulo>span:first-child{min-width:0}.edital-planejador .edital-nota{margin-left:0}.edital-edicao{padding:12px}}
+
