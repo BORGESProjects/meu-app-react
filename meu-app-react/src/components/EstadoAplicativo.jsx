@@ -9,7 +9,8 @@ export default function EstadoAplicativo() {
   },[])
   if (!aplicativoNativo) return null
   return <aside className="px-4 py-2 text-sm bg-slate-900 border-b border-slate-700" aria-live="polite">
-    <span>{online ? 'Aplicativo · acervo disponível offline' : 'Sem conexão · questões, simulados e progresso disponíveis neste aparelho. A sincronização e a IA aguardam internet.'}</span>
+    <span>{online ? 'Aplicativo · questões no aparelho; imagens carregadas sob demanda.' : 'Sem conexão · questões em texto, simulados e progresso disponíveis. Imagens, sincronização e IA aguardam internet.'}</span>
     {erro && <p role="alert" className="mt-2 text-amber-300">{erro} <button className="underline" onClick={()=>setErro('')}>Fechar</button></p>}
   </aside>
 }
+

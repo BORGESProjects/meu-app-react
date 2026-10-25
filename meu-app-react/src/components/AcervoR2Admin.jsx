@@ -3,6 +3,7 @@ import {API_URL} from '../api'
 import {supabase} from '../supabaseClient'
 
 // Small multipart batches stay below the hosting parser's effective request cap.
+// Keep the complete multipart request below Render's observed ~700 KB ceiling.
 const MAX_BATCH_BYTES = 500000
 const MAX_BATCH_FILES = 100
 const KEY_ALLOWED = /^(?:manifesto|visuais)\.json$|^lotes\/[A-Za-z0-9._-]+\.json\.gz$|^paginas\/[A-Za-z0-9._-]+\.webp$/
@@ -220,4 +221,5 @@ export default function AcervoR2Admin({isAdmin = false}) {
     {erro && <p role="alert" className="mt-4 rounded-xl border border-amber-300/30 bg-amber-950/25 px-3 py-2 text-sm leading-6 text-amber-100">{erro}</p>}
   </section>
 }
+
 

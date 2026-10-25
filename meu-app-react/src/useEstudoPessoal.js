@@ -59,6 +59,8 @@ function mesclarEstudos(primeiro, segundo) {
   return { filtros, cadernos, questoes, simulados, configuracoes, removidos }
 }
 
+const estudosIguais = (a, b) => JSON.stringify(a) === JSON.stringify(b)
+
 function registrarAlteracoes(anteriores, dadosNovos) {
   const antes = normalizar(anteriores), depois = normalizar(dadosNovos)
   const agora = new Date().toISOString()
@@ -118,6 +120,8 @@ export function useEstudoPessoal(userId, sincronizar = true) {
   const [estado, setEstado] = useState({ chave: '', dados: vazio(), carregado: false, erro: '', sincronizacao: 'local' })
   const estadoRef = useRef(estado)
   const remotoPronto = useRef(false)
+  const sincronizacaoPendente = useRef(false)
+  const versaoLocal = useRef(0)
   const gravaEmAndamento = useRef(false)
   const timer = useRef(null)
   const sincronizarRef = useRef(null)
@@ -141,37 +145,47 @@ export function useEstudoPessoal(userId, sincronizar = true) {
         remotoPronto.current = true
         if (erroRemoto) {
           const tabelaAusente = erroRemoto.code === 'PGRST205' || erroRemoto.code === '42P01'
+          sincronizacaoPendente.current = !estudosIguais(local, vazio())
           setEstado(atual => atual.chave === chave ? { ...atual, sincronizacao: 'erro', erro: tabelaAusente
             ? 'Sincronização entre dispositivos depende da migração estudo-pessoal.sql no Supabase.'
             : 'A sincronização on-line falhou; seus dados locais foram preservados.' } : atual)
           return
         }
         if (data?.dados) {
-          const dados = mesclarEstudos(estadoRef.current.chave === chave ? estadoRef.current.dados : local, data.dados)
-          setEstado(atual => atual.chave === chave ? { ...atual, dados, sincronizacao: 'salvo', erro: '' } : atual)
+          const estadoLocal = estadoRef.current.chave === chave ? estadoRef.current.dados : local
+          const dados = mesclarEstudos(estadoLocal, data.dados)
+          sincronizacaoPendente.current = !estudosIguais(dados, normalizar(data.dados))
+          setEstado(atual => {
+            if (atual.chave !== chave) return atual
+            return { ...atual, dados: estudosIguais(atual.dados, dados) ? atual.dados : dados, sincronizacao: 'salvo', erro: '' }
+          })
         } else {
+          sincronizacaoPendente.current = !estudosIguais(local, vazio())
           setEstado(atual => atual.chave === chave ? { ...atual, sincronizacao: 'salvo', erro: '' } : atual)
-          setTimeout(() => { void sincronizarRef.current?.() }, 0)
         }
       }).catch(() => {
         if (!ativo) return
         remotoPronto.current = true
+        sincronizacaoPendente.current = !estudosIguais(local, vazio())
         setEstado(atual => atual.chave === chave ? { ...atual, sincronizacao: 'erro', erro: 'A sincronização on-line falhou; seus dados locais foram preservados.' } : atual)
       })
     }
     return () => { ativo = false; clearTimeout(timer.current) }
   }, [chave, remotoAtivo, userId])
 
-  const sincronizarAgora = useCallback(async () => {
-    if (!remotoAtivo || !remotoPronto.current || gravaEmAndamento.current) return
+  const sincronizarAgora = useCallback(async (forcar = false) => {
+    if (!remotoAtivo || !remotoPronto.current || gravaEmAndamento.current || (!sincronizacaoPendente.current && !forcar)) return
     gravaEmAndamento.current = true
     const enviado = estadoRef.current.dados
+    const versaoEnviada = versaoLocal.current
     setEstado(atual => atual.chave === chave ? { ...atual, sincronizacao: 'sincronizando' } : atual)
     try {
       const salvo = await gravarRemoto(userId, estadoRef.current.dados)
+      sincronizacaoPendente.current = versaoLocal.current !== versaoEnviada
       setEstado(atual => {
         if (atual.chave !== chave) return atual
-        return { ...atual, dados: mesclarEstudos(atual.dados, salvo), sincronizacao: 'salvo', erro: '' }
+        const dados = mesclarEstudos(atual.dados, salvo)
+        return { ...atual, dados: estudosIguais(atual.dados, dados) ? atual.dados : dados, sincronizacao: 'salvo', erro: '' }
       })
     } catch (erro) {
       setEstado(atual => atual.chave === chave ? { ...atual, sincronizacao: 'erro', erro: erro?.code === '42P01' || erro?.code === 'PGRST205'
@@ -179,7 +193,7 @@ export function useEstudoPessoal(userId, sincronizar = true) {
         : 'A sincronização on-line falhou; as alterações continuam salvas neste dispositivo.' } : atual)
     } finally {
       gravaEmAndamento.current = false
-      if (JSON.stringify(estadoRef.current.dados) !== JSON.stringify(enviado)) {
+      if (sincronizacaoPendente.current && JSON.stringify(estadoRef.current.dados) !== JSON.stringify(enviado)) {
         clearTimeout(timer.current)
         timer.current = setTimeout(() => { void sincronizarRef.current?.() }, 500)
       }
@@ -197,7 +211,7 @@ export function useEstudoPessoal(userId, sincronizar = true) {
   }, [chave, estado])
 
   useEffect(() => {
-    if (!remotoAtivo || !remotoPronto.current || !estado.carregado || estado.chave !== chave) return
+    if (!remotoAtivo || !remotoPronto.current || !estado.carregado || estado.chave !== chave || !sincronizacaoPendente.current) return
     clearTimeout(timer.current)
     timer.current = setTimeout(() => { void sincronizarRef.current?.() }, 900)
     return () => clearTimeout(timer.current)
@@ -205,13 +219,15 @@ export function useEstudoPessoal(userId, sincronizar = true) {
 
   useEffect(() => {
     if (!remotoAtivo) return undefined
-    const tentar = () => { if (!document.hidden) void sincronizarRef.current?.() }
+    const tentar = () => { if (!document.hidden) void sincronizarRef.current?.(true) }
     window.addEventListener('online', tentar)
     window.addEventListener('focus', tentar)
     return () => { window.removeEventListener('online', tentar); window.removeEventListener('focus', tentar) }
   }, [remotoAtivo])
 
   const atualizar = useCallback(mudar => {
+    versaoLocal.current++
+    sincronizacaoPendente.current = true
     setEstado(atual => {
       if (atual.chave !== chave || !atual.carregado) return atual
       const recebido = typeof mudar === 'function' ? mudar(atual.dados) : mudar
@@ -229,3 +245,4 @@ export function useEstudoPessoal(userId, sincronizar = true) {
     sincronizarAgora,
   }
 }
+

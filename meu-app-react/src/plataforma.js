@@ -5,7 +5,7 @@ export function configurarRecursos(mapa,recursos=[]) {mapaRecursos = mapa || Obj
 export function resolverRecurso(url,{nativo=aplicativoNativo,mapa=mapaRecursos,locais=recursosInstalados}={}) {
   if(!nativo)return url
   if(mapa[url] || locais.has(url))return mapa[url] || url
-  // Questões publicadas depois da edição instalada continuam disponíveis online.
+  // Figuras e outros recursos que não cabem no pacote enxuto carregam online.
   if(typeof url==='string' && url.startsWith('/acervo/'))return 'https://apaprovado.vercel.app'+url
   if(typeof url==='string' && url.startsWith('/api/'))return 'https://aprovado-api.onrender.com'+url
   return url
@@ -33,3 +33,4 @@ export function contaOffline(storage = localStorage) {
   catch { return null }
 }
 export function esquecerConta(storage = localStorage) { storage.removeItem(chaveConta) }
+

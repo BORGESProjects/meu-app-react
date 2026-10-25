@@ -29,6 +29,29 @@ import { useEstudoPessoal } from './useEstudoPessoal'
 import { analisarDesempenho } from './analiseDesempenho'
 
 const DIAS_SEMANA = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo']
+const CONFIG_CRONOGRAMA_ID = 'config-cronograma-semanal-v1'
+const minutosPadraoPorDia = Object.fromEntries(DIAS_SEMANA.map((dia, indice) => [dia, indice < 5 ? 120 : 90]))
+function dataLocalISO(data) {
+  const ano = data.getFullYear(), mes = String(data.getMonth() + 1).padStart(2, '0'), dia = String(data.getDate()).padStart(2, '0')
+  return `${ano}-${mes}-${dia}`
+}
+function dataISOParaLocal(valor) {
+  const [ano, mes, dia] = String(valor || '').split('-').map(Number)
+  return ano && mes && dia ? new Date(ano, mes - 1, dia) : null
+}
+function inicioSemanaLocal(data = new Date()) {
+  const inicio = new Date(data.getFullYear(), data.getMonth(), data.getDate())
+  inicio.setDate(inicio.getDate() - ((inicio.getDay() + 6) % 7))
+  return inicio
+}
+function dataDiaDaSemana(inicio, dia) {
+  const data = new Date(inicio)
+  data.setDate(data.getDate() + DIAS_SEMANA.indexOf(dia))
+  return dataLocalISO(data)
+}
+function diaParaDataSemana(dia, inicio) {
+  return DIAS_SEMANA.includes(dia) ? dataDiaDaSemana(inicio, dia) : ''
+}
 const Redacao = lazy(() => import('./components/Redacao'))
 const CentralRevisao = lazy(() => import('./components/CentralRevisao'))
 const ImportarPdf = lazy(() => import('./components/ImportarPdf'))
@@ -202,7 +225,8 @@ export default function App() {
   const estudoPessoal = useEstudoPessoal(session?.user?.id, !session?.offline)
   const {filtros:filtrosSalvos,cadernos,questoes:marcacoesPessoais,simulados:historicoSimulados,configuracoes:configuracoesSimulado} = estudoPessoal.dados
   const {horas_estudo:horasEstudo, historico_respostas:historicoRespostas, tarefas:tarefasDaConta} = progresso.dados
-  const tarefas = useMemo(() => tarefasDaConta.filter(t => t.tipo !== 'material_revisao'), [tarefasDaConta])
+  const configuracaoCronograma = useMemo(() => tarefasDaConta.find(t => t.id === CONFIG_CRONOGRAMA_ID), [tarefasDaConta])
+  const tarefas = useMemo(() => tarefasDaConta.filter(t => t.tipo !== 'material_revisao' && t.id !== CONFIG_CRONOGRAMA_ID), [tarefasDaConta])
   const {setHorasEstudo, setHistoricoRespostas, setTarefas, carregado:progressoCarregado,
     status:sincronizacao, erro:erroProgresso} = progresso
 
@@ -696,6 +720,7 @@ export default function App() {
     setTarefas(prev => [...prev, {
       id: crypto.randomUUID(),
       dia: novaTarefa.dia,
+      data: novaTarefa.data || diaParaDataSemana(novaTarefa.dia, inicioSemanaLocal()),
       materia: novaTarefa.materia.trim(),
       atividade: novaTarefa.atividade.trim(),
       horario: novaTarefa.horario,
@@ -710,10 +735,21 @@ export default function App() {
     setTarefas(prev => prev.filter(tarefa => tarefa.id !== id))
   }
 
-  function alternarTarefa(id) {
+  function alternarTarefa(id, dataAgendada) {
     setTarefas(prev => prev.map(tarefa => tarefa.id === id
-      ? { ...tarefa, concluida: !tarefa.concluida }
+      ? { ...tarefa, data: dataAgendada || tarefa.data, concluida: !tarefa.concluida }
       : tarefa))
+  }
+
+  function alterarDisponibilidade(dia, minutos) {
+    setTarefas(prev => {
+      const atual = prev.find(tarefa => tarefa.id === CONFIG_CRONOGRAMA_ID) || {id: CONFIG_CRONOGRAMA_ID, tipo: 'configuracao_cronograma', disponibilidade: minutosPadraoPorDia}
+      return [...prev.filter(tarefa => tarefa.id !== CONFIG_CRONOGRAMA_ID), {
+        ...atual, id: CONFIG_CRONOGRAMA_ID, tipo: 'configuracao_cronograma',
+        disponibilidade: {...minutosPadraoPorDia, ...(atual.disponibilidade || {}), [dia]: Number(minutos)},
+        atualizado_em: new Date().toISOString(),
+      }]
+    })
   }
 
   function validarResposta(questaoId, _respostaCorretaDoBanco, isSimulado = false) {
@@ -1060,12 +1096,47 @@ export default function App() {
     return historicoSimulados.filter(item => `${item.titulo} ${item.banca || ''} ${item.foco || ''}`.toLocaleLowerCase('pt-BR').includes(termo))
   }, [buscaHistoricoSimulado, historicoSimulados])
 
-  const tarefasDoCronograma = tarefas.filter(tarefa => DIAS_SEMANA.includes(tarefa.dia))
-  const tarefasSemDia = tarefas.filter(tarefa => !DIAS_SEMANA.includes(tarefa.dia))
+  const hoje = new Date()
+  const inicioSemana = inicioSemanaLocal(hoje)
+  const hojeISO = dataLocalISO(hoje)
+  const datasDaSemana = DIAS_SEMANA.map(dia => ({dia, data: dataDiaDaSemana(inicioSemana, dia)}))
+  const disponibilidadeCronograma = {...minutosPadraoPorDia, ...(configuracaoCronograma?.disponibilidade || {})}
+  const mapaDia = new Map(datasDaSemana.map(item => [item.data, item.dia]))
+  const tarefasDaSemana = tarefas.map(tarefa => {
+    const dataOriginal = dataISOParaLocal(tarefa.data) ? String(tarefa.data) : diaParaDataSemana(tarefa.dia, inicioSemana)
+    const data = dataOriginal || ''
+    const atual = data && mapaDia.has(data)
+    const pendenteAtrasada = !tarefa.concluida && data && data < datasDaSemana[0].data
+    return { ...tarefa, dataOriginal: data, dataPreferida: pendenteAtrasada ? hojeISO : data, daSemana: Boolean(atual || pendenteAtrasada) }
+  }).filter(tarefa => tarefa.daSemana && (!tarefa.concluida || mapaDia.has(tarefa.dataOriginal)))
+  const ocupacaoPorData = new Map()
+  const tarefasDistribuidas = []
+  for (const tarefa of tarefasDaSemana.filter(item => item.concluida)) {
+    const data = tarefa.dataOriginal
+    ocupacaoPorData.set(data, (ocupacaoPorData.get(data) || 0) + (Number(tarefa.minutos) || 0))
+    tarefasDistribuidas.push({...tarefa, dataAgendada: data, redistribuida: false, excedeDisponibilidade: (ocupacaoPorData.get(data) || 0) > Number(disponibilidadeCronograma[mapaDia.get(data)] || 0)})
+  }
+  const pendentesOrdenadas = tarefasDaSemana.filter(item => !item.concluida)
+    .sort((a, b) => String(a.dataPreferida).localeCompare(String(b.dataPreferida)) || String(a.horario || '').localeCompare(String(b.horario || '')))
+  for (const tarefa of pendentesOrdenadas) {
+    const minutos = Math.max(15, Number(tarefa.minutos) || 60)
+    const minimo = tarefa.dataPreferida < hojeISO ? hojeISO : tarefa.dataPreferida
+    const candidatos = datasDaSemana.filter(item => item.data >= minimo)
+    let escolhido = candidatos.find(item => (ocupacaoPorData.get(item.data) || 0) + minutos <= Number(disponibilidadeCronograma[item.dia] || 0))
+    let excedeDisponibilidade = false
+    if (!escolhido) {
+      escolhido = candidatos[0] || datasDaSemana.at(-1)
+      excedeDisponibilidade = true
+    }
+    const dataAgendada = escolhido.data
+    ocupacaoPorData.set(dataAgendada, (ocupacaoPorData.get(dataAgendada) || 0) + minutos)
+    tarefasDistribuidas.push({...tarefa, dataAgendada, redistribuida: dataAgendada !== tarefa.dataOriginal, excedeDisponibilidade})
+  }
+  const tarefasDoCronograma = tarefasDistribuidas
+  const tarefasSemDia = tarefas.filter(tarefa => !DIAS_SEMANA.includes(tarefa.dia) && !dataISOParaLocal(tarefa.data))
   const minutosPlanejados = tarefasDoCronograma.reduce((total, tarefa) => total + (Number(tarefa.minutos) || 0), 0)
   const minutosConcluidos = tarefasDoCronograma.filter(tarefa => tarefa.concluida).reduce((total, tarefa) => total + (Number(tarefa.minutos) || 0), 0)
-  const nomesDiaAtual = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
-  const diaAtual = nomesDiaAtual[new Date().getDay()]
+  const diaAtual = datasDaSemana.find(item => item.data === hojeISO)?.dia
 
   const errosPorConteudo = {}
   historicoRespostas.forEach(h => {
@@ -1107,7 +1178,7 @@ export default function App() {
             { id: 'edital', label: 'Edital' },
             { id: 'redacao', label: 'Redação' },
             { id: 'revisao', label: 'Revisão' },
-            { id: 'tarefas', label: 'Tarefas' },
+            { id: 'tarefas', label: 'Cronograma' },
             { id: 'conta', label: 'Minha conta' }
           ].map(tab => (
             <button
@@ -1144,7 +1215,7 @@ export default function App() {
         {abaAtiva === 'cadernos' && <CadernosPessoais
           cadernos={cadernos} questoes={questoes} anotacoes={marcacoesPessoais}
           sincronizacao={estudoPessoal.sincronizacao} erroSincronizacao={estudoPessoal.erro}
-          onSincronizar={estudoPessoal.sincronizarAgora}
+          onSincronizar={() => estudoPessoal.sincronizarAgora(true)}
           onNovo={() => abrirDialogoPessoal('caderno')}
           onEstudar={estudarCaderno}
           onExcluir={excluirCaderno}
@@ -1733,7 +1804,7 @@ export default function App() {
         )}
 
         {abaAtiva === 'redacao' && <Suspense fallback={<p role="status">Carregando a oficina de redação…</p>}><Redacao key={session.user.id} session={session} foco={focoEstudo}/></Suspense>}
-        {abaAtiva === 'revisao' && <Suspense fallback={<p role="status">Carregando seus mapas e resumos…</p>}><CentralRevisao key={session.user.id} registros={tarefasDaConta} setRegistros={setTarefas} materias={materiasCronograma} indice={indiceFiltros} onPraticar={material => {
+        {abaAtiva === 'revisao' && <Suspense fallback={<p role="status">Carregando seus mapas e resumos…</p>}><CentralRevisao key={session.user.id} registros={tarefasDaConta.filter(item => item.id !== CONFIG_CRONOGRAMA_ID)} setRegistros={setTarefas} materias={materiasCronograma} indice={indiceFiltros} onPraticar={material => {
           limparFiltros(); setFiltrosMateria([material.materia]); setFiltrosConteudo(material.conteudo ? [material.conteudo] : []); setLimiteVisivel(40); setAbaAtiva('questoes')
         }}/></Suspense>}
 
@@ -1741,8 +1812,8 @@ export default function App() {
         {abaAtiva === 'tarefas' && (
           <div className="space-y-6">
             <header>
-              <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">📅 Cronograma semanal</h1>
-              <p className="mt-1 text-sm text-slate-400">Distribua matérias e horas ao longo da semana e marque cada sessão concluída.</p>
+              <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">📅 Cronograma</h1>
+              <p className="mt-1 text-sm text-slate-400">Semana de {inicioSemana.toLocaleDateString('pt-BR')} a {datasDaSemana.at(-1).data ? dataISOParaLocal(datasDaSemana.at(-1).data).toLocaleDateString('pt-BR') : ''}. O plano redistribui sessões pendentes conforme seu tempo disponível.</p>
             </header>
 
             <section className="grid grid-cols-1 gap-3 min-[380px]:grid-cols-3">
@@ -1791,27 +1862,34 @@ export default function App() {
             </form>
 
             <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {DIAS_SEMANA.map(dia => {
+              {datasDaSemana.map(({dia, data}) => {
                 const sessoes = tarefasDoCronograma
-                  .filter(tarefa => tarefa.dia === dia)
+                  .filter(tarefa => tarefa.dataAgendada === data)
                   .sort((a, b) => String(a.horario || '').localeCompare(String(b.horario || '')))
                 const minutosDia = sessoes.reduce((total, tarefa) => total + (Number(tarefa.minutos) || 0), 0)
-                return <article key={dia} className={`rounded-3xl border p-4 shadow-lg ${dia === diaAtual ? 'border-indigo-500/60 bg-indigo-950/20' : 'border-slate-800 bg-slate-900/60'}`}>
+                return <article key={data} className={`rounded-3xl border p-4 shadow-lg ${dia === diaAtual ? 'border-indigo-500/60 bg-indigo-950/20' : 'border-slate-800 bg-slate-900/60'}`}>
                   <div className="mb-4 flex items-center justify-between gap-3 border-b border-slate-800 pb-3">
                     <div>
                       <h2 className="font-bold text-slate-100">{dia}</h2>
-                      {dia === diaAtual && <span className="text-xs font-semibold text-indigo-300">Hoje</span>}
+                      <span className="text-xs text-slate-500">{dataISOParaLocal(data).toLocaleDateString('pt-BR')}{dia === diaAtual ? ' · Hoje' : ''}</span>
                     </div>
-                    <span className="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-slate-300">{formatarDuracaoPlanejada(minutosDia)}</span>
+                    <label className="text-right text-[10px] font-semibold uppercase tracking-wide text-slate-500">Tempo disponível
+                      <select aria-label={`Tempo disponível ${dia}`} value={disponibilidadeCronograma[dia]} onChange={e => alterarDisponibilidade(dia, e.target.value)} className="mt-1 block max-w-24 rounded-xl border border-slate-700 bg-slate-950 px-2 py-1.5 text-xs font-semibold text-slate-200">
+                        {[0, 30, 60, 90, 120, 150, 180, 240, 300, 360].map(minutos => <option key={minutos} value={minutos}>{minutos === 0 ? 'Livre' : formatarDuracaoPlanejada(minutos)}</option>)}
+                      </select>
+                      <span className={`mt-1 block text-xs ${minutosDia > Number(disponibilidadeCronograma[dia]) ? 'text-amber-300' : 'text-slate-300'}`}>{formatarDuracaoPlanejada(minutosDia)} planejados</span>
+                    </label>
                   </div>
                   {sessoes.length === 0 ? <p className="py-5 text-center text-sm text-slate-500">Dia livre</p> : <div className="space-y-3">
                     {sessoes.map(tarefa => <div key={tarefa.id} className={`rounded-2xl border p-3 ${tarefa.concluida ? 'border-emerald-500/30 bg-emerald-950/20' : 'border-slate-800 bg-slate-950/50'}`}>
                       <div className="flex items-start gap-3">
-                        <input aria-label={`Marcar ${tarefa.materia} como concluída`} type="checkbox" checked={Boolean(tarefa.concluida)} onChange={() => alternarTarefa(tarefa.id)} className="mt-1 h-5 w-5 shrink-0 cursor-pointer" />
+                        <input aria-label={`Marcar ${tarefa.materia} como concluída`} type="checkbox" checked={Boolean(tarefa.concluida)} onChange={() => alternarTarefa(tarefa.id, tarefa.dataAgendada)} className="mt-1 h-5 w-5 shrink-0 cursor-pointer" />
                         <div className="min-w-0 flex-1">
                           <div className="flex flex-wrap items-center gap-2">
                             <strong className={`break-words text-sm ${tarefa.concluida ? 'text-emerald-300 line-through' : 'text-slate-100'}`}>{tarefa.materia}</strong>
                             <span className="text-xs text-slate-500">{tarefa.horario}</span>
+                            {tarefa.redistribuida && <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-semibold text-amber-300">Reprogramada</span>}
+                            {tarefa.excedeDisponibilidade && <span className="rounded-full bg-rose-500/10 px-2 py-0.5 text-[10px] font-semibold text-rose-300">Acima do tempo disponível</span>}
                           </div>
                           {tarefa.atividade && <p className="mt-1 break-words text-xs text-slate-400">{tarefa.atividade}</p>}
                           <p className="mt-2 text-xs font-semibold text-indigo-300">{formatarDuracaoPlanejada(tarefa.minutos)}</p>
@@ -1857,3 +1935,4 @@ export default function App() {
     </div>
   )
 }
+

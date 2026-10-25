@@ -1,7 +1,7 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import {pertenceAoFoco} from '../focoEstudo'
 import {carregarManifestoAcervo} from '../acervoExtraidoManifesto'
-import {API_URL} from '../api'
+import {API_URL, fetchApi} from '../api'
 import {chaveCampoFiltro} from '../filtros'
 import {supabase} from '../supabaseClient'
 
@@ -14,6 +14,12 @@ const normalizar = valor => String(valor || '').normalize('NFD').replace(/[\u030
 const motivosConferencia = new Set(['possivel_corrupcao_de_caracteres', 'marcadores_de_questoes_vizinhas_na_transcricao', 'alternativas_incompletas_ou_atipicas'])
 const precisaConferir = q => q.motivos_revisao?.some(motivo => motivosConferencia.has(motivo)) || false
 const chaveClassificacao = id => `acervo-extraido-classificacao:${id}`
+
+const comandoDiscursivo = /^\s*(?:\d+[.)-]\s*)?(?:explique|justifique|discorra|descreva|apresente|diferencie|defina|redija|elabore|argumente|comente|indique|mencione|demonstre|calcule|resolva|analise|compare|avalie|proponha|escreva|responda)\b/iu
+const valorPontuado = /\[\s*valor\s*:\s*\d+(?:[,.]\d+)?\s*pontos?\s*\]/iu
+const ehDiscursiva = q => [q.tipo_resposta, q.tipo_extraido].some(tipo => String(tipo || '').toLocaleLowerCase('pt-BR') === 'discursiva')
+  || (comandoDiscursivo.test(String(q.enunciado || '')) && ((!Array.isArray(q.opcoes) || !q.opcoes.length) || valorPontuado.test(String(q.enunciado || ''))))
+
 
 function lerClassificacao(chave) {
   try {
@@ -76,7 +82,7 @@ async function obterUrlsR2(caminhos) {
   const token = sessao?.session?.access_token
   if (erroSessao || !token || !chavePublicaSupabase || !caminhos.length) return {}
 
-  const resposta = await fetch(`${API_URL}/api/acervo/r2/assinaturas`, {
+  const resposta = await fetchApi(`${API_URL}/api/acervo/r2/assinaturas`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -95,7 +101,7 @@ async function obterObjetoR2(caminho, opcoes = {}) {
   const token = sessao?.session?.access_token
   if (erroSessao || !token || !chavePublicaSupabase) return null
 
-  const resposta = await fetch(`${API_URL}/api/acervo/r2/objeto?key=${encodeURIComponent(caminho)}`, {
+  const resposta = await fetchApi(`${API_URL}/api/acervo/r2/objeto?key=${encodeURIComponent(caminho)}`, {
     ...opcoes,
     headers: {
       ...opcoes.headers,
@@ -199,14 +205,13 @@ function textoSeguroParaExibicao(valor) {
 
 function CartaoQuestaoExtraida({questao: q, onEstadoResposta}) {
   const [resposta, setResposta] = useState(() => lerRespostaLocal('acervo-extraido:' + q.id))
-  const [rascunho, setRascunho] = useState(() => lerRespostaLocal('acervo-extraido-texto:' + q.id))
   const [classificacao, setClassificacao] = useState(() => lerClassificacao(q.id))
   const imagens = useMemo(() => [...new Set(q.imagens_paginas?.length ? q.imagens_paginas : q.pagina_imagem ? [q.pagina_imagem] : [])], [q.imagens_paginas, q.pagina_imagem])
   const [urlsImagens, setUrlsImagens] = useState(null)
   const [carregandoImagens, setCarregandoImagens] = useState(false)
   const [erroImagens, setErroImagens] = useState(false)
   const textoCampos = [q.enunciado, q.texto_apoio, ...(q.opcoes || []), ...(q.transcricoes_ocr || []).map(item => item.texto)].join('\n')
-  const precisaApoioVisual = precisaConferir(q) || temCaractereIrrecuperavel(textoCampos)
+  const precisaApoioVisual = precisaConferir(q) || q.motivos_revisao?.includes('verificar_imagem_ou_diagrama_no_pdf') || temCaractereIrrecuperavel(textoCampos)
   const enunciado = textoSeguroParaExibicao(q.enunciado)
   const textoApoio = textoSeguroParaExibicao(q.texto_apoio)
   const carregarImagens = useCallback(async () => {
@@ -229,12 +234,6 @@ function CartaoQuestaoExtraida({questao: q, onEstadoResposta}) {
     setResposta(valor)
     try { localStorage.setItem('acervo-extraido:' + q.id, valor) } catch { /* A resposta continua selecionada até sair da página. */ }
     onEstadoResposta?.(q.id, true)
-  }
-  const salvarRascunho = valor => {
-    const estavaRespondida = Boolean(rascunho.trim())
-    setRascunho(valor)
-    try { localStorage.setItem('acervo-extraido-texto:' + q.id, valor) } catch { /* O campo continua editável nesta sessão. */ }
-    if (estavaRespondida !== Boolean(valor.trim())) onEstadoResposta?.(q.id, Boolean(valor.trim()))
   }
   const salvarClassificacao = evento => {
     evento.preventDefault()
@@ -271,9 +270,6 @@ function CartaoQuestaoExtraida({questao: q, onEstadoResposta}) {
         </label>
       })}
     </fieldset>}
-    {(q.tipo_extraido === 'discursiva' || !q.opcoes?.length) && <label className="mt-4 block text-xs font-semibold uppercase tracking-wide text-slate-400">Sua resolução
-      <textarea value={rascunho} onChange={evento => salvarRascunho(evento.target.value)} rows={6} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case leading-6 text-slate-100 placeholder:text-slate-500" placeholder="Escreva sua resolução. Ela fica salva neste dispositivo." />
-    </label>}
     {q.opcoes?.length > 0 && <p className="mt-2 text-xs text-slate-400">Sua resposta fica salva neste dispositivo. Questões sem gabarito associado não recebem correção automática.</p>}
     {q.transcricoes_ocr?.length > 0 && <details className="mt-4 rounded-xl border border-slate-700 bg-slate-950/40 p-3">
       <summary className="cursor-pointer text-xs font-semibold text-slate-300">Conteúdo complementar</summary>
@@ -438,6 +434,7 @@ export default function QuestoesExtraidas({
     const buscaNormalizada = normalizar(termo)
     const excluidas = new Set(excluirIds.map(String))
     return questoesCarregadas.filter(q => {
+      if (ehDiscursiva(q)) return false
       const classificacao = classificacoes.get(q.id) || lerClassificacao(q.id)
       const banca = chaveCampoFiltro('banca', q.banca || '')
       const ano = q.ano ? String(q.ano) : 'sem-ano'
@@ -503,3 +500,4 @@ export default function QuestoesExtraidas({
     {questoesVisiveis.map(q => <CartaoQuestaoExtraida key={q.id} questao={q} onEstadoResposta={atualizarRespostaLocal} />)}
   </>
 }
+

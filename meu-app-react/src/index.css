@@ -168,3 +168,4 @@ input, select, textarea { accent-color: #9aae5a; }
   .redacao-emblema { width: 38px; height: 38px; border-radius: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
+

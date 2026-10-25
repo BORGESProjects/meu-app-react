@@ -125,3 +125,4 @@ export default function FiltroMultiplo({ titulo, opcoes, selecionados, aoAlterar
     </details>
   </div>
 }
+

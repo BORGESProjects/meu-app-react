@@ -38,3 +38,4 @@ export function iniciarIntegracaoNativa() {
     e.preventDefault();void abrir(a).catch(informar)
   })
 }
+

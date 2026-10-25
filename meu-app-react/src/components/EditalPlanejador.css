@@ -73,3 +73,4 @@
 .edital-pdf-avisos ul{padding-left:20px;list-style:disc}
 @media(max-width:700px){.edital-campos,.edital-filtros{grid-template-columns:minmax(0,1fr)}.edital-painel{padding:16px}.edital-topico{gap:8px}.edital-topico-acoes{width:100%;padding-left:32px}.edital-topico-acoes select{flex:1;min-width:120px}.edital-cabecalho{gap:12px}.edital-cabecalho>.edital-primario{width:100%}.edital-seletor{gap:6px}.edital-seletor>span{padding:0}.edital-materia-titulo>span:first-child{min-width:0}.edital-planejador .edital-nota{margin-left:0}.edital-edicao{padding:12px}}
 
+

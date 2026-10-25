@@ -134,7 +134,7 @@ const gruposConteudo = [
   ['Clima e atmosfera', /clima|climatolog|massa de ar|inversao termica|anomalia climatica/],
   ['Biomas e vegetação', /bioma|vegetacao|amazonia|caatinga|cerrado|mata atlantica|araucaria|morfoclimatico/],
   ['Relevo, geologia e solos', /geomorfolog|geolog|relevo|solo|tecton|vulcan|tsunami/],
-  ['Hidrografia', /hidrograf|bacia hidro|rio|aguas subterraneas|aquifero/],
+  ['Hidrografia', /hidrograf|bacia hidro|\brio\b|aguas subterraneas|aquifero/],
   ['População e demografia', /demograf|populac|migrac|exodo rural|transicao demografica/],
   ['Urbanização', /urbaniz|geografia urbana|cidade|rede urbana/],
   ['Espaço agrário e agropecuária', /agrar|agricultur|agropecuar|estrutura fundiaria|pecuaria/],
@@ -460,3 +460,4 @@ export function opcoesFiltro(questoes, campo) {
     ? (ordemDificuldade[a.value] ?? 99) - (ordemDificuldade[b.value] ?? 99)
     : a.label.localeCompare(b.label, 'pt-BR', { sensitivity: 'base', numeric: true }))
 }
+

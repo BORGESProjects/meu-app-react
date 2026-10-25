@@ -2,7 +2,7 @@ name: Aplicativos AP Aprovado
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, codex/app-0.2.1-20261025]
     paths:
       - 'meu-app-react/native/**'
       - 'meu-app-react/src-tauri/**'

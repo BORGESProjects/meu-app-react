@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "AP Aprovado",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "identifier": "br.com.apaprovado.app",
   "build": {
     "frontendDist": "../dist-native",
@@ -23,7 +23,7 @@
       }
     ],
     "security": {
-      "csp": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob: https://apaprovado.vercel.app https://aprovado-api.onrender.com https://*.supabase.co https://enem.dev https://d2q576s0wzfxtl.cloudfront.net https://s3.static.brasilescola.uol.com.br; connect-src 'self' ipc: http://ipc.localhost https://aprovado-api.onrender.com https://*.supabase.co wss://*.supabase.co; worker-src 'self' blob:; frame-src 'self' blob: https://aprovado-api.onrender.com; object-src 'none'; base-uri 'self'; form-action 'self'"
+      "csp": "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob: https://apaprovado.vercel.app https://*.r2.cloudflarestorage.com https://aprovado-api.onrender.com https://*.supabase.co https://enem.dev https://d2q576s0wzfxtl.cloudfront.net https://s3.static.brasilescola.uol.com.br; connect-src 'self' https://*.r2.cloudflarestorage.com ipc: http://ipc.localhost https://aprovado-api.onrender.com https://*.supabase.co wss://*.supabase.co; worker-src 'self' blob:; frame-src 'self' blob: https://aprovado-api.onrender.com; object-src 'none'; base-uri 'self'; form-action 'self'"
     }
   },
   "bundle": {
@@ -45,3 +45,4 @@
     }
   }
 }
+

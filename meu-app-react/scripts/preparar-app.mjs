@@ -1,7 +1,8 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import {build,loadEnv} from 'vite'
-import {raiz,caminhoPublico,sha256} from './empacotar-acervo.mjs'
+import {raiz,sha256} from './empacotar-acervo.mjs'
+import {unirQuestoes} from '../src/acervo.js'
 
 // Somente a configuração pública do Supabase é embutida no aplicativo.
 let publica={}
@@ -17,26 +18,51 @@ const origem = path.join(raiz,'native/acervo'), destino = path.join(raiz,'dist-n
 const manifesto = JSON.parse(await fs.readFile(path.join(origem,'manifesto.json'),'utf8'))
 const questoes = await fs.readFile(path.join(origem,'questoes.json'))
 if (manifesto.questoes !== 25495 || sha256(questoes) !== manifesto.sha256) throw Error('Pacote de 25.495 questões ausente ou alterado. Execute app:acervo com as fontes conferidas.')
+// O pacote instalado fica enxuto: questões e filtros ficam offline; imagens e
+// páginas originais são carregadas da hospedagem quando solicitadas. Limpar
+// antes do build também impede que cópias antigas do acervo pesado entrem nele.
+await fs.rm(destino,{recursive:true,force:true})
 await import('./preparar-leitor-edital.mjs')
 await build({configFile:path.join(raiz,'vite.native.config.js'),define:{
   'import.meta.env.VITE_SUPABASE_URL':JSON.stringify(env.VITE_SUPABASE_URL),
   'import.meta.env.VITE_SUPABASE_ANON_KEY':JSON.stringify(env.VITE_SUPABASE_ANON_KEY),
 }})
 await fs.mkdir(path.join(destino,'offline'),{recursive:true})
-await fs.copyFile(path.join(origem,'questoes.json'),path.join(destino,'offline/questoes.json'))
-await fs.copyFile(path.join(origem,'manifesto.json'),path.join(destino,'offline/manifesto.json'))
-for (const r of manifesto.recursos) {
-  const arquivo = r.url.startsWith('/native-media/') ? path.join(raiz,'native/media',path.basename(r.url)) : caminhoPublico(r.url)
-  const bytes = await fs.readFile(arquivo)
-  if (sha256(bytes) !== r.sha256) throw Error('Imagem alterada ou incompleta: '+r.url)
-  const para = path.join(destino,r.url.slice(1))
-  await fs.mkdir(path.dirname(para),{recursive:true});await fs.writeFile(para,bytes)
-}
 for (const nome of ['favicon.svg','leitura-editais','acervo-provas']) {
   try { await fs.cp(path.join(raiz,'public',nome),path.join(destino,nome),{recursive:true}) }
   catch (erro) { if (erro.code !== 'ENOENT') throw erro }
 }
+// O app nativo lê um único arquivo offline. Reaplicamos as edições atuais
+// com as mesmas regras de validade e deduplicação usadas pelo site.
+const origemAcervo = path.join(raiz,'public','acervo')
+const pacotesAcervo = []
+const questoesAtuais = JSON.parse(questoes.toString('utf8'))
+for (const entrada of await fs.readdir(origemAcervo,{withFileTypes:true})) {
+  if (!entrada.isDirectory()) continue
+  const origemQuestoes = path.join(origemAcervo,entrada.name,'questoes.json')
+  try {
+    const bytes = await fs.readFile(origemQuestoes)
+    const questoes = JSON.parse(bytes.toString('utf8'))
+    if (!Array.isArray(questoes)) throw Error('o conteúdo não é uma lista')
+    questoesAtuais.push(...questoes)
+    pacotesAcervo.push({edicao:entrada.name,questoes:questoes.length,bytes:bytes.length,sha256:sha256(bytes)})
+  } catch (erro) {
+    if (erro.code !== 'ENOENT') throw Error(`Pacote de questões inválido em public/acervo/${entrada.name}: ${erro.message}`)
+  }
+}
+const instaladas = unirQuestoes(questoesAtuais)
+if (instaladas.length < manifesto.questoes) throw Error('O acervo atualizado perdeu questões; revise as fontes antes de compilar.')
+const bytesInstalados = Buffer.from(JSON.stringify(instaladas))
+await fs.writeFile(path.join(destino,'offline/questoes.json'),bytesInstalados)
+await fs.writeFile(path.join(destino,'offline/manifesto.json'),JSON.stringify({
+  versao:1,
+  questoes:instaladas.length,
+  sha256:sha256(bytesInstalados),
+  bytes:bytesInstalados.length,
+  midia:'sob-demanda',
+  edicoes:pacotesAcervo,
+},null,2))
 // As fontes do sistema funcionam offline; não faz requisição a fontes externas.
 const html=await fs.readFile(path.join(destino,'index.html'),'utf8')
 await fs.writeFile(path.join(destino,'index.html'),html.replace(/<link[^>]+fonts\.googleapis\.com[^>]+>/gu,''))
-console.log(`Aplicativo preparado: ${manifesto.questoes} questões e ${manifesto.recursos.length} recursos visuais verificados.`)
+console.log(`Aplicativo preparado: ${instaladas.length} questões offline, atualizadas com ${pacotesAcervo.length} conjuntos sem duplicar registros; imagens carregadas sob demanda.`)

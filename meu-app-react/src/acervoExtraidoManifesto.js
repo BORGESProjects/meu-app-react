@@ -1,4 +1,4 @@
-import {API_URL} from './api'
+import {API_URL, fetchApi} from './api'
 import {supabase} from './supabaseClient'
 
 const bucket = 'acervo-extraido'
@@ -17,7 +17,7 @@ async function buscarManifesto() {
 
   if (token && chavePublicaSupabase) {
     try {
-      const resposta = await fetch(`${API_URL}/api/acervo/r2/objeto?key=manifesto.json&v=${Date.now()}`, {
+      const resposta = await fetchApi(`${API_URL}/api/acervo/r2/objeto?key=manifesto.json&v=${Date.now()}`, {
         headers: {Authorization: `Bearer ${token}`, 'X-Supabase-Key': chavePublicaSupabase},
         signal,
       })
@@ -47,3 +47,4 @@ export function carregarManifestoAcervo() {
   }
   return manifestoPendente
 }
+
