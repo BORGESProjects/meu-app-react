@@ -41,7 +41,7 @@ public class AcessoController {
         this.retornoAdmin = retornoAdmin;
     }
 
-    public record CheckoutRequest(String plano, String ciclo) {}
+    public record CheckoutRequest(String plano, String ciclo, String modalidade) {}
 
     @GetMapping("/preco")
     public Map<String, String> preco() {
@@ -100,7 +100,7 @@ public class AcessoController {
             @RequestHeader(value="X-Supabase-Key", required=false) String publicKey) {
         String email = emailConfirmado(authorization, publicKey);
         return mercadoPago.criarCheckout(email, request == null ? "" : request.plano(),
-            request == null ? "" : request.ciclo());
+            request == null ? "" : request.ciclo(), request == null ? "" : request.modalidade());
     }
 
     @PostMapping("/cancelar")

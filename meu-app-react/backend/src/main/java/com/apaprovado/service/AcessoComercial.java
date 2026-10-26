@@ -42,17 +42,30 @@ public class AcessoComercial {
     public record RelatorioRecebimentos(BigDecimal saldoMesAntesTaxas, long pagamentosAprovadosMes,
             List<Recebimento> recebimentos) {}
 
-    public record TitularCheckout(String referencia, String email, String plano, String ciclo, BigDecimal valor) {}
+    public record TitularCheckout(String referencia, String email, String plano, String ciclo, BigDecimal valor, String modalidade) {}
 
     public void registrarCheckout(String id, String referencia, String email, String plano, String ciclo, BigDecimal valor) {
         jdbc.update("INSERT INTO public.checkouts_mercado_pago(subscription_id,external_reference,email,plan_key,billing_cycle,amount) "
             + "VALUES (?,?,?,?,?,?)", id, referencia, email, plano, ciclo, valor);
     }
 
+    public void registrarCheckoutAvulso(String id, String referencia, String email, String plano, String ciclo,
+            BigDecimal valor, String modalidade) {
+        jdbc.update("INSERT INTO public.checkouts_mercado_pago(subscription_id,external_reference,email,plan_key,billing_cycle,amount,modality) "
+            + "VALUES (?,?,?,?,?,?,?)", id, referencia, email, plano, ciclo, valor, modalidade);
+    }
+
     public TitularCheckout checkout(String id) {
-        var rows = jdbc.query("SELECT external_reference,email,plan_key,billing_cycle,amount FROM public.checkouts_mercado_pago WHERE subscription_id=?",
+        var rows = jdbc.query("SELECT external_reference,email,plan_key,billing_cycle,amount,modality FROM public.checkouts_mercado_pago WHERE subscription_id=?",
             (rs, row) -> new TitularCheckout(rs.getString("external_reference"), rs.getString("email"),
-                rs.getString("plan_key"), rs.getString("billing_cycle"), rs.getBigDecimal("amount")), id);
+                rs.getString("plan_key"), rs.getString("billing_cycle"), rs.getBigDecimal("amount"), rs.getString("modality")), id);
+        return rows.isEmpty() ? null : rows.get(0);
+    }
+
+    public TitularCheckout checkoutPorReferencia(String referencia) {
+        var rows = jdbc.query("SELECT external_reference,email,plan_key,billing_cycle,amount,modality FROM public.checkouts_mercado_pago WHERE external_reference=?",
+            (rs, row) -> new TitularCheckout(rs.getString("external_reference"), rs.getString("email"),
+                rs.getString("plan_key"), rs.getString("billing_cycle"), rs.getBigDecimal("amount"), rs.getString("modality")), referencia);
         return rows.isEmpty() ? null : rows.get(0);
     }
 
@@ -138,7 +151,7 @@ public class AcessoComercial {
     public String assinaturaAtivaParaCancelar(String email) {
         if (email == null || email.isBlank()) return null;
         var ids = jdbc.query("SELECT subscription_id FROM public.acesso_comercial "
-                + "WHERE provider='mercado_pago' AND lower(email)=lower(?) AND status='active' AND access_until>now() "
+                + "WHERE provider='mercado_pago' AND lower(email)=lower(?) AND status='active' AND billing_cycle='monthly' AND access_until>now() "
                 + "ORDER BY access_until DESC LIMIT 1", (rs, row) -> rs.getString("subscription_id"), email.trim());
         return ids.isEmpty() ? null : ids.get(0);
     }

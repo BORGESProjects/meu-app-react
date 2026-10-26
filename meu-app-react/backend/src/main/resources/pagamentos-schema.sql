@@ -72,6 +72,7 @@ CREATE TABLE IF NOT EXISTS public.checkouts_mercado_pago (
     amount numeric(12,2) NOT NULL CHECK (amount > 0),
     created_at timestamptz NOT NULL DEFAULT now()
 );
+ALTER TABLE public.checkouts_mercado_pago ADD COLUMN IF NOT EXISTS modality text NOT NULL DEFAULT 'subscription';
 REVOKE ALL ON TABLE public.checkouts_mercado_pago FROM PUBLIC, anon, authenticated;
 ALTER TABLE public.checkouts_mercado_pago ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.acesso_comercial ENABLE ROW LEVEL SECURITY;
