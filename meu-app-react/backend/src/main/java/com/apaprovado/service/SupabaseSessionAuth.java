@@ -29,7 +29,7 @@ public class SupabaseSessionAuth {
         this.supabaseUrl = supabaseUrl.replaceAll("/+$", "");
     }
 
-    public void requireAuthenticated(String authorization, String publicKey) {
+    public JsonNode requireAuthenticated(String authorization, String publicKey) {
         if (authorization == null || !authorization.startsWith("Bearer ")
             || publicKey == null || publicKey.isBlank()) {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Entre na sua conta para acessar o acervo.");
@@ -49,6 +49,7 @@ public class SupabaseSessionAuth {
                 || user.path("is_anonymous").asBoolean(false)) {
                 throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Sessão inválida. Entre novamente.");
             }
+            return user;
         } catch (HttpClientErrorException e) {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Sessão inválida. Entre novamente.");
         } catch (RestClientException e) {
