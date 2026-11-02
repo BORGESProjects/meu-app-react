@@ -27,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
+import software.amazon.awssdk.core.client.config.ClientOverrideConfiguration;
 import software.amazon.awssdk.core.ResponseBytes;
 import software.amazon.awssdk.core.exception.SdkException;
 import software.amazon.awssdk.core.sync.RequestBody;
@@ -49,6 +50,8 @@ public class R2AcervoStorage {
     private static final int MAX_KEYS_PER_REQUEST = 100;
     private static final long MAX_STORAGE_BYTES = 10_000_000_000L;
     private static final long MAX_UPLOAD_BATCH_BYTES = 3_800_000L;
+    private static final Duration STORAGE_SCAN_TIMEOUT = Duration.ofSeconds(25);
+    private static final long STORAGE_CACHE_TTL_MILLIS = 60_000L;
     private static final Duration URL_TTL = Duration.ofMinutes(30);
     private static final Pattern ALLOWED_KEY = Pattern.compile(
         "(?:manifesto|visuais)\\.json|lotes/[A-Za-z0-9._-]+\\.json\\.gz|paginas/[A-Za-z0-9._-]+\\.webp"
@@ -59,6 +62,7 @@ public class R2AcervoStorage {
     private final S3Presigner presigner;
     private final ExecutorService uploadExecutor = Executors.newFixedThreadPool(6);
     private StorageUsage cachedUsage;
+    private long cachedUsageAtMillis;
 
     public R2AcervoStorage(
         @Value("${R2_ACCOUNT_ID:}") String accountId,
@@ -86,6 +90,10 @@ public class R2AcervoStorage {
             .credentialsProvider(credentials)
             .region(Region.of("auto"))
             .serviceConfiguration(clientConfiguration)
+            .overrideConfiguration(ClientOverrideConfiguration.builder()
+                .apiCallTimeout(Duration.ofSeconds(8))
+                .apiCallAttemptTimeout(Duration.ofSeconds(5))
+                .build())
             .build();
         this.presigner = S3Presigner.builder()
             .endpointOverride(endpoint)
@@ -142,10 +150,15 @@ public class R2AcervoStorage {
         }
     }
 
-    public synchronized StorageStatus storageStatus() {
+    public synchronized StorageStatus storageStatus(boolean refresh) {
         ensureConfigured();
+        if (!refresh && cachedUsage != null
+            && System.currentTimeMillis() - cachedUsageAtMillis < STORAGE_CACHE_TTL_MILLIS) {
+            return toStatus(cachedUsage);
+        }
         StorageUsage usage = readStorageUsageWithKeys();
         cachedUsage = usage;
+        cachedUsageAtMillis = System.currentTimeMillis();
         return toStatus(usage);
     }
 
@@ -169,6 +182,7 @@ public class R2AcervoStorage {
 
         StorageUsage current = readStorageUsageWithKeys();
         cachedUsage = current;
+        cachedUsageAtMillis = System.currentTimeMillis();
         if (current.bytes() > MAX_STORAGE_BYTES) {
             throw new ResponseStatusException(HttpStatus.PAYLOAD_TOO_LARGE,
                 "O bucket já está acima de 10 GB. O envio foi bloqueado antes de alterar qualquer arquivo.");
@@ -250,9 +264,11 @@ public class R2AcervoStorage {
             for (PendingObject item : pending) updatedSizes.put(item.key(), item.file().getSize());
             StorageUsage after = new StorageUsage(projectedBytes, before.objects() + newObjects, Map.copyOf(updatedSizes));
             cachedUsage = after;
+            cachedUsageAtMillis = System.currentTimeMillis();
             return Map.of("enviados", files.size(), "enviadosBytes", incomingBytes, "armazenamento", toStatus(after));
         } catch (CompletionException e) {
             cachedUsage = null;
+            cachedUsageAtMillis = 0L;
             Throwable cause = e;
             while (cause instanceof CompletionException && cause.getCause() != null) cause = cause.getCause();
             if (cause instanceof ResponseStatusException responseStatus) throw responseStatus;
@@ -314,13 +330,34 @@ public class R2AcervoStorage {
             long bytes = 0L;
             long objects = 0L;
             Map<String, Long> sizes = new HashMap<>();
-            for (S3Object object : client.listObjectsV2Paginator(
-                ListObjectsV2Request.builder().bucket(bucket).build()).contents()) {
-                bytes = Math.addExact(bytes, object.size());
-                sizes.put(object.key(), object.size());
-                objects++;
-            }
+            long deadline = System.nanoTime() + STORAGE_SCAN_TIMEOUT.toNanos();
+            String continuationToken = null;
+            boolean more;
+            do {
+                if (System.nanoTime() >= deadline) {
+                    throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE,
+                        "A leitura do armazenamento excedeu 25 segundos. Tente atualizar novamente.");
+                }
+                ListObjectsV2Request.Builder request = ListObjectsV2Request.builder()
+                    .bucket(bucket)
+                    .maxKeys(1000);
+                if (continuationToken != null) request.continuationToken(continuationToken);
+                var page = client.listObjectsV2(request.build());
+                for (S3Object object : page.contents()) {
+                    bytes = Math.addExact(bytes, object.size());
+                    sizes.put(object.key(), object.size());
+                    objects++;
+                }
+                more = Boolean.TRUE.equals(page.isTruncated());
+                continuationToken = page.nextContinuationToken();
+                if (more && (continuationToken == null || continuationToken.isBlank())) {
+                    throw new ResponseStatusException(HttpStatus.BAD_GATEWAY,
+                        "O armazenamento interrompeu a paginação antes de concluir a leitura.");
+                }
+            } while (more);
             return new StorageUsage(bytes, objects, sizes);
+        } catch (ResponseStatusException e) {
+            throw e;
         } catch (SdkException e) {
             throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Não foi possível medir o uso atual do bucket.");
         }

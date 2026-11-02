@@ -53,10 +53,11 @@ public class AcervoController {
     @GetMapping("/r2/status")
     public R2AcervoStorage.StorageStatus statusR2(
         @RequestHeader(value = "Authorization", required = false) String authorization,
-        @RequestHeader(value = "X-Supabase-Key", required = false) String publicKey
+        @RequestHeader(value = "X-Supabase-Key", required = false) String publicKey,
+        @RequestParam(value = "refresh", defaultValue = "false") boolean refresh
     ) {
         admin.require(authorization, publicKey);
-        return r2.storageStatus();
+        return r2.storageStatus(refresh);
     }
 
     @PostMapping("/r2/preflight")

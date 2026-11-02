@@ -3,8 +3,10 @@ import {API_URL} from '../api'
 import {supabase} from '../supabaseClient'
 
 // Small multipart batches stay below the hosting parser's effective request cap.
-const MAX_BATCH_BYTES = 500000
+// Keep multipart overhead below Render's observed ~700 KB request ceiling.
+const MAX_BATCH_BYTES = 650000
 const MAX_BATCH_FILES = 100
+const STATUS_TIMEOUT_MS = 55000
 const KEY_ALLOWED = /^(?:manifesto|visuais)\.json$|^lotes\/[A-Za-z0-9._-]+\.json\.gz$|^paginas\/[A-Za-z0-9._-]+\.webp$/
 
 const numero = valor => Number(valor || 0).toLocaleString('pt-BR')
@@ -42,25 +44,45 @@ export default function AcervoR2Admin({isAdmin = false}) {
     return session
   }, [])
 
-  const buscarStatus = useCallback(async () => {
+  const buscarStatus = useCallback(async (atualizar = false) => {
+    const controller = new AbortController()
+    let timeoutId
     try {
-      const session = await obterSessao()
-      const response = await fetch(`${API_URL}/api/acervo/r2/status`, {
-        headers: {Authorization: `Bearer ${session.access_token}`, 'X-Supabase-Key': import.meta.env.VITE_SUPABASE_ANON_KEY || ''},
+      const tempoLimite = new Promise((_, reject) => {
+        timeoutId = setTimeout(() => {
+          controller.abort()
+          reject(new Error('A consulta do armazenamento excedeu 55 segundos. Tente atualizar novamente.'))
+        }, STATUS_TIMEOUT_MS)
       })
-      const payload = await response.json().catch(() => ({}))
+      const {data, error: authError} = await Promise.race([supabase.auth.getSession(), tempoLimite])
+      const session = data?.session
+      if (authError || !session?.access_token) throw new Error('Entre na conta administradora do app para consultar o armazenamento.')
+      const url = new URL(`${API_URL}/api/acervo/r2/status`)
+      if (atualizar) url.searchParams.set('refresh', 'true')
+      const response = await Promise.race([fetch(url, {
+        headers: {Authorization: `Bearer ${session.access_token}`, 'X-Supabase-Key': import.meta.env.VITE_SUPABASE_ANON_KEY || ''},
+        signal: controller.signal,
+      }), tempoLimite])
+      const payload = await Promise.race([response.json().catch(() => ({})), tempoLimite])
       if (!response.ok) throw new Error(mensagemErro(payload, response))
       setStatus(payload)
       setErro('')
     } catch (error) {
-      setErro(error.message || 'Não foi possível consultar o uso do bucket.')
+      setErro(error.name === 'AbortError'
+        ? 'A consulta do armazenamento excedeu 55 segundos. Tente atualizar novamente.'
+        : error.message || 'Não foi possível consultar o uso do bucket.')
+    } finally {
+      clearTimeout(timeoutId)
     }
-  }, [obterSessao])
+  }, [])
 
   const atualizarStatus = useCallback(async () => {
     setCarregando(true)
-    await buscarStatus()
-    setCarregando(false)
+    try {
+      await buscarStatus(true)
+    } finally {
+      setCarregando(false)
+    }
   }, [buscarStatus])
 
   useEffect(() => { if (isAdmin) void buscarStatus() }, [buscarStatus, isAdmin])
