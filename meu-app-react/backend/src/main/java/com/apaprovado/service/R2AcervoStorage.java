@@ -50,7 +50,7 @@ public class R2AcervoStorage {
     private static final int MAX_KEYS_PER_REQUEST = 100;
     private static final long MAX_STORAGE_BYTES = 10_000_000_000L;
     private static final long MAX_UPLOAD_BATCH_BYTES = 3_800_000L;
-    private static final Duration STORAGE_SCAN_TIMEOUT = Duration.ofSeconds(25);
+    private static final Duration STORAGE_SCAN_TIMEOUT = Duration.ofSeconds(80);
     private static final long STORAGE_CACHE_TTL_MILLIS = 60_000L;
     private static final Duration URL_TTL = Duration.ofMinutes(30);
     private static final Pattern ALLOWED_KEY = Pattern.compile(
@@ -152,14 +152,18 @@ public class R2AcervoStorage {
 
     public synchronized StorageStatus storageStatus(boolean refresh) {
         ensureConfigured();
+        return toStatus(currentStorageUsage(refresh));
+    }
+
+    private StorageUsage currentStorageUsage(boolean refresh) {
         if (!refresh && cachedUsage != null
             && System.currentTimeMillis() - cachedUsageAtMillis < STORAGE_CACHE_TTL_MILLIS) {
-            return toStatus(cachedUsage);
+            return cachedUsage;
         }
         StorageUsage usage = readStorageUsageWithKeys();
         cachedUsage = usage;
         cachedUsageAtMillis = System.currentTimeMillis();
-        return toStatus(usage);
+        return usage;
     }
 
     public synchronized PreflightResult preflight(List<UploadFileDescriptor> files) {
@@ -180,9 +184,7 @@ public class R2AcervoStorage {
             incomingBytes = Math.addExact(incomingBytes, file.bytes());
         }
 
-        StorageUsage current = readStorageUsageWithKeys();
-        cachedUsage = current;
-        cachedUsageAtMillis = System.currentTimeMillis();
+        StorageUsage current = currentStorageUsage(false);
         if (current.bytes() > MAX_STORAGE_BYTES) {
             throw new ResponseStatusException(HttpStatus.PAYLOAD_TOO_LARGE,
                 "O bucket já está acima de 10 GB. O envio foi bloqueado antes de alterar qualquer arquivo.");
@@ -229,11 +231,7 @@ public class R2AcervoStorage {
             pending.add(new PendingObject(file, key, 0L));
         }
 
-        StorageUsage before = cachedUsage;
-        if (before == null) {
-            before = readStorageUsageWithKeys();
-            cachedUsage = before;
-        }
+        StorageUsage before = currentStorageUsage(false);
         long replacingBytes = 0L;
         long newObjects = 0L;
         List<PendingObject> resolved = new ArrayList<>(pending.size());
@@ -336,7 +334,7 @@ public class R2AcervoStorage {
             do {
                 if (System.nanoTime() >= deadline) {
                     throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE,
-                        "A leitura do armazenamento excedeu 25 segundos. Tente atualizar novamente.");
+                        "A leitura do armazenamento excedeu 80 segundos. Tente atualizar novamente.");
                 }
                 ListObjectsV2Request.Builder request = ListObjectsV2Request.builder()
                     .bucket(bucket)
