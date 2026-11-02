@@ -16,6 +16,7 @@ import java.util.concurrent.*;
 
 @Service
 public class GeminiService {
+    private static final org.slf4j.Logger log=org.slf4j.LoggerFactory.getLogger(GeminiService.class);
     public record Resultado(JsonNode relatorio,boolean reutilizada,String modelo) {}
     private record Entrada(JsonNode relatorio,long expira) {}
     private final RestTemplate http;
@@ -81,7 +82,7 @@ public class GeminiService {
         catch(Exception e){throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Não foi possível ler o texto enviado.");}
         var body=Map.of("systemInstruction",Map.of("parts",List.of(Map.of("text",instrucao+"\nRubrica obrigatória: "+rubrica))),
                 "contents",List.of(Map.of("role","user","parts",List.of(Map.of("text",dados)))),
-                "generationConfig",Map.of("temperature",0.2,"maxOutputTokens",6000,"responseMimeType","application/json"));
+                "generationConfig",Map.of("maxOutputTokens",6000,"responseMimeType","application/json"));
         var headers=new HttpHeaders();headers.setContentType(MediaType.APPLICATION_JSON);headers.set("x-goog-api-key",apiKey);
         for(int tentativa=0;tentativa<2;tentativa++) {
             try {
@@ -94,6 +95,7 @@ public class GeminiService {
                 catch(Exception e){throw new ResponseStatusException(HttpStatus.BAD_GATEWAY,"O relatório veio em um formato inválido. Seu texto foi mantido; tente novamente.");}
             } catch(HttpStatusCodeException e) {
                 int status=e.getStatusCode().value();
+                log.warn("Redacao: provedor recusou solicitacao; modelo={}, status={}",modelo,status);
                 if(tentativa==0 && Set.of(500,502,503,504).contains(status)){pausar();continue;}
                 if(status==429)throw new ResponseStatusException(HttpStatus.TOO_MANY_REQUESTS,"O limite do provedor de IA foi atingido. Aguarde antes de tentar novamente; seu rascunho foi mantido.");
                 if(status==401 || status==403 || status==404)throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE,"O serviço de correção precisa de ajuste de acesso ou modelo no servidor. Seu rascunho foi mantido.");

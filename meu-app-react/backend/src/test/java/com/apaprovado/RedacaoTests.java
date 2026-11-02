@@ -25,4 +25,10 @@ class RedacaoTests {
  @Test void quotaNaoRepeteNemVazaDetalhes(){var service=new GeminiService(new RestTemplateBuilder(),mapper,"segredo","modelo-teste");var server=servidor(service);server.expect(anything()).andRespond(withStatus(HttpStatus.TOO_MANY_REQUESTS).body("SEGREDO"));var erro=assertThrows(ResponseStatusException.class,()->service.corrigir("A",pedido()));assertEquals(429,erro.getStatusCode().value());assertFalse(erro.getMessage().contains("SEGREDO"));server.verify();}
  @Test void indisponibilidadeTemUmaRetentativa()throws Exception{var service=new GeminiService(new RestTemplateBuilder(),mapper,"segredo","modelo-teste");var server=servidor(service);server.expect(anything()).andRespond(withStatus(HttpStatus.SERVICE_UNAVAILABLE));server.expect(anything()).andRespond(withSuccess(resposta(),MediaType.APPLICATION_JSON));assertEquals(800,service.corrigir("A",pedido()).relatorio().path("nota").asInt());server.verify();}
  @Test void autenticacaoExigeSessaoConfirmadaDeQualquerEstudante(){var auth=new RedacaoAuth(new RestTemplateBuilder(),"https://example.supabase.co");assertThrows(ResponseStatusException.class,()->auth.require(null,null));var server=servidor(auth);server.expect(anything()).andRespond(withSuccess("{\"id\":\"estudante\",\"email_confirmed_at\":\"2026-01-01\"}",MediaType.APPLICATION_JSON));assertEquals("estudante",auth.require("Bearer token","public-key"));server.verify();}
+ @Test void naoEnviaParametroDeAmostragemObsoleto()throws Exception{
+ var service=new GeminiService(new RestTemplateBuilder(),mapper,"segredo","gemini-3.6-flash");
+ var server=servidor(service);
+ server.expect(anything()).andExpect(content().string(org.hamcrest.Matchers.not(org.hamcrest.Matchers.containsString("temperature")))).andRespond(withSuccess(resposta(),MediaType.APPLICATION_JSON));
+ assertEquals(800,service.corrigir("A",pedido()).relatorio().path("nota").asInt());server.verify();
+ }
 }
