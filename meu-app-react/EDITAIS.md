@@ -11,7 +11,7 @@ A aba Edital usa a conta conectada. Cada concurso tem título, edição, unidade
 
 ## Modelos institucionais
 
-“Começar por um modelo de edital” inclui uma seleção de matrizes e programas recentes, resumidos e organizados em matérias e tópicos. Cada modelo exibe edição, observação de escopo e link para a fonte oficial. O catálogo está em `src/data/modelosEditaisOficiais.js`; ao escolher um modelo, o app cria uma cópia pessoal com tópicos pendentes e preserva os editais já existentes.
+“Começar por um modelo de edital” inclui uma seleção de matrizes e programas recentes, resumidos e organizados em matérias e tópicos. Cada modelo exibe edição, observação de escopo e link para a fonte oficial. O catálogo está em `src/data/modelosEditaisOficiais.js`; ao escolher um modelo, o app cria uma cópia pessoal com tópicos pendentes e preserva os editais já existentes. Ele aparece na aba Editais do aplicativo do banco de questões (`src/App.jsx`). O portal comercial oculta esse catálogo usando `mostrarCatalogoOficial={false}`.
 
 O catálogo inclui UFPR, UTFPR, UFSC/IFC, FURG, ENEM, IFSP e referências específicas de CPOR/RJ e NPOR/19º BC. Nos processos de CPOR/NPOR não há uma matriz nacional única: os modelos militares informam unidade e ano da referência, e instruem o estudante a conferir o edital local vigente. O catálogo resume os documentos; não substitui editais, retificações, listas de obras nem regras de cada curso/campus.
 

@@ -537,7 +537,7 @@ function mountEditalPlanner() {
   const userId=state.session.user.id
   const praticar=(materia,conteudo)=>{const url=new URL('/estudar.html',softwareOrigin);url.searchParams.set('aba','questoes');url.searchParams.set('materia',materia);if(conteudo)url.searchParams.set('conteudo',conteudo);location.assign(url.href)}
   editalModulePromise ||= import('../src/components/EditalPlanejador.jsx').then(module=>module.default)
-  void editalModulePromise.then(Component=>{if(state.session?.user?.id===userId)editalRoot.render(createElement(Component,{userId,historicoRespostas:state.progressData.historico_respostas,onPraticar:praticar}))}).catch(()=>{if(state.session?.user?.id===userId)host.textContent='Não foi possível carregar o planejador de editais. Recarregue a página para tentar novamente.'})
+  void editalModulePromise.then(Component=>{if(state.session?.user?.id===userId)editalRoot.render(createElement(Component,{userId,historicoRespostas:state.progressData.historico_respostas,onPraticar:praticar,mostrarCatalogoOficial:false}))}).catch(()=>{if(state.session?.user?.id===userId)host.textContent='Não foi possível carregar o planejador de editais. Recarregue a página para tentar novamente.'})
 }
 
 async function updateProgressArray(field,transform) {

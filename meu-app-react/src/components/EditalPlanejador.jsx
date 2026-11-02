@@ -28,7 +28,7 @@ function Progresso({materias}) {
   return <div className="edital-progresso"><div><span>{r.concluidos} de {r.total} conteúdos estudados</span><strong>{r.percentual}%</strong></div><progress max="100" value={r.percentual} aria-label="Conteúdos estudados" /></div>
 }
 
-export default function EditalPlanejador({userId, client = supabase, historicoRespostas = [], onPraticar}) {
+export default function EditalPlanejador({userId, client = supabase, historicoRespostas = [], onPraticar, mostrarCatalogoOficial = true}) {
   const repositorioLocal=useMemo(()=>aplicativoNativo?criarEditaisOffline({client,userId,storage:window.localStorage}):null,[client,userId])
   const [editais,setEditais] = useState([])
   const [selecionado,setSelecionado] = useState('')
@@ -47,9 +47,9 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
   const [prioridade,setPrioridade] = useState('')
   const [abertas,setAbertas] = useState({})
   const [editando,setEditando] = useState(null)
-  const [antigos,setAntigos] = useState(linhasModelosEditais)
+  const [antigos,setAntigos] = useState(mostrarCatalogoOficial ? linhasModelosEditais : null)
   const [lendoAntigos,setLendoAntigos] = useState(false)
-  const [modeloSelecionado,setModeloSelecionado] = useState(linhasModelosEditais[0]?.concurso || '')
+  const [modeloSelecionado,setModeloSelecionado] = useState(mostrarCatalogoOficial ? linhasModelosEditais[0]?.concurso || '' : '')
   const [leitorSolicitado,setLeitorSolicitado] = useState(false)
   const bloqueio = useRef(false)
   const ativo = editais.find(e => e.id === selecionado)
@@ -84,7 +84,7 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
     return () => {cancelado = true;window.removeEventListener('online',reconectar)}
   }, [carregar,repositorioLocal])
 
-  useEffect(() => { void carregarAntigos() }, [])
+  useEffect(() => { if (mostrarCatalogoOficial) void carregarAntigos() }, [])
 
   async function gravar(edital, novo = false) {
     if (bloqueio.current) return false
@@ -235,7 +235,7 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
         {!!resumo.total && !ativo.materias.some(m => m.topicos.some(t => topicoVisivel(t,busca,status,prioridade))) && <p className="edital-painel">Nenhum conteúdo corresponde aos filtros. Limpe-os para ver os demais tópicos.</p>}
         {!resumo.total && <div className="edital-vazio"><h3>Seu edital está pronto para receber conteúdos</h3><p>Abra “Acrescentar matérias e conteúdos”, escolha uma matéria ou cole várias e verticalize. Depois, acompanhe cada tópico na lista.</p></div>}
       </> : !criando && <div className="edital-vazio"><h3>Qual concurso você está estudando?</h3><p>Crie um edital, como CPOR 2026, e inclua as matérias do seu programa. Cada concurso terá seu próprio acompanhamento.</p><button className="edital-primario" onClick={() => {setForm(vazio);setCriando(true)}}>Criar meu primeiro edital</button></div>}
-      <section className="edital-painel edital-modelo-pronto"><h3>Começar por um modelo de edital</h3><p>Escolha uma matriz de conteúdos publicada pela instituição para criar seu acompanhamento pessoal. Os tópicos e marcações ficam na sua conta; o modelo compartilhado não é alterado.</p><div className="edital-seletor"><label>Concurso, vestibular ou edição<select disabled={salvando || !modelos.length} value={modeloSelecionado} onChange={e=>setModeloSelecionado(e.target.value)}><option value="">Selecione um modelo</option>{modelos.map(modelo=><option key={modelo} value={modelo}>{modelo} · {antigos.filter(item=>item.concurso===modelo).length} conteúdos</option>)}</select></label><button className="edital-primario" disabled={salvando || !modeloSelecionado} onClick={()=>copiar(modeloSelecionado)}>Adicionar à minha área</button><button disabled={lendoAntigos} onClick={carregarAntigos}>{lendoAntigos?'Atualizando…':'Atualizar modelos'}</button></div>{modeloInfo && <div className="edital-modelo-fonte"><strong>{modeloInfo.categoria} · Edição {modeloInfo.ano}</strong><p>{modeloInfo.observacao}</p><a href={modeloInfo.fonte} target="_blank" rel="noreferrer">Consultar programa ou documento oficial ↗</a></div>}{antigos && !modelos.length && <p role="status">Nenhum modelo está disponível agora. Você ainda pode criar seu edital manualmente ou importar o PDF oficial.</p>}</section>
+      {mostrarCatalogoOficial && <section className="edital-painel edital-modelo-pronto"><h3>Começar por um modelo de edital</h3><p>Escolha uma matriz de conteúdos publicada pela instituição para criar seu acompanhamento pessoal. Os tópicos e marcações ficam na sua conta; o modelo compartilhado não é alterado.</p><div className="edital-seletor"><label>Concurso, vestibular ou edição<select disabled={salvando || !modelos.length} value={modeloSelecionado} onChange={e=>setModeloSelecionado(e.target.value)}><option value="">Selecione um modelo</option>{modelos.map(modelo=><option key={modelo} value={modelo}>{modelo} · {antigos.filter(item=>item.concurso===modelo).length} conteúdos</option>)}</select></label><button className="edital-primario" disabled={salvando || !modeloSelecionado} onClick={()=>copiar(modeloSelecionado)}>Adicionar à minha área</button><button disabled={lendoAntigos} onClick={carregarAntigos}>{lendoAntigos?'Atualizando…':'Atualizar modelos'}</button></div>{modeloInfo && <div className="edital-modelo-fonte"><strong>{modeloInfo.categoria} · Edição {modeloInfo.ano}</strong><p>{modeloInfo.observacao}</p><a href={modeloInfo.fonte} target="_blank" rel="noreferrer">Consultar programa ou documento oficial ↗</a></div>}{antigos && !modelos.length && <p role="status">Nenhum modelo está disponível agora. Você ainda pode criar seu edital manualmente ou importar o PDF oficial.</p>}</section>}
     </>}
   </section>
 }
