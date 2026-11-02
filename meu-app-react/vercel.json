@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/aluno.html",
+      "destination": "https://ap-aprovado.pages.dev/aluno",
+      "permanent": true
+    },
+    {
+      "source": "/aluno",
+      "destination": "https://ap-aprovado.pages.dev/aluno",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

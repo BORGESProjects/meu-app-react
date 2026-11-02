@@ -1246,7 +1246,7 @@ export default function App() {
             { id: 'questoes', label: 'Questões' },
             { id: 'simulados', label: 'Simulados' },
             { id: 'desempenho', label: 'Desempenho' },
-            { id: 'area-aluno', label: 'Área do aluno', href: '/aluno.html#caderno' },
+            { id: 'area-aluno', label: 'Área do aluno', href: 'https://ap-aprovado.pages.dev/aluno#caderno' },
             ...(isAdmin ? [{ id: 'cadastrar', label: 'Cadastrar' }, { id: 'importar', label: 'Importar PDF' }, { id: 'r2-upload', label: 'Migrar acervo R2' }, { id: 'recebimentos', label: 'Recebimentos' }] : []),
             { id: 'redacao', label: 'Redação' },
             { id: 'conta', label: 'Minha conta' }
