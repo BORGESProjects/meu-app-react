@@ -9,7 +9,11 @@ A aba Edital usa a conta conectada. Cada concurso tem título, edição, unidade
 3. Conferir a prévia e acrescentar. Repetições na mesma matéria são ignoradas; tópicos existentes mantêm etapa, prioridade e anotações.
 4. Marcar estudado pelo checkbox ou escolher Não iniciado, Em estudo, Revisar ou Estudado. Usar prioridade alta e anotações para organizar revisões.
 
-Os exemplos da interface explicam a organização; não são programas oficiais de concursos. O usuário deve incluir os conteúdos do edital de sua aplicação.
+## Modelos institucionais
+
+“Começar por um modelo de edital” inclui uma seleção de matrizes e programas recentes, resumidos e organizados em matérias e tópicos. Cada modelo exibe edição, observação de escopo e link para a fonte oficial. O catálogo está em `src/data/modelosEditaisOficiais.js`; ao escolher um modelo, o app cria uma cópia pessoal com tópicos pendentes e preserva os editais já existentes.
+
+O catálogo inclui UFPR, UTFPR, UFSC/IFC, FURG, ENEM, IFSP e referências específicas de CPOR/RJ e NPOR/19º BC. Nos processos de CPOR/NPOR não há uma matriz nacional única: os modelos militares informam unidade e ano da referência, e instruem o estudante a conferir o edital local vigente. O catálogo resume os documentos; não substitui editais, retificações, listas de obras nem regras de cada curso/campus.
 
 ## Persistência e preservação
 

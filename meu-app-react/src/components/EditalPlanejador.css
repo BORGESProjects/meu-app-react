@@ -63,6 +63,10 @@
 .edital-vazio p{max-width:570px;margin:8px auto 22px}
 .edital-modelos{display:grid;gap:12px;margin-top:18px}
 .edital-modelos>div{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.9rem}
+.edital-modelo-fonte{margin-top:14px;padding:14px 16px;border:1px solid #39432e;border-radius:10px;background:#10140e;line-height:1.6}
+.edital-modelo-fonte strong{font-size:.82rem;color:var(--edital-olive-light)}
+.edital-modelo-fonte p{margin:6px 0 8px}
+.edital-modelo-fonte a{color:#d2e89a;font-size:.84rem;text-underline-offset:3px;overflow-wrap:anywhere}
 .edital-pdf>.edital-form{margin-top:18px}
 .edital-pdf p,.edital-pdf strong{overflow-wrap:anywhere}
 .edital-pdf-pagina{display:block;max-height:650px;width:100%;object-fit:contain;background:white;border-radius:8px;margin-top:16px}
