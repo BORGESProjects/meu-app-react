@@ -2,7 +2,7 @@ name: Aplicativos AP Aprovado
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [main, codex/app-0.2.1-20261025]
     paths:
       - 'meu-app-react/native/**'
       - 'meu-app-react/src-tauri/**'
@@ -21,6 +21,7 @@ defaults:
     working-directory: meu-app-react
 jobs:
   windows:
+    if: ${{ !contains(github.event.head_commit.message, '[android-only]') }}
     runs-on: windows-latest
     timeout-minutes: 90
     steps:
@@ -52,6 +53,10 @@ jobs:
   android:
     runs-on: ubuntu-latest
     timeout-minutes: 90
+    env:
+      CARGO_PROFILE_DEV_DEBUG: '0'
+      CARGO_PROFILE_DEV_STRIP: symbols
+      CARGO_PROFILE_DEV_OPT_LEVEL: s
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

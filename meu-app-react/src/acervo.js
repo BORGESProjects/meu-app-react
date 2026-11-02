@@ -3,6 +3,7 @@ import enem2022 from './data/enem2022.json' with { type: 'json' }
 import { BANCA_ASSIMILACAO, normalizarBanca, normalizarMateria } from './filtros.js'
 import {blocosValidos,temApoioEmBlocos,assinaturaVisualBlocos} from './blocosQuestao.js'
 import {problemasDeIntegridade,separarRodapeEditorial} from './qualidadeQuestao.js'
+import {normalizarMetadadosQuestao} from './origemQuestao.js'
 
 export const acervo = [...esa2025, ...enem2022]
 
@@ -180,7 +181,7 @@ function respostaCanonica(questao) {
 
 export function corrigirQuestaoConferida(questao) {
   const correcao = CORRECOES_CONFERIDAS.get(String(questao?.id ?? ''))
-  const corrigida = correcao ? { ...questao, ...correcao } : { ...questao }
+  const corrigida = normalizarMetadadosQuestao(correcao ? { ...questao, ...correcao } : questao)
   corrigida.banca = normalizarBanca(corrigida.banca, corrigida.concurso)
   if (Object.hasOwn(corrigida, 'materia')) corrigida.materia = normalizarMateria(corrigida.materia, corrigida.conteudo)
   corrigida.enunciado = limparMarcadoresExtracao(corrigida.enunciado)
@@ -307,6 +308,7 @@ export function unirQuestoes(cadastradas = []) {
 }
 
 export function podeCorrigir(q) {
+  if(q.integridade_profissional?.apta_resolucao===false || q.integridade_profissional?.correcao_automatica===false)return false
   if (q.anulada) return false
   if (q.tipo_resposta === 'somatoria') return Number.isInteger(Number(q.resposta_soma ?? q.resposta_correta))
   return q.resposta_correta !== null && q.resposta_correta !== undefined

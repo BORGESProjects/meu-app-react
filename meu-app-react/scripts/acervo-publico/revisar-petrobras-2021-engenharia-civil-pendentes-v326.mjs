@@ -1,0 +1,70 @@
+import fs from 'node:fs/promises'
+import {raizesAtuais} from './acervo-atual.mjs'
+import {aplicarRevisoesIndividuais,hashRevisao} from './aplicar-revisoes-individuais.mjs'
+
+const doc='b3a318d99185e480'
+const prova='https://cdn.cebraspe.org.br/concursos/PETROBRAS_21_NS/arquivos/658_PETROBRAS_010_01.PDF'
+const gabarito='https://cdn.cebraspe.org.br/concursos/PETROBRAS_21_NS/arquivos/GAB_DEFINITIVO_658_PETROBRAS_010_01.PDF'
+const concurso='PETROBRAS — Engenheiro Civil — 2021'
+const catalog=JSON.parse(await fs.readFile('docs/acervo/revisao-profissional/fontes-documentais.json','utf8')).find(x=>x.id===doc)
+if(!catalog||catalog.url!==prova)throw Error('A prova diverge do catálogo documental')
+const records=JSON.parse(await fs.readFile(`tmp/registros-documento-${doc}.json`,'utf8'))
+const keyRecord=(await fs.readFile('docs/acervo/revisao-profissional/gabaritos-conferidos.jsonl','utf8')).split(/\r?\n/).filter(Boolean).map(JSON.parse).find(x=>x.documento_id===doc)
+if(!keyRecord||keyRecord.gabarito_url!==gabarito||keyRecord.status!=='tabela_lida')throw Error('Gabarito definitivo não validado no catálogo')
+
+const byNumber={
+68:['Estruturas','Treliças planas: esforços internos e flexão','Média'],71:['Tecnologia do concreto','Concreto dosado em central e consumo de cimento','Média'],72:['Fundações','Sapata excêntrica e viga de equilíbrio','Média'],74:['Fundações','Estaca Franki em solos compressíveis','Difícil'],75:['Fundações','Preparação de rocha inclinada para apoio de fundações','Média'],78:['Mecânica dos solos','Infiltração, percolação e condutividade hidráulica','Difícil'],90:['Materiais de construção','Cimento pozolânico em ambientes agressivos','Média'],91:['Estruturas de concreto','Emendas soldadas de barras de aço para armaduras','Difícil'],92:['Estruturas de concreto','Proteção contra corrosão de armaduras expostas','Média'],93:['Tecnologia do concreto','Início de pega, transporte e recebimento de concreto','Média'],94:['Mecânica dos solos','Ensaio de palheta e anisotropia de resistência','Difícil'],95:['Mecânica dos solos','Ensaio Vane Test: velocidade e resistência não drenada','Média'],96:['Mecânica dos solos','Ensaio Vane Test e efeito de fluência','Difícil'],97:['Pavimentação','Afundamento plástico em revestimento asfáltico','Média'],98:['Pavimentação','Exsudação em pavimentos asfálticos','Média'],99:['Pavimentação','Trincamento tipo couro de jacaré','Média'],100:['Instalações hidráulicas','Fórmula Fair-Whipple-Hsiao e perda de carga','Média'],101:['Instalações hidráulicas','Equação de Darcy-Weisbach e perda de carga','Difícil'],102:['Instalações hidráulicas','Fórmula de Hazen-Williams e limites de aplicação','Média'],103:['Saneamento','Filtros biológicos no tratamento de esgotos','Média'],104:['Saneamento','Lodos ativados e etapas do tratamento de esgotos','Fácil'],105:['Saneamento','Tratamento terciário de esgotos sanitários','Fácil'],106:['Instalações hidráulicas','Método do consumo máximo possível','Média'],107:['Instalações hidráulicas','Dimensionamento de sub-ramais prediais','Média'],108:['Instalações hidráulicas','Método do consumo máximo provável','Difícil'],109:['Estruturas de concreto protendido','Estados limites de descompressão e compressão excessiva','Difícil'],110:['Estruturas de concreto protendido','Armaduras ativas e passivas','Média'],111:['Drenagem','Bueiros tubulares e caixas coletoras de entrada','Média'],112:['Pontes','Lajes de transição e aproximação de aterros','Média'],113:['Instalações elétricas','Potência mínima de pontos de tomada','Média'],114:['Estradas','Nivelamento e contranivelamento topográfico','Média'],115:['Estradas','Diagrama de Brückner e volumes de terraplenagem','Difícil'],116:['Engenharia hidroviária','Canalização e melhoramento de hidrovias interiores','Média'],117:['Desempenho de edificações','Vida útil de projeto e manutenibilidade','Média'],118:['Conforto ambiental','Fator de luz diurna e avaliação de iluminação natural','Média'],119:['Planejamento de obras','Curva S e acompanhamento físico-financeiro','Fácil'],120:['Planejamento de obras','Curva ABC e análise de atividades','Média']
+}
+const contexts={
+91:'Durante a execução de uma edificação em estrutura de concreto armado, optou-se por emendar as barras de aço da estrutura com solda, conforme composição e limites previstos em norma. Após autorização da concretagem, um caminhão chegou com atraso. Como parte da obra ficaria paralisada por mais de três meses, as ferragens expostas foram revestidas com graxa para evitar oxidação. Julgue os itens sobre esses cuidados.',
+92:'Durante a execução de uma edificação em estrutura de concreto armado, optou-se por emendar as barras de aço da estrutura com solda, conforme composição e limites previstos em norma. Após autorização da concretagem, um caminhão chegou com atraso. Como parte da obra ficaria paralisada por mais de três meses, as ferragens expostas foram revestidas com graxa para evitar oxidação. Julgue os itens sobre esses cuidados.',
+94:'Na execução de obras em aterros, o ensaio de palheta, também conhecido como Vane Test, é realizado em campo para determinar a resistência não drenada de solos puramente coesivos. Julgue os itens a seguir.',
+95:'Na execução de obras em aterros, o ensaio de palheta, também conhecido como Vane Test, é realizado em campo para determinar a resistência não drenada de solos puramente coesivos. Julgue os itens a seguir.',
+96:'Na execução de obras em aterros, o ensaio de palheta, também conhecido como Vane Test, é realizado em campo para determinar a resistência não drenada de solos puramente coesivos. Julgue os itens a seguir.',
+97:'Dois anos após a conclusão da pavimentação asfáltica de um arruamento, foram observados afundamento plástico, trincamento tipo couro de jacaré e exsudação. Julgue os itens sobre as causas prováveis dessas patologias.',
+98:'Dois anos após a conclusão da pavimentação asfáltica de um arruamento, foram observados afundamento plástico, trincamento tipo couro de jacaré e exsudação. Julgue os itens sobre as causas prováveis dessas patologias.',
+99:'Dois anos após a conclusão da pavimentação asfáltica de um arruamento, foram observados afundamento plástico, trincamento tipo couro de jacaré e exsudação. Julgue os itens sobre as causas prováveis dessas patologias.',
+100:'Acerca de fórmulas empíricas utilizadas para análise do escoamento e dimensionamento hidráulico de tubulações, julgue os itens seguintes.',
+101:'Acerca de fórmulas empíricas utilizadas para análise do escoamento e dimensionamento hidráulico de tubulações, julgue os itens seguintes.',
+102:'Acerca de fórmulas empíricas utilizadas para análise do escoamento e dimensionamento hidráulico de tubulações, julgue os itens seguintes.',
+103:'Acerca de fórmulas empíricas utilizadas para análise do escoamento e dimensionamento hidráulico de tubulações e de tratamento de esgotos, julgue os itens seguintes.',
+104:'Acerca de fórmulas empíricas utilizadas para análise do escoamento e dimensionamento hidráulico de tubulações e de tratamento de esgotos, julgue os itens seguintes.',
+105:'Acerca de fórmulas empíricas utilizadas para análise do escoamento e dimensionamento hidráulico de tubulações e de tratamento de esgotos, julgue os itens seguintes.',
+106:'Acerca de fórmulas empíricas utilizadas para análise do escoamento e dimensionamento hidráulico de tubulações e de instalações prediais, julgue os itens seguintes.',
+107:'Acerca de fórmulas empíricas utilizadas para análise do escoamento e dimensionamento hidráulico de tubulações e de instalações prediais, julgue os itens seguintes.',
+108:'Acerca de fórmulas empíricas utilizadas para análise do escoamento e dimensionamento hidráulico de tubulações e de instalações prediais, julgue os itens seguintes.',
+109:'Julgue os itens seguintes, relativos aos conceitos e às verificações em projetos de estruturas de concreto protendido.',
+110:'Julgue os itens seguintes, relativos aos conceitos e às verificações em projetos de estruturas de concreto protendido.',
+113:'Julgue o item a seguir, relativo a instalações elétricas prediais.',
+114:'Acerca das atividades de estudos de projetos básicos de rodovias, julgue os itens seguintes.',
+115:'Acerca das atividades de estudos de projetos básicos de rodovias, julgue os itens seguintes.',
+116:'No que se refere a melhoramentos de projetos de transporte hidroviário, julgue o item a seguir.'
+}
+const trim={78:' BLOCO II',90:' Durante a execução de uma edificação',93:' Na execução de obras em aterros',96:' Dois anos após a conclusão',99:' BLOCO III',108:' 658010_01N77793',112:' Julgue o próximo item, relativo a instalações',115:' No que se refere aos melhoramentos de projetos de transporte hidroviário',120:' Espaço livre'}
+// O gabarito oficial catalogado para o caderno cargo 10 cobre somente os itens 51–110.
+// Registros 111–120 pertencem a outra sequência e ficam fora deste pacote até confirmar sua fonte.
+const targets=records.filter(q=>q.materia==='Engenharia Civil'&&q.conteudo==='Fundamentos de Engenharia Civil'&&q.classificacao_pendente&&q.integridade_profissional?.apta_resolucao===true&&keyRecord.respostas[String(q.numero)])
+if(targets.length!==27)throw Error(`Esperados 27 itens com gabarito coberto pelo cargo 10; encontrados ${targets.length}`)
+const decisions=[]
+for(const q of targets){
+ const n=Number(q.numero),topic=byNumber[n],key=keyRecord.respostas[String(n)]
+ if(!topic||!key)throw Error(`Classificação ou gabarito definitivo ausente no item ${n}`)
+ let stem=q.enunciado.replace(/\s+/g,' ').trim()
+ if(trim[n]&&stem.includes(trim[n]))stem=stem.slice(0,stem.indexOf(trim[n])).trim()
+ if(n===92)stem='O uso de graxa para proteger as barras contra corrosão é inadequado; devido ao longo tempo de exposição, elas devem ser protegidas com pasta de cimento.'
+ if(n===120)stem=stem.replace(/\s*Espaço livre\s*$/i,'').trim()
+ const d={id:q.id,sha256_enunciado:hashRevisao(q.enunciado),materia:'Engenharia Civil',conteudo:topic[0]+' — '+topic[1],ano:2021,concurso,cargo:'Engenheiro Civil — Conhecimentos Específicos',banca:'CEBRASPE',organizadora:'CEBRASPE',aplicacao:'Prova objetiva — Conhecimentos Específicos — cargo 10 — caderno 658_PETROBRAS_010_01',numero_original:n,pagina:Number(q.pagina),dificuldade:topic[2],dificuldade_estimada:true,dificuldade_evidencia:'Estimativa editorial a partir da especialidade e do nível de aplicação normativa ou cálculo exigido; não é classificação oficial da banca.',classificacao_fonte:prova,motivo:`Item ${n} classificado pelo conceito de Engenharia Civil efetivamente cobrado, pela aplicação PETROBRAS 2021 e pelo caderno oficial.`,enunciado:stem,opcoes:['Certo','Errado'],resposta_correta:key==='C'?0:key==='E'?1:null,anulada:key==='X',apta_resolucao:true,gabarito_oficial:{fonte:gabarito,arquivo:'GAB_DEFINITIVO_658_PETROBRAS_010_01.PDF',prova:'658_PETROBRAS_010_01.PDF',sha256:keyRecord.sha256,numero:n,resposta:key,criterio:'Gabarito definitivo oficial do mesmo cargo e caderno CEBRASPE.'},remover_pendencias:['classificacao_especifica_pendente','ano_sem_evidencia','visual_ausente','dificuldade_nao_informada','texto_corrompido','texto_corrompido_requer_reconstrucao','texto_de_outro_bloco','enunciado_incompleto'],visual:{pagina:Number(q.pagina),imagem:`paginas/${doc}-${String(q.pagina).padStart(4,'0')}.webp`,motivo:`Página original do caderno do cargo 10; preservada para conferir contexto, tabelas, gráficos e esquemas.`}}
+ if(contexts[n])d.texto_apoio=contexts[n]
+ if(n===71||n===111||n===112||n===113||n===114||n===115||n===116||n===117||n===118||n===119||n===120){if(key==='X')d.anulada=true;else d.gabarito_oficial={...d.gabarito_oficial,resposta:key}}
+ decisions.push(d)
+}
+for(const d of decisions)await fs.access(`public/acervo-extraido/${d.visual.imagem}`)
+if(process.argv.includes('--dry-run')){console.log(JSON.stringify({classificadas:decisions.length,anuladas:decisions.filter(d=>d.anulada).map(d=>d.numero_original),gabaritosVerificados:decisions.length,paginasComImagemOriginal:decisions.length,registros111a120AguardandoFonte:true,publicado:false},null,2));process.exit(0)}
+const nome='revisao-petrobras-2021-engenharia-civil-pendentes-v326'
+const result=await aplicarRevisoesIndividuais({nome,base:raizesAtuais[0],decisoes:decisions})
+raizesAtuais.unshift(`tmp/revisao-profissional/${nome}/acervo-extraido`)
+await fs.appendFile('scripts/acervo-publico/acervo-atual.mjs',`\nraizesAtuais.unshift('tmp/revisao-profissional/${nome}/acervo-extraido')\n`)
+const report={...result,documento:doc,edicao:concurso,itensClassificados:27,itensComGabaritoDefinitivo:27,itensAnulados:decisions.filter(d=>d.anulada).map(d=>d.numero_original),registros111a120AguardandoConfirmacaoDeFonte:10,contextosReassociados:Object.keys(contexts).map(Number).filter(n=>n<=110),paginasOriginaisConferidas:27,fonteProva:prova,fonteGabarito:gabarito,publicado:false}
+await fs.writeFile(`docs/acervo/revisao-profissional/${nome}.json`,JSON.stringify(report,null,2))
+await fs.appendFile('docs/acervo/revisao-profissional/RELATORIO.md',`\n\n## PETROBRAS — Engenheiro Civil 2021 — revisão v326\n\n- Classifiquei 27 itens com gabarito definitivo coberto pelo caderno cargo 10 em subáreas específicas: estruturas, materiais, tecnologia do concreto, fundações, solos, pavimentação, instalações hidráulicas e saneamento.\n- Associei o gabarito definitivo e reconstruí textos-base compartilhados que estavam grudados ao item anterior; corrigi OCR e removi fragmentos de rodapé.\n- O catálogo também contém dez registros numerados de 111 a 120, fora do intervalo do gabarito oficial desse caderno (51–110). Eles ficaram pendentes de confirmação da origem, sem receber classificação ou resposta presumida.\n- Itens anulados permanecem sem correção automática. As páginas originais foram preservadas para conferir elementos gráficos.\n- Validação local: ${result.total} registros; ${result.disponiveis} elegíveis; ${result.pendentes} pendências. Nuvem não publicada.\n- Fontes: [prova oficial](<${prova}>), [gabarito definitivo](<${gabarito}>).\n`)
+console.log(JSON.stringify(report,null,2))

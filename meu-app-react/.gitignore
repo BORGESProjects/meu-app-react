@@ -41,3 +41,17 @@ output/aplicativos/
 native/toolchains/
 src-tauri/gen/android/
 src-tauri/gen/apple/
+
+# Instaladores entregues e cópias temporárias da integração da versão nativa.
+releases/
+native/release-review/
+
+# Extração, revisão e saídas locais não fazem parte do site publicado.
+/tmp/
+/output/
+/public-page/
+/backend/.maven-user/
+/public/acervo/federais-em-revisao/
+/docs/acervo/revisao-profissional/
+__pycache__/
+*.py[cod]

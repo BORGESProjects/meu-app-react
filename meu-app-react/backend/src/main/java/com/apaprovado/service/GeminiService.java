@@ -13,6 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.function.Supplier;
 
 @Service
 public class GeminiService {
@@ -38,6 +39,9 @@ public class GeminiService {
         String chave;
         try {chave=usuario+":"+HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest((modelo+"|rubrica-v1|"+mapper.writeValueAsString(r)).getBytes(StandardCharsets.UTF_8)));}
         catch(Exception e){throw new IllegalStateException("Não foi possível preparar a correção.");}
+        return executarComCache(usuario,chave,()->executar(r));
+    }
+    private Resultado executarComCache(String usuario,String chave,Supplier<JsonNode> produtor) {
         synchronized(cache) {
             cache.entrySet().removeIf(e->e.getValue().expira()<System.currentTimeMillis());
             var anterior=cache.get(chave);if(anterior!=null)return new Resultado(anterior.relatorio(),true,modelo);
@@ -52,9 +56,9 @@ public class GeminiService {
         boolean usuarioAtivo=false,admitido=false;
         try {
             usuarioAtivo=usuarios.add(usuario);
-            if(!usuarioAtivo)throw new ResponseStatusException(HttpStatus.TOO_MANY_REQUESTS,"Uma redação desta conta já está em correção. Aguarde antes de enviar outra.");
+            if(!usuarioAtivo)throw new ResponseStatusException(HttpStatus.TOO_MANY_REQUESTS,"Uma análise desta conta já está em andamento. Aguarde antes de enviar outra.");
             admitido=vagas.tryAcquire();if(!admitido)throw new ResponseStatusException(HttpStatus.TOO_MANY_REQUESTS,"A correção está ocupada. Aguarde alguns segundos e tente novamente.");
-            JsonNode relatorio=executar(r);
+            JsonNode relatorio=produtor.get();
             synchronized(cache){if(cache.size()>=64)cache.remove(cache.keySet().iterator().next());cache.put(chave,new Entrada(relatorio,System.currentTimeMillis()+900000));}
             futura.complete(relatorio);return new Resultado(relatorio,false,modelo);
         } catch(RuntimeException e){futura.completeExceptionally(e);throw e;}

@@ -21,12 +21,11 @@ public class Importacoes {
     private final ImportacaoRepository repo;
     private final ObjectMapper mapper;
     private final QuestionDrafts drafts;
-    private final LocalQuestionAi classifier;
     private final PdfLocal local;
     private final PdfFiles files;
     private final ThreadPoolExecutor worker = new ThreadPoolExecutor(1,1,0,TimeUnit.SECONDS,new ArrayBlockingQueue<>(2));
-    public Importacoes(ImportacaoRepository repo, ObjectMapper mapper, QuestionDrafts drafts, LocalQuestionAi classifier, PdfFiles files, PdfLocal local) {
-        this.repo=repo; this.mapper=mapper; this.drafts=drafts; this.classifier=classifier; this.files=files; this.local=local;
+    public Importacoes(ImportacaoRepository repo, ObjectMapper mapper, QuestionDrafts drafts, PdfFiles files, PdfLocal local) {
+        this.repo=repo; this.mapper=mapper; this.drafts=drafts; this.files=files; this.local=local;
     }
     @PreDestroy public void stop() { worker.shutdownNow(); }
     @EventListener(ApplicationReadyEvent.class)
@@ -116,14 +115,8 @@ public class Importacoes {
                     ((ObjectNode)old).set("resposta_correta",q.path("resposta_correta"));
             }
             all=drafts.normalize(all,job,false);
-            job.questoes=all.toString(); job.progresso=all.size(); job.atualizado=Instant.now(); job=repo.saveAndFlush(job);
-            String classificationWarning=null;
-            try { classifyMissing(job,all); }
-            catch(IllegalStateException e) { classificationWarning=e.getMessage()+" Use ‘Classificar pendentes’ para tentar novamente."; }
-            job=repo.findById(id).orElseThrow();
-            all=drafts.normalize(all,job,false);
             job.questoes=all.toString(); job.progresso=all.size(); job.atualizado=Instant.now();
-            job.status="REVISAO"; job.erro=classificationWarning; repo.save(job);
+            job.status="REVISAO"; job.erro=null; repo.save(job);
         } catch (Exception e) {
             ImportacaoPdf job=repo.findById(id).orElse(null);
             if(job!=null) {
@@ -133,49 +126,6 @@ public class Importacoes {
             }
             if(e instanceof InterruptedException) Thread.currentThread().interrupt();
         }
-    }
-    public ObjectNode classify(String id,String owner,JsonNode body) throws Exception {
-        ImportacaoPdf job=owned(id,owner);
-        if(!List.of("REVISAO","ERRO").contains(job.status)) throw bad("Abra um rascunho para sugerir a classificação.");
-        JsonNode q=body.path("questao");
-        ArrayNode one=mapper.createArrayNode().add(q);
-        return classifier.classify(drafts.normalize(one,job,false).get(0));
-    }
-    private void classifyMissing(ImportacaoPdf job,ArrayNode all) throws Exception {
-        List<ObjectNode> pending=new ArrayList<>();
-        for(JsonNode q:all) if(q.path("materia").asText("").isBlank() || q.path("conteudo").asText("").isBlank()) pending.add((ObjectNode)q);
-        for(int start=0;start<pending.size();start+=10) {
-            List<ObjectNode> batch=pending.subList(start,Math.min(start+10,pending.size()));
-            ArrayNode input=mapper.createArrayNode(); batch.forEach(input::add);
-            ArrayNode suggestions=classifier.classifyBatch(input);
-            Map<Integer,JsonNode> byNumber=new HashMap<>();
-            for(JsonNode suggestion:suggestions) byNumber.put(suggestion.path("numero_original").asInt(),suggestion);
-            for(ObjectNode question:batch) {
-                JsonNode suggestion=byNumber.get(question.path("numero_original").asInt());
-                if(suggestion==null) throw new IllegalStateException("A IA local não classificou todas as questões.");
-                question.put("materia",suggestion.path("materia").asText());
-                question.put("conteudo",suggestion.path("conteudo").asText());
-                question.put("dificuldade",suggestion.path("dificuldade").asText());
-                question.put("confianca_classificacao",suggestion.path("confianca").asDouble(0.5));
-                question.put("revisada",false);
-            }
-            job.questoes=all.toString(); job.atualizado=Instant.now(); job=repo.saveAndFlush(job);
-        }
-    }
-    public ArrayNode classifyBatch(String id,String owner,JsonNode body) throws Exception {
-        ImportacaoPdf job=owned(id,owner);
-        if(!List.of("REVISAO","ERRO").contains(job.status)) throw bad("Abra um rascunho para sugerir a classificação.");
-        JsonNode input=body.path("questoes");
-        if(!input.isArray() || input.isEmpty() || input.size()>10) throw bad("Selecione de 1 a 10 questões por lote.");
-        Map<Integer,JsonNode> originals=new HashMap<>();
-        for(JsonNode q:mapper.readTree(job.questoes)) originals.put(q.path("numero_original").asInt(),q);
-        ArrayNode safe=mapper.createArrayNode(); Set<Integer> seen=new HashSet<>();
-        for(JsonNode requested:input) {
-            int number=requested.path("numero_original").asInt(); JsonNode original=originals.get(number);
-            if(original==null || !seen.add(number)) throw bad("O lote contém uma questão inválida ou repetida.");
-            safe.add(original);
-        }
-        return classifier.classifyBatch(safe);
     }
     public ObjectNode detail(ImportacaoPdf j) throws Exception {
         ObjectNode o=mapper.createObjectNode();

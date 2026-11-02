@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0B0D0A" />
+    <meta name="description" content="Sua central AP Aprovado: acompanhe questões, acertos, horas de estudo, ranking e recursos gratuitos de estudo." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" />
+    <title>Área do aluno — AP Aprovado</title>
+  </head>
+  <body>
+    <a href="#app" class="skip-link">Pular para o conteúdo</a>
+    <div class="glow glow-one" aria-hidden="true"></div>
+    <div class="glow glow-two" aria-hidden="true"></div>
+    <header class="topbar">
+      <div class="nav-container">
+      <a class="brand" href="/" aria-label="AP Aprovado — página inicial">
+        <span class="brand-mark">AP</span><span>AP Aprovado</span>
+      </a>
+      <a class="back-link" href="/#planos">Ver acesso gratuito</a>
+      </div>
+    </header>
+    <main id="app" class="page-shell">
+      <section class="intro">
+        <p class="eyebrow">Sua conta, seu ritmo</p>
+        <h1>Área do aluno</h1>
+        <p>Seu esforço vira progresso. Crie uma conta gratuita ou entre para acompanhar seus resultados, sua posição no ranking e seus recursos de estudo.</p>
+      </section>
+
+      <p id="confirmation-message" class="notice" role="status" aria-live="polite" hidden></p>
+      <section id="auth-card" class="card auth-card" aria-labelledby="auth-title">
+        <div class="auth-tabs" role="tablist" aria-label="Acesso à conta">
+          <button class="auth-tab is-active" type="button" role="tab" aria-selected="true" data-mode="login">Entrar</button>
+          <button class="auth-tab" type="button" role="tab" aria-selected="false" data-mode="signup">Criar conta</button>
+        </div>
+        <div class="card-body">
+          <h2 id="auth-title">Entre na sua conta</h2>
+          <p id="auth-hint" class="muted">Use o e-mail e a senha da sua conta AP Aprovado.</p>
+          <form id="auth-form" class="form-stack">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required maxlength="254" />
+            <label for="password">Senha</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required />
+            <button id="auth-submit" class="button button-primary" type="submit">Entrar</button>
+          </form>
+          <p id="auth-message" class="notice" role="status" aria-live="polite" hidden></p>
+          <div class="confirmation-help">
+            <p class="muted">Já se cadastrou, mas seu e-mail ainda não foi confirmado?</p>
+            <button id="resend-confirmation" class="button button-quiet" type="button">Reenviar confirmação</button>
+            <p id="resend-message" class="fine-print" role="status" aria-live="polite" hidden></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="student-card" class="card student-card" hidden aria-labelledby="student-title">
+        <div class="card-body">
+          <div class="account-head">
+            <div><p class="eyebrow">Conta conectada</p><h2 id="student-title">Minha conta</h2></div>
+            <button id="signout" class="button button-quiet" type="button">Sair</button>
+          </div>
+          <p id="account-email" class="account-email"></p>
+          <div id="account-message" class="notice" role="status" aria-live="polite" hidden></div>
+          <button id="retry-account-load" class="button button-quiet retry-account-load" type="button" hidden>Tentar carregar novamente</button>
+
+          <nav class="student-tabs" role="tablist" aria-label="Seções da área do aluno">
+            <button id="tab-performance" class="student-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-performance" data-panel="performance">Meu desempenho</button>
+            <button id="tab-evolution" class="student-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-evolution" data-panel="evolution">Minha evolução</button>
+            <button id="tab-notebook" class="student-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-notebook" data-panel="notebook">Meus estudos</button>
+            <button id="tab-edital" class="student-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-edital" data-panel="edital">Editais</button>
+            <button id="tab-downloads" class="student-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-downloads" data-panel="downloads">Downloads</button>
+            <button id="tab-receipts" class="student-tab admin-tab" type="button" role="tab" aria-selected="false" aria-controls="admin-card" data-panel="receipts" hidden>Recebimentos</button>
+          </nav>
+
+          <section id="panel-performance" class="student-panel" role="tabpanel" aria-labelledby="tab-performance">
+          <section class="progress-panel" aria-labelledby="progress-title">
+            <div class="section-head">
+              <div><p class="eyebrow">Sincronizado com seu estudo</p><h3 id="progress-title">Meu desempenho</h3></div>
+              <button id="refresh-progress" class="button button-quiet" type="button">Atualizar</button>
+            </div>
+            <div class="progress-kpis">
+              <article><span>Questões respondidas</span><strong id="progress-questions">—</strong></article>
+              <article><span>Acertos</span><strong id="progress-correct">—</strong></article>
+              <article><span>Erros</span><strong id="progress-wrong">—</strong></article>
+              <article><span>Horas estudadas</span><strong id="progress-hours">—</strong></article>
+            </div>
+            <div class="progress-foot"><span id="progress-accuracy">Aproveitamento: —</span><span id="progress-updated">Buscando seu progresso…</span></div>
+            <p id="progress-message" class="muted" role="status" aria-live="polite">Os dados aparecem aqui quando você estuda no AP Aprovado usando esta mesma conta.</p>
+          </section>
+
+          <section class="analytics-panel" aria-labelledby="analytics-title">
+            <div class="section-head analytics-head"><div><p class="eyebrow">Leitura inteligente do seu ritmo</p><h3 id="analytics-title">Evolução no período</h3></div><div class="period-switch" role="group" aria-label="Período da análise"><button class="sort-button is-active" data-range="7" aria-pressed="true">7 dias</button><button class="sort-button" data-range="30" aria-pressed="false">30 dias</button><button class="sort-button" data-range="90" aria-pressed="false">90 dias</button></div></div>
+            <div class="chart-grid">
+              <article class="chart-card"><div class="chart-title"><div><h4>Ritmo de questões</h4><p>Questões respondidas por dia</p></div><strong id="range-questions">—</strong></div><div id="questions-chart" class="bar-chart" role="img" aria-label="Gráfico de questões por dia"></div><div id="chart-axis" class="chart-axis"></div></article>
+              <article class="chart-card"><div class="chart-title"><div><h4>Precisão recente</h4><p>Acertos entre as questões respondidas</p></div><strong id="range-accuracy">—</strong></div><div id="accuracy-chart" class="accuracy-chart"></div><p id="accuracy-guidance" class="chart-guidance">Responda questões para receber uma orientação personalizada.</p></article>
+            </div>
+            <article class="subject-card"><div class="chart-title"><div><h4>Desempenho por matéria</h4><p>Identifique o que está sólido e onde vale reforçar</p></div></div><div id="subject-insights" class="subject-insights"></div><p id="study-guidance" class="chart-guidance"></p></article>
+          </section>
+
+          <section class="analytics-panel study-calendar-panel" aria-labelledby="study-calendar-title">
+            <div class="section-head"><div><p class="eyebrow">Consistência que você consegue enxergar</p><h3 id="study-calendar-title">Horas e calendário</h3></div><div class="calendar-nav"><button id="calendar-prev" class="sort-button" type="button" aria-label="Mês anterior">‹</button><strong id="calendar-month"></strong><button id="calendar-next" class="sort-button" type="button" aria-label="Próximo mês">›</button></div></div>
+            <div class="study-kpis"><article><span>Dias com estudo</span><strong id="days-studied">0</strong><small>no período selecionado</small></article><article><span>Tempo estudado</span><strong id="hours-studied">0 min</strong><small>soma das sessões registradas</small></article><article><span>Atividade em questões</span><strong id="question-time">Sem registro</strong><small>tempo medido nas respostas</small></article><article><span>Média por dia ativo</span><strong id="daily-average">0 min</strong><small>para manter um ritmo sustentável</small></article></div>
+            <div class="calendar-card"><div class="calendar-weekdays" aria-hidden="true"><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span><span>Dom</span></div><div id="study-calendar" class="study-calendar" role="grid" aria-label="Calendário de horas estudadas"></div><div class="calendar-legend"><span><i class="level-0"></i>Sem registro</span><span><i class="level-1"></i>Até 30 min</span><span><i class="level-2"></i>30–90 min</span><span><i class="level-3"></i>Mais de 90 min</span></div></div>
+            <div class="study-tools-grid">
+              <section class="tool-card"><p class="eyebrow">Sessão focada</p><h4>Registrar tempo de estudo</h4><p class="muted">Inicie ao começar. Pause nos intervalos e encerre para sincronizar as horas com o seu software.</p><div class="form-grid"><label>Matéria<input id="timer-subject" class="field" list="subject-options" maxlength="80" placeholder="Ex.: Matemática" /></label><label>Conteúdo<input id="timer-topic" class="field" maxlength="120" placeholder="Ex.: Funções" /></label></div><datalist id="subject-options"></datalist><p id="study-timer" class="study-timer" role="timer">00:00:00</p><div class="tool-actions"><button id="timer-start" class="button button-primary" type="button">Iniciar sessão</button><button id="timer-pause" class="button button-quiet" type="button" hidden>Pausar</button><button id="timer-finish" class="button button-quiet" type="button" hidden>Encerrar e sincronizar</button></div><p id="timer-status" class="fine-print" role="status"></p></section>
+              <section class="tool-card"><p class="eyebrow">Registro manual</p><h4>Adicionar tempo estudado</h4><p class="muted">Use para incluir estudos feitos fora do cronômetro. A data e a matéria ajudam a leitura do calendário.</p><form id="manual-study-form" class="manual-study-form"><label>Matéria<input id="manual-subject" class="field" list="subject-options" maxlength="80" required placeholder="Ex.: História" /></label><label>Data<input id="manual-date" class="field" type="date" required /></label><div class="duration-fields"><label>Horas<input id="manual-hours" class="field" type="number" min="0" max="24" value="0" /></label><label>Minutos<input id="manual-minutes" class="field" type="number" min="0" max="59" value="30" /></label></div><button class="button button-primary" type="submit">Salvar e sincronizar</button><p id="manual-status" class="fine-print" role="status"></p></form></section>
+            </div>
+            <section class="sessions-card"><div class="chart-title"><div><h4>Atividade recente</h4><p>Seus registros de estudo sincronizados entre dispositivos</p></div></div><div id="study-sessions" class="study-sessions"></div></section>
+          </section>
+
+          <section class="ranking-panel" aria-labelledby="ranking-title">
+            <div class="section-head">
+              <div><p class="eyebrow">Comunidade AP</p><h3 id="ranking-title">Ranking de estudantes</h3></div>
+              <div class="ranking-sort" role="group" aria-label="Ordenar ranking">
+                <button id="ranking-by-questions" class="sort-button is-active" type="button" aria-pressed="true">Questões</button>
+                <button id="ranking-by-time" class="sort-button" type="button" aria-pressed="false">Tempo</button>
+              </div>
+            </div>
+            <ol id="ranking-list" class="ranking-list"></ol>
+            <p id="ranking-empty" class="muted">O ranking aparece quando estudantes autorizam a exibição do apelido e dos totais de estudo.</p>
+            <p id="ranking-status" class="ranking-status" role="status" aria-live="polite"></p>
+            <form id="ranking-form" class="ranking-form">
+              <label for="ranking-nickname">Seu apelido no ranking</label>
+              <input id="ranking-nickname" class="field" type="text" minlength="3" maxlength="24" autocomplete="nickname" placeholder="Ex.: FocoNaMeta" />
+              <label class="ranking-opt-in"><input id="ranking-public" type="checkbox" /><span>Quero aparecer no ranking com meu apelido e totais de estudo.</span></label>
+              <button id="save-ranking-profile" class="button button-quiet" type="submit">Salvar preferência</button>
+              <small>Seu e-mail e as respostas individuais nunca aparecem no ranking. Evite usar seu nome completo.</small>
+            </form>
+          </section>
+          </section>
+
+          <section id="panel-evolution" class="student-panel evolution-panel" role="tabpanel" aria-labelledby="tab-evolution" hidden>
+            <header class="evolution-hero"><div><p class="eyebrow">Seu progresso, etapa por etapa</p><h3>Uma visão clara da sua evolução</h3><p>Acompanhe a consistência dos estudos, o desempenho nos simulados e o avanço nas redações corrigidas.</p></div><span class="evolution-mark" aria-hidden="true">↗</span></header>
+            <section class="evolution-section" aria-labelledby="evolution-summary-title"><div class="section-head"><div><p class="eyebrow">Resumo do seu percurso</p><h3 id="evolution-summary-title">Indicadores de evolução</h3></div><label class="filter-label">Período<select id="evolution-range" class="field"><option value="30">Últimos 30 dias</option><option value="90">Últimos 90 dias</option><option value="365">Último ano</option><option value="all">Todo o histórico</option></select></label></div>
+              <div class="evolution-kpis"><article class="evolution-kpi"><span>Precisão em questões</span><strong id="evolution-accuracy">—</strong><small id="evolution-accuracy-delta">Aguardando histórico</small></article><article class="evolution-kpi"><span>Simulados concluídos</span><strong id="evolution-sim-count">0</strong><small id="evolution-sim-trend">Seus resultados aparecerão aqui</small></article><article class="evolution-kpi"><span>Redações corrigidas</span><strong id="evolution-essay-count">0</strong><small id="evolution-essay-trend">Notas sincronizadas entre dispositivos</small></article><article class="evolution-kpi"><span>Última redação</span><strong id="evolution-essay-latest">—</strong><small id="evolution-essay-latest-date">Sem correção registrada</small></article></div>
+            </section>
+            <div class="evolution-charts"><section class="evolution-section trend-card"><div class="chart-title"><div><h4>Acertos ao longo do tempo</h4><p>Aproveitamento em cada período · eixo de 0% a 100%</p></div><span id="accuracy-trend" class="trend-indicator">Aguardando dados</span></div><div id="evolution-accuracy-chart" class="evolution-chart" role="img" aria-label="Gráfico de evolução de acertos"></div></section><section class="evolution-section trend-card"><div class="chart-title"><div><h4>Notas de redação</h4><p>Pontuação normalizada para comparar critérios e bancas</p></div><span id="essay-trend" class="trend-indicator">Aguardando dados</span></div><div id="evolution-essay-chart" class="evolution-chart" role="img" aria-label="Gráfico da evolução das notas de redação"></div></section></div>
+            <section class="evolution-section history-section"><div class="section-head"><div><p class="eyebrow">Resultados mais recentes</p><h3>Histórico de simulados</h3></div></div><div id="evolution-sim-list" class="evolution-list"></div><p id="evolution-sim-empty" class="empty-state" hidden>Conclua um simulado no software para ver seus resultados e a evolução aqui.</p></section>
+            <section class="evolution-section history-section"><div class="section-head"><div><p class="eyebrow">Sua escrita também evolui</p><h3>Redações corrigidas</h3></div></div><div id="evolution-essay-list" class="evolution-list"></div><p id="evolution-essay-empty" class="empty-state" hidden>As próximas correções aparecerão nesta linha do tempo, sincronizadas com sua conta.</p></section>
+          </section>
+
+          <section id="panel-notebook" class="student-panel notebook-panel" role="tabpanel" aria-labelledby="tab-notebook" hidden>
+            <section class="notebook-section saved-notebooks" aria-labelledby="saved-notebooks-title">
+              <div class="section-head"><div><p class="eyebrow">Suas listas pessoais</p><h3 id="saved-notebooks-title">Meus cadernos</h3></div></div>
+              <p class="muted">Reúna questões para estudar depois. Abra um caderno para praticar as questões salvas no acervo.</p>
+              <form id="saved-notebook-form" class="notebook-create-form"><label for="saved-notebook-name">Nome do caderno</label><input id="saved-notebook-name" class="field" maxlength="80" required placeholder="Ex.: Funções — revisão semanal"/><button class="button button-primary" type="submit">Criar caderno</button></form>
+              <div id="saved-notebooks-list" class="saved-notebooks-list"></div><p id="saved-notebooks-empty" class="empty-state" hidden>Você ainda não criou cadernos. Crie um e salve questões enquanto pratica.</p><p id="saved-notebooks-status" class="fine-print" role="status" aria-live="polite"></p>
+            </section>
+            <div class="section-head"><div><p class="eyebrow">Aprenda com cada erro e revise no momento certo</p><h3>Caderno inteligente</h3></div><div class="notebook-shortcuts"><a class="sort-button" href="#erros">Meus erros</a><a class="sort-button" href="#revisoes">Revisões</a></div></div>
+            <section id="erros" class="notebook-section" aria-labelledby="errors-title">
+            <div class="section-head"><div><p class="eyebrow">Erros também mostram o próximo passo</p><h3 id="errors-title">Caderno de erros</h3></div><label class="filter-label">Matéria<select id="error-subject-filter" class="field"><option value="">Todas as matérias</option></select></label></div>
+            <p class="muted">As questões erradas vêm do seu histórico sincronizado. Acrescente uma nota pessoal, registre quando já revisou e retome os pontos difíceis.</p>
+            <div class="error-summary" id="error-summary"></div><div id="error-list" class="error-list"></div><p id="errors-empty" class="empty-state" hidden>Nenhum erro registrado ainda. Ao errar uma questão no software, ela aparecerá aqui automaticamente.</p>            </section>
+            <section id="revisoes" class="notebook-section" aria-labelledby="flashcards-title">
+            <div class="section-head"><div><p class="eyebrow">Recupere da memória, não só releia</p><h3 id="flashcards-title">Flashcards com revisão espaçada</h3></div><div class="flashcard-count"><strong id="cards-due">0</strong><span>para revisar hoje</span></div></div>
+            <p class="muted">Crie cartões curtos por matéria e conteúdo. Depois de revelar a resposta, avalie o quanto lembrou; o intervalo se ajusta e os cartões sincronizam com seu progresso.</p>
+            <div class="flashcard-layout"><section class="review-card" aria-live="polite"><div class="review-card-top"><span id="review-deck">Sua próxima revisão</span><span id="review-position">0 / 0</span></div><div id="review-front" class="review-face"><p class="eyebrow">Pergunta</p><p id="review-question">Crie seus primeiros flashcards para começar a revisar.</p></div><div id="review-back" class="review-face review-answer" hidden><p class="eyebrow">Resposta</p><p id="review-answer"></p></div><button id="reveal-card" class="button button-primary" type="button" hidden>Revelar resposta</button><div id="review-ratings" class="review-ratings" hidden><button data-rating="again" type="button">Errei<span>&lt; 10 min</span></button><button data-rating="hard" type="button">Difícil<span>1 dia</span></button><button data-rating="good" type="button">Lembrei<span>3 dias</span></button><button data-rating="easy" type="button">Fácil<span>7 dias</span></button></div><p id="review-status" class="fine-print" role="status"></p></section>
+              <section class="tool-card flashcard-editor"><p class="eyebrow">Construa sua memória</p><h4>Novo flashcard</h4><form id="flashcard-form" class="flashcard-form"><label>Matéria<input id="card-subject" class="field" list="subject-options" maxlength="80" required placeholder="Ex.: Biologia" /></label><label>Conteúdo<input id="card-topic" class="field" maxlength="120" placeholder="Ex.: Genética" /></label><label>Pergunta ou conceito<textarea id="card-front" class="field" rows="3" maxlength="1200" required placeholder="Uma pergunta objetiva, fórmula ou conceito-chave"></textarea></label><label>Resposta e explicação<textarea id="card-back" class="field" rows="4" maxlength="2400" required placeholder="Responda com suas palavras e inclua um exemplo quando ajudar"></textarea></label><button class="button button-primary" type="submit">Salvar flashcard</button><p id="card-form-status" class="fine-print" role="status"></p></form></section></div>
+            <section class="sessions-card"><div class="chart-title"><div><h4>Seus cartões</h4><p>Filtre por matéria, veja a próxima data e edite ou arquive o que não usa mais.</p></div><label class="filter-label">Matéria<select id="card-subject-filter" class="field"><option value="">Todas as matérias</option></select></label></div><div id="flashcard-list" class="flashcard-list"></div><p id="cards-empty" class="empty-state" hidden>Seus cartões aparecerão aqui. Comece criando uma pergunta e uma resposta simples.</p></section>            </section>
+            <section class="notebook-section weekly-plan" aria-labelledby="weekly-plan-title">
+              <div class="section-head"><div><p class="eyebrow">Organização prática</p><h3 id="weekly-plan-title">Cronograma semanal</h3></div><div class="calendar-nav"><button id="plan-week-prev" class="sort-button" type="button" aria-label="Semana anterior">‹</button><strong id="plan-week-label">Esta semana</strong><button id="plan-week-next" class="sort-button" type="button" aria-label="Próxima semana">›</button></div></div>
+              <p class="muted">Planeje blocos curtos de estudo, marque o que concluiu e use o cronômetro para registrar as horas na sua conta.</p>
+              <form id="plan-task-form" class="plan-task-form"><label>Matéria<input id="plan-task-subject" class="field" maxlength="80" list="subject-options" required placeholder="Ex.: Matemática"/></label><label>Conteúdo<input id="plan-task-topic" class="field" maxlength="120" placeholder="Ex.: Funções do segundo grau"/></label><label>Dia<input id="plan-task-date" class="field" type="date" required/></label><label>Início<input id="plan-task-time" class="field" type="time" required value="19:00"/></label><label>Duração<select id="plan-task-minutes" class="field"><option value="30">30 min</option><option value="45">45 min</option><option value="60" selected>1 hora</option><option value="90">1h30</option><option value="120">2 horas</option></select></label><button class="button button-primary" type="submit">Adicionar sessão</button></form>
+              <div id="plan-task-list" class="plan-task-list"></div><p id="plan-task-empty" class="empty-state" hidden>Nenhuma sessão planejada nesta semana. Adicione seu primeiro bloco de estudo.</p><p id="plan-task-status" class="fine-print" role="status" aria-live="polite"></p>
+            </section>
+          </section>
+
+          <section id="panel-edital" class="student-panel edital-student-panel" role="tabpanel" aria-labelledby="tab-edital" hidden><div id="edital-root"></div></section>
+
+          <section id="panel-downloads" class="student-panel downloads-panel" role="tabpanel" aria-labelledby="tab-downloads" hidden>
+            <div class="section-head"><div><p class="eyebrow">Continue em qualquer dispositivo</p><h3>Downloads do AP Aprovado</h3></div></div>
+            <p class="muted">Os instaladores oficiais serão disponibilizados aqui assim que os arquivos forem publicados.</p>
+            <div class="download-grid">
+              <article class="download-card"><span class="download-icon" aria-hidden="true">PC</span><div><h4>Windows</h4><p>Aplicativo para computador Windows.</p></div><span class="download-status">Disponível em breve</span></article>
+              <article class="download-card"><span class="download-icon" aria-hidden="true">Cel</span><div><h4>Celular</h4><p>Aplicativo para estudar no celular.</p></div><span class="download-status">Disponível em breve</span></article>
+            </div>
+          </section>
+
+          <section id="admin-card" class="student-panel admin-card" role="tabpanel" aria-labelledby="tab-receipts" hidden>
+            <div class="card-body">
+              <div class="account-head">
+                <div><p class="eyebrow">Somente administradora</p><h2 id="admin-title">Recebimentos</h2></div>
+                <button id="refresh-admin" class="button button-quiet" type="button">Atualizar</button>
+              </div>
+              <p id="merchant-status" class="muted">Verificando conta recebedora…</p>
+              <button id="connect-merchant" class="button button-primary" type="button">Conectar Mercado Pago</button>
+              <div class="admin-kpis">
+                <article><span>Recebido neste mês</span><strong id="month-total">—</strong><small>Antes das tarifas do provedor, menos estornos e contestações.</small></article>
+                <article><span>Pagamentos aprovados</span><strong id="month-count">—</strong><small>Confirmados pelos avisos do Mercado Pago.</small></article>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Data</th><th>Assinante</th><th>Plano</th><th>Valor</th><th>Status</th><th>Referência</th></tr></thead>
+                  <tbody id="receipt-rows"><tr><td colspan="6" class="empty-row">Nenhum recebimento carregado.</td></tr></tbody>
+                </table>
+              </div>
+              <p id="admin-message" class="notice" role="status" aria-live="polite" hidden></p>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <p class="privacy-note">Sua senha é validada pelo serviço de autenticação. Dados de recebimentos ficam disponíveis somente à conta administradora validada no servidor.</p>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

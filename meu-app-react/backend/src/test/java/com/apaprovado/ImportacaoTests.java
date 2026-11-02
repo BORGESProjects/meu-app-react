@@ -32,7 +32,6 @@ class ImportacaoTests {
     @Autowired PdfFiles pdfs;
     @Autowired ObjectMapper mapper;
     @Autowired MockMvc mvc;
-    @MockBean LocalQuestionAi classifier;
     @MockBean PdfLocal local;
 
     ArrayNode fixture() throws Exception {
@@ -55,7 +54,7 @@ class ImportacaoTests {
             .andExpect(status().isUnauthorized());
         mvc.perform(post("/api/importacoes/anything/publicar").contentType("application/json").content("{}"))
             .andExpect(status().isUnauthorized());
-        verifyNoInteractions(classifier,local);
+        verifyNoInteractions(local);
     }
     @Test void manualQuestionIsValidatedAndPublishedInPublicCollection() throws Exception {
         ObjectNode body=mapper.createObjectNode().put("ano",2026).put("banca","Professor")
@@ -86,7 +85,6 @@ class ImportacaoTests {
         body.set("questoes",fixture());
         ImportacaoPdf published=jobs.save(draft.id,"admin-one",body,true);
         assertEquals("PUBLICADO",published.status);
-        verifyNoInteractions(classifier);
         assertTrue(jobs.publicQuestions().toString().contains(draft.id));
         assertFalse(jobs.publicQuestions().toString().contains("ownerId"));
         JsonNode publicQuestion=null;
@@ -178,19 +176,15 @@ class ImportacaoTests {
         await().atMost(Duration.ofSeconds(10)).until(()->repo.findById(created.id).orElseThrow().progresso==2);
         assertEquals(2,mapper.readTree(jobs.owned(created.id,"admin-incomplete").questoes).size());
     }
-    @Test void extractionAutomaticallyClassifiesMissingMetadata() throws Exception {
+    @Test void extractionKeepsMissingMetadataForManualReview() throws Exception {
         ArrayNode extracted=fixture(); ObjectNode question=(ObjectNode)extracted.get(0);
         question.put("materia","");question.put("conteudo","");question.put("revisada",false);
         when(local.extract(any())).thenReturn(extracted);
-        ArrayNode suggestions=mapper.createArrayNode().add(mapper.createObjectNode()
-            .put("numero_original",1).put("materia","Matemática").put("conteudo","Operações fundamentais")
-            .put("dificuldade","Fácil").put("confianca",0.94));
-        when(classifier.classifyBatch(any())).thenReturn(suggestions);
         var created=jobs.create("admin-auto",pdf(),pdf(),2025,"TESTE","Classificação automática","AUTO",1);
         await().atMost(Duration.ofSeconds(10)).until(()->repo.findById(created.id).orElseThrow().status.equals("REVISAO"));
         JsonNode saved=mapper.readTree(jobs.owned(created.id,"admin-auto").questoes).get(0);
-        assertEquals("Operações fundamentais",saved.path("conteudo").asText());
-        assertEquals(0.94,saved.path("confianca_classificacao").asDouble());
-        verify(classifier).classifyBatch(any());
+        assertTrue(saved.path("materia").asText().isBlank());
+        assertTrue(saved.path("conteudo").asText().isBlank());
+        assertFalse(saved.has("confianca_classificacao"));
     }
 }

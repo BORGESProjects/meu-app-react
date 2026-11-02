@@ -1,14 +1,2145 @@
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AP Aprovado — Seu espaço de estudo</title>
-    <meta name="theme-color" content="#10170f" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10170f">
+  <link rel="icon" type="image/png" href="/ap-monograma.png">
+  <link rel="apple-touch-icon" href="/ap-monograma.png">
+  <title>AP Aprovado | Estudo por questões para concursos militares</title>
+  <meta name="description" content="Prepare-se para concursos militares com questões de provas, correção imediata, simulados, revisão de erros e acompanhamento do seu desempenho.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <style>
+/* Skip artifact shell — fixed styles served beside every artifact.
+   Tokens, utilities and components (basecoat 1.0 markup, no CDN); artifacts
+   override --accent for their own identity. */
+:root {
+  color-scheme: light dark;
+  --accent: #2563eb;
+  --accent-contrast: #ffffff;
+  --accent-text: color-mix(in srgb, var(--accent) 72%, #000);
+  --bg: #f8f9fb;
+  --surface: #ffffff;
+  --text: #14171f;
+  --text-muted: #5b6472;
+  --border: rgba(20, 23, 31, 0.10);
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(20, 23, 31, 0.08);
+  --space: 16px;
+  --success: #0a7a35;
+  --danger: #c0262d;
+  --warning: #8a5300;
+}
+/* Theme resolution. Without data-theme the viewer's system preference decides,
+   as it always did. With it, the artifact's own choice wins in BOTH directions:
+   a page that hardcodes one palette must not be handed the opposite set of
+   tokens by the machine it happens to be opened on. The dark values appear
+   twice because a media query cannot be folded into a selector list.
+   The attribute sits inside :where() so these blocks keep the specificity of a
+   bare :root — the page's own <style> is linked after this file and must go on
+   overriding any token it wants, exactly as it could before. */
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    --accent-text: color-mix(in srgb, var(--accent) 78%, #fff);
+    --bg: #101318;
+    --surface: #181c23;
+    --text: #eef1f6;
+    --text-muted: #9aa4b2;
+    --border: rgba(238, 241, 246, 0.12);
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --success: #4ade80;
+    --danger: #f87171;
+    --warning: #fbbf24;
+  }
+}
+:root:where([data-theme="dark"]) {
+  color-scheme: dark;
+  --accent-text: color-mix(in srgb, var(--accent) 78%, #fff);
+  --bg: #101318;
+  --surface: #181c23;
+  --text: #eef1f6;
+  --text-muted: #9aa4b2;
+  --border: rgba(238, 241, 246, 0.12);
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --success: #4ade80;
+  --danger: #f87171;
+  --warning: #fbbf24;
+}
+:root:where([data-theme="light"]) { color-scheme: light; }
+/* Pages generated before the shell had its own components still link the
+   basecoat CDN, which reads its own tokens and switches theme only on a
+   .dark class. Bridged to the shell's, whatever of it those pages use takes
+   the page's accent and follows the declared theme. Its --accent token is a
+   hover tint, renamed in its theme as --color-accent; the shell's --accent is
+   the brand colour, so the tint is derived from it here. */
+:root {
+  --background: var(--bg);
+  --foreground: var(--text);
+  --card: var(--surface);
+  --card-foreground: var(--text);
+  --popover: var(--surface);
+  --popover-foreground: var(--text);
+  --primary: var(--accent);
+  --primary-foreground: var(--accent-contrast);
+  --secondary: color-mix(in srgb, var(--text) 7%, var(--surface));
+  --secondary-foreground: var(--text);
+  --muted: color-mix(in srgb, var(--text) 5%, var(--surface));
+  --muted-foreground: var(--text-muted);
+  --color-accent: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  --color-accent-foreground: var(--text);
+  --destructive: var(--danger);
+  --input: var(--border);
+  --ring: var(--accent);
+}
+* { box-sizing: border-box; }
+/* The reset the pages were written against: they all linked basecoat, which
+   ships Tailwind's. Its components now live here, so the reset does too. */
+*, ::before, ::after, ::backdrop { margin: 0; padding: 0; border: 0 solid; }
+h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
+a { color: inherit; text-decoration: inherit; }
+b, strong { font-weight: bolder; }
+ol, ul, menu { list-style: none; }
+svg, video, canvas, iframe { display: block; vertical-align: middle; }
+button, input, select, textarea { color: inherit; background-color: transparent; border-radius: 0; }
+table { border-collapse: collapse; }
+hr { height: 0; color: inherit; border-top-width: 1px; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+
+.shell-container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+.shell-section { padding: calc(var(--space) * 2) 0; }
+.shell-grid { display: grid; gap: var(--space); grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.shell-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: var(--space); }
+.shell-footer { padding: 24px 0 40px; color: var(--text-muted); font-size: 13px; }
+
+.shell-hero { padding: calc(var(--space) * 3) 0 calc(var(--space) * 2); }
+.shell-hero h1 { font-size: clamp(26px, 4vw, 40px); line-height: 1.15; margin: 0 0 10px; text-wrap: balance; }
+.shell-hero p { color: var(--text-muted); max-width: 60ch; margin: 0; }
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space);
+}
+
+.kpi { display: flex; flex-direction: column; gap: 4px; }
+.kpi .kpi-value { font-size: 28px; font-weight: 650; line-height: 1.1; }
+.kpi .kpi-label { font-size: 13px; color: var(--text-muted); }
+.kpi .kpi-delta { font-size: 12.5px; font-weight: 600; }
+.kpi .kpi-delta.up { color: var(--success); }
+.kpi .kpi-delta.down { color: var(--danger); }
+
+table.shell-table { border-collapse: collapse; width: 100%; font-size: 14px; }
+table.shell-table th {
+  text-align: left; font-size: 11.5px; letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--text-muted); font-weight: 600;
+}
+table.shell-table th, table.shell-table td { padding: 9px 12px 9px 0; border-bottom: 1px solid var(--border); }
+table.shell-table td.num, table.shell-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.shell-table tbody tr:hover { background: color-mix(in srgb, var(--accent) 6%, transparent); }
+
+.chart-box { width: 100%; min-height: 220px; }
+.chart-box svg { width: 100%; height: auto; display: block; }
+
+.muted { color: var(--text-muted); }
+.accent { color: var(--accent-text); }
+.shell-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent); color: var(--accent-text);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .shell-fade { animation: shell-fade 400ms ease both; }
+  @keyframes shell-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+}
+
+/* Layout and type utilities: what the pages kept spelling in style="".
+   Spacing and type sizes follow Tailwind's scale; there is no Tailwind. */
+.row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.stack { display: flex; flex-direction: column; gap: var(--space); }
+.between { justify-content: space-between; }
+.grow { flex: 1 1 0; min-width: 0; }
+.cols-2, .cols-3, .cols-4 { display: grid; gap: var(--space); grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 720px) {
+  .cols-2, .cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 1000px) { .cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.gap-1 { gap: 4px; } .gap-2 { gap: 8px; } .gap-3 { gap: 12px; } .gap-4 { gap: 16px; } .gap-6 { gap: 24px; }
+.m-0 { margin: 0; }
+.mt-1 { margin-top: 4px; } .mt-2 { margin-top: 8px; } .mt-3 { margin-top: 12px; } .mt-4 { margin-top: 16px; } .mt-6 { margin-top: 24px; }
+.mb-1 { margin-bottom: 4px; } .mb-2 { margin-bottom: 8px; } .mb-3 { margin-bottom: 12px; } .mb-4 { margin-bottom: 16px; } .mb-6 { margin-bottom: 24px; }
+.p-2 { padding: 8px; } .p-3 { padding: 12px; } .p-4 { padding: 16px; } .p-6 { padding: 24px; }
+.text-xs { font-size: 12px; } .text-sm { font-size: 14px; } .text-base { font-size: 16px; }
+.text-lg { font-size: 18px; } .text-xl { font-size: 20px; line-height: 1.35; }
+.text-2xl { font-size: 24px; line-height: 1.25; } .text-3xl { font-size: 30px; line-height: 1.2; }
+.font-medium { font-weight: 500; } .font-semibold { font-weight: 600; } .font-bold { font-weight: 700; }
+.text-right { text-align: right; } .text-center { text-align: center; }
+.nowrap { white-space: nowrap; }
+.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-variant-numeric: tabular-nums; }
+.w-full { width: 100%; }
+.text-success { color: var(--success); } .text-danger { color: var(--danger); } .text-warning { color: var(--warning); }
+
+/* Components, with basecoat 1.0 markup (variants and sizes are data
+   attributes) and the shell tokens, so a page needs neither component CSS
+   nor a CSS framework. An older page that also links basecoat gets these
+   rules after it, over the same properties. */
+button, input, select, textarea { font: inherit; }
+input[type="checkbox"], input[type="radio"] { accent-color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  height: 36px; padding: 0 14px; border: 1px solid transparent; border-radius: calc(var(--radius) - 2px);
+  background: var(--accent); color: var(--accent-contrast);
+  font-size: 14px; font-weight: 500; line-height: 1; white-space: nowrap; text-decoration: none; cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+.btn:hover { background: color-mix(in srgb, var(--accent) 86%, #000); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.5; pointer-events: none; }
+.btn[data-variant="secondary"] { background: color-mix(in srgb, var(--text) 8%, var(--surface)); color: var(--text); }
+.btn[data-variant="secondary"]:hover { background: color-mix(in srgb, var(--text) 14%, var(--surface)); }
+.btn[data-variant="outline"] { background: var(--surface); color: var(--text); border-color: var(--border); }
+.btn[data-variant="ghost"] { background: transparent; color: var(--text); }
+.btn[data-variant="outline"]:hover, .btn[data-variant="ghost"]:hover { background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+.btn[data-variant="destructive"] { background: var(--danger); color: var(--bg); }
+.btn[data-variant="destructive"]:hover { background: color-mix(in srgb, var(--danger) 86%, var(--text)); }
+.btn[data-variant="link"] { height: auto; padding: 0; background: none; color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+.btn[data-size="sm"] { height: 30px; padding: 0 10px; font-size: 13px; }
+.btn[data-size="lg"] { height: 42px; padding: 0 20px; font-size: 15px; }
+.btn[data-size="icon"] { width: 36px; padding: 0; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px;
+  border: 1px solid transparent; border-radius: 999px; background: var(--accent); color: var(--accent-contrast);
+  font-size: 12px; font-weight: 600; line-height: 1.5; white-space: nowrap;
+}
+.badge[data-variant="secondary"] { background: color-mix(in srgb, var(--text) 8%, var(--surface)); color: var(--text); }
+.badge[data-variant="outline"] { background: transparent; color: var(--text); border-color: var(--border); }
+.badge[data-variant="destructive"] { background: color-mix(in srgb, var(--danger) 14%, var(--surface)); color: var(--danger); }
+
+.alert {
+  display: grid; gap: 4px; padding: 12px 16px; border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); color: var(--text); font-size: 14px;
+}
+.alert h2, .alert h3 { margin: 0; font-size: 14px; font-weight: 600; }
+.alert p, .alert section { margin: 0; color: var(--text-muted); }
+.alert[data-variant="destructive"] { border-color: color-mix(in srgb, var(--danger) 45%, var(--border)); background: color-mix(in srgb, var(--danger) 7%, var(--surface)); color: var(--danger); }
+
+.card {
+  display: flex; flex-direction: column; gap: 16px; padding: 20px 0;
+  border: 1px solid var(--border); border-radius: calc(var(--radius) + 2px);
+  background: var(--surface); color: var(--text); box-shadow: var(--shadow);
+}
+.card > header, .card > section, .card > footer { padding: 0 20px; }
+.card > header { display: grid; gap: 4px; }
+.card > header h2, .card > header h3 { margin: 0; font-size: 16px; font-weight: 600; line-height: 1.3; }
+.card > header p { margin: 0; color: var(--text-muted); font-size: 14px; }
+.card > footer { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+
+.input {
+  width: 100%; min-height: 36px; padding: 6px 12px; border: 1px solid var(--border); border-radius: calc(var(--radius) - 2px);
+  background: var(--surface); color: var(--text); font-size: 14px;
+}
+textarea.input { min-height: 84px; resize: vertical; }
+.input::placeholder { color: var(--text-muted); }
+.input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent); }
+.field { display: grid; gap: 6px; }
+.field label { font-size: 14px; font-weight: 500; }
+.field [role="alert"] { color: var(--danger); font-size: 13px; }
+
+dialog.dialog {
+  width: min(520px, calc(100vw - 32px)); max-height: calc(100vh - 32px); margin: auto; padding: 0;
+  border: 1px solid var(--border); border-radius: calc(var(--radius) + 4px);
+  background: var(--surface); color: var(--text); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+dialog.dialog::backdrop { background: rgba(0, 0, 0, 0.5); }
+dialog.dialog > div { display: grid; gap: 16px; padding: 24px; }
+dialog.dialog header { display: grid; gap: 4px; }
+dialog.dialog header h2 { margin: 0; font-size: 18px; font-weight: 600; }
+dialog.dialog header p { margin: 0; color: var(--text-muted); font-size: 14px; }
+dialog.dialog footer { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+
+.tabs { display: grid; gap: 12px; }
+.tabs > [role="tablist"] {
+  display: inline-flex; gap: 4px; width: fit-content; max-width: 100%; padding: 4px; overflow-x: auto;
+  border-radius: var(--radius); background: color-mix(in srgb, var(--text) 6%, var(--surface));
+}
+.tabs [role="tab"] {
+  padding: 6px 12px; border: 0; border-radius: calc(var(--radius) - 4px); background: transparent;
+  color: var(--text-muted); font-size: 14px; font-weight: 500; white-space: nowrap; cursor: pointer;
+}
+.tabs [role="tab"][aria-selected="true"] { background: var(--surface); color: var(--text); box-shadow: var(--shadow); }
+.tabs [role="tabpanel"][hidden] { display: none; }
+
+.accordion > details { border-bottom: 1px solid var(--border); }
+.accordion > details > summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 14px 0; font-weight: 500; list-style: none; cursor: pointer;
+}
+.accordion > details > summary::-webkit-details-marker { display: none; }
+.accordion > details > summary::after { content: "+"; color: var(--text-muted); font-size: 18px; line-height: 1; }
+.accordion > details[open] > summary::after { content: "\2212"; }
+.accordion > details > :not(summary) { margin: 0 0 14px; color: var(--text-muted); }
+
+.toaster {
+  position: fixed; right: 16px; bottom: 16px; z-index: 50; display: flex; flex-direction: column-reverse; gap: 8px;
+  width: min(360px, calc(100vw - 32px)); pointer-events: none;
+}
+.toaster .toast { pointer-events: auto; transition: opacity 200ms ease, transform 200ms ease; }
+.toaster .toast[aria-hidden="true"] { opacity: 0; transform: translateY(8px); }
+.toaster .toast-content {
+  padding: 12px 14px; border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); color: var(--text); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); font-size: 13px;
+}
+.toaster .toast-content h2 { margin: 0 0 2px; font-size: 14px; font-weight: 600; }
+.toaster .toast-content p { margin: 0; color: var(--text-muted); }
+
+/* skipUI building blocks. */
+.skip-table-search { max-width: 320px; margin-bottom: 12px; }
+.skip-table-wrap { overflow-x: auto; }
+table.shell-table th[data-sort] { cursor: pointer; user-select: none; }
+table.shell-table th[aria-sort="ascending"]::after { content: " \25B2"; font-size: 9px; }
+table.shell-table th[aria-sort="descending"]::after { content: " \25BC"; font-size: 9px; }
+table.shell-table td.skip-table-empty { color: var(--text-muted); text-align: center; padding: 24px 0; }
+.skip-pager { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 12px; font-size: 13px; color: var(--text-muted); }
+.toaster .toast[data-type="success"] .toast-content { border-left: 3px solid var(--success); }
+.toaster .toast[data-type="error"] .toast-content { border-left: 3px solid var(--danger); }
+
+</style>
+  <style>
+    :root {
+      --bg: #0B0D0A;
+      --surface: #1A1C18;
+      --surface-elevated: #20231D;
+      --accent: #8EA363;
+      --accent-hover: #A3B878;
+      --accent-subtle: rgba(142, 163, 99, 0.14);
+      --accent-border: rgba(142, 163, 99, 0.35);
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #FFFFFF;
+      --text-muted: #A0A0A0;
+      --accent-contrast: #0B0D0A;
+      --danger: #C46A5E;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 14px;
+      --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: var(--font-display);
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin: 0;
+    }
+
+    p {
+      margin: 0 0 1rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Acessibilidade: skip link */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--accent);
+      color: var(--accent-contrast);
+      padding: 0.6rem 1.2rem;
+      font-weight: 600;
+      border-radius: var(--radius-sm);
+      z-index: 9999;
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus {
+      top: 1rem;
+      outline: 2px solid #FFFFFF;
+      outline-offset: 2px;
+    }
+
+    /* Foco visível geral */
+    button:focus-visible,
+    a:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Header e Navegação */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(11, 13, 10, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+    .site-header.scrolled {
+      background: rgba(11, 13, 10, 0.95);
+      border-bottom-color: rgba(142, 163, 99, 0.2);
+    }
+    .nav-container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo */
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: var(--text);
+    }
+    .brand-monogram {
+      width: 34px;
+      height: 34px;
+      background: var(--accent);
+      color: var(--accent-contrast);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: -0.05em;
+      border-radius: 9px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-link {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+    .nav-link:hover {
+      color: var(--text);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* Botão Hambúrguer */
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.5rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Botões Padrão da Landing */
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: var(--accent-contrast);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.18s ease, transform 0.15s ease;
+      text-decoration: none;
+    }
+    .btn-main:hover {
+      background: var(--accent-hover);
+    }
+    .btn-main:active {
+      transform: translateY(1px);
+    }
+
+    .btn-ghost-accent {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.7rem 1.35rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+      text-decoration: none;
+    }
+    .btn-ghost-accent:hover {
+      background: var(--accent-subtle);
+      border-color: var(--accent);
+      color: var(--accent-hover);
+    }
+
+    /* Badges */
+    .badge-ap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent-subtle);
+      color: var(--accent-hover);
+      border: 1px solid var(--accent-border);
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    /* Estrutura de Seções */
+    .section-wrap {
+      padding: 5.5rem 1.25rem;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .section-title-wrap {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.85rem;
+    }
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
+
+    /* HERO */
+    .hero-section {
+      padding-top: 8.5rem;
+      padding-bottom: 4rem;
+      position: relative;
+    }
+    .hero-glow {
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(900px, 90vw);
+      height: 480px;
+      background: radial-gradient(circle, rgba(142, 163, 99, 0.10) 0%, rgba(11, 13, 10, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.03em;
+    }
+    .hero-title .highlight {
+      color: var(--accent);
+      display: inline-block;
+    }
+    .hero-sub {
+      color: var(--text-muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.6;
+      max-width: 680px;
+      margin: 0 auto 2rem;
+    }
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .hero-signals {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .signal-item {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .signal-icon {
+      width: 18px;
+      height: 18px;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* DEMO INTERATIVA DE QUESTÃO */
+    .demo-section {
+      padding-top: 2rem;
+      padding-bottom: 5.5rem;
+    }
+    .demo-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.25rem, 3.5vw, 2.25rem);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+      max-width: 840px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .demo-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .demo-tags {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .demo-tag-neutral {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 0.22rem 0.6rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 500;
+    }
+    .demo-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .demo-mini-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .demo-mini-btn:hover {
+      background: var(--surface-elevated);
+      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .demo-statement {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+    }
+
+    .demo-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .demo-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      text-align: left;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.85rem 1.15rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      line-height: 1.45;
+      cursor: pointer;
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+    .demo-option:hover:not(:disabled) {
+      background: var(--surface-elevated);
+      border-color: var(--accent-border);
+    }
+    .demo-option-content {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .demo-option-letter {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.82rem;
+      flex-shrink: 0;
+    }
+    .demo-option-status-icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      display: none;
+    }
+
+    /* Estados de resposta da Demo */
+    .demo-option.correct {
+      border-color: var(--accent) !important;
+      background: rgba(142, 163, 99, 0.08) !important;
+    }
+    .demo-option.correct .demo-option-letter {
+      background: var(--accent);
+      color: var(--accent-contrast);
+      border-color: var(--accent);
+    }
+    .demo-option.correct .demo-option-status-icon {
+      display: block;
+      color: var(--accent);
+    }
+
+    .demo-option.wrong {
+      border-color: var(--danger) !important;
+      background: rgba(196, 106, 94, 0.08) !important;
+    }
+    .demo-option.wrong .demo-option-letter {
+      background: var(--danger);
+      color: #FFFFFF;
+      border-color: var(--danger);
+    }
+    .demo-option.wrong .demo-option-status-icon {
+      display: block;
+      color: var(--danger);
+    }
+
+    .demo-resolution {
+      display: none;
+      background: var(--surface-elevated);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      margin-top: 1rem;
+      animation: fadeIn 0.25s ease-out;
+    }
+    .demo-resolution.visible {
+      display: block;
+    }
+    .demo-resolution-header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--accent-hover);
+      margin-bottom: 0.5rem;
+    }
+    .demo-resolution-body {
+      color: #E0E0E0;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .demo-stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .demo-stats-highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* BENEFÍCIOS (6 CARDS) */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .benefit-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+    .benefit-card:hover {
+      background: var(--surface-elevated);
+      border-color: var(--accent-border);
+      transform: translateY(-2px);
+    }
+    .benefit-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--accent-subtle);
+      border: 1px solid var(--accent-border);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .benefit-icon-box svg {
+      width: 22px;
+      height: 22px;
+    }
+    .benefit-title {
+      font-size: 1.18rem;
+      font-weight: 600;
+      margin-bottom: 0.65rem;
+    }
+    .benefit-text {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+      margin-bottom: 0.5rem;
+    }
+
+    /* COMO FUNCIONA (TIMELINE 4 PASSOS) */
+    .timeline-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      position: relative;
+    }
+    .timeline-step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      position: relative;
+    }
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      line-height: 1;
+    }
+    .step-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .step-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    /* COMPARATIVO */
+    .comparison-container {
+      max-width: 900px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .comparison-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-col-header {
+      padding: 1.25rem 1.5rem;
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+    .comparison-col-traditional {
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-muted);
+      border-right: 1px solid var(--border);
+    }
+    .comparison-col-ap {
+      background: var(--accent-subtle);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+    .comparison-cell {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+    .comparison-cell-trad {
+      border-right: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .comparison-cell-ap {
+      color: #EDEDED;
+      background: rgba(142, 163, 99, 0.03);
+    }
+    .comp-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .icon-fail {
+      color: var(--danger);
+    }
+    .icon-success {
+      color: var(--accent);
+    }
+
+    /* BLOCO DE DESTAQUE / FAIXA CHEIA */
+    .banner-highlight {
+      background: var(--surface);
+      border-top: 1px solid rgba(142, 163, 99, 0.2);
+      border-bottom: 1px solid rgba(142, 163, 99, 0.2);
+      padding: 4.5rem 1.25rem;
+      margin: 3rem 0;
+      text-align: center;
+    }
+    .banner-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .banner-quote {
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+      font-weight: 600;
+      line-height: 1.35;
+      margin-bottom: 1.75rem;
+      color: var(--text);
+    }
+
+    /* PERGUNTAS FREQUENTES (FAQ) */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.18s ease;
+    }
+    .faq-item[open] {
+      border-color: var(--accent-border);
+    }
+    .faq-summary {
+      padding: 1.25rem 1.5rem;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+      user-select: none;
+    }
+    .faq-summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-chevron {
+      width: 18px;
+      height: 18px;
+      color: var(--accent);
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+    .faq-item[open] .faq-chevron {
+      transform: rotate(180deg);
+    }
+    .faq-content {
+      padding: 0 1.5rem 1.35rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* SEÇÃO DE PLANOS */
+    .pricing-section {
+      padding-top: 6.5rem;
+      padding-bottom: 5.5rem;
+    }
+    .billing-selector-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2.75rem;
+    }
+    .billing-selector {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.35rem;
+      border-radius: var(--radius);
+      display: inline-flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+    .billing-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .billing-btn[aria-pressed="true"] {
+      background: var(--accent);
+      color: var(--accent-contrast);
+    }
+    .billing-btn:hover:not([aria-pressed="true"]) {
+      color: var(--text);
+      background: var(--surface-elevated);
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 940px;
+      margin: 0 auto 2.5rem;
+      align-items: stretch;
+    }
+
+    .plan-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: border-color 0.2s ease;
+    }
+    .plan-card.featured {
+      border: 1px solid var(--accent-border);
+      background: #1c1f19;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .plan-badges {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .badge-primary-pill {
+      background: var(--accent);
+      color: var(--accent-contrast);
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .plan-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .plan-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+      min-height: 2.7rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .plan-price-block {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .price-strike {
+      font-size: 0.88rem;
+      color: #7A7A7A;
+      text-decoration: line-through;
+      margin-bottom: 0.2rem;
+    }
+    .price-current-line {
+      display: flex;
+      align-items: baseline;
+      gap: 0.35rem;
+    }
+    .price-val {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .price-period {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .price-billing-detail {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    .plan-features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 2rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      flex-grow: 1;
+    }
+    .plan-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: #E2E2E2;
+    }
+    .plan-feature-item.muted-feature {
+      color: #6C7066;
+    }
+    .plan-feature-item .feat-icon {
+      width: 17px;
+      height: 17px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .feat-check {
+      color: var(--accent);
+    }
+    .feat-dash {
+      color: #555850;
+    }
+
+    .plan-guarantee-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.85rem;
+    }
+
+    .pricing-footnote {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 0.8rem;
+      color: #787878;
+      line-height: 1.5;
+    }
+
+    /* RODAPÉ */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      background: #0E100D;
+      padding: 4.5rem 1.25rem 2.5rem;
+    }
+    .footer-container {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+    }
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-top: 0.85rem;
+      max-width: 300px;
+      line-height: 1.5;
+    }
+    .footer-col-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 1.15rem;
+      color: var(--text);
+    }
+    .footer-nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .footer-nav-list a {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      transition: color 0.15s ease;
+    }
+    .footer-nav-list a:hover {
+      color: var(--text);
+    }
+
+    .footer-newsletter p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .input-field {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.6rem 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-family: inherit;
+      width: 100%;
+    }
+    .input-field:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+    .newsletter-feedback {
+      display: none;
+      margin-top: 0.65rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+      line-height: 1.4;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.25rem;
+      font-size: 0.8rem;
+      color: #6C7066;
+    }
+    .footer-disclaimer {
+      max-width: 720px;
+      line-height: 1.5;
+    }
+
+    /* MODAL DE INTERESSE */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(11, 13, 10, 0.82);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-dialog {
+      background: var(--surface);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 460px;
+      padding: 2rem;
+      position: relative;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      animation: modalSlide 0.2s ease-out;
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 0.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+    }
+    .modal-close-btn:hover {
+      color: var(--text);
+      background: var(--surface-elevated);
+    }
+    .modal-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .modal-summary-box {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #E2E2E2;
+      margin-bottom: 1.25rem;
+    }
+    .modal-notice-banner {
+      background: var(--accent-subtle);
+      border: 1px solid var(--accent-border);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      font-size: 0.82rem;
+      color: var(--accent-hover);
+      line-height: 1.45;
+      margin-bottom: 1.25rem;
+    }
+    .modal-feedback {
+      display: none;
+      background: rgba(142, 163, 99, 0.12);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      font-size: 0.88rem;
+      color: #FFFFFF;
+      margin-top: 1rem;
+      line-height: 1.45;
+    }
+
+    /* BOTÃO VOLTAR AO TOPO */
+    .btn-back-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      background: var(--surface-elevated);
+      border: 1px solid var(--accent-border);
+      color: var(--accent);
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 900;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+      transition: background-color 0.15s ease, transform 0.15s ease;
+    }
+    .btn-back-top:hover {
+      background: var(--accent);
+      color: var(--accent-contrast);
+      transform: translateY(-2px);
+    }
+    .btn-back-top.visible {
+      display: flex;
+    }
+
+    /* ANIMAÇÃO DE REVELAÇÃO */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+    }
+    .reveal-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes modalSlide {
+      from { opacity: 0; transform: scale(0.97) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 992px) {
+      .footer-top-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .timeline-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #0E100D;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 1.5rem 1.25rem;
+        gap: 1.25rem;
+        align-items: flex-start;
+      }
+      .nav-menu.open {
+        display: flex;
+      }
+      .timeline-steps {
+        grid-template-columns: 1fr;
+      }
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+      }
+      .comparison-head,
+      .comparison-row {
+        grid-template-columns: 1fr;
+      }
+      .comparison-col-traditional,
+      .comparison-cell-trad {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+      }
+      .section-wrap {
+        padding: 4rem 1.25rem;
+      }
+      .hero-section {
+        padding-top: 7rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal-item {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Link de Acessibilidade -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- Header Fixo Translúcido -->
+  <header class="site-header" id="navbar">
+    <div class="nav-container">
+      <a href="/" class="brand-logo" aria-label="AP Aprovado - Página Inicial">
+        <span class="brand-monogram">AP</span>
+        <span>AP Aprovado</span>
+      </a>
+
+      <nav aria-label="Navegação principal">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#como-funciona" class="nav-link">Como funciona</a></li>
+          <li><a href="#beneficios" class="nav-link">Benefícios</a></li>
+          <li><a href="#perguntas" class="nav-link">Perguntas</a></li>
+          <li><a href="#planos" class="nav-link">Planos</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="/estudar.html" class="btn-main" style="padding: 0.55rem 1.15rem; font-size: 0.88rem;">Entrar</a>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Abrir menu de navegação">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo-principal">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="section-wrap" style="padding-top: 0; padding-bottom: 0;">
+        <div class="hero-content">
+          <div style="margin-bottom: 1.25rem;">
+            <span class="badge-ap">Seu espaço de estudo</span>
+          </div>
+
+          <h1 class="hero-title">
+            Aprender de verdade é responder, errar e <span class="highlight">praticar</span> de novo.
+          </h1>
+
+          <p class="hero-sub">
+            Estude focado por questões com correção imediata, revisão dirigida dos seus erros e estatísticas precisas do seu próprio desempenho real.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#planos" class="btn-main">Ver planos</a>
+            <a href="#beneficios" class="btn-ghost-accent">Ver como funciona</a>
+          </div>
+
+          <div class="hero-signals">
+            <div class="signal-item">
+              <svg class="signal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              <span>Sem promessa de aprovação, com método</span>
+            </div>
+            <div class="signal-item">
+              <svg class="signal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span>Questões de provas oficiais</span>
+            </div>
+            <div class="signal-item">
+              <svg class="signal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span>Funciona no PC e no Android</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO INTERATIVA DE QUESTÃO -->
+    <section class="demo-section">
+      <div class="section-wrap" style="padding-top: 0; padding-bottom: 0;">
+        <div class="demo-card reveal-item" id="demoCard">
+          <div class="demo-header">
+            <div class="demo-tags">
+              <span class="badge-ap" id="demoSubject">Matemática</span>
+              <span class="demo-tag-neutral" id="demoExam">EsPCEx · 2024</span>
+            </div>
+            <div class="demo-actions">
+              <button type="button" class="demo-mini-btn" id="btnToggleQuestion">Tentar outra questão</button>
+              <button type="button" class="demo-mini-btn" id="btnResetDemo">Reiniciar</button>
+            </div>
+          </div>
+
+          <div class="demo-statement" id="demoStatement">
+            Carregando questão...
+          </div>
+
+          <div class="demo-options" id="demoOptions" role="radiogroup" aria-label="Alternativas da questão">
+            <!-- Alternativas dinâmicas -->
+          </div>
+
+          <div class="demo-resolution" id="demoResolution" aria-live="polite">
+            <div class="demo-resolution-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="9" y1="15" x2="15" y2="15"></line>
+              </svg>
+              <span>Resolução Comentada e Gabarito</span>
+            </div>
+            <div class="demo-resolution-body" id="demoResolutionText">
+              <!-- Comentário explicativo -->
+            </div>
+          </div>
+
+          <div class="demo-stats-bar" id="demoStatsBar" style="visibility: hidden;">
+            <div>
+              Tempo: <span class="demo-stats-highlight">42s</span> · Acerto acumulado nesta disciplina: <span class="demo-stats-highlight">68%</span>
+            </div>
+            <div style="font-size: 0.8rem;">
+              Registro gravado no seu histórico de estudo
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE BENEFÍCIOS -->
+    <section class="section-wrap" id="beneficios">
+      <div class="section-title-wrap reveal-item">
+        <span class="badge-ap" style="margin-bottom: 0.75rem;">Método Comprovado</span>
+        <h2 class="section-title">Por que estudar por questões funciona melhor</h2>
+        <p class="section-desc">
+          O cursinho tradicional faz você passar horas assistindo aula sem saber se realmente reteve o conteúdo. No AP Aprovado, o estudo é ativo do primeiro ao último minuto.
+        </p>
+      </div>
+
+      <div class="benefits-grid">
+        <!-- Benefício 1 -->
+        <article class="benefit-card reveal-item">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3 class="benefit-title">Prática ativa, não passiva</h3>
+          <p class="benefit-text">
+            Ler apostilas e grifar PDFs cria uma falsa sensação de domínio. Responder questões força seu cérebro a recuperar a memória nos mesmos moldes da prova oficial.
+          </p>
+          <p class="benefit-text">
+            Você descobre a lacuna na hora, e não no dia da avaliação.
+          </p>
+        </article>
+
+        <!-- Benefício 2 -->
+        <article class="benefit-card reveal-item">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 14 14"></polyline>
+            </svg>
+          </div>
+          <h3 class="benefit-title">Correção imediata</h3>
+          <p class="benefit-text">
+            Não espere até o fim do simulado para descobrir onde errou. Cada alternativa acompanha fundamentação passo a passo logo após a sua resposta.
+          </p>
+          <p class="benefit-text">
+            Compreenda o raciocínio correto enquanto o problema ainda está fresco na mente.
+          </p>
+        </article>
+
+        <!-- Benefício 3 -->
+        <article class="benefit-card reveal-item">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <polyline points="1 20 1 14 7 14"></polyline>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+          </div>
+          <h3 class="benefit-title">Repetição inteligente de erros</h3>
+          <p class="benefit-text">
+            As questões que você errou ou teve hesitação voltam para a sua esteira em intervalos calculados de revisão até que o conceito seja consolidado.
+          </p>
+          <p class="benefit-text">
+            Pare de acertar sempre as mesmas coisas fáceis e ataque seus reais pontos cegos.
+          </p>
+        </article>
+
+        <!-- Benefício 4 -->
+        <article class="benefit-card reveal-item">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <h3 class="benefit-title">Estatísticas sem achismo</h3>
+          <p class="benefit-text">
+            Tenha clareza de qual matéria e de qual subtópico está puxando sua nota para baixo, com taxa de assertividade e tempo médio por questão.
+          </p>
+          <p class="benefit-text">
+            Saiba exatamente onde investir suas horas preciosas de estudo na semana.
+          </p>
+        </article>
+
+        <!-- Benefício 5 -->
+        <article class="benefit-card reveal-item">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+          </div>
+          <h3 class="benefit-title">Filtros cirúrgicos</h3>
+          <p class="benefit-text">
+            Filtre seu caderno por banca organizadora, ano de aplicação, disciplina, assunto e nível de dificuldade de forma rápida e combinada.
+          </p>
+          <p class="benefit-text">
+            Crie baterias personalizadas para o padrão exato da carreira que você almeja.
+          </p>
+        </article>
+
+        <!-- Benefício 6 -->
+        <article class="benefit-card reveal-item">
+          <div class="benefit-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+              <line x1="12" y1="18" x2="12.01" y2="18"></line>
+            </svg>
+          </div>
+          <h3 class="benefit-title">Funciona offline no celular</h3>
+          <p class="benefit-text">
+            Baixe seus cadernos e responda no ônibus, no quartel ou em locais sem sinal de operadora. Tudo sincroniza com seu computador assim que reconectar.
+          </p>
+          <p class="benefit-text">
+            Aproveite cada intervalo de 15 minutos do seu dia sem desculpas.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- COMO FUNCIONA (4 PASSOS) -->
+    <section class="section-wrap" id="como-funciona" style="border-top: 1px solid var(--border);">
+      <div class="section-title-wrap reveal-item">
+        <span class="badge-ap" style="margin-bottom: 0.75rem;">Etapas Claras</span>
+        <h2 class="section-title">Como funciona na prática</h2>
+        <p class="section-desc">Quatro etapas diretas para transformar cada sessão de estudo em evolução mensurável.</p>
+      </div>
+
+      <div class="timeline-steps">
+        <div class="timeline-step reveal-item">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Escolha sua prova</h3>
+          <p class="step-desc">Selecione o concurso-alvo (EsPCEx, ESA, EEAR, etc.) ou defina as bancas e assuntos que deseja isolar para o dia.</p>
+        </div>
+
+        <div class="timeline-step reveal-item">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Responda e confira</h3>
+          <p class="step-desc">Resolva cada item no seu ritmo ou com cronômetro. Receba a correção imediata com o gabarito comentado.</p>
+        </div>
+
+        <div class="timeline-step reveal-item">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Revise o que errou</h3>
+          <p class="step-desc">O sistema separa automaticamente as falhas em uma lista de repetição espaçada para nova rodada de consolidação.</p>
+        </div>
+
+        <div class="timeline-step reveal-item">
+          <div class="step-number">04</div>
+          <h3 class="step-title">Acompanhe a curva</h3>
+          <p class="step-desc">Consulte seus gráficos semanais de percentual de acerto e veja quais matérias já estão seguras e quais exigem reforço.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO COMPARATIVA -->
+    <section class="section-wrap" style="border-top: 1px solid var(--border);">
+      <div class="section-title-wrap reveal-item">
+        <span class="badge-ap" style="margin-bottom: 0.75rem;">Comparativo Direto</span>
+        <h2 class="section-title">Método passivo vs. Estudo por questões</h2>
+        <p class="section-desc">Entenda a diferença estrutural entre apenas consumir conteúdo e treinar para a prova.</p>
+      </div>
+
+      <div class="comparison-container reveal-item">
+        <div class="comparison-head">
+          <div class="comparison-col-header comparison-col-traditional">
+            Ler PDF e assistir aula
+          </div>
+          <div class="comparison-col-header comparison-col-ap">
+            <span class="brand-monogram" style="width: 22px; height: 22px; font-size: 0.75rem; border-radius: 5px;">AP</span>
+            <span>Resolver questões no AP Aprovado</span>
+          </div>
+        </div>
+
+        <!-- Linha 1 -->
+        <div class="comparison-row">
+          <div class="comparison-cell comparison-cell-trad">
+            <svg class="comp-icon icon-fail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <div>
+              <strong style="color: #FFFFFF; display: block; margin-bottom: 0.2rem;">Lembrar do conteúdo</strong>
+              A retenção passiva cai para menos de 20% após 48 horas se não houver aplicação prática ativa.
+            </div>
+          </div>
+          <div class="comparison-cell comparison-cell-ap">
+            <svg class="comp-icon icon-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <div>
+              <strong style="color: #FFFFFF; display: block; margin-bottom: 0.2rem;">Lembrar do conteúdo</strong>
+              O esforço de evocação mental fixa o raciocínio na memória de longo prazo por meio do efeito teste.
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha 2 -->
+        <div class="comparison-row">
+          <div class="comparison-cell comparison-cell-trad">
+            <svg class="comp-icon icon-fail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <div>
+              <strong style="color: #FFFFFF; display: block; margin-bottom: 0.2rem;">Saber o que você não sabe</strong>
+              Você lê o texto achando que compreendeu tudo e só percebe a dúvida quando o erro acontece na prova.
+            </div>
+          </div>
+          <div class="comparison-cell comparison-cell-ap">
+            <svg class="comp-icon icon-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <div>
+              <strong style="color: #FFFFFF; display: block; margin-bottom: 0.2rem;">Saber o que você não sabe</strong>
+              Cada questão aponta cirurgicamente o tópico exato em que a sua fundamentação teórica falhou.
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha 3 -->
+        <div class="comparison-row">
+          <div class="comparison-cell comparison-cell-trad">
+            <svg class="comp-icon icon-fail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <div>
+              <strong style="color: #FFFFFF; display: block; margin-bottom: 0.2rem;">Medir evolução</strong>
+              Mede apenas "páginas lidas" ou "horas de vídeo", métricas de vaidade que não refletem prontidão real.
+            </div>
+          </div>
+          <div class="comparison-cell comparison-cell-ap">
+            <svg class="comp-icon icon-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <div>
+              <strong style="color: #FFFFFF; display: block; margin-bottom: 0.2rem;">Medir evolução</strong>
+              Mede percentual de assertividade por matéria, velocidade média por item e constância de resolução.
+            </div>
+          </div>
+        </div>
+
+        <!-- Linha 4 -->
+        <div class="comparison-row">
+          <div class="comparison-cell comparison-cell-trad">
+            <svg class="comp-icon icon-fail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+            <div>
+              <strong style="color: #FFFFFF; display: block; margin-bottom: 0.2rem;">Treinar ritmo de prova</strong>
+              Não simula o cansaço mental, a armadilha das alternativas parecidas nem o gerenciamento do tempo.
+            </div>
+          </div>
+          <div class="comparison-cell comparison-cell-ap">
+            <svg class="comp-icon icon-success" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <div>
+              <strong style="color: #FFFFFF; display: block; margin-bottom: 0.2rem;">Treinar ritmo de prova</strong>
+              Condiciona sua tomada de decisão e a velocidade de leitura para o estilo real da banca examinadora.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BLOCO DE DESTAQUE EM FAIXA CHEIA -->
+    <section class="banner-highlight">
+      <div class="banner-inner reveal-item">
+        <h2 class="banner-quote">
+          O erro não é o fim do estudo — é o ponto exato onde o aprendizado começa.
+        </h2>
+        <a href="#planos" class="btn-main" style="padding: 0.85rem 1.8rem; font-size: 1rem;">Começar a praticar</a>
+      </div>
+    </section>
+
+    <!-- PERGUNTAS FREQUENTES (FAQ) -->
+    <section class="section-wrap" id="perguntas">
+      <div class="section-title-wrap reveal-item">
+        <span class="badge-ap" style="margin-bottom: 0.75rem;">Dúvidas Frequentes</span>
+        <h2 class="section-title">Perguntas e respostas</h2>
+        <p class="section-desc">Transparência total sobre como a ferramenta funciona, sem meias-palavras.</p>
+      </div>
+
+      <div class="faq-container">
+        <!-- P1 -->
+        <details class="faq-item reveal-item">
+          <summary class="faq-summary">
+            <span>De onde vêm as questões?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-content">
+            A base do AP Aprovado é composta por questões de provas oficiais aplicadas por bancas e comissões examinadoras, sempre com indicação explícita da instituição e do ano de aplicação. Além disso, o aluno pode importar seu próprio acervo de questões via planilha ou PDF para resolver no mesmo formato.
+          </div>
+        </details>
+
+        <!-- P2 -->
+        <details class="faq-item reveal-item">
+          <summary class="faq-summary">
+            <span>Serve para qual prova?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-content">
+            A plataforma tem foco rigoroso em concursos das carreiras militares das Forças Armadas: EsPCEx, ESA, EEAR, AFA, Escola Naval e NPOR. Os filtros e conteúdos são calibrados para os editais específicos dessas instituições.
+          </div>
+        </details>
+
+        <!-- P3 -->
+        <details class="faq-item reveal-item">
+          <summary class="faq-summary">
+            <span>Funciona sem internet?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-content">
+            Sim. No aplicativo Android, você pode salvar blocos de questões para resolver em modo offline (como durante trajetos de transporte ou locais sem sinal). Assim que seu dispositivo restabelece a conexão, suas estatísticas e revisões pendentes sincronizam automaticamente.
+          </div>
+        </details>
+
+        <!-- P4 -->
+        <details class="faq-item reveal-item">
+          <summary class="faq-summary">
+            <span>Preciso instalar alguma coisa no computador?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-content">
+            Não. No computador ou tablet, a plataforma funciona diretamente pelo navegador de internet moderno (Chrome, Edge, Firefox, Safari), sem necessidade de instalação pesada ou arquivos adicionais.
+          </div>
+        </details>
+
+        <!-- P5 -->
+        <details class="faq-item reveal-item">
+          <summary class="faq-summary">
+            <span>Posso cancelar quando quiser?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-content">
+            A assinatura é mensal. A área Minha conta mostra o status do acesso e a data até quando ele está válido. As opções de cobrança disponíveis aparecem no checkout do Mercado Pago.
+          </div>
+        </details>
+
+        <!-- P6 -->
+        <details class="faq-item reveal-item">
+          <summary class="faq-summary">
+            <span>Vocês garantem aprovação?</span>
+            <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </summary>
+          <div class="faq-content">
+            Não. Nenhum método sério e ético garante aprovação. O que oferecemos é ferramenta robusta, banco de questões organizado e método disciplinado para você estudar com eficiência máxima. O resultado final depende exclusivamente da sua dedicação e constância.
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE PLANOS (ÚNICA COM PREÇOS) -->
+    <section class="section-wrap pricing-section" id="planos">
+      <div class="section-title-wrap reveal-item">
+        <span class="badge-ap" style="margin-bottom: 0.75rem;">Acesso completo</span>
+        <h2 class="section-title">Seu próximo passo começa com uma questão</h2>
+        <p class="section-desc">Uma assinatura mensal para praticar, acompanhar sua evolução e organizar a preparação em um só lugar.</p>
+      </div>
+      <div class="plans-grid">
+        <article class="plan-card featured reveal-item">
+          <div class="plan-badges"><span class="badge-primary-pill">Plano estudante</span></div>
+          <h3 class="plan-name">Acesso completo</h3>
+          <p class="plan-desc">Para manter uma rotina consistente até o dia da prova.</p>
+          <div class="plan-price-block" aria-live="polite">
+            <div class="price-current-line">
+              <span class="price-val" id="precoMensal">Consultando…</span>
+              <span class="price-period">/mês</span>
+            </div>
+            <div class="price-billing-detail" id="precoStatus">Mensalidade recorrente pelo Mercado Pago</div>
+          </div>
+          <ul class="plan-features-list">
+            <li class="plan-feature-item"><span class="feat-icon feat-check" aria-hidden="true">✓</span><span>Questões de provas oficiais com banca e ano identificados</span></li>
+            <li class="plan-feature-item"><span class="feat-icon feat-check" aria-hidden="true">✓</span><span>Correção imediata e revisão das questões erradas</span></li>
+            <li class="plan-feature-item"><span class="feat-icon feat-check" aria-hidden="true">✓</span><span>Simulados e cadernos para organizar seus treinos</span></li>
+            <li class="plan-feature-item"><span class="feat-icon feat-check" aria-hidden="true">✓</span><span>Painel com horas, acertos e evolução por matéria</span></li>
+            <li class="plan-feature-item"><span class="feat-icon feat-check" aria-hidden="true">✓</span><span>Progresso sincronizado com sua conta</span></li>
+            <li class="plan-feature-item"><span class="feat-icon feat-check" aria-hidden="true">✓</span><span>Planejamento por edital, cronograma e revisão</span></li>
+          </ul>
+          <a class="btn-main" href="/estudar.html?cadastro=1">Começar a estudar</a>
+          <div class="plan-guarantee-note">O valor final e as condições são confirmados no checkout seguro.</div>
+        </article>
+      </div>
+      <p class="pricing-footnote reveal-item">A cobrança acontece pelo Mercado Pago. O acesso é associado ao e-mail usado no pagamento e no cadastro da conta.</p>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top-grid">
+        <!-- Coluna 1: Marca -->
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <span class="brand-monogram">AP</span>
+            <span>AP Aprovado</span>
+          </div>
+          <p>Seu espaço de estudo por questões para quem tem foco nas carreiras militares e busca resultado real.</p>
+        </div>
+
+        <!-- Coluna 2: Produto -->
+        <div>
+          <h4 class="footer-col-title">Produto</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#como-funciona">Como funciona</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#planos">Planos e Preços</a></li>
+            <li><a href="#perguntas">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Estudo & Legal -->
+        <div>
+          <h4 class="footer-col-title">Concursos</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#perguntas">EsPCEx & ESA</a></li>
+            <li><a href="#perguntas">EEAR & AFA</a></li>
+            <li><a href="#perguntas">Escola Naval & NPOR</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Novidades -->
+        <div class="footer-newsletter">
+          <h4 class="footer-col-title">Área do estudante</h4>
+          <p class="footer-newsletter-cta">Acompanhe seus estudos e veja seu progresso na área do estudante.</p>
+          <a class="btn-main" href="/estudar.html" style="padding: 0.6rem 1rem; font-size: 0.85rem;">Acessar minha conta</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-disclaimer">
+          O AP Aprovado não possui vínculo oficial com o Ministério da Defesa, Exército, Marinha ou Aeronáutica. Questões de provas oficiais são citadas e agrupadas para fins estritamente educacionais com indicação de banca e ano de aplicação. Não garantimos aprovação em processos seletivos.
+        </div>
+        <div>
+          &copy; 2026 AP Aprovado. Todos os direitos reservados.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button type="button" class="btn-back-top" id="btnBackTop" aria-label="Voltar ao topo da página">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script type="module" src="/src/marketing.js"></script>
+</body>
 </html>
+

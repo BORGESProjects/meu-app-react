@@ -42,7 +42,8 @@ export function acrescentarConteudos(materias, grupos, id = novoIdEdital) {
       const titulo = (typeof item === 'string' ? item : item.titulo).trim()
       if (existentes.has(chave(titulo))) { repetidos++; continue }
       materia.topicos.push({id:id(), titulo, status:'pendente', prioridade:'normal', notas:'',
-        ...(typeof item === 'object' && item.fonte_pdf ? {fonte_pdf:item.fonte_pdf} : {})})
+        ...(typeof item === 'object' && item.fonte_pdf ? {fonte_pdf:item.fonte_pdf} : {}),
+        ...(typeof item === 'object' && item.incidencia ? {incidencia:item.incidencia} : {})})
       existentes.add(chave(titulo)); adicionados++
     }
   }
@@ -72,7 +73,7 @@ export function identidadeEdital(titulo, edicao, unidade) {
 }
 
 export function copiarEditalAntigo(itens, id = novoIdEdital) {
-  const grupos = itens.filter(i => (i.conteudo || i.topico) && i.materia).map(i => ({nome:i.materia, topicos:[i.conteudo || i.topico]}))
+  const grupos = itens.filter(i => (i.conteudo || i.topico) && i.materia).map(i => ({nome:i.materia, topicos:[{titulo:i.conteudo || i.topico, incidencia:i.incidencia || ''}]}))
   // Legacy data is shared; its completion flags are not anybody's private progress.
   return acrescentarConteudos([], grupos, id).materias
 }

@@ -296,6 +296,12 @@ function classificarMotivos(item) {
 }
 
 function questaoRegistro(registro, pagina, numero, enunciado, opcoes, tipo, ano, paginasOrigem = [pagina], textoApoio = '', transcricoesOcr = []) {
+  const comandoDiscursivo = /^\s*(?:\d+[.)-]\s*)?(?:explique|justifique|discorra|descreva|apresente|diferencie|defina|redija|elabore|argumente|comente|indique|mencione|demonstre|calcule|resolva|analise)\b/iu.test(enunciado)
+  const valorDiscursivo = /\[\s*valor\s*:\s*\d+(?:[,.]\d+)?\s*pontos?\s*\]/iu.test(enunciado)
+  if (tipo === 'certo_errado' && comandoDiscursivo && valorDiscursivo) {
+    tipo = 'discursiva'
+    opcoes = []
+  }
   const url = registro.url_origem || ''
   const concurso = concursoLegivel(registro)
   const documentoId = idDocumento(registro)
@@ -422,6 +428,7 @@ for (const registro of candidatos) {
         }
     }
   }
+  encontrados = encontrados.filter(questao => questao.tipo_resposta !== 'discursiva' && questao.tipo_extraido !== 'discursiva')
   if (!encontrados.length) {
     docsSemQuestao++
     continue

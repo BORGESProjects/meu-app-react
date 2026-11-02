@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends tesseract-ocr t
 WORKDIR /app
 COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar app.jar
 ENV JAVA_TOOL_OPTIONS="-XX:MaxRAMPercentage=65"
+ENV SPRING_PROFILES_ACTIVE=prod
 EXPOSE 8080
 USER 10001
 ENTRYPOINT ["java", "-jar", "app.jar"]

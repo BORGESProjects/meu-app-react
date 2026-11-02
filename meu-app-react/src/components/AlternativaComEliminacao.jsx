@@ -33,3 +33,4 @@ export default function AlternativaComEliminacao({ questao, indice, texto, selec
     </button>
   </div>
 }
+

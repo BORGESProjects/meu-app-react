@@ -1,4 +1,5 @@
 import { unirQuestoes, podeCorrigir } from './acervo'
+import {avaliarRespostaComplementar} from './correcaoAcervoComplementar'
 import EnunciadoQuestao from './components/EnunciadoQuestao'
 import AlternativaComEliminacao from './components/AlternativaComEliminacao'
 import FiltroMultiplo from './components/FiltroMultiplo'
@@ -9,13 +10,13 @@ import {useProgressoUsuario} from './useProgressoUsuario'
 import { API_URL, fetchApi } from './api'
 import { useState, useEffect, useMemo, useRef, useCallback, lazy, Suspense } from 'react'
 import { supabase, sairDaConta } from './supabaseClient'
-import { carregarManifestoAcervo } from './acervoExtraidoManifesto'
+import { carregarManifestoAcervo, carregarClassificacaoPrincipal } from './acervoExtraidoManifesto'
 import { tentarLeitura, carregarEmEtapas } from './carregarAcervo'
 import catalogoLivros from './data/livrosComplementares.json'
 import { carregarLoteLivro } from './livrosAcervo'
 import { criarProcessadorAcervo } from './processarAcervo'
 import {aplicativoNativo, carregarAcervoInstalado, lembrarConta, contaOffline} from './plataforma'
-import { opcoesFiltro, chaveCampoFiltro } from './filtros'
+import { opcoesFiltro, chaveCampoFiltro, normalizarBanca } from './filtros'
 import { indexarFiltros, filtrarIndice, opcoesRelacionadas, atualizarFiltrosRelacionados } from './indiceFiltros'
 import { ESPECIFICAS_UEM } from './uem'
 import { questoesDaProva, listarProvasCompletas, gerarTreinoCpor } from './simulados'
@@ -27,14 +28,41 @@ import RevisaoSimulado from './components/RevisaoSimulado'
 import CadernosPessoais from './components/CadernosPessoais'
 import { useEstudoPessoal } from './useEstudoPessoal'
 import { analisarDesempenho } from './analiseDesempenho'
+import {opcoesFacetasAcervo} from './facetasAcervo'
 
 const DIAS_SEMANA = ['Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo']
+const CONFIG_CRONOGRAMA_ID = 'config-cronograma-semanal-v1'
+const parametrosDeEntrada = new URLSearchParams(window.location.search)
+const controleComercialAtivo=import.meta.env.VITE_ACESSO_COMERCIAL_ATIVO==='true'
+const minutosPadraoPorDia = Object.fromEntries(DIAS_SEMANA.map((dia, indice) => [dia, indice < 5 ? 120 : 90]))
+function dataLocalISO(data) {
+  const ano = data.getFullYear(), mes = String(data.getMonth() + 1).padStart(2, '0'), dia = String(data.getDate()).padStart(2, '0')
+  return `${ano}-${mes}-${dia}`
+}
+function dataISOParaLocal(valor) {
+  const [ano, mes, dia] = String(valor || '').split('-').map(Number)
+  return ano && mes && dia ? new Date(ano, mes - 1, dia) : null
+}
+function inicioSemanaLocal(data = new Date()) {
+  const inicio = new Date(data.getFullYear(), data.getMonth(), data.getDate())
+  inicio.setDate(inicio.getDate() - ((inicio.getDay() + 6) % 7))
+  return inicio
+}
+function dataDiaDaSemana(inicio, dia) {
+  const data = new Date(inicio)
+  data.setDate(data.getDate() + DIAS_SEMANA.indexOf(dia))
+  return dataLocalISO(data)
+}
+function diaParaDataSemana(dia, inicio) {
+  return DIAS_SEMANA.includes(dia) ? dataDiaDaSemana(inicio, dia) : ''
+}
 const Redacao = lazy(() => import('./components/Redacao'))
 const CentralRevisao = lazy(() => import('./components/CentralRevisao'))
 const ImportarPdf = lazy(() => import('./components/ImportarPdf'))
 const AcervoR2Uploader = lazy(() => import('./components/AcervoR2Uploader'))
 const EditalPlanejador = lazy(() => import('./components/EditalPlanejador'))
 const QuestoesExtraidas = lazy(() => import('./components/QuestoesExtraidas'))
+const RecebimentosAdmin = lazy(() => import('./components/RecebimentosAdmin'))
 
 function combinarOpcoesFiltro(opcoesBase, valoresExtra) {
   const combinadas = new Map()
@@ -63,6 +91,7 @@ function combinarOpcoesFiltro(opcoesBase, valoresExtra) {
     .map(({value, rotulo, quantidade}) => ({value, label: quantidade ? rotulo + ' (' + quantidade.toLocaleString('pt-BR') + ')' : rotulo}))
     .sort((a, b) => a.label.localeCompare(b.label, 'pt-BR', {numeric: true}))
 }
+
 
 function formatarDuracaoPlanejada(minutos) {
   const total = Number(minutos) || 0
@@ -114,7 +143,9 @@ function questaoTemImagem(questao) {
 export default function App() {
   const requisicaoAcervo = useRef(0)
   const campoEdicaoQuestao = useRef(null)
-  const [abaAtiva, setAbaAtiva] = useState('questoes')
+  const inicioRespostaQuestao = useRef(new Map())
+  const [termoBusca, setTermoBusca] = useState(() => new URLSearchParams(window.location.search).get('questao') || '')
+  const [abaAtiva, setAbaAtiva] = useState(() => ['questoes','recebimentos'].includes(parametrosDeEntrada.get('aba')) ? parametrosDeEntrada.get('aba') : 'questoes')
   const [questoesExtraidasTotal, setQuestoesExtraidasTotal] = useState(() => {
     try {
       const salvo = Number(localStorage.getItem('aprovado:total-questoes:v1'))
@@ -128,11 +159,12 @@ export default function App() {
   const [authReady, setAuthReady] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
   const [checkingAdmin, setCheckingAdmin] = useState(false)
+  const [acessoComercial, setAcessoComercial] = useState({status:'carregando'})
 
   // Estados das Questões
   const [acervoPreparado, setAcervoPreparado] = useState(() => ({questoes: unirQuestoes(), indice: null}))
   const {questoes} = acervoPreparado
-  const totalQuestoesCatalogo = questoes.length + (questoesExtraidasTotal || 0)
+  const totalQuestoesCatalogo = questoes.filter(q=>q.integridade_profissional?.apta_resolucao!==false).length + (questoesExtraidasTotal || 0)
   const processamentoAcervo = useRef(null)
   const [carregandoAcervo, setCarregandoAcervo] = useState(true)
   const [falhasAcervo, setFalhasAcervo] = useState([])
@@ -144,16 +176,15 @@ export default function App() {
 
   // Filtros de Questões
   const [filtrosAno, setFiltrosAno] = useState([])
-  const [filtrosMateria, setFiltrosMateria] = useState([])
-  const [filtrosConteudo, setFiltrosConteudo] = useState([])
+  const [filtrosMateria, setFiltrosMateria] = useState(() => parametrosDeEntrada.get('materia') ? [parametrosDeEntrada.get('materia')] : [])
+  const [filtrosConteudo, setFiltrosConteudo] = useState(() => parametrosDeEntrada.get('conteudo') ? [parametrosDeEntrada.get('conteudo')] : [])
   const [filtrosBanca, setFiltrosBanca] = useState([])
   const [filtrosDificuldade, setFiltrosDificuldade] = useState([])
-  const [termoBusca, setTermoBusca] = useState('')
   const [filtroSituacaoQuestao, setFiltroSituacaoQuestao] = useState('todas')
   const [somenteComentadas, setSomenteComentadas] = useState(false)
   const [somenteComImagem, setSomenteComImagem] = useState(false)
   const [excluirQuestaoEmCadernos, setExcluirQuestaoEmCadernos] = useState(false)
-  const [cadernoAtivoId, setCadernoAtivoId] = useState(null)
+  const [cadernoAtivoId, setCadernoAtivoId] = useState(() => parametrosDeEntrada.get('caderno'))
   const [cadernoDestinoId, setCadernoDestinoId] = useState('')
   const [dialogoPessoal, setDialogoPessoal] = useState(null)
   const [nomeRascunhoPessoal, setNomeRascunhoPessoal] = useState('')
@@ -197,12 +228,13 @@ export default function App() {
 
   const preferenciaFoco = useFocoEstudo(session)
   const focoEstudo = preferenciaFoco.foco
-  const questoesDoFoco = useMemo(() => questoes.filter(q => pertenceAoFoco(q, focoEstudo, true)), [questoes, focoEstudo])
+  const questoesDoFoco = useMemo(() => questoes.filter(q => q.integridade_profissional?.apta_resolucao!==false && pertenceAoFoco(q, focoEstudo, true)), [questoes, focoEstudo])
   const progresso = useProgressoUsuario(session?.user?.id)
   const estudoPessoal = useEstudoPessoal(session?.user?.id, !session?.offline)
   const {filtros:filtrosSalvos,cadernos,questoes:marcacoesPessoais,simulados:historicoSimulados,configuracoes:configuracoesSimulado} = estudoPessoal.dados
   const {horas_estudo:horasEstudo, historico_respostas:historicoRespostas, tarefas:tarefasDaConta} = progresso.dados
-  const tarefas = useMemo(() => tarefasDaConta.filter(t => t.tipo !== 'material_revisao'), [tarefasDaConta])
+  const configuracaoCronograma = useMemo(() => tarefasDaConta.find(t => t.id === CONFIG_CRONOGRAMA_ID), [tarefasDaConta])
+  const tarefas = useMemo(() => tarefasDaConta.filter(t => !['material_revisao','flashcard_aprovado','nota_erro_aprovado'].includes(t.tipo) && t.id !== CONFIG_CRONOGRAMA_ID), [tarefasDaConta])
   const {setHorasEstudo, setHistoricoRespostas, setTarefas, carregado:progressoCarregado,
     status:sincronizacao, erro:erroProgresso} = progresso
 
@@ -227,7 +259,7 @@ export default function App() {
     let ativo = true
     carregarManifestoAcervo()
       .then(manifesto => {
-        const total = Number(manifesto?.questoes_extraidas_unicas) || 0
+        const total = Number(manifesto?.questoes_disponiveis_resolucao ?? manifesto?.questoes_extraidas_unicas) || 0
         if (ativo) {
           setQuestoesExtraidasTotal(total)
           setManifestoAcervoCompleto(manifesto)
@@ -260,7 +292,24 @@ export default function App() {
   }, [session])
 
   useEffect(() => {
-    if (authReady && !checkingAdmin && !isAdmin && ['cadastrar', 'importar', 'r2-upload'].includes(abaAtiva)) setAbaAtiva('conta')
+    let cancelled = false
+    if (!controleComercialAtivo || !session?.user?.id || session.offline) {
+      setAcessoComercial({status:session?.offline ? 'offline' : 'indisponivel'})
+      return
+    }
+    setAcessoComercial({status:'carregando'})
+    fetchApi(`${API_URL}/api/acesso/status`, {
+      headers:{Authorization:`Bearer ${session.access_token}`, 'X-Supabase-Key':import.meta.env.VITE_SUPABASE_ANON_KEY},
+      signal:AbortSignal.timeout(30000),
+    }).then(async response => {
+      const status = response.ok ? await response.json() : null
+      if (!cancelled) setAcessoComercial({status:status?.liberado ? 'ativo' : 'pendente'})
+    }).catch(() => { if (!cancelled) setAcessoComercial({status:'indisponivel'}) })
+    return () => { cancelled = true }
+  }, [session])
+
+  useEffect(() => {
+    if (authReady && !checkingAdmin && !isAdmin && ['cadastrar', 'importar', 'r2-upload', 'recebimentos'].includes(abaAtiva)) setAbaAtiva('conta')
   }, [authReady, checkingAdmin, isAdmin, abaAtiva])
 
   async function buscarQuestoes(atualizarNativo = true) {
@@ -271,7 +320,9 @@ export default function App() {
     processamentoAcervo.current ||= criarProcessadorAcervo()
     async function preparar(itens) {
       if (requisicao !== requisicaoAcervo.current) return
-      const resultado = await processamentoAcervo.current.preparar(itens)
+      const classificacoes=await carregarClassificacaoPrincipal().catch(()=>new Map())
+      if (requisicao !== requisicaoAcervo.current) return
+      const resultado = await processamentoAcervo.current.preparar(itens.map(q=>classificacoes.has(String(q.id))?{...q,...classificacoes.get(String(q.id))}:q))
       if (requisicao === requisicaoAcervo.current) setAcervoPreparado(resultado)
     }
     if (aplicativoNativo) {
@@ -696,6 +747,7 @@ export default function App() {
     setTarefas(prev => [...prev, {
       id: crypto.randomUUID(),
       dia: novaTarefa.dia,
+      data: novaTarefa.data || diaParaDataSemana(novaTarefa.dia, inicioSemanaLocal()),
       materia: novaTarefa.materia.trim(),
       atividade: novaTarefa.atividade.trim(),
       horario: novaTarefa.horario,
@@ -710,11 +762,46 @@ export default function App() {
     setTarefas(prev => prev.filter(tarefa => tarefa.id !== id))
   }
 
-  function alternarTarefa(id) {
+  function alternarTarefa(id, dataAgendada) {
     setTarefas(prev => prev.map(tarefa => tarefa.id === id
-      ? { ...tarefa, concluida: !tarefa.concluida }
+      ? { ...tarefa, data: dataAgendada || tarefa.data, concluida: !tarefa.concluida }
       : tarefa))
   }
+
+  function alterarDisponibilidade(dia, minutos) {
+    setTarefas(prev => {
+      const atual = prev.find(tarefa => tarefa.id === CONFIG_CRONOGRAMA_ID) || {id: CONFIG_CRONOGRAMA_ID, tipo: 'configuracao_cronograma', disponibilidade: minutosPadraoPorDia}
+      return [...prev.filter(tarefa => tarefa.id !== CONFIG_CRONOGRAMA_ID), {
+        ...atual, id: CONFIG_CRONOGRAMA_ID, tipo: 'configuracao_cronograma',
+        disponibilidade: {...minutosPadraoPorDia, ...(atual.disponibilidade || {}), [dia]: Number(minutos)},
+        atualizado_em: new Date().toISOString(),
+      }]
+    })
+  }
+
+  function iniciarMedicaoQuestao(questaoId) {
+    const id=String(questaoId)
+    if(!inicioRespostaQuestao.current.has(id)) inicioRespostaQuestao.current.set(id,Date.now())
+  }
+  function concluirMedicaoQuestao(questaoId) {
+    const id=String(questaoId),inicio=inicioRespostaQuestao.current.get(id)
+    inicioRespostaQuestao.current.delete(id)
+    return inicio?Math.min(3600,Math.max(0,Math.floor((Date.now()-inicio)/1000))):undefined
+  }
+
+  const registrarRespostaComplementar = useCallback((questao, resposta) => {
+    const avaliacao = avaliarRespostaComplementar(questao, resposta)
+    if (!avaliacao) return
+    const tempoRespostaSegundos=concluirMedicaoQuestao(questao.id)
+    setHistoricoRespostas(prev => [...prev, {
+      id: crypto.randomUUID(), questaoId: questao.id, acertou: avaliacao.acertou,
+      materia: questao.materia, conteudo: questao.conteudo,
+      banca: questao.banca || '', concurso: questao.concurso || '', ano: questao.ano || '',
+      respostaSelecionada: avaliacao.escolhida, respostaCorreta: avaliacao.correta,
+      ...(tempoRespostaSegundos!==undefined?{tempoRespostaSegundos}:{}),
+      tipo: 'questao', respondidaEm: new Date().toISOString(),
+    }])
+  }, [setHistoricoRespostas])
 
   function validarResposta(questaoId, _respostaCorretaDoBanco, isSimulado = false) {
     const questaoAtual = questoes.find(q => q.id === questaoId)
@@ -724,11 +811,13 @@ export default function App() {
     if (!avaliacao.respondida) return
 
     if (!isSimulado) {
+      const tempoRespostaSegundos=concluirMedicaoQuestao(questaoId)
       setHistoricoRespostas(prev => [...prev, {
         id: crypto.randomUUID(), questaoId, acertou: avaliacao.acertou,
         materia: questaoAtual.materia, conteudo: questaoAtual.conteudo,
         banca: questaoAtual.banca || '', concurso: questaoAtual.concurso || '', ano: questaoAtual.ano || '',
         respostaSelecionada: avaliacao.escolhida, respostaCorreta: avaliacao.correta,
+        ...(tempoRespostaSegundos!==undefined?{tempoRespostaSegundos}:{}),
         tipo: 'questao', respondidaEm: new Date().toISOString(),
       }])
       if (avaliacao.acertou) {
@@ -800,7 +889,7 @@ export default function App() {
   const quantidadeFiltrosAtivos = totalFiltrosAtivos + (termoBusca.trim() ? 1 : 0) + (filtroSituacaoQuestao !== 'todas' ? 1 : 0) + Number(somenteComentadas) + Number(somenteComImagem) + Number(excluirQuestaoEmCadernos) + (cadernoAtivoId ? 1 : 0)
   const temFiltrosAtivos = quantidadeFiltrosAtivos > 0
 
-  const indiceCompleto = useMemo(() => acervoPreparado.indice || indexarFiltros(questoes), [acervoPreparado.indice, questoes])
+  const indiceCompleto = useMemo(() => (acervoPreparado.indice || indexarFiltros(questoes)).filter(item=>item.questao.integridade_profissional?.apta_resolucao!==false), [acervoPreparado.indice, questoes])
   const indiceFiltros = useMemo(
     () => indiceCompleto.filter(item => pertenceAoFoco(item.questao, focoEstudo, true)),
     [indiceCompleto, focoEstudo],
@@ -879,15 +968,19 @@ export default function App() {
   const anosSimuladoDisponiveis = [...new Set(simuladosDisponiveis.map(sim => sim.ano))].sort((a, b) => b.localeCompare(a, 'pt-BR', { numeric: true }))
   const provasSimuladoDisponiveis = simuladosDisponiveis.filter(sim => filtroAnoSimulado === 'Todos' || sim.ano === filtroAnoSimulado)
 
-  const {materia:materiasDisponiveis,dificuldade:dificuldadesDisponiveis,conteudo:conteudosDisponiveis}=opcoesAtuais
+  const facetasComplementares = useMemo(()=>opcoesFacetasAcervo(manifestoAcervoCompleto,filtrosAtuais),[manifestoAcervoCompleto,filtrosAtuais])
+  const materiasDisponiveis = useMemo(()=>combinarOpcoesFiltro(opcoesAtuais.materia,facetasComplementares.materia||[]),[opcoesAtuais.materia,facetasComplementares.materia])
+  const conteudosDisponiveis = useMemo(()=>combinarOpcoesFiltro(opcoesAtuais.conteudo,facetasComplementares.conteudo||[]),[opcoesAtuais.conteudo,facetasComplementares.conteudo])
+  const dificuldadesDisponiveis = useMemo(()=>combinarOpcoesFiltro(opcoesAtuais.dificuldade,facetasComplementares.dificuldade||[]),[opcoesAtuais.dificuldade,facetasComplementares.dificuldade])
+  const opcoesBancasCompletas=useMemo(()=>opcoesRelacionadas(indiceCompleto,filtrosAtuais).banca,[indiceCompleto,filtrosAtuais])
   const lotesManifestoAcervo = manifestoAcervoCompleto?.lotes || []
   const bancasArquivo = useMemo(() => {
     const agrupadas = new Map()
     for (const lote of lotesManifestoAcervo) {
       if (filtrosAno.length && !filtrosAno.includes(String(lote.ano || 'sem-ano'))) continue
-      const value = chaveCampoFiltro('banca', lote.banca)
+      const value = chaveCampoFiltro('banca', normalizarBanca(lote.banca,lote.concurso))
       if (!value) continue
-      const atual = agrupadas.get(value) || {value, label: lote.banca, quantidade: 0}
+      const atual = agrupadas.get(value) || {value, label:normalizarBanca(lote.banca,lote.concurso), quantidade: 0}
       atual.quantidade += Number(lote.quantidade) || 0
       agrupadas.set(value, atual)
     }
@@ -896,15 +989,15 @@ export default function App() {
   const anosArquivo = useMemo(() => {
     const agrupados = new Map()
     for (const lote of lotesManifestoAcervo) {
-      const banca = chaveCampoFiltro('banca', lote.banca)
+      const banca = chaveCampoFiltro('banca', normalizarBanca(lote.banca,lote.concurso))
       if (filtrosBanca.length && !filtrosBanca.includes(banca)) continue
       const value = lote.ano ? String(lote.ano) : 'sem-ano'
       agrupados.set(value, (agrupados.get(value) || 0) + (Number(lote.quantidade) || 0))
     }
     return [...agrupados].map(([value, quantidade]) => ({value, label: value === 'sem-ano' ? 'Ano não identificado' : value, quantidade}))
   }, [lotesManifestoAcervo, filtrosBanca])
-  const bancasDisponiveis = useMemo(() => combinarOpcoesFiltro(opcoesAtuais.banca, bancasArquivo), [opcoesAtuais.banca, bancasArquivo])
-  const anosDisponiveis = useMemo(() => combinarOpcoesFiltro(opcoesAtuais.ano, anosArquivo), [opcoesAtuais.ano, anosArquivo])
+  const bancasDisponiveis = useMemo(() => combinarOpcoesFiltro(opcoesBancasCompletas, facetasComplementares.banca || bancasArquivo), [opcoesBancasCompletas, facetasComplementares.banca, bancasArquivo])
+  const anosDisponiveis = useMemo(() => combinarOpcoesFiltro(opcoesAtuais.ano, facetasComplementares.ano || anosArquivo), [opcoesAtuais.ano, facetasComplementares.ano, anosArquivo])
   const materiasCronograma = useMemo(() => opcoesFiltro(questoesDoFoco,'materia'), [questoesDoFoco])
   const questoesSimuladoAtivo = useMemo(() => simuladoAtivo
     ? simuladoAtivo.questoes : [],
@@ -1060,12 +1153,47 @@ export default function App() {
     return historicoSimulados.filter(item => `${item.titulo} ${item.banca || ''} ${item.foco || ''}`.toLocaleLowerCase('pt-BR').includes(termo))
   }, [buscaHistoricoSimulado, historicoSimulados])
 
-  const tarefasDoCronograma = tarefas.filter(tarefa => DIAS_SEMANA.includes(tarefa.dia))
-  const tarefasSemDia = tarefas.filter(tarefa => !DIAS_SEMANA.includes(tarefa.dia))
+  const hoje = new Date()
+  const inicioSemana = inicioSemanaLocal(hoje)
+  const hojeISO = dataLocalISO(hoje)
+  const datasDaSemana = DIAS_SEMANA.map(dia => ({dia, data: dataDiaDaSemana(inicioSemana, dia)}))
+  const disponibilidadeCronograma = {...minutosPadraoPorDia, ...(configuracaoCronograma?.disponibilidade || {})}
+  const mapaDia = new Map(datasDaSemana.map(item => [item.data, item.dia]))
+  const tarefasDaSemana = tarefas.map(tarefa => {
+    const dataOriginal = dataISOParaLocal(tarefa.data) ? String(tarefa.data) : diaParaDataSemana(tarefa.dia, inicioSemana)
+    const data = dataOriginal || ''
+    const atual = data && mapaDia.has(data)
+    const pendenteAtrasada = !tarefa.concluida && data && data < datasDaSemana[0].data
+    return { ...tarefa, dataOriginal: data, dataPreferida: pendenteAtrasada ? hojeISO : data, daSemana: Boolean(atual || pendenteAtrasada) }
+  }).filter(tarefa => tarefa.daSemana && (!tarefa.concluida || mapaDia.has(tarefa.dataOriginal)))
+  const ocupacaoPorData = new Map()
+  const tarefasDistribuidas = []
+  for (const tarefa of tarefasDaSemana.filter(item => item.concluida)) {
+    const data = tarefa.dataOriginal
+    ocupacaoPorData.set(data, (ocupacaoPorData.get(data) || 0) + (Number(tarefa.minutos) || 0))
+    tarefasDistribuidas.push({...tarefa, dataAgendada: data, redistribuida: false, excedeDisponibilidade: (ocupacaoPorData.get(data) || 0) > Number(disponibilidadeCronograma[mapaDia.get(data)] || 0)})
+  }
+  const pendentesOrdenadas = tarefasDaSemana.filter(item => !item.concluida)
+    .sort((a, b) => String(a.dataPreferida).localeCompare(String(b.dataPreferida)) || String(a.horario || '').localeCompare(String(b.horario || '')))
+  for (const tarefa of pendentesOrdenadas) {
+    const minutos = Math.max(15, Number(tarefa.minutos) || 60)
+    const minimo = tarefa.dataPreferida < hojeISO ? hojeISO : tarefa.dataPreferida
+    const candidatos = datasDaSemana.filter(item => item.data >= minimo)
+    let escolhido = candidatos.find(item => (ocupacaoPorData.get(item.data) || 0) + minutos <= Number(disponibilidadeCronograma[item.dia] || 0))
+    let excedeDisponibilidade = false
+    if (!escolhido) {
+      escolhido = candidatos[0] || datasDaSemana.at(-1)
+      excedeDisponibilidade = true
+    }
+    const dataAgendada = escolhido.data
+    ocupacaoPorData.set(dataAgendada, (ocupacaoPorData.get(dataAgendada) || 0) + minutos)
+    tarefasDistribuidas.push({...tarefa, dataAgendada, redistribuida: dataAgendada !== tarefa.dataOriginal, excedeDisponibilidade})
+  }
+  const tarefasDoCronograma = tarefasDistribuidas
+  const tarefasSemDia = tarefas.filter(tarefa => !DIAS_SEMANA.includes(tarefa.dia) && !dataISOParaLocal(tarefa.data))
   const minutosPlanejados = tarefasDoCronograma.reduce((total, tarefa) => total + (Number(tarefa.minutos) || 0), 0)
   const minutosConcluidos = tarefasDoCronograma.filter(tarefa => tarefa.concluida).reduce((total, tarefa) => total + (Number(tarefa.minutos) || 0), 0)
-  const nomesDiaAtual = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
-  const diaAtual = nomesDiaAtual[new Date().getDay()]
+  const diaAtual = datasDaSemana.find(item => item.data === hojeISO)?.dia
 
   const errosPorConteudo = {}
   historicoRespostas.forEach(h => {
@@ -1078,10 +1206,25 @@ export default function App() {
 
   if (!session) return <div className="min-h-screen bg-slate-950 text-slate-100 px-3 py-8 sm:px-6 sm:py-12">
     <div className="mx-auto mb-8 flex max-w-md items-center justify-center gap-3 text-2xl font-extrabold">
-      <span className="rounded-xl bg-gradient-to-tr from-indigo-500 to-violet-500 px-3 py-1.5 text-base shadow-lg shadow-indigo-500/20">AP</span>
+      <img src="/ap-monograma.png" alt="" className="h-12 w-12 rounded-xl object-cover shadow-lg shadow-black/30" />
       <span>AP Aprovado</span>
     </div>
+    {controleComercialAtivo && <a href="/" className="mx-auto mb-5 block w-fit text-sm font-semibold text-lime-200 hover:text-lime-100">Voltar à página pública</a>}
     <Conta session={null} isAdmin={false} checkingAdmin={false} />
+  </div>
+
+  if (!session.offline && checkingAdmin) return <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center"><p className="text-sm text-lime-200">Verificando seu acesso…</p></div>
+
+  if (controleComercialAtivo && !session.offline && !isAdmin && acessoComercial.status !== 'ativo') return <div className="min-h-screen bg-slate-950 px-3 py-8 text-slate-100 sm:px-6 sm:py-12">
+    <div className="mx-auto mb-8 flex max-w-md items-center justify-center gap-3 text-2xl font-extrabold">
+      <img src="/ap-monograma.png" alt="" className="h-12 w-12 rounded-xl object-cover shadow-lg shadow-black/30" />
+      <span>AP Aprovado</span>
+    </div>
+    <a href="/" className="mx-auto mb-5 block w-fit text-sm font-semibold text-lime-200 hover:text-lime-100">Voltar à página pública</a>
+    <div className="mx-auto mb-5 max-w-xl rounded-2xl border border-lime-400/25 bg-lime-950/20 p-4 text-center text-sm text-lime-100">
+      {acessoComercial.status === 'carregando' ? 'Conferindo a confirmação da assinatura…' : acessoComercial.status === 'indisponivel' ? 'Não foi possível validar o acesso agora. Tente novamente em instantes.' : 'Para acessar as ferramentas de estudo, confirme a assinatura mensal usando este mesmo e-mail.'}
+    </div>
+    <Conta session={session} isAdmin={isAdmin} checkingAdmin={checkingAdmin} />
   </div>
 
   if (!progressoCarregado || !estudoPessoal.carregado) return <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col items-center justify-center gap-4 px-6 text-center">
@@ -1094,30 +1237,26 @@ export default function App() {
       {/* Barra de Navegação Superior Refinada */}
       <nav aria-label="Área de estudo" className="app-nav sticky top-0 z-50 flex flex-col items-stretch gap-3 border-b border-slate-800/80 bg-slate-950/80 px-3 py-3 backdrop-blur-xl xl:flex-row xl:items-center xl:justify-between md:px-6 md:py-3.5">
         <div className="app-brand px-1 text-lg font-bold tracking-tight">
-          <span className="app-brand-mark">AP</span>
+          <img src="/ap-monograma.png" alt="" className="app-brand-mark" />
           <span className="text-slate-100">Aprovado<small>SEU ESPAÇO DE ESTUDO</small></span>
         </div>
+        {!aplicativoNativo && <a href="/" className="self-start rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:bg-slate-800 xl:self-auto">Página pública</a>}
         <div aria-label="Navegação principal" className="mobile-nav flex w-full min-w-0 items-center gap-1.5 overflow-x-auto pb-1 xl:w-auto xl:pb-0">
           {[
             { id: 'questoes', label: 'Questões' },
-            { id: 'cadernos', label: 'Meus cadernos' },
             { id: 'simulados', label: 'Simulados' },
             { id: 'desempenho', label: 'Desempenho' },
-            ...(isAdmin ? [{ id: 'cadastrar', label: 'Cadastrar' }, { id: 'importar', label: 'Importar PDF' }, { id: 'r2-upload', label: 'Migrar acervo R2' }] : []),
-            { id: 'edital', label: 'Edital' },
+            { id: 'area-aluno', label: 'Área do aluno', href: '/aluno.html#caderno' },
+            ...(isAdmin ? [{ id: 'cadastrar', label: 'Cadastrar' }, { id: 'importar', label: 'Importar PDF' }, { id: 'r2-upload', label: 'Migrar acervo R2' }, { id: 'recebimentos', label: 'Recebimentos' }] : []),
             { id: 'redacao', label: 'Redação' },
-            { id: 'revisao', label: 'Revisão' },
-            { id: 'tarefas', label: 'Tarefas' },
             { id: 'conta', label: 'Minha conta' }
           ].map(tab => (
-            <button
+            tab.href ? <a key={tab.id} href={tab.href} className="nav-link shrink-0 whitespace-nowrap rounded-2xl px-3 py-2 text-xs font-medium text-slate-400 transition-all duration-200 hover:bg-slate-900/80 hover:text-slate-200 md:text-sm">{tab.label}</a> : <button
               key={tab.id}
               aria-current={abaAtiva === tab.id ? "page" : undefined}
               onClick={() => setAbaAtiva(tab.id)}
               className={`nav-link shrink-0 whitespace-nowrap px-3 py-2 rounded-2xl text-xs md:text-sm font-medium transition-all duration-200 ${abaAtiva === tab.id ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/80'}`}
-            >
-              {tab.label}
-            </button>
+            >{tab.label}</button>
           ))}
         </div>
       </nav>
@@ -1133,6 +1272,7 @@ export default function App() {
           totais={{ horas: totalHorasEstudo, questoes: totalQuestoesResolvidas, acertos: totalAcertos }}
           preferenciaFoco={preferenciaFoco}
           focoBloqueado={Boolean(simuladoAtivo)}
+          onVerDesempenho={() => setAbaAtiva('desempenho')}
           onEscolherFoco={valor => {
             if (simuladoAtivo) return
             preferenciaFoco.escolher(valor)
@@ -1141,10 +1281,11 @@ export default function App() {
             setFiltroProvaSimulado('Todos')
           }}
         />}
+        {abaAtiva === 'recebimentos' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-lime-300">Carregando painel de recebimentos…</p>}><RecebimentosAdmin session={session}/></Suspense>}
         {abaAtiva === 'cadernos' && <CadernosPessoais
           cadernos={cadernos} questoes={questoes} anotacoes={marcacoesPessoais}
           sincronizacao={estudoPessoal.sincronizacao} erroSincronizacao={estudoPessoal.erro}
-          onSincronizar={estudoPessoal.sincronizarAgora}
+          onSincronizar={() => estudoPessoal.sincronizarAgora(true)}
           onNovo={() => abrirDialogoPessoal('caderno')}
           onEstudar={estudarCaderno}
           onExcluir={excluirCaderno}
@@ -1201,7 +1342,7 @@ export default function App() {
               <FiltroMultiplo key={chaveDoFiltro('ano')} titulo="Ano" opcoes={anosDisponiveis} selecionados={filtrosAno} aoAlterar={valores => alterarFiltro('ano',valores)} rotuloTodos="Todos os anos" />
               <FiltroMultiplo key={chaveDoFiltro('materia')} titulo={`Matéria (${materiasDisponiveis.length})`} opcoes={materiasDisponiveis} selecionados={filtrosMateria} aoAlterar={valores => alterarFiltro('materia',valores)} rotuloTodos="Todas as matérias" />
               <FiltroMultiplo key={chaveDoFiltro('conteudo')} titulo={`Conteúdo (${conteudosDisponiveis.length} grupos)`} opcoes={conteudosDisponiveis} selecionados={filtrosConteudo} aoAlterar={valores => alterarFiltro('conteudo',valores)} rotuloTodos="Todos os conteúdos" />
-              <FiltroMultiplo key={chaveDoFiltro('banca')} titulo={`Banca (${bancasDisponiveis.length})`} opcoes={bancasDisponiveis} selecionados={filtrosBanca} aoAlterar={valores => alterarFiltro('banca',valores)} rotuloTodos="Todas as bancas" compactarAcervoPequeno />
+              <FiltroMultiplo key={chaveDoFiltro('banca')} titulo={`Banca / aplicação (${bancasDisponiveis.length})`} opcoes={bancasDisponiveis} selecionados={filtrosBanca} aoAlterar={valores => alterarFiltro('banca',valores)} rotuloTodos="Todas as bancas e aplicações" compactarAcervoPequeno />
               <FiltroMultiplo key={chaveDoFiltro('dificuldade')} titulo="Dificuldade" opcoes={dificuldadesDisponiveis} selecionados={filtrosDificuldade} aoAlterar={valores => alterarFiltro('dificuldade',valores)} rotuloTodos="Todas as dificuldades" />
               <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Minha situação
                 <select value={filtroSituacaoQuestao} onChange={evento => { setFiltroSituacaoQuestao(evento.target.value); setLimiteVisivel(40) }} className="mt-2 w-full rounded-2xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm font-normal normal-case tracking-normal text-slate-100">
@@ -1235,7 +1376,7 @@ export default function App() {
                   <select value={cadernoDestinoId} onChange={evento => setCadernoDestinoId(evento.target.value)} className="min-w-0 flex-1 rounded-xl border border-slate-700 bg-slate-950/80 px-3 py-2.5 text-sm font-normal normal-case tracking-normal text-slate-100">
                     <option value="">Selecione um caderno</option>{cadernos.map(caderno => <option key={caderno.id} value={caderno.id}>{caderno.nome}</option>)}
                   </select>
-                  <button type="button" disabled={!cadernoDestinoId || !questoesFiltradas.length} onClick={() => { adicionarQuestoesAoCaderno(questoesFiltradas.map(q => q.id)); setAbaAtiva('cadernos') }} className="rounded-xl border border-slate-700 px-4 py-2.5 text-xs font-semibold text-slate-200 hover:border-indigo-400/50 disabled:opacity-40">Guardar resultados da busca</button>
+                  <button type="button" disabled={!cadernoDestinoId || !questoesFiltradas.length} onClick={() => { adicionarQuestoesAoCaderno(questoesFiltradas.map(q => q.id)); setAvisoFiltros('Questões salvas. Abra a Área do aluno para organizar seus cadernos e continuar a revisão.') }} className="rounded-xl border border-slate-700 px-4 py-2.5 text-xs font-semibold text-slate-200 hover:border-indigo-400/50 disabled:opacity-40">Guardar resultados da busca</button>
                 </div>
               </label>}
               {filtrosSalvos.length > 0 && <section className="sm:col-span-2 lg:col-span-3 border-t border-slate-800 pt-4" aria-label="Buscas salvas">
@@ -1277,7 +1418,7 @@ export default function App() {
                         key={idx} questao={q} indice={idx} texto={opcao}
                         selecionada={alternativaSelecionada(respostasSelecionadas, q, idx)}
                         eliminada={alternativaFoiEliminada('normal', q.id, idx)}
-                        onSelecionar={() => alternarResposta(setRespostasSelecionadas, q, idx)}
+                        onSelecionar={() => { iniciarMedicaoQuestao(q.id); alternarResposta(setRespostasSelecionadas, q, idx) }}
                         onEliminar={() => alternarEliminacao('normal', q.id, idx)}
                       />)}
                     </div>
@@ -1318,6 +1459,10 @@ export default function App() {
                   foco={focoEstudo}
                   onEstado={atualizarQuestaoExtraidaEstado}
                   onRegistrarMais={registrarCarregadorExtraido}
+                  onResponder={registrarRespostaComplementar}
+                  tentativas={ultimasRespostasPorQuestao}
+                  marcacoes={marcacoesPessoais}
+                  onFavoritar={alternarFavorita}
                 />
               </Suspense>}
               {(limiteVisivel < questoesFiltradas.length || questoesExtraidasEstado.mais) && <button type="button" className="mx-auto block rounded-2xl border border-indigo-500/40 bg-indigo-500/10 px-6 py-3 text-sm font-semibold text-indigo-100 shadow-lg shadow-black/20 transition hover:bg-indigo-900/40" onClick={() => { if (limiteVisivel < questoesFiltradas.length) setLimiteVisivel(value => value + 40); carregarMaisExtraidas.current?.() }}>Mostrar mais questões</button>}
@@ -1597,7 +1742,7 @@ export default function App() {
                           key={idx} questao={q} indice={idx} texto={opcao} compacta
                           selecionada={alternativaSelecionada(respostasSelecionadas, q, idx)}
                           eliminada={alternativaFoiEliminada('normal', q.id, idx)}
-                          onSelecionar={() => alternarResposta(setRespostasSelecionadas, q, idx)}
+                          onSelecionar={() => { iniciarMedicaoQuestao(q.id); alternarResposta(setRespostasSelecionadas, q, idx) }}
                           onEliminar={() => alternarEliminacao('normal', q.id, idx)}
                         />)}
                       </div>
@@ -1732,8 +1877,8 @@ export default function App() {
           </Suspense>
         )}
 
-        {abaAtiva === 'redacao' && <Suspense fallback={<p role="status">Carregando a oficina de redação…</p>}><Redacao key={session.user.id} session={session} foco={focoEstudo}/></Suspense>}
-        {abaAtiva === 'revisao' && <Suspense fallback={<p role="status">Carregando seus mapas e resumos…</p>}><CentralRevisao key={session.user.id} registros={tarefasDaConta} setRegistros={setTarefas} materias={materiasCronograma} indice={indiceFiltros} onPraticar={material => {
+        {abaAtiva === 'redacao' && <Suspense fallback={<p role="status">Carregando a oficina de redação…</p>}><Redacao key={session.user.id} session={session} foco={focoEstudo} onSalvarHistorico={item => estudoPessoal.atualizar(dados => ({ ...dados, redacoes: [item, ...(dados.redacoes || []).filter(redacao => redacao.id !== item.id)] }))}/></Suspense>}
+        {abaAtiva === 'revisao' && <Suspense fallback={<p role="status">Carregando seus mapas e resumos…</p>}><CentralRevisao key={session.user.id} registros={tarefasDaConta.filter(item => item.id !== CONFIG_CRONOGRAMA_ID)} setRegistros={setTarefas} materias={materiasCronograma} indice={indiceFiltros} onPraticar={material => {
           limparFiltros(); setFiltrosMateria([material.materia]); setFiltrosConteudo(material.conteudo ? [material.conteudo] : []); setLimiteVisivel(40); setAbaAtiva('questoes')
         }}/></Suspense>}
 
@@ -1741,8 +1886,8 @@ export default function App() {
         {abaAtiva === 'tarefas' && (
           <div className="space-y-6">
             <header>
-              <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">📅 Cronograma semanal</h1>
-              <p className="mt-1 text-sm text-slate-400">Distribua matérias e horas ao longo da semana e marque cada sessão concluída.</p>
+              <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">📅 Cronograma</h1>
+              <p className="mt-1 text-sm text-slate-400">Semana de {inicioSemana.toLocaleDateString('pt-BR')} a {datasDaSemana.at(-1).data ? dataISOParaLocal(datasDaSemana.at(-1).data).toLocaleDateString('pt-BR') : ''}. O plano redistribui sessões pendentes conforme seu tempo disponível.</p>
             </header>
 
             <section className="grid grid-cols-1 gap-3 min-[380px]:grid-cols-3">
@@ -1791,27 +1936,34 @@ export default function App() {
             </form>
 
             <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {DIAS_SEMANA.map(dia => {
+              {datasDaSemana.map(({dia, data}) => {
                 const sessoes = tarefasDoCronograma
-                  .filter(tarefa => tarefa.dia === dia)
+                  .filter(tarefa => tarefa.dataAgendada === data)
                   .sort((a, b) => String(a.horario || '').localeCompare(String(b.horario || '')))
                 const minutosDia = sessoes.reduce((total, tarefa) => total + (Number(tarefa.minutos) || 0), 0)
-                return <article key={dia} className={`rounded-3xl border p-4 shadow-lg ${dia === diaAtual ? 'border-indigo-500/60 bg-indigo-950/20' : 'border-slate-800 bg-slate-900/60'}`}>
+                return <article key={data} className={`rounded-3xl border p-4 shadow-lg ${dia === diaAtual ? 'border-indigo-500/60 bg-indigo-950/20' : 'border-slate-800 bg-slate-900/60'}`}>
                   <div className="mb-4 flex items-center justify-between gap-3 border-b border-slate-800 pb-3">
                     <div>
                       <h2 className="font-bold text-slate-100">{dia}</h2>
-                      {dia === diaAtual && <span className="text-xs font-semibold text-indigo-300">Hoje</span>}
+                      <span className="text-xs text-slate-500">{dataISOParaLocal(data).toLocaleDateString('pt-BR')}{dia === diaAtual ? ' · Hoje' : ''}</span>
                     </div>
-                    <span className="rounded-full bg-slate-950/70 px-3 py-1 text-xs font-semibold text-slate-300">{formatarDuracaoPlanejada(minutosDia)}</span>
+                    <label className="text-right text-[10px] font-semibold uppercase tracking-wide text-slate-500">Tempo disponível
+                      <select aria-label={`Tempo disponível ${dia}`} value={disponibilidadeCronograma[dia]} onChange={e => alterarDisponibilidade(dia, e.target.value)} className="mt-1 block max-w-24 rounded-xl border border-slate-700 bg-slate-950 px-2 py-1.5 text-xs font-semibold text-slate-200">
+                        {[0, 30, 60, 90, 120, 150, 180, 240, 300, 360].map(minutos => <option key={minutos} value={minutos}>{minutos === 0 ? 'Livre' : formatarDuracaoPlanejada(minutos)}</option>)}
+                      </select>
+                      <span className={`mt-1 block text-xs ${minutosDia > Number(disponibilidadeCronograma[dia]) ? 'text-amber-300' : 'text-slate-300'}`}>{formatarDuracaoPlanejada(minutosDia)} planejados</span>
+                    </label>
                   </div>
                   {sessoes.length === 0 ? <p className="py-5 text-center text-sm text-slate-500">Dia livre</p> : <div className="space-y-3">
                     {sessoes.map(tarefa => <div key={tarefa.id} className={`rounded-2xl border p-3 ${tarefa.concluida ? 'border-emerald-500/30 bg-emerald-950/20' : 'border-slate-800 bg-slate-950/50'}`}>
                       <div className="flex items-start gap-3">
-                        <input aria-label={`Marcar ${tarefa.materia} como concluída`} type="checkbox" checked={Boolean(tarefa.concluida)} onChange={() => alternarTarefa(tarefa.id)} className="mt-1 h-5 w-5 shrink-0 cursor-pointer" />
+                        <input aria-label={`Marcar ${tarefa.materia} como concluída`} type="checkbox" checked={Boolean(tarefa.concluida)} onChange={() => alternarTarefa(tarefa.id, tarefa.dataAgendada)} className="mt-1 h-5 w-5 shrink-0 cursor-pointer" />
                         <div className="min-w-0 flex-1">
                           <div className="flex flex-wrap items-center gap-2">
                             <strong className={`break-words text-sm ${tarefa.concluida ? 'text-emerald-300 line-through' : 'text-slate-100'}`}>{tarefa.materia}</strong>
                             <span className="text-xs text-slate-500">{tarefa.horario}</span>
+                            {tarefa.redistribuida && <span className="rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-semibold text-amber-300">Reprogramada</span>}
+                            {tarefa.excedeDisponibilidade && <span className="rounded-full bg-rose-500/10 px-2 py-0.5 text-[10px] font-semibold text-rose-300">Acima do tempo disponível</span>}
                           </div>
                           {tarefa.atividade && <p className="mt-1 break-words text-xs text-slate-400">{tarefa.atividade}</p>}
                           <p className="mt-2 text-xs font-semibold text-indigo-300">{formatarDuracaoPlanejada(tarefa.minutos)}</p>

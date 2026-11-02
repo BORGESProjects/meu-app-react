@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { supabase } from './supabaseClient'
 
-const vazio = () => ({ filtros: [], cadernos: [], questoes: {}, simulados: [], configuracoes: [], removidos: { filtros: [], cadernos: [], questoes: [], simulados: [], configuracoes: [] } })
-const colecoes = ['filtros', 'cadernos', 'simulados', 'configuracoes']
+const vazio = () => ({ filtros: [], cadernos: [], questoes: {}, simulados: [], redacoes: [], configuracoes: [], removidos: { filtros: [], cadernos: [], questoes: [], simulados: [], redacoes: [], configuracoes: [] } })
+const colecoes = ['filtros', 'cadernos', 'simulados', 'redacoes', 'configuracoes']
 
 function normalizar(dados) {
   const removidos = dados?.removidos || {}
@@ -16,6 +16,7 @@ function normalizar(dados) {
     })).filter(item => typeof item.id === 'string' && typeof item.nome === 'string') : [],
     questoes: dados?.questoes && typeof dados.questoes === 'object' && !Array.isArray(dados.questoes) ? dados.questoes : {},
     simulados: Array.isArray(dados?.simulados) ? dados.simulados.filter(item => item && typeof item.id === 'string').slice(0, 50) : [],
+    redacoes: Array.isArray(dados?.redacoes) ? dados.redacoes.filter(item => item && typeof item.id === 'string' && Number.isFinite(Number(item.nota)) && Number(item.maximo) > 0) : [],
     configuracoes: Array.isArray(dados?.configuracoes) ? dados.configuracoes.filter(item => item && typeof item.id === 'string').slice(0, 30) : [],
     removidos: Object.fromEntries([...colecoes, 'questoes'].map(campo => [campo, Array.isArray(removidos[campo]) ? [...new Set(removidos[campo].map(String))] : []])),
   }
@@ -39,6 +40,7 @@ function mesclarEstudos(primeiro, segundo) {
   const removidos = Object.fromEntries([...colecoes, 'questoes'].map(campo => [campo, [...new Set([...a.removidos[campo], ...b.removidos[campo]])]]))
   const filtros = unirColecao(a.filtros, b.filtros, removidos.filtros)
   const simulados = unirColecao(a.simulados, b.simulados, removidos.simulados).slice(0, 50)
+  const redacoes = unirColecao(a.redacoes, b.redacoes, removidos.redacoes)
   const configuracoes = unirColecao(a.configuracoes, b.configuracoes, removidos.configuracoes).slice(0, 30)
   const cadernos = unirColecao(a.cadernos, b.cadernos, removidos.cadernos).map(caderno => {
     const outro = [...a.cadernos, ...b.cadernos].find(item => item.id === caderno.id) || caderno
@@ -56,8 +58,10 @@ function mesclarEstudos(primeiro, segundo) {
     const tb = Date.parse(qb?.modificadoEm || 0) || 0
     questoes[id] = !qa ? qb : !qb ? qa : ta >= tb ? qa : qb
   }
-  return { filtros, cadernos, questoes, simulados, configuracoes, removidos }
+  return { filtros, cadernos, questoes, simulados, redacoes, configuracoes, removidos }
 }
+
+const estudosIguais = (a, b) => JSON.stringify(a) === JSON.stringify(b)
 
 function registrarAlteracoes(anteriores, dadosNovos) {
   const antes = normalizar(anteriores), depois = normalizar(dadosNovos)
@@ -118,6 +122,8 @@ export function useEstudoPessoal(userId, sincronizar = true) {
   const [estado, setEstado] = useState({ chave: '', dados: vazio(), carregado: false, erro: '', sincronizacao: 'local' })
   const estadoRef = useRef(estado)
   const remotoPronto = useRef(false)
+  const sincronizacaoPendente = useRef(false)
+  const versaoLocal = useRef(0)
   const gravaEmAndamento = useRef(false)
   const timer = useRef(null)
   const sincronizarRef = useRef(null)
@@ -141,37 +147,47 @@ export function useEstudoPessoal(userId, sincronizar = true) {
         remotoPronto.current = true
         if (erroRemoto) {
           const tabelaAusente = erroRemoto.code === 'PGRST205' || erroRemoto.code === '42P01'
+          sincronizacaoPendente.current = !estudosIguais(local, vazio())
           setEstado(atual => atual.chave === chave ? { ...atual, sincronizacao: 'erro', erro: tabelaAusente
             ? 'Sincronização entre dispositivos depende da migração estudo-pessoal.sql no Supabase.'
             : 'A sincronização on-line falhou; seus dados locais foram preservados.' } : atual)
           return
         }
         if (data?.dados) {
-          const dados = mesclarEstudos(estadoRef.current.chave === chave ? estadoRef.current.dados : local, data.dados)
-          setEstado(atual => atual.chave === chave ? { ...atual, dados, sincronizacao: 'salvo', erro: '' } : atual)
+          const estadoLocal = estadoRef.current.chave === chave ? estadoRef.current.dados : local
+          const dados = mesclarEstudos(estadoLocal, data.dados)
+          sincronizacaoPendente.current = !estudosIguais(dados, normalizar(data.dados))
+          setEstado(atual => {
+            if (atual.chave !== chave) return atual
+            return { ...atual, dados: estudosIguais(atual.dados, dados) ? atual.dados : dados, sincronizacao: 'salvo', erro: '' }
+          })
         } else {
+          sincronizacaoPendente.current = !estudosIguais(local, vazio())
           setEstado(atual => atual.chave === chave ? { ...atual, sincronizacao: 'salvo', erro: '' } : atual)
-          setTimeout(() => { void sincronizarRef.current?.() }, 0)
         }
       }).catch(() => {
         if (!ativo) return
         remotoPronto.current = true
+        sincronizacaoPendente.current = !estudosIguais(local, vazio())
         setEstado(atual => atual.chave === chave ? { ...atual, sincronizacao: 'erro', erro: 'A sincronização on-line falhou; seus dados locais foram preservados.' } : atual)
       })
     }
     return () => { ativo = false; clearTimeout(timer.current) }
   }, [chave, remotoAtivo, userId])
 
-  const sincronizarAgora = useCallback(async () => {
-    if (!remotoAtivo || !remotoPronto.current || gravaEmAndamento.current) return
+  const sincronizarAgora = useCallback(async (forcar = false) => {
+    if (!remotoAtivo || !remotoPronto.current || gravaEmAndamento.current || (!sincronizacaoPendente.current && !forcar)) return
     gravaEmAndamento.current = true
     const enviado = estadoRef.current.dados
+    const versaoEnviada = versaoLocal.current
     setEstado(atual => atual.chave === chave ? { ...atual, sincronizacao: 'sincronizando' } : atual)
     try {
       const salvo = await gravarRemoto(userId, estadoRef.current.dados)
+      sincronizacaoPendente.current = versaoLocal.current !== versaoEnviada
       setEstado(atual => {
         if (atual.chave !== chave) return atual
-        return { ...atual, dados: mesclarEstudos(atual.dados, salvo), sincronizacao: 'salvo', erro: '' }
+        const dados = mesclarEstudos(atual.dados, salvo)
+        return { ...atual, dados: estudosIguais(atual.dados, dados) ? atual.dados : dados, sincronizacao: 'salvo', erro: '' }
       })
     } catch (erro) {
       setEstado(atual => atual.chave === chave ? { ...atual, sincronizacao: 'erro', erro: erro?.code === '42P01' || erro?.code === 'PGRST205'
@@ -179,7 +195,7 @@ export function useEstudoPessoal(userId, sincronizar = true) {
         : 'A sincronização on-line falhou; as alterações continuam salvas neste dispositivo.' } : atual)
     } finally {
       gravaEmAndamento.current = false
-      if (JSON.stringify(estadoRef.current.dados) !== JSON.stringify(enviado)) {
+      if (sincronizacaoPendente.current && JSON.stringify(estadoRef.current.dados) !== JSON.stringify(enviado)) {
         clearTimeout(timer.current)
         timer.current = setTimeout(() => { void sincronizarRef.current?.() }, 500)
       }
@@ -197,7 +213,7 @@ export function useEstudoPessoal(userId, sincronizar = true) {
   }, [chave, estado])
 
   useEffect(() => {
-    if (!remotoAtivo || !remotoPronto.current || !estado.carregado || estado.chave !== chave) return
+    if (!remotoAtivo || !remotoPronto.current || !estado.carregado || estado.chave !== chave || !sincronizacaoPendente.current) return
     clearTimeout(timer.current)
     timer.current = setTimeout(() => { void sincronizarRef.current?.() }, 900)
     return () => clearTimeout(timer.current)
@@ -205,13 +221,15 @@ export function useEstudoPessoal(userId, sincronizar = true) {
 
   useEffect(() => {
     if (!remotoAtivo) return undefined
-    const tentar = () => { if (!document.hidden) void sincronizarRef.current?.() }
+    const tentar = () => { if (!document.hidden) void sincronizarRef.current?.(true) }
     window.addEventListener('online', tentar)
     window.addEventListener('focus', tentar)
     return () => { window.removeEventListener('online', tentar); window.removeEventListener('focus', tentar) }
   }, [remotoAtivo])
 
   const atualizar = useCallback(mudar => {
+    versaoLocal.current++
+    sincronizacaoPendente.current = true
     setEstado(atual => {
       if (atual.chave !== chave || !atual.carregado) return atual
       const recebido = typeof mudar === 'function' ? mudar(atual.dados) : mudar
@@ -229,3 +247,4 @@ export function useEstudoPessoal(userId, sincronizar = true) {
     sincronizarAgora,
   }
 }
+

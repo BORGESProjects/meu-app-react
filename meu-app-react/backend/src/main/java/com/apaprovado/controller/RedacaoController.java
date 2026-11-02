@@ -27,4 +27,5 @@ public class RedacaoController {
             return resposta.body(Map.of("message",Objects.toString(e.getReason(),"Não foi possível corrigir a redação.")));
         }
     }
+
 }

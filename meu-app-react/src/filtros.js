@@ -46,6 +46,24 @@ export function normalizarBanca(valor, concurso = '') {
   const original = limparValorFiltro(valor)
   const chave = chaveFiltro(original)
   const chaveConcurso = chaveFiltro(concurso)
+  // A organizadora não identifica a aplicação: o INEP aplica exames diferentes
+  // e o Exército reúne seleções com programas e cadernos próprios.
+  if (/^(?:inep|exercito brasileiro|exercito)$/.test(chave)) {
+    const provas = [
+      ['EsPCEx', /\bespcex\b/], ['ESA', /\b(?:esa|essa)\b/], ['IME', /\bime\b/],
+      ['EEAR', /\beear\b/], ['EAM', /\beam\b/], ['CFN', /\bcfn\b|fuzileir/],
+      ['CPOR', /\bcpor\b/], ['ENEM-PPL', /\benem[ -]?ppl\b/],
+      ['ENEM', /\benem\b/], ['ENCCEJA', /\bencceja\b/], ['ENADE', /\benade\b/],
+      ['ENAMED', /\benamed\b/], ['REVALIDA', /\brevalida\b/], ['SAEB', /\bsaeb\b/], ['PND', /\bpnd\b/],
+    ]
+    const prova = provas.find(([, padrao]) => padrao.test(chaveConcurso))
+    if (prova) return prova[0]
+  }
+  if (/^eear(?:[- /]\d{4})/.test(chave)) return 'EEAR'
+  if (/^(?:ita-sp|afa-rj)$/.test(chave)) return chave.startsWith('ita') ? 'ITA' : 'AFA'
+  if (/^en[ae]m[- ](?:pll|ppl)$/.test(chave)) return 'ENEM-PPL'
+  if (/^enem[- ]libras$/.test(chave)) return 'ENEM-LIBRAS'
+  if (/^mackenzie$/.test(chave)) return 'Mackenzie'
   if (!chave || BANCAS_INVALIDAS.has(chave) || BANCAS_ASSIMILACAO.has(chave)) return BANCA_ASSIMILACAO
   if (/^(?:cespe|cebraspe)(?:$|[- /])/.test(chave)) return 'CEBRASPE'
   if (/^fgv(?:$|[- /])/.test(chave)) return 'FGV'
@@ -74,6 +92,8 @@ export function normalizarMateria(valor, conteudo = '') {
   const original = limparValorFiltro(valor)
   const chave = chaveFiltro(original)
   const chaveConteudo = chaveFiltro(conteudo)
+  if (/^portugu.{1,3}s$/.test(chave) || chave === 'lingua portuguesa') return 'Português'
+  if (/^ingl.{1,3}s$/.test(chave) || chave === 'lingua inglesa') return 'Inglês'
   if (/^fisica$/.test(chave) && /potenciacao|radiciacao|produtos? notaveis?|fatoracao|fracoes?/.test(chaveConteudo)) return 'Matemática'
   if (/^(?:lingua )?portuguesa?$|^portugues$/.test(chave)) return 'Português'
   if (/^(?:lingua )?inglesa?$|^ingles$/.test(chave)) return 'Inglês'
@@ -134,7 +154,7 @@ const gruposConteudo = [
   ['Clima e atmosfera', /clima|climatolog|massa de ar|inversao termica|anomalia climatica/],
   ['Biomas e vegetação', /bioma|vegetacao|amazonia|caatinga|cerrado|mata atlantica|araucaria|morfoclimatico/],
   ['Relevo, geologia e solos', /geomorfolog|geolog|relevo|solo|tecton|vulcan|tsunami/],
-  ['Hidrografia', /hidrograf|bacia hidro|rio|aguas subterraneas|aquifero/],
+  ['Hidrografia', /hidrograf|bacia hidro|\brio\b|aguas subterraneas|aquifero/],
   ['População e demografia', /demograf|populac|migrac|exodo rural|transicao demografica/],
   ['Urbanização', /urbaniz|geografia urbana|cidade|rede urbana/],
   ['Espaço agrário e agropecuária', /agrar|agricultur|agropecuar|estrutura fundiaria|pecuaria/],
@@ -431,6 +451,7 @@ function rotuloPreferido(chave, contagens, campo) {
   if (campo === 'dificuldade') return ({ facil: 'Fácil', media: 'Média', dificil: 'Difícil' })[chave] || valores[0][0]
   if (campo === 'banca') {
     if (chave === 'puc') return 'PUC'
+    if (chave === 'fuvest') return 'USP (FUVEST)'
     const sigla = valores.find(([valor]) => valor.length <= 10 && valor === valor.toLocaleUpperCase('pt-BR'))
     if (sigla) return sigla[0]
   }

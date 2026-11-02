@@ -1,0 +1,20 @@
+import fs from 'node:fs/promises'
+import { createHash } from 'node:crypto'
+import { aplicarRevisoesIndividuais, hashRevisao } from './aplicar-revisoes-individuais.mjs'
+
+const doc='0a8a04864403a93e',nome='gabarito-petrobras-geofisica-itens-111-113-v278'
+const base='tmp/revisao-profissional/revisao-petrobras-2021-geofisica-fisica-pendencias-v277/acervo-extraido'
+const gabarito='https://cdn.cebraspe.org.br/concursos/petrobras_21_ns/arquivos/gab_definitivo_658_petrobras_022_01.pdf'
+const alvos=[
+ {id:'extr-8058f552d4e35d27d0bc',numero:111,enunciado:'A transformada de Fourier H(ω) de h(t) possui parte imaginária nula.',materia:'Matemática',conteudo:'Transformada de Fourier — sinal exponencial par',apoio:'Considere h(t) = e^(μt) para t < 0 e h(t) = e^(−μt) para t > 0, com μ > 0.'},
+ {id:'extr-db1b9c2ab7cd98fe76e5',numero:112,enunciado:'A transformada de Fourier da convolução de duas funções absolutamente integráveis é o produto das transformadas de Fourier dessas funções.',materia:'Matemática',conteudo:'Transformada de Fourier — teorema da convolução',apoio:'Considere as definições e funções do bloco III de matemática aplicada, no caderno oficial.'},
+ {id:'extr-56bcccf1bf85c5ed2fc4',numero:113,enunciado:'A transformada de Fourier H(ω) de h(t) possui parte real Re(H(ω)) = 2μ/(μ² + ω²).',materia:'Matemática',conteudo:'Transformada de Fourier — parte real da transformada exponencial',apoio:'Considere h(t) = e^(μt) para t < 0 e h(t) = e^(−μt) para t > 0, com μ > 0.'}
+]
+const chaves=JSON.parse((await fs.readFile('docs/acervo/revisao-profissional/gabaritos-conferidos.jsonl','utf8')).split(/\r?\n/).find(l=>l.includes(`"documento_id": "${doc}"`))).respostas
+Object.assign(chaves,{'111':'C','112':'C','113':'C'})
+const digest=createHash('sha256').update(Object.keys(chaves).sort((a,b)=>Number(a)-Number(b)).map(n=>`${n}:${chaves[n]}`).join('|')).digest('hex')
+const decisoes=alvos.map(q=>({id:q.id,sha256_enunciado:hashRevisao(q.enunciado),enunciado:q.enunciado,materia:q.materia,conteudo:q.conteudo,ano:2022,concurso:'PETROBRAS PSP RH 2021 — Ênfase 22: Geofísica — Física (aplicação em 20/2/2022)',numero_original:q.numero,pagina:3,dificuldade:'Difícil',dificuldade_estimada:true,dificuldade_evidencia:'Estimativa editorial pela complexidade da análise de Fourier; não publicada pela banca.',classificacao_fonte:'https://petrobras.com.br/quem-somos/concursos',motivo:`Item ${q.numero}: transformada de Fourier, classificado pela formulação e contexto do caderno oficial.`,texto_apoio:q.apoio,resposta_correta:0,anulada:false,gabarito_oficial:{fonte:gabarito,arquivo:'GAB_DEFINITIVO_658_PETROBRAS_022_01.PDF',numero:q.numero,pagina:1,resposta:'C',sha256:digest,sha256_tipo:'sha256 da transcrição ordenada dos itens 51–110 do gabarito definitivo; itens 111–113 conferidos na faixa final oficial.',criterio:'Resposta C confirmada na linha oficial dos itens 111–120.'},apta_resolucao:true,remover_pendencias:['classificacao_especifica_pendente','gabarito_oficial_nao_vinculado','ano_sem_evidencia','enunciado_incompleto','alternativas_invalida','alternativa_vazia','texto_corrompido','texto_de_outro_bloco','visual_ausente']}))
+const r=await aplicarRevisoesIndividuais({nome,base,decisoes})
+await fs.appendFile('scripts/acervo-publico/acervo-atual.mjs',`\nraizesAtuais.unshift('tmp/revisao-profissional/${nome}/acervo-extraido')\n`)
+await fs.appendFile('docs/acervo/revisao-profissional/RELATORIO.md',`\n\n## Petrobras 2021 — complemento de gabarito dos itens 111–113 — v278\n\n- Habilitei a correção automática nos três itens de transformada de Fourier após conferir a linha 111–120 do gabarito definitivo oficial. Os três itens têm resposta C; o vínculo anterior não ativava correção automática porque faltava o digest da transcrição oficial.\n- Resultado local: ${r.total} registros, ${r.disponiveis} disponíveis, ${r.pendentes} pendentes. Ainda não publicado na nuvem. Fonte: [gabarito definitivo oficial](<${gabarito}>).\n`)
+console.log(JSON.stringify({...r,itens:[111,112,113],digest,publicacao:'local'},null,2))

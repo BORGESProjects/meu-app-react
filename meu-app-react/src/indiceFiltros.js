@@ -22,7 +22,8 @@ function textoBuscaQuestao(questao) {
 export function indexarFiltros(questoes) {
   return questoes.map(questao => {
     const grupo = grupoConteudo(questao.conteudo, questao.materia, `${questao.enunciado || ''} ${(questao.opcoes || []).join(' ')}`)
-    return { questao, ano: anoDaQuestao(questao),
+    const ano = anoDaQuestao(questao)
+    return { questao, ano: /^\d{4}$/u.test(ano) ? ano : 'sem-ano',
       materia: chaveCampoFiltro('materia', normalizarMateria(questao.materia, questao.conteudo)),
       banca: chaveCampoFiltro('banca', normalizarBanca(questao.banca, questao.concurso)),
       dificuldade: chaveCampoFiltro('dificuldade', questao.dificuldade),
@@ -60,7 +61,7 @@ function basesDoIndice(indice) {
   const questoes=indice.map(i=>i.questao), grupos=new Map()
   for(const item of indice) if(item.grupo.value && !grupos.has(item.grupo.value)) grupos.set(item.grupo.value,{value:item.grupo.value,label:item.grupo.label})
   const bases={
-    ano:[...new Set(indice.map(i=>i.ano))].sort((a,b)=>b.localeCompare(a,'pt-BR',{numeric:true})).map(value=>({value,label:value})),
+    ano:[...new Set(indice.map(i=>i.ano))].sort((a,b)=>b.localeCompare(a,'pt-BR',{numeric:true})).map(value=>({value,label:value==='sem-ano'?'Ano não identificado':value})),
     materia:opcoesFiltro(questoes,'materia'), banca:opcoesFiltro(questoes,'banca'), dificuldade:opcoesFiltro(questoes,'dificuldade'),
     conteudo:[...grupos.values()].sort((a,b)=>a.label.localeCompare(b.label,'pt-BR',{sensitivity:'base',numeric:true})),
   }

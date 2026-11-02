@@ -9,13 +9,25 @@ import {criarEditaisOffline} from '../editaisOffline'
 const vazio = {titulo:'', edicao:'', unidade:'', data_prova:''}
 const exemplo = 'Português:\nInterpretação de textos\nConcordância verbal e nominal\n\nMatemática:\nEquações do primeiro e segundo grau\nGeometria plana'
 const ImportarEditalPdf = lazy(()=>import('./ImportarEditalPdf'))
+const chavePratica = valor => String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR').replace(/[^a-z0-9]+/g,' ').trim()
+function estatisticaPratica(materia,topico,historico) {
+  const materiaAlvo=chavePratica(materia),conteudoAlvo=chavePratica(topico)
+  const itens=historico.filter(item=>{
+    const materiaResposta=chavePratica(item.materia),conteudoResposta=chavePratica(item.conteudo)
+    if(!materiaResposta || !conteudoResposta || !conteudoAlvo)return false
+    const mesmaMateria=materiaResposta===materiaAlvo || materiaResposta.includes(materiaAlvo) || materiaAlvo.includes(materiaResposta)
+    return mesmaMateria && (conteudoResposta.includes(conteudoAlvo) || conteudoAlvo.includes(conteudoResposta))
+  })
+  const acertos=itens.filter(item=>item.acertou===true).length
+  return {total:itens.length,percentual:itens.length?Math.round(acertos/itens.length*100):0}
+}
 
 function Progresso({materias}) {
   const r = resumoEdital(materias)
   return <div className="edital-progresso"><div><span>{r.concluidos} de {r.total} conteúdos estudados</span><strong>{r.percentual}%</strong></div><progress max="100" value={r.percentual} aria-label="Conteúdos estudados" /></div>
 }
 
-export default function EditalPlanejador({userId, client = supabase}) {
+export default function EditalPlanejador({userId, client = supabase, historicoRespostas = [], onPraticar}) {
   const repositorioLocal=useMemo(()=>aplicativoNativo?criarEditaisOffline({client,userId,storage:window.localStorage}):null,[client,userId])
   const [editais,setEditais] = useState([])
   const [selecionado,setSelecionado] = useState('')
@@ -36,10 +48,12 @@ export default function EditalPlanejador({userId, client = supabase}) {
   const [editando,setEditando] = useState(null)
   const [antigos,setAntigos] = useState(null)
   const [lendoAntigos,setLendoAntigos] = useState(false)
+  const [modeloSelecionado,setModeloSelecionado] = useState('')
   const [leitorSolicitado,setLeitorSolicitado] = useState(false)
   const bloqueio = useRef(false)
   const ativo = editais.find(e => e.id === selecionado)
   const resumo = useMemo(() => resumoEdital(ativo?.materias || []),[ativo])
+  const modelos = useMemo(() => [...new Set((antigos || []).map(item => item.concurso).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt-BR')),[antigos])
 
   const carregar = useCallback(async (cancelado = () => false) => {
     setCarregando(true); setErro('')
@@ -67,6 +81,8 @@ export default function EditalPlanejador({userId, client = supabase}) {
     if(repositorioLocal)window.addEventListener('online',reconectar)
     return () => {cancelado = true;window.removeEventListener('online',reconectar)}
   }, [carregar,repositorioLocal])
+
+  useEffect(() => { void carregarAntigos() }, [])
 
   async function gravar(edital, novo = false) {
     if (bloqueio.current) return false
@@ -144,6 +160,7 @@ export default function EditalPlanejador({userId, client = supabase}) {
       const data = await r.json()
       if (!Array.isArray(data)) throw new Error()
       setAntigos(data)
+      setModeloSelecionado(atual=>data.some(item=>item.concurso===atual)?atual:data.find(item=>item.concurso)?.concurso||'')
     } catch {setErro('Os modelos anteriores estão indisponíveis no momento. Seus editais pessoais continuam disponíveis.')}
     finally {setLendoAntigos(false)}
   }
@@ -170,7 +187,7 @@ export default function EditalPlanejador({userId, client = supabase}) {
     {carregando ? <p role="status">Carregando seus editais…</p> : <>
       {(criando || configurando) && <form onSubmit={salvarConcurso} className="edital-painel edital-form">
         <h3>{configurando ? 'Editar informações do concurso' : 'Crie seu edital pessoal'}</h3>
-        <p>Use o nome do concurso e, se necessário, a edição e a unidade. Cada edital tem seu próprio progresso.</p>
+            <p>Use o nome do concurso e, se necessário, a edição e a unidade. Cada edital tem seu próprio progresso.</p>
         <div className="edital-campos"><label>Concurso<input required maxLength={150} placeholder="Ex.: CPOR" value={form.titulo} onChange={e => setForm({...form,titulo:e.target.value})} /></label><label>Edição<input maxLength={80} placeholder="Ex.: 2026" value={form.edicao} onChange={e => setForm({...form,edicao:e.target.value})} /></label><label>Unidade ou local<input maxLength={150} placeholder="Ex.: CPOR de São Paulo" value={form.unidade} onChange={e => setForm({...form,unidade:e.target.value})} /></label><label>Data da prova (opcional)<input type="date" value={form.data_prova || ''} onChange={e => setForm({...form,data_prova:e.target.value})} /></label></div>
         <div className="edital-acoes"><button disabled={salvando || !form.titulo.trim()} className="edital-primario">{configurando ? 'Salvar informações' : 'Criar edital'}</button><button type="button" onClick={() => {setCriando(false);setConfigurando(false)}}>Cancelar</button></div>
       </form>}
@@ -198,18 +215,19 @@ export default function EditalPlanejador({userId, client = supabase}) {
           return <section className="edital-painel edital-materia" key={m.id}>
             <button className="edital-materia-titulo" aria-expanded={aberta} onClick={() => setAbertas({...abertas,[m.id]:!aberta})}><span>{aberta ? '▾' : '▸'} {m.nome}</span><span>{r.concluidos}/{r.total} · {r.percentual}%</span></button>
             <Progresso materias={[m]} />
-            {aberta && <><p className="edital-ajuda">Marque o que já estudou. Use “Revisar” para conteúdos que precisam de reforço.</p><ol className="edital-topicos">{visiveis.map(t => <li key={t.id} className={t.status === 'concluido' ? 'edital-concluido' : ''}>
-              <div className="edital-topico"><label className="edital-check"><input type="checkbox" disabled={salvando} checked={t.status === 'concluido'} onChange={() => atualizar(m.id,t.id,{status:t.status === 'concluido' ? 'pendente' : 'concluido'})} /><span>{t.titulo}</span></label><div className="edital-topico-acoes"><select disabled={salvando} aria-label={`Etapa de ${t.titulo}`} value={t.status} onChange={e => atualizar(m.id,t.id,{status:e.target.value})}>{Object.entries(STATUS_EDITAL).map(([v,label]) => <option key={v} value={v}>{label}</option>)}</select><button className={t.prioridade === 'alta' ? 'edital-alta' : ''} aria-pressed={t.prioridade === 'alta'} disabled={salvando} title="Alternar prioridade" onClick={() => atualizar(m.id,t.id,{prioridade:t.prioridade === 'alta' ? 'normal' : 'alta'})}>{t.prioridade === 'alta' ? '★ Alta' : '☆ Prioridade'}</button><button disabled={salvando} onClick={() => setEditando({materiaId:m.id,...t})} aria-label={`Editar ${t.titulo}`}>Editar</button></div></div>
+            {aberta && <><p className="edital-ajuda">Marque o que já estudou. Use “Revisar” para conteúdos que precisam de reforço. O sinal de prática considera suas respostas recentes, mas não substitui uma avaliação completa.</p><ol className="edital-topicos">{visiveis.map(t => {const pratica=estatisticaPratica(m.nome,t.titulo,historicoRespostas);const incidencia=chavePratica(t.incidencia);return <li key={t.id} className={t.status === 'concluido' ? 'edital-concluido' : ''}>
+            <div className="edital-topico"><label className="edital-check"><input type="checkbox" disabled={salvando} checked={t.status === 'concluido'} onChange={() => atualizar(m.id,t.id,{status:t.status === 'concluido' ? 'pendente' : 'concluido'})} /><span>{t.titulo}</span></label><div className="edital-topico-acoes"><select disabled={salvando} aria-label={`Etapa de ${t.titulo}`} value={t.status} onChange={e => atualizar(m.id,t.id,{status:e.target.value})}>{Object.entries(STATUS_EDITAL).map(([v,label]) => <option key={v} value={v}>{label}</option>)}</select><button className={t.prioridade === 'alta' ? 'edital-alta' : ''} aria-pressed={t.prioridade === 'alta'} disabled={salvando} title="Alternar prioridade" onClick={() => atualizar(m.id,t.id,{prioridade:t.prioridade === 'alta' ? 'normal' : 'alta'})}>{t.prioridade === 'alta' ? '★ Alta' : '☆ Prioridade'}</button><button disabled={salvando} onClick={() => setEditando({materiaId:m.id,...t})} aria-label={`Editar ${t.titulo}`}>Editar</button></div></div>
+              <div className="edital-study-signal"><span className="edital-incidencia" data-level={incidencia.startsWith('alt')?'alta':incidencia.startsWith('med')?'media':incidencia.startsWith('bai')?'baixa':''}>{t.incidencia ? `Incidência ${t.incidencia}` : 'Incidência não informada no modelo'}</span><span>{pratica.total ? `${pratica.total} questão(ões) vinculadas · ${pratica.percentual}% de acerto · ${pratica.total>=20&&pratica.percentual>=80?'boa consistência recente':pratica.total>=10?'em desenvolvimento':'pratique mais para avaliar'}` : 'Ainda sem respostas vinculadas a este conteúdo'}</span>{onPraticar && <button type="button" className="edital-praticar" onClick={()=>onPraticar(m.nome,t.titulo)}>Praticar este conteúdo</button>}</div>
               {t.notas && <p className="edital-nota">{t.notas}</p>}
               {t.fonte_pdf && <p className="edital-nota">PDF: {t.fonte_pdf.arquivo} · página {t.fonte_pdf.pagina}{t.fonte_pdf.pagina_fim!==t.fonte_pdf.pagina ? `–${t.fonte_pdf.pagina_fim}` : ''}{t.fonte_pdf.ocr ? ' · OCR' : ''}</p>}
               {editando?.id === t.id && <form className="edital-edicao edital-form" onSubmit={async e => {e.preventDefault(); if (await atualizar(m.id,t.id,{titulo:editando.titulo.trim(),notas:editando.notas.trim()})) setEditando(null)}}><label>Conteúdo<input required maxLength={1500} value={editando.titulo} onChange={e => setEditando({...editando,titulo:e.target.value})} /></label><label>Minhas anotações<textarea rows={3} maxLength={5000} placeholder="O que revisar, materiais, páginas, dúvidas…" value={editando.notas} onChange={e => setEditando({...editando,notas:e.target.value})} /></label><div className="edital-acoes"><button className="edital-primario" disabled={salvando || !editando.titulo.trim()}>Salvar tópico</button><button type="button" onClick={() => setEditando(null)}>Cancelar</button><button type="button" disabled={salvando} className="edital-perigo" onClick={async () => {if (window.confirm(`Excluir apenas o tópico “${t.titulo}”? Os outros conteúdos serão mantidos.`) && await gravar({...ativo,materias:ativo.materias.map(mm => mm.id === m.id ? {...mm,topicos:mm.topicos.filter(tt => tt.id !== t.id)} : mm)})) setEditando(null)}}>Excluir tópico</button></div></form>}
-            </li>)}</ol><div className="edital-acoes"><button disabled={salvando} onClick={() => {setModo('materia');setMateria(m.nome);document.querySelector('.edital-inclusao')?.setAttribute('open','');document.querySelector('.edital-inclusao')?.scrollIntoView({behavior:'smooth',block:'start'})}}>+ Conteúdos em {m.nome}</button></div></>}
+            </li>})}</ol><div className="edital-acoes"><button disabled={salvando} onClick={() => {setModo('materia');setMateria(m.nome);document.querySelector('.edital-inclusao')?.setAttribute('open','');document.querySelector('.edital-inclusao')?.scrollIntoView({behavior:'smooth',block:'start'})}}>+ Conteúdos em {m.nome}</button></div></>}
           </section>
         })}
         {!!resumo.total && !ativo.materias.some(m => m.topicos.some(t => topicoVisivel(t,busca,status,prioridade))) && <p className="edital-painel">Nenhum conteúdo corresponde aos filtros. Limpe-os para ver os demais tópicos.</p>}
         {!resumo.total && <div className="edital-vazio"><h3>Seu edital está pronto para receber conteúdos</h3><p>Abra “Acrescentar matérias e conteúdos”, escolha uma matéria ou cole várias e verticalize. Depois, acompanhe cada tópico na lista.</p></div>}
       </> : !criando && <div className="edital-vazio"><h3>Qual concurso você está estudando?</h3><p>Crie um edital, como CPOR 2026, e inclua as matérias do seu programa. Cada concurso terá seu próprio acompanhamento.</p><button className="edital-primario" onClick={() => {setForm(vazio);setCriando(true)}}>Criar meu primeiro edital</button></div>}
-      <details className="edital-painel"><summary>Preservar e aproveitar os itens da versão anterior</summary><p>Os itens antigos continuam intactos. Você pode criar uma cópia pessoal por concurso, sem modificar a lista compartilhada.</p><button disabled={lendoAntigos || salvando} onClick={carregarAntigos}>{lendoAntigos ? 'Carregando…' : 'Consultar modelos anteriores'}</button>{antigos && <div className="edital-modelos">{[...new Set(antigos.map(i => i.concurso || 'Sem concurso'))].map(c => <div key={c}><span>{c} · {antigos.filter(i => (i.concurso || 'Sem concurso') === c).length} tópicos</span><button disabled={salvando} onClick={() => copiar(c)}>Criar cópia pessoal</button></div>)}{!antigos.length && <p>Nenhum modelo anterior encontrado.</p>}</div>}</details>
+      <section className="edital-painel edital-modelo-pronto"><h3>Começar por um modelo de edital</h3><p>Escolha um modelo disponível para criar seu acompanhamento pessoal. As marcações ficam na sua conta e não alteram o modelo compartilhado.</p><div className="edital-seletor"><label>Concurso, vestibular ou edição<select disabled={lendoAntigos || salvando || !modelos.length} value={modeloSelecionado} onChange={e=>setModeloSelecionado(e.target.value)}><option value="">{lendoAntigos?'Carregando modelos…':'Selecione um modelo'}</option>{modelos.map(modelo=><option key={modelo} value={modelo}>{modelo} · {antigos.filter(item=>item.concurso===modelo).length} conteúdos</option>)}</select></label><button className="edital-primario" disabled={salvando || !modeloSelecionado} onClick={()=>copiar(modeloSelecionado)}>Adicionar à minha área</button><button disabled={lendoAntigos} onClick={carregarAntigos}>{lendoAntigos?'Atualizando…':'Atualizar modelos'}</button></div>{antigos && !modelos.length && <p role="status">Nenhum modelo compartilhado está disponível agora. Você ainda pode criar seu edital manualmente ou importar o PDF oficial.</p>}</section>
     </>}
   </section>
 }

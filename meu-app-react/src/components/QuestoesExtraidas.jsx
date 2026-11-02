@@ -1,19 +1,30 @@
 import {useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import {pertenceAoFoco} from '../focoEstudo'
 import {carregarManifestoAcervo} from '../acervoExtraidoManifesto'
-import {API_URL} from '../api'
-import {chaveCampoFiltro} from '../filtros'
+import {API_URL, fetchApi} from '../api'
+import {chaveCampoFiltro, normalizarBanca, normalizarMateria, grupoConteudo} from '../filtros'
+import {loteCorrespondeFacetas} from '../facetasAcervo'
 import {supabase} from '../supabaseClient'
+import {avaliarRespostaComplementar} from '../correcaoAcervoComplementar'
+import BlocosQuestao from './BlocosQuestao'
+import {blocosValidos} from '../blocosQuestao'
 
 const base = `${import.meta.env.BASE_URL || '/'}acervo-extraido/`
 const bucketExtraido = 'acervo-extraido'
 const urlsAssinadasCache = new Map()
 const chavePublicaSupabase = import.meta.env.VITE_SUPABASE_ANON_KEY || ''
-const numero = valor => Number(valor || 0).toLocaleString('pt-BR')
 const normalizar = valor => String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/gu, '').toLocaleLowerCase('pt-BR')
 const motivosConferencia = new Set(['possivel_corrupcao_de_caracteres', 'marcadores_de_questoes_vizinhas_na_transcricao', 'alternativas_incompletas_ou_atipicas'])
 const precisaConferir = q => q.motivos_revisao?.some(motivo => motivosConferencia.has(motivo)) || false
 const chaveClassificacao = id => `acervo-extraido-classificacao:${id}`
+
+const comandoDiscursivo = /^\s*(?:\d+[.)-]\s*)?(?:explique|justifique|discorra|descreva|apresente|diferencie|defina|redija|elabore|argumente|comente|indique|mencione|demonstre|calcule|resolva|analise|compare|avalie|proponha|escreva|responda)\b/iu
+const valorPontuado = /\[\s*valor\s*:\s*\d+(?:[,.]\d+)?\s*pontos?\s*\]/iu
+const ehDiscursiva = q => [q.tipo_resposta, q.tipo_extraido].some(tipo => String(tipo || '').toLocaleLowerCase('pt-BR') === 'discursiva')
+  || /discursiv|dissertativ/iu.test(String(q.documento_origem || ''))
+  || (/2fase|2.fase|segunda.fase/iu.test(String(q.documento_origem||'')) && /fuvest|fuv\d|\busp\b/iu.test([q.banca,q.documento_origem,q.fonte].join(' ')))
+  || (comandoDiscursivo.test(String(q.enunciado || '')) && ((!Array.isArray(q.opcoes) || !q.opcoes.length) || valorPontuado.test(String(q.enunciado || ''))))
+
 
 function lerClassificacao(chave) {
   try {
@@ -76,7 +87,7 @@ async function obterUrlsR2(caminhos) {
   const token = sessao?.session?.access_token
   if (erroSessao || !token || !chavePublicaSupabase || !caminhos.length) return {}
 
-  const resposta = await fetch(`${API_URL}/api/acervo/r2/assinaturas`, {
+  const resposta = await fetchApi(`${API_URL}/api/acervo/r2/assinaturas`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -95,7 +106,7 @@ async function obterObjetoR2(caminho, opcoes = {}) {
   const token = sessao?.session?.access_token
   if (erroSessao || !token || !chavePublicaSupabase) return null
 
-  const resposta = await fetch(`${API_URL}/api/acervo/r2/objeto?key=${encodeURIComponent(caminho)}`, {
+  const resposta = await fetchApi(`${API_URL}/api/acervo/r2/objeto?key=${encodeURIComponent(caminho)}`, {
     ...opcoes,
     headers: {
       ...opcoes.headers,
@@ -197,16 +208,17 @@ function textoSeguroParaExibicao(valor) {
   return temCaractereIrrecuperavel(texto) ? '' : texto
 }
 
-function CartaoQuestaoExtraida({questao: q, onEstadoResposta}) {
+function CartaoQuestaoExtraida({questao: q, onEstadoResposta, onResponder, favorita, onFavoritar}) {
   const [resposta, setResposta] = useState(() => lerRespostaLocal('acervo-extraido:' + q.id))
-  const [rascunho, setRascunho] = useState(() => lerRespostaLocal('acervo-extraido-texto:' + q.id))
+  const [avaliacao, setAvaliacao] = useState(null)
+  const podeAvaliar = Boolean(avaliarRespostaComplementar(q, 0))
   const [classificacao, setClassificacao] = useState(() => lerClassificacao(q.id))
   const imagens = useMemo(() => [...new Set(q.imagens_paginas?.length ? q.imagens_paginas : q.pagina_imagem ? [q.pagina_imagem] : [])], [q.imagens_paginas, q.pagina_imagem])
   const [urlsImagens, setUrlsImagens] = useState(null)
   const [carregandoImagens, setCarregandoImagens] = useState(false)
   const [erroImagens, setErroImagens] = useState(false)
   const textoCampos = [q.enunciado, q.texto_apoio, ...(q.opcoes || []), ...(q.transcricoes_ocr || []).map(item => item.texto)].join('\n')
-  const precisaApoioVisual = precisaConferir(q) || temCaractereIrrecuperavel(textoCampos)
+  const precisaApoioVisual = precisaConferir(q) || q.motivos_revisao?.includes('verificar_imagem_ou_diagrama_no_pdf') || temCaractereIrrecuperavel(textoCampos)
   const enunciado = textoSeguroParaExibicao(q.enunciado)
   const textoApoio = textoSeguroParaExibicao(q.texto_apoio)
   const carregarImagens = useCallback(async () => {
@@ -227,14 +239,16 @@ function CartaoQuestaoExtraida({questao: q, onEstadoResposta}) {
 
   const marcarResposta = valor => {
     setResposta(valor)
+    setAvaliacao(null)
     try { localStorage.setItem('acervo-extraido:' + q.id, valor) } catch { /* A resposta continua selecionada até sair da página. */ }
     onEstadoResposta?.(q.id, true)
   }
-  const salvarRascunho = valor => {
-    const estavaRespondida = Boolean(rascunho.trim())
-    setRascunho(valor)
-    try { localStorage.setItem('acervo-extraido-texto:' + q.id, valor) } catch { /* O campo continua editável nesta sessão. */ }
-    if (estavaRespondida !== Boolean(valor.trim())) onEstadoResposta?.(q.id, Boolean(valor.trim()))
+  const responder = () => {
+    if (avaliacao) return
+    const resultado = avaliarRespostaComplementar(q, resposta)
+    if (!resultado) return
+    setAvaliacao(resultado)
+    onResponder?.(q, resposta)
   }
   const salvarClassificacao = evento => {
     evento.preventDefault()
@@ -251,30 +265,32 @@ function CartaoQuestaoExtraida({questao: q, onEstadoResposta}) {
     <div className="flex flex-wrap items-center justify-between gap-2">
       <p className="text-xs font-semibold uppercase tracking-wide text-indigo-300">{q.banca} · {q.ano || 'ano não identificado'} · questão {q.numero_original}</p>
     </div>
+    <p className="mt-2 text-xs leading-5 text-lime-200/80">{[q.materia,q.conteudo,q.dificuldade && `${q.dificuldade}${q.dificuldade_estimada?' (estimada)':''}`].filter(Boolean).join(' · ')}</p>
     {precisaApoioVisual && <p role="note" className="mt-3 rounded-xl border border-cyan-400/25 bg-cyan-950/20 px-4 py-3 text-sm leading-6 text-cyan-100">A imagem desta questão está aberta para completar a leitura de símbolos, fórmulas e trechos com baixa legibilidade.</p>}
     {q.texto_apoio && <section aria-label="Texto de apoio" className="mt-4 rounded-xl border border-lime-300/20 bg-lime-950/15 p-4">
       <h3 className="mb-2 text-xs font-bold uppercase tracking-wide text-sky-200">Texto de apoio</h3>
       <p className="whitespace-pre-wrap text-sm leading-7 text-slate-200">{textoApoio || 'Consulte o conteúdo visual desta questão.'}</p>
     </section>}
-    {enunciado
+    {blocosValidos(q.blocos_enunciado) ? <div className="mt-4"><BlocosQuestao blocos={q.blocos_enunciado}/></div> : enunciado
       ? <p className="mt-4 whitespace-pre-wrap text-sm leading-7 text-slate-100">{enunciado}</p>
       : <p role="note" className="mt-4 rounded-xl border border-slate-700 bg-slate-950/50 p-3 text-sm leading-6 text-slate-300">Leia o enunciado no conteúdo visual desta questão.</p>}
     {q.opcoes?.length > 0 && <fieldset className="mt-4 space-y-2">
       <legend className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400">Marque sua resposta</legend>
       {q.opcoes.map((opcao, indice) => {
         const texto = textoSeguroParaExibicao(opcao)
-        const rotulo = q.tipo_extraido === 'certo_errado' ? ['C', 'E'][indice] : String.fromCharCode(65 + indice)
+        const rotulo = [q.tipo_extraido, q.tipo_resposta].includes('certo_errado') ? ['C', 'E'][indice] : String.fromCharCode(65 + indice)
         return <label key={q.id + '-' + indice} className={'question-choice flex cursor-pointer gap-3 rounded-xl px-3 py-2.5 text-sm leading-6 transition ' + (resposta === String(indice) ? 'is-selected text-white' : 'text-slate-200')}>
           <input type="radio" name={'resposta-' + q.id} checked={resposta === String(indice)} onChange={() => marcarResposta(String(indice))} className="mt-1 accent-indigo-400" />
           <span className="shrink-0 font-bold text-indigo-300">{rotulo}.</span>
-          <span className="whitespace-pre-wrap">{texto || 'Leia a alternativa ' + rotulo + ' no conteúdo visual da questão.'}</span>
+          <span className="min-w-0 whitespace-pre-wrap">{blocosValidos(q.blocos_opcoes?.[indice]) ? <BlocosQuestao inline blocos={q.blocos_opcoes[indice]}/> : texto || 'Leia a alternativa ' + rotulo + ' no conteúdo visual da questão.'}</span>
         </label>
       })}
     </fieldset>}
-    {(q.tipo_extraido === 'discursiva' || !q.opcoes?.length) && <label className="mt-4 block text-xs font-semibold uppercase tracking-wide text-slate-400">Sua resolução
-      <textarea value={rascunho} onChange={evento => salvarRascunho(evento.target.value)} rows={6} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-3 text-sm font-normal normal-case leading-6 text-slate-100 placeholder:text-slate-500" placeholder="Escreva sua resolução. Ela fica salva neste dispositivo." />
-    </label>}
-    {q.opcoes?.length > 0 && <p className="mt-2 text-xs text-slate-400">Sua resposta fica salva neste dispositivo. Questões sem gabarito associado não recebem correção automática.</p>}
+    {podeAvaliar && <div className="mt-3 flex flex-wrap items-center gap-3">
+      <button type="button" onClick={responder} disabled={resposta === '' || resposta == null || Boolean(avaliacao)} className="rounded-xl border border-lime-300/35 bg-lime-950/40 px-5 py-2 text-sm font-semibold text-lime-100 disabled:opacity-50">Responder</button>
+      {avaliacao && <p role="status" className="text-sm text-lime-100">{avaliacao.acertou ? 'Resposta correta.' : `Resposta incorreta. Gabarito: ${q.opcoes[avaliacao.correta]}.`}</p>}
+    </div>}
+    {!podeAvaliar && q.opcoes?.length > 0 && <p className="mt-2 text-xs text-slate-400">{q.anulada ? 'Questão anulada: disponível para consulta.' : 'Gabarito ainda não disponível para correção.'}</p>}
     {q.transcricoes_ocr?.length > 0 && <details className="mt-4 rounded-xl border border-slate-700 bg-slate-950/40 p-3">
       <summary className="cursor-pointer text-xs font-semibold text-slate-300">Conteúdo complementar</summary>
       <div className="mt-3 space-y-4">{q.transcricoes_ocr.map(item => {
@@ -311,6 +327,7 @@ function CartaoQuestaoExtraida({questao: q, onEstadoResposta}) {
     </details>
     <footer className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-slate-800 pt-3">
       <p className="text-xs text-slate-500">{q.concurso}</p>
+      {onFavoritar && <button type="button" aria-pressed={Boolean(favorita)} onClick={()=>onFavoritar(q.id)} className="rounded-xl border border-lime-300/25 px-3 py-2 text-xs font-semibold text-lime-100">{favorita?'★ Favorita':'☆ Favoritar'}</button>}
       {q.fonte && <a className="shrink-0 rounded-xl border border-indigo-400/40 px-3 py-2 text-xs font-semibold text-indigo-200 hover:bg-indigo-500/10" href={q.fonte} target="_blank" rel="noreferrer">Ver prova completa ↗</a>}
     </footer>
   </article>
@@ -328,6 +345,10 @@ export default function QuestoesExtraidas({
   foco = 'todos',
   onEstado,
   onRegistrarMais,
+  onResponder,
+  tentativas,
+  marcacoes,
+  onFavoritar,
 }) {
   const [questoes, setQuestoes] = useState([])
   const [chaveQuestaoCarregada, setChaveQuestaoCarregada] = useState('')
@@ -346,10 +367,11 @@ export default function QuestoesExtraidas({
   const conteudosSelecionados = filtros.conteudo || []
   const dificuldadesSelecionadas = filtros.dificuldade || []
   const termo = busca.trim()
-  const filtroExplicito = bancasSelecionadas.length > 0 || anosSelecionados.length > 0
+  const filtroExplicito = [bancasSelecionadas,anosSelecionados,materiasSelecionadas,conteudosSelecionados,dificuldadesSelecionadas].some(valores=>valores.length>0)
   const chaveLotes = JSON.stringify([
     [...bancasSelecionadas].sort(),
     [...anosSelecionados].sort(),
+    [...materiasSelecionadas].sort(),[...conteudosSelecionados].sort(),[...dificuldadesSelecionadas].sort(),
     filtroExplicito ? '' : normalizar(termo),
     foco,
   ])
@@ -360,17 +382,21 @@ export default function QuestoesExtraidas({
     const termoMetadado = normalizar(termo)
     if (!filtroExplicito && termoMetadado.length < 2) return []
     return manifesto.lotes
-      .filter(lote => {
+      .filter((lote,indiceLote) => {
+        const correspondeFacetas=loteCorrespondeFacetas(manifesto,indiceLote,{banca:bancasSelecionadas,ano:anosSelecionados,materia:materiasSelecionadas,conteudo:conteudosSelecionados,dificuldade:dificuldadesSelecionadas})
+        if(correspondeFacetas===false)return false
         const anoLote = lote.ano ? String(lote.ano) : 'sem-ano'
-        if (bancasSelecionadas.length && !bancasSelecionadas.includes(chaveCampoFiltro('banca', lote.banca))) return false
-        if (anosSelecionados.length && !anosSelecionados.includes(anoLote)) return false
+        if(correspondeFacetas===null){
+          if (bancasSelecionadas.length && !bancasSelecionadas.includes(chaveCampoFiltro('banca', normalizarBanca(lote.banca,lote.concurso)))) return false
+          if (anosSelecionados.length && !anosSelecionados.includes(anoLote)) return false
+        }
         if (!filtroExplicito && !normalizar(`${lote.banca} ${lote.concurso} ${anoLote}`).includes(termoMetadado)) return false
         return true
       })
       .sort((a, b) => Number(b.ano || 0) - Number(a.ano || 0)
         || String(a.banca || '').localeCompare(String(b.banca || ''), 'pt-BR')
         || String(a.concurso || '').localeCompare(String(b.concurso || ''), 'pt-BR'))
-  }, [manifesto, bancasSelecionadas, anosSelecionados, filtroExplicito, termo])
+  }, [manifesto, bancasSelecionadas, anosSelecionados, materiasSelecionadas, conteudosSelecionados, dificuldadesSelecionadas, filtroExplicito, termo])
 
   const lotesAlvo = useMemo(() => lotesCorrespondentes.slice(0, limite), [lotesCorrespondentes, limite])
   const questoesCarregadas = chaveQuestaoCarregada === chaveLotes ? questoes : []
@@ -438,25 +464,31 @@ export default function QuestoesExtraidas({
     const buscaNormalizada = normalizar(termo)
     const excluidas = new Set(excluirIds.map(String))
     return questoesCarregadas.filter(q => {
+      if (ehDiscursiva(q)) return false
+      if (foco && foco !== 'todos' && !pertenceAoFoco(q, foco, true)) return false
+      if (q.documento_auxiliar || q.integridade_profissional?.apta_resolucao===false) return false
       const classificacao = classificacoes.get(q.id) || lerClassificacao(q.id)
-      const banca = chaveCampoFiltro('banca', q.banca || '')
+      const banca = chaveCampoFiltro('banca', normalizarBanca(q.banca,q.concurso))
       const ano = q.ano ? String(q.ano) : 'sem-ano'
       if (excluidas.has(String(q.id))) return false
       if (bancasSelecionadas.length && !bancasSelecionadas.includes(banca)) return false
       if (anosSelecionados.length && !anosSelecionados.includes(ano)) return false
-      const materia = chaveCampoFiltro('materia', classificacao.materia || q.materia || '')
-      const conteudo = normalizar(classificacao.assunto || q.conteudo || '')
+      const materiaRotulo=normalizarMateria(classificacao.materia || q.materia || '',q.conteudo)
+      const materia = chaveCampoFiltro('materia', materiaRotulo)
+      const conteudo = grupoConteudo(classificacao.assunto || q.conteudo || '',materiaRotulo,`${q.enunciado||''} ${(q.opcoes||[]).join(' ')}`).value
       const dificuldade = chaveCampoFiltro('dificuldade', q.dificuldade || '')
       if (materiasSelecionadas.length && !materiasSelecionadas.includes(materia)) return false
       if (conteudosSelecionados.length && !conteudosSelecionados.some(valor => normalizar(valor) === conteudo)) return false
       if (dificuldadesSelecionadas.length && !dificuldadesSelecionadas.includes(dificuldade)) return false
-      if (foco && foco !== 'todos' && !pertenceAoFoco(q, foco, true)) return false
       if (somenteComImagem && !(q.imagens_paginas?.length || q.pagina_imagem)) return false
       if (somenteComentadas && ![q.explicacao, q.resolucao, q.resposta_comentada, q.comentario].some(valor => typeof valor === 'string' && valor.trim())) return false
-      const respondida = Boolean(respostasLocais[q.id])
+      const tentativa = tentativas?.get(String(q.id))
+      const respondida = Boolean(tentativa || respostasLocais[q.id])
       if (situacao === 'resolvidas' && !respondida) return false
       if (situacao === 'nao-resolvidas' && respondida) return false
-      if (['acertadas', 'erradas', 'favoritas'].includes(situacao)) return false
+      if (situacao === 'acertadas' && tentativa?.acertou!==true) return false
+      if (situacao === 'erradas' && tentativa?.acertou!==false) return false
+      if (situacao === 'favoritas' && marcacoes?.[String(q.id)]?.favorita!==true) return false
       if (!buscaNormalizada) return true
       return normalizar([
         q.id, q.numero_original, q.banca, q.ano, q.concurso, q.materia, q.conteudo,
@@ -466,7 +498,7 @@ export default function QuestoesExtraidas({
   }, [
     busca, bancasSelecionadas, anosSelecionados, materiasSelecionadas, conteudosSelecionados,
     dificuldadesSelecionadas, questoesCarregadas, classificacoes, respostasLocais, situacao,
-    somenteComImagem, somenteComentadas, excluirIds, foco,
+    somenteComImagem, somenteComentadas, excluirIds, foco, filtroExplicito, tentativas, marcacoes,
   ])
 
   const limiteAtualQuestoes = limiteQuestoes.chave === chaveLotes ? limiteQuestoes.valor : 30
@@ -500,6 +532,6 @@ export default function QuestoesExtraidas({
   return <>
     {carregando && <p role="status" className="rounded-xl px-1 py-2 text-sm text-slate-400">Carregando mais questões para esta busca…</p>}
     {erro && <p role="alert" className="rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">Algumas questões não foram carregadas. Tente novamente ajustando os filtros.</p>}
-    {questoesVisiveis.map(q => <CartaoQuestaoExtraida key={q.id} questao={q} onEstadoResposta={atualizarRespostaLocal} />)}
+    {questoesVisiveis.map(q => <CartaoQuestaoExtraida key={q.id} questao={q} onEstadoResposta={atualizarRespostaLocal} onResponder={onResponder} favorita={marcacoes?.[String(q.id)]?.favorita} onFavoritar={onFavoritar} />)}
   </>
 }

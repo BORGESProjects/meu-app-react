@@ -1,0 +1,23 @@
+import {lotesAtuais} from './acervo-atual.mjs'
+import {aplicarRevisoesIndividuais,hashRevisao} from './aplicar-revisoes-individuais.mjs'
+const base='tmp/revisao-profissional/revisao-hub-terapia-ocupacional-2018-v99/acervo-extraido',doc='e7152989a6322160'
+const tema=new Map([
+ [63,['Terapia Ocupacional neonatal: prematuridade, UTIN, posicionamento e autorregulação','Na unidade de tratamento intensivo neonatal (UTIN), julgue os itens sobre cuidados e desenvolvimento de bebês pré-termo.']],
+ [78,['Brincar terapêutico: desenvolvimento, brincar espontâneo e história da Terapia Ocupacional','No que se refere ao brincar, atividade primordialmente utilizada pelo terapeuta ocupacional como recurso terapêutico para crianças, julgue os itens.']],
+ ...[79,80,81,82,83].map(n=>[n,['Doenças neuromusculares na infância: distrofia muscular de Duchenne, mobilidade, sinal de Gowers e órteses','Caso clínico: criança com distrofia muscular de Duchenne, atraso para iniciar a marcha, quedas e apoio das mãos nos joelhos para se levantar. Julgue os itens com base no caso.']]),
+ [84,['Desenvolvimento infantil: transtornos do neurodesenvolvimento, queixas funcionais e CIF','Com relação à atuação do terapeuta ocupacional em casos de crianças com transtornos globais do desenvolvimento, julgue os itens.']],
+ [85,['Desenvolvimento infantil: transtornos do neurodesenvolvimento, queixas funcionais e CIF','Com relação à atuação do terapeuta ocupacional em casos de crianças com transtornos globais do desenvolvimento, julgue os itens.']],
+ [86,['Desenvolvimento infantil: transtornos do neurodesenvolvimento, queixas funcionais e CIF','Com relação à atuação do terapeuta ocupacional em casos de crianças com transtornos globais do desenvolvimento, julgue os itens.']],
+ [87,['Desenvolvimento infantil: transtornos do neurodesenvolvimento, participação e CIF','Com relação à atuação do terapeuta ocupacional em casos de crianças com transtornos globais do desenvolvimento, julgue os itens.']],
+ [95,['Avaliação da dor pediátrica: escala visual analógica e comunicação da dor','No que se refere às causas de dor e aos cuidados paliativos na população infantil, julgue os itens.']],
+ [104,['Terapia Ocupacional em terapia intensiva: prevenção da síndrome do desuso e efeitos da imobilização','O processo de intervenção em Terapia Ocupacional consiste em ações qualificadas para facilitar o envolvimento do cliente na ocupação. Julgue os itens.']],
+ [105,['Neuroreabilitação: acidente vascular cerebral, desempenho ocupacional e atividade de vestir-se','O processo de intervenção em Terapia Ocupacional consiste em ações qualificadas para facilitar o envolvimento do cliente na ocupação. Julgue os itens.']],
+ [106,['Análise e adaptação de atividades: demandas biomecânicas e uso de tecnologia assistiva','O processo de intervenção em Terapia Ocupacional consiste em ações qualificadas para facilitar o envolvimento do cliente na ocupação. Julgue os itens.']],
+ [107,['Terapia Ocupacional em grupos: grupo de atividades e atividade grupal','O processo de intervenção em Terapia Ocupacional consiste em ações qualificadas para facilitar o envolvimento do cliente na ocupação. Julgue os itens.']],
+ [108,['Terapia Ocupacional hospitalar: fases do cuidado e cuidados paliativos','O processo de intervenção em Terapia Ocupacional consiste em ações qualificadas para facilitar o envolvimento do cliente na ocupação. Julgue os itens.']],
+ [109,['Terapia Ocupacional pediátrica: brincar, posicionamento e adaptação ambiental','O processo de intervenção em Terapia Ocupacional consiste em ações qualificadas para facilitar o envolvimento do cliente na ocupação. Julgue os itens.']]
+])
+const qs=[];for await(const {questoes} of lotesAtuais())for(const q of questoes)if(q.documento_id===doc&&tema.has(q.numero_original))qs.push(q)
+if(qs.length!==18)throw Error(`Esperados 18 itens previamente classificados incoerentemente; encontrados ${qs.length}`)
+const decisoes=qs.map(q=>{const [conteudo,apoio]=tema.get(q.numero_original);return{id:q.id,sha256_enunciado:hashRevisao(q.enunciado),materia:'Terapia Ocupacional',conteudo,ano:2018,numero_original:q.numero_original,pagina:q.pagina,dificuldade:'Média',dificuldade_estimada:true,dificuldade_evidencia:'Estimativa editorial; o caderno não informa dificuldade oficial.',motivo:`Revisão cruzada do item ${q.numero_original} com a página original; a classificação anterior em matéria ampla ou não pertinente foi corrigida.`,visual:{pagina:q.pagina,imagem:`paginas/${doc}-${String(q.pagina).padStart(4,'0')}.webp`,texto_apoio:apoio,motivo:'Classificação e contexto conferidos na página do caderno oficial.'}}})
+await aplicarRevisoesIndividuais({nome:'revisao-hub-terapia-ocupacional-caderno-completo-v100',base,decisoes})

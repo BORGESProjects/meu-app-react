@@ -1,0 +1,98 @@
+import fs from 'node:fs/promises'
+import { aplicarRevisoesIndividuais, hashRevisao } from './aplicar-revisoes-individuais.mjs'
+
+const nome='revisao-icmbio-administracao-v87'
+const base='tmp/revisao-profissional/revisao-ansa-engenharia-civil-v86/acervo-extraido'
+const doc='b9198d03a85ef330'
+const prova='https://cdn.cebraspe.org.br/concursos/ICMBIO_24/arquivos/045_ICMBIO_001_01.pdf'
+const qs=JSON.parse(await fs.readFile('tmp/pendentes-icmbio-administracao.json','utf8'))
+const temas={
+51:['Administração Geral','Teorias administrativas: teoria burocrática e teoria estruturalista'],
+52:['Administração Geral','Abordagem contingencial: ênfase nas variáveis ambientais'],
+53:['Gestão de Pessoas','Avaliação de desempenho: critérios e competências no serviço público'],
+54:['Administração Geral','Funções administrativas: direção e definição de objetivos'],
+55:['Administração Geral','Gestão da qualidade: centralização e tomada de decisão'],
+56:['Gestão de Pessoas','Recrutamento e seleção: modelo de colocação de candidatos'],
+57:['Administração Geral','Gestão por objetivos: efetividade e alcance de resultados'],
+58:['Administração Geral','Gestão da qualidade total: abrangência e melhoria contínua'],
+59:['Administração Geral','Indicadores de desempenho: eficiência, eficácia e efetividade'],
+60:['Gestão de Projetos','Gerenciamento de projetos: prazo, custos e alocação de recursos'],
+61:['Gestão de Processos','Ferramentas da qualidade: diagrama de dispersão e correlação'],
+62:['Gestão de Projetos','Gerenciamento de portfólio: indicadores e desempenho global'],
+63:['Gestão de Projetos','Gestão estratégica de projetos e geração de valor organizacional'],
+64:['Licitações e Contratos','Pregão eletrônico: fases de julgamento e habilitação'],
+65:['Direito Administrativo','Regime disciplinar: perda do cargo de servidor público estável'],
+66:['Licitações e Contratos','Compras públicas: aquisição de artigos de luxo pela administração'],
+67:['Direito Administrativo','Regime jurídico dos servidores: redistribuição e readequação de cargo'],
+68:['Licitações e Contratos','Concorrência: critérios de julgamento em licitação'],
+69:['Orçamento Público','Orçamento público: orientação normativa e competências dos Poderes'],
+70:['Orçamento Público','Orçamento de investimento das empresas estatais e redução de desigualdades'],
+71:['Orçamento Público','Funções do orçamento público: função alocativa e transferências de renda'],
+72:['Orçamento Público','Princípios orçamentários: unidade e integração dos orçamentos'],
+73:['Orçamento Público','Orçamento-programa: integração entre planejamento e orçamento'],
+74:['Orçamento Público','Processo legislativo orçamentário: competências de comissões do Congresso'],
+75:['Orçamento Público','Lei Orçamentária Anual: princípio da anualidade e vigência'],
+76:['Orçamento Público','Lei de Diretrizes Orçamentárias: riscos fiscais e renúncia de receitas'],
+77:['Orçamento Público','Receita pública: unidade de tesouraria e vedação à vinculação de caixas'],
+78:['Orçamento Público','Renúncia de receita: anistia, remissão, subsídio e benefícios tributários'],
+79:['Orçamento Público','Receita patrimonial: alienação de bens públicos'],
+80:['Orçamento Público','Regra de ouro e destinação de receitas de capital'],
+81:['Orçamento Público','Despesa pública: criação de despesa obrigatória continuada e compensação'],
+82:['Orçamento Público','Créditos adicionais: crédito extraordinário e despesas urgentes e imprevisíveis'],
+83:['Orçamento Público','Classificação funcional da receita e subfunções orçamentárias'],
+84:['Gestão de Pessoas','Despesas com pessoal: diárias e auxílio-alimentação'],
+85:['Administração Financeira e Orçamentária','Suprimento de fundos: concessão e responsabilidade do servidor'],
+86:['Orçamento Público','Créditos adicionais: fontes de recursos para créditos suplementares e especiais'],
+87:['Gestão de Materiais','Classificação de materiais: método XYZ e criticidade'],
+88:['Gestão de Materiais','Classificação de materiais: atributos e critérios organizacionais'],
+89:['Gestão de Materiais','Gestão de estoques: custo de aquisição, armazenagem e controle'],
+90:['Gestão de Materiais','Gestão de estoques: giro, capital imobilizado e retorno sobre investimentos'],
+91:['Gestão de Materiais','Gestão de estoques: estoque empenhado, reservado e saldo disponível'],
+92:['Gestão de Compras','Compras públicas: sistemas de cadastro e habilitação de fornecedores'],
+93:['Gestão de Compras','Perfil estratégico do comprador: negociação, análise e gestão de fornecedores'],
+94:['Gestão de Compras','Processo de compras: requisição, cotação, seleção e mapa comparativo de preços'],
+95:['Licitações e Contratos','Lei nº 14.133/2021: serviços contínuos, prazo contratual e prorrogação'],
+96:['Licitações e Contratos','Lei nº 14.133/2021: reajustamento de preços e índices contratuais'],
+97:['Licitações e Contratos','Pregão: definição objetiva de padrões de desempenho e qualidade'],
+98:['Gestão de Materiais','Distribuição interna de materiais: fluxo, ergonomia e prevenção de riscos'],
+99:['Gestão de Materiais','Armazenagem: unitização de cargas e uso de pallets'],
+100:['Gestão de Materiais','Recebimento de materiais: conferência quantitativa e qualitativa'],
+101:['Gestão Patrimonial','Inventário patrimonial: inventário eventual e extinção de unidade gestora'],
+102:['Gestão Patrimonial','Controle patrimonial: custo de controle e identificação de bens permanentes'],
+103:['Gestão Patrimonial','Controle de material bibliográfico e registro patrimonial'],
+104:['Gestão de Pessoas','Liderança transformacional: autonomia, confiança e desenvolvimento de equipes'],
+105:['Gestão de Pessoas','Gestão estratégica de pessoas: impacto das transformações tecnológicas'],
+106:['Gestão de Pessoas','Políticas de recursos humanos: princípios e adaptação organizacional'],
+107:['Gestão de Pessoas','Abordagem sistêmica: integração entre organização e trabalhador'],
+108:['Gestão de Pessoas','Análise e descrição de cargos: responsabilidades e promoção'],
+109:['Gestão de Pessoas','Seleção de pessoas: entrevista e validade dos instrumentos seletivos'],
+110:['Gestão de Pessoas','Competência interpessoal: percepção e autoconhecimento'],
+111:['Gestão de Pessoas','Gestão de conflitos: prevenção de abuso de poder e retenção de talentos'],
+112:['Gestão de Pessoas','Treinamento e desenvolvimento: diagnóstico de necessidades de capacitação'],
+113:['Gestão de Pessoas','Avaliação de treinamento: nível de reação e aprendizagem'],
+114:['Gestão de Pessoas','Gestão do desempenho: dados para decisões de pessoal'],
+115:['Gestão de Pessoas','Avaliação por objetivos: alinhamento de metas organizacionais e individuais'],
+116:['Gestão de Pessoas','Organização do trabalho: teletrabalho e trabalho remoto no serviço público'],
+117:['Gestão de Pessoas','Gestão por competências: descrição e observação de comportamentos'],
+118:['Gestão de Pessoas','Administração de salários: equilíbrio interno e externo'],
+119:['Direito Administrativo','Lei nº 8.112/1990: reposição ao erário após exoneração'],
+120:['Direito Administrativo','Lei nº 8.112/1990: disponibilidade e aproveitamento de servidor estável'],
+}
+const blocos=[
+[51,52,'Contexto: abordagens teóricas da administração.'],[53,54,'Contexto: processo administrativo e gestão de pessoas.'],
+[55,59,'Contexto: gestão da qualidade, objetivos e indicadores organizacionais.'],[60,63,'Contexto: gestão de projetos, processos e portfólios.'],
+[64,68,'Contexto: licitações públicas e regime jurídico dos servidores federais.'],
+[69,73,'Contexto: orçamento público, funções, princípios e orçamento-programa.'],[74,76,'Contexto: leis orçamentárias e responsabilidades legislativas e fiscais.'],
+[77,83,'Contexto: receita e despesa públicas, classificação orçamentária e créditos adicionais.'],
+[84,86,'Contexto: despesas públicas, suprimento de fundos e créditos adicionais.'],
+[87,91,'Contexto: classificação de materiais e gestão de estoques.'],[92,97,'Contexto: gestão de compras e processos de contratação pública.'],
+[98,100,'Contexto: distribuição, armazenagem e recebimento de materiais.'],[101,103,'Contexto: gestão patrimonial em organizações públicas e no ICMBio.'],
+[104,118,'Contexto: gestão de pessoas, liderança, seleção, desenvolvimento, desempenho, competências e remuneração.'],
+[119,120,'Base normativa: Lei nº 8.112/1990, regime jurídico dos servidores públicos civis da União.'],
+]
+const ids=new Set(),decisoes=[]
+if(qs.length!==58)throw Error(`Esperados 58 itens pendentes; encontrados ${qs.length}`)
+for(const q of qs){const n=Number(q.numero_original),d=temas[n];if(!d)throw Error(`Item ${n} sem classificação`);if(ids.has(q.id))throw Error(`ID duplicado ${q.id}`);ids.add(q.id);const[pagina]=[Number(q.pagina)],imagem=`paginas/${doc}-${String(pagina).padStart(4,'0')}.webp`,texto_apoio=blocos.find(([a,b])=>n>=a&&n<=b)?.[2]||'';decisoes.push({id:q.id,sha256_enunciado:hashRevisao(q.enunciado),materia:d[0],conteudo:d[1],ano:2024,dificuldade:['60','62','63','64','65','66','67','68','69','70','72','73','74','75','76','77','78','81','82','86','92','94','95','96','97','101','102','104','108','109','111','113','114','119','120'].includes(String(n))?'Difícil':'Média',dificuldade_estimada:true,dificuldade_evidencia:'Estimativa editorial pela complexidade conceitual, normativa e administrativa; não representa estatística oficial de acerto.',classificacao_fonte:prova,motivo:`ICMBio 2024 — Analista Administrativo — CEBRASPE; item ${n}. Tópico conferido na página do caderno oficial.`,visual:{pagina,imagem,texto_apoio,motivo:'Página oficial do caderno conferida visualmente; o enunciado e seu cabeçalho temático foram preservados.'}})}
+const relatorio=await aplicarRevisoesIndividuais({nome,base,decisoes})
+const detalhe={...relatorio,banca:'CEBRASPE',concurso:'ICMBio 2024 — Analista Administrativo',ano:2024,documento:'045_ICMBIO_001_01.pdf',fonte:prova,paginas_origem_conferidas:[1,2,3],observacao:'Reclassifiquei 58 itens antes agrupados genericamente em Administração. Separei administração geral, gestão de pessoas, compras, materiais, orçamento público, licitações, gestão patrimonial e direito administrativo com conteúdo individual. Os blocos da prova e páginas originais permanecem associados. Gabaritos existentes foram preservados; dificuldade é estimada editorialmente.'}
+await fs.writeFile(`docs/acervo/revisao-profissional/${nome}.json`,JSON.stringify(detalhe,null,2));console.log(JSON.stringify(detalhe))

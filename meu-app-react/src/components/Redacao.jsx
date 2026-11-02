@@ -5,14 +5,20 @@ import {temasRedacao,bancasRedacao} from '../data/temasRedacao'
 import {PERFIS_REDACAO,assinaturaRedacao,estatisticasRedacao,validarRedacao,solicitarCorrecao,verificarServicoRedacao,lerRascunho,salvarRascunho,textoRelatorio} from '../redacao'
 const campo='mt-2 w-full min-w-0 rounded-xl border border-slate-700 bg-slate-950/70 p-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 disabled:opacity-60'
 const botao='rounded-xl bg-indigo-600 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-50'
-export default function Redacao({session,foco}) {
+export default function Redacao({session,foco,onSalvarHistorico}) {
  const userId=session.user.id
  const [inicial]=useState(()=>lerRascunho(window.localStorage,userId))
  const [rascunho,setRascunho]=useState(()=>inicial?.rascunho||{tema:'',texto:'',banca:['militares','concursos'].includes(foco)?'GERAL':'ENEM',ano:null,criterios:'',temaId:''})
  const [historico,setHistorico]=useState(()=>inicial?.historico||[])
  const [resultado,setResultado]=useState(null),[filtroBanca,setFiltroBanca]=useState('Todas'),[erro,setErro]=useState(''),[salvo,setSalvo]=useState(inicial?'Rascunho recuperado deste navegador.':''),[ocupado,setOcupado]=useState(false),[reutilizada,setReutilizada]=useState(false)
- const requisicao=useRef(null),versao=useRef(0)
+ const requisicao=useRef(null),versao=useRef(0),historicoMigrado=useRef(false)
  useEffect(()=>()=>{versao.current++;requisicao.current?.abort()},[])
+ function publicarResumo(item) {
+  const relatorio=item?.resultado?.relatorio
+  if(!onSalvarHistorico||!relatorio||!Number.isFinite(Number(relatorio.nota))||!Number(relatorio.maximo))return
+  onSalvarHistorico({id:item.id,criadaEm:item.criadaEm,tema:item.redacao?.tema||'Tema livre',banca:item.redacao?.banca||'Redação',ano:item.redacao?.ano||null,nota:Number(relatorio.nota),maximo:Number(relatorio.maximo),criterios:Array.isArray(relatorio.criterios)?relatorio.criterios.map(c=>({id:c.id,nome:c.nome,nota:Number(c.nota),maximo:Number(c.maximo)})):[]})
+ }
+ useEffect(()=>{if(historicoMigrado.current||!onSalvarHistorico)return;historicoMigrado.current=true;historico.forEach(publicarResumo)},[historico,onSalvarHistorico])
  const estatisticas=estatisticasRedacao(rascunho.texto),perfil=PERFIS_REDACAO[rascunho.banca]
  const temaEscolhido=temasRedacao.find(t=>t.id===rascunho.temaId)
  const temas=filtroBanca==='Todas'?temasRedacao:temasRedacao.filter(t=>t.banca===filtroBanca)
@@ -43,6 +49,7 @@ export default function Redacao({session,foco}) {
    if(token!==versao.current)return
    const item={id:crypto.randomUUID(),criadaEm:new Date().toISOString(),redacao:copia,resultado:resposta}
    const atualizados=[item,...historico.filter(h=>assinaturaRedacao(h.redacao)!==chave)].slice(0,5)
+   publicarResumo(item)
    setResultado(item);setHistorico(atualizados);setReutilizada(resposta.reutilizada);persistir(copia,atualizados)
   }catch(e){if(token===versao.current)setErro(e.name==='AbortError'?'Espera cancelada. Seu texto está preservado. A análise já iniciada no servidor pode continuar.':e.message)}
   finally{if(token===versao.current){requisicao.current=null;setOcupado(false)}}

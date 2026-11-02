@@ -1,0 +1,16 @@
+import fs from 'node:fs/promises'
+import {aplicarRevisoesIndividuais,hashRevisao} from './aplicar-revisoes-individuais.mjs'
+import {raizesAtuais} from './acervo-atual.mjs'
+const base=raizesAtuais[0],arquivo=JSON.parse(await fs.readFile('tmp/pendentes-documento-eea0cf38c8469745.json','utf8'))
+const apoio='A respeito do serviço de referência, ferramenta que facilita o acesso à informação e que pode auxiliar o utilizador a localizar a informação procurada, julgue os itens seguintes.'
+const fonte='https://cdn.cebraspe.org.br/concursos/ABIN_17/arquivos/378_ABIN_014_01.PDF'
+const conteudos={135:'Serviços de alerta — disseminação seletiva da informação',136:'Referência bibliográfica — identificação e descrição documental',138:'Serviço de referência — bases de texto completo e atendimento'}
+const hashes={'extr-d97ad614ea6fa05f3406':'94c5988f2d2d24902110d8b54c4e0f7e4ccfd4572187f1bdaf22ec8be493d6a6','extr-29e9646face62b26a166':'ce0adc24c2485545fbdcb64656d7c1ec03e2a161bbb6a0b73faa304f35d29cea','extr-e998b07d643571d9083f':'546355ccc4a6dbd759fb957357a7b86017bacd19770405288b78507a639ab77d'}
+const decisoes=arquivo.filter(q=>[135,136,138].includes(q.numero)).map(q=>({id:q.id,sha256_enunciado:hashes[q.id],materia:'Biblioteconomia',conteudo:conteudos[q.numero],concurso:'ABIN — Oficial Técnico de Inteligência, Cargo 2, Área 10 (Arquivologia e Biblioteconomia)',ano:2018,numero_original:q.numero,pagina:q.pagina,texto_apoio:apoio,visual:{pagina:q.pagina,imagem:`paginas/eea0cf38c8469745-${String(q.pagina).padStart(4,'0')}.webp`,motivo:`Página oficial preservada para o item ${q.numero}; texto-base comum corrigido conforme o caderno.`},motivo:'A seção oficial da prova aplica este comando comum aos itens de serviço de referência 133–138.'}))
+for(const q of arquivo.filter(x=>[135,136,138].includes(x.numero)))decisoes.find(x=>x.id===q.id).visual.imagem=`paginas/eea0cf38c8469745-${String(q.pagina).padStart(4,'0')}.webp`
+if(decisoes.length!==3)throw Error('Itens do bloco de referência incompletos')
+const rel=await aplicarRevisoesIndividuais({nome:'revisao-abin-area10-contexto-v130',base,decisoes}),raiz='tmp/revisao-profissional/revisao-abin-area10-contexto-v130/acervo-extraido'
+if(!raizesAtuais.includes(raiz))raizesAtuais.unshift(raiz)
+let a=await fs.readFile('scripts/acervo-publico/acervo-atual.mjs','utf8');if(!a.includes(`raizesAtuais.unshift('${raiz}')`))a=a.replace('export async function lerArquivoAtual',`raizesAtuais.unshift('${raiz}')\nexport async function lerArquivoAtual`);await fs.writeFile('scripts/acervo-publico/acervo-atual.mjs',a)
+const rp='docs/acervo/revisao-profissional/RELATORIO.md';let r=await fs.readFile(rp,'utf8');r+='\n\n## Ajuste do texto-base ABIN — Área 10 — v130\n\n- Corrigi o vínculo do comando comum dos itens 135, 136 e 138: os três pertencem ao bloco de serviço de referência, não ao bloco anterior de estudos de usuários. Texto-base confrontado com o caderno oficial.\n- Validação local: '+rel.classificadas+' registros atualizados; total do banco '+rel.total+'; '+rel.disponiveis+' disponíveis; '+rel.pendentes+' pendências elegíveis. Não publicado na nuvem.\n- Fonte primária: [caderno oficial CEBRASPE — ABIN, Área 10](https://cdn.cebraspe.org.br/concursos/ABIN_17/arquivos/378_ABIN_014_01.PDF).\n';await fs.writeFile(rp,r)
+console.log(JSON.stringify(rel,null,2))

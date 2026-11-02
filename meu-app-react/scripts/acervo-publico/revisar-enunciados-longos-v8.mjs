@@ -1,0 +1,9 @@
+import fs from 'node:fs/promises'
+import zlib from 'node:zlib'
+import {aplicarRevisoesIndividuais,hashRevisao} from './aplicar-revisoes-individuais.mjs'
+const fila=JSON.parse(zlib.gunzipSync(await fs.readFile('docs/acervo/revisao-profissional/revisao-longos-pendente.json.gz'))),item=i=>fila.find(q=>q.indice===i).questao
+const decisoes=[
+ {i:9,materia:'Direito Processual Penal',conteudo:'Inquérito policial: acesso do defensor aos elementos documentados',enunciado:item(9).enunciado.split('\nJosé, vereador')[0].trim(),texto_apoio:'A respeito de inquérito policial, julgue os itens subsequentes.',imagem:'paginas/2dede8058e9ded01-0003.webp',pagina:3,motivo:'A imagem confirma o comando específico de inquérito policial e o item 110. O caso de José, iniciado abaixo, é a situação-base independente do item 111 e foi retirado do enunciado.'},
+ {i:10,materia:'Direito Administrativo',conteudo:'Contratos administrativos: garantias contratuais',enunciado:item(10).enunciado.split('\nO contrato de compra')[0].trim(),texto_apoio:'Acerca de delegação de serviço público, formalização de contrato administrativo e proteção ao patrimônio histórico e artístico, julgue os itens subsequentes, tendo como referência a legislação vigente acerca dessas matérias.',imagem:'paginas/009dd268f7abd1a7-0002.webp',pagina:2,motivo:'A imagem confirma que o item 74 encerra o bloco comum de delegação e contratos; a situação de compra e venda que vinha depois é o texto-base do item 75.'}
+]
+await aplicarRevisoesIndividuais({nome:'revisao-semantica-v8',base:'tmp/revisao-profissional/revisao-semantica-v7/acervo-extraido',decisoes:decisoes.map(p=>{const q=item(p.i);return {id:q.id,sha256_enunciado:hashRevisao(q.enunciado),materia:p.materia,conteudo:p.conteudo,motivo:p.motivo,visual:{pagina:p.pagina,imagem:p.imagem,enunciado:p.enunciado,texto_apoio:p.texto_apoio,motivo:p.motivo}}})})

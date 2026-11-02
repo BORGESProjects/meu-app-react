@@ -34,5 +34,15 @@ export default defineConfig({
     tailwindcss(),
     copiarArquivosPublicosSemAcervoPesado(),
   ],
-  build: { copyPublicDir: false },
+  build: {
+    copyPublicDir: false,
+    minify: true,
+    sourcemap: false,
+    rollupOptions: {
+      input: {
+        main: path.resolve(process.cwd(), 'index.html'),
+        estudante: path.resolve(process.cwd(), 'estudar.html'),
+      },
+    },
+  },
 })

@@ -1,0 +1,17 @@
+import fs from 'node:fs/promises'
+import zlib from 'node:zlib'
+import {aplicarRevisoesIndividuais,hashRevisao} from './aplicar-revisoes-individuais.mjs'
+const fila=JSON.parse(zlib.gunzipSync(await fs.readFile('docs/acervo/revisao-profissional/revisao-longos-pendente.json.gz'))),item=i=>fila.find(q=>q.indice===i).questao
+const decisoes=[
+ {i:53,materia:'Direito Administrativo',conteudo:'Responsabilidade civil do Estado: operações policiais e risco administrativo',motivo:'A página identifica o item 54 como responsabilidade civil estatal por morte em operação policial, segundo a teoria do risco administrativo.'},
+ {i:54,materia:'Direito Administrativo',conteudo:'Licitações e contratos administrativos: nulidade contratual e interesse público',motivo:'A página confirma o item 56 no bloco de licitações e contratos, sobre quando declarar nulidade na execução contratual.'},
+ {i:55,materia:'Informática',conteudo:'Banco de dados: PostgreSQL, CTE recursiva e consultas hierárquicas',motivo:'A página contém o esquema, os comandos SQL, o resultado esperado e identifica o PostgreSQL 14; refinado o tópico específico.'},
+ {i:56,materia:'Informática',conteudo:'Redes de computadores: endereçamento IPv6 e IPv4',motivo:'A imagem confirma o item 65 no bloco de redes e proteção. Mantida a afirmação como impressa, inclusive o valor propositalmente incorreto, para julgamento.'},
+ {i:57,materia:'Direito Administrativo',conteudo:'Organização administrativa: criação de autarquias estaduais',texto_apoio:'No que concerne à organização administrativa, julgue os itens que se seguem.',imagem:'paginas/5c3cff23c8c41d3e-0001.webp',pagina:1,motivo:'A página posiciona o item 62 no bloco de organização administrativa; o cabeçalho OCR anterior tratava de fontes do direito administrativo e estava desconectado.'},
+ {i:58,materia:'Direito Administrativo',conteudo:'Improbidade administrativa: alterações legais e entendimento do STF',motivo:'A página mostra o item 64 sobre a constitucionalidade das alterações da Lei de Improbidade Administrativa e o elemento subjetivo do ilícito.'},
+ {i:59,materia:'Português',conteudo:'Pronomes demonstrativos: emprego de “este” como elemento de coesão',motivo:'A página confirma que o item 21 analisa o demonstrativo “este” em um texto sobre a formação da rede rodoviária; a matéria não é logística.'},
+ {i:60,materia:'Português',conteudo:'Concordância verbal: sujeito composto e concordância com núcleo próximo',motivo:'A página mostra o item 20 como análise de concordância no texto sobre apostas; “a facilidade” e “a promessa” são o sujeito composto.'},
+ {i:61,materia:'Português',conteudo:'Interpretação de textos literários: sentido de expressão no contexto',motivo:'O enunciado pergunta o sentido contextual de “redução estrutural” em um texto sobre literatura; a classificação matemática não corresponde ao conteúdo.'},
+ {i:62,materia:'Economia',conteudo:'Economia aberta: regime de câmbio fixo e política monetária',motivo:'A página confirma o item 207 sobre as limitações da taxa de juros sob câmbio fixo e mobilidade internacional de capitais.'}
+]
+await aplicarRevisoesIndividuais({nome:'revisao-semantica-v14',base:'tmp/revisao-profissional/revisao-semantica-v13/acervo-extraido',decisoes:decisoes.map(p=>{const q=item(p.i);return {id:q.id,sha256_enunciado:hashRevisao(q.enunciado),materia:p.materia,conteudo:p.conteudo,motivo:p.motivo,...(p.imagem?{visual:{pagina:p.pagina,imagem:p.imagem,texto_apoio:p.texto_apoio,motivo:p.motivo}}:{})}})})

@@ -1,0 +1,16 @@
+import fs from 'node:fs/promises'
+import zlib from 'node:zlib'
+import {aplicarRevisoesIndividuais,hashRevisao} from './aplicar-revisoes-individuais.mjs'
+const fila=JSON.parse(zlib.gunzipSync(await fs.readFile('docs/acervo/revisao-profissional/revisao-longos-pendente.json.gz'))),item=i=>fila.find(q=>q.indice===i).questao
+const decisoes=[
+ {i:2,materia:'Informática',conteudo:'Redes de computadores: HTTP, TCP/IP e aplicações web',texto_apoio:'',imagem:'paginas/50fc6307cb04dc6c-0002.webp',pagina:2,motivo:'A página 2 confirma que o item 83 é o enunciado sobre HTTP e TCP/IP; removido do apoio o item 82 sobre roteamento, que é questão separada.'},
+ {i:7,materia:'Português',conteudo:'Tipologia textual: narração, descrição e argumentação',texto_apoio:'Texto-base e item apresentados na imagem original vinculada a esta questão.',imagem:'paginas/96e9bc3d4ec46f83-0001.webp',pagina:1,motivo:'A imagem mostra o item 6 sobre classificação de trecho como narrativo e o texto-base na mesma página; a classificação foi especificada.'},
+ {i:8,materia:'Engenharia Civil',conteudo:'Orçamento de obras: BDI, custos indiretos e parcelamento do objeto',motivo:'A página identifica a questão no caso de engenharia e composição de custos de obra; o item 56 examina o BDI do fornecimento de grupo gerador.'},
+ {i:22,materia:'Português',conteudo:'Interpretação de textos: coesão e expressão avaliativa',motivo:'O item 74 pergunta o efeito coesivo de uma expressão no segundo parágrafo de um texto; o foco avaliável é interpretação e análise linguística.'},
+ {i:24,materia:'Português',conteudo:'Semântica lexical: sentido de “lato” e substituição contextual',texto_apoio:'Texto-base exibido na página original vinculada; o item 10 refere-se ao último parágrafo.',imagem:'paginas/92039966f8bbed1c-0002.webp',pagina:2,motivo:'A página confirma o item 10 de Português sobre o sentido de “lato” em um texto; corrigida a matéria que estava registrada como Informática.'},
+ {i:25,materia:'Português',conteudo:'Concordância verbal: concordância com expressões partitivas',motivo:'O item 15 avalia a reescrita de “Grande parte das doações foram destinadas...” preservando a correção gramatical e o sentido.'},
+ {i:26,materia:'Português',conteudo:'Sintaxe: supressão de verbo e pronome relativo na oração',motivo:'A página mostra o item 10 como análise de correção gramatical de uma oração sobre o mundo digital; a matéria constitucional estava incorreta.'},
+ {i:27,materia:'Português',conteudo:'Verbos: substituição do indicativo pelo subjuntivo e efeitos de sentido',motivo:'A página mostra o item 6 de interpretação linguística sobre substituir “busca” por “busque”; não é questão de informática.'},
+ {i:41,materia:'Direito Administrativo',conteudo:'Licitações: dispensa por emergência ou calamidade pública',motivo:'O enunciado trata diretamente de hipótese legal de dispensa de licitação por emergência e calamidade pública.'}
+]
+await aplicarRevisoesIndividuais({nome:'revisao-semantica-v15',base:'tmp/revisao-profissional/revisao-semantica-v14/acervo-extraido',decisoes:decisoes.map(p=>{const q=item(p.i);return {id:q.id,sha256_enunciado:hashRevisao(q.enunciado),materia:p.materia,conteudo:p.conteudo,motivo:p.motivo,...(p.imagem?{visual:{pagina:p.pagina,imagem:p.imagem,texto_apoio:p.texto_apoio,motivo:p.motivo}}:{})}})})

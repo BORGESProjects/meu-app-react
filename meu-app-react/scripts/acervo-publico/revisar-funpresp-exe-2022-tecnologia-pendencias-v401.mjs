@@ -1,0 +1,59 @@
+import fs from 'node:fs/promises'
+import {hashRevisao,aplicarRevisoesIndividuais} from './aplicar-revisoes-individuais.mjs'
+import {raizesAtuais} from './acervo-atual.mjs'
+
+const nome='revisao-funpresp-exe-2022-tecnologia-pendencias-v401'
+const doc='d601594c45dc1810'
+const prova='https://cdn.cebraspe.org.br/concursos/funpresp_21/arquivos/648_FUNPRESP_EXE_010_01.PDF'
+const gabarito='https://cdn.cebraspe.org.br/concursos/funpresp_21/arquivos/GAB_DEFINITIVO_648_FUNPRESP_EXE_010_01.PDF'
+const records=JSON.parse(await fs.readFile(`tmp/pendentes-documento-${doc}.json`,'utf8'))
+const answers={51:'C',52:'E',53:'E',54:'C',55:'E',56:'C',57:'C',58:'E',59:'C',61:'E',62:'C',63:'E',64:'C',65:'E',66:'C',67:'E',68:'C',69:'E',70:'C',71:'E',72:'E',74:'C',75:'C',76:'E',77:'E',80:'C',82:'E',83:'E',84:'E',85:'E',86:'E',87:'C',88:'C',89:'E',90:'E',104:'C',107:'C',109:'E',113:'E'}
+const duplicateIds=new Set(['extr-f4910dd4b0b87f5ecc2b','extr-25d677a6114ae679518a','extr-f733810df164704bf9f3','extr-c383db0b934be8be3326','extr-b7e85b00dcf827b231c3'])
+const T={
+51:['Gerenciamento de Projetos','PMBOK: estimativa de custos de três pontos'],52:['Gerenciamento de Projetos','PMBOK: planejamento do gerenciamento do escopo e requisitos'],53:['Engenharia de Software','Estimativas de esforço: pontos de função'],54:['Gerenciamento de Projetos','PMBOK: características e ciclo de vida de projetos'],55:['Gerenciamento de Projetos','Gestão da qualidade: diagrama de dispersão e ferramentas da qualidade'],56:['Gerenciamento de Projetos','PMBOK: estrutura analítica do projeto (EAP)'],
+57:['Segurança da Informação','Propriedades da informação: autenticidade e confiabilidade'],58:['Segurança da Informação','Continuidade de negócios: governança e equipe responsável'],59:['Segurança da Informação','Continuidade de negócios: planos de contingência operacional'],61:['Segurança da Informação','Classificação da informação: níveis de criticidade e sigilo'],62:['Segurança da Informação','ISO 17799: segregação de funções e controle de acesso'],
+63:['Governança de TI','ITIL 4: gerenciamento de incidentes e análise de causa raiz'],64:['Governança de TI','ITIL 4: prática de gerenciamento de implantação'],65:['Governança de TI','ITIL 4: gerenciamento de problemas e monitoramento'],66:['Governança de TI','ITIL 4: gerenciamento da continuidade de serviço'],67:['Governança de TI','ITIL 4: gerenciamento de nível de serviço e riscos'],68:['Governança de TI','ITIL 4: controle de mudanças e mudança padrão'],69:['Governança de TI','ITIL 4: requisição de serviço e mudança de software'],70:['Governança de TI','ITIL 4: configuração de serviço e itens de configuração'],71:['Governança de TI','ITIL 4: gerenciamento de liberação em ambientes ágeis'],
+72:['Governança de TI','COBIT 5: níveis de capacidade e avaliação de processos'],74:['Governança de TI','COBIT 5: princípios e atendimento às necessidades das partes interessadas'],
+75:['Engenharia de Software','Modelos de ciclo de vida: modelo espiral'],76:['Engenharia de Software','Gestão de riscos de software: riscos de projeto'],77:['Engenharia de Software','Métodos ágeis e prototipação: elicitação e evolução de requisitos'],
+80:['Engenharia de Requisitos','Validação de requisitos: validade, consistência e completude'],82:['Engenharia de Requisitos','Elicitação de requisitos: Quality Function Deployment (QFD)'],83:['Engenharia de Requisitos','Elicitação de requisitos: brainstorming'],84:['Engenharia de Requisitos','Prototipação de interface e validação de requisitos'],
+85:['Arquitetura de Sistemas','Arquitetura cliente-servidor e camadas de aplicação'],86:['Arquitetura de Sistemas','Arquitetura em camadas: servidor web e acesso a dados'],87:['Arquitetura de Sistemas','Portais corporativos: integração, comunicação e segurança'],88:['Arquitetura de Sistemas','Integração de sistemas: Enterprise Service Bus (ESB)'],89:['Arquitetura de Sistemas','Arquitetura orientada a serviços: registro, provedor e consumidor'],90:['Computação em Nuvem','Computação distribuída e modelos de processamento em nuvem'],
+104:['Planejamento Estratégico','Execução e implementação da estratégia: orçamento, políticas e procedimentos'],107:['Planejamento Estratégico','Identidade organizacional: missão e valores institucionais'],109:['Banco de Dados','Modelagem conceitual: modelo entidade-relacionamento'],113:['Banco de Dados','SQL e arquitetura de banco de dados: visões (views)']
+}
+const it=records.find(q=>q.numero===62&&q.id==='extr-39f74662558e16e65847')
+const contexts={
+ project:'Comando compartilhado: julgue os itens de gerenciamento de projetos de tecnologia da informação conforme as práticas e conceitos do PMBOK.',
+ security:'Comando compartilhado: julgue os itens relativos a segurança da informação, continuidade de negócios, classificação da informação e normas ISO citadas.',
+ itil:'Situação-base ITIL 4: sistema de informação vital, de alta criticidade e operação 24×7. Uma nova versão foi disponibilizada em produção por integração e entrega contínua, classificada como mudança de baixo risco pré-autorizada. Houve indisponibilidade de duas horas, repetida cinco vezes em 30 dias, com perdas financeiras e de imagem. O monitoramento não detectou o evento; usuários avisaram a central de atendimento. O impacto não havia sido previsto no planejamento.',
+ cobit:'Comando compartilhado: julgue conforme os princípios e o modelo de capacidade de processos do COBIT 5.',
+ software:'Comando compartilhado: julgue os itens sobre modelos de ciclo de vida, riscos e métodos de desenvolvimento de software.',
+ requirements:'Comando compartilhado: julgue os itens de engenharia de requisitos, validação, elicitação e prototipação.',
+ architecture:'Comando compartilhado: julgue os itens sobre arquitetura de sistemas de informação e integração de aplicações.',
+ cloud:'Comando compartilhado: julgue os itens sobre orientação a serviços (SOA), protocolos e computação em nuvem.',
+ strategy:'Comando compartilhado: julgue os itens a respeito do planejamento estratégico institucional, implementação e análise de cenário.',
+ database:'Comando compartilhado: julgue os itens de banco de dados, modelo entidade-relacionamento e objetos SQL.'
+}
+function context(n){if(n<=56)return contexts.project;if(n<=62)return contexts.security;if(n<=71)return contexts.itil;if(n<=74)return contexts.cobit;if(n<=79)return contexts.software;if(n<=84)return contexts.requirements;if(n<=89)return contexts.architecture;if(n===90)return contexts.cloud;if(n===104||n===107)return contexts.strategy;return contexts.database}
+function clean(q){let s=q.enunciado.trim();if(q.numero===62)s=s.split(/\n\s*Uma organização disponibiliza/i)[0];if(q.numero===74)s=s.split(/\n\s*Uma organização disponibiliza/i)[0];if(q.numero===84)s=s.split(/\n\s*648010_01N824054/i)[0];return s.replace(/\bsofiware\b/gi,'software').replace(/\bcontomos\b/gi,'contornos').replace(/\bDeplyment\b/g,'Deployment').replace(/\bCOBITS\b/g,'COBIT 5').replace(/\s+([,.;:!?])/g,'$1').trim()}
+if(records.length!==44)throw Error(`Esperados 44 registros; recebidos ${records.length}.`)
+if(new Set(records.map(q=>q.id)).size!==records.length)throw Error('IDs duplicados no arquivo exportado.')
+const decisions=records.map(q=>{
+ const n=Number(q.numero),topic=T[n]
+ if(!topic)throw Error(`Item ${n} sem mapeamento temático.`)
+ if(!Array.isArray(q.opcoes)||q.opcoes[0]!=='Certo'||q.opcoes[1]!=='Errado')throw Error(`Formato inesperado no item ${n}.`)
+ const stem=clean(q),duplicate=duplicateIds.has(q.id)
+ if(stem.length<40)throw Error(`Enunciado curto/incompleto no item ${n}.`)
+ const answer=answers[n]
+ if(!duplicate&&!answer)throw Error(`Item ${n} sem gabarito definitivo mapeado.`)
+ return {id:q.id,sha256_enunciado:hashRevisao(q.enunciado),enunciado:stem,texto_apoio:context(n),materia:topic[0],conteudo:topic[1],ano:2022,concurso:'FUNPRESP-EXE 2022 — Analista de Previdência Complementar — Área de Tecnologia',banca:'CEBRASPE',organizadora:'CEBRASPE',aplicacao:'30/01/2022',cargo:'Analista de Previdência Complementar — Tecnologia',numero_original:n,numero:n,pagina:q.pagina,dificuldade:[51,53,55,62,63,65,67,68,71,72,73,74,76,80,82,84,85,86,88,89,90,104,109,113].includes(n)?'Difícil':'Média',dificuldade_estimada:true,dificuldade_evidencia:'Estimativa editorial pela complexidade conceitual e técnica; não publicada como nível oficial pela banca.',classificacao_fonte:prova,motivo:duplicate?`Registro duplicado ou contaminado por texto de outro item; excluído da resolução automática e preservada a cópia canônica do item ${n}.`:`Item ${n} classificado conforme comando, seção temática e enunciado do caderno oficial.`,resposta_correta:duplicate?null:answer==='C'?0:1,anulada:false,remover_pendencias:['classificacao_especifica_pendente','ano_sem_evidencia','gabarito_oficial_nao_vinculado'],gabarito_oficial:duplicate?undefined:{fonte:gabarito,arquivo:gabarito.split('/').at(-1),prova,numero:n,pagina:1,resposta:answer,criterio:'Gabarito definitivo oficial CEBRASPE para o cargo 10 — Analista de Previdência Complementar, Tecnologia.'},apta_resolucao:!duplicate,...(duplicate?{inelegibilidade_motivo:'duplicata_ou_extracao_contaminada'}:{})}
+})
+const dupDec=decisions.filter(d=>duplicateIds.has(d.id))
+const canonicalIds=new Set(decisions.filter(d=>!duplicateIds.has(d.id)).map(d=>d.numero))
+for(const n of canonicalIds)if(decisions.filter(d=>d.numero===n&&!duplicateIds.has(d.id)).length!==1)throw Error(`Mais de um registro canônico para o item ${n}.`)
+if(process.argv.includes('--dry-run')){console.log(JSON.stringify({registros:decisions.length,canonical:decisions.length-dupDec.length,duplicadosDesativados:dupDec.map(d=>({numero:d.numero,id:d.id})),porMateria:Object.fromEntries([...new Set(decisions.map(d=>d.materia))].map(m=>[m,decisions.filter(d=>d.materia===m).length])),prova,gabarito,publicado:false},null,2));process.exit(0)}
+const result=await aplicarRevisoesIndividuais({nome,base:raizesAtuais[0],decisoes:decisions})
+raizesAtuais.unshift(`tmp/revisao-profissional/${nome}/acervo-extraido`)
+await fs.appendFile('scripts/acervo-publico/acervo-atual.mjs',`\nraizesAtuais.unshift('tmp/revisao-profissional/${nome}/acervo-extraido')\n`)
+const report={...result,documento:doc,edicao:'CEBRASPE — FUNPRESP-EXE 2022 — Analista de Previdência Complementar — Tecnologia',duplicatas_ou_fragmentos_desativados:dupDec.map(d=>({numero:d.numero,id:d.id})),prova,gabarito,publicado:false,nota:'44 registros revisados. Cinco duplicatas ou extrações contaminadas foram excluídas da resolução, mantendo uma cópia canônica por item. Itens 63–71 receberam o contexto compartilhado da situação ITIL. Gabarito e aplicação conferidos em fontes oficiais. Alterações locais, não publicadas.'}
+await fs.writeFile(`docs/acervo/revisao-profissional/${nome}.json`,JSON.stringify(report,null,2))
+await fs.appendFile('docs/acervo/revisao-profissional/RELATORIO.md',`\n\n## CEBRASPE — FUNPRESP-EXE 2022 — Analista de Previdência Complementar — Tecnologia — revisão v401\n\n- 44 registros revistos com classificação por banca, órgão, cargo, aplicação, ano, matéria e conteúdo específico. A prova foi aplicada em 30/01/2022, embora o edital seja de 2021.\n- Cinco registros duplicados ou contaminados por sobreposição de texto foram retirados da resolução automática, preservando a cópia canônica do item.\n- O contexto compartilhado do cenário ITIL foi ligado aos itens 63–71; OCR evidente foi corrigido sem alterar o sentido dos enunciados.\n- Dificuldade é estimativa editorial, não metadado atribuído pelo CEBRASPE.\n- Fontes: [caderno oficial](${prova}) e [gabarito definitivo](${gabarito}).\n- Alterações locais; não publicadas na nuvem.\n`)
+console.log(JSON.stringify({gerado_em:result.gerado_em,classificadas:result.classificadas,duplicatas_desativadas:dupDec.length,total:result.total,disponiveis:result.disponiveis,pendentes:result.pendentes,publicado:false}))

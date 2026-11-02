@@ -1,0 +1,302 @@
+{
+  "gerado_em": "2026-10-26T22:52:06.931Z",
+  "questoes": [
+    {
+      "id": "utfpr-2023-37",
+      "antes": [
+        "O valor de Kc para este equilíbrio é de 0,1.",
+        "Um aumento da pressão irá deslocar o equilíbrio\nfavorecendo a formação dos produtos.",
+        "A reação direta é endotérmica.",
+        "Nas condições apresentadas, a velocidade direta\né o quádruplo da velocidade inversa.",
+        "O equilíbrio é representado por Kc= [NO]2[O2]\n[NO2]2"
+      ],
+      "opcoes": [
+        "O valor de Kc para este equilíbrio é de 0,1.",
+        "Um aumento da pressão irá deslocar o equilíbrio favorecendo a formação dos produtos.",
+        "A reação direta é endotérmica.",
+        "Nas condições apresentadas, a velocidade direta é o quádruplo da velocidade inversa.",
+        "O equilíbrio é representado por Kc = [NO]²[O₂]/[NO₂]²."
+      ],
+      "blocos_opcoes": [
+        [
+          "O valor de Kc para este equilíbrio é de 0,1."
+        ],
+        [
+          "Um aumento da pressão irá deslocar o equilíbrio favorecendo a formação dos produtos."
+        ],
+        [
+          "A reação direta é endotérmica."
+        ],
+        [
+          "Nas condições apresentadas, a velocidade direta é o quádruplo da velocidade inversa."
+        ],
+        [
+          "O equilíbrio é representado por ",
+          {
+            "tag": "math",
+            "children": [
+              {
+                "tag": "mrow",
+                "children": [
+                  {
+                    "tag": "msub",
+                    "children": [
+                      {
+                        "tag": "mi",
+                        "children": [
+                          "K"
+                        ]
+                      },
+                      {
+                        "tag": "mn",
+                        "children": [
+                          "c"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "mo",
+                    "children": [
+                      "="
+                    ]
+                  },
+                  {
+                    "tag": "mfrac",
+                    "children": [
+                      {
+                        "tag": "mrow",
+                        "children": [
+                          {
+                            "tag": "msup",
+                            "children": [
+                              {
+                                "tag": "mrow",
+                                "children": [
+                                  {
+                                    "tag": "mo",
+                                    "children": [
+                                      "["
+                                    ]
+                                  },
+                                  {
+                                    "tag": "mi",
+                                    "children": [
+                                      "NO"
+                                    ]
+                                  },
+                                  {
+                                    "tag": "mo",
+                                    "children": [
+                                      "]"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "mn",
+                                "children": [
+                                  "2"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "mrow",
+                            "children": [
+                              {
+                                "tag": "mo",
+                                "children": [
+                                  "["
+                                ]
+                              },
+                              {
+                                "tag": "msub",
+                                "children": [
+                                  {
+                                    "tag": "mi",
+                                    "children": [
+                                      "O"
+                                    ]
+                                  },
+                                  {
+                                    "tag": "mn",
+                                    "children": [
+                                      "2"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "mo",
+                                "children": [
+                                  "]"
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tag": "msup",
+                        "children": [
+                          {
+                            "tag": "mrow",
+                            "children": [
+                              {
+                                "tag": "mo",
+                                "children": [
+                                  "["
+                                ]
+                              },
+                              {
+                                "tag": "msub",
+                                "children": [
+                                  {
+                                    "tag": "mi",
+                                    "children": [
+                                      "NO"
+                                    ]
+                                  },
+                                  {
+                                    "tag": "mn",
+                                    "children": [
+                                      "2"
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "tag": "mo",
+                                "children": [
+                                  "]"
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "tag": "mn",
+                            "children": [
+                              "2"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      ],
+      "fontes": [
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q37-a.webp",
+          "sha256": "9b6524333c2454d008a36c7190896e93dee3a3f22a5748ddb522ce2ca1e9297e"
+        },
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q37-b.webp",
+          "sha256": "65468007463024b2b99df8d00b7ec1aa4aa2432b21c875220a4688306ac121e5"
+        },
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q37-c.webp",
+          "sha256": "eb1647db1d494590c1b1afa49410b8ed720050c66fd50aa169c02278f66da325"
+        },
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q37-d.webp",
+          "sha256": "95a3e9be1ef0ef9edfc880167e2b6db2496f0da768aa293acbd6233635402029"
+        },
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q37-e.webp",
+          "sha256": "ec7f675fae646e7c4971071af8fe819b84e8547c5c48ab30c5bc2063412e6661"
+        }
+      ],
+      "resposta_correta": 4,
+      "metodo": "Leitura visual individual dos cinco recortes; conteúdo das alternativas preservado, inclusive distratores."
+    },
+    {
+      "id": "utfpr-2023-53",
+      "antes": [
+        "Utiliza-se a força gravitacional da nave, que no\nvácuo é maior que da terra, para orbitar ao redor\ndesta.",
+        "A Primeira Lei de Newton afirma que todo corpo\ndeve manter seu estado de movimento até que\numa força atue sobre ele. Isso torna impossível\nque o(a) astronauta movimente-se no espaço\nsem uma corda, pois não há contato com outro\ncorpo capaz de realizar uma força.",
+        "Pelo princípio de conservação do momento linear,\nao expelir gás comprimido usando o traje de caminhada espacial em uma direção, o(a) astronauta\nserá impulsionado na direção oposta.",
+        "A diferença de temperatura entre o traje do(a)\nastronauta e o espaço causa uma convecção, fazendo com que o(a) astronauta mova-se no espaço vazio.",
+        "Se a toda ação corresponde uma reação, o(a) astronauta pode executar um movimento parecido\ncom o nado, em que empurra o vácuo para trás e\né impulsionado para frente."
+      ],
+      "opcoes": [
+        "Utiliza-se a força gravitacional da nave, que no vácuo é maior que da terra, para orbitar ao redor desta.",
+        "A Primeira Lei de Newton afirma que todo corpo deve manter seu estado de movimento até que uma força atue sobre ele. Isso torna impossível que o(a) astronauta movimente-se no espaço sem uma corda, pois não há contato com outro corpo capaz de realizar uma força.",
+        "Pelo princípio de conservação do momento linear, ao expelir gás comprimido usando o traje de caminhada espacial em uma direção, o(a) astronauta será impulsionado na direção oposta.",
+        "A diferença de temperatura entre o traje do(a) astronauta e o espaço causa uma convecção, fazendo com que o(a) astronauta mova-se no espaço vazio.",
+        "Se a toda ação corresponde uma reação, o(a) astronauta pode executar um movimento parecido com o nado, em que empurra o vácuo para trás e é impulsionado para frente."
+      ],
+      "fontes": [
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q53-a.webp",
+          "sha256": "3c11463b980c73620903d3979e2c9394387020a43f6a2a46320fc9e21956bc97"
+        },
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q53-b.webp",
+          "sha256": "be0d2c7cb8495ba49b7fbfa436276bd7c68991c803d2aff66653aca6959067ed"
+        },
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q53-c.webp",
+          "sha256": "ab374150920ec43b5f6bbb7ee445a86cc62cdfe724959f2267444b8fa855d79f"
+        },
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q53-d.webp",
+          "sha256": "63d7f1d856811d4ea62e8eea491fc8147adc290806c293e4d315037fe94ad2cd"
+        },
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q53-e.webp",
+          "sha256": "54a2672c94752f6f352b819bab789c73774073e1b8804287150aecd48b01700d"
+        }
+      ],
+      "resposta_correta": 2,
+      "metodo": "Leitura visual individual dos cinco recortes; conteúdo das alternativas preservado, inclusive distratores."
+    },
+    {
+      "id": "utfpr-2023-54",
+      "antes": [
+        "As rodas externas irão girar, aproximadamente,\n32% a mais que as internas.",
+        "As rodas externas irão girar, aproximadamente,\n25% a mais que as internas.",
+        "As rodas externas irão girar, aproximadamente,\n25% a menos que as internas.",
+        "As rodas externas irão girar, aproximadamente,\n32% a menos que as internas.",
+        "As rodas externas e internas descreverão a mesma quantidade de giros, pois o aro é o mesmo."
+      ],
+      "opcoes": [
+        "As rodas externas irão girar, aproximadamente, 32% a mais que as internas.",
+        "As rodas externas irão girar, aproximadamente, 25% a mais que as internas.",
+        "As rodas externas irão girar, aproximadamente, 25% a menos que as internas.",
+        "As rodas externas irão girar, aproximadamente, 32% a menos que as internas.",
+        "As rodas externas e internas descreverão a mesma quantidade de giros, pois o aro é o mesmo."
+      ],
+      "fontes": [
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q54-a.webp",
+          "sha256": "f50f9d19322a5b79cc8058cd1606f917de137498f8b1363b28e3b7790098cb21"
+        },
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q54-b.webp",
+          "sha256": "4514f4d5cdd8e559ebb171f6897b5584d71b5a9498f16a90a33f1702a5196113"
+        },
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q54-c.webp",
+          "sha256": "551a66e3456c7bf23f399dad0a0f1654fc24e0572a618a5690ffd7366e3a3958"
+        },
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q54-d.webp",
+          "sha256": "bc7f8cc13f6dfa8c7b03efedbe7fbef327c590eb195f374175e6d9fbb76adc12"
+        },
+        {
+          "imagem": "/acervo/utfpr-2023/imagens/q54-e.webp",
+          "sha256": "c6edcdf53d84be6ebc1755fa7ae8d6d3110fc4d0530a3b86a8a59129534f9237"
+        }
+      ],
+      "resposta_correta": 0,
+      "metodo": "Leitura visual individual dos cinco recortes; conteúdo das alternativas preservado, inclusive distratores."
+    }
+  ],
+  "publicado": false
+}
