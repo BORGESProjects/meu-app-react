@@ -1,5 +1,4 @@
 import { spawn } from 'node:child_process'
-import { copyFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 
 const viteCli = fileURLToPath(new URL('../node_modules/vite/bin/vite.js', import.meta.url))
@@ -23,6 +22,5 @@ const result = await new Promise((resolve, reject) => {
 if (result.code !== 0 && !buildReportedSuccess) process.exit(result.code ?? 1)
 if (!buildReportedSuccess) throw new Error('A compilação do Vite terminou sem confirmar a geração dos arquivos.')
 
-// Vercel serves the question-bank app at the domain root.
-// The commercial page and its student portal are built separately for Cloudflare Pages.
-await copyFile(new URL('../dist/estudar.html', import.meta.url), new URL('../dist/index.html', import.meta.url))
+// Keep the commercial landing page at the domain root. The question-bank app
+// remains available at /estudar.html as the web prototype for the future native apps.
