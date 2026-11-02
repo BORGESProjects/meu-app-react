@@ -86,6 +86,121 @@ export const modelosEditaisOficiais = [
     'Geografia':['Cartografia e orientação','Geografia do Brasil','População, economia e território'],
     'História':['História do Brasil','História geral e contemporânea'],
     'Redação':['Compreensão do tema','Organização de ideias e argumentação']
+  }),
+  modelo('FUVEST/USP — Vestibular 2027', '2027', 'Universidade de São Paulo', 'https://www.fuvest.br/wp-content/uploads/fuvest2027-programa-vestibular.pdf', 'Programa oficial FUVEST 2027. A primeira fase tem 80 questões; a segunda fase varia conforme a carreira. Confira a lista vigente de leituras obrigatórias e o Guia de Provas.', {
+    'Língua Portuguesa':['Interpretação, gêneros e efeitos de sentido','Norma-padrão, morfossintaxe e pontuação','Coesão, coerência e argumentação'],
+    'Literatura':['Leitura das nove obras obrigatórias de 2027','Gêneros, escolas literárias e contexto histórico-cultural'],
+    'Língua Inglesa':['Leitura e interpretação de textos','Vocabulário e recursos linguísticos em contexto'],
+    'Matemática':['Números, álgebra e funções','Geometria, trigonometria e grandezas','Estatística, combinatória e probabilidade'],
+    'Biologia':['Células, metabolismo e genética','Evolução, biodiversidade e fisiologia','Ecologia, saúde e ambiente'],
+    'Física':['Mecânica e energia','Termologia, ondas e óptica','Eletricidade, magnetismo e física moderna'],
+    'Química':['Matéria, estrutura e propriedades','Reações, estequiometria e soluções','Energia, equilíbrio e química orgânica'],
+    'História':['Antiguidade, mundo medieval e moderno','Brasil: Colônia, Império e República','Mundo contemporâneo e relações internacionais'],
+    'Geografia':['Cartografia e representações espaciais','Natureza, população e ambiente','Economia, território e geopolítica'],
+    'Filosofia':['Conhecimento, ética e política','Filosofia antiga, moderna e contemporânea'],
+    'Sociologia':['Cultura, sociedade e identidade','Trabalho, desigualdade, poder e cidadania'],
+    'Arte e Educação Física':['Leitura de linguagens artísticas e patrimônio cultural','Práticas corporais, cultura e sociedade'],
+    'Redação':['Leitura da proposta e planejamento','Tese, argumentação, coesão e revisão']
+  }),
+  modelo('UFRJ — Acesso 2026 via SiSU/ENEM', '2026', 'Universidade federal', 'https://acessograduacao.ufrj.br/periodo-2026-1/editais-acesso-2026', 'A UFRJ utiliza notas do ENEM/SiSU e, para alguns cursos, Teste de Habilidade Específica. Este modelo é um roteiro de preparação para o ENEM, não um vestibular próprio da UFRJ; consulte o edital e os pesos do curso escolhido.', {
+    'Linguagens e suas Tecnologias':['Interpretação de textos verbais e multissemióticos','Gêneros, coesão, argumentação e variação linguística','Literatura, artes, cultura corporal e língua estrangeira'],
+    'Matemática e suas Tecnologias':['Números, proporcionalidade e matemática financeira','Geometria, grandezas e medidas','Funções, álgebra e gráficos','Estatística, tabelas e probabilidade'],
+    'Ciências da Natureza e suas Tecnologias':['Biologia celular, genética, evolução e ecologia','Física: mecânica, energia, ondas e eletricidade','Química: matéria, reações, soluções e equilíbrio'],
+    'Ciências Humanas e Sociais Aplicadas':['História, cultura, cidadania e direitos','Geografia, território, cartografia e ambiente','Trabalho, economia, política e globalização','Filosofia, ética, sociologia e diversidade'],
+    'Redação':['Compreensão do tema e do gênero dissertativo-argumentativo','Projeto de texto, repertório e argumentação','Coesão, norma escrita e proposta de intervenção']
+  }),
+  modelo('UFMG — SiSU 2026 (preparação ENEM)', '2026', 'Universidade federal', 'https://www.ufmg.br/sisu/edital/', 'A seleção regular da UFMG ocorre pelo SiSU com notas do ENEM. O roteiro acompanha as quatro áreas e a redação da matriz do Inep; pesos e notas mínimas variam por curso e estão no edital/termo de adesão da UFMG.', {
+    'Linguagens e suas Tecnologias':['Leitura, interpretação e gêneros textuais','Língua portuguesa, literatura e variação linguística','Artes, educação física e língua estrangeira'],
+    'Matemática e suas Tecnologias':['Aritmética, razão, proporção e porcentagem','Álgebra, funções e leitura de gráficos','Geometria, estatística e probabilidade'],
+    'Ciências da Natureza e suas Tecnologias':['Biologia celular, genética, evolução e ecologia','Mecânica, termologia, ondas e eletricidade','Química geral, orgânica, soluções e reações'],
+    'Ciências Humanas e Sociais Aplicadas':['História do Brasil e história geral','Geografia física, humana e cartografia','Filosofia, sociologia, cidadania e política'],
+    'Redação':['Interpretação da proposta','Planejamento e desenvolvimento argumentativo','Coesão, norma escrita e revisão']
+  }),
+  modelo('UFRGS — Vestibular 2027', '2027', 'Universidade federal', 'https://www.ufrgs.br/coperse/concurso-vestibular/', 'Modelo para o Vestibular UFRGS 2027, conforme a página oficial da COPERSE e o programa de provas da edição. Inclui disciplinas objetivas e redação; consulte a lista oficial de leituras e eventuais retificações.', {
+    'Língua Portuguesa':['Interpretação e análise linguística','Gêneros, coesão, sintaxe e semântica'],
+    'Literatura em Língua Portuguesa':['Leitura das obras indicadas para 2027','Gêneros literários, escolas e análise textual'],
+    'Língua Estrangeira':['Compreensão de textos no idioma escolhido','Vocabulário e estruturas em contexto'],
+    'Matemática':['Aritmética, álgebra e funções','Geometria e trigonometria','Estatística, combinatória e probabilidade'],
+    'Biologia':['Citologia, genética e evolução','Fisiologia, biodiversidade e ecologia'],
+    'Física':['Mecânica e conservação','Termologia, ondas e óptica','Eletricidade e magnetismo'],
+    'Química':['Estrutura da matéria e ligações','Estequiometria, soluções e equilíbrio','Química orgânica e transformações'],
+    'História':['História antiga, medieval e moderna','História do Brasil','Mundo contemporâneo'],
+    'Geografia':['Cartografia, natureza e ambiente','População, economia e espaço geográfico'],
+    'Redação':['Leitura do tema','Organização, desenvolvimento e revisão do texto']
+  }),
+  modelo('PRF — Policial Rodoviário Federal 2021 (último edital)', '2021', 'Concurso público federal', 'https://www.gov.br/prf/pt-br/concurso-2021/etapa1/provas/edital-verticalizado-1.pdf', 'Referência do último edital de abertura da carreira policial localizado no portal oficial da PRF. Não há novo edital policial publicado no momento; confira atualizações oficiais antes de usar como edital vigente.', {
+    'Língua Portuguesa':['Compreensão, interpretação e gêneros textuais','Ortografia, coesão e reescrita','Morfossintaxe, pontuação, concordância, regência e crase','Redação oficial'],
+    'Raciocínio Lógico-Matemático':['Lógica proposicional e argumentação','Conjuntos, contagem e probabilidade','Razões, proporções e problemas quantitativos'],
+    'Informática':['Sistemas operacionais e ferramentas de escritório','Redes, internet e segurança da informação'],
+    'Física':['Grandezas, unidades e mecânica','Energia, movimento e fenômenos ondulatórios'],
+    'Ética e Cidadania':['Ética no serviço público','Direitos humanos, cidadania e diversidade'],
+    'Geopolítica Brasileira':['Território, população e dinâmica socioeconômica','Desenvolvimento, meio ambiente e espaço geográfico'],
+    'Língua Estrangeira':['Compreensão de textos em inglês ou espanhol'],
+    'Legislação de Trânsito':['Código de Trânsito Brasileiro e legislação correlata','Normas de circulação, conduta, sinalização e infrações'],
+    'Direito Administrativo':['Administração pública, atos e poderes administrativos','Agentes públicos, responsabilidade e controle'],
+    'Direito Constitucional':['Direitos e garantias fundamentais','Organização do Estado e segurança pública'],
+    'Direito Penal e Processual Penal':['Teoria do crime, crimes em espécie e legislação penal','Inquérito, provas, prisão e procedimentos'],
+    'Legislação Especial':['Legislação aplicada à atividade policial rodoviária federal']
+  }),
+  modelo('PF — Agente de Polícia Federal 2025', '2025', 'Concurso público federal', 'https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos/edital/carreira-policial-2025/editais/edital-no-1_2025-dgp-pf.pdf', 'Baseado no edital oficial PF 2025 para Agente. O certame também teve outros cargos e conteúdos específicos próprios; este modelo não substitui os anexos dos cargos de Escrivão, Papiloscopista, Delegado ou Perito.', {
+    'Língua Portuguesa':['Interpretação, tipologia e gêneros textuais','Coesão, coerência, sintaxe e reescrita'],
+    'Raciocínio Lógico':['Lógica proposicional e argumentação','Conjuntos, contagem e probabilidade'],
+    'Estatística':['Estatística descritiva e análise de dados','Probabilidade e distribuições'],
+    'Informática':['Sistemas, redes e segurança da informação','Dados, bancos de dados e tecnologias digitais'],
+    'Contabilidade Geral':['Patrimônio, contas e demonstrações contábeis','Escrituração e análise de balanços'],
+    'Direito Administrativo':['Organização administrativa, atos e poderes','Agentes públicos, responsabilidade e licitações'],
+    'Direito Constitucional':['Direitos fundamentais e organização do Estado','Administração pública e segurança pública'],
+    'Direito Penal':['Princípios, aplicação da lei e teoria do delito','Crimes em espécie e legislação penal especial'],
+    'Direito Processual Penal':['Inquérito policial, ação penal e competência','Provas, prisões, medidas cautelares e procedimentos'],
+    'Legislação Especial':['Leis penais e normas indicadas no Anexo I do edital PF 2025'],
+    'Direitos Humanos':['Sistemas de proteção e tratados aplicáveis','Direitos humanos na atividade policial']
+  }),
+  modelo('IBGE — Agente de Pesquisas e Mapeamento 2025', '2025', 'Processo seletivo federal', 'https://ftp.ibge.gov.br/edital/PSS_Censo_2022/PSS_Complementar_Censo_2022/01_2025/Edital%2001-2025-Retificado-em-07-02-2025.pdf', 'Programa do edital oficial retificado de 2025 para Agente de Pesquisas e Mapeamento. O IBGE possui seleções diferentes por função; este roteiro é especificamente para APM.', {
+    'Língua Portuguesa':['Interpretação e compreensão','Gêneros, coesão, coerência e organização textual','Norma culta, sintaxe, pontuação e reescrita'],
+    'Geografia':['Cartografia, orientação e representação espacial','Território brasileiro, população e regionalização','Espaço urbano e rural, economia e meio ambiente'],
+    'Raciocínio Lógico-Matemático':['Números, operações e proporções','Porcentagem e resolução de problemas','Leitura de tabelas, gráficos e dados'],
+    'Informática':['Noções de sistemas e ferramentas digitais','Internet, segurança e uso de aplicativos'],
+    'Ética no Serviço Público':['Ética, deveres e conduta no serviço público','Código de Ética do IBGE']
+  }),
+  modelo('Banco do Brasil — Agente Comercial 2022', '2022', 'Concurso público — instituição financeira', 'https://www.bb.com.br/docs/portal/dipes/EditalSelExtern2022001.pdf', 'Seleção Externa 2022/001, edital oficial do Banco do Brasil. É uma referência histórica; o próprio BB informa que esse foi seu último concurso externo divulgado. Conteúdo do Agente Comercial, não do Agente de Tecnologia.', {
+    'Língua Portuguesa':['Compreensão, interpretação e tipologia textual','Ortografia, gramática, pontuação e reescrita'],
+    'Língua Inglesa':['Vocabulário fundamental e gramática para compreensão de textos'],
+    'Matemática':['Números, proporção, porcentagem e medidas','Funções, equações e matemática financeira','Contagem, probabilidade e estatística básica'],
+    'Atualidades do Mercado Financeiro':['Sistema financeiro, bancos e meios de pagamento','Transformação digital, fintechs e open finance'],
+    'Conhecimentos Bancários':['Sistema Financeiro Nacional e produtos bancários','Mercado de crédito, câmbio, capitais e seguros'],
+    'Informática':['Segurança digital, internet e ferramentas de escritório'],
+    'Vendas e Negociação':['Atendimento, relacionamento e experiência do cliente','Técnicas de vendas, negociação e ética comercial']
+  }),
+  modelo('ESA — CFGS Área Geral (matrícula 2026)', '2026', 'Concurso militar — Exército', 'https://concursocfgs.esa.eb.mil.br/', 'Referência para o concurso de admissão aos Cursos de Formação e Graduação de Sargentos, Área Geral, regido pelo edital de 2025 para matrícula em 2026. O edital anual pode alterar matérias e pesos; consulte a página oficial da ESA.', {
+    'Língua Portuguesa':['Interpretação de textos e gêneros','Gramática, sintaxe, pontuação e literatura'],
+    'Matemática':['Números, álgebra e funções','Geometria, trigonometria e medidas','Análise combinatória e probabilidade'],
+    'Língua Inglesa':['Interpretação de textos','Vocabulário e estruturas gramaticais'],
+    'História do Brasil':['Brasil Colônia, Império e República','Formação política e conflitos históricos'],
+    'Geografia do Brasil':['Território, população e regionalização','Economia, urbanização e meio ambiente'],
+    'Redação':['Compreensão do tema','Estrutura dissertativo-argumentativa e norma escrita']
+  }),
+  modelo('EsPCEx — Concurso de Admissão 2026/2027', '2026', 'Concurso militar — Exército', 'https://www.vunesp.com.br/EPCE2601', 'Concurso de Admissão à EsPCEx 2026/27, com documentos e prova publicados pela organizadora oficial VUNESP. Roteiro baseado nas matérias do exame intelectual; consulte o edital e suas retificações.', {
+    'Língua Portuguesa':['Interpretação e análise de textos','Gramática, sintaxe, literatura e redação'],
+    'Matemática':['Álgebra, funções e equações','Geometria, trigonometria e geometria analítica','Combinatória, probabilidade e estatística'],
+    'Física':['Mecânica, energia e gravitação','Termologia, ondas e óptica','Eletricidade e magnetismo'],
+    'Química':['Estrutura da matéria e tabela periódica','Ligações, reações, estequiometria e soluções','Química orgânica e equilíbrio'],
+    'História':['História geral e mundo contemporâneo','História do Brasil e formação nacional'],
+    'Geografia':['Geografia física, cartografia e ambiente','Geografia humana, econômica e do Brasil'],
+    'Língua Inglesa':['Interpretação de textos','Vocabulário e estruturas em contexto'],
+    'Redação':['Planejamento e desenvolvimento do texto','Argumentação, coesão e norma escrita']
+  }),
+  modelo('PMESP/APMBB — Cadete PM 2026', '2026', 'Concurso militar estadual — São Paulo', 'https://concursos.policiamilitar.sp.gov.br/concursos/edital-dp-2-321-26-concurso-para-cadete-pm/', 'Edital oficial DP-2/321/26 para Cadete PM, curso realizado na Academia de Polícia Militar do Barro Branco. O programa inclui componentes do ensino médio e conhecimentos específicos de administração pública e informática; confirme o edital completo.', {
+    'História':['Antiguidade, mundo medieval e moderno','Mundo contemporâneo e história do Brasil'],
+    'Sociologia':['Cultura, diversidade e desigualdades','Trabalho, violência, cidadania e organização política'],
+    'Geografia':['Sociedade, natureza e recursos naturais','Economia mundial, população e espaço brasileiro'],
+    'Língua Portuguesa':['Norma ortográfica e morfossintaxe','Interpretação, coesão, pontuação e significação','Literatura brasileira e portuguesa'],
+    'Língua Inglesa e Língua Espanhola':['Compreensão global e específica de textos','Vocabulário e elementos linguísticos em contexto'],
+    'Matemática':['Conjuntos, números e sequências','Polinômios, equações e funções','Estatística, combinatória e probabilidade','Matrizes, sistemas, geometria e trigonometria'],
+    'Física':['Movimentos, leis de Newton e energia','Termologia e eletricidade'],
+    'Química':['Matéria, átomos e tabela periódica','Ligações, funções inorgânicas e reações'],
+    'Biologia':['Classificação e diversidade dos seres vivos','Plantas, animais e fundamentos de biologia'],
+    'Noções de Administração Pública':['Constituição Federal e Constituição do Estado de São Paulo','Administração pública, servidores e segurança pública','Acesso à informação'],
+    'Noções Básicas de Informática':['Windows e aplicativos de escritório','Word, Excel, arquivos e ferramentas digitais']
   })
 ]
 

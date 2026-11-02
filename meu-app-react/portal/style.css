@@ -103,13 +103,6 @@ h3 { font-size: 20px; }
 .plan-task-row>input[type="checkbox"] { width: 18px; height: 18px; flex: 0 0 auto; accent-color: var(--success); }
 .plan-task-date-title { grid-column: 1 / -1; margin: 8px 0 -2px; color: var(--accent-hover); font: 600 13px var(--font-display); }
 .plan-task-list:has(.empty-state) { display: block; }
-.edital-student-panel { padding-top: 4px; }
-.edital-study-signal { display: block; margin-top: 6px; color: var(--muted); font-size: 11px; line-height: 1.5; }
-.edital-incidencia { display: inline-flex; width: fit-content; padding: 3px 8px; border: 1px solid var(--border); border-radius: 99px; color: var(--muted); font-size: 10px; }
-.edital-incidencia[data-level="alta"] { color: #ffb5aa; border-color: #c46a5e59; background: #c46a5e14; }
-.edital-incidencia[data-level="media"] { color: #e3c98d; border-color: #e3c98d44; background: #e3c98d10; }
-.edital-incidencia[data-level="baixa"] { color: #bcd795; border-color: #8ea36359; background: #8ea36314; }
-.edital-praticar { min-height: 38px !important; padding: 7px 10px !important; font-size: 11px !important; }
 .download-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .download-card { display: grid; grid-template-columns: 48px minmax(0, 1fr); align-items: center; gap: 14px; padding: 18px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); }
 .download-icon { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 10px; background: var(--accent-subtle); color: var(--accent-hover); font: 700 12px var(--font-display); }

@@ -1,6 +1,4 @@
 import { createClient } from '@supabase/supabase-js'
-import { createElement } from 'react'
-import { createRoot } from 'react-dom/client'
 import { formatarDuracao, resumirProgresso } from './progresso.js'
 import './style.css'
 
@@ -20,8 +18,6 @@ let sessionRequests = new AbortController()
 let rankingRequest = 0
 let profileDirty = false
 let resendAvailableAt = 0
-let editalRoot = null
-let editalModulePromise = null
 
 function authErrorMessage(error) {
   if (error?.code === 'email_not_confirmed' || /email not confirmed/i.test(error?.message || '')) {
@@ -137,7 +133,7 @@ async function api(path, options = {}, independentOfSession = false) {
 
 function selecionarAbaAluno(aba, atualizarUrl = true) {
   const aliasesCaderno = ['errors', 'flashcards']
-  const permitidas = ['performance', 'evolution', 'notebook', 'edital', 'downloads', ...(state.isAdmin ? ['receipts'] : [])]
+  const permitidas = ['performance', 'evolution', 'notebook', 'downloads', ...(state.isAdmin ? ['receipts'] : [])]
   if (aliasesCaderno.includes(aba)) aba = 'notebook'
   if (aba === 'hours') aba = 'performance'
   const ativa = permitidas.includes(aba) ? aba : 'performance'
@@ -152,15 +148,14 @@ function selecionarAbaAluno(aba, atualizarUrl = true) {
     const selecionado = panel.id === `panel-${ativa}` || (ativa === 'receipts' && panel.id === 'admin-card')
     panel.hidden = !selecionado
   }
-  if(ativa==='edital')mountEditalPlanner()
   if (atualizarUrl) {
-    const fragmento = { performance: '#desempenho', evolution: '#evolucao', notebook: '#caderno', edital: '#editais', downloads: '#downloads', receipts: '#recebimentos' }[ativa]
+    const fragmento = { performance: '#desempenho', evolution: '#evolucao', notebook: '#caderno', downloads: '#downloads', receipts: '#recebimentos' }[ativa]
     history.replaceState(null, '', `${location.pathname}${location.search}${fragmento}`)
   }
 }
 
 function abaInicialDoEndereco() {
-  return ({ '#desempenho': 'performance', '#horas': 'performance', '#evolucao': 'evolution', '#erros': 'notebook', '#flashcards': 'notebook', '#caderno': 'notebook', '#editais': 'edital', '#downloads': 'downloads', '#recebimentos': 'receipts' })[location.hash] || 'performance'
+  return ({ '#desempenho': 'performance', '#horas': 'performance', '#evolucao': 'evolution', '#erros': 'notebook', '#flashcards': 'notebook', '#caderno': 'notebook', '#downloads': 'downloads', '#recebimentos': 'receipts' })[location.hash] || 'performance'
 }
 
 async function loadLeaderboard(userId = state.session?.user?.id) {
@@ -306,7 +301,6 @@ async function loadStudentProgress({ quiet = false } = {}) {
     renderSavedNotebooks()
     renderReviewMaterials()
     renderStudyPlan()
-    if(editalRoot)mountEditalPlanner()
     renderEvolution()
   } catch {
     if (state.session?.user?.id !== userId) return
@@ -529,15 +523,6 @@ async function updatePersonalData(transform) {
     state.personalData=next;renderSavedNotebooks();return next
   }
   throw new Error('Os cadernos mudaram em outro dispositivo. Tente novamente.')
-}
-
-function mountEditalPlanner() {
-  if(!state.session?.user?.id)return
-  const host=$('#edital-root');if(!editalRoot)editalRoot=createRoot(host)
-  const userId=state.session.user.id
-  const praticar=(materia,conteudo)=>{const url=new URL('/estudar.html',softwareOrigin);url.searchParams.set('aba','questoes');url.searchParams.set('materia',materia);if(conteudo)url.searchParams.set('conteudo',conteudo);location.assign(url.href)}
-  editalModulePromise ||= import('../src/components/EditalPlanejador.jsx').then(module=>module.default)
-  void editalModulePromise.then(Component=>{if(state.session?.user?.id===userId)editalRoot.render(createElement(Component,{userId,historicoRespostas:state.progressData.historico_respostas,onPraticar:praticar,mostrarCatalogoOficial:false}))}).catch(()=>{if(state.session?.user?.id===userId)host.textContent='Não foi possível carregar o planejador de editais. Recarregue a página para tentar novamente.'})
 }
 
 async function updateProgressArray(field,transform) {
