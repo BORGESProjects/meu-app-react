@@ -1244,14 +1244,17 @@ export default function App() {
         <div aria-label="Navegação principal" className="mobile-nav flex w-full min-w-0 items-center gap-1.5 overflow-x-auto pb-1 xl:w-auto xl:pb-0">
           {[
             { id: 'questoes', label: 'Questões' },
+            { id: 'cadernos', label: 'Meus cadernos' },
             { id: 'simulados', label: 'Simulados' },
             { id: 'desempenho', label: 'Desempenho' },
-            { id: 'area-aluno', label: 'Área do aluno', href: 'https://ap-aprovado.pages.dev/aluno#caderno' },
-            ...(isAdmin ? [{ id: 'cadastrar', label: 'Cadastrar' }, { id: 'importar', label: 'Importar PDF' }, { id: 'r2-upload', label: 'Migrar acervo R2' }, { id: 'recebimentos', label: 'Recebimentos' }] : []),
+            ...(isAdmin ? [{ id: 'cadastrar', label: 'Cadastrar' }, { id: 'importar', label: 'Importar PDF' }, { id: 'r2-upload', label: 'Migrar acervo R2' }] : []),
+            { id: 'edital', label: 'Edital' },
             { id: 'redacao', label: 'Redação' },
+            { id: 'revisao', label: 'Revisão' },
+            { id: 'tarefas', label: 'Tarefas' },
             { id: 'conta', label: 'Minha conta' }
           ].map(tab => (
-            tab.href ? <a key={tab.id} href={tab.href} className="nav-link shrink-0 whitespace-nowrap rounded-2xl px-3 py-2 text-xs font-medium text-slate-400 transition-all duration-200 hover:bg-slate-900/80 hover:text-slate-200 md:text-sm">{tab.label}</a> : <button
+            <button
               key={tab.id}
               aria-current={abaAtiva === tab.id ? "page" : undefined}
               onClick={() => setAbaAtiva(tab.id)}
