@@ -1834,7 +1834,7 @@ export default function App() {
         {/* ABA: EDITAL VERTICALIZADO */}
         {abaAtiva === 'edital' && (
           <Suspense fallback={<p role="status">Carregando seu planejador de editais…</p>}>
-            <EditalPlanejador key={session.user.id} userId={session.user.id} />
+            <EditalPlanejador key={session.user.id} userId={session.user.id} mostrarCatalogoOficial />
           </Suspense>
         )}
 
