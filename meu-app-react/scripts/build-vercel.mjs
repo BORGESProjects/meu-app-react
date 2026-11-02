@@ -1,3 +1,4 @@
+import { copyFile } from 'node:fs/promises'
 import { spawn } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 
@@ -22,5 +23,10 @@ const result = await new Promise((resolve, reject) => {
 if (result.code !== 0 && !buildReportedSuccess) process.exit(result.code ?? 1)
 if (!buildReportedSuccess) throw new Error('A compilação do Vite terminou sem confirmar a geração dos arquivos.')
 
-// Keep the commercial landing page at the domain root. The question-bank app
-// remains available at /estudar.html as the web prototype for the future native apps.
+// Vercel is the question-bank app and future native-app prototype. The
+// commercial landing page and student portal are published separately on Pages.
+await copyFile(
+  new URL('../dist/estudar.html', import.meta.url),
+  new URL('../dist/index.html', import.meta.url),
+)
+console.log('A raiz da Vercel serve o app de estudos; a página comercial continua no projeto separado do Cloudflare Pages.')
