@@ -25,7 +25,6 @@ import { useFocoEstudo } from './useFocoEstudo'
 import TreinosFoco from './components/TreinosFoco'
 import TempoSimulado from './components/TempoSimulado'
 import RevisaoSimulado from './components/RevisaoSimulado'
-import CadernosPessoais from './components/CadernosPessoais'
 import { useEstudoPessoal } from './useEstudoPessoal'
 import { analisarDesempenho } from './analiseDesempenho'
 import {opcoesFacetasAcervo} from './facetasAcervo'
@@ -57,7 +56,6 @@ function diaParaDataSemana(dia, inicio) {
   return DIAS_SEMANA.includes(dia) ? dataDiaDaSemana(inicio, dia) : ''
 }
 const Redacao = lazy(() => import('./components/Redacao'))
-const CentralRevisao = lazy(() => import('./components/CentralRevisao'))
 const ImportarPdf = lazy(() => import('./components/ImportarPdf'))
 const AcervoR2Uploader = lazy(() => import('./components/AcervoR2Uploader'))
 const EditalPlanejador = lazy(() => import('./components/EditalPlanejador'))
@@ -1028,10 +1026,9 @@ export default function App() {
     })
   }
 
-  function abrirDialogoPessoal(tipo, questoesParaSalvar = []) {
-    const sufixo = tipo === 'filtro' ? 'Busca salva' : 'Meu caderno'
-    setNomeRascunhoPessoal(`${sufixo} ${new Date().toLocaleDateString('pt-BR')}`)
-    setDialogoPessoal({ tipo, questoes: [...new Set(questoesParaSalvar.map(String))] })
+  function abrirDialogoPessoal() {
+    setNomeRascunhoPessoal(`Busca salva ${new Date().toLocaleDateString('pt-BR')}`)
+    setDialogoPessoal({ tipo: 'filtro' })
   }
 
   function confirmarDialogoPessoal(evento) {
@@ -1047,10 +1044,6 @@ export default function App() {
         foco: focoEstudo, criadoEm: new Date().toISOString(),
       }
       estudoPessoal.atualizar(dados => ({ ...dados, filtros: [novoFiltro, ...dados.filtros] }))
-    } else {
-      const novoCaderno = { id: crypto.randomUUID(), nome, pasta: '', questoes: dialogoPessoal.questoes, criadoEm: new Date().toISOString() }
-      estudoPessoal.atualizar(dados => ({ ...dados, cadernos: [novoCaderno, ...dados.cadernos] }))
-      setCadernoDestinoId(novoCaderno.id)
     }
     setDialogoPessoal(null)
     setNomeRascunhoPessoal('')
@@ -1104,20 +1097,6 @@ export default function App() {
       ...dados,
       questoes: { ...dados.questoes, [id]: { ...dados.questoes[id], nota } },
     }))
-  }
-
-  function estudarCaderno(cadernoId) {
-    setFiltrosAno([]); setFiltrosMateria([]); setFiltrosConteudo([])
-    setFiltrosBanca([]); setFiltrosDificuldade([]); setTermoBusca('')
-    setFiltroSituacaoQuestao('todas'); setCadernoAtivoId(cadernoId); setLimiteVisivel(40)
-    setSomenteComentadas(false); setSomenteComImagem(false); setExcluirQuestaoEmCadernos(false)
-    setAbaAtiva('questoes')
-  }
-
-  function excluirCaderno(cadernoId) {
-    estudoPessoal.atualizar(dados => ({ ...dados, cadernos: dados.cadernos.filter(caderno => caderno.id !== cadernoId) }))
-    if (cadernoAtivoId === cadernoId) setCadernoAtivoId(null)
-    if (cadernoDestinoId === cadernoId) setCadernoDestinoId('')
   }
 
   function salvarConfiguracaoSimulado(configuracao) {
@@ -1240,17 +1219,15 @@ export default function App() {
           <img src="/ap-monograma.png" alt="" className="app-brand-mark" />
           <span className="text-slate-100">Aprovado<small>SEU ESPAÇO DE ESTUDO</small></span>
         </div>
-        {!aplicativoNativo && <a href="/" className="self-start rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:bg-slate-800 xl:self-auto">Página pública</a>}
+        {!aplicativoNativo && <a href="https://ap-aprovado.pages.dev/" className="self-start rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:bg-slate-800 xl:self-auto">Página comercial</a>}
         <div aria-label="Navegação principal" className="mobile-nav flex w-full min-w-0 items-center gap-1.5 overflow-x-auto pb-1 xl:w-auto xl:pb-0">
           {[
             { id: 'questoes', label: 'Questões' },
-            { id: 'cadernos', label: 'Meus cadernos' },
             { id: 'simulados', label: 'Simulados' },
             { id: 'desempenho', label: 'Desempenho' },
             ...(isAdmin ? [{ id: 'cadastrar', label: 'Cadastrar' }, { id: 'importar', label: 'Importar PDF' }, { id: 'r2-upload', label: 'Migrar acervo R2' }] : []),
             { id: 'edital', label: 'Edital' },
             { id: 'redacao', label: 'Redação' },
-            { id: 'revisao', label: 'Revisão' },
             { id: 'tarefas', label: 'Tarefas' },
             { id: 'conta', label: 'Minha conta' }
           ].map(tab => (
@@ -1285,25 +1262,6 @@ export default function App() {
           }}
         />}
         {abaAtiva === 'recebimentos' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-lime-300">Carregando painel de recebimentos…</p>}><RecebimentosAdmin session={session}/></Suspense>}
-        {abaAtiva === 'cadernos' && <CadernosPessoais
-          cadernos={cadernos} questoes={questoes} anotacoes={marcacoesPessoais}
-          sincronizacao={estudoPessoal.sincronizacao} erroSincronizacao={estudoPessoal.erro}
-          onSincronizar={() => estudoPessoal.sincronizarAgora(true)}
-          onNovo={() => abrirDialogoPessoal('caderno')}
-          onEstudar={estudarCaderno}
-          onExcluir={excluirCaderno}
-          onRenomear={(cadernoId, nome) => {
-            const valor = nome.trim()
-            if (valor) estudoPessoal.atualizar(dados => ({ ...dados, cadernos: dados.cadernos.map(item => item.id === cadernoId ? { ...item, nome: valor } : item) }))
-          }}
-          onMover={(cadernoId, pasta) => estudoPessoal.atualizar(dados => ({ ...dados, cadernos: dados.cadernos.map(item => item.id === cadernoId ? { ...item, pasta: pasta.trim() } : item) }))}
-          onRemoverQuestao={(cadernoId, questaoId) => estudoPessoal.atualizar(dados => ({
-            ...dados,
-            cadernos: dados.cadernos.map(caderno => caderno.id === cadernoId
-              ? { ...caderno, questoes: caderno.questoes.filter(id => id !== String(questaoId)) }
-              : caderno),
-          }))}
-        />}
         {abaAtiva === 'importar' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Carregando importador…</p>}><ImportarPdf onPublicado={buscarQuestoes} /></Suspense>}
         {abaAtiva === 'r2-upload' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Preparando envio do acervo…</p>}><AcervoR2Uploader isAdmin={isAdmin} /></Suspense>}
         {/* ABA: BANCO DE QUESTÕES */}
@@ -1371,8 +1329,8 @@ export default function App() {
                 </div>
               </fieldset>
               <div className="flex flex-col justify-end gap-2">
-                <button type="button" onClick={() => abrirDialogoPessoal('filtro')} className="w-full rounded-xl border border-indigo-400/30 bg-indigo-500/10 px-3 py-3 text-xs font-bold text-indigo-200 hover:bg-indigo-500/20">Salvar esta busca</button>
-                <button type="button" disabled={!questoesFiltradas.length} onClick={() => abrirDialogoPessoal('caderno', questoesFiltradas.map(q => q.id))} className="w-full rounded-xl border border-slate-700 px-3 py-3 text-xs font-semibold text-slate-200 hover:border-indigo-400/50 disabled:opacity-40">Criar caderno com {questoesFiltradas.length} questões</button>
+                <button type="button" onClick={abrirDialogoPessoal} className="w-full rounded-xl border border-indigo-400/30 bg-indigo-500/10 px-3 py-3 text-xs font-bold text-indigo-200 hover:bg-indigo-500/20">Salvar esta busca</button>
+                <a href="https://ap-aprovado.pages.dev/aluno#caderno" target="_blank" rel="noreferrer" className="w-full rounded-xl border border-slate-700 px-3 py-3 text-center text-xs font-semibold text-slate-200 hover:border-indigo-400/50">Organizar cadernos na Área do estudante</a>
               </div>
               {cadernos.length > 0 && <label className="sm:col-span-2 lg:col-span-3 text-xs font-semibold uppercase tracking-wider text-slate-400">Adicionar questões ao caderno
                 <div className="mt-2 flex flex-col gap-2 sm:flex-row">
@@ -1881,10 +1839,6 @@ export default function App() {
         )}
 
         {abaAtiva === 'redacao' && <Suspense fallback={<p role="status">Carregando a oficina de redação…</p>}><Redacao key={session.user.id} session={session} foco={focoEstudo} onSalvarHistorico={item => estudoPessoal.atualizar(dados => ({ ...dados, redacoes: [item, ...(dados.redacoes || []).filter(redacao => redacao.id !== item.id)] }))}/></Suspense>}
-        {abaAtiva === 'revisao' && <Suspense fallback={<p role="status">Carregando seus mapas e resumos…</p>}><CentralRevisao key={session.user.id} registros={tarefasDaConta.filter(item => item.id !== CONFIG_CRONOGRAMA_ID)} setRegistros={setTarefas} materias={materiasCronograma} indice={indiceFiltros} onPraticar={material => {
-          limparFiltros(); setFiltrosMateria([material.materia]); setFiltrosConteudo(material.conteudo ? [material.conteudo] : []); setLimiteVisivel(40); setAbaAtiva('questoes')
-        }}/></Suspense>}
-
         {/* ABA: TAREFAS */}
         {abaAtiva === 'tarefas' && (
           <div className="space-y-6">
@@ -1992,18 +1946,17 @@ export default function App() {
             <div className="mb-5 flex items-start justify-between gap-4">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[.16em] text-indigo-300">Organização de estudos</p>
-                <h2 id="titulo-dialogo-pessoal" className="mt-1 text-xl font-extrabold text-slate-100">{dialogoPessoal.tipo === 'filtro' ? 'Salvar busca' : 'Criar caderno'}</h2>
+                <h2 id="titulo-dialogo-pessoal" className="mt-1 text-xl font-extrabold text-slate-100">Salvar busca</h2>
               </div>
               <button type="button" aria-label="Fechar" onClick={() => setDialogoPessoal(null)} className="rounded-lg px-2 py-1 text-xl text-slate-400 hover:bg-slate-800 hover:text-white">×</button>
             </div>
-            {dialogoPessoal.tipo === 'caderno' && <p className="mb-4 text-sm leading-6 text-slate-400">{dialogoPessoal.questoes.length ? `${dialogoPessoal.questoes.length.toLocaleString('pt-BR')} questão(ões) da busca serão adicionadas.` : 'O caderno será criado vazio; você poderá adicionar questões enquanto estuda.'}</p>}
-            {dialogoPessoal.tipo === 'filtro' && <p className="mb-4 text-sm leading-6 text-slate-400">Salve a combinação de filtros, busca por texto e situação para reaplicá-la depois.</p>}
+            <p className="mb-4 text-sm leading-6 text-slate-400">Salve a combinação de filtros, busca por texto e situação para reaplicá-la depois.</p>
             <form onSubmit={confirmarDialogoPessoal}>
               <label htmlFor="nome-estudo-pessoal" className="text-xs font-semibold uppercase tracking-wider text-slate-400">Nome</label>
               <input autoFocus id="nome-estudo-pessoal" maxLength={80} required value={nomeRascunhoPessoal} onChange={evento => setNomeRascunhoPessoal(evento.target.value)} className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-4 py-3 text-sm text-slate-100 focus:border-indigo-500" />
               <div className="mt-5 flex flex-col-reverse justify-end gap-2 sm:flex-row">
                 <button type="button" onClick={() => setDialogoPessoal(null)} className="rounded-xl border border-slate-700 px-4 py-3 text-sm font-semibold text-slate-300 hover:bg-slate-800">Cancelar</button>
-                <button type="submit" disabled={!nomeRascunhoPessoal.trim()} className="rounded-xl bg-indigo-500 px-4 py-3 text-sm font-bold text-white hover:bg-indigo-400 disabled:opacity-50">{dialogoPessoal.tipo === 'filtro' ? 'Salvar busca' : 'Criar caderno'}</button>
+                <button type="submit" disabled={!nomeRascunhoPessoal.trim()} className="rounded-xl bg-indigo-500 px-4 py-3 text-sm font-bold text-white hover:bg-indigo-400 disabled:opacity-50">Salvar busca</button>
               </div>
             </form>
           </section>

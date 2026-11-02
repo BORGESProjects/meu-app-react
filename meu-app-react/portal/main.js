@@ -15,7 +15,7 @@ const isEmailCallback = callbackParams.has('access_token') && ['signup', 'email'
 const supabase = configOk ? createClient(supabaseUrl, supabaseKey) : null
 const confirmationRedirect = `${location.origin}/aluno`
 const $ = selector => document.querySelector(selector)
-const state = { mode: new URLSearchParams(location.search).get('cadastro') === '1' ? 'signup' : 'login', session: null, rankingOrder: 'questoes', isAdmin: false, progressData: {horas_estudo:[],historico_respostas:[],tarefas:[]}, evolutionData:{simulados:[],redacoes:[]}, personalData:{cadernos:[]}, rangeDays: 7, calendarMonth: new Date(new Date().getFullYear(),new Date().getMonth(),1), weekOffset:0, timer: null, reviewId: null, editingCardId: null }
+const state = { mode: new URLSearchParams(location.search).get('cadastro') === '1' ? 'signup' : 'login', session: null, rankingOrder: 'questoes', isAdmin: false, progressData: {horas_estudo:[],historico_respostas:[],tarefas:[]}, evolutionData:{simulados:[],redacoes:[]}, personalData:{cadernos:[]}, rangeDays: 7, calendarMonth: new Date(new Date().getFullYear(),new Date().getMonth(),1), weekOffset:0, timer: null, reviewId: null, editingCardId: null, selectedMaterialId: null, editingMaterialId: null, materialMode: 'integrado', materialMemoryHidden: false }
 let sessionRequests = new AbortController()
 let rankingRequest = 0
 let profileDirty = false
@@ -295,6 +295,7 @@ async function loadStudentProgress({ quiet = false } = {}) {
     renderStudyCalendar()
     renderErrorNotebook()
     renderFlashcardHub()
+    renderReviewMaterials()
     try {
       const {data:estudos,error:erroEstudos}=await supabase.from('estudo_pessoal_usuario').select('dados').eq('user_id',userId).abortSignal(AbortSignal.timeout(20000)).maybeSingle()
       if(erroEstudos)throw erroEstudos
@@ -303,6 +304,7 @@ async function loadStudentProgress({ quiet = false } = {}) {
       state.evolutionData={simulados:Array.isArray(estudos?.dados?.simulados)?estudos.dados.simulados:[],redacoes:Array.isArray(estudos?.dados?.redacoes)?estudos.dados.redacoes:[]}
     } catch { state.evolutionData={simulados:[],redacoes:[]};state.personalData={cadernos:[]} }
     renderSavedNotebooks()
+    renderReviewMaterials()
     renderStudyPlan()
     if(editalRoot)mountEditalPlanner()
     renderEvolution()
@@ -424,6 +426,79 @@ function renderSavedNotebooks() {
   }
 }
 
+const reviewMaterialType = 'material_revisao'
+const reviewMaterials = () => state.progressData.tarefas.filter(item => item?.tipo === reviewMaterialType)
+const isMaterialDue = material => !material.proximaRevisao || !Number.isFinite(Date.parse(material.proximaRevisao)) || Date.parse(material.proximaRevisao) <= Date.now()
+
+function parseMaterialOutline(text='') {
+  const roots=[],stack=[],lines=String(text).split('\n').filter(line=>line.trim())
+  if(lines.length>100)throw new Error('O mapa pode ter até 100 tópicos.')
+  for(const [index,line] of lines.entries()){
+    const spaces=line.match(/^\s*/)[0].replace(/\t/g,'  ').length,level=Math.floor(spaces/2)
+    if(level>4)throw new Error('O mapa pode ter até cinco níveis de tópicos.')
+    const node={id:String(index),title:line.trim().replace(/^(?:[-*•]|\d+[.)])\s+/,''),children:[]}
+    while(stack.length&&stack.at(-1).level>=level)stack.pop()
+    if(stack.length)stack.at(-1).node.children.push(node);else roots.push(node)
+    stack.push({level,node})
+  }
+  return roots
+}
+
+function drawMaterialMap(host,material) {
+  host.replaceChildren()
+  let roots
+  try{roots=parseMaterialOutline(material.roteiro||'')}catch(error){const warning=document.createElement('p');warning.className='fine-print';warning.textContent=error.message;host.append(warning);return}
+  if(!roots.length){const empty=document.createElement('p');empty.className='muted';empty.textContent='Ainda não há tópicos no mapa deste material.';host.append(empty);return}
+  const center=document.createElement('div');center.className='material-map-center';center.textContent=material.titulo||'Tema central'
+  const list=document.createElement('ul');list.className='material-map-roots'
+  const appendNode=(parent,node,level=0)=>{const item=document.createElement('li'),label=document.createElement('div');label.className=`material-map-node${level===0?' is-root':''}`;label.textContent=node.title;item.append(label);if(node.children.length){const children=document.createElement('ul');children.className='material-map-children';for(const child of node.children)appendNode(children,child,level+1);item.append(children)}parent.append(item)}
+  for(const root of roots)appendNode(list,root)
+  host.append(center,list)
+}
+
+function renderMaterialDetail() {
+  const section=$('#material-detail'),material=reviewMaterials().find(item=>String(item.id)===String(state.selectedMaterialId))
+  section.hidden=!material
+  if(!material)return
+  $('#material-detail-title').textContent=material.titulo||'Material de revisão'
+  $('#material-detail-meta').textContent=[material.materiaNome||material.materia,material.conteudoNome||material.conteudo,isMaterialDue(material)?'Revisão pendente':`Rever em ${dateLabel(localDateKey(material.proximaRevisao))}`].filter(Boolean).join(' · ')
+  const practice=new URL('/estudar.html',softwareOrigin);practice.searchParams.set('aba','questoes');if(material.materia)practice.searchParams.set('materia',material.materia);if(material.conteudo)practice.searchParams.set('conteudo',material.conteudo);$('#material-practice').href=practice.href
+  const content=$('#material-study-content');content.replaceChildren()
+  if(state.materialMemoryHidden){const recall=document.createElement('div');recall.className='material-recall';const title=document.createElement('strong');title.textContent='Sem consultar, tente explicar:';const questions=document.createElement('ul');for(const text of ['Quais são as ideias centrais deste conteúdo?','Como elas se relacionam?','Que exemplo ou erro de prova você consegue lembrar?']){const item=document.createElement('li');item.textContent=text;questions.append(item)}recall.append(title,questions);content.append(recall)}
+  else{
+    if(state.materialMode!=='mapa'){const summary=document.createElement('article');summary.className='material-summary';const title=document.createElement('h5');title.textContent='Resumo';const text=document.createElement('p');text.textContent=material.resumo||'Este material contém apenas mapa mental.';summary.append(title,text);content.append(summary)}
+    if(state.materialMode!=='resumo'){const map=document.createElement('article');map.className='material-map';const title=document.createElement('h5');title.textContent='Mapa mental';const body=document.createElement('div');drawMaterialMap(body,material);map.append(title,body);content.append(map)}
+  }
+  $('#material-memory').textContent=state.materialMemoryHidden?'Revelar material':'Testar minha memória';$('#material-memory').setAttribute('aria-pressed',String(state.materialMemoryHidden))
+  for(const button of document.querySelectorAll('[data-material-mode]')){const active=button.dataset.materialMode===state.materialMode;button.classList.toggle('is-active',active);button.setAttribute('aria-pressed',String(active))}
+}
+
+function renderReviewMaterials() {
+  const materials=reviewMaterials(),due=materials.filter(isMaterialDue),query=$('#material-search').value.trim().toLocaleLowerCase('pt-BR'),onlyDue=$('#material-due-only').checked
+  $('#material-count').textContent=materials.length.toLocaleString('pt-BR');$('#material-due-count').textContent=due.length.toLocaleString('pt-BR')
+  const visible=materials.filter(item=>(!onlyDue||isMaterialDue(item))&&`${item.titulo||''} ${item.materiaNome||item.materia||''} ${item.conteudoNome||item.conteudo||''} ${item.resumo||''}`.toLocaleLowerCase('pt-BR').includes(query)).sort((a,b)=>(isMaterialDue(a)?0:1)-(isMaterialDue(b)?0:1)||String(b.atualizadoEm||b.updated_at||'').localeCompare(String(a.atualizadoEm||a.updated_at||'')))
+  const host=$('#material-list');host.replaceChildren();$('#materials-empty').hidden=visible.length>0
+  for(const material of visible){const card=document.createElement('article');card.className=`material-row${String(material.id)===String(state.selectedMaterialId)?' is-selected':''}`;const choose=document.createElement('button');choose.type='button';choose.className='material-row-select';choose.dataset.action='select-material';choose.dataset.materialId=material.id;const title=document.createElement('strong');title.textContent=material.titulo||'Material de revisão';const meta=document.createElement('span');meta.textContent=[material.materiaNome||material.materia,material.conteudoNome||material.conteudo].filter(Boolean).join(' · ')||'Matéria não informada';const dueLabel=document.createElement('small');dueLabel.textContent=isMaterialDue(material)?'Pronto para revisar':`Rever em ${dateLabel(localDateKey(material.proximaRevisao))}`;choose.append(title,meta,dueLabel);const actions=document.createElement('div');actions.className='material-row-actions';for(const [action,label] of [['edit-material','Editar'],['delete-material','Excluir']]){const button=document.createElement('button');button.type='button';button.className='sort-button';button.dataset.action=action;button.dataset.materialId=material.id;button.textContent=label;actions.append(button)}card.append(choose,actions);host.append(card)}
+  renderMaterialDetail()
+}
+
+function startMaterialEditor(material=null) {
+  state.editingMaterialId=material?.id||null
+  $('#material-editor-title').textContent=material?'Editar material':'Novo resumo e mapa mental'
+  $('#material-title').value=material?.titulo||'';$('#material-subject').value=material?.materiaNome||material?.materia||'';$('#material-topic').value=material?.conteudoNome||material?.conteudo||'';$('#material-summary').value=material?.resumo||'';$('#material-outline').value=material?.roteiro||'';$('#material-form-status').textContent=''
+  drawMaterialMap($('#material-map-preview'),{titulo:material?.titulo||'',roteiro:material?.roteiro||''})
+  $('#material-detail').hidden=true;$('#material-editor').hidden=false;$('#material-editor').scrollIntoView({behavior:'smooth',block:'start'});$('#material-title').focus()
+}
+
+function outlineFromSummary(summary) {
+  return String(summary).split(/\n\s*\n/).map(part=>part.trim()).filter(Boolean).map(part=>{const lines=part.split('\n').map(line=>line.trim()).filter(Boolean);if(lines.length>1)return [lines[0],...lines.slice(1).map(line=>'  '+line)].join('\n');const sentences=part.split(/(?<=[.!?])\s+(?=[A-ZÀ-Ý])/u);return [sentences[0],...sentences.slice(1).map(sentence=>'  '+sentence)].join('\n')}).join('\n')
+}
+
+function exportReviewMaterial(material) {
+  const text=`${material.titulo}\n${material.materiaNome||material.materia}${material.conteudoNome?` · ${material.conteudoNome}`:''}\n\nRESUMO\n${material.resumo||''}\n\nMAPA · tópicos e subtópicos\n${material.roteiro||''}\n`
+  const url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'})),link=document.createElement('a');link.href=url;link.download='revisao.txt';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000)
+}
+
 function mondayOfWeek(offset=0) {
   const date=new Date();date.setHours(12,0,0,0);date.setDate(date.getDate()-((date.getDay()+6)%7)+offset*7);return date
 }
@@ -474,7 +549,7 @@ async function updateProgressArray(field,transform) {
     let result
     if(current){result=await supabase.from('progresso_usuario').update({[field]:next,updated_at}).eq('user_id',userId).eq('updated_at',current.updated_at).select('updated_at').maybeSingle();if(result.error)throw result.error;if(!result.data)continue}
     else {result=await supabase.from('progresso_usuario').insert({user_id:userId,horas_estudo:field==='horas_estudo'?next:[],historico_respostas:[],tarefas:field==='tarefas'?next:[],updated_at}).select('updated_at').maybeSingle();if(result.error?.code==='23505')continue;if(result.error)throw result.error}
-    state.progressData[field]=next;state.progressData.updated_at=result.data?.updated_at||updated_at;renderLearningInsights();renderStudyCalendar();renderErrorNotebook();renderFlashcardHub();renderStudyPlan();return
+    state.progressData[field]=next;state.progressData.updated_at=result.data?.updated_at||updated_at;renderLearningInsights();renderStudyCalendar();renderErrorNotebook();renderFlashcardHub();renderReviewMaterials();renderStudyPlan();return
   }
   throw new Error('Seu progresso mudou em outro dispositivo. Atualize e tente novamente.')
 }
@@ -766,6 +841,54 @@ $('#saved-notebooks-list').addEventListener('click',async event=>{
   }else if(button.dataset.action==='delete'&&window.confirm(`Excluir o caderno “${notebook.nome}”? As questões não serão apagadas do acervo.`)){
     button.disabled=true;try{await updatePersonalData(data=>({...data,cadernos:data.cadernos.filter(item=>String(item.id)!==String(id)),removidos:{...(data.removidos||{}),cadernos:[...new Set([...(data.removidos?.cadernos||[]),String(id)])]}}));$('#saved-notebooks-status').textContent='Caderno excluído. As questões do acervo foram preservadas.'}catch(error){$('#saved-notebooks-status').textContent=`Não foi possível excluir. ${error.message}`}finally{button.disabled=false}
   }
+})
+$('#new-material').addEventListener('click',()=>startMaterialEditor())
+$('#material-cancel').addEventListener('click',()=>{$('#material-editor').hidden=true;state.editingMaterialId=null;$('#material-form-status').textContent='';renderReviewMaterials()})
+$('#material-outline').addEventListener('input',()=>drawMaterialMap($('#material-map-preview'),{titulo:$('#material-title').value,roteiro:$('#material-outline').value}))
+$('#material-title').addEventListener('input',()=>drawMaterialMap($('#material-map-preview'),{titulo:$('#material-title').value,roteiro:$('#material-outline').value}))
+$('#material-generate-map').addEventListener('click',()=>{
+  const outline=outlineFromSummary($('#material-summary').value)
+  if(!outline){$('#material-form-status').textContent='Escreva um resumo antes de organizar o mapa.';return}
+  try{parseMaterialOutline(outline);$('#material-outline').value=outline;drawMaterialMap($('#material-map-preview'),{titulo:$('#material-title').value,roteiro:outline});$('#material-form-status').textContent='Mapa organizado a partir do seu texto. Confira os tópicos antes de salvar.'}
+  catch(error){$('#material-form-status').textContent=error.message}
+})
+$('#material-editor').addEventListener('submit',async event=>{
+  event.preventDefault()
+  const title=$('#material-title').value.trim(),subject=$('#material-subject').value.trim(),topic=$('#material-topic').value.trim(),summary=$('#material-summary').value.trim(),outline=$('#material-outline').value.trim()
+  if(!title||title.length>160||!subject||(!summary&&!outline)){ $('#material-form-status').textContent='Informe título, matéria e um resumo ou mapa.';return }
+  if(summary.length>12000||outline.length>16000){$('#material-form-status').textContent='O resumo aceita até 12.000 caracteres e o mapa até 16.000.';return}
+  try{parseMaterialOutline(outline)}catch(error){$('#material-form-status').textContent=error.message;return}
+  const previous=reviewMaterials().find(item=>String(item.id)===String(state.editingMaterialId)),now=new Date().toISOString(),previousSubject=previous?.materiaNome||previous?.materia,previousTopic=previous?.conteudoNome||previous?.conteudo,subjectValue=previous&&subject===previousSubject?previous.materia:subject,topicValue=previous&&topic===previousTopic?previous.conteudo:topic,material={...previous,id:previous?.id||`revisao:${crypto.randomUUID()}`,tipo:reviewMaterialType,titulo:title,materia:subjectValue,materiaNome:subject,conteudo:topicValue,conteudoNome:topic,resumo:summary,roteiro:outline,criado_em:previous?.criado_em||now,atualizadoEm:now,updated_at:now,proximaRevisao:previous?.proximaRevisao||now,revisoesFeitas:Number(previous?.revisoesFeitas)||0,revisoes:Array.isArray(previous?.revisoes)?previous.revisoes:[]}
+  const button=event.currentTarget.querySelector('button[type="submit"]');button.disabled=true;$('#material-form-status').textContent='Salvando material na sua conta…'
+  try{await updateProgressArray('tarefas',items=>[...items.filter(item=>String(item.id)!==String(material.id)),material]);state.selectedMaterialId=material.id;state.materialMemoryHidden=false;$('#material-editor').hidden=true;state.editingMaterialId=null;$('#material-status').textContent='Resumo e mapa sincronizados com sua conta.';renderReviewMaterials()}
+  catch(error){$('#material-form-status').textContent=`Não foi possível sincronizar o material. ${error.message}`}
+  finally{button.disabled=false}
+})
+$('#material-list').addEventListener('click',async event=>{
+  const button=event.target.closest('button[data-action]');if(!button)return
+  const material=reviewMaterials().find(item=>String(item.id)===String(button.dataset.materialId));if(!material)return
+  if(button.dataset.action==='select-material'){state.selectedMaterialId=material.id;state.materialMemoryHidden=false;$('#material-detail-status').textContent='';renderReviewMaterials();return}
+  if(button.dataset.action==='edit-material'){startMaterialEditor(material);return}
+  if(button.dataset.action==='delete-material'&&window.confirm(`Excluir o material “${material.titulo}” da sua conta?`)){
+    button.disabled=true;try{await updateProgressArray('tarefas',items=>items.filter(item=>String(item.id)!==String(material.id)));if(String(state.selectedMaterialId)===String(material.id))state.selectedMaterialId=null;$('#material-status').textContent='Material removido da sua conta.';renderReviewMaterials()}
+    catch(error){button.disabled=false;$('#material-status').textContent=`Não foi possível excluir o material. ${error.message}`}
+  }
+})
+$('#material-search').addEventListener('input',renderReviewMaterials)
+$('#material-due-only').addEventListener('change',renderReviewMaterials)
+$('#material-edit').addEventListener('click',()=>{const material=reviewMaterials().find(item=>String(item.id)===String(state.selectedMaterialId));if(material)startMaterialEditor(material)})
+$('#material-export').addEventListener('click',()=>{const material=reviewMaterials().find(item=>String(item.id)===String(state.selectedMaterialId));if(material)exportReviewMaterial(material)})
+$('#material-memory').addEventListener('click',()=>{state.materialMemoryHidden=!state.materialMemoryHidden;renderMaterialDetail()})
+$('#material-detail').addEventListener('click',async event=>{
+  const mode=event.target.closest('button[data-material-mode]');if(mode){state.materialMode=mode.dataset.materialMode;state.materialMemoryHidden=false;renderMaterialDetail();return}
+  const button=event.target.closest('button[data-material-days]');if(!button)return
+  const material=reviewMaterials().find(item=>String(item.id)===String(state.selectedMaterialId));if(!material)return
+  const days=Number(button.dataset.materialDays),now=new Date(),next=new Date(now);next.setDate(next.getDate()+days)
+  const updated={...material,revisoesFeitas:(Number(material.revisoesFeitas)||0)+1,ultimaRevisao:now.toISOString(),proximaRevisao:next.toISOString(),revisoes:[...(Array.isArray(material.revisoes)?material.revisoes:[]),{data:now.toISOString(),dias:days}].slice(-20),atualizadoEm:now.toISOString(),updated_at:now.toISOString()}
+  button.disabled=true;$('#material-detail-status').textContent='Salvando revisão…'
+  try{await updateProgressArray('tarefas',items=>[...items.filter(item=>String(item.id)!==String(updated.id)),updated]);state.materialMemoryHidden=false;$('#material-detail-status').textContent=`Revisão registrada. Próxima revisão em ${days} dia(s).`;renderReviewMaterials()}
+  catch(error){$('#material-detail-status').textContent=`Não foi possível registrar a revisão. ${error.message}`}
+  finally{button.disabled=false}
 })
 $('#plan-week-prev').addEventListener('click',()=>{state.weekOffset--;renderStudyPlan()})
 $('#plan-week-next').addEventListener('click',()=>{state.weekOffset++;renderStudyPlan()})
