@@ -103,7 +103,30 @@ export function normalizarMateria(valor, conteudo = '') {
     ['historia', 'História'], ['geografia', 'Geografia'], ['biologia', 'Biologia'],
     ['filosofia', 'Filosofia'], ['sociologia', 'Sociologia'], ['literatura', 'Literatura'],
   ])
-  return canonicas.get(chave) || original
+  const materiaDireta = canonicas.get(chave)
+  if (materiaDireta) return materiaDireta
+  const materiasConhecidas = [
+    'Administração', 'Administração Pública', 'Agronomia', 'Arquitetura', 'Arquivologia', 'Auditoria',
+    'Biblioteconomia', 'Ciências Humanas', 'Ciências Humanas e suas Tecnologias', 'Ciências da Natureza',
+    'Ciências da Natureza e suas Tecnologias', 'Conhecimentos Específicos', 'Conhecimentos Gerais',
+    'Contabilidade', 'Direito Administrativo', 'Direito Ambiental', 'Direito Civil', 'Direito Constitucional',
+    'Direito Econômico', 'Direito Eleitoral', 'Direito Empresarial', 'Direito Internacional', 'Direito Penal',
+    'Direito Previdenciário', 'Direito Processual', 'Direito Tributário', 'Direito do Consumidor',
+    'Direito do Trabalho', 'Economia', 'Educação', 'Educação Física', 'Enfermagem', 'Engenharia Ambiental',
+    'Engenharia Civil', 'Engenharia Elétrica', 'Engenharia Mecânica', 'Espanhol', 'Estatística', 'Farmácia',
+    'Filosofia', 'Fisioterapia', 'Formação Geral', 'Formação de Professores', 'Geografia', 'História',
+    'História e Geografia do Brasil', 'Informática', 'Legislação e normas', 'Linguagens e Códigos',
+    'Linguagens e suas Tecnologias', 'Logística', 'Medicina', 'Nutrição', 'Odontologia', 'Processo Civil',
+    'Processo Penal', 'Processo do Trabalho', 'Psicologia', 'Raciocínio Lógico', 'Saúde Coletiva',
+    'Segurança do Trabalho', 'Serviço Social', 'Literatura',
+  ]
+  const materiaConhecida = materiasConhecidas.find(nome => {
+    const nomeChave = chaveFiltro(nome)
+    return chave === nomeChave || chave.startsWith(`${nomeChave} —`) || chave.startsWith(`${nomeChave} -`)
+  })
+  if (materiaConhecida) return materiaConhecida
+  if (/^[a-z]$/.test(chave) || /^(?:n\/?a|nao informado|nao identificad[oa]|sem classificacao|sem materia|a definir|pendente|unknown|undefined|null|-)$/u.test(chave)) return 'Conhecimentos Gerais'
+  return original ? 'Outras disciplinas' : ''
 }
 
 export function chaveCampoFiltro(campo, valor) {
@@ -399,6 +422,22 @@ export function grupoConteudo(valor, materia = '', contexto = '') {
   const chave = chaveFiltro(original)
   if (!chave) return { value: '', label: '' }
   const chaveMateria = chaveFiltro(materia)
+  // Extrações antigas às vezes usam a letra da alternativa ou um marcador de
+  // campo vazio como se fosse o nome do assunto. Nunca exponha esses valores
+  // como filtros; tente primeiro recuperar o tópico pelo enunciado/contexto.
+  const classificacaoSemSinal = /^[a-z]$/.test(chave)
+    || /^(?:n\/?a|nao informado|nao identificad[oa]|sem classificacao|sem assunto|a definir|pendente|unknown|undefined|null|-)$/u.test(chave)
+  if (classificacaoSemSinal) {
+    const contextoChave = chaveFiltro(contexto)
+    if (/\bquimica\b/u.test(chaveMateria)) return grupoQuimica('', contexto)
+    const porMateria = grupoDaMateria(chaveMateria, '', contexto)
+    if (porMateria && !/^Fundamentos de /u.test(porMateria.label)) return porMateria
+    const grupoContextual = [...gruposConteudoPrioritarios, ...gruposConteudo].find(([, padrao]) => padrao.test(contextoChave))
+    if (grupoContextual) return { value: chaveFiltro(grupoContextual[0]), label: grupoContextual[0] }
+    const nomeMateria = limparValorFiltro(materia)
+    const label = nomeMateria ? `Conteúdos gerais de ${nomeMateria}` : 'Conteúdos gerais'
+    return { value: chaveFiltro(label), label }
+  }
   if (/\bquimica\b/.test(chaveMateria)) return grupoQuimica(original, contexto)
   if (/ingles|lingua inglesa|espanhol/.test(chaveMateria)) {
     const texto = `${chave} ${chaveFiltro(contexto)}`
@@ -420,12 +459,11 @@ export function grupoConteudo(valor, materia = '', contexto = '') {
     return { value: chaveFiltro(label), label }
   }
 
-  const base = original
-    .split(/\s+(?:[—–]|\/)\s+|\s+-\s+/)[0]
-    .replace(/\s+(?:I{1,3}|IV|V|VI{0,3})$/i, '')
-    .trim()
-  const rotulo = base || original || limparValorFiltro(materia) || 'Outros conteúdos'
-  return { value: chaveFiltro(rotulo), label: rotulo.charAt(0).toLocaleUpperCase('pt-BR') + rotulo.slice(1) }
+  const nomeMateria = limparValorFiltro(materia)
+  const rotulo = nomeMateria && nomeMateria !== 'Outras disciplinas'
+    ? `Conteúdos gerais de ${nomeMateria}`
+    : 'Outros conteúdos'
+  return { value: chaveFiltro(rotulo), label: rotulo }
 }
 
 export function chaveConteudoFiltro(valor, materia, contexto = '') {

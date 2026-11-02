@@ -74,7 +74,9 @@ function combinarOpcoesFiltro(opcoesBase, valoresExtra) {
     const quantidade = Math.max(0, Number(opcao.quantidade) || Number(contagemTexto) || 0)
     const existente = combinadas.get(value)
     if (existente) {
-      existente.quantidade += quantidade
+      // A faceta complementar cobre o acervo inteiro; o índice em memória é
+      // apenas uma parte dele. Somar os dois contava as mesmas questões duas vezes.
+      existente.quantidade = Math.max(existente.quantidade, quantidade)
       if (!existente.rotulo && rotulo) existente.rotulo = rotulo
     } else {
       combinadas.set(value, {value, rotulo, quantidade})
@@ -1185,7 +1187,7 @@ export default function App() {
 
   if (!session) return <div className="min-h-screen bg-slate-950 text-slate-100 px-3 py-8 sm:px-6 sm:py-12">
     <div className="mx-auto mb-8 flex max-w-md items-center justify-center gap-3 text-2xl font-extrabold">
-      <img src="/ap-monograma.png" alt="" className="h-12 w-12 rounded-xl object-cover shadow-lg shadow-black/30" />
+      <img src="/ap-monograma.png" alt="Logotipo AP Aprovado" className="app-brand-mark app-brand-mark-login" />
       <span>AP Aprovado</span>
     </div>
     {controleComercialAtivo && <a href="/" className="mx-auto mb-5 block w-fit text-sm font-semibold text-lime-200 hover:text-lime-100">Voltar à página pública</a>}
@@ -1196,7 +1198,7 @@ export default function App() {
 
   if (controleComercialAtivo && !session.offline && !isAdmin && acessoComercial.status !== 'ativo') return <div className="min-h-screen bg-slate-950 px-3 py-8 text-slate-100 sm:px-6 sm:py-12">
     <div className="mx-auto mb-8 flex max-w-md items-center justify-center gap-3 text-2xl font-extrabold">
-      <img src="/ap-monograma.png" alt="" className="h-12 w-12 rounded-xl object-cover shadow-lg shadow-black/30" />
+      <img src="/ap-monograma.png" alt="Logotipo AP Aprovado" className="app-brand-mark app-brand-mark-login" />
       <span>AP Aprovado</span>
     </div>
     <a href="/" className="mx-auto mb-5 block w-fit text-sm font-semibold text-lime-200 hover:text-lime-100">Voltar à página pública</a>
@@ -1216,8 +1218,8 @@ export default function App() {
       {/* Barra de Navegação Superior Refinada */}
       <nav aria-label="Área de estudo" className="app-nav sticky top-0 z-50 flex flex-col items-stretch gap-3 border-b border-slate-800/80 bg-slate-950/80 px-3 py-3 backdrop-blur-xl xl:flex-row xl:items-center xl:justify-between md:px-6 md:py-3.5">
         <div className="app-brand px-1 text-lg font-bold tracking-tight">
-          <img src="/ap-monograma.png" alt="" className="app-brand-mark" />
-          <span className="text-slate-100">Aprovado<small>SEU ESPAÇO DE ESTUDO</small></span>
+          <img src="/ap-monograma.png" alt="Logotipo AP Aprovado" className="app-brand-mark" />
+          <span className="text-slate-100">AP Aprovado<small>SEU ESPAÇO DE ESTUDO</small></span>
         </div>
         {!aplicativoNativo && <a href="https://ap-aprovado.pages.dev/" className="self-start rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:bg-slate-800 xl:self-auto">Página comercial</a>}
         <div aria-label="Navegação principal" className="mobile-nav flex w-full min-w-0 items-center gap-1.5 overflow-x-auto pb-1 xl:w-auto xl:pb-0">

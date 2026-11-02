@@ -111,6 +111,13 @@ test('as demais matérias usam grupos próprios sem colisões entre disciplinas'
   }
 })
 
+test('rótulos residuais não viram filtros de conteúdo com uma letra ou marcadores vazios', () => {
+  assert.equal(grupoConteudo('A', 'Matemática', 'Resolva a equação do segundo grau.').label, 'Álgebra, equações e inequações')
+  assert.equal(grupoConteudo('B', 'História', 'A Independência do Brasil ocorreu em 1822.').label, 'Independência e Brasil Império')
+  assert.equal(grupoConteudo('N/A', 'Direito Administrativo', '').label, 'Conteúdos gerais de Direito Administrativo')
+  assert.notEqual(grupoConteudo('A', 'Matemática').value, 'a')
+})
+
 test('unifica matérias equivalentes e corrige tópicos matemáticos marcados como Física', () => {
   assert.equal(normalizarMateria('Língua Portuguesa'), 'Português')
   assert.equal(normalizarMateria('Língua Inglesa'), 'Inglês')
