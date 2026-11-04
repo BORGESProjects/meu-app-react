@@ -1,6 +1,7 @@
-import { copyFile } from 'node:fs/promises'
+import { copyFile, mkdir, readdir } from 'node:fs/promises'
 import { spawn } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
+import path from 'node:path'
 
 const viteCli = fileURLToPath(new URL('../node_modules/vite/bin/vite.js', import.meta.url))
 const viteBuild = spawn(process.execPath, [viteCli, 'build'], { stdio: ['ignore', 'pipe', 'pipe'] })
@@ -29,6 +30,31 @@ if (!buildReportedSuccess) throw new Error('A compilação do Vite terminou sem 
 for (const asset of ['ap-monograma.png', 'favicon.svg', 'icons.svg']) {
   await copyFile(new URL(`../public/${asset}`, import.meta.url), new URL(`../dist/${asset}`, import.meta.url))
 }
+
+// Keep every static question batch available on Vercel. The full public archive
+// also contains a multi-gigabyte image collection; only its compact JSON indexes
+// are needed here because question visuals are served through their existing URLs.
+const publicRoot = path.resolve(fileURLToPath(new URL('../public/', import.meta.url)))
+const distRoot = path.resolve(fileURLToPath(new URL('../dist/', import.meta.url)))
+const publicAcervo = path.join(publicRoot, 'acervo')
+const questionFiles = []
+async function collectQuestionFiles(directory) {
+  for (const entry of await readdir(directory, {withFileTypes: true})) {
+    const absolute = path.join(directory, entry.name)
+    if (entry.isDirectory()) await collectQuestionFiles(absolute)
+    else if (entry.isFile() && entry.name === 'questoes.json') questionFiles.push(absolute)
+  }
+}
+await collectQuestionFiles(publicAcervo)
+for (let offset = 0; offset < questionFiles.length; offset += 32) {
+  await Promise.all(questionFiles.slice(offset, offset + 32).map(async source => {
+  const relative = path.relative(publicRoot, source)
+  const destination = path.join(distRoot, relative)
+  await mkdir(path.dirname(destination), {recursive: true})
+  await copyFile(source, destination)
+  }))
+}
+console.log(`Acervo estático preparado: ${questionFiles.length} lotes de questões.`)
 
 // Vercel is the question-bank app and future native-app prototype. The
 // commercial landing page and student portal are published separately on Pages.

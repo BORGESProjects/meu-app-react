@@ -1194,8 +1194,6 @@ export default function App() {
     <Conta session={null} isAdmin={false} checkingAdmin={false} />
   </div>
 
-  if (!session.offline && checkingAdmin) return <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center"><p className="text-sm text-lime-200">Verificando seu acesso…</p></div>
-
   if (controleComercialAtivo && !session.offline && !isAdmin && acessoComercial.status !== 'ativo') return <div className="min-h-screen bg-slate-950 px-3 py-8 text-slate-100 sm:px-6 sm:py-12">
     <div className="mx-auto mb-8 flex max-w-md items-center justify-center gap-3 text-2xl font-extrabold">
       <img src="/ap-monograma.png" alt="Logotipo AP Aprovado" className="app-brand-mark app-brand-mark-login" />
