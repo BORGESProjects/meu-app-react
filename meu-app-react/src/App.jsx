@@ -1476,8 +1476,8 @@ export default function App() {
                     {!simuladosSalvosFiltrados.length && <p className="rounded-xl border border-dashed border-slate-800 p-5 text-center text-sm text-slate-500">Nenhum resultado corresponde à busca.</p>}
                   </div>
                 </section>}
-                <h2 className="mb-2 text-xl font-bold text-slate-100">Edições completas</h2>
-                <p className="mb-5 text-sm text-slate-400">Somente cadernos conferidos e integralmente carregados. Anuladas são descontadas da correção; conjuntos parciais continuam disponíveis no banco de questões.</p>
+                <h2 className="mb-2 text-xl font-bold text-slate-100">Provas completas e simulados</h2>
+                <p className="mb-5 text-sm text-slate-400">Cadernos e simulados com as questões disponíveis revisadas. Questões anuladas não recebem correção automática.</p>
                 <div className="mb-5 grid gap-4 rounded-2xl border border-slate-800 p-4 sm:grid-cols-3">
                   <label className="text-sm text-slate-300">Idioma das provas
                     <select value={idiomaSimulado} onChange={e => setIdiomaSimulado(e.target.value)} className="mt-2 block w-full rounded-xl border border-slate-700 bg-slate-900 p-3">
@@ -1533,6 +1533,7 @@ export default function App() {
                           {simulado.prova}
                         </h3>
                         <p className="text-slate-400 text-sm mt-2">{simulado.questoesCount} questões para responder · {simulado.totalOriginal} posições no caderno{simulado.anuladas > 0 ? ` · ${simulado.anuladas} anulada(s)` : ''}.</p>
+                        {simulado.observacao_integridade && <p className="mt-3 rounded-xl border border-amber-400/20 bg-amber-400/5 p-3 text-xs leading-relaxed text-amber-100">{simulado.observacao_integridade}</p>}
                       </div>
                       <button
                         onClick={() => iniciarSimulado(simulado)}
