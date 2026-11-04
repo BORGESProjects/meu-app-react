@@ -16,7 +16,14 @@ public class ImportacaoController {
     private final Importacoes jobs;
     public ImportacaoController(ImportAdmin auth,Importacoes jobs) { this.auth=auth; this.jobs=jobs; }
     @GetMapping("/acesso") public Map<String,Boolean> access(@RequestHeader(value="Authorization",required=false) String token,@RequestHeader(value="X-Supabase-Key",required=false) String key) {
-        auth.require(token,key); return Map.of("administrador",true);
+        try { auth.require(token,key); return Map.of("administrador",true); }
+        catch (ResponseStatusException e) {
+            // A signed-in student can safely learn that this account is not an admin.
+            // Keep routine role checks out of the browser console as failed requests;
+            // all protected import endpoints still enforce require() and return 403.
+            if (e.getStatusCode() == HttpStatus.FORBIDDEN) return Map.of("administrador",false);
+            throw e;
+        }
     }
     @GetMapping public Object list(@RequestHeader(value="Authorization",required=false) String token,@RequestHeader(value="X-Supabase-Key",required=false) String key) {
         return jobs.list(auth.require(token,key));

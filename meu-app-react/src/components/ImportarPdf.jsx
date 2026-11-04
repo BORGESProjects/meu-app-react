@@ -76,7 +76,11 @@ export default function ImportarPdf({ onPublicado }) {
     if (userId) {
       setCheckingAccess(true)
       setErro('')
-      api('/acesso').then(() => api('')).then(items => {
+      api('/acesso').then(({administrador}) => administrador ? api('') : null).then(items => {
+        if (items === null) {
+          if (!cancelled) { setAdminId(null); setLista([]); setErro('Esta conta não tem acesso de administrador ao importador.') }
+          return
+        }
         if (!cancelled) { setAdminId(userId); setLista(items); setErro('') }
       }).catch(e => { if (!cancelled) setErro(e.message) })
         .finally(() => { if (!cancelled) setCheckingAccess(false) })

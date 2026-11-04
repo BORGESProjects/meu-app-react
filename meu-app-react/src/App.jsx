@@ -284,8 +284,9 @@ export default function App() {
     fetchApi(`${API_URL}/api/importacoes/acesso`, {
       headers: { Authorization: `Bearer ${session.access_token}`, 'X-Supabase-Key': import.meta.env.VITE_SUPABASE_ANON_KEY },
       signal: AbortSignal.timeout(30000),
-    }).then(response => {
-      if (!cancelled) setIsAdmin(response.ok)
+    }).then(async response => {
+      const payload = response.ok ? await response.json().catch(() => null) : null
+      if (!cancelled) setIsAdmin(response.ok && payload?.administrador === true)
     }).catch(() => { if (!cancelled) setIsAdmin(false) })
       .finally(() => { if (!cancelled) setCheckingAdmin(false) })
     return () => { cancelled = true }
