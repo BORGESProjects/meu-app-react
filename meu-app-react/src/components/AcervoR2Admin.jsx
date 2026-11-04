@@ -4,7 +4,10 @@ import {supabase} from '../supabaseClient'
 
 // Small multipart batches stay below the hosting parser's effective request cap.
 // Keep multipart overhead below Render's observed ~700 KB request ceiling.
-const MAX_BATCH_BYTES = 650000
+// The server accepts batches up to 3.8 MB. The current manifest is ~651 KB,
+// so leave modest multipart headroom while keeping the client cap far below
+// the backend limit and preserving small incremental uploads.
+const MAX_BATCH_BYTES = 700000
 const MAX_BATCH_FILES = 100
 const STATUS_TIMEOUT_MS = 95000
 const KEY_ALLOWED = /^(?:manifesto|visuais)\.json$|^lotes\/[A-Za-z0-9._-]+\.json\.gz$|^paginas\/[A-Za-z0-9._-]+\.webp$/
@@ -242,4 +245,5 @@ export default function AcervoR2Admin({isAdmin = false}) {
     {erro && <p role="alert" className="mt-4 rounded-xl border border-amber-300/30 bg-amber-950/25 px-3 py-2 text-sm leading-6 text-amber-100">{erro}</p>}
   </section>
 }
+
 
