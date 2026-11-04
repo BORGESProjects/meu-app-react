@@ -14,9 +14,13 @@ public class RedacaoService {
     public static List<Criterio> rubrica(String banca) {
         if("ENEM".equals(banca)) return List.of(new Criterio("C1","Norma-padrão",200),new Criterio("C2","Tema e repertório",200),new Criterio("C3","Argumentação",200),new Criterio("C4","Coesão",200),new Criterio("C5","Intervenção",200));
         if("FUVEST".equals(banca)) return List.of(new Criterio("tema","Tema e organização",40),new Criterio("articulacao","Coerência e articulação",30),new Criterio("linguagem","Gramática e vocabulário",30));
+        if("UTFPR".equals(banca)) return List.of(new Criterio("tema","Tema e atendimento à proposta",20),new Criterio("ponto_de_vista","Ponto de vista e contextualização",20),new Criterio("argumentacao","Argumentos, informações e repertório",20),new Criterio("estrutura","Estrutura, progressão e coesão",20),new Criterio("linguagem","Língua formal e convenções ortográficas",20));
+        if("ESA".equals(banca)) return List.of(new Criterio("tema","Tema e adequação ao comando",3),new Criterio("desenvolvimento","Desenvolvimento e consistência",3),new Criterio("estrutura","Organização, coerência e coesão",2),new Criterio("linguagem","Clareza e norma escrita",2));
+        if("ESPCEX".equals(banca)) return List.of(new Criterio("tema","Tema e atendimento ao comando",30),new Criterio("desenvolvimento","Desenvolvimento e argumentação",30),new Criterio("estrutura","Organização, coerência e coesão",20),new Criterio("linguagem","Clareza e norma escrita",20));
+        if("CPOR".equals(banca)) return List.of(new Criterio("tema","Tema e atendimento ao comando",25),new Criterio("desenvolvimento","Desenvolvimento e argumentação",25),new Criterio("estrutura","Organização, coerência e coesão",25),new Criterio("linguagem","Clareza e norma escrita",25));
         return List.of(new Criterio("tema","Adequação ao tema",30),new Criterio("argumentacao","Argumentação",30),new Criterio("coesao","Estrutura e coesão",20),new Criterio("linguagem","Norma-padrão",20));
     }
-    public static String perfil(String banca) {return Set.of("ENEM","FUVEST").contains(banca==null?"":banca.toUpperCase(Locale.ROOT))?banca.toUpperCase(Locale.ROOT):"GERAL";}
+    public static String perfil(String banca) {String chave=banca==null?"":banca.toUpperCase(Locale.ROOT);return Set.of("ENEM","FUVEST","UTFPR","ESA","ESPCEX","CPOR").contains(chave)?chave:"GERAL";}
     public static void validar(RedacaoRequest r) {
         if(r==null || r.getTema()==null || r.getTema().strip().length()<3 || r.getTema().length()>500) throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Informe um tema entre 3 e 500 caracteres.");
         if(r.getTexto()==null || r.getTexto().strip().length()<80 || r.getTexto().length()>20000) throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Envie um texto entre 80 e 20.000 caracteres para a análise.");
@@ -47,7 +51,7 @@ public class RedacaoService {
             item.put("justificativa",texto(encontrado.path("justificativa"),1500));item.put("sugestao",texto(encontrado.path("sugestao"),1200));total+=nota;
         }
         out.put("nota",total);out.put("maximo",rubrica.stream().mapToInt(Criterio::maximo).sum());
-        out.put("escala","ENEM".equals(perfil)?"Estimativa pedagógica na escala ENEM":"Escala pedagógica normalizada; não é a nota oficial da banca");
+        out.put("escala",switch(perfil){case "ENEM"->"Estimativa pedagógica na escala ENEM";case "ESA"->"Estimativa didática na escala 0 a 10; não substitui o conceito oficial APTO/INAPTO";case "ESPCEX"->"Estimativa didática na escala 0 a 100; não é a nota oficial";case "UTFPR"->"Rubrica didática em 100 pontos; os pesos não são oficiais";case "CPOR"->"Rubrica de treino; regras e critérios podem variar por unidade";default->"Escala pedagógica normalizada; não é a nota oficial da banca";});
         out.set("pontos_fortes",lista(mapper,raw.path("pontos_fortes"),3));out.set("prioridades",lista(mapper,raw.path("prioridades"),3));
         if(out.path("prioridades").isEmpty())throw invalida();
         var alertas=lista(mapper,raw.path("alertas"),4);out.set("alertas",alertas);
