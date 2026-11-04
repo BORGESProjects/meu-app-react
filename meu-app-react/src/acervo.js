@@ -1,11 +1,12 @@
 import esa2025 from './data/esa2025.json' with { type: 'json' }
 import enem2022 from './data/enem2022.json' with { type: 'json' }
+import cporSimuladoTreineiro from './data/cporSimuladoTreineiro.json' with { type: 'json' }
 import { BANCA_ASSIMILACAO, normalizarBanca, normalizarMateria } from './filtros.js'
 import {blocosValidos,temApoioEmBlocos,assinaturaVisualBlocos} from './blocosQuestao.js'
 import {problemasDeIntegridade,separarRodapeEditorial} from './qualidadeQuestao.js'
 import {normalizarMetadadosQuestao} from './origemQuestao.js'
 
-export const acervo = [...esa2025, ...enem2022]
+export const acervo = [...esa2025, ...enem2022, ...cporSimuladoTreineiro]
 
 // Correções conferidas diretamente nas provas oficiais. Manter este mapa
 // pequeno e explícito evita tentar "adivinhar" alternativas danificadas pelo
