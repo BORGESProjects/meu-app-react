@@ -23,6 +23,8 @@
 .edital-form>p{margin:0}
 .edital-campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .edital-acoes{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.edital-planejador button.edital-favorito{border-color:#7f642f;color:#f4d47a;background:#282216}
+.edital-planejador button.edital-favorito[aria-pressed=true]{border-color:#a88b3e;background:#393019;color:#ffe08c}
 .edital-mensagem{font-size:.85rem;color:#bbd77c;min-height:24px;margin-top:14px;line-height:1.5}
 .edital-erro{border:1px solid #9f4141;background:#351e25;border-radius:10px;padding:14px;color:#fecaca;margin:12px 0;font-size:.9rem;line-height:1.6}
 .edital-erro button{margin-left:8px}

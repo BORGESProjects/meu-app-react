@@ -32,6 +32,7 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
   const repositorioLocal=useMemo(()=>aplicativoNativo?criarEditaisOffline({client,userId,storage:window.localStorage}):null,[client,userId])
   const [editais,setEditais] = useState([])
   const [selecionado,setSelecionado] = useState('')
+  const [favoritos,setFavoritos] = useState([])
   const [carregando,setCarregando] = useState(true)
   const [salvando,setSalvando] = useState(false)
   const [erro,setErro] = useState('')
@@ -52,10 +53,47 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
   const [modeloSelecionado,setModeloSelecionado] = useState(mostrarCatalogoOficial ? linhasModelosEditais[0]?.concurso || '' : '')
   const [leitorSolicitado,setLeitorSolicitado] = useState(false)
   const bloqueio = useRef(false)
+  const chavePreferencias = useMemo(()=>`ap-edital-preferencias:${userId||'anonimo'}`,[userId])
   const ativo = editais.find(e => e.id === selecionado)
   const resumo = useMemo(() => resumoEdital(ativo?.materias || []),[ativo])
   const modelos = useMemo(() => [...new Set((antigos || []).map(item => item.concurso).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt-BR')),[antigos])
   const modeloInfo = useMemo(() => modelosEditaisOficiais.find(item=>item.concurso===modeloSelecionado),[modeloSelecionado])
+
+  useEffect(()=>{
+    let cancelado=false
+    try {
+      const local=JSON.parse(window.localStorage.getItem(chavePreferencias)||'{}')
+      if(Array.isArray(local.favoritos))setFavoritos(local.favoritos.filter(id=>typeof id==='string'))
+      if(typeof local.selecionado==='string')setSelecionado(local.selecionado)
+    } catch { /* Preferências locais antigas ou inválidas são ignoradas. */ }
+    if(!client?.auth?.getUser)return undefined
+    client.auth.getUser().then(({data,error})=>{
+      if(cancelado||error||data?.user?.id!==userId)return
+      const meta=data.user.user_metadata||{}
+      if(Array.isArray(meta.ap_edital_favoritos))setFavoritos(meta.ap_edital_favoritos.filter(id=>typeof id==='string'))
+      if(typeof meta.ap_edital_selecionado==='string')setSelecionado(meta.ap_edital_selecionado)
+    }).catch(()=>{})
+    return ()=>{cancelado=true}
+  },[client,userId,chavePreferencias])
+
+  async function salvarPreferencias(proximasFavoritas=favoritos,proximoSelecionado=selecionado) {
+    const preferencia={favoritos:proximasFavoritas,selecionado:proximoSelecionado}
+    try {window.localStorage.setItem(chavePreferencias,JSON.stringify(preferencia))} catch { /* O salvamento em conta continua sendo tentado. */ }
+    if(!client?.auth?.getUser||!client?.auth?.updateUser)return false
+    try {
+      const {data,error}=await client.auth.getUser()
+      if(error||data?.user?.id!==userId)return false
+      const {error:erroAtualizacao}=await client.auth.updateUser({data:{...(data.user.user_metadata||{}),ap_edital_favoritos:proximasFavoritas,ap_edital_selecionado:proximoSelecionado}})
+      return !erroAtualizacao
+    } catch {return false}
+  }
+
+  async function alternarFavorito(id) {
+    const proximos=favoritos.includes(id)?favoritos.filter(item=>item!==id):[...favoritos,id]
+    setFavoritos(proximos)
+    const salvo=await salvarPreferencias(proximos)
+    setAviso(salvo?'Favorito salvo na sua conta.':'Favorito salvo neste dispositivo; sincronize quando estiver online.')
+  }
 
   const carregar = useCallback(async (cancelado = () => false) => {
     setCarregando(true); setErro('')
@@ -92,7 +130,7 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
     try {
       if(repositorioLocal) {
         const {row,aviso:mensagem}=await repositorioLocal.gravar(edital,novo)
-        setEditais(atuais=>[...atuais.filter(e=>e.id!==row.id),row]);setSelecionado(row.id);setAviso(mensagem);return true
+        setEditais(atuais=>[...atuais.filter(e=>e.id!==row.id),row]);setSelecionado(row.id);void salvarPreferencias(favoritos,row.id);setAviso(mensagem);return true
       }
       const payload = {titulo:edital.titulo.trim(), edicao:edital.edicao.trim(), unidade:edital.unidade.trim(), data_prova:edital.data_prova || null, materias:edital.materias, updated_at:new Date().toISOString()}
       const query = novo
@@ -101,7 +139,7 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
       const {data,error} = await query.select().single()
       if (error) throw error
       setEditais(atuais => novo ? [...atuais,data] : atuais.map(e => e.id === data.id ? data : e))
-      setSelecionado(data.id); setAviso('Alterações salvas na sua conta.')
+      setSelecionado(data.id); void salvarPreferencias(favoritos,data.id); setAviso('Alterações salvas na sua conta.')
       return true
     } catch {setErro('Não foi possível salvar. Confira a conexão ou recarregue se o edital foi alterado em outra aba. Seu rascunho continua no formulário.'); return false}
     finally {bloqueio.current = false; setSalvando(false)}
@@ -110,6 +148,7 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
   function escolher(id) {
     setSelecionado(id); setEditando(null); setConfigurando(false); setCriando(false)
     setBusca(''); setStatus(''); setPrioridade(''); setMateria(''); setConteudos(''); setErro(''); setAviso('')
+    void salvarPreferencias(favoritos,id)
   }
 
   async function salvarConcurso(event) {
@@ -199,9 +238,9 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
         <div className="edital-campos"><label>Concurso<input required maxLength={150} placeholder="Ex.: CPOR" value={form.titulo} onChange={e => setForm({...form,titulo:e.target.value})} /></label><label>Edição<input maxLength={80} placeholder="Ex.: 2026" value={form.edicao} onChange={e => setForm({...form,edicao:e.target.value})} /></label><label>Unidade ou local<input maxLength={150} placeholder="Ex.: CPOR de São Paulo" value={form.unidade} onChange={e => setForm({...form,unidade:e.target.value})} /></label><label>Data da prova (opcional)<input type="date" value={form.data_prova || ''} onChange={e => setForm({...form,data_prova:e.target.value})} /></label></div>
         <div className="edital-acoes"><button disabled={salvando || !form.titulo.trim()} className="edital-primario">{configurando ? 'Salvar informações' : 'Criar edital'}</button><button type="button" onClick={() => {setCriando(false);setConfigurando(false)}}>Cancelar</button></div>
       </form>}
-      {!!editais.length && <div className="edital-seletor"><label>Concurso em estudo<select disabled={salvando} value={selecionado} onChange={e => escolher(e.target.value)}>{editais.map(e => <option key={e.id} value={e.id}>{[e.titulo,e.edicao,e.unidade].filter(Boolean).join(' · ')}</option>)}</select></label><span>Seus editais e marcações são pessoais.</span></div>}
+      {!!editais.length && <div className="edital-seletor"><label>Concurso em estudo<select disabled={salvando} value={selecionado} onChange={e => escolher(e.target.value)}>{[...editais].sort((a,b)=>Number(favoritos.includes(b.id))-Number(favoritos.includes(a.id))||String(a.titulo).localeCompare(String(b.titulo),'pt-BR')).map(e => <option key={e.id} value={e.id}>{favoritos.includes(e.id)?'★ ':''}{[e.titulo,e.edicao,e.unidade].filter(Boolean).join(' · ')}</option>)}</select></label><span>{favoritos.length?`${favoritos.length} favorito(s) · `:''}Seus editais e marcações são pessoais.</span></div>}
       {ativo ? <>
-        <div className="edital-painel"><div className="edital-linha"><div><h3>{ativo.titulo} {ativo.edicao}</h3><p>{ativo.unidade}{ativo.data_prova ? ` · Prova em ${ativo.data_prova.split('-').reverse().join('/')}` : ''}</p></div><div className="edital-acoes"><button disabled={salvando} onClick={() => {setForm({titulo:ativo.titulo,edicao:ativo.edicao,unidade:ativo.unidade,data_prova:ativo.data_prova || ''});setConfigurando(true);setCriando(false)}}>Editar concurso</button><button onClick={exportar}>Baixar cópia</button></div></div><Progresso materias={ativo.materias} /><div className="edital-indicadores"><span><strong>{ativo.materias.length}</strong> matérias</span><span><strong>{resumo.estudando}</strong> em estudo</span><span><strong>{resumo.revisar}</strong> para revisar</span><span><strong>{resumo.total-resumo.concluidos}</strong> ainda não concluídos</span></div></div>
+        <div className="edital-painel"><div className="edital-linha"><div><h3>{ativo.titulo} {ativo.edicao}</h3><p>{ativo.unidade}{ativo.data_prova ? ` · Prova em ${ativo.data_prova.split('-').reverse().join('/')}` : ''}</p></div><div className="edital-acoes"><button type="button" className="edital-favorito" aria-pressed={favoritos.includes(ativo.id)} onClick={()=>alternarFavorito(ativo.id)}>{favoritos.includes(ativo.id)?'★ Edital favorito':'☆ Favoritar edital'}</button><button disabled={salvando} onClick={() => {setForm({titulo:ativo.titulo,edicao:ativo.edicao,unidade:ativo.unidade,data_prova:ativo.data_prova || ''});setConfigurando(true);setCriando(false)}}>Editar concurso</button><button onClick={exportar}>Baixar cópia</button></div></div><Progresso materias={ativo.materias} /><div className="edital-indicadores"><span><strong>{ativo.materias.length}</strong> matérias</span><span><strong>{resumo.estudando}</strong> em estudo</span><span><strong>{resumo.revisar}</strong> para revisar</span><span><strong>{resumo.total-resumo.concluidos}</strong> ainda não concluídos</span></div></div>
         <details className="edital-painel edital-pdf" onToggle={e=>{if(e.currentTarget.open)setLeitorSolicitado(true)}}><summary>Importar e verticalizar um PDF de edital</summary>{leitorSolicitado && <Suspense fallback={<p>Carregando leitor de editais…</p>}><ImportarEditalPdf key={ativo.id} materiasExistentes={ativo.materias} onAdicionar={incluirDoPdf} disabled={salvando}/></Suspense>}</details>
         <details className="edital-painel edital-inclusao" open={!resumo.total || undefined}>
           <summary>+ Acrescentar matérias e conteúdos</summary>
@@ -235,7 +274,7 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
         {!!resumo.total && !ativo.materias.some(m => m.topicos.some(t => topicoVisivel(t,busca,status,prioridade))) && <p className="edital-painel">Nenhum conteúdo corresponde aos filtros. Limpe-os para ver os demais tópicos.</p>}
         {!resumo.total && <div className="edital-vazio"><h3>Seu edital está pronto para receber conteúdos</h3><p>Abra “Acrescentar matérias e conteúdos”, escolha uma matéria ou cole várias e verticalize. Depois, acompanhe cada tópico na lista.</p></div>}
       </> : !criando && <div className="edital-vazio"><h3>Qual concurso você está estudando?</h3><p>Crie um edital, como CPOR 2026, e inclua as matérias do seu programa. Cada concurso terá seu próprio acompanhamento.</p><button className="edital-primario" onClick={() => {setForm(vazio);setCriando(true)}}>Criar meu primeiro edital</button></div>}
-      {mostrarCatalogoOficial && <section className="edital-painel edital-modelo-pronto"><h3>Começar por um modelo de edital</h3><p>Escolha uma matriz de conteúdos publicada pela instituição para criar seu acompanhamento pessoal. Os tópicos e marcações ficam na sua conta; o modelo compartilhado não é alterado.</p><div className="edital-seletor"><label>Concurso, vestibular ou edição<select disabled={salvando || !modelos.length} value={modeloSelecionado} onChange={e=>setModeloSelecionado(e.target.value)}><option value="">Selecione um modelo</option>{modelos.map(modelo=><option key={modelo} value={modelo}>{modelo} · {antigos.filter(item=>item.concurso===modelo).length} conteúdos</option>)}</select></label><button className="edital-primario" disabled={salvando || !modeloSelecionado} onClick={()=>copiar(modeloSelecionado)}>Adicionar à minha área</button><button disabled={lendoAntigos} onClick={carregarAntigos}>{lendoAntigos?'Atualizando…':'Atualizar modelos'}</button></div>{modeloInfo && <div className="edital-modelo-fonte"><strong>{modeloInfo.categoria} · Edição {modeloInfo.ano}</strong><p>{modeloInfo.observacao}</p><a href={modeloInfo.fonte} target="_blank" rel="noreferrer">Consultar programa ou documento oficial ↗</a></div>}{antigos && !modelos.length && <p role="status">Nenhum modelo está disponível agora. Você ainda pode criar seu edital manualmente ou importar o PDF oficial.</p>}</section>}
+      {mostrarCatalogoOficial && <section className="edital-painel edital-modelo-pronto"><h3>Começar por um modelo de edital</h3><p>Escolha uma matriz para criar seu acompanhamento pessoal. Os tópicos e marcações ficam na sua conta; modelos transcritos de fichas enviadas estão identificados como referência e não alteram o documento compartilhado.</p><div className="edital-seletor"><label>Concurso, vestibular ou edição<select disabled={salvando || !modelos.length} value={modeloSelecionado} onChange={e=>setModeloSelecionado(e.target.value)}><option value="">Selecione um modelo</option>{modelos.map(modelo=><option key={modelo} value={modelo}>{modelo} · {antigos.filter(item=>item.concurso===modelo).length} conteúdos</option>)}</select></label><button className="edital-primario" disabled={salvando || !modeloSelecionado} onClick={()=>copiar(modeloSelecionado)}>Adicionar à minha área</button><button disabled={lendoAntigos} onClick={carregarAntigos}>{lendoAntigos?'Atualizando…':'Atualizar modelos'}</button></div>{modeloInfo && <div className="edital-modelo-fonte"><strong>{modeloInfo.categoria}{modeloInfo.ano?` · Edição ${modeloInfo.ano}`:''}</strong><p>{modeloInfo.observacao}</p>{modeloInfo.fonte && <a href={modeloInfo.fonte} target="_blank" rel="noreferrer">Consultar programa ou documento oficial ↗</a>}</div>}{antigos && !modelos.length && <p role="status">Nenhum modelo está disponível agora. Você ainda pode criar seu edital manualmente ou importar o PDF oficial.</p>}</section>}
     </>}
   </section>
 }
