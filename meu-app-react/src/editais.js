@@ -72,8 +72,51 @@ export function identidadeEdital(titulo, edicao, unidade) {
   return [titulo, edicao, unidade].map(chave).join('|')
 }
 
+const materiasCPOR = ['História','Geografia','Matemática','Português']
+export function materiaCanonicaCPOR(nome, topico='') {
+  const k=chave(nome)
+  if (/historia/.test(k)) return 'História'
+  if (/geografia/.test(k)) return 'Geografia'
+  if (/matematica/.test(k)) return 'Matemática'
+  if (/portugues|producao textual|redacao/.test(k)) return 'Português'
+  if (!/outras materias|outras disciplinas|^outros?$/.test(k)) {
+    const canonica=materiasCPOR.find(m=>chave(m)===k)
+    if(canonica)return canonica
+  }
+  const conteudo=chave(typeof topico==='string'?topico:topico?.titulo)
+  if (/hist|brasil colonia|republica|guerra|independencia/.test(conteudo)) return 'História'
+  if (/geograf|clima|mapa|cartograf|populacao|urban|relevo|hidrograf|energia|agropecu|regional|territor/.test(conteudo)) return 'Geografia'
+  if (/matemat|equacao|funcao|geometr|trigonom|probabilidade|conjunto numerico|porcentagem|logarit|progressao/.test(conteudo)) return 'Matemática'
+  return 'Português'
+}
+export function normalizarEditalCPOR(edital) {
+  if (!edital || !/\b(?:cpor|npor)\b/i.test(`${edital.titulo||''} ${edital.unidade||''}`) || !Array.isArray(edital.materias)) return edital
+  const materias=new Map()
+  for (const origem of edital.materias) {
+    for(const topico of origem.topicos||[]) {
+      const nome=materiaCanonicaCPOR(origem.nome,topico)
+      if (!materias.has(nome)) materias.set(nome,{...origem,nome,topicos:[]})
+      const destino=materias.get(nome), indice=destino.topicos.findIndex(item=>chave(item.titulo)===chave(topico.titulo))
+      if(indice<0)destino.topicos.push(topico)
+      else {
+        const existente=destino.topicos[indice]
+        const ordem={pendente:0,estudando:1,revisar:2,concluido:3}
+        destino.topicos[indice]={...existente,...topico,
+          status:(ordem[topico.status]||0)>(ordem[existente.status]||0)?topico.status:existente.status,
+          prioridade:existente.prioridade==='alta'||topico.prioridade==='alta'?'alta':'normal',
+          notas:[existente.notas,topico.notas].filter(Boolean).filter((nota,i,array)=>array.indexOf(nota)===i).join('\n')}
+      }
+    }
+  }
+  const ordenadas=materiasCPOR.filter(nome=>materias.has(nome)).map(nome=>materias.get(nome))
+  if (JSON.stringify(edital.materias)===JSON.stringify(ordenadas)) return edital
+  return {...edital,materias:ordenadas}
+}
+
 export function copiarEditalAntigo(itens, id = novoIdEdital) {
-  const grupos = itens.filter(i => (i.conteudo || i.topico) && i.materia).map(i => ({nome:i.materia, topicos:[{titulo:i.conteudo || i.topico, incidencia:i.incidencia || ''}]}))
+  const concurso=itens.find(i=>i.concurso)?.concurso||''
+  const ehCpor=/\b(?:cpor|npor)\b/i.test(concurso)
+  const grupos = itens.filter(i => (i.conteudo || i.topico) && i.materia).map(i => ({nome:ehCpor?materiaCanonicaCPOR(i.materia,i.conteudo||i.topico):i.materia, topicos:[{titulo:i.conteudo || i.topico, incidencia:i.incidencia || ''}]}))
   // Legacy data is shared; its completion flags are not anybody's private progress.
   return acrescentarConteudos([], grupos, id).materias
 }

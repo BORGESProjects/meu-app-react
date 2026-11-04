@@ -1,7 +1,7 @@
 import {lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import {supabase} from '../supabaseClient'
 import {API_URL,fetchApi} from '../api'
-import {STATUS_EDITAL, novoIdEdital, lerConteudosEdital, acrescentarConteudos, alterarTopico, resumoEdital, topicoVisivel, identidadeEdital, copiarEditalAntigo} from '../editais'
+import {STATUS_EDITAL, novoIdEdital, lerConteudosEdital, acrescentarConteudos, alterarTopico, resumoEdital, topicoVisivel, identidadeEdital, copiarEditalAntigo, normalizarEditalCPOR} from '../editais'
 import './EditalPlanejador.css'
 import {aplicativoNativo} from '../plataforma'
 import {criarEditaisOffline} from '../editaisOffline'
@@ -55,9 +55,34 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
   const bloqueio = useRef(false)
   const chavePreferencias = useMemo(()=>`ap-edital-preferencias:${userId||'anonimo'}`,[userId])
   const ativo = editais.find(e => e.id === selecionado)
+  const ehEditalCpor = edital => /\b(?:cpor|npor)\b/i.test(`${edital?.titulo||''} ${edital?.unidade||''}`)
   const resumo = useMemo(() => resumoEdital(ativo?.materias || []),[ativo])
   const modelos = useMemo(() => [...new Set((antigos || []).map(item => item.concurso).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt-BR')),[antigos])
   const modeloInfo = useMemo(() => modelosEditaisOficiais.find(item=>item.concurso===modeloSelecionado),[modeloSelecionado])
+
+  const ajustarCategoriasCpor=useCallback(async rows => {
+    const ajustados=[...rows]
+    let alterados=0, falhas=0
+    for(let i=0;i<ajustados.length;i++) {
+      const original=ajustados[i], normalizado=normalizarEditalCPOR(original)
+      if(normalizado===original)continue
+      try {
+        if(repositorioLocal) {
+          const {row}=await repositorioLocal.gravar(normalizado,false)
+          ajustados[i]=row
+        } else {
+          let query=client.from('editais_usuario').update({materias:normalizado.materias,updated_at:new Date().toISOString()}).eq('id',original.id).eq('user_id',userId)
+          if(original.updated_at)query=query.eq('updated_at',original.updated_at)
+          const {data,error}=await query.select().maybeSingle()
+          if(error)throw error
+          if(!data){falhas++;continue}
+          ajustados[i]=data
+        }
+        alterados++
+      } catch {falhas++}
+    }
+    return {rows:ajustados,alterados,falhas}
+  },[repositorioLocal,client,userId])
 
   useEffect(()=>{
     let cancelado=false
@@ -101,17 +126,24 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
       if(repositorioLocal) {
         const {rows,aviso:mensagem}=await repositorioLocal.listar()
         if(cancelado())return
-        setEditais(rows);setAviso(mensagem);setSelecionado(atual=>rows.some(e=>e.id===atual)?atual:rows[0]?.id||'');return
+        const resultado=await ajustarCategoriasCpor(rows)
+        if(cancelado())return
+        setEditais(resultado.rows)
+        setAviso(resultado.falhas?'Alguns editais CPOR/NPOR precisam ser salvos novamente para organizar as matérias.':resultado.alterados?`${resultado.alterados} edital(is) CPOR/NPOR organizado(s) em História, Geografia, Matemática e Português.`:mensagem)
+        setSelecionado(atual=>resultado.rows.some(e=>e.id===atual)?atual:resultado.rows[0]?.id||'');return
       }
       const {data,error} = await client.from('editais_usuario').select('*').eq('user_id',userId).order('created_at',{ascending:true})
       if (error) throw error
       if (cancelado()) return
-      setEditais(data || [])
-      setSelecionado(atual => data?.some(e => e.id === atual) ? atual : data?.[0]?.id || '')
+      const resultado=await ajustarCategoriasCpor(data||[])
+      if(cancelado())return
+      setEditais(resultado.rows)
+      setAviso(resultado.falhas?'Alguns editais CPOR/NPOR foram carregados, mas não foi possível salvar a organização das matérias.':resultado.alterados?`${resultado.alterados} edital(is) CPOR/NPOR organizado(s) em História, Geografia, Matemática e Português.`:'')
+      setSelecionado(atual => resultado.rows.some(e => e.id === atual) ? atual : resultado.rows[0]?.id || '')
     } catch {
       if (!cancelado()) setErro('Não foi possível carregar seus editais. Verifique a conexão e tente novamente. Seus conteúdos não foram alterados.')
     } finally { if (!cancelado()) setCarregando(false) }
-  }, [userId, client, repositorioLocal])
+  }, [userId, client, repositorioLocal, ajustarCategoriasCpor])
 
   useEffect(() => {
     let cancelado = false
@@ -164,7 +196,10 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
 
   let previa = null, erroPrevia = ''
   if (conteudos.trim() && (modo === 'varias' || materia.trim())) {
-    try {previa = acrescentarConteudos(ativo?.materias || [], lerConteudosEdital(conteudos,modo === 'materia' ? materia : ''), () => '')}
+    try {
+      previa = acrescentarConteudos(ativo?.materias || [], lerConteudosEdital(conteudos,modo === 'materia' ? materia : ''), () => '')
+      if(ativo&&ehEditalCpor(ativo))previa.materias=normalizarEditalCPOR({...ativo,materias:previa.materias}).materias
+    }
     catch (e) {erroPrevia = e.message}
   }
 
@@ -173,7 +208,8 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
     try {
       const lote = acrescentarConteudos(ativo.materias,lerConteudosEdital(conteudos,modo === 'materia' ? materia : ''))
       if (!lote.adicionados) {setAviso(`Nenhum conteúdo novo. ${lote.repetidos} já constam neste edital.`); return}
-      if (await gravar({...ativo,materias:lote.materias})) {
+      const materias=ehEditalCpor(ativo)?normalizarEditalCPOR({...ativo,materias:lote.materias}).materias:lote.materias
+      if (await gravar({...ativo,materias})) {
         setConteudos(''); setAviso(`${lote.adicionados} conteúdo(s) acrescentado(s). ${lote.repetidos} repetido(s) ignorado(s). O progresso existente foi preservado.`)
       }
     } catch (e) {setErro(e.message)}
@@ -186,7 +222,8 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
   async function incluirDoPdf(grupos) {
     const lote=acrescentarConteudos(ativo.materias,grupos)
     if(!lote.adicionados)return false
-    if(await gravar({...ativo,materias:lote.materias})) {
+    const materias=ehEditalCpor(ativo)?normalizarEditalCPOR({...ativo,materias:lote.materias}).materias:lote.materias
+    if(await gravar({...ativo,materias})) {
       setAviso(`${lote.adicionados} conteúdos do PDF acrescentados. O progresso e as outras matérias foram preservados.`)
       return true
     }
@@ -232,22 +269,21 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
     <div className="edital-mensagem" aria-live="polite">{salvando ? 'Salvando alterações…' : aviso}</div>
     {erro && <div role="alert" className="edital-erro">{erro} <button onClick={() => carregar()} disabled={salvando}>Recarregar editais</button></div>}
     {carregando ? <p role="status">Carregando seus editais…</p> : <>
-      {(criando || configurando) && <form onSubmit={salvarConcurso} className="edital-painel edital-form">
-        <h3>{configurando ? 'Editar informações do concurso' : 'Crie seu edital pessoal'}</h3>
-            <p>Use o nome do concurso e, se necessário, a edição e a unidade. Cada edital tem seu próprio progresso.</p>
+      {criando && <form onSubmit={salvarConcurso} className="edital-painel edital-form">
+        <h3>Crie seu edital pessoal</h3>
+        <p>Use o nome do concurso e, se necessário, a edição e a unidade. Cada edital tem seu próprio progresso.</p>
         <div className="edital-campos"><label>Concurso<input required maxLength={150} placeholder="Ex.: CPOR" value={form.titulo} onChange={e => setForm({...form,titulo:e.target.value})} /></label><label>Edição<input maxLength={80} placeholder="Ex.: 2026" value={form.edicao} onChange={e => setForm({...form,edicao:e.target.value})} /></label><label>Unidade ou local<input maxLength={150} placeholder="Ex.: CPOR de São Paulo" value={form.unidade} onChange={e => setForm({...form,unidade:e.target.value})} /></label><label>Data da prova (opcional)<input type="date" value={form.data_prova || ''} onChange={e => setForm({...form,data_prova:e.target.value})} /></label></div>
-        <div className="edital-acoes"><button disabled={salvando || !form.titulo.trim()} className="edital-primario">{configurando ? 'Salvar informações' : 'Criar edital'}</button><button type="button" onClick={() => {setCriando(false);setConfigurando(false)}}>Cancelar</button></div>
+        <div className="edital-acoes"><button disabled={salvando || !form.titulo.trim()} className="edital-primario">Criar edital</button><button type="button" onClick={() => setCriando(false)}>Cancelar</button></div>
       </form>}
       {!!editais.length && <div className="edital-seletor"><label>Concurso em estudo<select disabled={salvando} value={selecionado} onChange={e => escolher(e.target.value)}>{[...editais].sort((a,b)=>Number(favoritos.includes(b.id))-Number(favoritos.includes(a.id))||String(a.titulo).localeCompare(String(b.titulo),'pt-BR')).map(e => <option key={e.id} value={e.id}>{favoritos.includes(e.id)?'★ ':''}{[e.titulo,e.edicao,e.unidade].filter(Boolean).join(' · ')}</option>)}</select></label><span>{favoritos.length?`${favoritos.length} favorito(s) · `:''}Seus editais e marcações são pessoais.</span></div>}
       {ativo ? <>
-        <div className="edital-painel"><div className="edital-linha"><div><h3>{ativo.titulo} {ativo.edicao}</h3><p>{ativo.unidade}{ativo.data_prova ? ` · Prova em ${ativo.data_prova.split('-').reverse().join('/')}` : ''}</p></div><div className="edital-acoes"><button type="button" className="edital-favorito" aria-pressed={favoritos.includes(ativo.id)} onClick={()=>alternarFavorito(ativo.id)}>{favoritos.includes(ativo.id)?'★ Edital favorito':'☆ Favoritar edital'}</button><button disabled={salvando} onClick={() => {setForm({titulo:ativo.titulo,edicao:ativo.edicao,unidade:ativo.unidade,data_prova:ativo.data_prova || ''});setConfigurando(true);setCriando(false)}}>Editar concurso</button><button onClick={exportar}>Baixar cópia</button></div></div><Progresso materias={ativo.materias} /><div className="edital-indicadores"><span><strong>{ativo.materias.length}</strong> matérias</span><span><strong>{resumo.estudando}</strong> em estudo</span><span><strong>{resumo.revisar}</strong> para revisar</span><span><strong>{resumo.total-resumo.concluidos}</strong> ainda não concluídos</span></div></div>
-        <details className="edital-painel edital-pdf" onToggle={e=>{if(e.currentTarget.open)setLeitorSolicitado(true)}}><summary>Importar e verticalizar um PDF de edital</summary>{leitorSolicitado && <Suspense fallback={<p>Carregando leitor de editais…</p>}><ImportarEditalPdf key={ativo.id} materiasExistentes={ativo.materias} onAdicionar={incluirDoPdf} disabled={salvando}/></Suspense>}</details>
+        <div className="edital-painel"><div className="edital-linha"><div><h3>{ativo.titulo} {ativo.edicao}</h3><p>{ativo.unidade}{ativo.data_prova ? ` · Prova em ${ativo.data_prova.split('-').reverse().join('/')}` : ''}</p></div><div className="edital-acoes"><button type="button" className="edital-favorito" aria-pressed={favoritos.includes(ativo.id)} onClick={()=>alternarFavorito(ativo.id)}>{favoritos.includes(ativo.id)?'★ Edital favorito':'☆ Favoritar edital'}</button></div></div><Progresso materias={ativo.materias} /><div className="edital-indicadores"><span><strong>{ativo.materias.length}</strong> matérias</span><span><strong>{resumo.estudando}</strong> em estudo</span><span><strong>{resumo.revisar}</strong> para revisar</span><span><strong>{resumo.total-resumo.concluidos}</strong> ainda não concluídos</span></div></div>
         <details className="edital-painel edital-inclusao" open={!resumo.total || undefined}>
           <summary>+ Acrescentar matérias e conteúdos</summary>
           <form onSubmit={incluir} className="edital-form">
             <p>Cole os conteúdos do edital. A inclusão soma novos tópicos sem apagar matérias ou reiniciar marcações.</p>
             <div className="edital-acoes"><button type="button" aria-pressed={modo === 'materia'} onClick={() => setModo('materia')}>Uma matéria</button><button type="button" aria-pressed={modo === 'varias'} onClick={() => setModo('varias')}>Várias matérias</button></div>
-            {modo === 'materia' ? <label>Matéria<input required list="materias-do-edital" maxLength={100} value={materia} placeholder="Escolha uma existente ou escreva uma nova" onChange={e => setMateria(e.target.value)} /><datalist id="materias-do-edital">{ativo.materias.map(m => <option key={m.id} value={m.nome} />)}</datalist></label> : <p>Escreva o nome de cada matéria seguido de <strong>:</strong> em uma linha própria. Abaixo, um conteúdo por linha. Use o exemplo apenas como modelo de organização, não como edital oficial.</p>}
+            {modo === 'materia' ? <label>Matéria<input required list="materias-do-edital" maxLength={100} value={materia} placeholder={ehEditalCpor(ativo)?'História, Geografia, Matemática ou Português':'Escolha uma existente ou escreva uma nova'} onChange={e => setMateria(e.target.value)} /><datalist id="materias-do-edital">{ativo.materias.map(m => <option key={m.id} value={m.nome} />)}{ehEditalCpor(ativo)&&['História','Geografia','Matemática','Português'].map(nome=><option key={nome} value={nome}/>)}</datalist></label> : <p>Escreva o nome de cada matéria seguido de <strong>:</strong> em uma linha própria. Abaixo, um conteúdo por linha. Use o exemplo apenas como modelo de organização, não como edital oficial.{ehEditalCpor(ativo)&&' Para CPOR/NPOR, use História, Geografia, Matemática e Português.'}</p>}
             <label>Conteúdos<textarea rows={modo === 'varias' ? 10 : 6} required maxLength={150000} value={conteudos} onChange={e => setConteudos(e.target.value)} placeholder={modo === 'varias' ? exemplo : 'Um conteúdo por linha. Também pode separar por ponto e vírgula.'} /></label>
             {erroPrevia && <p className="edital-erro">{erroPrevia}</p>}
             {previa && <p role="status">Prévia: <strong>{previa.adicionados}</strong> novos conteúdos · {previa.repetidos} repetidos serão ignorados.</p>}
@@ -258,7 +294,7 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
         {ativo.materias.map(m => {
           const visiveis = m.topicos.filter(t => topicoVisivel(t,busca,status,prioridade)), r = resumoEdital([m])
           if (!visiveis.length && (busca || status || prioridade)) return null
-          const aberta = abertas[m.id] !== false
+          const aberta = abertas[m.id] === true
           return <section className="edital-painel edital-materia" key={m.id}>
             <button className="edital-materia-titulo" aria-expanded={aberta} onClick={() => setAbertas({...abertas,[m.id]:!aberta})}><span>{aberta ? '▾' : '▸'} {m.nome}</span><span>{r.concluidos}/{r.total} · {r.percentual}%</span></button>
             <Progresso materias={[m]} />
@@ -275,6 +311,16 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
         {!resumo.total && <div className="edital-vazio"><h3>Seu edital está pronto para receber conteúdos</h3><p>Abra “Acrescentar matérias e conteúdos”, escolha uma matéria ou cole várias e verticalize. Depois, acompanhe cada tópico na lista.</p></div>}
       </> : !criando && <div className="edital-vazio"><h3>Qual concurso você está estudando?</h3><p>Crie um edital, como CPOR 2026, e inclua as matérias do seu programa. Cada concurso terá seu próprio acompanhamento.</p><button className="edital-primario" onClick={() => {setForm(vazio);setCriando(true)}}>Criar meu primeiro edital</button></div>}
       {mostrarCatalogoOficial && <section className="edital-painel edital-modelo-pronto"><h3>Começar por um modelo de edital</h3><p>Escolha uma matriz para criar seu acompanhamento pessoal. Os tópicos e marcações ficam na sua conta; modelos transcritos de fichas enviadas estão identificados como referência e não alteram o documento compartilhado.</p><div className="edital-seletor"><label>Concurso, vestibular ou edição<select disabled={salvando || !modelos.length} value={modeloSelecionado} onChange={e=>setModeloSelecionado(e.target.value)}><option value="">Selecione um modelo</option>{modelos.map(modelo=><option key={modelo} value={modelo}>{modelo} · {antigos.filter(item=>item.concurso===modelo).length} conteúdos</option>)}</select></label><button className="edital-primario" disabled={salvando || !modeloSelecionado} onClick={()=>copiar(modeloSelecionado)}>Adicionar à minha área</button><button disabled={lendoAntigos} onClick={carregarAntigos}>{lendoAntigos?'Atualizando…':'Atualizar modelos'}</button></div>{modeloInfo && <div className="edital-modelo-fonte"><strong>{modeloInfo.categoria}{modeloInfo.ano?` · Edição ${modeloInfo.ano}`:''}</strong><p>{modeloInfo.observacao}</p>{modeloInfo.fonte && <a href={modeloInfo.fonte} target="_blank" rel="noreferrer">Consultar programa ou documento oficial ↗</a>}</div>}{antigos && !modelos.length && <p role="status">Nenhum modelo está disponível agora. Você ainda pode criar seu edital manualmente ou importar o PDF oficial.</p>}</section>}
+      {ativo && <details className="edital-painel edital-gerenciar" open={configurando || undefined}>
+        <summary>Opções do edital e ferramentas avançadas</summary>
+        <div className="edital-acoes edital-ferramentas"><button type="button" disabled={salvando} onClick={() => {setForm({titulo:ativo.titulo,edicao:ativo.edicao,unidade:ativo.unidade,data_prova:ativo.data_prova || ''});setConfigurando(true)}}>Editar edital</button><button type="button" onClick={exportar}>Baixar cópia</button></div>
+        {configurando && <form onSubmit={salvarConcurso} className="edital-form edital-form-edicao">
+          <h3>Editar informações do concurso</h3><p>Atualize os dados sem alterar os conteúdos e o progresso.</p>
+          <div className="edital-campos"><label>Concurso<input required maxLength={150} value={form.titulo} onChange={e=>setForm({...form,titulo:e.target.value})}/></label><label>Edição<input maxLength={80} value={form.edicao} onChange={e=>setForm({...form,edicao:e.target.value})}/></label><label>Unidade ou local<input maxLength={150} value={form.unidade} onChange={e=>setForm({...form,unidade:e.target.value})}/></label><label>Data da prova (opcional)<input type="date" value={form.data_prova||''} onChange={e=>setForm({...form,data_prova:e.target.value})}/></label></div>
+          <div className="edital-acoes"><button disabled={salvando||!form.titulo.trim()} className="edital-primario">Salvar informações</button><button type="button" onClick={()=>{setConfigurando(false);setForm(vazio)}}>Cancelar</button></div>
+        </form>}
+        <details className="edital-pdf" onToggle={e=>{if(e.currentTarget.open)setLeitorSolicitado(true)}}><summary>Importar e verticalizar um PDF de edital</summary>{leitorSolicitado && <Suspense fallback={<p>Carregando leitor de editais…</p>}><ImportarEditalPdf key={ativo.id} materiasExistentes={ativo.materias} onAdicionar={incluirDoPdf} disabled={salvando}/></Suspense>}</details>
+      </details>}
     </>}
   </section>
 }

@@ -70,6 +70,9 @@
 .edital-modelo-fonte p{margin:6px 0 8px}
 .edital-modelo-fonte a{color:#d2e89a;font-size:.84rem;text-underline-offset:3px;overflow-wrap:anywhere}
 .edital-pdf>.edital-form{margin-top:18px}
+.edital-gerenciar>.edital-ferramentas{margin-top:16px}
+.edital-gerenciar>.edital-pdf{margin:18px 0 0;padding:16px 0 0;border:0;border-top:1px solid #303a27;border-radius:0;background:transparent}
+.edital-form-edicao{margin-top:18px;padding-top:18px;border-top:1px solid #303a27}
 .edital-pdf p,.edital-pdf strong{overflow-wrap:anywhere}
 .edital-pdf-pagina{display:block;max-height:650px;width:100%;object-fit:contain;background:white;border-radius:8px;margin-top:16px}
 .edital-pdf-grupo{border:1px solid #39432e;border-radius:10px;padding:14px;background:#10140e}
