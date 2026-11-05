@@ -1,5 +1,6 @@
-// Modelos resumidos a partir de programas/edital oficiais. São cópias pessoais
-// de estudo; sempre confira retificações e o documento da edição/unidade escolhida.
+// Roteiros de estudo organizados a partir de fontes oficiais ou fichas identificadas.
+// Cada roteiro resume a fonte; consulte o documento vinculado para o programa integral,
+// pesos e retificações. Modelos históricos e fichas sem origem estão identificados.
 const modelo = (concurso, ano, categoria, fonte, observacao, grupos) => ({
   concurso, ano, categoria, fonte, observacao,
   itens: Object.entries(grupos).flatMap(([materia, conteudos]) =>
@@ -10,16 +11,17 @@ const modelo = (concurso, ano, categoria, fonte, observacao, grupos) => ({
 export const modelosEditaisOficiais = [
   modelo('UFPR — Vestibular 2027', '2027', 'Universidade federal', 'https://servicos.nc.ufpr.br/PortalNC/Concurso?edital=9363', 'Matriz vigente publicada pelo Núcleo de Concursos. O formato foi alterado para fase única; este roteiro cobre os componentes indicados no programa oficial.', {
     'Língua Portuguesa':['Compreensão e interpretação de textos','Gêneros textuais, coesão e coerência','Recursos linguísticos e efeitos de sentido','Norma padrão: morfologia, sintaxe, concordância, regência e pontuação','Compreensão e produção de textos'],
-    'Literatura Brasileira':['Leitura e análise das obras da lista oficial 2027','Gêneros literários, contexto histórico e recursos estéticos'],
-    'Língua Estrangeira':['Leitura e interpretação','Vocabulário em contexto','Estruturas gramaticais aplicadas à compreensão'],
+    'Literatura Brasileira':['A falência — Julia Lopes de Almeida','Eu — Augusto dos Anjos (1ª edição, 1912)','Noite na taverna — Álvares de Azevedo','O demônio familiar — José de Alencar','O drible — Sérgio Rodrigues','O Quinze — Rachel de Queiroz','O sol na cabeça — Geovani Martins','Poema sujo — Ferreira Gullar','Leitura integral, análise estética e contexto histórico-social das oito obras'],
+    'Língua Estrangeira':['Leitura e interpretação em alemão, espanhol, francês, inglês, italiano, japonês ou polonês','Vocabulário em contexto','Estruturas gramaticais aplicadas à compreensão'],
     'Matemática':['Números e operações','Funções e gráficos','Sequências e progressões','Contagem, probabilidade e estatística','Matrizes, determinantes e sistemas lineares','Trigonometria','Polinômios e equações algébricas','Geometria plana, espacial e analítica'],
     'Física':['Grandezas, unidades e análise dimensional','Mecânica e gravitação','Fluidos e hidrostática','Termologia e termodinâmica','Ondas e acústica','Eletricidade e magnetismo','Óptica e física moderna'],
     'Química':['Matéria, medidas e modelos atômicos','Tabela periódica e ligações','Funções inorgânicas e reações','Estequiometria e gases','Soluções e propriedades coligativas','Termoquímica e cinética','Equilíbrio químico e iônico','Eletroquímica','Química orgânica'],
     'Biologia':['Biologia celular e bioquímica','Genética e biotecnologia','Evolução','Diversidade dos seres vivos','Fisiologia humana','Ecologia e meio ambiente'],
     'História':['Antiguidade e mundo medieval','Idade Moderna e colonização','História do Brasil: Colônia, Império e República','Mundo contemporâneo: revoluções, guerras e relações internacionais'],
     'Geografia':['Cartografia e representação espacial','Natureza, clima, relevo e meio ambiente','População e dinâmica demográfica','Espaço agrário, urbano e industrial','Geopolítica e globalização','Brasil: território, sociedade e economia'],
-    'Filosofia':['Mito, conhecimento e verdade','Ética e política','Filosofia antiga, moderna e contemporânea'],
-    'Sociologia':['Cultura e sociedade','Trabalho, desigualdade e classes sociais','Poder, política, cidadania e movimentos sociais']
+    'Filosofia':['Mito, conhecimento e verdade','Ética e política','Filosofia antiga, moderna e contemporânea','Leituras: Sueli Carneiro — Dispositivo de racialidade (1ª parte, cap. 3); Carole Pateman — Participação e teoria democrática (cap. I); Platão — Mito de Er (República, 614b–621c); Karl Popper — A lógica da pesquisa científica (cap. 1); Rousseau — Discurso sobre a desigualdade (parte II)'],
+    'Sociologia':['Cultura e sociedade','Trabalho, desigualdade e classes sociais','Poder, política, cidadania e movimentos sociais','Leituras: Cida Bento — Pacto da branquitude; Judith Butler — Quem tem medo do gênero?; Clássicas do pensamento social: mulheres e feminismos no século XIX (org. Verônica Daflon e Bila Sorj); Um toque de clássicos — Marx, Durkheim e Weber; Lilia Schwarcz — Sobre o autoritarismo brasileiro'],
+    'Música (prova específica)':['Percepção e teoria musical básica; história da música ocidental e brasileira','Roy Bennett — Elementos básicos da música; Forma e estrutura na música; Uma breve história da música','L. Edlund — Modus Vetus; Lemoine e Carulli — Solfeo de los solfeos, v. 1A','Bohumil Med — Teoria da Música; H. Pozzoli — Guia teórico-prático para o ensino do ditado musical, partes I e II','J. Severiano — Uma história da música popular brasileira, p. 273–462; J. M. Wisnik — O som e o sentido, p. 15–68']
   }),
   modelo('UTFPR — Vestibular 2027', '2027', 'Universidade federal tecnológica', 'https://www.utfpr.edu.br/cursos/estudenautfpr/vestibular/guia-do-candidato/programa-de-provas-vestibular-2027.pdf/@@display-file/file', 'Verticalização do Programa de Provas oficial do Vestibular 2027. Os itens abaixo foram organizados como checklist de estudo, sem estimar incidência. O documento oficial vinculado contém o programa integral e as leituras obrigatórias.', {
     'Matemática':['Conjuntos numéricos: divisibilidade, fatoração, frações, notação científica, razões, proporções, regra de três, porcentagem e juros','Números reais e complexos: propriedades, desigualdades, intervalos, forma algébrica e trigonométrica','Funções: domínio, imagem, gráficos, paridade, monotonicidade, composição, inversa e função por partes','Funções afim, quadrática, racional e modular: gráficos e resolução de equações e inequações','Funções exponenciais e logarítmicas: propriedades, gráficos, equações e inequações','Sequências, recorrência, PA e PG: termo geral, interpolação e soma','Contagem, arranjos, combinações, permutações e Binômio de Newton','Probabilidade: espaço amostral, eventos equiprováveis, condicional e independência','Estatística: distribuição de frequências, gráficos, tendência central e dispersão','Matrizes, determinantes e sistemas lineares: operações, resolução, discussão e aplicações','Trigonometria: triângulos, leis dos senos e cossenos, funções, gráficos, identidades e equações','Polinômios e equações algébricas: operações, fatoração, raízes, multiplicidade e relações de Girard','Geometria plana: polígonos, paralelismo, Tales, semelhança, circunferência, perímetros e áreas','Geometria espacial: poliedros, prismas, pirâmides, cilindros, cones, esferas, áreas e volumes','Geometria analítica e cônicas: pontos, retas, distâncias, circunferências, parábola, elipse e hipérbole'],
@@ -35,8 +37,8 @@ export const modelosEditaisOficiais = [
     'Sociologia':['Indivíduo e sociedade: interação, integração, papéis e identidades','Ideologia, cultura, indústria cultural e poder','Estado, soberania, legitimidade e relações entre público e privado','Estratificação, desigualdades de gênero e raça e políticas públicas','Democracia, instituições, participação política e movimentos sociais','Diversidade cultural, etnocentrismo, relativismo e culturas afro-brasileiras e indígenas','Trabalho: pensamento sociológico clássico, transformações e precarização'],
     'Redação':['Compreensão do tema e atendimento às instruções da proposta','Definição e sustentação de ponto de vista em texto dissertativo','Contextualização com dados, referências e repertório pertinente','Estrutura, organização de parágrafos, progressão e unidade','Modalidade escrita formal, vocabulário, sintaxe, pontuação e ortografia','Critérios oficiais: domínio da escrita; tema e gênero; argumentos; mecanismos linguísticos; proposta de intervenção que respeite os direitos humanos']
   }),
-  modelo('UFSC/IFC — Vestibular Unificado 2027', '2027', 'Universidade federal e instituto federal', 'https://vestibularunificado2027.ufsc.br/programa/', 'Programa oficial das disciplinas do Vestibular Unificado. Inclui conteúdos e obras literárias indicadas para essa edição.', {
-    'Língua Portuguesa e Literatura':['Interpretação e análise de textos','Estudo das obras literárias indicadas para 2027','Gêneros, linguagem e contexto sociocultural'],
+  modelo('UFSC/IFC — Vestibular Unificado 2027', '2027', 'Universidade federal e instituto federal', 'https://vestibularunificado2027.ufsc.br/', 'Roteiro resumido do programa das disciplinas publicado no portal oficial; consulte a seção Programa das Disciplinas para os tópicos integrais. Inclui as sete leituras obrigatórias desta edição.', {
+    'Língua Portuguesa e Literatura':['Interpretação e análise de textos','Primeiro de abril: narrativas da cadeia — Salim Miguel','Vésperas — Adriana Lunardi','O irmão alemão — Chico Buarque','Eu sou Macuxi e outras histórias — Julie Dorrico','Clara dos Anjos — Lima Barreto','A paixão segundo G. H. — Clarice Lispector','Secos e Molhados — álbum (1973)','Análise integral das sete obras, gêneros, linguagem e contexto sociocultural'],
     'Matemática':['Números, álgebra e funções','Geometria e trigonometria','Estatística, probabilidade e análise de dados'],
     'Biologia':['Célula, metabolismo e genética','Diversidade, evolução e fisiologia','Ecologia, saúde e ambiente'],
     'Física':['Mecânica e energia','Termologia e ondas','Eletricidade, magnetismo e óptica'],
@@ -47,9 +49,9 @@ export const modelosEditaisOficiais = [
     'Língua Estrangeira':['Compreensão leitora no idioma escolhido','Vocabulário e recursos linguísticos em contexto'],
     'Redação':['Produção textual conforme proposta da prova','Planejamento, argumentação, coesão e revisão']
   }),
-  modelo('FURG — Vestibular 2027', '2027', 'Universidade federal', 'https://coperse.furg.br/vestibular', 'Baseado no Programa de Prova oficial 2027, que inclui Artes e Educação Física, além das disciplinas tradicionais.', {
+  modelo('FURG — Vestibular 2027', '2027', 'Universidade federal', 'https://coperse.furg.br/images/2026/Vestibular-2026/ProgramaProva.pdf', 'Verticalização resumida do Programa de Prova oficial 2027, que inclui Artes e Educação Física. O mesmo documento lista seis obras de leitura obrigatória; confira a versão oficial antes de estudar e retificações na página da COPERSE.', {
     'Língua Portuguesa':['Interpretação de gêneros textuais','Semântica, coesão e relações entre textos','Norma padrão: concordância, regência, ortografia e pontuação'],
-    'Literatura':['Leitura integral e análise das obras indicadas','Gêneros, contexto cultural e história literária'],
+    'Literatura':['Papéis avulsos — Machado de Assis','A hora da estrela — Clarice Lispector','Olhos d’água — Conceição Evaristo','Vila Sapo — José Falero','Ritos de passagem — Ana Paula Tavares','Um útero é do tamanho de um punho — Angélica Freitas','Leitura integral e análise dos gêneros, contexto cultural e história literária'],
     'Produção de Textos':['Adequação ao tema e ao gênero','Argumentação, coerência e coesão','Norma escrita e revisão'],
     'Língua Estrangeira':['Leitura de textos em inglês ou espanhol','Ideias centrais, informações específicas e pontos de vista'],
     'Biologia':['Biologia celular e bioquímica','Seres vivos, genética e evolução','Ecologia, saúde e saneamento'],
@@ -70,7 +72,7 @@ export const modelosEditaisOficiais = [
     'Ciências Humanas e Sociais Aplicadas':['Tempo histórico, cultura, cidadania e direitos','Território, cartografia, população e ambiente','Trabalho, produção, economia e globalização','Política, poder, conflitos e movimentos sociais','Filosofia, ética, sociologia e diversidade'],
     'Redação':['Compreensão da proposta','Seleção e organização de argumentos','Coesão e domínio da escrita formal','Proposta de intervenção respeitando direitos humanos']
   }),
-  modelo('IFSP — Técnico Integrado 2027', '2027', 'Instituto federal', 'https://www.ifsp.edu.br/index.php/editais-daest/17-ultimas-noticias/6110-ifsp-publica-edital-com-4-504-vagas-em-cursos-tecnicos-integrados-ao-ensino-medio', 'Edital 166/2026 para ingresso em 2027: prova objetiva de Língua Portuguesa e Matemática, 15 itens por área, conteúdos de referência do 6º ao 9º ano do Ensino Fundamental.', {
+  modelo('IFSP — Técnico Integrado 2027', '2027', 'Instituto federal', 'https://www.ifsp.edu.br/index.php/editais-daest/17-ultimas-noticias/6110-ifsp-publica-edital-com-4-504-vagas-em-cursos-tecnicos-integrados-ao-ensino-medio', 'Edital 166/2026 para ingresso em 2027: prova de 30 itens, 15 de Português e 15 de Matemática. O edital oficial define como referência os conhecimentos do 6º ao 9º ano, sem publicar uma lista temática detalhada; estes tópicos são um roteiro auxiliar, não transcrição oficial.', {
     'Língua Portuguesa':['Leitura e interpretação de textos e gêneros','Localização de informações e inferências','Coesão, coerência e relações de sentido','Classes de palavras e efeitos de uso','Pontuação, ortografia e convenções da escrita'],
     'Matemática':['Números naturais, inteiros, racionais e reais','Operações, frações, razão, proporção e porcentagem','Expressões, equações e sistemas simples','Geometria, medidas, perímetro, área e volume','Leitura de tabelas e gráficos','Estatística e probabilidade básica']
   }),
@@ -88,9 +90,9 @@ export const modelosEditaisOficiais = [
     'História':['História do Brasil','História geral e contemporânea'],
     'Redação':['Compreensão do tema','Organização de ideias e argumentação']
   }),
-  modelo('FUVEST/USP — Vestibular 2027', '2027', 'Universidade de São Paulo', 'https://www.fuvest.br/wp-content/uploads/fuvest2027-programa-vestibular.pdf', 'Programa oficial FUVEST 2027. A primeira fase tem 80 questões; a segunda fase varia conforme a carreira. Confira a lista vigente de leituras obrigatórias e o Guia de Provas.', {
-    'Língua Portuguesa':['Interpretação, gêneros e efeitos de sentido','Norma-padrão, morfossintaxe e pontuação','Coesão, coerência e argumentação'],
-    'Literatura':['Leitura das nove obras obrigatórias de 2027','Gêneros, escolas literárias e contexto histórico-cultural'],
+  modelo('FUVEST/USP — Vestibular 2027', '2027', 'Universidade de São Paulo', 'https://www.fuvest.br/wp-content/uploads/fuvest2027-programa-vestibular.pdf', 'Programa oficial FUVEST 2027. A 1ª fase tem 80 questões e integra quatro componentes de Linguagens — Arte, Educação Física, Inglês e Português. A 2ª fase varia por carreira. Leituras obrigatórias e redação foram conferidas com os documentos vigentes.', {
+    'Língua Portuguesa':['Interpretação, gêneros e efeitos de sentido','Norma-padrão, morfossintaxe e pontuação','Coesão, coerência e argumentação','Redação: proposta pode solicitar mais de um gênero textual; use fontes verificáveis, argumente e observe os gêneros e instruções definidos no tema'],
+    'Literatura':['Opúsculo Humanitário — Nísia Floresta','Nebulosas — Narcisa Amália','Memórias de Martha — Julia Lopes de Almeida','Caminho de pedras — Rachel de Queiroz','A paixão segundo G. H. — Clarice Lispector','Geografia — Sophia de Mello Breyner Andresen','Balada de amor ao vento — Paulina Chiziane','Canção para ninar menino grande — Conceição Evaristo','A visão das plantas — Djaimilia Pereira de Almeida','Gêneros, linguagem, contexto histórico-cultural e leitura integral das nove obras'],
     'Língua Inglesa':['Leitura e interpretação de textos','Vocabulário e recursos linguísticos em contexto'],
     'Matemática':['Números, álgebra e funções','Geometria, trigonometria e grandezas','Estatística, combinatória e probabilidade'],
     'Biologia':['Células, metabolismo e genética','Evolução, biodiversidade e fisiologia','Ecologia, saúde e ambiente'],
@@ -100,8 +102,8 @@ export const modelosEditaisOficiais = [
     'Geografia':['Cartografia e representações espaciais','Natureza, população e ambiente','Economia, território e geopolítica'],
     'Filosofia':['Conhecimento, ética e política','Filosofia antiga, moderna e contemporânea'],
     'Sociologia':['Cultura, sociedade e identidade','Trabalho, desigualdade, poder e cidadania'],
-    'Arte e Educação Física':['Leitura de linguagens artísticas e patrimônio cultural','Práticas corporais, cultura e sociedade'],
-    'Redação':['Leitura da proposta e planejamento','Tese, argumentação, coesão e revisão']
+    'Arte e Educação Física':['Arte: linguagens visuais, música, teatro e dança; materialidades, mediação e patrimônio cultural','Educação Física: práticas corporais, cultura, inclusão e crítica a estereótipos','Práticas corporais, cultura e sociedade'],
+    'Redação':['Leitura da proposta e planejamento','Argumentação baseada em fontes verificáveis','A proposta pode exigir mais de um gênero textual; adequar composição e registro ao comando','Coesão, norma escrita e revisão']
   }),
   modelo('UFRJ — Acesso 2026 via SiSU/ENEM', '2026', 'Universidade federal', 'https://acessograduacao.ufrj.br/periodo-2026-1/editais-acesso-2026', 'A UFRJ utiliza notas do ENEM/SiSU e, para alguns cursos, Teste de Habilidade Específica. Este modelo é um roteiro de preparação para o ENEM, não um vestibular próprio da UFRJ; consulte o edital e os pesos do curso escolhido.', {
     'Linguagens e suas Tecnologias':['Interpretação de textos verbais e multissemióticos','Gêneros, coesão, argumentação e variação linguística','Literatura, artes, cultura corporal e língua estrangeira'],
@@ -117,9 +119,9 @@ export const modelosEditaisOficiais = [
     'Ciências Humanas e Sociais Aplicadas':['História do Brasil e história geral','Geografia física, humana e cartografia','Filosofia, sociologia, cidadania e política'],
     'Redação':['Interpretação da proposta','Planejamento e desenvolvimento argumentativo','Coesão, norma escrita e revisão']
   }),
-  modelo('UFRGS — Vestibular 2027', '2027', 'Universidade federal', 'https://www.ufrgs.br/coperse/concurso-vestibular/', 'Modelo para o Vestibular UFRGS 2027, conforme a página oficial da COPERSE e o programa de provas da edição. Inclui disciplinas objetivas e redação; consulte a lista oficial de leituras e eventuais retificações.', {
+  modelo('UFRGS — Vestibular 2027', '2027', 'Universidade federal', 'https://www.ufrgs.br/coperse/concurso-vestibular/', 'Roteiro resumido baseado nos programas e na lista de leituras do Vestibular 2027 divulgados pela UFRGS. A lista abaixo é checklist de estudo, não substitui o conteúdo programático integral nem o edital; confirme o formato, idioma escolhido e eventuais retificações no portal da COPERSE.', {
     'Língua Portuguesa':['Interpretação e análise linguística','Gêneros, coesão, sintaxe e semântica'],
-    'Literatura em Língua Portuguesa':['Leitura das obras indicadas para 2027','Gêneros literários, escolas e análise textual'],
+    'Literatura em Língua Portuguesa':['Ideias para adiar o fim do mundo — Ailton Krenak','Macunaíma — Mário de Andrade','A fúria — Silvina Ocampo','A teus pés — Ana Cristina Cesar','Quincas Borba — Machado de Assis','O demônio familiar — José de Alencar','Mrs. Dalloway — Virginia Woolf','A visão das plantas — Djaimilia Pereira de Almeida','Niketche: uma história de poligamia — Paulina Chiziane','O avesso da pele — Jeferson Tenório','Mas em que mundo tu vive — José Falero','Seleta de Canções — Lupicínio Rodrigues: Cadeira vazia; Castigo; Cevando o amargo; Dona Divergência; Ela disse-me assim; Esses moços; Foi assim; Loucura; Maria Rosa; Migalhas; Namorados; Nervos de Aço; Nunca; Se acaso você chegasse; Vingança; (Xote da) Felicidade','Gêneros literários, escolas e análise textual das leituras indicadas'],
     'Língua Estrangeira':['Compreensão de textos no idioma escolhido','Vocabulário e estruturas em contexto'],
     'Matemática':['Aritmética, álgebra e funções','Geometria e trigonometria','Estatística, combinatória e probabilidade'],
     'Biologia':['Citologia, genética e evolução','Fisiologia, biodiversidade e ecologia'],
@@ -129,7 +131,7 @@ export const modelosEditaisOficiais = [
     'Geografia':['Cartografia, natureza e ambiente','População, economia e espaço geográfico'],
     'Redação':['Leitura do tema','Organização, desenvolvimento e revisão do texto']
   }),
-  modelo('PRF — Policial Rodoviário Federal 2021 (último edital)', '2021', 'Concurso público federal', 'https://www.gov.br/prf/pt-br/concurso-2021/etapa1/provas/edital-verticalizado-1.pdf', 'Referência do último edital de abertura da carreira policial localizado no portal oficial da PRF. Não há novo edital policial publicado no momento; confira atualizações oficiais antes de usar como edital vigente.', {
+  modelo('PRF — Policial Rodoviário Federal 2021 (último edital)', '2021', 'Concurso público federal', 'https://www.gov.br/prf/pt-br/concurso-2021/etapa1/provas/edital-verticalizado-1.pdf', 'Roteiro baseado no último edital de abertura da carreira policial localizado no portal oficial da PRF (2021). É uma referência histórica, não um edital vigente; confirme no portal oficial se houver novo concurso ou retificação.', {
     'Língua Portuguesa':['Compreensão, interpretação e gêneros textuais','Ortografia, coesão e reescrita','Morfossintaxe, pontuação, concordância, regência e crase','Redação oficial'],
     'Raciocínio Lógico-Matemático':['Lógica proposicional e argumentação','Conjuntos, contagem e probabilidade','Razões, proporções e problemas quantitativos'],
     'Informática':['Sistemas operacionais e ferramentas de escritório','Redes, internet e segurança da informação'],
@@ -172,7 +174,7 @@ export const modelosEditaisOficiais = [
     'Informática':['Segurança digital, internet e ferramentas de escritório'],
     'Vendas e Negociação':['Atendimento, relacionamento e experiência do cliente','Técnicas de vendas, negociação e ética comercial']
   }),
-  modelo('ESA — CFGS Área Geral (matrícula 2026)', '2026', 'Concurso militar — Exército', 'https://concursocfgs.esa.eb.mil.br/', 'Referência para o concurso de admissão aos Cursos de Formação e Graduação de Sargentos, Área Geral, regido pelo edital de 2025 para matrícula em 2026. O edital anual pode alterar matérias e pesos; consulte a página oficial da ESA.', {
+  modelo('ESA — CFGS Área Geral (matrícula 2026)', '2026', 'Concurso militar — Exército', 'https://concursocfgs.esa.eb.mil.br/', 'Checklist resumido do concurso de admissão aos Cursos de Formação e Graduação de Sargentos, Área Geral, regido pelo edital de 2025 para matrícula em 2026. O edital e anexos da ESA prevalecem para disciplinas, tópicos e pesos.', {
     'Língua Portuguesa':['Interpretação de textos e gêneros','Gramática, sintaxe, pontuação e literatura'],
     'Matemática':['Números, álgebra e funções','Geometria, trigonometria e medidas','Análise combinatória e probabilidade'],
     'Língua Inglesa':['Interpretação de textos','Vocabulário e estruturas gramaticais'],
@@ -190,12 +192,12 @@ export const modelosEditaisOficiais = [
     'Língua Inglesa':['Interpretação de textos','Vocabulário e estruturas em contexto'],
     'Redação':['Planejamento e desenvolvimento do texto','Argumentação, coesão e norma escrita']
   }),
-  modelo('PMESP/APMBB — Cadete PM 2026', '2026', 'Concurso militar estadual — São Paulo', 'https://concursos.policiamilitar.sp.gov.br/concursos/edital-dp-2-321-26-concurso-para-cadete-pm/', 'Edital oficial DP-2/321/26 para Cadete PM, curso realizado na Academia de Polícia Militar do Barro Branco. O programa inclui componentes do ensino médio e conhecimentos específicos de administração pública e informática; confirme o edital completo.', {
+  modelo('PMESP/APMBB — Cadete PM 2026', '2026', 'Concurso militar estadual — São Paulo', 'https://concursos.policiamilitar.sp.gov.br/concursos/edital-dp-2-321-26-concurso-para-cadete-pm/', 'Roteiro resumido do Edital DP-2/321/26 para Cadete PM/APMBB. A prova inclui componentes do ensino médio e conhecimentos específicos de administração pública e informática; em língua estrangeira, o candidato escolhe Inglês ou Espanhol. Consulte o edital para a distribuição de questões, tópicos e regras integrais.', {
     'História':['Antiguidade, mundo medieval e moderno','Mundo contemporâneo e história do Brasil'],
     'Sociologia':['Cultura, diversidade e desigualdades','Trabalho, violência, cidadania e organização política'],
     'Geografia':['Sociedade, natureza e recursos naturais','Economia mundial, população e espaço brasileiro'],
     'Língua Portuguesa':['Norma ortográfica e morfossintaxe','Interpretação, coesão, pontuação e significação','Literatura brasileira e portuguesa'],
-    'Língua Inglesa e Língua Espanhola':['Compreensão global e específica de textos','Vocabulário e elementos linguísticos em contexto'],
+    'Língua Inglesa ou Língua Espanhola':['Idioma escolhido pelo candidato','Compreensão geral e específica de textos','Vocabulário e elementos linguísticos em contexto'],
     'Matemática':['Conjuntos, números e sequências','Polinômios, equações e funções','Estatística, combinatória e probabilidade','Matrizes, sistemas, geometria e trigonometria'],
     'Física':['Movimentos, leis de Newton e energia','Termologia e eletricidade'],
     'Química':['Matéria, átomos e tabela periódica','Ligações, funções inorgânicas e reações'],
