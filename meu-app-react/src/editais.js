@@ -75,6 +75,8 @@ export function identidadeEdital(titulo, edicao, unidade) {
 const materiasCPOR = ['História','Geografia','Matemática','Português']
 export function materiaCanonicaCPOR(nome, topico='') {
   const k=chave(nome)
+  const conteudo=chave(typeof topico==='string'?topico:topico?.titulo)
+  if (/invas(?:ao|oes)|holandes|revoltas? nativistas?|constituico(?:es|es brasileiras)|escravidao|periodo regencial|regencial|estado novo|getulio vargas|seculo xix|exportacao|tenentismo|canudos|contestado|chibata|revolta da armada|revolucao federalista|economia mineradora/.test(conteudo)) return 'História'
   if (/historia/.test(k)) return 'História'
   if (/geografia/.test(k)) return 'Geografia'
   if (/matematica/.test(k)) return 'Matemática'
@@ -83,7 +85,6 @@ export function materiaCanonicaCPOR(nome, topico='') {
     const canonica=materiasCPOR.find(m=>chave(m)===k)
     if(canonica)return canonica
   }
-  const conteudo=chave(typeof topico==='string'?topico:topico?.titulo)
   if (/hist|brasil colonia|republica|guerra|independencia/.test(conteudo)) return 'História'
   if (/geograf|clima|mapa|cartograf|populacao|urban|relevo|hidrograf|energia|agropecu|regional|territor/.test(conteudo)) return 'Geografia'
   if (/matemat|equacao|funcao|geometr|trigonom|probabilidade|conjunto numerico|porcentagem|logarit|progressao/.test(conteudo)) return 'Matemática'
