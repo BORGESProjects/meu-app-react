@@ -47,6 +47,11 @@
 .edital-materia-titulo>span:last-child{font-size:.85rem;white-space:nowrap;color:var(--edital-olive-light)}
 .edital-materia .edital-progresso{margin-top:10px}
 .edital-planejador .edital-ajuda{font-size:.8rem;margin:18px 0}
+.edital-study-signal{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px;margin:12px 0 0;align-items:stretch}
+.edital-sinal-dado{display:grid;align-content:start;gap:5px;min-width:0;padding:11px 13px;border:1px solid #303a27;border-radius:10px;background:#10140e;color:#aeb7a2;font-size:.8rem;line-height:1.5}
+.edital-sinal-dado strong{color:#dce6c6;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase}
+.edital-sinal-dado span{overflow-wrap:anywhere}
+.edital-study-signal .edital-praticar{justify-self:start;align-self:center}
 .edital-topicos{list-style:none;margin:0;padding:0}
 .edital-topicos>li{padding:16px 0;border-top:1px solid #303a27}
 .edital-topico{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap}

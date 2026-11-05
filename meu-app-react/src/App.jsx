@@ -16,7 +16,7 @@ import catalogoLivros from './data/livrosComplementares.json'
 import { carregarLoteLivro } from './livrosAcervo'
 import { criarProcessadorAcervo } from './processarAcervo'
 import {aplicativoNativo, carregarAcervoInstalado, lembrarConta, contaOffline} from './plataforma'
-import { opcoesFiltro, chaveCampoFiltro, normalizarBanca } from './filtros'
+import { opcoesFiltro, chaveCampoFiltro, chaveConteudoFiltro, normalizarBanca, normalizarMateria } from './filtros'
 import { indexarFiltros, filtrarIndice, opcoesRelacionadas, atualizarFiltrosRelacionados } from './indiceFiltros'
 import { ESPECIFICAS_UEM } from './uem'
 import { questoesDaProva, listarProvasCompletas, gerarTreinoCpor } from './simulados'
@@ -1124,6 +1124,35 @@ export default function App() {
     setAbaAtiva('questoes')
   }
 
+  function praticarConteudoEdital(materia, conteudo) {
+    const textoMateria=String(materia||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR')
+    const materiasAgrupadas=textoMateria.includes('ciencias da natureza') ? ['Biologia','Física','Química']
+      : textoMateria.includes('ciencias humanas') ? ['História','Geografia','Filosofia','Sociologia']
+        : textoMateria.includes('linguagens') ? ['Português','Literatura','Inglês','Espanhol']
+          : textoMateria.includes('lingua estrangeira') ? ['Inglês','Espanhol']
+            : textoMateria.startsWith('matematica e suas tecnologias') ? ['Matemática']
+              : textoMateria.includes('filosofia e sociologia') ? ['Filosofia','Sociologia']
+                : textoMateria.includes('portuguesa e literatura') ? ['Português','Literatura']
+                  : [normalizarMateria(materia)]
+    const chavesMateria=[...new Set(materiasAgrupadas.map(valor=>chaveCampoFiltro('materia',valor)).filter(Boolean))]
+    const materiaDisponivel=indiceCompleto.some(item=>chavesMateria.includes(item.materia))
+    const chaveConteudo=chaveConteudoFiltro(conteudo,materia)
+    const conteudoDisponivel=chaveConteudo!=='outros-conteudos' && materiaDisponivel && indiceCompleto.some(item=>chavesMateria.includes(item.materia) && item.conteudo===chaveConteudo)
+    setFiltrosAno([])
+    setFiltrosMateria(materiaDisponivel?chavesMateria:[])
+    setFiltrosConteudo(conteudoDisponivel?[chaveConteudo]:[])
+    setFiltrosBanca([])
+    setFiltrosDificuldade([])
+    setTermoBusca(conteudoDisponivel?'':conteudo)
+    setFiltroSituacaoQuestao('todas')
+    setSomenteComentadas(false)
+    setSomenteComImagem(false)
+    setExcluirQuestaoEmCadernos(false)
+    setCadernoAtivoId(null)
+    setLimiteVisivel(40)
+    setAbaAtiva('questoes')
+  }
+
   const totalHorasEstudo = horasEstudo.reduce((acc, curr) => acc + (curr.horas || 0), 0)
   const totalQuestoesResolvidas = historicoRespostas.length
   const totalAcertos = historicoRespostas.filter(h => h.acertou).length
@@ -1836,7 +1865,7 @@ export default function App() {
         {/* ABA: EDITAL VERTICALIZADO */}
         {abaAtiva === 'edital' && (
           <Suspense fallback={<p role="status">Carregando seu planejador de editais…</p>}>
-            <EditalPlanejador key={session.user.id} userId={session.user.id} mostrarCatalogoOficial />
+            <EditalPlanejador key={session.user.id} userId={session.user.id} historicoRespostas={historicoRespostas} indiceQuestoes={indiceCompleto} onPraticar={praticarConteudoEdital} mostrarCatalogoOficial />
           </Suspense>
         )}
 

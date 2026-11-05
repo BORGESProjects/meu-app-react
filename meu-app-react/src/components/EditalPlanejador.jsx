@@ -6,11 +6,31 @@ import './EditalPlanejador.css'
 import {aplicativoNativo} from '../plataforma'
 import {criarEditaisOffline} from '../editaisOffline'
 import {linhasModelosEditais, modelosEditaisOficiais} from '../data/modelosEditaisOficiais'
+import {chaveCampoFiltro, chaveConteudoFiltro, normalizarMateria} from '../filtros'
 
 const vazio = {titulo:'', edicao:'', unidade:'', data_prova:''}
 const exemplo = 'Português:\nInterpretação de textos\nConcordância verbal e nominal\n\nMatemática:\nEquações do primeiro e segundo grau\nGeometria plana'
 const ImportarEditalPdf = lazy(()=>import('./ImportarEditalPdf'))
 const chavePratica = valor => String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR').replace(/[^a-z0-9]+/g,' ').trim()
+function materiasFiltro(materia) {
+  const chave=chavePratica(materia)
+  const equivalencias = chave.includes('ciencias da natureza')
+    ? ['Biologia','Física','Química']
+    : chave.includes('ciencias humanas')
+      ? ['História','Geografia','Filosofia','Sociologia']
+      : chave.includes('linguagens')
+        ? ['Português','Literatura','Inglês','Espanhol']
+        : chave.includes('lingua estrangeira')
+          ? ['Inglês','Espanhol']
+          : chave.startsWith('matematica e suas tecnologias')
+            ? ['Matemática']
+        : chave.includes('filosofia e sociologia')
+          ? ['Filosofia','Sociologia']
+          : chave.includes('portuguesa e literatura')
+            ? ['Português','Literatura']
+            : [normalizarMateria(materia)]
+  return [...new Set(equivalencias.map(valor=>chaveCampoFiltro('materia',valor)).filter(Boolean))]
+}
 function estatisticaPratica(materia,topico,historico) {
   const materiaAlvo=chavePratica(materia),conteudoAlvo=chavePratica(topico)
   const itens=historico.filter(item=>{
@@ -28,7 +48,7 @@ function Progresso({materias}) {
   return <div className="edital-progresso"><div><span>{r.concluidos} de {r.total} conteúdos estudados</span><strong>{r.percentual}%</strong></div><progress max="100" value={r.percentual} aria-label="Conteúdos estudados" /></div>
 }
 
-export default function EditalPlanejador({userId, client = supabase, historicoRespostas = [], onPraticar, mostrarCatalogoOficial = true}) {
+export default function EditalPlanejador({userId, client = supabase, historicoRespostas = [], indiceQuestoes = [], onPraticar, mostrarCatalogoOficial = true}) {
   const repositorioLocal=useMemo(()=>aplicativoNativo?criarEditaisOffline({client,userId,storage:window.localStorage}):null,[client,userId])
   const [editais,setEditais] = useState([])
   const [selecionado,setSelecionado] = useState('')
@@ -59,6 +79,31 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
   const resumo = useMemo(() => resumoEdital(ativo?.materias || []),[ativo])
   const modelos = useMemo(() => [...new Set((antigos || []).map(item => item.concurso).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'pt-BR')),[antigos])
   const modeloInfo = useMemo(() => modelosEditaisOficiais.find(item=>item.concurso===modeloSelecionado),[modeloSelecionado])
+  const inventarioAcervo = useMemo(()=>{
+    const materias=new Map(), topicos=new Map()
+    for(const item of indiceQuestoes){
+      if(!item?.materia)continue
+      materias.set(item.materia,(materias.get(item.materia)||0)+1)
+      if(item.conteudo){const chave=`${item.materia}|${item.conteudo}`;topicos.set(chave,(topicos.get(chave)||0)+1)}
+    }
+    return {materias,topicos}
+  },[indiceQuestoes])
+  const historicoPorMateria = useMemo(()=>{
+    const resultado=new Map()
+    for(const resposta of historicoRespostas){
+      const chave=chaveCampoFiltro('materia',normalizarMateria(resposta?.materia))
+      if(!chave)continue
+      if(!resultado.has(chave))resultado.set(chave,[])
+      resultado.get(chave).push(resposta)
+    }
+    return resultado
+  },[historicoRespostas])
+  function disponibilidade(materia,topico) {
+    const chaves=materiasFiltro(materia), grupo=chaveConteudoFiltro(topico,materia)
+    const porMateria=chaves.reduce((total,chave)=>total+(inventarioAcervo.materias.get(chave)||0),0)
+    const porTopico=grupo==='outros-conteudos'?0:chaves.reduce((total,chave)=>total+(inventarioAcervo.topicos.get(`${chave}|${grupo}`)||0),0)
+    return {porMateria,porTopico,grupo}
+  }
 
   const ajustarCategoriasCpor=useCallback(async rows => {
     const ajustados=[...rows]
@@ -293,14 +338,20 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
         {!!resumo.total && <div className="edital-painel edital-filtros"><label>Buscar conteúdo<input type="search" placeholder="Pesquise tópicos ou anotações" value={busca} onChange={e => setBusca(e.target.value)} /></label><label>Etapa<select value={status} onChange={e => setStatus(e.target.value)}><option value="">Todas</option><option value="pendentes">Ainda não concluídos</option>{Object.entries(STATUS_EDITAL).map(([v,t]) => <option key={v} value={v}>{t}</option>)}</select></label><label>Prioridade<select value={prioridade} onChange={e => setPrioridade(e.target.value)}><option value="">Todas</option><option value="alta">Alta</option><option value="normal">Normal</option></select></label><button type="button" onClick={() => {setBusca('');setStatus('');setPrioridade('')}}>Limpar filtros</button></div>}
         {ativo.materias.map(m => {
           const visiveis = m.topicos.filter(t => topicoVisivel(t,busca,status,prioridade)), r = resumoEdital([m])
+          const historicoDaMateria=[...new Set(materiasFiltro(m.nome).flatMap(chave=>historicoPorMateria.get(chave)||[]))]
           if (!visiveis.length && (busca || status || prioridade)) return null
           const aberta = abertas[m.id] === true
           return <section className="edital-painel edital-materia" key={m.id}>
             <button className="edital-materia-titulo" aria-expanded={aberta} onClick={() => setAbertas({...abertas,[m.id]:!aberta})}><span>{aberta ? '▾' : '▸'} {m.nome}</span><span>{r.concluidos}/{r.total} · {r.percentual}%</span></button>
             <Progresso materias={[m]} />
-            {aberta && <><p className="edital-ajuda">Marque o que já estudou. Use “Revisar” para conteúdos que precisam de reforço. O sinal de prática considera suas respostas recentes, mas não substitui uma avaliação completa.</p><ol className="edital-topicos">{visiveis.map(t => {const pratica=estatisticaPratica(m.nome,t.titulo,historicoRespostas);const incidencia=chavePratica(t.incidencia);return <li key={t.id} className={t.status === 'concluido' ? 'edital-concluido' : ''}>
+            {aberta && <><p className="edital-ajuda">Marque o que já estudou. A disponibilidade vem do acervo carregado; seu desempenho considera as respostas registradas na conta. A incidência só aparece quando foi informada no próprio edital.</p><ol className="edital-topicos">{visiveis.map(t => {const pratica=estatisticaPratica(m.nome,t.titulo,historicoDaMateria);const incidencia=chavePratica(t.incidencia);const acervo=disponibilidade(m.nome,t.titulo);return <li key={t.id} className={t.status === 'concluido' ? 'edital-concluido' : ''}>
             <div className="edital-topico"><label className="edital-check"><input type="checkbox" disabled={salvando} checked={t.status === 'concluido'} onChange={() => atualizar(m.id,t.id,{status:t.status === 'concluido' ? 'pendente' : 'concluido'})} /><span>{t.titulo}</span></label><div className="edital-topico-acoes"><select disabled={salvando} aria-label={`Etapa de ${t.titulo}`} value={t.status} onChange={e => atualizar(m.id,t.id,{status:e.target.value})}>{Object.entries(STATUS_EDITAL).map(([v,label]) => <option key={v} value={v}>{label}</option>)}</select><button className={t.prioridade === 'alta' ? 'edital-alta' : ''} aria-pressed={t.prioridade === 'alta'} disabled={salvando} title="Alternar prioridade" onClick={() => atualizar(m.id,t.id,{prioridade:t.prioridade === 'alta' ? 'normal' : 'alta'})}>{t.prioridade === 'alta' ? '★ Alta' : '☆ Prioridade'}</button><button disabled={salvando} onClick={() => setEditando({materiaId:m.id,...t})} aria-label={`Editar ${t.titulo}`}>Editar</button></div></div>
-              <div className="edital-study-signal"><span className="edital-incidencia" data-level={incidencia.startsWith('alt')?'alta':incidencia.startsWith('med')?'media':incidencia.startsWith('bai')?'baixa':''}>{t.incidencia ? `Incidência ${t.incidencia}` : 'Incidência não informada no modelo'}</span><span>{pratica.total ? `${pratica.total} questão(ões) vinculadas · ${pratica.percentual}% de acerto · ${pratica.total>=20&&pratica.percentual>=80?'boa consistência recente':pratica.total>=10?'em desenvolvimento':'pratique mais para avaliar'}` : 'Ainda sem respostas vinculadas a este conteúdo'}</span>{onPraticar && <button type="button" className="edital-praticar" onClick={()=>onPraticar(m.nome,t.titulo)}>Praticar este conteúdo</button>}</div>
+              <div className="edital-study-signal">
+                <div className="edital-sinal-dado"><strong>Questões disponíveis</strong><span>{acervo.porTopico ? `${acervo.porTopico} no grupo de conteúdo correspondente` : acervo.porMateria ? `${acervo.porMateria} nesta matéria; ainda não há uma correspondência específica confiável para este tópico` : 'Nenhuma questão identificada nesta matéria'}</span></div>
+                <div className="edital-sinal-dado"><strong>Seu desempenho</strong><span>{pratica.total ? `${pratica.total} respostas associadas · ${pratica.percentual}% de acerto${pratica.total<10?' · amostra ainda pequena':pratica.percentual<70?' · vale revisar este tópico':pratica.total>=20?' · bom desempenho recente':''}` : 'Nenhuma resposta registrada para este conteúdo ainda'}</span></div>
+                {t.incidencia && <div className="edital-sinal-dado"><strong>Incidência informada</strong><span className="edital-incidencia" data-level={incidencia.startsWith('alt')?'alta':incidencia.startsWith('med')?'media':incidencia.startsWith('bai')?'baixa':''}>{t.incidencia}</span></div>}
+                {onPraticar && <button type="button" className="edital-praticar" onClick={()=>onPraticar(m.nome,t.titulo)}>{acervo.porTopico?'Abrir questões correspondentes':'Abrir questões da matéria'}</button>}
+              </div>
               {t.notas && <p className="edital-nota">{t.notas}</p>}
               {t.fonte_pdf && <p className="edital-nota">PDF: {t.fonte_pdf.arquivo} · página {t.fonte_pdf.pagina}{t.fonte_pdf.pagina_fim!==t.fonte_pdf.pagina ? `–${t.fonte_pdf.pagina_fim}` : ''}{t.fonte_pdf.ocr ? ' · OCR' : ''}</p>}
               {editando?.id === t.id && <form className="edital-edicao edital-form" onSubmit={async e => {e.preventDefault(); if (await atualizar(m.id,t.id,{titulo:editando.titulo.trim(),notas:editando.notas.trim()})) setEditando(null)}}><label>Conteúdo<input required maxLength={1500} value={editando.titulo} onChange={e => setEditando({...editando,titulo:e.target.value})} /></label><label>Minhas anotações<textarea rows={3} maxLength={5000} placeholder="O que revisar, materiais, páginas, dúvidas…" value={editando.notas} onChange={e => setEditando({...editando,notas:e.target.value})} /></label><div className="edital-acoes"><button className="edital-primario" disabled={salvando || !editando.titulo.trim()}>Salvar tópico</button><button type="button" onClick={() => setEditando(null)}>Cancelar</button><button type="button" disabled={salvando} className="edital-perigo" onClick={async () => {if (window.confirm(`Excluir apenas o tópico “${t.titulo}”? Os outros conteúdos serão mantidos.`) && await gravar({...ativo,materias:ativo.materias.map(mm => mm.id === m.id ? {...mm,topicos:mm.topicos.filter(tt => tt.id !== t.id)} : mm)})) setEditando(null)}}>Excluir tópico</button></div></form>}
