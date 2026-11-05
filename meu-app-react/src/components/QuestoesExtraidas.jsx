@@ -216,11 +216,16 @@ function CartaoQuestaoExtraida({questao: q, onEstadoResposta, onResponder, favor
   const [avaliacao, setAvaliacao] = useState(null)
   const podeAvaliar = Boolean(avaliarRespostaComplementar(q, 0))
   const [classificacao, setClassificacao] = useState(() => lerClassificacao(q.id))
-  const imagensOpcoes = Array.isArray(q.imagens_opcoes) ? q.imagens_opcoes : []
+  // O acervo usa `opcoes_imagens` como campo canônico; `imagens_opcoes`
+  // continua aceito para lotes antigos. Sem esse alias, fórmulas que só
+  // podem ser lidas com segurança no recorte original aparecem como OCR ruim.
+  const imagensOpcoes = Array.isArray(q.opcoes_imagens)
+    ? q.opcoes_imagens
+    : Array.isArray(q.imagens_opcoes) ? q.imagens_opcoes : []
   const imagens = useMemo(() => [...new Set([
     ...(q.imagens_paginas?.length ? q.imagens_paginas : q.pagina_imagem ? [q.pagina_imagem] : []),
     ...imagensOpcoes.filter(imagem => typeof imagem === 'string' && imagem.trim()),
-  ])], [q.imagens_paginas, q.pagina_imagem, q.imagens_opcoes])
+  ])], [q.imagens_paginas, q.pagina_imagem, q.opcoes_imagens, q.imagens_opcoes])
   const [urlsImagens, setUrlsImagens] = useState(null)
   const [carregandoImagens, setCarregandoImagens] = useState(false)
   const [erroImagens, setErroImagens] = useState(false)
@@ -549,3 +554,4 @@ export default function QuestoesExtraidas({
     {questoesVisiveis.map(q => <CartaoQuestaoExtraida key={q.id} questao={q} onEstadoResposta={atualizarRespostaLocal} onResponder={onResponder} favorita={marcacoes?.[String(q.id)]?.favorita} onFavoritar={onFavoritar} />)}
   </>
 }
+
