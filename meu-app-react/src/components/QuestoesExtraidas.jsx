@@ -102,12 +102,15 @@ async function obterUrlsR2(caminhos) {
 }
 
 async function obterObjetoR2(caminho, opcoes = {}) {
+  const {cacheVersion, ...fetchOptions} = opcoes
   const {data: sessao, error: erroSessao} = await supabase.auth.getSession()
   const token = sessao?.session?.access_token
   if (erroSessao || !token || !chavePublicaSupabase) return null
 
-  const resposta = await fetchApi(`${API_URL}/api/acervo/r2/objeto?key=${encodeURIComponent(caminho)}`, {
-    ...opcoes,
+  const versao = cacheVersion ? `&v=${encodeURIComponent(cacheVersion)}` : `&v=${Date.now()}`
+  const resposta = await fetchApi(`${API_URL}/api/acervo/r2/objeto?key=${encodeURIComponent(caminho)}${versao}`, {
+    ...fetchOptions,
+    cache: 'no-store',
     headers: {
       ...opcoes.headers,
       Authorization: `Bearer ${token}`,
@@ -213,12 +216,16 @@ function CartaoQuestaoExtraida({questao: q, onEstadoResposta, onResponder, favor
   const [avaliacao, setAvaliacao] = useState(null)
   const podeAvaliar = Boolean(avaliarRespostaComplementar(q, 0))
   const [classificacao, setClassificacao] = useState(() => lerClassificacao(q.id))
-  const imagens = useMemo(() => [...new Set(q.imagens_paginas?.length ? q.imagens_paginas : q.pagina_imagem ? [q.pagina_imagem] : [])], [q.imagens_paginas, q.pagina_imagem])
+  const imagensOpcoes = Array.isArray(q.imagens_opcoes) ? q.imagens_opcoes : []
+  const imagens = useMemo(() => [...new Set([
+    ...(q.imagens_paginas?.length ? q.imagens_paginas : q.pagina_imagem ? [q.pagina_imagem] : []),
+    ...imagensOpcoes.filter(imagem => typeof imagem === 'string' && imagem.trim()),
+  ])], [q.imagens_paginas, q.pagina_imagem, q.imagens_opcoes])
   const [urlsImagens, setUrlsImagens] = useState(null)
   const [carregandoImagens, setCarregandoImagens] = useState(false)
   const [erroImagens, setErroImagens] = useState(false)
   const textoCampos = [q.enunciado, q.texto_apoio, ...(q.opcoes || []), ...(q.transcricoes_ocr || []).map(item => item.texto)].join('\n')
-  const precisaApoioVisual = precisaConferir(q) || q.motivos_revisao?.includes('verificar_imagem_ou_diagrama_no_pdf') || temCaractereIrrecuperavel(textoCampos)
+  const precisaApoioVisual = precisaConferir(q) || q.motivos_revisao?.includes('verificar_imagem_ou_diagrama_no_pdf') || temCaractereIrrecuperavel(textoCampos) || imagensOpcoes.some(Boolean)
   const enunciado = textoSeguroParaExibicao(q.enunciado)
   const textoApoio = textoSeguroParaExibicao(q.texto_apoio)
   const carregarImagens = useCallback(async () => {
@@ -279,10 +286,16 @@ function CartaoQuestaoExtraida({questao: q, onEstadoResposta, onResponder, favor
       {q.opcoes.map((opcao, indice) => {
         const texto = textoSeguroParaExibicao(opcao)
         const rotulo = [q.tipo_extraido, q.tipo_resposta].includes('certo_errado') ? ['C', 'E'][indice] : String.fromCharCode(65 + indice)
+        const imagemOpcao = imagensOpcoes[indice]
+        const indiceImagemOpcao = imagemOpcao ? imagens.indexOf(imagemOpcao) : -1
         return <label key={q.id + '-' + indice} className={'question-choice flex cursor-pointer gap-3 rounded-xl px-3 py-2.5 text-sm leading-6 transition ' + (resposta === String(indice) ? 'is-selected text-white' : 'text-slate-200')}>
           <input type="radio" name={'resposta-' + q.id} checked={resposta === String(indice)} onChange={() => marcarResposta(String(indice))} className="mt-1 accent-indigo-400" />
           <span className="shrink-0 font-bold text-indigo-300">{rotulo}.</span>
-          <span className="min-w-0 whitespace-pre-wrap">{blocosValidos(q.blocos_opcoes?.[indice]) ? <BlocosQuestao inline blocos={q.blocos_opcoes[indice]}/> : texto || 'Leia a alternativa ' + rotulo + ' no conteúdo visual da questão.'}</span>
+          <span className="min-w-0 whitespace-pre-wrap">{indiceImagemOpcao >= 0
+            ? urlsImagens?.[indiceImagemOpcao]
+              ? <img src={urlsImagens[indiceImagemOpcao]} alt={`Recorte da alternativa ${rotulo} na prova original`} loading="lazy" className="h-auto max-w-full rounded-lg bg-white" />
+              : 'Carregando recorte da alternativa original…'
+            : blocosValidos(q.blocos_opcoes?.[indice]) ? <BlocosQuestao inline blocos={q.blocos_opcoes[indice]}/> : texto || 'Leia a alternativa ' + rotulo + ' no conteúdo visual da questão.'}</span>
         </label>
       })}
     </fieldset>}
@@ -403,21 +416,22 @@ export default function QuestoesExtraidas({
 
   const carregarLote = useCallback(lote => {
     const chave = caminhoAcervoSeguro(lote.arquivo)
-    if (!cacheLotes.current.has(chave)) {
-      const promessa = buscarArquivoAcervo(chave, {signal: AbortSignal.timeout(90000)})
+    const chaveCache = `${manifesto?.gerado_em || 'atual'}:${chave}`
+    if (!cacheLotes.current.has(chaveCache)) {
+      const promessa = buscarArquivoAcervo(chave, {signal: AbortSignal.timeout(90000), cacheVersion: manifesto?.gerado_em || 'atual'})
         .then(resposta => lerLote(resposta, chave))
         .then(dados => {
           if (!Array.isArray(dados) || dados.length !== lote.quantidade) throw new Error('O lote não corresponde ao índice do acervo.')
           return dados
         })
         .catch(falha => {
-          cacheLotes.current.delete(chave)
+          cacheLotes.current.delete(chaveCache)
           throw falha
         })
-      cacheLotes.current.set(chave, promessa)
+      cacheLotes.current.set(chaveCache, promessa)
     }
-    return cacheLotes.current.get(chave)
-  }, [])
+    return cacheLotes.current.get(chaveCache)
+  }, [manifesto?.gerado_em])
 
   useEffect(() => {
     const id = ++requisicao.current
