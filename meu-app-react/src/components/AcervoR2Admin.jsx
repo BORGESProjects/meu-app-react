@@ -9,7 +9,9 @@ import {supabase} from '../supabaseClient'
 // the backend limit and preserving small incremental uploads.
 const MAX_BATCH_BYTES = 700000
 const MAX_BATCH_FILES = 100
-const STATUS_TIMEOUT_MS = 95000
+// O serviço gratuito do Render pode levar cerca de dois minutos para despertar.
+// Mantenha a consulta ativa por mais tempo que a inicialização observada.
+const STATUS_TIMEOUT_MS = 180000
 const KEY_ALLOWED = /^(?:manifesto|visuais)\.json$|^lotes\/[A-Za-z0-9._-]+\.json\.gz$|^paginas\/[A-Za-z0-9._-]+\.webp$/
 
 const numero = valor => Number(valor || 0).toLocaleString('pt-BR')
@@ -54,7 +56,7 @@ export default function AcervoR2Admin({isAdmin = false}) {
       const tempoLimite = new Promise((_, reject) => {
         timeoutId = setTimeout(() => {
           controller.abort()
-          reject(new Error('A consulta do armazenamento excedeu 95 segundos. Tente atualizar novamente.'))
+          reject(new Error('O serviço ainda não respondeu após 3 minutos. Tente atualizar o uso novamente.'))
         }, STATUS_TIMEOUT_MS)
       })
       const {data, error: authError} = await Promise.race([supabase.auth.getSession(), tempoLimite])
@@ -72,7 +74,7 @@ export default function AcervoR2Admin({isAdmin = false}) {
       setErro('')
     } catch (error) {
       setErro(error.name === 'AbortError'
-        ? 'A consulta do armazenamento excedeu 95 segundos. Tente atualizar novamente.'
+        ? 'O serviço ainda não respondeu após 3 minutos. Tente atualizar o uso novamente.'
         : error.message || 'Não foi possível consultar o uso do bucket.')
     } finally {
       clearTimeout(timeoutId)
