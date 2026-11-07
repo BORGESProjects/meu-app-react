@@ -50,7 +50,7 @@ export default function SessaoEstudo({userId, onConcluir}) {
     guardar(null)
     setErro('')
   }
-  const botao = 'rounded-xl px-4 py-3 text-sm font-semibold transition-colors disabled:opacity-50'
+  const botao = 'inline-flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0'
   return <section aria-label="Sessão de estudo" className="rounded-3xl border border-indigo-500/30 bg-slate-900/60 p-4 shadow-xl sm:p-7">
     <h3 className="mb-2 text-lg font-bold text-slate-100">⏱️ Sessão de estudo</h3>
     <p className="mb-5 text-sm text-slate-400">O tempo continua ao trocar de aba ou minimizar o navegador. Pause quando fizer uma pausa e registre ao terminar.</p>
@@ -64,9 +64,9 @@ export default function SessaoEstudo({userId, onConcluir}) {
       <p className="break-words text-sm text-slate-400">{sessao.materia}{sessao.conteudo ? ` · ${sessao.conteudo}` : ''}</p>
     </div>}
     <div className="flex flex-wrap gap-3">
-      {!sessao ? <button onClick={iniciar} className={`${botao} bg-emerald-600 text-white hover:bg-emerald-500`}>▶ Iniciar sessão</button> : <>
-        <button onClick={()=>guardar(atual.current.inicio === null ? {...atual.current,inicio:Date.now()} : pausarSessao(atual.current))} className={`${botao} bg-slate-700 text-white hover:bg-slate-600`}>{sessao.inicio === null ? '▶ Retomar' : '⏸ Pausar'}</button>
-        <button onClick={concluir} className={`${botao} bg-indigo-600 text-white hover:bg-indigo-500`}>⏹ Encerrar e registrar</button>
+      {!sessao ? <button onClick={iniciar} className={`${botao} bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-400 hover:to-blue-500 focus-visible:ring-cyan-300`}>▶ Iniciar sessão</button> : <>
+        <button onClick={()=>guardar(atual.current.inicio === null ? {...atual.current,inicio:Date.now()} : pausarSessao(atual.current))} className={`${botao} border border-slate-600 bg-slate-800 text-slate-100 hover:border-slate-500 hover:bg-slate-700 focus-visible:ring-slate-300`}>{sessao.inicio === null ? '▶ Retomar' : '⏸ Pausar'}</button>
+        <button onClick={concluir} className={`${botao} bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white hover:from-violet-500 hover:to-fuchsia-500 focus-visible:ring-violet-300`}>⏹ Encerrar e registrar</button>
       </>}
     </div>
     {erro && <p role="alert" className="mt-3 text-sm text-red-300">{erro}</p>}

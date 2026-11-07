@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { gerarTreinoCpor } from '../simulados'
 import { gerarSimuladoPersonalizado, gerarTreinoVestibular, materiaCanonica, nomeFoco, planoRevisao, questoesParaTreino } from '../focoEstudo'
 const campo='mt-2 block w-full rounded-xl border border-slate-700 bg-slate-950 p-3 text-sm text-slate-100'
-const botao='rounded-xl bg-indigo-600 px-4 py-3 text-sm font-semibold text-white hover:bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-50'
+const botao='inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0'
 export default function TreinosFoco({questoes,foco,historico,onIniciar,configuracoes=[],onSalvarConfig,onExcluirConfig}) {
   const [materias,setMaterias]=useState([]),[banca,setBanca]=useState(''),[quantidade,setQuantidade]=useState(40),[modo,setModo]=useState('equilibrado'),[aviso,setAviso]=useState('')
   const pool=useMemo(()=>questoesParaTreino(questoes,foco),[questoes,foco])
@@ -44,8 +44,8 @@ export default function TreinosFoco({questoes,foco,historico,onIniciar,configura
       <h2 id="criador-titulo" className="mt-2 text-xl font-bold">Criar seu simulado</h2>
       <p className="mt-2 text-sm text-slate-400">Escolha matérias, banca e quantidade. A seleção permanece fixa até você terminar; o gabarito aparece na correção.</p>
       <div className="mt-4 flex flex-wrap gap-3">
-        {['militares','sem-preferencia'].includes(foco)&&<button className={botao} onClick={()=>iniciar(gerarTreinoCpor(questoes),'Treino CPOR / NPOR — 40 questões')}>CPOR / NPOR · 40 questões</button>}
-        {['vestibulares','sem-preferencia'].includes(foco)&&<button className={botao} onClick={()=>iniciar(gerarTreinoVestibular(questoes),'Treino vestibular por áreas — 40 questões')}>Vestibulares · 40 questões por áreas</button>}
+        {['militares','sem-preferencia'].includes(foco)&&<button className={`${botao} bg-gradient-to-r from-amber-500 to-orange-600 text-slate-950 hover:from-amber-400 hover:to-orange-500 focus-visible:ring-amber-300`} onClick={()=>iniciar(gerarTreinoCpor(questoes),'Treino CPOR / NPOR — 40 questões')}>🎖️ CPOR / NPOR · 40 questões</button>}
+        {['vestibulares','sem-preferencia'].includes(foco)&&<button className={`${botao} bg-gradient-to-r from-sky-500 to-cyan-600 text-white hover:from-sky-400 hover:to-cyan-500 focus-visible:ring-sky-300`} onClick={()=>iniciar(gerarTreinoVestibular(questoes),'Treino vestibular por áreas — 40 questões')}>📚 Vestibulares · 40 questões por áreas</button>}
       </div>
       {foco==='militares'&&<p className="mt-3 text-xs text-slate-400">Treino CPOR/NPOR: 10 de Português, 10 de Geografia, 10 de História e 10 de Matemática.</p>}
       {foco==='vestibulares'&&<p className="mt-3 text-xs text-slate-400">Treino por áreas: 10 de Linguagens, 10 de Humanas, 10 de Natureza e 10 de Matemática. Não reproduz a matriz ou a nota TRI do ENEM.</p>}
@@ -61,8 +61,8 @@ export default function TreinosFoco({questoes,foco,historico,onIniciar,configura
             <div className="mt-3 grid max-h-60 grid-cols-1 gap-2 overflow-y-auto rounded-xl border border-slate-700 p-3 sm:grid-cols-2 lg:grid-cols-3">{opcoesMaterias.map(m=><label key={m} className="flex min-w-0 items-start gap-2 rounded-lg p-2 text-sm hover:bg-slate-800"><input type="checkbox" className="mt-1 shrink-0" checked={materias.includes(m)} onChange={()=>setMaterias(atuais=>atuais.includes(m)?atuais.filter(v=>v!==m):[...atuais,m])}/><span className="min-w-0 break-words">{m}</span></label>)}</div>
           </fieldset>
           <div className="flex flex-wrap gap-2">
-            <button className={botao} type="submit" disabled={!pool.length}>Gerar simulado personalizado</button>
-            <button className="rounded-xl border border-slate-700 px-4 py-3 text-sm font-semibold text-slate-200 hover:border-indigo-400/50 disabled:opacity-50" type="button" onClick={salvarConfiguracao}>Salvar esta configuração</button>
+            <button className={`${botao} bg-gradient-to-r from-violet-600 to-indigo-600 text-white hover:from-violet-500 hover:to-indigo-500 focus-visible:ring-violet-300`} type="submit" disabled={!pool.length}>✨ Gerar simulado personalizado</button>
+            <button className="rounded-xl border border-sky-400/40 bg-sky-400/10 px-4 py-3 text-sm font-semibold text-sky-100 transition hover:-translate-y-0.5 hover:border-sky-300/70 hover:bg-sky-400/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950" type="button" onClick={salvarConfiguracao}>☆ Salvar esta configuração</button>
           </div>
         </form>
       </details>
@@ -79,8 +79,8 @@ export default function TreinosFoco({questoes,foco,historico,onIniciar,configura
       <h2 id="revisoes-titulo" className="text-lg font-bold">Próximo passo nos estudos</h2>
       <p className="mt-2 text-sm text-slate-400">Resolva antes de consultar. Depois da correção, volte aos conteúdos em outros dias.</p>
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        <div className="rounded-2xl border border-slate-700 p-4"><h3 className="font-semibold">Revisões sugeridas: {plano.vencidas.length}</h3><p className="my-2 text-xs text-slate-400">Retome até 20 questões já praticadas, começando pelas mais atrasadas.</p><button className={botao} disabled={!plano.vencidas.length} onClick={()=>revisar('revisao')}>Começar revisão</button></div>
-        <div className="rounded-2xl border border-slate-700 p-4"><h3 className="font-semibold">Caderno de erros: {plano.erros.length}</h3><p className="my-2 text-xs text-slate-400">Questões cuja tentativa mais recente foi incorreta. Um novo acerto atualiza esta lista.</p><button className={botao} disabled={!plano.erros.length} onClick={()=>revisar('erros')}>Praticar meus erros</button></div>
+        <div className="rounded-2xl border border-amber-400/20 bg-amber-400/[0.04] p-4"><h3 className="font-semibold">Revisões sugeridas: {plano.vencidas.length}</h3><p className="my-2 text-xs text-slate-400">Retome até 20 questões já praticadas, começando pelas mais atrasadas.</p><button className={`${botao} bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 hover:from-amber-400 hover:to-yellow-400 focus-visible:ring-amber-300`} disabled={!plano.vencidas.length} onClick={()=>revisar('revisao')}>↻ Começar revisão</button></div>
+        <div className="rounded-2xl border border-rose-400/20 bg-rose-400/[0.04] p-4"><h3 className="font-semibold">Caderno de erros: {plano.erros.length}</h3><p className="my-2 text-xs text-slate-400">Questões cuja tentativa mais recente foi incorreta. Um novo acerto atualiza esta lista.</p><button className={`${botao} bg-gradient-to-r from-rose-600 to-pink-600 text-white hover:from-rose-500 hover:to-pink-500 focus-visible:ring-rose-300`} disabled={!plano.erros.length} onClick={()=>revisar('erros')}>↗ Praticar meus erros</button></div>
       </div>
       {plano.proxima&&<p className="mt-3 text-xs text-indigo-300">Próxima revisão sugerida: {new Date(plano.proxima).toLocaleDateString('pt-BR')}.</p>}
       {!plano.ultimas.size&&<p className="mt-3 text-sm text-slate-400">Conclua questões ou um simulado para formar suas revisões com o histórico desta conta.</p>}
