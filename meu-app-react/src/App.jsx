@@ -1277,6 +1277,7 @@ export default function App() {
       <main className="relative z-10 mx-auto min-w-0 max-w-5xl p-3 sm:p-6 md:p-8">
         <EstadoProgresso progresso={progresso} />
         {estudoPessoal.erro && <p role="status" className="mb-4 rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">{estudoPessoal.erro}</p>}
+        <div key={abaAtiva} className="tab-transition">
         {abaAtiva === 'conta' && <Conta
           session={session}
           isAdmin={isAdmin}
@@ -1995,6 +1996,7 @@ export default function App() {
             </form>
           </section>
         </div>}
+        </div>
       </main>
     </div>
   )
