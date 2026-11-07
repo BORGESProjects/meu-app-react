@@ -1565,7 +1565,7 @@ export default function App() {
                           {simulado.prova}
                         </h3>
                         <p className="text-slate-400 text-sm mt-2">{simulado.questoesCount} questões para responder · {simulado.totalOriginal} posições no caderno{simulado.anuladas > 0 ? ` · ${simulado.anuladas} anulada(s)` : ''}.</p>
-                        {simulado.observacao_integridade && <p className="mt-3 rounded-xl border border-amber-400/20 bg-amber-400/5 p-3 text-xs leading-relaxed text-amber-100">{simulado.observacao_integridade}</p>}
+                        {simulado.observacao_integridade && !String(simulado.id || '').includes('simulado preparatório|simulado treineiro cpor') && <p className="mt-3 rounded-xl border border-amber-400/20 bg-amber-400/5 p-3 text-xs leading-relaxed text-amber-100">{simulado.observacao_integridade}</p>}
                       </div>
                       <button
                         onClick={() => iniciarSimulado(simulado)}
