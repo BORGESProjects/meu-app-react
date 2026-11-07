@@ -4,6 +4,7 @@ import EnunciadoQuestao from './components/EnunciadoQuestao'
 import AlternativaComEliminacao from './components/AlternativaComEliminacao'
 import FiltroMultiplo from './components/FiltroMultiplo'
 import Conta from './components/Conta'
+import SeletorAparencia from './components/SeletorAparencia'
 import SessaoEstudo from './components/SessaoEstudo'
 import EstadoProgresso from './components/EstadoProgresso'
 import {useProgressoUsuario} from './useProgressoUsuario'
@@ -1243,12 +1244,14 @@ export default function App() {
 
   return (
     <div className="app-shell min-h-screen text-slate-100 font-sans selection:bg-indigo-500 selection:text-white">
+      <span className="theme-watermark" aria-hidden="true" />
       {/* Barra de Navegação Superior Refinada */}
       <nav aria-label="Área de estudo" className="app-nav sticky top-0 z-50 flex flex-col items-stretch gap-3 border-b border-slate-800/80 bg-slate-950/80 px-3 py-3 backdrop-blur-xl xl:flex-row xl:items-center xl:justify-between md:px-6 md:py-3.5">
         <div className="app-brand px-1 text-lg font-bold tracking-tight">
           <img src="/ap-monograma.png" alt="Logotipo AP Aprovado" className="app-brand-mark" />
           <span className="text-slate-100">AP Aprovado<small>SEU ESPAÇO DE ESTUDO</small></span>
         </div>
+        <SeletorAparencia />
         {!aplicativoNativo && <a href="https://ap-aprovado.pages.dev/" className="self-start rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:bg-slate-800 xl:self-auto">Página comercial</a>}
         <div aria-label="Navegação principal" className="mobile-nav flex w-full min-w-0 items-center gap-1.5 overflow-x-auto pb-1 xl:w-auto xl:pb-0">
           {[
@@ -1271,7 +1274,7 @@ export default function App() {
         </div>
       </nav>
 
-      <main className="mx-auto min-w-0 max-w-5xl p-3 sm:p-6 md:p-8">
+      <main className="relative z-10 mx-auto min-w-0 max-w-5xl p-3 sm:p-6 md:p-8">
         <EstadoProgresso progresso={progresso} />
         {estudoPessoal.erro && <p role="status" className="mb-4 rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">{estudoPessoal.erro}</p>}
         {abaAtiva === 'conta' && <Conta
