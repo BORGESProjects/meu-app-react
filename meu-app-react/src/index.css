@@ -207,6 +207,7 @@ input, select, textarea { accent-color: #9aae5a; }
 :root[data-study-theme="multidisciplinar"] .question-choice.is-selected { background: linear-gradient(#18364b,#25224c) padding-box,linear-gradient(120deg,#7af1f3,#8f83ff 55%,#f18cda) border-box; box-shadow: 0 0 24px #50ddec26; }
 :root[data-study-theme="multidisciplinar"] .redacao-hero { border-color: #8561cb88; background: radial-gradient(ellipse at 95% 0%,#39cfe424,transparent 24rem),linear-gradient(120deg,#17233b,#17142b); }
 :root[data-study-theme="multidisciplinar"] .redacao-emblema { border-color: #63ddeb88; background: #35cde822; color: #a6f4f6; }
+:root[data-study-theme="multidisciplinar"] .redacao-etapas b { background: linear-gradient(135deg,#17677f,#5551a5 70%,#813e83); color: #f8faff; box-shadow: 0 0 12px #55cde022; }
 :root[data-study-theme="multidisciplinar"] .appearance-trigger { border-color: #49cadd88; background: #111b30cc; }
 :root[data-study-theme="multidisciplinar"] .appearance-trigger-summary { color: #8cecf0; }
 :root[data-study-theme="multidisciplinar"] .appearance-panel { border-color: #49cadd99; background: #0b1425f5; }
@@ -275,6 +276,7 @@ input, select, textarea { accent-color: #9aae5a; }
 :root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .question-choice { background: linear-gradient(#fbfcff,#fbfcff) padding-box,linear-gradient(130deg,#78c6d1,#b2a7df 52%,#d8a3cd) border-box; }
 :root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .question-choice:hover,:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .question-choice.is-selected { background: linear-gradient(#eefaff,#f4f0ff) padding-box,linear-gradient(130deg,#42aabd,#8071cd 52%,#c968ac) border-box; }
 :root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .redacao-hero { background: radial-gradient(ellipse at 95% 0%,#39cfe415,transparent 24rem),linear-gradient(120deg,#fff,#f8f5ff); }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .redacao-etapas b { background: linear-gradient(135deg,#4dabb8,#7768b9 70%,#b66aa5); color: #fff; }
 :root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .appearance-trigger { border-color: #75cbd3; background: #fff; }
 :root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .appearance-trigger-summary { color: #4655a5; }
 :root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .appearance-panel { border-color: #9b8ad8; background: #fffffff7; }
