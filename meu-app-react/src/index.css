@@ -305,3 +305,46 @@ input, select, textarea { accent-color: #9aae5a; }
 :root[data-color-mode="claro"] .appearance-mode { border-color: #c1ccd8; background: #edf1f5; }
 :root[data-color-mode="claro"] .appearance-option.is-active,
 :root[data-color-mode="claro"] .appearance-mode.is-active { border-color: #7d954a; background: #e3ebd5; }
+
+/* Multidisciplinar: tokens independentes do tema clássico e efeitos leves. */
+:root[data-study-theme="multidisciplinar"] {
+  --color-slate-50:#f8fafc; --color-slate-100:#f1f5f9; --color-slate-200:#e2e8f0; --color-slate-300:#cbd5e1; --color-slate-400:#94a3b8; --color-slate-500:#64748b; --color-slate-600:#475569; --color-slate-700:#334155; --color-slate-800:#1e293b; --color-slate-900:#0f172a; --color-slate-950:#020617;
+  --color-indigo-50:#eef2ff; --color-indigo-100:#e0e7ff; --color-indigo-200:#c7d2fe; --color-indigo-300:#a5b4fc; --color-indigo-400:#818cf8; --color-indigo-500:#6366f1; --color-indigo-600:#4f46e5; --color-indigo-700:#4338ca; --color-indigo-800:#3730a3; --color-indigo-900:#312e81; --color-indigo-950:#1e1b4b;
+  --color-violet-50:#f5f3ff; --color-violet-100:#ede9fe; --color-violet-200:#ddd6fe; --color-violet-300:#c4b5fd; --color-violet-400:#a78bfa; --color-violet-500:#8b5cf6; --color-violet-600:#7c3aed; --color-violet-700:#6d28d9; --color-violet-800:#5b21b6; --color-violet-900:#4c1d95; --color-violet-950:#2e1065;
+  --color-blue-50:#eff6ff; --color-blue-100:#dbeafe; --color-blue-200:#bfdbfe; --color-blue-300:#93c5fd; --color-blue-400:#60a5fa; --color-blue-500:#3b82f6; --color-blue-600:#2563eb; --color-blue-700:#1d4ed8; --color-blue-800:#1e40af; --color-blue-900:#1e3a8a; --color-blue-950:#172554;
+  --color-sky-50:#f0f9ff; --color-sky-100:#e0f2fe; --color-sky-200:#bae6fd; --color-sky-300:#7dd3fc; --color-sky-400:#38bdf8; --color-sky-500:#0ea5e9; --color-sky-600:#0284c7; --color-sky-700:#0369a1; --color-sky-800:#075985; --color-sky-900:#0c4a6e; --color-sky-950:#082f49;
+  --color-cyan-50:#ecfeff; --color-cyan-100:#cffafe; --color-cyan-200:#a5f3fc; --color-cyan-300:#67e8f9; --color-cyan-400:#22d3ee; --color-cyan-500:#06b6d4; --color-cyan-600:#0891b2; --color-cyan-700:#0e7490; --color-cyan-800:#155e75; --color-cyan-900:#164e63; --color-cyan-950:#083344;
+}
+:root[data-study-theme="multidisciplinar"] .app-shell [class*="bg-emerald-950"],
+:root[data-study-theme="multidisciplinar"] .app-shell [class*="bg-lime-950"] { background-color:#111a2c; }
+:root[data-study-theme="multidisciplinar"] .app-shell [class*="border-emerald-500"],
+:root[data-study-theme="multidisciplinar"] .app-shell [class*="border-lime-500"] { border-color:#536a91; }
+
+/* Menos trabalho de composição para listas de questões longas. */
+.app-shell [class~="backdrop-blur-md"],
+.app-shell [class~="backdrop-blur-xl"] { -webkit-backdrop-filter:none !important; backdrop-filter:none !important; }
+.app-shell .question-card { contain:layout style; transition:none !important; }
+.app-shell .question-card:hover { transform:none !important; }
+.tab-transition { animation:tab-transition-in 180ms ease-out both; transform-origin:top center; }
+@keyframes tab-transition-in { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
+.study-dialog-backdrop { -webkit-backdrop-filter:none; backdrop-filter:none; }
+.theme-watermark i { animation:none !important; text-shadow:none !important; }
+
+/* Cabeçalho e controles dimensionados para telas estreitas e toque. */
+.mobile-nav { scrollbar-width:thin; overscroll-behavior-inline:contain; -webkit-overflow-scrolling:touch; scroll-snap-type:x proximity; }
+.mobile-nav .nav-link { min-height:40px; scroll-snap-align:start; }
+.appearance-panel { max-height:min(70dvh,34rem); overflow-y:auto; overscroll-behavior:contain; }
+@media (max-width:639px) {
+  .app-nav { position:relative !important; gap:.55rem; padding:.6rem .75rem; }
+  .app-nav .app-brand { gap:.55rem; font-size:1rem; }
+  .app-nav .app-brand-mark { width:44px; height:44px; flex-basis:44px; border-radius:12px; }
+  .mobile-nav { gap:.4rem; margin-inline:-.15rem; padding-inline:.15rem; }
+  .mobile-nav .nav-link { padding:.55rem .7rem; }
+  .app-shell main { padding-inline:.75rem; }
+  .filter-panel, .question-card, .study-stat-card { border-radius:1.15rem; }
+  .tab-transition { animation-duration:140ms; }
+  .study-dialog-backdrop { backdrop-filter:none; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .tab-transition, .study-dialog { animation:none !important; }
+}
