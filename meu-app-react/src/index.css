@@ -424,3 +424,17 @@ input, select, textarea { accent-color: #9aae5a; }
 :root[data-study-theme="classico"] .theme-watermark i:nth-child(12) { top:90%; right:8%; }
 :root[data-study-theme="classico"] .theme-watermark i:nth-child(13) { top:27%; left:4%; transform:scale(1.04); }
 @media(max-width:639px){:root[data-study-theme="classico"] .theme-watermark i::before{font-size:clamp(1.8rem,7vw,3rem)}}
+
+
+/* Insígnias de oficial: 2º Tenente (1 estrela), 1º Tenente (2) e Capitão (3). */
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(6)::before { content:"★"; color:#e0c78c; font-size:clamp(2.3rem,4.4vw,3.4rem); white-space:nowrap; text-shadow:0 2px 14px #0005; }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(9)::before { content:"★★"; color:#e0c78c; font-size:clamp(1.9rem,3.8vw,2.8rem); letter-spacing:.08em; white-space:nowrap; text-shadow:0 2px 14px #0005; }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(12)::before { content:"★★★"; color:#e0c78c; font-size:clamp(1.6rem,3.2vw,2.3rem); letter-spacing:.045em; white-space:nowrap; text-shadow:0 2px 14px #0005; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .theme-watermark i:nth-child(6)::before,
+:root[data-study-theme="classico"][data-color-mode="claro"] .theme-watermark i:nth-child(9)::before,
+:root[data-study-theme="classico"][data-color-mode="claro"] .theme-watermark i:nth-child(12)::before { color:#657c42; text-shadow:0 2px 12px #657c4225; }
+@media(max-width:639px) {
+  :root[data-study-theme="classico"] .theme-watermark i:nth-child(6)::before { font-size:clamp(1.7rem,7vw,2.5rem); }
+  :root[data-study-theme="classico"] .theme-watermark i:nth-child(9)::before { font-size:clamp(1.45rem,6vw,2.1rem); }
+  :root[data-study-theme="classico"] .theme-watermark i:nth-child(12)::before { font-size:clamp(1.2rem,5vw,1.75rem); }
+}
