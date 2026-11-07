@@ -412,26 +412,26 @@
     "aplicacao": "Preparação CPOR/NPOR — simulado treineiro (não oficial)",
     "ano": null,
     "ano_evidencia": "As capturas não identificam ano de aplicação ou elaboração; nenhum ano foi atribuído.",
-    "enunciado": "Uma força militar multinacional possui 42.000 militares: 34.000 do país A, 6.000 do país B e 2.000 do país C. As porcentagens correspondentes são, respectivamente:",
+    "enunciado": "Uma força militar multinacional possui 42.000 militares do país A, 6.000 do país B e 2.000 do país C. As porcentagens correspondentes são, respectivamente:",
     "opcoes": [
       "Aproximadamente 88%, 8% e 4%.",
-      "Aproximadamente 81%, 14% e 5%.",
+      "Aproximadamente 82%, 14% e 4%.",
       "Aproximadamente 84%, 10% e 6%.",
       "Aproximadamente 86%, 10% e 4%.",
       "Aproximadamente 84%, 12% e 4%."
     ],
     "alternativas": {
       "a": "Aproximadamente 88%, 8% e 4%.",
-      "b": "Aproximadamente 81%, 14% e 5%.",
+      "b": "Aproximadamente 82%, 14% e 4%.",
       "c": "Aproximadamente 84%, 10% e 6%.",
       "d": "Aproximadamente 86%, 10% e 4%.",
       "e": "Aproximadamente 84%, 12% e 4%."
     },
-    "resposta_correta": "B",
-    "gabarito": "B",
+    "resposta_correta": "E",
+    "gabarito": "E",
     "tipo_resposta": "multipla_escolha",
     "nivel": 2,
-    "resolucao": "As frações são 34.000/42.000≈80,95%, 6.000/42.000≈14,29% e 2.000/42.000≈4,76%. Arredondadas ao percentual inteiro mais próximo, resultam em 81%, 14% e 5%. A alternativa B foi ajustada para corrigir a inconsistência aritmética das opções da imagem.",
+    "resolucao": "O total é 42.000+6.000+2.000=50.000. As proporções são 42.000/50.000=84%, 6.000/50.000=12% e 2.000/50.000=4%; portanto, a alternativa correta é E.",
     "imagens": [],
     "fonte_secundaria": true,
     "origem_material": "Capturas de tela do simulado treineiro fornecidas pelo usuário (imagens 1.PNG a 10.PNG).",
@@ -440,7 +440,7 @@
     "classificacao_metodo": "Classificação individual por leitura do enunciado e resolução independente; conferência da matéria e do conteúdo específico.",
     "classificacao_evidencia": "Matéria e conteúdo identificados pelo comando da questão 8; origem identificada nas capturas como simulado preparatório CPOR, não prova oficial.",
     "gabarito_conferido": true,
-    "gabarito_revisao_detalhe": "Alternativa B resolvida independentemente e conferida por cálculo/regra gramatical/histórica/geográfica, conforme a matéria.",
+    "gabarito_revisao_detalhe": "Gabarito resolvido e conferido por cálculo independente, pois a captura do simulado não exibe chave de respostas.",
     "integridade_profissional": {
       "apta_resolucao": true,
       "correcao_automatica": true,
@@ -452,9 +452,7 @@
     "elegibilidade": {
       "elegivel_para_resolucao": true,
       "elegivel_para_correcao_automatica": true,
-      "apontamentos": [
-        "A alternativa B foi corrigida para 81%, 14% e 5%; os dados do enunciado produzem 80,95%, 14,29% e 4,76%."
-      ]
+      "apontamentos": []
     },
     "alternativas_originais": [
       "88%, 8% e 4%",
@@ -463,7 +461,7 @@
       "86%, 10% e 4%",
       "84%, 12% e 4%"
     ],
-    "revisao_integridade_detalhe": "As porcentagens de 34.000, 6.000 e 2.000 sobre 42.000 não correspondiam a nenhuma opção original. A alternativa B foi corrigida para os percentuais arredondados corretos (81%, 14%, 5%)."
+    "revisao_integridade_detalhe": "A conferência da captura original mostrou que a redação correta informa 42.000 militares do país A, além de 6.000 do país B e 2.000 do país C. Restaurei o enunciado e as alternativas originais; o total é 50.000 e a resposta correta é E (84%, 12%, 4%)."
   },
   {
     "id": "cpor-treineiro-q09",
@@ -650,7 +648,7 @@
     "aplicacao": "Preparação CPOR/NPOR — simulado treineiro (não oficial)",
     "ano": null,
     "ano_evidencia": "As capturas não identificam ano de aplicação ou elaboração; nenhum ano foi atribuído.",
-    "enunciado": "A palavra “entardecer” é formada pelo acréscimo simultâneo de prefixo e sufixo ao radical. Esse processo denomina-se:",
+    "enunciado": "A palavra “entardecer” é formada pelo acréscimo simultâneo de prefixo e sufixo ao radical, não existindo, com o mesmo sentido e estrutura, as formas intermediárias entarde ou tardecer. Esse processo é denominado:",
     "opcoes": [
       "derivação regressiva.",
       "composição por aglutinação.",
@@ -669,7 +667,7 @@
     "gabarito": "C",
     "tipo_resposta": "multipla_escolha",
     "nivel": 2,
-    "resolucao": "“Entardecer” forma-se com o prefixo en- e o sufixo -ecer, acrescentados simultaneamente; é derivação parassintética.",
+    "resolucao": "“Entardecer” forma-se com os afixos en- e -ecer aplicados simultaneamente à base tarde. A supressão de um deles não produz as formas intermediárias indicadas no enunciado; por isso, a alternativa C corresponde à derivação parassintética.",
     "imagens": [],
     "fonte_secundaria": true,
     "origem_material": "Capturas de tela do simulado treineiro fornecidas pelo usuário (imagens 1.PNG a 10.PNG).",
@@ -678,7 +676,7 @@
     "classificacao_metodo": "Classificação individual por leitura do enunciado e resolução independente; conferência da matéria e do conteúdo específico.",
     "classificacao_evidencia": "Matéria e conteúdo identificados pelo comando da questão 12; origem identificada nas capturas como simulado preparatório CPOR, não prova oficial.",
     "gabarito_conferido": true,
-    "gabarito_revisao_detalhe": "Alternativa C resolvida independentemente e conferida por cálculo/regra gramatical/histórica/geográfica, conforme a matéria.",
+    "gabarito_revisao_detalhe": "Alternativa C: a formação de entardecer combina en- e -ecer simultaneamente com a base tarde; as formas intermediárias mencionadas no enunciado não ocorrem com o mesmo sentido e estrutura.",
     "integridade_profissional": {
       "apta_resolucao": true,
       "correcao_automatica": true,
