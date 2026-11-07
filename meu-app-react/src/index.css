@@ -211,14 +211,15 @@ input, select, textarea { accent-color: #9aae5a; }
 :root[data-study-theme="multidisciplinar"] .appearance-option.is-active,
 :root[data-study-theme="multidisciplinar"] .appearance-mode.is-active,
 :root[data-study-theme="multidisciplinar"] .appearance-motif.is-active { border-color: #72e7ef; background: #163249; box-shadow: 0 0 0 1px #72e7ef33,0 5px 20px #34d4ed20; }
-:root[data-study-theme="multidisciplinar"] .theme-watermark { position: fixed; z-index: 0; right: max(2vw,calc((100vw - 1100px)/2)); bottom: 3vh; display: block; width: min(34vw,360px); height: min(34vw,360px); pointer-events: none; opacity: .035; }
-:root[data-study-theme="multidisciplinar"] .theme-watermark { display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(2,1fr); place-items:center; transform:rotate(-8deg); }
-:root[data-study-theme="multidisciplinar"] .theme-watermark i { display:grid; place-items:center; color:#a5f4fc; font-family:"Segoe UI Symbol",sans-serif; font-size:clamp(2.5rem,6vw,5rem); font-style:normal; text-shadow:0 0 28px #56d9ed55; animation:motif-float 7s ease-in-out infinite alternate; }
-:root[data-study-theme="multidisciplinar"] .theme-watermark i:nth-child(2n) { animation-delay:-2.5s; }
-:root[data-study-theme="multidisciplinar"] .theme-watermark i:nth-child(3n) { animation-delay:-4s; }
+:root[data-study-theme="multidisciplinar"] .app-shell { position: relative; isolation: isolate; }
+:root[data-study-theme="multidisciplinar"] .theme-watermark { position: absolute; z-index: 0; inset: 0; display: block; width: 100%; height: 100%; min-height: 100vh; overflow: hidden; pointer-events: none; opacity: .035; }
+:root[data-study-theme="multidisciplinar"] .theme-watermark i { position: absolute; display: grid; place-items: center; color:#a5f4fc; font-family:"Segoe UI Symbol",sans-serif; font-size:clamp(2.5rem,5vw,4.5rem); font-style:normal; line-height: 1; text-shadow:0 0 28px #56d9ed55; animation:motif-float 7s ease-in-out infinite alternate; }
+:root[data-study-theme="multidisciplinar"] .theme-watermark i:nth-child(1) { top: 8%; left: 8%; }
+:root[data-study-theme="multidisciplinar"] .theme-watermark i:nth-child(2) { top: 28%; right: 9%; color: #c8adff; animation-delay: -2.5s; }
+:root[data-study-theme="multidisciplinar"] .theme-watermark i:nth-child(3) { top: 51%; left: 4%; color: #91c8ff; animation-delay: -4s; }
+:root[data-study-theme="multidisciplinar"] .theme-watermark i:nth-child(4) { right: 23%; bottom: 11%; color: #aeb8ff; animation-delay: -1.5s; }
+:root[data-study-theme="multidisciplinar"] .theme-watermark i:nth-child(5) { top: 68%; left: 48%; color: #9debdc; animation-delay: -3s; }
 @keyframes motif-float { from { transform:translateY(-5px) rotate(-5deg); } to { transform:translateY(6px) rotate(6deg); } }
-:root[data-study-theme="multidisciplinar"] .app-shell { isolation: isolate; }
-:root[data-study-theme="multidisciplinar"] .theme-watermark { z-index: 0; }
 
 /* Tema claro prioriza leitura, mantendo cartões e controles distinguíveis. */
 :root[data-color-mode="claro"] { color-scheme: light; background: #f2f5f9; color: #152237; }
