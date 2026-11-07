@@ -438,3 +438,71 @@ input, select, textarea { accent-color: #9aae5a; }
   :root[data-study-theme="classico"] .theme-watermark i:nth-child(9)::before { font-size:clamp(1.45rem,6vw,2.1rem); }
   :root[data-study-theme="classico"] .theme-watermark i:nth-child(12)::before { font-size:clamp(1.2rem,5vw,1.75rem); }
 }
+
+
+/* Paleta exclusiva dos filtros multidisciplinares; evita fundos verde-oliva do tema clássico. */
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-component { color:#dce7fa; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-label { color:#b9b2ff; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select > summary { border-color:#40547a; background:linear-gradient(135deg,#111d33,#14172f); color:#e8edfa; box-shadow:inset 0 1px #ffffff0c,0 5px 16px #02081735; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select > summary:hover,
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select[open] > summary { border-color:#7b79ce; background:linear-gradient(120deg,#13263b,#211a3b); }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select > summary > span:last-child { color:#9baed0; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select > div { border-color:#40547a; background:linear-gradient(155deg,#111b2e,#0d1527 62%,#17152d); box-shadow:0 18px 44px #02081780,0 0 0 1px #776fd222; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select > div > div:first-child { border-color:#344866; background:linear-gradient(120deg,#131f34,#17182f); }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select > div > div:first-child span { color:#bdc9df; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select input[type="search"] { border-color:#465a80; background:linear-gradient(120deg,#0c1629,#12172c); color:#eff4ff; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select input[type="search"]::placeholder { color:#a1aec7; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select .filter-options-scroll { scrollbar-color:#7771bd #151c2d; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select .filter-options-scroll::-webkit-scrollbar-track { background:#151c2d; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select .filter-options-scroll::-webkit-scrollbar-thumb { background:#7771bd; border-color:#151c2d; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select [role="checkbox"] { color:#d6e0f2; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select [role="checkbox"]:hover { background:linear-gradient(100deg,#1b3045,#252141); }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select [role="checkbox"][aria-checked="true"] { background:linear-gradient(105deg,#194052,#30254d); color:#f3f1ff; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select [role="checkbox"] > span:first-child { border-color:#60769c; background:#152139; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select [role="checkbox"][aria-checked="true"] > span:first-child { border-color:#60c5d4; background:linear-gradient(140deg,#16869c,#6557b8); }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select [aria-checked="true"] .text-indigo-100 { color:#f3f1ff; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select [class*="text-indigo-"] { color:#c2baff; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select button:hover { color:#f3f1ff; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select details[name="bancas-com-poucas-questoes"] { border-color:#49577c; background:linear-gradient(130deg,#172239,#211d3d); }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select details[name="bancas-com-poucas-questoes"] > summary { color:#d3caff; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select details[name="bancas-com-poucas-questoes"] > summary:hover { background:#282448; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select details[name="bancas-com-poucas-questoes"] [role="checkbox"][aria-checked="true"] { background:linear-gradient(110deg,#194052,#30254d); color:#f3f1ff; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select p { color:#afbdd4; }
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select button:focus-visible,
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select input:focus-visible,
+:root[data-study-theme="multidisciplinar"] .app-shell .filter-select summary:focus-visible { outline-color:#70d8e7; }
+
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-component { color:#202b43; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-label { color:#494487; text-shadow:0 1px #ffffffb8; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select > summary { border-color:#9ba8c5; background:linear-gradient(130deg,#ffffff,#f0f3fa 60%,#f5effa); color:#202b43; box-shadow:inset 0 1px #ffffff,0 5px 14px #26345318; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select > summary:hover,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select[open] > summary { border-color:#6a68ae; background:linear-gradient(115deg,#edfafd,#f0edfc 65%,#faeff8); }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select > summary > span:last-child { color:#4e5e7b; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select > div { border-color:#a9b3ca; background:linear-gradient(145deg,#ffffff,#f5f6fb 58%,#f5f0fa); box-shadow:0 18px 42px #28324b2b,0 0 0 1px #6f62bd20; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select > div > div:first-child { border-color:#d1d7e4; background:linear-gradient(120deg,#f1f8fb,#f3f0fa); }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select > div > div:first-child span { color:#44516a; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select input[type="search"] { border-color:#adb9d0; background:linear-gradient(110deg,#ffffff,#f3f5fb); color:#1c2941; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select input[type="search"]::placeholder { color:#5d6b82; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select .filter-options-scroll { scrollbar-color:#7770b0 #e7e9f1; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select .filter-options-scroll::-webkit-scrollbar-track { background:#e7e9f1; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select .filter-options-scroll::-webkit-scrollbar-thumb { background:#7770b0; border-color:#e7e9f1; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select [role="checkbox"] { color:#26344d; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select [role="checkbox"]:hover { background:linear-gradient(105deg,#e6f5f7,#edeafb); color:#243149; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select [role="checkbox"][aria-checked="true"] { background:linear-gradient(105deg,#d8f0f3,#e7def4); color:#27254c; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select [role="checkbox"] > span:first-child { border-color:#7788a8; background:linear-gradient(135deg,#f7f9fd,#e8ecf4); }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select [role="checkbox"][aria-checked="true"] > span:first-child { border-color:#4a97a6; background:linear-gradient(140deg,#258da0,#6659ae); }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select [class*="text-indigo-"] { color:#46427e; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select button:hover { color:#25234e; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select details[name="bancas-com-poucas-questoes"] { border-color:#9c99c3; background:linear-gradient(125deg,#edf6f8,#efebf8); }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select details[name="bancas-com-poucas-questoes"] > summary { color:#443d76; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select details[name="bancas-com-poucas-questoes"] > summary:hover { background:#e2e1f2; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select details[name="bancas-com-poucas-questoes"] [role="checkbox"][aria-checked="true"] { background:linear-gradient(105deg,#d8f0f3,#e7def4); color:#27254c; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select p { color:#4d5a70; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select button:focus-visible,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select input:focus-visible,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select summary:focus-visible { outline-color:#5b559f; }
+
+@media(max-width:639px) {
+  :root[data-study-theme="multidisciplinar"] .app-shell .filter-select > div { max-width:min(92vw,25rem); }
+  :root[data-study-theme="multidisciplinar"] .app-shell .filter-select .filter-options-scroll { max-height:min(56dvh,21rem); }
+}

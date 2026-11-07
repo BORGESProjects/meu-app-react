@@ -53,9 +53,9 @@ export default function FiltroMultiplo({ titulo, opcoes, selecionados, aoAlterar
       ? opcoes.find(opcao => opcao.value === selecionados[0])?.label || selecionados[0]
       : `${selecionados.length} selecionados`
 
-  return <div className="min-w-0 self-start">
-    <span className="mb-2 block text-xs font-semibold uppercase tracking-wider text-indigo-400">{titulo}</span>
-    <details name="filtros-questoes" className="group min-w-0">
+  return <div className="filter-component min-w-0 self-start">
+    <span className="filter-label mb-2 block text-xs font-semibold uppercase tracking-wider text-indigo-400">{titulo}</span>
+    <details name="filtros-questoes" className="filter-select group min-w-0">
       <summary className="flex min-h-12 min-w-0 cursor-pointer list-none items-center justify-between gap-3 rounded-xl border border-slate-700 bg-slate-950/80 px-4 py-3 text-sm text-slate-200 shadow-inner transition-all hover:border-indigo-500/70 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 group-open:border-indigo-500/60 group-open:rounded-b-none [&::-webkit-details-marker]:hidden">
         <span className="min-w-0 flex-1 truncate" title={resumo}>{resumo}</span>
         {selecionados.length > 0 && <span className="shrink-0 rounded-full bg-indigo-500/20 px-2 py-0.5 text-[11px] font-bold text-indigo-200">{selecionados.length}</span>}
