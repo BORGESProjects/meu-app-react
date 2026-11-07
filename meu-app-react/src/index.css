@@ -506,3 +506,19 @@ input, select, textarea { accent-color: #9aae5a; }
   :root[data-study-theme="multidisciplinar"] .app-shell .filter-select > div { max-width:min(92vw,25rem); }
   :root[data-study-theme="multidisciplinar"] .app-shell .filter-select .filter-options-scroll { max-height:min(56dvh,21rem); }
 }
+
+
+/* Cobra fumando da FEB e insígnia de 3º Sargento; remove ornamentos sem relação militar. */
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(1),
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(4),
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(13) { display:none!important; }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(7)::before,
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(8)::before { content:""; display:block; width:100%; height:100%; background-position:center; background-repeat:no-repeat; background-size:contain; color:transparent; text-shadow:none; }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(7)::before { background-image:url("/simbolos/terceiro-sargento.svg"); }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(8)::before { background-image:url("/simbolos/feb-cobra-fumando.svg"); }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(8) { width:clamp(3.2rem,6vw,5rem); height:clamp(3.6rem,6.5vw,5.4rem); }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(10)::before { content:"⚜"; color:#d7c38d; }
+@media(max-width:639px) {
+  :root[data-study-theme="classico"] .theme-watermark i:nth-child(7) { width:clamp(2.7rem,9vw,3.8rem); height:clamp(2.2rem,7vw,3rem); }
+  :root[data-study-theme="classico"] .theme-watermark i:nth-child(8) { width:clamp(2.8rem,9vw,3.8rem); height:clamp(3rem,10vw,4.2rem); }
+}
