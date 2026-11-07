@@ -348,3 +348,6 @@ input, select, textarea { accent-color: #9aae5a; }
 @media (prefers-reduced-motion:reduce) {
   .tab-transition, .study-dialog { animation:none !important; }
 }
+
+/* Alinha o menu de aparência com a largura do controle em telas pequenas. */
+.appearance-panel { left:0; right:auto; }
