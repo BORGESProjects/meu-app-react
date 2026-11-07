@@ -175,3 +175,90 @@
 :root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .edital-modelo-fonte a{color:#326d8a}
 :root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .edital-gerenciar>.edital-pdf{border-color:#d4dae5}
 
+
+
+/* Ajuste exclusivo do tema clássico claro: painéis suaves, tons grafite e oliva com contraste. */
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador {
+  --edital-olive:#52683b; --edital-olive-light:#405632; --edital-border:#a9b5a0;
+  color:#28364a;
+}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador h2,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador h3 { color:#263449; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador p { color:#526076; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-sobretitulo,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-progresso strong,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-materia-titulo>span:last-child,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-modelo-fonte strong { color:#405632; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-seletor>span { color:#59677c; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-painel {
+  border:1px solid transparent;
+  background:linear-gradient(145deg,#e6ebe2,#dfe6df 58%,#e4e8eb) padding-box,linear-gradient(135deg,#829566,#aebc9c 48%,#8291a4) border-box;
+  box-shadow:0 12px 30px #25352813,inset 0 1px #ffffffbb;
+}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador button {
+  border-color:#a9b5a0; background:linear-gradient(135deg,#e3e9df,#dce3dc); color:#2c3a4b;
+  transition:background 160ms ease,border-color 160ms ease,box-shadow 160ms ease;
+}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador button:hover {
+  border-color:#758a60; background:linear-gradient(135deg,#d7e1ce,#d7e1e3); box-shadow:0 4px 13px #263b2816;
+}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador button.edital-primario {
+  border-color:#718449; background:linear-gradient(115deg,#627a3c,#879c54 58%,#a5b66b); color:#172114;
+  box-shadow:0 6px 16px #415a2d25;
+}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador button.edital-primario:hover {
+  background:linear-gradient(115deg,#536f35,#788f49 58%,#98ad5e);
+}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador button[aria-pressed="true"] {
+  border-color:#738a4c; background:linear-gradient(120deg,#d5e0c8,#d2dfdf); color:#30462f;
+}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador button.edital-favorito,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador button.edital-favorito[aria-pressed="true"] {
+  border-color:#b09a57; background:linear-gradient(120deg,#f2ead1,#e8e1cd); color:#59491f;
+}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador input:not([type="checkbox"]),
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador select,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador textarea {
+  border-color:#aebaaa; background:linear-gradient(135deg,#f4f6f2,#edf1ed); color:#27364b;
+}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador input::placeholder,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador textarea::placeholder { color:#68768a; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador select option { background:#eef1ed; color:#27364b; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador label { color:#44536a; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador button:focus-visible,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador summary:focus-visible,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador input:focus-visible,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador select:focus-visible,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador textarea:focus-visible {
+  outline-color:#637b48; box-shadow:0 0 0 3px #728a4930;
+}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-mensagem { color:#456747; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-progresso>div,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-indicadores { color:#59677c; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-indicadores strong { color:#29394d; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-progresso progress,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-progresso progress::-webkit-progress-bar { background:#cdd6ca; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-progresso progress::-webkit-progress-value,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-progresso progress::-moz-progress-bar { background:linear-gradient(90deg,#687f43,#9aae65); }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-sinal-dado,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-edicao,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-vazio,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-modelo-fonte,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-pdf-grupo {
+  border-color:#c0cabb; background:linear-gradient(135deg,#e8ede6,#e1e7e3); color:#46536a;
+}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-sinal-dado strong { color:#405632; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-topicos>li,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-pdf-topico,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-form-edicao,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-gerenciar>.edital-pdf { border-color:#c0cabb; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-check input[type="checkbox"] { accent-color:#667e42; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-concluido>.edital-topico .edital-check span { color:#397250; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador button.edital-alta,
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-pdf-avisos { border-color:#a9904b; color:#6c5111; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-modelo-fonte a { color:#405f78; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-erro { border-color:#d2a2a2; background:#f5e8e8; color:#7d3434; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-erro button { color:#713939; }
+@media(prefers-reduced-motion:reduce) {
+  :root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador button { transition:none; }
+}
