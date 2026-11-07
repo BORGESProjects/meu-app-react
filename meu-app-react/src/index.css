@@ -405,3 +405,22 @@ input, select, textarea { accent-color: #9aae5a; }
 :root[data-study-theme="classico"][data-color-mode="claro"] .theme-watermark { opacity:.075; }
 :root[data-study-theme="classico"][data-color-mode="claro"] .theme-watermark i::before { color:#657c42!important; text-shadow:0 0 20px #657c4222; }
 @media(max-width:639px){:root[data-study-theme="classico"] .theme-watermark i::before{font-size:clamp(1.8rem,7vw,3rem)}}
+
+
+/* Corrige a camada e espalha as marcas d'água militares sem ocupar espaço no layout. */
+:root[data-study-theme="classico"] .theme-watermark { position:absolute; z-index:-1; inset:0; display:block; width:100%; height:100%; min-height:100vh; overflow:hidden; pointer-events:none; opacity:.052; }
+:root[data-study-theme="classico"] .theme-watermark i { position:absolute; display:grid; place-items:center; width:clamp(2.5rem,5vw,4.5rem); height:clamp(2.5rem,5vw,4.5rem); color:transparent; font-size:0!important; animation:none; }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(1) { top:8%; left:8%; }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(2) { top:20%; right:14%; transform:rotate(12deg) scale(1.08); }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(3) { top:43%; left:5%; transform:rotate(-14deg) scale(.92); }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(4) { top:65%; right:28%; }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(5) { top:9%; left:61%; transform:rotate(8deg); }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(6) { top:31%; left:32%; transform:scale(.86); }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(7) { top:50%; right:7%; }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(8) { top:83%; left:13%; transform:rotate(18deg); }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(9) { top:76%; right:45%; transform:scale(1.12); }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(10) { top:13%; right:30%; transform:rotate(-10deg); }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(11) { top:42%; right:40%; transform:rotate(15deg) scale(.9); }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(12) { top:90%; right:8%; }
+:root[data-study-theme="classico"] .theme-watermark i:nth-child(13) { top:27%; left:4%; transform:scale(1.04); }
+@media(max-width:639px){:root[data-study-theme="classico"] .theme-watermark i::before{font-size:clamp(1.8rem,7vw,3rem)}}
