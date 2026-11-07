@@ -351,3 +351,11 @@ input, select, textarea { accent-color: #9aae5a; }
 
 /* Alinha o menu de aparência com a largura do controle em telas pequenas. */
 .appearance-panel { left:0; right:auto; }
+
+/* Mantém os controles do tema multidisciplinar na própria paleta. */
+:root[data-study-theme="multidisciplinar"][data-color-mode="escuro"] .appearance-option:not(.is-active),
+:root[data-study-theme="multidisciplinar"][data-color-mode="escuro"] .appearance-mode:not(.is-active),
+:root[data-study-theme="multidisciplinar"][data-color-mode="escuro"] .appearance-motif:not(.is-active) { border-color:#394968; background:#121d32; color:#dce7fa; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .appearance-option:not(.is-active),
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .appearance-mode:not(.is-active),
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .appearance-motif:not(.is-active) { border-color:#cbd4e3; background:#eef1f6; color:#25334a; }
