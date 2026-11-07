@@ -1,6 +1,8 @@
 package com.apaprovado.service;
 
 import jakarta.annotation.PreDestroy;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
@@ -13,6 +15,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.zip.GZIPInputStream;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutorService;
@@ -50,6 +53,7 @@ public class R2AcervoStorage {
     private static final int MAX_KEYS_PER_REQUEST = 100;
     private static final long MAX_STORAGE_BYTES = 10_000_000_000L;
     private static final long MAX_UPLOAD_BATCH_BYTES = 3_800_000L;
+    private static final int MAX_DECOMPRESSED_MANIFEST_BYTES = 5_000_000;
     private static final Duration STORAGE_SCAN_TIMEOUT = Duration.ofSeconds(80);
     private static final long STORAGE_CACHE_TTL_MILLIS = 60_000L;
     private static final Duration URL_TTL = Duration.ofMinutes(30);
@@ -213,6 +217,7 @@ public class R2AcervoStorage {
 
         Set<String> keys = new HashSet<>();
         List<PendingObject> pending = new ArrayList<>();
+        long requestBytes = 0L;
         long incomingBytes = 0L;
         for (MultipartFile file : files) {
             String key = decodeObjectKey(file);
@@ -224,11 +229,13 @@ public class R2AcervoStorage {
             if (size <= 0L) {
                 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Arquivos vazios não podem ser publicados.");
             }
-            incomingBytes = Math.addExact(incomingBytes, size);
-            if (incomingBytes > MAX_UPLOAD_BATCH_BYTES) {
+            requestBytes = Math.addExact(requestBytes, size);
+            if (requestBytes > MAX_UPLOAD_BATCH_BYTES) {
                 throw new ResponseStatusException(HttpStatus.PAYLOAD_TOO_LARGE, "Cada lote deve ter no máximo 3,8 MB.");
             }
-            pending.add(new PendingObject(file, key, 0L));
+            byte[] contents = preparedContents(file, key);
+            incomingBytes = Math.addExact(incomingBytes, contents.length);
+            pending.add(new PendingObject(file, key, 0L, contents));
         }
 
         StorageUsage before = currentStorageUsage(false);
@@ -239,7 +246,7 @@ public class R2AcervoStorage {
             long existingBytes = before.objectSizes().getOrDefault(item.key(), 0L);
             replacingBytes = Math.addExact(replacingBytes, existingBytes);
             if (existingBytes == 0L) newObjects++;
-            resolved.add(new PendingObject(item.file(), item.key(), existingBytes));
+            resolved.add(new PendingObject(item.file(), item.key(), existingBytes, item.contents()));
         }
         pending = resolved;
         if (before.bytes() > MAX_STORAGE_BYTES) {
@@ -259,7 +266,7 @@ public class R2AcervoStorage {
             CompletableFuture.allOf(writes.toArray(CompletableFuture[]::new)).join();
 
             Map<String, Long> updatedSizes = new HashMap<>(before.objectSizes());
-            for (PendingObject item : pending) updatedSizes.put(item.key(), item.file().getSize());
+            for (PendingObject item : pending) updatedSizes.put(item.key(), (long) item.contents().length);
             StorageUsage after = new StorageUsage(projectedBytes, before.objects() + newObjects, Map.copyOf(updatedSizes));
             cachedUsage = after;
             cachedUsageAtMillis = System.currentTimeMillis();
@@ -284,26 +291,50 @@ public class R2AcervoStorage {
     }
 
     private void uploadAndVerify(PendingObject item) {
-        MultipartFile file = item.file();
         String key = item.key();
+        byte[] contents = item.contents();
         PutObjectRequest put = PutObjectRequest.builder()
             .bucket(bucket)
             .key(key)
-            .contentLength(file.getSize())
-            .contentType(contentTypeFor(key, file.getContentType()))
+            .contentLength((long) contents.length)
+            .contentType(contentTypeFor(key, item.file().getContentType()))
             .build();
         try {
-            byte[] contents = file.getBytes();
-            if (contents.length != file.getSize()) {
-                throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "A leitura do arquivo enviado não correspondeu ao tamanho original.");
-            }
             client.putObject(put, RequestBody.fromBytes(contents));
             long storedBytes = client.headObject(HeadObjectRequest.builder().bucket(bucket).key(key).build()).contentLength();
-            if (storedBytes != file.getSize()) {
+            if (storedBytes != contents.length) {
                 throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "A verificação do arquivo enviado não correspondeu ao tamanho original.");
             }
-        } catch (IOException | SdkException e) {
+        } catch (SdkException e) {
             throw new CompletionException(e);
+        }
+    }
+
+    private static byte[] preparedContents(MultipartFile file, String key) {
+        try {
+            byte[] uploaded = file.getBytes();
+            if (!"manifesto.json".equals(key) || !"application/gzip".equalsIgnoreCase(file.getContentType())) {
+                return uploaded;
+            }
+            try (GZIPInputStream gzip = new GZIPInputStream(new ByteArrayInputStream(uploaded));
+                 ByteArrayOutputStream output = new ByteArrayOutputStream()) {
+                byte[] buffer = new byte[8192];
+                int read;
+                while ((read = gzip.read(buffer)) != -1) {
+                    if (output.size() + read > MAX_DECOMPRESSED_MANIFEST_BYTES) {
+                        throw new ResponseStatusException(HttpStatus.PAYLOAD_TOO_LARGE,
+                            "O manifesto descompactado excede o limite seguro de 5 MB.");
+                    }
+                    output.write(buffer, 0, read);
+                }
+                byte[] contents = output.toByteArray();
+                if (contents.length == 0 || contents[0] != '{') {
+                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "O manifesto compactado não contém um objeto JSON válido.");
+                }
+                return contents;
+            }
+        } catch (IOException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Não foi possível ler o arquivo enviado ou descompactar o manifesto.");
         }
     }
 
@@ -396,7 +427,7 @@ public class R2AcervoStorage {
     public record UploadFileDescriptor(String key, long bytes) {}
     public record PreflightResult(StorageStatus current, long projectedBytes, long additionalBytes, long files, long packageBytes) {}
     private record StorageUsage(long bytes, long objects, Map<String, Long> objectSizes) {}
-    private record PendingObject(MultipartFile file, String key, long existingBytes) {}
+    private record PendingObject(MultipartFile file, String key, long existingBytes, byte[] contents) {}
 
     @PreDestroy
     public void close() {

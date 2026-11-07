@@ -3,10 +3,8 @@ import {API_URL} from '../api'
 import {supabase} from '../supabaseClient'
 
 // Small multipart batches stay below the hosting parser's effective request cap.
-// Keep multipart overhead below Render's observed ~700 KB request ceiling.
-// The server accepts batches up to 3.8 MB. The current manifest is ~651 KB,
-// so leave modest multipart headroom while keeping the client cap far below
-// the backend limit and preserving small incremental uploads.
+// Oversized manifests are gzipped in transit and restored by the backend before
+// they are stored in R2 as ordinary JSON.
 const MAX_BATCH_BYTES = 700000
 const MAX_BATCH_FILES = 100
 // O serviço gratuito do Render pode levar cerca de dois minutos para despertar.
@@ -26,6 +24,14 @@ function chaveDoArquivo(file) {
 
 function nomeSeguroDaParte(chave) {
   return btoa(chave).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '')
+}
+
+async function compactarManifesto(file) {
+  if (typeof CompressionStream !== 'function') {
+    throw new Error('Este navegador não oferece compactação segura para enviar o manifesto. Atualize o navegador e tente novamente.')
+  }
+  const compactado = await new Response(file.stream().pipeThrough(new CompressionStream('gzip'))).blob()
+  return new Blob([compactado], {type: 'application/gzip'})
 }
 
 function mensagemErro(payload, resposta) {
@@ -181,7 +187,15 @@ export default function AcervoR2Admin({isAdmin = false}) {
         if (pararDepoisDoLote.current) break
         const itens = lotes[indice]
         const form = new FormData()
-        for (const item of itens) form.append('files', item.file, nomeSeguroDaParte(item.key))
+        for (const item of itens) {
+          const arquivoEnvio = item.key === 'manifesto.json' && item.file.size > MAX_BATCH_BYTES
+            ? await compactarManifesto(item.file)
+            : item.file
+          if (arquivoEnvio.size > MAX_BATCH_BYTES) {
+            throw new Error(`O arquivo ${item.key} ultrapassa o tamanho seguro por lote mesmo após a compactação.`)
+          }
+          form.append('files', arquivoEnvio, nomeSeguroDaParte(item.key))
+        }
         const session = await obterSessao()
         const response = await fetch(`${API_URL}/api/acervo/r2/objetos`, {
           method: 'POST',
