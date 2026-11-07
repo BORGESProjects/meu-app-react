@@ -529,3 +529,135 @@ input, select, textarea { accent-color: #9aae5a; }
 :root[data-study-theme="classico"] .theme-watermark i:nth-child(8)::before { background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20128%20140%22%20fill%3D%22none%22%3E%3Ccircle%20cx%3D%2264%22%20cy%3D%2261%22%20r%3D%2253%22%20fill%3D%22%23152015%22%20fill-opacity%3D%22.12%22%20stroke%3D%22%23D8C58F%22%20stroke-width%3D%223%22%2F%3E%3Cpath%20d%3D%22M34%2091c-13-9-13-27%200-36%2010-8%2025-5%2031%204%206%209%201%2021-8%2024-8%202-15-4-12-11%202-5%208-7%2012-3%22%20stroke%3D%22%23D8C58F%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M55%2072c-7-9-6-21%202-29%205-5%207-11%207-17%200-7%206-12%2013-11%205%201%207%205%207%209%22%20stroke%3D%22%23D8C58F%22%20stroke-width%3D%227%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M75%2014c7-3%2015%200%2019%206l-8%208-12-3%22%20fill%3D%22%23D8C58F%22%2F%3E%3Ccircle%20cx%3D%2285%22%20cy%3D%2219%22%20r%3D%221.6%22%20fill%3D%22%23243020%22%2F%3E%3Cpath%20d%3D%22M90%2020h17v-7h5v13h-5v-2H90%22%20stroke%3D%22%23D8C58F%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3Cpath%20d%3D%22M109%209c-5-4%205-5%201-9m5%2010c-4-4%204-5%201-8%22%20stroke%3D%22%23D8C58F%22%20stroke-width%3D%222.2%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M28%2066c3-8%209-13%2018-14%22%20stroke%3D%22%23D8C58F%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%2F%3E%3Ctext%20x%3D%2264%22%20y%3D%22132%22%20text-anchor%3D%22middle%22%20fill%3D%22%23D8C58F%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20letter-spacing%3D%224%22%3EFEB%3C%2Ftext%3E%3C%2Fsvg%3E"); }
 
 :root[data-study-theme="classico"] .theme-watermark i:nth-child(11)::before { content:"⌖"; color:#d8c58f; }
+
+
+/* Repaginada exclusiva dos temas claros: contraste firme, degradês e foco interativo. */
+:root[data-color-mode="claro"] .app-shell .text-indigo-100 { color:#334763; }
+:root[data-color-mode="claro"] .app-shell .text-indigo-200 { color:#394d70; }
+:root[data-color-mode="claro"] .app-shell .text-indigo-300 { color:#465780; }
+:root[data-color-mode="claro"] .app-shell .text-indigo-400 { color:#52647d; }
+:root[data-color-mode="claro"] .app-shell .text-emerald-300,
+:root[data-color-mode="claro"] .app-shell .text-emerald-400 { color:#286847; }
+:root[data-color-mode="claro"] .app-shell .text-lime-100,
+:root[data-color-mode="claro"] .app-shell .text-lime-200,
+:root[data-color-mode="claro"] .app-shell .text-lime-300 { color:#4a5d31; }
+:root[data-color-mode="claro"] .app-shell .text-amber-200,
+:root[data-color-mode="claro"] .app-shell .text-amber-300 { color:#80520e; }
+:root[data-color-mode="claro"] .app-shell .text-rose-200,
+:root[data-color-mode="claro"] .app-shell .text-rose-300 { color:#994253; }
+:root[data-color-mode="claro"] .app-shell button:disabled { opacity:.76; color:#59677c; }
+
+:root[data-color-mode="claro"] .app-shell header p[aria-live="polite"] {
+  color:#31445f; border:1px solid transparent;
+  background:linear-gradient(120deg,#fff,#f4f6fb) padding-box,linear-gradient(110deg,#82984f,#879dc5 52%,#9984c2) border-box;
+  box-shadow:0 5px 18px #26384b12,inset 0 1px #fff;
+}
+:root[data-color-mode="claro"] .app-shell header p[aria-live="polite"] strong { color:#1d3452; }
+:root[data-color-mode="claro"] .app-shell header p[role="status"]:not([aria-live="polite"]) { color:#435775; }
+
+:root[data-color-mode="claro"] .app-shell .filter-label { color:#405632; text-shadow:0 1px #fff9; }
+:root[data-color-mode="claro"] .app-shell .filter-select > summary {
+  border-color:transparent;
+  background:linear-gradient(135deg,#fff,#f5f7f1 58%,#f0f4e9) padding-box,linear-gradient(120deg,#718e43,#aabd7d 48%,#8093ad) border-box;
+  color:#27364b; box-shadow:0 4px 13px #263b2810,inset 0 1px #fff;
+  transition:background 160ms ease,border-color 160ms ease,box-shadow 160ms ease;
+}
+:root[data-color-mode="claro"] .app-shell .filter-select > summary:hover,
+:root[data-color-mode="claro"] .app-shell .filter-select[open] > summary {
+  background:linear-gradient(135deg,#f4f8ed,#f3f6fc 58%,#f5f0fb) padding-box,linear-gradient(120deg,#658b39,#829ac1 50%,#8e6db5) border-box;
+  box-shadow:0 6px 18px #33476520,inset 0 1px #fff;
+}
+:root[data-color-mode="claro"] .app-shell .filter-select > summary > span:last-child { color:#52617b; }
+:root[data-color-mode="claro"] .app-shell .filter-select > div {
+  border-color:#aab5c6; background:linear-gradient(145deg,#fff,#f5f7f4 55%,#f4f1fa);
+  box-shadow:0 18px 44px #26384b2b,0 0 0 1px #758e5c1c;
+}
+:root[data-color-mode="claro"] .app-shell .filter-select > div > div:first-child {
+  border-color:#d2d9df; background:linear-gradient(120deg,#f4f7ef,#f1f4fa 60%,#f6f1f9);
+}
+:root[data-color-mode="claro"] .app-shell .filter-select > div > div:first-child span { color:#44536a; }
+:root[data-color-mode="claro"] .app-shell .filter-select input[type="search"] { border-color:#b8c3d0; background:#fff; color:#24344c; }
+:root[data-color-mode="claro"] .app-shell .filter-select input[type="search"]::placeholder { color:#66758a; }
+:root[data-color-mode="claro"] .app-shell .filter-select [role="checkbox"] { color:#33445b; border-radius:.75rem; }
+:root[data-color-mode="claro"] .app-shell .filter-select [role="checkbox"]:hover { background:linear-gradient(105deg,#edf5e5,#e9f2f4); color:#24364e; }
+:root[data-color-mode="claro"] .app-shell .filter-select [role="checkbox"][aria-checked="true"] { background:linear-gradient(110deg,#e2edd3,#e3edf1); color:#263d32; }
+:root[data-color-mode="claro"] .app-shell .filter-select [role="checkbox"] > span:first-child { border-color:#849273; background:linear-gradient(135deg,#fff,#edf1e8); }
+:root[data-color-mode="claro"] .app-shell .filter-select [role="checkbox"][aria-checked="true"] > span:first-child { border-color:#6c873d; background:linear-gradient(140deg,#739a3c,#6981a7); color:#fff; }
+:root[data-color-mode="claro"] .app-shell .filter-select button:focus-visible,
+:root[data-color-mode="claro"] .app-shell .filter-select summary:focus-visible,
+:root[data-color-mode="claro"] .app-shell .filter-select input:focus-visible { outline:2px solid #667e9f; outline-offset:2px; }
+:root[data-color-mode="claro"] .app-shell .filter-select details[name="bancas-com-poucas-questoes"] { border-color:#9baa8c; background:linear-gradient(125deg,#eef3e6,#eaf0f4); }
+:root[data-color-mode="claro"] .app-shell .filter-select details[name="bancas-com-poucas-questoes"] > summary { color:#405632; }
+:root[data-color-mode="claro"] .app-shell .filter-select .filter-options-scroll { scrollbar-color:#758764 #e6ebe4; }
+:root[data-color-mode="claro"] .app-shell .filter-select .filter-options-scroll::-webkit-scrollbar-track { background:#e6ebe4; }
+:root[data-color-mode="claro"] .app-shell .filter-select .filter-options-scroll::-webkit-scrollbar-thumb { background:#758764; border-color:#e6ebe4; }
+
+:root[data-study-theme="classico"][data-color-mode="claro"] .app-shell .filter-panel {
+  border:1px solid transparent;
+  background:linear-gradient(140deg,#f9fbf5,#f0f4e9 55%,#eef2ec) padding-box,linear-gradient(125deg,#607d37,#a9bf78 42%,#7187a6 78%,#80984c) border-box;
+  box-shadow:0 18px 48px #283b251c,inset 0 1px #ffffffd9; transition:box-shadow 180ms ease;
+}
+:root[data-study-theme="classico"][data-color-mode="claro"] .app-shell .filter-panel:hover { box-shadow:0 22px 54px #283b2528,inset 0 1px #fff; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .app-shell .filter-panel .border-b,
+:root[data-study-theme="classico"][data-color-mode="claro"] .app-shell .filter-panel .border-t { border-color:#d4dccb; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .app-shell .filter-panel fieldset { border-color:#c2ceaf; background:linear-gradient(120deg,#ffffffb8,#f5f7f0d9); }
+:root[data-study-theme="classico"][data-color-mode="claro"] .app-shell .filter-panel legend,
+:root[data-study-theme="classico"][data-color-mode="claro"] .app-shell .filter-panel label > span { color:#405632; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .app-shell .filter-panel input[type="checkbox"] { accent-color:#657e39; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .app-shell .filter-panel input:not([type="checkbox"]):focus,
+:root[data-study-theme="classico"][data-color-mode="claro"] .app-shell .filter-panel select:focus { border-color:#718e43; box-shadow:0 0 0 3px #829d4a30; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .app-shell .filter-panel button:not(:disabled):hover,
+:root[data-study-theme="classico"][data-color-mode="claro"] .app-shell .filter-panel a:hover { border-color:#758e52; box-shadow:0 5px 16px #30452218; }
+
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .text-indigo-100 { color:#3c426e; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .text-indigo-200 { color:#424980; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .text-indigo-300 { color:#4b508e; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .text-indigo-400 { color:#575e83; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .text-emerald-300,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .text-emerald-400 { color:#246459; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .text-lime-100,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .text-lime-200,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .text-lime-300 { color:#4b5971; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .text-amber-200,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .text-amber-300 { color:#795422; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .text-rose-200,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .text-rose-300 { color:#85415d; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell header p[aria-live="polite"] {
+  color:#36405e; border:1px solid transparent;
+  background:linear-gradient(120deg,#fff,#f4f5fb) padding-box,linear-gradient(110deg,#378e9c,#7464bb 52%,#a85992) border-box;
+  box-shadow:0 5px 18px #28304b14,inset 0 1px #fff;
+}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell header p[aria-live="polite"] strong { color:#2d315f; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell header p[role="status"]:not([aria-live="polite"]) { color:#475371; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-label { color:#46427e; text-shadow:0 1px #ffffffb8; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select > summary {
+  border-color:transparent; background:linear-gradient(130deg,#fff,#f3f5fb 58%,#f4effa) padding-box,linear-gradient(120deg,#3e94a2,#7971b3 52%,#a35e8e) border-box;
+}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select > summary:hover,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select[open] > summary { background:linear-gradient(115deg,#ebf9fa,#efecfb 60%,#f9edf5) padding-box,linear-gradient(120deg,#288392,#6455a4 52%,#934879) border-box; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select > div { border-color:#aaa8c7; background:linear-gradient(145deg,#fff,#f5f6fb 58%,#f5f0fa); }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select [class*="text-indigo-"] { color:#46427e; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select [role="checkbox"] { color:#26344d; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select [role="checkbox"][aria-checked="true"] { color:#302a60; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-select details[name="bancas-com-poucas-questoes"] { border-color:#a29bc3; background:linear-gradient(125deg,#eef6f8,#efebf8); }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-panel {
+  border:1px solid transparent;
+  background:linear-gradient(140deg,#f7fbfc,#f2f2fa 55%,#f6eff7) padding-box,linear-gradient(125deg,#348f9d,#8a76c6 50%,#b65e9c) border-box;
+  box-shadow:0 18px 48px #2924451c,inset 0 1px #ffffffdc; transition:box-shadow 180ms ease;
+}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-panel:hover { box-shadow:0 22px 54px #2924452a,inset 0 1px #fff; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-panel .border-b,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-panel .border-t { border-color:#c8cedd; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-panel fieldset { border-color:#c1c4d8; background:linear-gradient(120deg,#ffffffd4,#f5f4f9e8); }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-panel legend,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-panel label > span { color:#46427e; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-panel input[type="checkbox"] { accent-color:#5b559f; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-panel input:not([type="checkbox"]):focus,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-panel select:focus { border-color:#6558a5; box-shadow:0 0 0 3px #6c5ab42e; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-panel button:not(:disabled):hover,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-panel a:hover { border-color:#7064ae; box-shadow:0 5px 16px #43346a1e; }
+
+@media (prefers-reduced-motion:reduce) {
+  :root[data-color-mode="claro"] .app-shell .filter-select > summary,
+  :root[data-color-mode="claro"] .app-shell .filter-panel { transition:none; }
+}
