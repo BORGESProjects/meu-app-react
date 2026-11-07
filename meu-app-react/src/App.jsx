@@ -1244,7 +1244,7 @@ export default function App() {
 
   return (
     <div className="app-shell min-h-screen text-slate-100 font-sans selection:bg-indigo-500 selection:text-white">
-      <span className="theme-watermark" aria-hidden="true" />
+      <span className="theme-watermark" aria-hidden="true"><i>⚕</i><i>⚖</i><i>⚙</i><i>⚛</i><i>&lt;/&gt;</i></span>
       {/* Barra de Navegação Superior Refinada */}
       <nav aria-label="Área de estudo" className="app-nav sticky top-0 z-50 flex flex-col items-stretch gap-3 border-b border-slate-800/80 bg-slate-950/80 px-3 py-3 backdrop-blur-xl xl:flex-row xl:items-center xl:justify-between md:px-6 md:py-3.5">
         <div className="app-brand px-1 text-lg font-bold tracking-tight">
