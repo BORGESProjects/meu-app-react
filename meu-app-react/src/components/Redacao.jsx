@@ -2,6 +2,7 @@ import {useEffect,useRef,useState} from 'react'
 import {API_URL,fetchApi} from '../api'
 import {supabase} from '../supabaseClient'
 import {temasRedacao,bancasRedacao} from '../data/temasRedacao'
+import './RedacaoTemas.css'
 import {PERFIS_REDACAO,assinaturaRedacao,estatisticasRedacao,validarRedacao,solicitarCorrecao,verificarServicoRedacao,lerRascunho,salvarRascunho,textoRelatorio} from '../redacao'
 const campo='mt-2 w-full min-w-0 rounded-xl border border-slate-700 bg-slate-950/70 p-3 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 disabled:opacity-60'
 const botao='inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-fuchsia-600 to-violet-600 px-5 py-3 text-sm font-semibold text-white shadow-md shadow-fuchsia-950/30 transition duration-200 hover:-translate-y-0.5 hover:from-fuchsia-500 hover:to-violet-500 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fuchsia-300 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0'
@@ -10,7 +11,8 @@ export default function Redacao({session,foco,onSalvarHistorico}) {
  const [inicial]=useState(()=>lerRascunho(window.localStorage,userId))
  const [rascunho,setRascunho]=useState(()=>inicial?.rascunho||{tema:'',texto:'',banca:['militares','concursos'].includes(foco)?'GERAL':'ENEM',ano:null,criterios:'',temaId:''})
  const [historico,setHistorico]=useState(()=>inicial?.historico||[])
- const [resultado,setResultado]=useState(null),[filtroBanca,setFiltroBanca]=useState('Todas'),[erro,setErro]=useState(''),[salvo,setSalvo]=useState(inicial?'Rascunho recuperado deste navegador.':''),[ocupado,setOcupado]=useState(false),[reutilizada,setReutilizada]=useState(false)
+ const [resultado,setResultado]=useState(null),[filtroBanca,setFiltroBanca]=useState('Todas'),[buscaTema,setBuscaTema]=useState(''),[erro,setErro]=useState(''),[salvo,setSalvo]=useState(inicial?'Rascunho recuperado deste navegador.':''),[ocupado,setOcupado]=useState(false),[reutilizada,setReutilizada]=useState(false)
+ const [favoritos,setFavoritos]=useState(()=>{try{return JSON.parse(window.localStorage.getItem(`ap-redacao-temas-favoritos:${userId}`)||'[]')}catch{return []}})
  const requisicao=useRef(null),versao=useRef(0),historicoMigrado=useRef(false)
  useEffect(()=>()=>{versao.current++;requisicao.current?.abort()},[])
  function publicarResumo(item) {
@@ -21,7 +23,7 @@ export default function Redacao({session,foco,onSalvarHistorico}) {
  useEffect(()=>{if(historicoMigrado.current||!onSalvarHistorico)return;historicoMigrado.current=true;historico.forEach(publicarResumo)},[historico,onSalvarHistorico])
  const estatisticas=estatisticasRedacao(rascunho.texto),perfil=PERFIS_REDACAO[rascunho.banca]
  const temaEscolhido=temasRedacao.find(t=>t.id===rascunho.temaId)
- const temas=filtroBanca==='Todas'?temasRedacao:temasRedacao.filter(t=>t.banca===filtroBanca)
+ const temas=temasRedacao.filter(t=>(filtroBanca==='Todas'||(filtroBanca==='Favoritos'?favoritos.includes(t.id):t.banca===filtroBanca))&&(!buscaTema||`${t.banca} ${t.ano} ${t.tema}`.toLocaleLowerCase('pt-BR').includes(buscaTema.toLocaleLowerCase('pt-BR'))))
  function persistir(dados,relatorios=historico) {
   try{salvarRascunho(window.localStorage,userId,dados,relatorios);setSalvo('Rascunho salvo neste navegador, separado por conta.')}catch{setSalvo('Não foi possível salvar neste navegador. Use Baixar rascunho para guardar uma cópia.')}
  }
@@ -29,8 +31,9 @@ export default function Redacao({session,foco,onSalvarHistorico}) {
  function escolherTema(id) {
   const tema=temasRedacao.find(t=>t.id===id)
   if(!tema){editar({temaId:'',ano:null});return}
-  editar({tema:tema.tema,temaId:id,ano:tema.ano,banca:tema.banca==='ENEM'?'ENEM':'FUVEST',criterios:''})
+  editar({tema:tema.tema,temaId:id,ano:tema.ano,banca:({ENEM:'ENEM',FUVEST:'FUVEST',ESA:'ESA',EsPCEx:'ESPCEX',CPOR:'CPOR'})[tema.banca]||rascunho.banca,criterios:''})
  }
+ function alternarFavorito(id){const atualizados=favoritos.includes(id)?favoritos.filter(item=>item!==id):[...favoritos,id];setFavoritos(atualizados);try{window.localStorage.setItem(`ap-redacao-temas-favoritos:${userId}`,JSON.stringify(atualizados))}catch{}}
  function baixar(nome,conteudo) {
   const url=URL.createObjectURL(new Blob([conteudo],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download=nome;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)
  }
@@ -63,14 +66,30 @@ export default function Redacao({session,foco,onSalvarHistorico}) {
     <label className="text-sm font-semibold">Correção para<select className={campo} disabled={ocupado} value={rascunho.banca} onChange={e=>editar({banca:e.target.value,temaId:'',ano:null})}>{Object.entries(PERFIS_REDACAO).map(([id,p])=><option key={id} value={id}>{p.nome}</option>)}</select></label>
     <div className="rounded-xl border border-indigo-500/30 bg-indigo-950/20 p-3 text-xs leading-relaxed text-indigo-200"><strong>{perfil.escala}</strong><p className="mt-2">{perfil.orientacao}</p>{perfil.fonte&&<a className="mt-2 inline-block underline decoration-indigo-400 underline-offset-2" href={perfil.fonte} target="_blank" rel="noreferrer">Ver referência oficial e conferir o edital vigente ↗</a>}<p className="mt-2">A avaliação por IA é apoio de estudo, não substitui a correção oficial. Limites manuscritos, caligrafia, tinta e identificação precisam ser conferidos por você.</p></div>
    </div>
-   <details className="mt-4"><summary className="cursor-pointer text-sm font-semibold text-indigo-300">Escolher um tema de edição anterior</summary>
-    <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_2fr]"><label className="text-sm">Filtrar temas por banca<select disabled={ocupado} className={campo} value={filtroBanca} onChange={e=>{setFiltroBanca(e.target.value);if(temaEscolhido&&e.target.value!=='Todas'&&temaEscolhido.banca!==e.target.value)editar({temaId:'',ano:null})}}><option>Todas</option>{bancasRedacao.map(b=><option key={b}>{b}</option>)}</select></label><label className="text-sm">Proposta de redação<select disabled={ocupado} className={campo} value={rascunho.temaId||''} onChange={e=>escolherTema(e.target.value)}><option value="">Tema livre</option>{temas.map(t=><option key={t.id} value={t.id}>{t.banca} {t.ano} — {t.tema}</option>)}</select></label></div>
-    {temaEscolhido&&<div className="mt-3 rounded-xl bg-slate-950/60 p-4 text-sm"><p className="font-semibold">{temaEscolhido.banca} {temaEscolhido.ano} · {temaEscolhido.tipo}</p><p className="mt-2 text-slate-400">{temaEscolhido.instrucoes}</p><a className="mt-3 inline-block text-indigo-300 underline" href={temaEscolhido.fonte} target="_blank" rel="noreferrer">Consultar proposta e coletânea na fonte oficial</a></div>}
-   </details>
+   <section className="redacao-biblioteca" aria-labelledby="titulo-biblioteca-redacao">
+    <div className="redacao-biblioteca-cabecalho"><div><p className="redacao-kicker">Propostas de provas anteriores</p><h2 id="titulo-biblioteca-redacao">Escolha um tema para treinar</h2><p>Temas aplicados em provas reais. Abra a coletânea da edição para consultar os textos motivadores, imagens e instruções originais.</p></div><span className="redacao-contagem">{temas.length} {temas.length===1?'tema':'temas'}</span></div>
+    <div className="redacao-biblioteca-filtros"><label className="redacao-busca-tema"><span className="sr-only">Buscar tema ou prova</span><span aria-hidden="true">⌕</span><input disabled={ocupado} value={buscaTema} onChange={e=>setBuscaTema(e.target.value)} placeholder="Buscar tema ou prova"/></label><label className="redacao-filtro-banca"><span className="sr-only">Filtrar por prova</span><select disabled={ocupado} value={filtroBanca==='Favoritos'?'Todas':filtroBanca} onChange={e=>setFiltroBanca(e.target.value)}><option value="Todas">Todas as provas</option>{bancasRedacao.map(b=><option key={b}>{b}</option>)}</select></label><button className={`redacao-favoritos-toggle ${filtroBanca==='Favoritos'?'is-active':''}`} type="button" aria-pressed={filtroBanca==='Favoritos'} onClick={()=>setFiltroBanca(filtroBanca==='Favoritos'?'Todas':'Favoritos')}>☆ Favoritos</button></div>
+    <div className="redacao-biblioteca-grade">
+     <div className="redacao-tema-lista" aria-label="Temas disponíveis">
+      {temas.map(t=><article key={t.id} className={`redacao-tema-card ${rascunho.temaId===t.id?'is-selected':''}`}>
+       <button type="button" className="redacao-tema-selecionar" aria-pressed={rascunho.temaId===t.id} onClick={()=>escolherTema(t.id)} disabled={ocupado}><span className="redacao-tema-ano">{t.banca} · {t.ano}</span><strong>{t.tema}</strong><span>{t.tipo}</span></button>
+       <button type="button" className="redacao-tema-favoritar" aria-label={`${favoritos.includes(t.id)?'Remover dos':'Adicionar aos'} favoritos: ${t.tema}`} aria-pressed={favoritos.includes(t.id)} onClick={()=>alternarFavorito(t.id)}>{favoritos.includes(t.id)?'★':'☆'}</button>
+      </article>)}
+      {!temas.length&&<p className="redacao-lista-vazia">{filtroBanca==='Favoritos'?'Você ainda não favoritou temas.':'Nenhuma proposta encontrada. Ajuste a busca ou o filtro.'}</p>}
+     </div>
+     <div className="redacao-coletanea" aria-live="polite">
+      {temaEscolhido?<><div className="redacao-coletanea-topo"><div><span>{temaEscolhido.banca} · {temaEscolhido.ano}</span><h3>{temaEscolhido.tema}</h3></div><span className="redacao-selo-fonte">{temaEscolhido.nivelFonte||'Proposta aplicada'}</span></div><p className="redacao-instrucao-tema">{temaEscolhido.instrucoes}</p>
+       {temaEscolhido.cadernoUrl?<div className="redacao-pdf-wrap"><iframe title={`Coletânea e proposta oficial ${temaEscolhido.banca} ${temaEscolhido.ano}`} src={`${temaEscolhido.cadernoUrl}#toolbar=0&navpanes=0`} loading="lazy" referrerPolicy="no-referrer"/><p>Se o documento não abrir aqui, <a href={temaEscolhido.cadernoUrl} target="_blank" rel="noreferrer">abra o caderno oficial em outra aba ↗</a>.</p></div>:<div className="redacao-coletanea-fallback"><span aria-hidden="true">▤</span><div><strong>Coletânea da prova</strong><p>Abra a fonte vinculada para consultar os textos motivadores, imagens e instruções originais desta edição.</p></div><a href={temaEscolhido.fonte} target="_blank" rel="noreferrer">Ver documento da prova ↗</a></div>}
+       <p className="redacao-creditos-fonte">Fonte: <a href={temaEscolhido.fonte} target="_blank" rel="noreferrer">{temaEscolhido.fonteNome||`página ${temaEscolhido.banca}`} ↗</a>{temaEscolhido.notaFonte&&<span> · {temaEscolhido.notaFonte}</span>}</p>
+       <button type="button" className="redacao-usar-tema" disabled={ocupado} onClick={()=>document.getElementById('redacao-tema-input')?.scrollIntoView({behavior:'smooth',block:'center'})}>Usar este tema na minha redação ↓</button>
+      </>:<div className="redacao-coletanea-vazia"><span aria-hidden="true">✎</span><h3>Selecione uma proposta</h3><p>Os temas e documentos da edição aparecerão aqui. Você pode favoritar propostas para encontrá-las depois.</p></div>}
+     </div>
+    </div>
+   </section>
    <details className="mt-4 text-sm"><summary className="cursor-pointer text-slate-300">Critérios desta avaliação</summary><ul className="mt-3 space-y-1 text-slate-400">{perfil.criterios.map(([id,nome,max])=><li key={id}>{nome} · até {max} pontos</li>)}</ul></details>
   </section>
   <form onSubmit={corrigir} className="space-y-4 rounded-3xl border border-slate-800 bg-slate-900/60 p-4 sm:p-6">
-   <label className="block text-sm font-semibold">Tema<input className={campo} required minLength={3} maxLength={500} disabled={ocupado} value={rascunho.tema} placeholder="Escolha uma proposta ou escreva o tema" onChange={e=>editar({tema:e.target.value,temaId:'',ano:null})}/></label>
+   <label className="block text-sm font-semibold">Tema<input id="redacao-tema-input" className={campo} required minLength={3} maxLength={500} disabled={ocupado} value={rascunho.tema} placeholder="Escolha uma proposta ou escreva o tema" onChange={e=>editar({tema:e.target.value,temaId:'',ano:null})}/></label>
    <label className="block text-sm font-semibold">Seu texto<textarea className={`${campo} min-h-80 leading-7`} rows={14} required maxLength={20000} readOnly={ocupado} value={rascunho.texto} placeholder="Cole ou escreva sua redação. Separe os parágrafos com uma linha em branco." onChange={e=>editar({texto:e.target.value})}/></label>
    <div className="flex flex-wrap justify-between gap-2 text-xs text-slate-400"><span>{estatisticas.palavras} palavras · {estatisticas.paragrafos} parágrafos</span><span>{estatisticas.caracteres.toLocaleString('pt-BR')} / 20.000 caracteres</span></div>
    <details><summary className="cursor-pointer text-sm text-indigo-300">Acrescentar instruções ou exigências do edital</summary><label className="mt-3 block text-xs text-slate-400">Tipo de texto, critérios particulares ou orientações. Para coletâneas extensas, consulte a fonte oficial.<textarea className={campo} maxLength={3000} rows={3} disabled={ocupado} value={rascunho.criterios} onChange={e=>editar({criterios:e.target.value})}/></label></details>
@@ -96,4 +115,5 @@ export default function Redacao({session,foco,onSalvarHistorico}) {
   {historico.length>0&&<section className="rounded-3xl border border-slate-800 p-4 sm:p-6"><h2 className="font-bold">Últimas correções neste navegador</h2><p className="mt-2 text-xs text-slate-400">Até cinco relatórios desta conta. Baixe as versões que quiser manter fora deste dispositivo.</p><div className="mt-4 space-y-2">{historico.map(h=><button key={h.id} className="w-full rounded-xl border border-slate-700 p-3 text-left text-sm hover:bg-slate-800" onClick={()=>{setResultado(h);setReutilizada(true)}}>{h.redacao.tema}<span className="mt-1 block text-xs text-slate-400">{new Date(h.criadaEm).toLocaleString('pt-BR')} · {h.resultado.relatorio?`${h.resultado.relatorio.nota}/${h.resultado.relatorio.maximo}`:'Relatório em texto'}</span></button>)}</div></section>}
  </div>
 }
+
 
