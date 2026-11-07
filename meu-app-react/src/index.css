@@ -146,6 +146,8 @@ input, select, textarea { accent-color: #9aae5a; }
 .study-dialog-backdrop { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; overflow-y: auto; padding: max(1rem, env(safe-area-inset-top)) 1rem max(1rem, env(safe-area-inset-bottom)); background: #020402e0; backdrop-filter: blur(8px); }
 .study-dialog { margin: auto; animation: study-dialog-in 160ms ease-out; }
 @keyframes study-dialog-in { from { opacity: 0; transform: translateY(8px) scale(.99); } to { opacity: 1; transform: translateY(0) scale(1); } }
+.tab-transition { animation: tab-transition-in 260ms cubic-bezier(.2,.75,.25,1) both; transform-origin: top center; }
+@keyframes tab-transition-in { from { opacity: 0; transform: translateY(10px) scale(.994); filter: blur(2px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
 
 .redacao-hero { display: flex; align-items: center; gap: 1.25rem; padding: 1.5rem; border: 1px solid #71864d80; border-radius: 20px; background: linear-gradient(120deg, #1d281b, #111811); }
 .redacao-emblema { display: grid; place-items: center; width: 56px; height: 56px; flex-shrink: 0; border-radius: 16px; background: #a7bd5b1a; border: 1px solid #a7bd5b4d; color: #d8e7a4; }
