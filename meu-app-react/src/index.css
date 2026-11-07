@@ -280,3 +280,28 @@ input, select, textarea { accent-color: #9aae5a; }
 :root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .appearance-panel { border-color: #9b8ad8; background: #fffffff7; }
 :root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .appearance-option.is-active,:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .appearance-mode.is-active,:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .appearance-motif.is-active { border-color: #598eae; background: #e9f7fa; }
 :root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .theme-watermark { opacity: .045; }
+
+
+/* Mais definição nas superfícies do tema claro sem perder conforto de leitura. */
+:root[data-color-mode="claro"] body { background: #e9eef3; }
+:root[data-color-mode="claro"] .app-shell { background: radial-gradient(ellipse at 84% 0%,#d9e4d17a,transparent 40rem),radial-gradient(ellipse at 3% 30%,#d4e1ed80,transparent 38rem),#edf1f5; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell { background: radial-gradient(ellipse at 12% 5%,#bfe8ed9c,transparent 35rem),radial-gradient(ellipse at 90% 12%,#e1d3f0a8,transparent 38rem),#edf1f5; }
+:root[data-color-mode="claro"] .app-shell .gradient-edge,
+:root[data-color-mode="claro"] .app-shell .filter-panel,
+:root[data-color-mode="claro"] .app-shell .study-stat-card,
+:root[data-color-mode="claro"] .app-shell .question-card { background: linear-gradient(#f4f6f8,#edf1f5) padding-box,linear-gradient(130deg,#8fa46a,#bcc7d3 48%,#758a55) border-box; box-shadow: 0 8px 24px #26364814; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .gradient-edge,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .filter-panel,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .study-stat-card,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .question-card { background: linear-gradient(#f3f3f8,#eaedf4) padding-box,linear-gradient(130deg,#55aebc,#887bbd 52%,#b66b9f) border-box; box-shadow: 0 8px 24px #36345118; }
+:root[data-color-mode="claro"] .app-shell .question-choice { background: linear-gradient(#edf1f5,#e7ecf1) padding-box,linear-gradient(130deg,#91a66b,#b8c3cf 52%,#7d9058) border-box; }
+:root[data-color-mode="claro"] .app-shell .question-choice:hover,
+:root[data-color-mode="claro"] .app-shell .question-choice.is-selected { background: linear-gradient(#e5edd9,#dfe9d0) padding-box,linear-gradient(130deg,#718d3c,#9fb660 52%,#738b48) border-box; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .question-choice { background: linear-gradient(#edf1f6,#e6eaf1) padding-box,linear-gradient(130deg,#5caeb9,#8b81bd 52%,#bd76a6) border-box; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .question-choice:hover,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .question-choice.is-selected { background: linear-gradient(#e2f1f2,#e9e5f4) padding-box,linear-gradient(130deg,#328f9d,#7166ad 52%,#a9548d) border-box; }
+:root[data-color-mode="claro"] .appearance-panel { border-color: #bac6d3; background: #f5f7f9f7; }
+:root[data-color-mode="claro"] .appearance-option,
+:root[data-color-mode="claro"] .appearance-mode { border-color: #c1ccd8; background: #edf1f5; }
+:root[data-color-mode="claro"] .appearance-option.is-active,
+:root[data-color-mode="claro"] .appearance-mode.is-active { border-color: #7d954a; background: #e3ebd5; }
