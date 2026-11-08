@@ -661,3 +661,21 @@ input, select, textarea { accent-color: #9aae5a; }
   :root[data-color-mode="claro"] .app-shell .filter-select > summary,
   :root[data-color-mode="claro"] .app-shell .filter-panel { transition:none; }
 }
+
+/* Contraste do cartão de revisão nos temas claros, sem alterar o modo escuro. */
+:root[data-color-mode="claro"] .performance-review-card {
+  border-color: #c99b55;
+  background: linear-gradient(125deg, #f1e6d1 0%, #eee9dc 58%, #e8edf0 100%);
+  box-shadow: 0 10px 26px #34425812, inset 0 1px #ffffffb3;
+}
+:root[data-color-mode="claro"] .performance-review-title { color: #5b4116; }
+:root[data-color-mode="claro"] .performance-review-description { color: #596477; }
+:root[data-color-mode="claro"] .performance-review-count {
+  background: linear-gradient(120deg, #e5dac3, #dce2e6);
+  color: #554a36;
+}
+:root[data-color-mode="claro"] .performance-review-empty { color: #4c596b; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .performance-review-card {
+  border-color: #bd9b67;
+  background: linear-gradient(125deg, #f0e6d3 0%, #eee9e2 56%, #e8eaf1 100%);
+}
