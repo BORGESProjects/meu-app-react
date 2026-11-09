@@ -9,6 +9,22 @@ export const FOCOS_ESTUDO = [
 ]
 export const validarFoco = valor => FOCOS_ESTUDO.some(f => f.id === valor) ? valor : 'sem-preferencia'
 export const nomeFoco = valor => FOCOS_ESTUDO.find(f => f.id === validarFoco(valor)).nome
+export const OBJETIVOS_FOCO = {
+  vestibulares: [{ id: 'utfpr', nome: 'UTFPR' }, { id: 'enem', nome: 'ENEM' }],
+  concursos: [{ id: 'agente-pf', nome: 'Agente de Polícia Federal' }, { id: 'prf', nome: 'PRF' }],
+  militares: [{ id: 'cpor', nome: 'CPOR / NPOR' }, { id: 'esa', nome: 'ESA' }, { id: 'espcex', nome: 'EsPCEx' }],
+}
+
+export function correspondeAoObjetivo(q, objetivo) {
+  if (!objetivo) return true
+  const origens = [q, ...(Array.isArray(q.origens_provas) ? q.origens_provas : [])]
+  return origens.some(origem => {
+    const texto = chaveFiltro([origem.banca, origem.concurso, origem.prova, origem.aplicacao, origem.cargo].filter(Boolean).join(' '))
+    if (objetivo === 'agente-pf') return /\bagente (?:de )?(?:policia federal|policial federal)\b/.test(texto)
+    if (objetivo === 'cpor') return /\b(?:cpor|npor)\b/.test(texto)
+    return texto.split(/\W+/).includes(objetivo)
+  })
+}
 export function categoriaQuestao(q) {
   const banca = chaveFiltro(q.banca), concurso = chaveFiltro(q.concurso || q.prova)
   if (/^(?:cpor|npor|esa|espcex|eear|eam|cfn|epcar|afa|efomm|ime|ita|colegio naval|escola naval|smv|pmpr|pmsp|pmerj)(?:\b|\/)/.test(banca) || /\b(?:cpor|npor|exercito|aeronautica|marinha|policia militar|bombeiro militar)\b/.test(concurso)) return 'militares'
@@ -63,9 +79,10 @@ function misturar(itens, random) {
   const a=[...itens]; for(let i=a.length-1;i>0;i--) {const j=Math.floor(random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]} return a
 }
 export function materiaCanonica(q) { return normalizarMateria(q.materia,q.conteudo) }
-export function gerarSimuladoPersonalizado(questoes, {foco='sem-preferencia',banca='',materias=[],quantidade=40,modo='equilibrado',historico=[],agora=Date.now()}={}, random=Math.random) {
+export function gerarSimuladoPersonalizado(questoes, {foco='sem-preferencia',banca='',objetivo='',materias=[],quantidade=40,modo='equilibrado',historico=[],agora=Date.now()}={}, random=Math.random) {
   if (!Number.isInteger(quantidade) || quantidade<1 || quantidade>120) return {itens:[],erro:'Escolha entre 1 e 120 questões.'}
   let pool=questoesParaTreino(questoes,foco,banca)
+  if (objetivo) pool=pool.filter(q=>correspondeAoObjetivo(q,objetivo))
   const plano=planoRevisao(pool,historico,agora)
   if(modo==='erros') pool=plano.erros
   else if(modo==='revisao') pool=plano.vencidas
@@ -74,6 +91,22 @@ export function gerarSimuladoPersonalizado(questoes, {foco='sem-preferencia',ban
   if(selecionadas.length) pool=pool.filter(q=>selecionadas.includes(materiaCanonica(q)))
   if(pool.length<quantidade) return {itens:[],erro:`Há ${pool.length} questões disponíveis nesta seleção; reduza a quantidade ou amplie os filtros.`}
   if(['erros','revisao'].includes(modo)) return {itens: (modo==='revisao'?pool:misturar(pool,random)).slice(0,quantidade),erro:''}
+  if (objetivo && !selecionadas.length) {
+    const porMateria = new Map()
+    for (const questao of misturar(pool, random)) {
+      const materia = materiaCanonica(questao)
+      if (!porMateria.has(materia)) porMateria.set(materia, [])
+      porMateria.get(materia).push(questao)
+    }
+    const itens = []
+    for (let rodada = 0; itens.length < quantidade; rodada++) {
+      for (const grupo of porMateria.values()) {
+        if (grupo[rodada]) itens.push(grupo[rodada])
+        if (itens.length === quantidade) break
+      }
+    }
+    return {itens:misturar(itens,random),erro:''}
+  }
   const grupos=selecionadas.length?selecionadas:[...new Set(pool.map(materiaCanonica))].sort((a,b)=>a.localeCompare(b,'pt-BR'))
   if(grupos.length>quantidade) return {itens:[],erro:'Selecione menos matérias ou aumente a quantidade para incluir todas.'}
   const itens=[]

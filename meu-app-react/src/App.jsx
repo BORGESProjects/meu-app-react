@@ -59,6 +59,7 @@ function diaParaDataSemana(dia, inicio) {
 const Redacao = lazy(() => import('./components/Redacao'))
 const ImportarPdf = lazy(() => import('./components/ImportarPdf'))
 const AcervoR2Uploader = lazy(() => import('./components/AcervoR2Uploader'))
+const TreinoDiario = lazy(() => import('./components/TreinoDiario'))
 const EditalPlanejador = lazy(() => import('./components/EditalPlanejador'))
 const QuestoesExtraidas = lazy(() => import('./components/QuestoesExtraidas'))
 const RecebimentosAdmin = lazy(() => import('./components/RecebimentosAdmin'))
@@ -146,7 +147,11 @@ export default function App() {
   const campoEdicaoQuestao = useRef(null)
   const inicioRespostaQuestao = useRef(new Map())
   const [termoBusca, setTermoBusca] = useState(() => new URLSearchParams(window.location.search).get('questao') || '')
-  const [abaAtiva, setAbaAtiva] = useState(() => ['questoes','recebimentos'].includes(parametrosDeEntrada.get('aba')) ? parametrosDeEntrada.get('aba') : 'questoes')
+  const [abaAtiva, setAbaAtiva] = useState(() => ['questoes','recebimentos','treino'].includes(parametrosDeEntrada.get('aba')) ? parametrosDeEntrada.get('aba') : 'questoes')
+  const veioDaDemonstracao = parametrosDeEntrada.get('demo') === '1'
+  const [mostrarDemonstracao, setMostrarDemonstracao] = useState(veioDaDemonstracao && parametrosDeEntrada.get('salvar') !== '1')
+  const [editalTreino, setEditalTreino] = useState(null)
+  const [diaCronograma, setDiaCronograma] = useState('hoje')
   const [questoesExtraidasTotal, setQuestoesExtraidasTotal] = useState(() => {
     try {
       const salvo = Number(localStorage.getItem('aprovado:total-questoes:v1'))
@@ -210,6 +215,7 @@ export default function App() {
   })
 
   // Estados de Simulados organizados por edição completa da prova
+  const [areaSimuladoManual, setFiltroFocoSimulado] = useState(null)
   const [filtroAnoSimulado, setFiltroAnoSimulado] = useState('Todos')
   const [filtroProvaSimulado, setFiltroProvaSimulado] = useState('Todos')
   const [buscaHistoricoSimulado, setBuscaHistoricoSimulado] = useState('')
@@ -229,6 +235,7 @@ export default function App() {
 
   const preferenciaFoco = useFocoEstudo(session)
   const focoEstudo = preferenciaFoco.foco
+  const filtroFocoSimulado = areaSimuladoManual?.foco === focoEstudo ? areaSimuladoManual.area : focoEstudo
   const questoesDoFoco = useMemo(() => questoes.filter(q => q.integridade_profissional?.apta_resolucao!==false && pertenceAoFoco(q, focoEstudo, true)), [questoes, focoEstudo])
   const progresso = useProgressoUsuario(session?.user?.id)
   const estudoPessoal = useEstudoPessoal(session?.user?.id, !session?.offline)
@@ -758,6 +765,7 @@ export default function App() {
       criada_em: new Date().toISOString(),
     }])
     setNovaTarefa(atual => ({ ...atual, materia: '', atividade: '' }))
+    setDiaCronograma(novaTarefa.data || diaParaDataSemana(novaTarefa.dia, inicioSemanaLocal()))
   }
 
   function deletarTarefa(id) {
@@ -952,7 +960,7 @@ export default function App() {
   }
   const questoesVisiveis = useMemo(() => questoesFiltradas.slice(0, limiteVisivel), [questoesFiltradas, limiteVisivel])
 
-  const simuladosDisponiveis = useMemo(() => abaAtiva === 'simulados' ? listarProvasCompletas(questoes, idiomaSimulado, especificasUem).filter(p => pertenceAoFoco(p, focoEstudo)) : [], [abaAtiva, questoes, idiomaSimulado, especificasUem, focoEstudo])
+  const simuladosDisponiveis = useMemo(() => abaAtiva === 'simulados' ? listarProvasCompletas(questoes, idiomaSimulado, especificasUem).filter(p => pertenceAoFoco(p, filtroFocoSimulado)) : [], [abaAtiva, questoes, idiomaSimulado, especificasUem, filtroFocoSimulado])
   function iniciarSimulado(simulado) {
     // O acervo que chega depois não altera uma prova já iniciada.
     const itens = simulado.tipo === 'personalizado' ? simulado.itens : simulado.tipo === 'treino' ? gerarTreinoCpor(questoes) : questoesDaProva(questoes, simulado.id, idiomaSimulado, especificasUem)
@@ -1206,6 +1214,8 @@ export default function App() {
   const minutosPlanejados = tarefasDoCronograma.reduce((total, tarefa) => total + (Number(tarefa.minutos) || 0), 0)
   const minutosConcluidos = tarefasDoCronograma.filter(tarefa => tarefa.concluida).reduce((total, tarefa) => total + (Number(tarefa.minutos) || 0), 0)
   const diaAtual = datasDaSemana.find(item => item.data === hojeISO)?.dia
+  const proximaSessao = tarefasDoCronograma.filter(tarefa => !tarefa.concluida && tarefa.dataAgendada >= hojeISO)
+    .sort((a, b) => `${a.dataAgendada} ${a.horario || ''}`.localeCompare(`${b.dataAgendada} ${b.horario || ''}`))[0]
 
   const errosPorConteudo = {}
   historicoRespostas.forEach(h => {
@@ -1214,6 +1224,25 @@ export default function App() {
     }
   })
   const pontosAMelhorar = Object.entries(errosPorConteudo).sort((a, b) => b[1] - a[1]).slice(0, 5)
+  function salvarDiagnostico(tentativas) {
+    setHistoricoRespostas(atuais => {
+      const ids = new Set(atuais.map(item => item.id))
+      return [...atuais, ...tentativas.filter(item => !ids.has(item.id))]
+    })
+  }
+  function planejarRevisaoTreino({ materia, conteudo }) {
+    setNovaTarefa(atual => ({ ...atual, dia: diaAtual || atual.dia, data: '', materia, atividade: `Revisar: ${conteudo}`, minutos: 30 }))
+    setDiaCronograma('hoje')
+    setAbaAtiva('tarefas')
+  }
+  if (mostrarDemonstracao && (!authReady || !session)) return <main className="min-h-screen bg-slate-950 p-4 text-slate-100 sm:p-8">
+    <Suspense fallback={<p>Carregando treino…</p>}><TreinoDiario demo onEntrar={() => {
+      const url = new URL(window.location.href)
+      url.searchParams.set('salvar', '1')
+      window.history.replaceState(null, '', url)
+      setMostrarDemonstracao(false)
+    }} /></Suspense>
+  </main>
   if (!authReady) return <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center"><p className="text-sm text-indigo-300">Verificando sua sessão…</p></div>
 
   if (!session) return <div className="min-h-screen bg-slate-950 text-slate-100 px-3 py-8 sm:px-6 sm:py-12">
@@ -1256,12 +1285,13 @@ export default function App() {
         <div aria-label="Navegação principal" className="mobile-nav flex w-full min-w-0 items-center gap-1.5 overflow-x-auto pb-1 xl:w-auto xl:pb-0">
           {[
             { id: 'questoes', label: 'Questões' },
+            { id: 'treino', label: 'Treino de hoje' },
             { id: 'simulados', label: 'Simulados' },
             { id: 'desempenho', label: 'Desempenho' },
             ...(isAdmin ? [{ id: 'cadastrar', label: 'Cadastrar' }, { id: 'importar', label: 'Importar PDF' }, { id: 'r2-upload', label: 'Migrar acervo R2' }] : []),
             { id: 'edital', label: 'Edital' },
             { id: 'redacao', label: 'Redação' },
-            { id: 'tarefas', label: 'Tarefas' },
+            { id: 'tarefas', label: 'Cronograma' },
             { id: 'conta', label: 'Minha conta' }
           ].map(tab => (
             <button
@@ -1275,6 +1305,10 @@ export default function App() {
       </nav>
 
       <main className="relative z-10 mx-auto min-w-0 max-w-5xl p-3 sm:p-6 md:p-8">
+        {abaAtiva === 'treino' && <Suspense fallback={<p>Carregando treino…</p>}>
+          {veioDaDemonstracao && <div className="mb-5"><TreinoDiario demo foco={focoEstudo} conta={session.user.id} onSalvar={salvarDiagnostico} onPraticar={praticarConteudoEdital} onEdital={() => setAbaAtiva('edital')} onAgendar={planejarRevisaoTreino} /></div>}
+          <TreinoDiario key={`${session.user.id}:${focoEstudo}`} foco={focoEstudo} conta={session.user.id} questoes={questoes} questoesDoFoco={questoesDoFoco} historico={historicoRespostas} edital={editalTreino} onSalvar={salvarDiagnostico} onPraticar={praticarConteudoEdital} onEdital={() => setAbaAtiva('edital')} onAgendar={planejarRevisaoTreino} />
+        </Suspense>}
         <EstadoProgresso progresso={progresso} />
         {estudoPessoal.erro && <p role="status" className="mb-4 rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">{estudoPessoal.erro}</p>}
         <div key={abaAtiva} className="tab-transition">
@@ -1511,6 +1545,14 @@ export default function App() {
                 <h2 className="mb-2 text-xl font-bold text-slate-100">Provas completas e simulados</h2>
                 <p className="mb-5 text-sm text-slate-400">Cadernos e simulados com as questões disponíveis revisadas. Questões anuladas não recebem correção automática.</p>
                 <div className="mb-5 grid gap-4 rounded-2xl border border-slate-800 p-4 sm:grid-cols-3">
+                  <label className="text-sm text-slate-300">Área das provas
+                    <select value={filtroFocoSimulado} onChange={e => { setFiltroFocoSimulado({ foco: focoEstudo, area: e.target.value }); setFiltroAnoSimulado('Todos'); setFiltroProvaSimulado('Todos') }} className="mt-2 block w-full rounded-xl border border-slate-700 bg-slate-900 p-3">
+                      <option value="sem-preferencia">Todas as áreas</option>
+                      <option value="vestibulares">Vestibulares</option>
+                      <option value="concursos">Concursos públicos</option>
+                      <option value="militares">Concursos militares</option>
+                    </select>
+                  </label>
                   <label className="text-sm text-slate-300">Idioma das provas
                     <select value={idiomaSimulado} onChange={e => setIdiomaSimulado(e.target.value)} className="mt-2 block w-full rounded-xl border border-slate-700 bg-slate-900 p-3">
                       {['Inglês','Espanhol','Francês'].map(idioma => <option key={idioma}>{idioma}</option>)}
@@ -1869,7 +1911,7 @@ export default function App() {
         {/* ABA: EDITAL VERTICALIZADO */}
         {abaAtiva === 'edital' && (
           <Suspense fallback={<p role="status">Carregando seu planejador de editais…</p>}>
-            <EditalPlanejador key={session.user.id} userId={session.user.id} historicoRespostas={historicoRespostas} indiceQuestoes={indiceCompleto} onPraticar={praticarConteudoEdital} mostrarCatalogoOficial />
+            <EditalPlanejador key={session.user.id} userId={session.user.id} historicoRespostas={historicoRespostas} indiceQuestoes={indiceCompleto} onPraticar={praticarConteudoEdital} onTreino={edital => { setEditalTreino(edital); setAbaAtiva('treino') }} mostrarCatalogoOficial />
           </Suspense>
         )}
 
@@ -1877,9 +1919,18 @@ export default function App() {
         {/* ABA: TAREFAS */}
         {abaAtiva === 'tarefas' && (
           <div className="space-y-6">
-            <header>
-              <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">📅 Cronograma</h1>
+            <header className="rounded-3xl border border-indigo-500/30 bg-indigo-950/20 p-5 sm:p-7">
+              <p className="mb-2 text-xs font-bold uppercase tracking-widest text-indigo-300">Planejamento semanal</p>
+              <h1 className="text-2xl font-extrabold text-slate-100 tracking-tight sm:text-3xl">Cronograma de estudos</h1>
               <p className="mt-1 text-sm text-slate-400">Semana de {inicioSemana.toLocaleDateString('pt-BR')} a {datasDaSemana.at(-1).data ? dataISOParaLocal(datasDaSemana.at(-1).data).toLocaleDateString('pt-BR') : ''}. O plano redistribui sessões pendentes conforme seu tempo disponível.</p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a href="#adicionar-sessao" className="rounded-xl border border-indigo-500/50 px-4 py-2 text-sm font-semibold text-indigo-300">+ Planejar sessão</a>
+                <button type="button" onClick={() => setAbaAtiva('treino')} className="rounded-xl border border-slate-700 px-4 py-2 text-sm font-semibold">Abrir treino de hoje</button>
+              </div>
+              <progress className="mt-5 w-full accent-indigo-500" max={minutosPlanejados || 1} value={minutosConcluidos} aria-label="Tempo concluído na semana" />
+              {proximaSessao && <button type="button" onClick={() => setDiaCronograma(proximaSessao.dataAgendada)} className="mt-3 block text-left text-sm text-indigo-300 hover:underline">
+                Próxima sessão: {proximaSessao.materia} · {dataISOParaLocal(proximaSessao.dataAgendada).toLocaleDateString('pt-BR')} {proximaSessao.horario}
+              </button>}
             </header>
 
             <section className="grid grid-cols-1 gap-3 min-[380px]:grid-cols-3">
@@ -1897,14 +1948,14 @@ export default function App() {
               </div>
             </section>
 
-            <form onSubmit={adicionarTarefa} className="rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-xl sm:p-6">
+            <form id="adicionar-sessao" onSubmit={adicionarTarefa} className="scroll-mt-48 rounded-3xl border border-slate-800/80 bg-slate-900/60 p-4 shadow-xl sm:p-6">
               <div className="mb-4">
                 <h2 className="text-lg font-bold text-slate-100">Adicionar sessão de estudo</h2>
                 <p className="mt-1 text-xs text-slate-400">A duração representa o tempo que você pretende dedicar à matéria.</p>
               </div>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
                 <label className="text-xs font-semibold uppercase tracking-wider text-slate-400">Dia
-                  <select value={novaTarefa.dia} onChange={e => setNovaTarefa({ ...novaTarefa, dia: e.target.value })} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100">
+                  <select value={novaTarefa.dia} onChange={e => setNovaTarefa({ ...novaTarefa, dia: e.target.value, data: '' })} className="mt-2 w-full rounded-2xl border border-slate-800 bg-slate-950/80 px-4 py-3 text-sm text-slate-100">
                     {DIAS_SEMANA.map(dia => <option key={dia}>{dia}</option>)}
                   </select>
                 </label>
@@ -1927,8 +1978,13 @@ export default function App() {
               <button type="submit" className="mt-5 w-full rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 px-6 py-3 text-sm font-semibold text-white shadow-md shadow-indigo-600/20 sm:w-auto">Adicionar ao cronograma</button>
             </form>
 
-            <section className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {datasDaSemana.map(({dia, data}) => {
+            <section aria-label="Dias do cronograma" className="space-y-3">
+              <h2 className="text-lg font-bold">Agenda da semana</h2>
+              <div className="flex flex-wrap gap-2">
+                {[['hoje', 'Hoje'], ['semana', 'Semana toda'], ...datasDaSemana.map(({dia, data}) => [data, dia])].map(([valor, nome]) => <button key={valor} type="button" aria-pressed={diaCronograma === valor} onClick={() => setDiaCronograma(valor)} className={`rounded-xl border px-3 py-2 text-sm ${diaCronograma === valor ? 'border-indigo-500 bg-indigo-500/15 font-bold text-indigo-300' : 'border-slate-700 text-slate-300'}`}>{nome}</button>)}
+              </div>
+              <div className={`grid grid-cols-1 gap-4 ${diaCronograma === 'semana' ? 'sm:grid-cols-2 lg:grid-cols-3' : ''}`}>
+              {datasDaSemana.filter(({data}) => diaCronograma === 'semana' || data === (diaCronograma === 'hoje' ? hojeISO : diaCronograma)).map(({dia, data}) => {
                 const sessoes = tarefasDoCronograma
                   .filter(tarefa => tarefa.dataAgendada === data)
                   .sort((a, b) => String(a.horario || '').localeCompare(String(b.horario || '')))
@@ -1966,6 +2022,7 @@ export default function App() {
                   </div>}
                 </article>
               })}
+              </div>
             </section>
 
             {tarefasSemDia.length > 0 && <section className="rounded-3xl border border-amber-500/25 bg-amber-950/10 p-4 sm:p-6">

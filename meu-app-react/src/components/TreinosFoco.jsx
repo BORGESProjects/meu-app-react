@@ -1,16 +1,20 @@
 import { useMemo, useState } from 'react'
 import { gerarTreinoCpor } from '../simulados'
-import { gerarSimuladoPersonalizado, gerarTreinoVestibular, materiaCanonica, nomeFoco, planoRevisao, questoesParaTreino } from '../focoEstudo'
+import { correspondeAoObjetivo, gerarSimuladoPersonalizado, gerarTreinoVestibular, materiaCanonica, nomeFoco, OBJETIVOS_FOCO, planoRevisao, questoesParaTreino } from '../focoEstudo'
 const campo='mt-2 block w-full rounded-xl border border-slate-700 bg-slate-950 p-3 text-sm text-slate-100'
 const botao='inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold shadow-sm transition duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0'
 export default function TreinosFoco({questoes,foco,historico,onIniciar,configuracoes=[],onSalvarConfig,onExcluirConfig}) {
   const [materias,setMaterias]=useState([]),[banca,setBanca]=useState(''),[quantidade,setQuantidade]=useState(40),[modo,setModo]=useState('equilibrado'),[aviso,setAviso]=useState('')
   const pool=useMemo(()=>questoesParaTreino(questoes,foco),[questoes,foco])
+  const [objetivo, setObjetivo] = useState('')
+  const objetivos = OBJETIVOS_FOCO[foco] || []
+  const objetivoNome = objetivos.find(item => item.id === objetivo)?.nome
+  const poolObjetivo = useMemo(() => pool.filter(q => correspondeAoObjetivo(q, objetivo)), [pool, objetivo])
   const plano=useMemo(()=>planoRevisao(pool,historico),[pool,historico])
-  const bancas=useMemo(()=>[...new Set(pool.map(q=>q.banca))].sort((a,b)=>a.localeCompare(b,'pt-BR')),[pool])
+  const bancas=useMemo(()=>[...new Set(poolObjetivo.map(q=>q.banca))].sort((a,b)=>a.localeCompare(b,'pt-BR')),[poolObjetivo])
   const configuracoesAtivas=configuracoes.filter(item=>item.foco===foco)
-  const opcoesMaterias=useMemo(()=>[...new Set(pool.filter(q=>!banca||q.banca===banca).map(materiaCanonica))].sort((a,b)=>a.localeCompare(b,'pt-BR')),[pool,banca])
-  const config={foco,banca,materias,quantidade,modo,historico}
+  const opcoesMaterias=useMemo(()=>[...new Set(poolObjetivo.filter(q=>!banca||q.banca===banca).map(materiaCanonica))].sort((a,b)=>a.localeCompare(b,'pt-BR')),[poolObjetivo,banca])
+  const config={foco,banca,objetivo,materias,quantidade,modo,historico}
   const perfil=foco==='vestibulares'?'Vestibulares':foco==='militares'?'Concursos militares':foco==='concursos'?'Concursos públicos':'Seu objetivo'
   function iniciar(itens,titulo) {
     if(!itens.length) {setAviso('O acervo ainda não tem questões suficientes para esta seleção. Amplie os filtros ou aguarde o carregamento.');return}
@@ -19,7 +23,7 @@ export default function TreinosFoco({questoes,foco,historico,onIniciar,configura
   function personalizado(e) {
     e.preventDefault();const resultado=gerarSimuladoPersonalizado(questoes,config)
     if(resultado.erro) {setAviso(resultado.erro);return}
-    iniciar(resultado.itens,`${perfil} — ${quantidade} questões`)
+    iniciar(resultado.itens,`${objetivoNome || banca || perfil} — ${quantidade} questões`)
   }
   function revisar(tipo) {
     const total=Math.min(20,tipo==='erros'?plano.erros.length:plano.vencidas.length)
@@ -29,10 +33,11 @@ export default function TreinosFoco({questoes,foco,historico,onIniciar,configura
   }
   function salvarConfiguracao() {
     const nomeMateria = materias.length ? materias.slice(0, 2).join(', ') + (materias.length > 2 ? '…' : '') : 'todas as matérias'
-    onSalvarConfig?.({ foco, banca, materias: [...materias], quantidade, modo, nome: `${perfil} · ${nomeMateria} · ${quantidade} questões` })
+    onSalvarConfig?.({ foco, banca, objetivo, materias: [...materias], quantidade, modo, nome: `${objetivoNome || perfil} · ${nomeMateria} · ${quantidade} questões` })
   }
   function aplicarConfiguracao(item) {
     setBanca(item.banca || '')
+    setObjetivo(objetivos.some(opcao => opcao.id === item.objetivo) ? item.objetivo : '')
     setMaterias(Array.isArray(item.materias) ? item.materias : [])
     setQuantidade(Math.min(120, Math.max(1, Number(item.quantidade) || 40)))
     setModo(item.modo || 'equilibrado')
@@ -44,14 +49,20 @@ export default function TreinosFoco({questoes,foco,historico,onIniciar,configura
       <h2 id="criador-titulo" className="mt-2 text-xl font-bold">Criar seu simulado</h2>
       <p className="mt-2 text-sm text-slate-400">Escolha matérias, banca e quantidade. A seleção permanece fixa até você terminar; o gabarito aparece na correção.</p>
       <div className="mt-4 flex flex-wrap gap-3">
-        {['militares','sem-preferencia'].includes(foco)&&<button className={`${botao} bg-gradient-to-r from-amber-500 to-orange-600 text-slate-950 hover:from-amber-400 hover:to-orange-500 focus-visible:ring-amber-300`} onClick={()=>iniciar(gerarTreinoCpor(questoes),'Treino CPOR / NPOR — 40 questões')}>🎖️ CPOR / NPOR · 40 questões</button>}
+        {foco==='militares'&&<button className={`${botao} bg-gradient-to-r from-amber-500 to-orange-600 text-slate-950 hover:from-amber-400 hover:to-orange-500 focus-visible:ring-amber-300`} onClick={()=>iniciar(gerarTreinoCpor(questoes),'Treino CPOR / NPOR — 40 questões')}>🎖️ CPOR / NPOR · 40 questões</button>}
         {['vestibulares','sem-preferencia'].includes(foco)&&<button className={`${botao} bg-gradient-to-r from-sky-500 to-cyan-600 text-white hover:from-sky-400 hover:to-cyan-500 focus-visible:ring-sky-300`} onClick={()=>iniciar(gerarTreinoVestibular(questoes),'Treino vestibular por áreas — 40 questões')}>📚 Vestibulares · 40 questões por áreas</button>}
       </div>
       {foco==='militares'&&<p className="mt-3 text-xs text-slate-400">Treino CPOR/NPOR: 10 de Português, 10 de Geografia, 10 de História e 10 de Matemática.</p>}
       {foco==='vestibulares'&&<p className="mt-3 text-xs text-slate-400">Treino por áreas: 10 de Linguagens, 10 de Humanas, 10 de Natureza e 10 de Matemática. Não reproduz a matriz ou a nota TRI do ENEM.</p>}
       <p className="mt-3 text-xs text-slate-400">Os treinos personalizados são seleções para estudo. As provas originais completas ficam na seção abaixo.</p>
-      <details className="mt-5" open={foco==='concursos'}><summary className="cursor-pointer text-sm font-semibold text-indigo-300">Personalizar matérias, banca e quantidade</summary>
+      <details className="mt-5" open={objetivos.length > 0}><summary className="cursor-pointer text-sm font-semibold text-indigo-300">Personalizar objetivo, matérias e quantidade</summary>
         <form onSubmit={personalizado} className="mt-4 space-y-4">
+          {objetivos.length > 0 && <label className="block text-sm">Instituição, prova ou cargo
+            <select className={campo} value={objetivo} onChange={e => { setObjetivo(e.target.value); setBanca(''); setMaterias([]); setAviso('') }}>
+              <option value="">Qualquer objetivo deste foco</option>
+              {objetivos.map(item => <option key={item.id} value={item.id}>{item.nome}</option>)}
+            </select>
+          </label>}
           <div className="grid gap-4 sm:grid-cols-3">
             <label className="text-sm">Quantidade<input className={campo} type="number" min="1" max="120" required value={quantidade} onChange={e=>setQuantidade(Number(e.target.value))}/></label>
             <label className="text-sm">Banca ou instituição<select className={campo} value={banca} onChange={e=>{setBanca(e.target.value);setMaterias([])}}><option value="">Todas deste foco</option>{bancas.map(b=><option key={b}>{b}</option>)}</select></label>
