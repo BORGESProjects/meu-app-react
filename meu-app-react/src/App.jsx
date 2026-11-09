@@ -24,6 +24,7 @@ import { questoesDaProva, listarProvasCompletas, gerarTreinoCpor } from './simul
 import { pertenceAoFoco, nomeFoco, ultimasTentativas } from './focoEstudo'
 import { useFocoEstudo } from './useFocoEstudo'
 import TreinosFoco from './components/TreinosFoco'
+import { carregarQuestoesParaSimulados } from './simuladosAcervoExtraido'
 import TempoSimulado from './components/TempoSimulado'
 import RevisaoSimulado from './components/RevisaoSimulado'
 import { useEstudoPessoal } from './useEstudoPessoal'
@@ -151,6 +152,8 @@ export default function App() {
   const veioDaDemonstracao = parametrosDeEntrada.get('demo') === '1'
   const [mostrarDemonstracao, setMostrarDemonstracao] = useState(veioDaDemonstracao && parametrosDeEntrada.get('salvar') !== '1')
   const [editalTreino, setEditalTreino] = useState(null)
+  const [acervoTreino, setAcervoTreino] = useState(null)
+  const [erroAcervoTreino, setErroAcervoTreino] = useState(false)
   const [diaCronograma, setDiaCronograma] = useState('hoje')
   const [questoesExtraidasTotal, setQuestoesExtraidasTotal] = useState(() => {
     try {
@@ -237,6 +240,21 @@ export default function App() {
   const focoEstudo = preferenciaFoco.foco
   const filtroFocoSimulado = areaSimuladoManual?.foco === focoEstudo ? areaSimuladoManual.area : focoEstudo
   const questoesDoFoco = useMemo(() => questoes.filter(q => q.integridade_profissional?.apta_resolucao!==false && pertenceAoFoco(q, focoEstudo, true)), [questoes, focoEstudo])
+  const baseTreino = useMemo(() => acervoTreino?.length ? unirQuestoes([...questoes, ...acervoTreino]) : questoes, [questoes, acervoTreino])
+  const questoesTreino = useMemo(() => baseTreino === questoes ? questoesDoFoco : baseTreino.filter(q => pertenceAoFoco(q, focoEstudo, true)), [baseTreino, questoes, questoesDoFoco, focoEstudo])
+  useEffect(() => {
+    if (abaAtiva !== 'treino' || !session?.user?.id || carregandoAcervo || acervoTreino !== null || erroAcervoTreino) return
+    let ativo = true
+    carregarManifestoAcervo().then(manifesto => carregarQuestoesParaSimulados(manifesto, questoes))
+      .then(({ questoes: itens, falhas }) => {
+        if (!ativo) return
+        setAcervoTreino(itens)
+        setErroAcervoTreino(Boolean(falhas))
+      })
+      .catch(() => { if (ativo) setErroAcervoTreino(true) })
+    return () => { ativo = false }
+  }, [abaAtiva, session?.user?.id, carregandoAcervo, acervoTreino, erroAcervoTreino, questoes])
+
   const progresso = useProgressoUsuario(session?.user?.id)
   const estudoPessoal = useEstudoPessoal(session?.user?.id, !session?.offline)
   const {filtros:filtrosSalvos,cadernos,questoes:marcacoesPessoais,simulados:historicoSimulados,configuracoes:configuracoesSimulado} = estudoPessoal.dados
@@ -1307,7 +1325,9 @@ export default function App() {
       <main className="relative z-10 mx-auto min-w-0 max-w-5xl p-3 sm:p-6 md:p-8">
         {abaAtiva === 'treino' && <Suspense fallback={<p>Carregando treino…</p>}>
           {veioDaDemonstracao && <div className="mb-5"><TreinoDiario demo foco={focoEstudo} conta={session.user.id} onSalvar={salvarDiagnostico} onPraticar={praticarConteudoEdital} onEdital={() => setAbaAtiva('edital')} onAgendar={planejarRevisaoTreino} /></div>}
-          <TreinoDiario key={`${session.user.id}:${focoEstudo}`} foco={focoEstudo} conta={session.user.id} questoes={questoes} questoesDoFoco={questoesDoFoco} historico={historicoRespostas} edital={editalTreino} onSalvar={salvarDiagnostico} onPraticar={praticarConteudoEdital} onEdital={() => setAbaAtiva('edital')} onAgendar={planejarRevisaoTreino} />
+          <TreinoDiario key={`${session.user.id}:${focoEstudo}`} foco={focoEstudo} conta={session.user.id} questoes={baseTreino} questoesDoFoco={questoesTreino} catalogoCarregando={carregandoAcervo || (acervoTreino === null && !erroAcervoTreino)} historico={historicoRespostas} edital={editalTreino} onSalvar={salvarDiagnostico} onPraticar={praticarConteudoEdital} onEdital={() => setAbaAtiva('edital')} onAgendar={planejarRevisaoTreino} />
+          {erroAcervoTreino && <p role="status" className="mx-auto mt-3 max-w-3xl text-sm text-amber-300">Algumas provas da nuvem podem estar indisponíveis. <button type="button" className="underline" onClick={() => { setAcervoTreino(null); setErroAcervoTreino(false) }}>Tentar carregar novamente</button></p>}
+
         </Suspense>}
         <EstadoProgresso progresso={progresso} />
         {estudoPessoal.erro && <p role="status" className="mb-4 rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">{estudoPessoal.erro}</p>}

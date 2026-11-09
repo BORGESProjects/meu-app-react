@@ -1,14 +1,14 @@
 import { useEffect, useMemo, useState } from 'react'
 import amostra from '../data/cporSimuladoTreineiro.json'
 import { podeCorrigir, questaoPublicavel } from '../acervo'
-import { chaveCampoFiltro, chaveConteudoFiltro } from '../filtros'
-import { correspondeAoObjetivo, FOCOS_ESTUDO, OBJETIVOS_FOCO, ultimasTentativas } from '../focoEstudo'
+import { chaveCampoFiltro, chaveConteudoFiltro, chaveFiltro, limparValorFiltro } from '../filtros'
+import { correspondeAoObjetivo, FOCOS_ESTUDO, ultimasTentativas } from '../focoEstudo'
+import { concursosDaQuestao, questaoNaProva } from '../provasCompartilhadas'
 import EnunciadoQuestao from './EnunciadoQuestao'
 import AlternativaQuestao from './AlternativaQuestao'
 
 const painel = 'rounded-3xl border border-slate-700 bg-slate-900/60 p-5 sm:p-7'
 const acao = 'inline-flex rounded-xl border border-indigo-500/60 px-4 py-3 text-sm font-semibold text-indigo-300 hover:bg-indigo-500/10 disabled:opacity-50'
-const chave = texto => String(texto || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
 const alternativas = q => (Array.isArray(q.opcoes) ? q.opcoes : []).map((texto, i) => [String.fromCharCode(65 + i), texto])
 const indiceResposta = valor => /^[A-E]$/i.test(String(valor).trim()) ? String(valor).trim().toUpperCase().charCodeAt(0) - 65 : Number(valor)
 const gabarito = q => (Array.isArray(q.respostas_aceitas) && q.respostas_aceitas.length ? q.respostas_aceitas : [q.resposta_correta]).map(indiceResposta)
@@ -29,14 +29,43 @@ function ler(id) {
   } catch { return null }
 }
 
-export default function TreinoDiario({ conta, questoes = [], questoesDoFoco = questoes, historico = [], edital, foco = 'sem-preferencia', demo = false, onSalvar, onPraticar, onEdital, onEntrar, onAgendar }) {
+function catalogarObjetivos(questoes) {
+  const grupos = new Map()
+  const aptas = []
+  const adicionar = (tipo, valor, questao) => {
+    const nome = limparValorFiltro(valor)
+    if (!nome) return
+    const id = `${tipo}:${chaveFiltro(nome)}`
+    if (!grupos.has(id)) grupos.set(id, { id, tipo, nome, itens: new Map() })
+    grupos.get(id).itens.set(String(questao.id), questao)
+  }
+  const vistos = new Set()
+  for (const q of questoes) {
+    if (!q.id || vistos.has(String(q.id)) || !apta(q)) continue
+    vistos.add(String(q.id))
+    aptas.push(q)
+    adicionar('instituicao', q.banca, q)
+    for (const concurso of concursosDaQuestao(q)) adicionar('prova', concurso, q)
+    for (const origem of [q, ...(Array.isArray(q.origens_provas) ? q.origens_provas : [])]) {
+      adicionar('prova', origem.concurso, q)
+      adicionar('prova', origem.prova, q)
+      adicionar('prova', origem.cargo, q)
+    }
+  }
+  const ordem = new Intl.Collator('pt-BR', { numeric: true })
+  return { grupos, aptas, opcoes: [...grupos.values()].sort((a, b) => ordem.compare(a.nome, b.nome)) }
+}
+
+export default function TreinoDiario({ conta, questoes = [], questoesDoFoco = questoes, historico = [], edital, foco = 'sem-preferencia', demo = false, catalogoCarregando = false, onSalvar, onPraticar, onEdital, onEntrar, onAgendar }) {
   const hoje = new Date().toLocaleDateString('sv-SE')
   const storage = demo ? 'ap:treino:demo:v1' : `ap:treino:${conta}:${hoje}:${foco}`
   const [sessao, setSessao] = useState(() => ler(storage) || (!demo && foco === 'sem-preferencia' ? ler(`ap:treino:${conta}:${hoje}`) : null))
   const [perfilDemo, setPerfilDemo] = useState(() => sessao?.perfilDemo || (sessao && demo ? 'militares' : demos[foco] ? foco : ''))
   const [dadosDemo, setDadosDemo] = useState(null)
   const [tentativaDemo, setTentativaDemo] = useState(0)
-  const [objetivo, setObjetivo] = useState(edital?.titulo || '')
+  const [objetivo, setObjetivo] = useState(edital ? 'edital' : '')
+  const [buscaObjetivo, setBuscaObjetivo] = useState('')
+  const [tipoObjetivo, setTipoObjetivo] = useState('')
   const [aviso, setAviso] = useState('')
   const [selecionada, setSelecionada] = useState('')
   const demoAtiva = demo ? demos[perfilDemo] : null
@@ -56,6 +85,15 @@ export default function TreinoDiario({ conta, questoes = [], questoesDoFoco = qu
     return () => controle.abort()
   }, [demoAtiva, tentativaDemo])
   const base = demo ? perfilDemo === 'militares' ? demonstracao : (dadosDemo?.url === demoAtiva?.url ? dadosDemo?.itens || semQuestoes : semQuestoes) : questoes
+  const catalogo = useMemo(() => catalogarObjetivos(demo ? semQuestoes : questoesDoFoco), [demo, questoesDoFoco])
+  const alvo = catalogo.grupos.get(objetivo)
+  const termosBusca = chaveFiltro(buscaObjetivo).split(' ').filter(Boolean)
+  const opcoesFiltradas = catalogo.opcoes.filter(item => (!tipoObjetivo || item.tipo === tipoObjetivo) && termosBusca.every(termo => chaveFiltro(item.nome).includes(termo)))
+  const opcoesVisiveis = alvo && !opcoesFiltradas.includes(alvo) ? [alvo, ...opcoesFiltradas] : opcoesFiltradas
+  const sugestoes = useMemo(() => ['instituicao', 'prova'].flatMap(tipo => catalogo.opcoes
+    .filter(item => item.tipo === tipo && item.itens.size >= 10 && (foco === 'militares' || !/\b(?:cpor|npor)\b/.test(chaveFiltro(item.nome))))
+    .sort((a, b) => b.itens.size - a.itens.size)
+    .slice(0, 3)), [catalogo, foco])
   const topicos = useMemo(() => new Map((edital?.materias || []).flatMap(m =>
     (m.topicos || []).map(t => [chaveTopico(m.nome, t.titulo), { materia: m.nome, conteudo: t.titulo }])
   ).filter(([id]) => !id.endsWith(':outros-conteudos'))), [edital])
@@ -63,7 +101,12 @@ export default function TreinoDiario({ conta, questoes = [], questoesDoFoco = qu
     if (!sessao) return []
     const ids = new Set(sessao.ids)
     const porId = new Map(base.filter(q => ids.has(String(q.id))).map(q => [String(q.id), q]))
-    return sessao.ids.map(id => porId.get(id)).filter(Boolean)
+    return sessao.ids.map(id => porId.get(id)).filter(Boolean).map(q => {
+      if (!sessao.provaId) return q
+      const origem = q.origens_provas?.find(item => [item.concurso, item.prova, item.cargo].some(valor => chaveFiltro(valor) === sessao.provaId))
+      const concurso = origem?.concurso || concursosDaQuestao(q).find(nome => chaveFiltro(nome) === sessao.provaId)
+      return (concurso && questaoNaProva(q, concurso)) || q
+    })
   }, [base, sessao])
 
   function guardar(valor) {
@@ -74,20 +117,13 @@ export default function TreinoDiario({ conta, questoes = [], questoesDoFoco = qu
   }
 
   function iniciar() {
-    const nome = demo ? demoAtiva?.nome : objetivo
+    const usaEdital = Boolean(edital && objetivo === 'edital')
+    const nome = demo ? demoAtiva?.nome : usaEdital ? edital.titulo : alvo?.nome
     const ultimas = ultimasTentativas(historico)
-    const termos = chave(objetivo).split(/\W+/).filter(termo => termo.length >= 2 && !/^\d+$/.test(termo) && !['de','do','da','concurso','vestibular','edital'].includes(termo))
-    const usaEdital = Boolean(edital && objetivo === edital.titulo)
-    const atalho = OBJETIVOS_FOCO[foco]?.find(item => chave(item.nome) === chave(objetivo))
-    const vistos = new Set()
-    const candidatos = demo ? base : (objetivo && foco === 'sem-preferencia' ? base : questoesDoFoco).filter(q => {
-      const origem = chave([q.banca, q.concurso, q.prova, q.aplicacao].join(' ')).split(/\W+/)
-      if (vistos.has(String(q.id)) || !apta(q)) return false
-      const mesmaProva = atalho ? correspondeAoObjetivo(q, atalho.id) : termos.length && termos.every(termo => origem.includes(termo))
-      if (objetivo && !mesmaProva && !(usaEdital && topicos.has(chaveTopico(q.materia, q.conteudo)))) return false
-      vistos.add(String(q.id))
-      return true
-    })
+    const candidatos = demo ? base : usaEdital
+      ? catalogo.aptas.filter(q => topicos.has(chaveTopico(q.materia, q.conteudo)) ||
+        [q.banca, q.concurso, q.prova].some(valor => chaveFiltro(valor) === chaveFiltro(edital.titulo)))
+      : alvo ? [...alvo.itens.values()] : objetivo ? [] : catalogo.aptas
     const erros = [], novas = [], acertos = []
     for (const q of candidatos) {
       const anterior = ultimas.get(String(q.id))
@@ -108,7 +144,7 @@ export default function TreinoDiario({ conta, questoes = [], questoesDoFoco = qu
     }
     setAviso('')
     const vinculos = usaEdital ? Object.fromEntries(selecionadas.map(q => [String(q.id), topicos.get(chaveTopico(q.materia, q.conteudo))]).filter(([, topico]) => topico)) : {}
-    guardar({ id: crypto.randomUUID(), objetivo: nome, ids: selecionadas.map(q => String(q.id)), respostas: {}, vinculos, ...(demo ? { perfilDemo } : {}) })
+    guardar({ id: crypto.randomUUID(), objetivo: nome, ids: selecionadas.map(q => String(q.id)), respostas: {}, vinculos, ...(alvo?.tipo === 'prova' ? { provaId: chaveFiltro(alvo.nome) } : {}), ...(demo ? { perfilDemo } : {}) })
   }
 
   const atual = itens.find(q => !sessao.respostas[String(q.id)])
@@ -140,11 +176,32 @@ export default function TreinoDiario({ conta, questoes = [], questoesDoFoco = qu
           {FOCOS_ESTUDO.filter(item => demos[item.id]).map(item => <option key={item.id} value={item.id}>{item.nome}</option>)}
         </select>
       </label>}
-      {!demo && <label className="min-w-0 flex-1 text-sm">Prova ou instituição
-        <input list="objetivos-treino-diario" className="mt-2 block w-full rounded-xl border border-slate-700 bg-slate-950 p-3" value={objetivo} onChange={e => setObjetivo(e.target.value)} placeholder={OBJETIVOS_FOCO[foco]?.[0]?.nome || 'Digite uma prova ou instituição'} />
-        <datalist id="objetivos-treino-diario">{(OBJETIVOS_FOCO[foco] || []).map(item => <option key={item.id} value={item.nome} />)}</datalist>
-      </label>}
-      {!demo && edital && <button type="button" className={acao} onClick={() => setObjetivo(edital.titulo)}>Usar meu edital</button>}
+      {!demo && <div className="grid w-full min-w-0 gap-3 sm:grid-cols-2">
+        <label className="min-w-0 text-sm">Buscar no acervo
+          <input type="search" className="mt-2 block w-full rounded-xl border border-slate-700 bg-slate-950 p-3" value={buscaObjetivo} onChange={e => setBuscaObjetivo(e.target.value)} placeholder="Nome da prova, cargo ou instituição" />
+        </label>
+        <label className="min-w-0 text-sm">Prova, cargo ou instituição
+          <select className="mt-2 block w-full rounded-xl border border-slate-700 bg-slate-950 p-3" value={objetivo} onChange={e => { setObjetivo(e.target.value); setAviso('') }}>
+            <option value="">Qualquer prova deste foco</option>
+            {edital && <option value="edital">Meu edital · {edital.titulo}</option>}
+            {[['instituicao', 'Bancas e instituições'], ['prova', 'Provas e cargos']].map(([tipo, rotulo]) => {
+              const opcoes = opcoesVisiveis.filter(item => item.tipo === tipo)
+              return opcoes.length > 0 && <optgroup key={tipo} label={rotulo}>{opcoes.map(item => <option key={item.id} value={item.id}>{item.nome} ({item.itens.size})</option>)}</optgroup>
+            })}
+          </select>
+        </label>
+        <div className="space-y-2 sm:col-span-2" aria-label="Sugestões de filtros">
+          <p className="text-xs font-semibold text-slate-400">Filtros rápidos</p>
+          <div className="flex flex-wrap gap-2">
+            {[['', 'Todas'], ['instituicao', 'Bancas e instituições'], ['prova', 'Provas e cargos']].map(([tipo, nome]) => <button key={tipo} type="button" aria-pressed={tipoObjetivo === tipo} onClick={() => setTipoObjetivo(tipo)} className={`rounded-full border px-3 py-1.5 text-xs ${tipoObjetivo === tipo ? 'border-indigo-500 text-indigo-300' : 'border-slate-700 text-slate-300'}`}>{nome}</button>)}
+          </div>
+          {sugestoes.some(item => !tipoObjetivo || item.tipo === tipoObjetivo) && <div className="flex flex-wrap gap-2">
+            {sugestoes.filter(item => !tipoObjetivo || item.tipo === tipoObjetivo).map(item => <button key={item.id} type="button" aria-pressed={objetivo === item.id} onClick={() => { setObjetivo(item.id); setBuscaObjetivo(''); setAviso('') }} className="rounded-full border border-slate-700 px-3 py-1.5 text-left text-xs text-slate-200 hover:border-indigo-500 aria-pressed:border-indigo-500 aria-pressed:text-indigo-300">{item.nome}</button>)}
+          </div>}
+        </div>
+        {!opcoesFiltradas.length && (termosBusca.length > 0 || tipoObjetivo) && !catalogoCarregando && <p role="status" className="text-sm text-slate-400 sm:col-span-2">Nenhuma prova ou instituição encontrada com esses filtros.</p>}
+        {catalogoCarregando && <p role="status" className="text-sm text-slate-400 sm:col-span-2">Carregando mais provas do acervo…</p>}
+      </div>}
       <button type="button" className={acao} disabled={demo && base.length < 10} onClick={iniciar}>Começar 10 questões</button>
     </div>}
     {demoAtiva && !sessao && <p className="text-sm">{demoAtiva.nome}</p>}
