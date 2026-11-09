@@ -16,6 +16,7 @@ import { tentarLeitura, carregarEmEtapas } from './carregarAcervo'
 import catalogoLivros from './data/livrosComplementares.json'
 import { carregarLoteLivro } from './livrosAcervo'
 import { criarProcessadorAcervo } from './processarAcervo'
+import { questaoIntegraPublicavel } from './elegibilidadeAcervoPublico'
 import {aplicativoNativo, carregarAcervoInstalado, lembrarConta, contaOffline} from './plataforma'
 import { opcoesFiltro, chaveCampoFiltro, chaveConteudoFiltro, normalizarBanca, normalizarMateria } from './filtros'
 import { indexarFiltros, filtrarIndice, opcoesRelacionadas, atualizarFiltrosRelacionados } from './indiceFiltros'
@@ -158,7 +159,7 @@ export default function App() {
   const [diaCronograma, setDiaCronograma] = useState('hoje')
   const [questoesExtraidasTotal, setQuestoesExtraidasTotal] = useState(() => {
     try {
-      const salvo = Number(localStorage.getItem('aprovado:total-questoes:v1'))
+      const salvo = Number(localStorage.getItem('aprovado:total-questoes:v2'))
       return Number.isFinite(salvo) && salvo > 0 ? salvo : null
     } catch { return null }
   })
@@ -199,9 +200,9 @@ export default function App() {
   const [acessoComercial, setAcessoComercial] = useState({status:'carregando'})
 
   // Estados das Questões
-  const [acervoPreparado, setAcervoPreparado] = useState(() => ({questoes: unirQuestoes(), indice: null}))
+  const [acervoPreparado, setAcervoPreparado] = useState(() => ({questoes: unirQuestoes().filter(questaoIntegraPublicavel), indice: null}))
   const {questoes} = acervoPreparado
-  const totalQuestoesCatalogo = questoes.filter(q=>q.integridade_profissional?.apta_resolucao!==false).length + (questoesExtraidasTotal || 0)
+  const totalQuestoesCatalogo = questoes.length + (questoesExtraidasTotal || 0)
   const processamentoAcervo = useRef(null)
   const [carregandoAcervo, setCarregandoAcervo] = useState(true)
   const [falhasAcervo, setFalhasAcervo] = useState([])
@@ -313,12 +314,12 @@ export default function App() {
     let ativo = true
     carregarManifestoAcervo()
       .then(manifesto => {
-        const total = Number(manifesto?.questoes_disponiveis_resolucao ?? manifesto?.questoes_extraidas_unicas) || 0
+        const total = Number(manifesto?.questoes_publicadas_integras ?? manifesto?.questoes_disponiveis_resolucao ?? manifesto?.questoes_extraidas_unicas) || 0
         if (ativo) {
           setQuestoesExtraidasTotal(total)
           setManifestoAcervoCompleto(manifesto)
         }
-        try { localStorage.setItem('aprovado:total-questoes:v1', String(total)) } catch { /* A contagem em memória continua disponível. */ }
+        try { localStorage.setItem('aprovado:total-questoes:v2', String(total)) } catch { /* A contagem em memória continua disponível. */ }
       })
       .catch(() => { /* Mantém a última contagem disponível quando estiver offline. */ })
     return () => { ativo = false }
@@ -377,7 +378,10 @@ export default function App() {
       if (requisicao !== requisicaoAcervo.current) return
       const classificacoes=await carregarClassificacaoPrincipal().catch(()=>new Map())
       if (requisicao !== requisicaoAcervo.current) return
-      const resultado = await processamentoAcervo.current.preparar(itens.map(q=>classificacoes.has(String(q.id))?{...q,...classificacoes.get(String(q.id))}:q))
+      const publicados = itens
+        .map(q=>classificacoes.has(String(q.id))?{...q,...classificacoes.get(String(q.id))}:q)
+        .filter(questaoIntegraPublicavel)
+      const resultado = await processamentoAcervo.current.preparar(publicados)
       if (requisicao === requisicaoAcervo.current) setAcervoPreparado(resultado)
     }
     if (aplicativoNativo) {

@@ -8,6 +8,7 @@ import {supabase} from '../supabaseClient'
 import {avaliarRespostaComplementar} from '../correcaoAcervoComplementar'
 import BlocosQuestao from './BlocosQuestao'
 import {blocosValidos} from '../blocosQuestao'
+import {questaoIntegraPublicavel} from '../elegibilidadeAcervoPublico'
 
 const base = `${import.meta.env.BASE_URL || '/'}acervo-extraido/`
 const bucketExtraido = 'acervo-extraido'
@@ -458,7 +459,7 @@ export default function QuestoesExtraidas({
     setErro(false)
     Promise.allSettled(lotesAlvo.map(carregarLote)).then(resultados => {
       if (id !== requisicao.current) return
-      const carregadas = resultados.filter(item => item.status === 'fulfilled').flatMap(item => item.value)
+      const carregadas = resultados.filter(item => item.status === 'fulfilled').flatMap(item => item.value).filter(questaoIntegraPublicavel)
       setQuestoes(carregadas)
       setChaveQuestaoCarregada(chaveLotes)
       setRespostasLocais(Object.fromEntries(carregadas.map(q => [q.id, possuiRespostaLocal(q)])))
@@ -483,7 +484,7 @@ export default function QuestoesExtraidas({
     const buscaNormalizada = normalizar(termo)
     const excluidas = new Set(excluirIds.map(String))
     return questoesCarregadas.filter(q => {
-      if (ehDiscursiva(q)) return false
+      if (!questaoIntegraPublicavel(q) || ehDiscursiva(q)) return false
       if (foco && foco !== 'todos' && !pertenceAoFoco(q, foco, true)) return false
       if (q.documento_auxiliar || q.integridade_profissional?.apta_resolucao===false) return false
       const classificacao = classificacoes.get(q.id) || lerClassificacao(q.id)

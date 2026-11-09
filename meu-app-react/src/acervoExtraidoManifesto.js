@@ -80,7 +80,7 @@ export function carregarClassificacaoPrincipal() {
     if(!indice)return new Map()
     const dados=await lerIndiceCompactado(indice)
     if(!Array.isArray(dados)||dados.length!==indice.quantidade)throw Error('Classificação incompleta')
-    const campos=['banca','banca_original','concurso','concurso_original','aplicacao','organizadora','ano','materia','conteudo','integridade_profissional']
+    const campos=['banca','banca_original','concurso','concurso_original','aplicacao','organizadora','ano','materia','conteudo','dificuldade','dificuldade_estimada','anulada','classificacao_revisada','classificacao_pendente','classificacao_evidencia','classificacao_confianca','classificacao_metodo','integridade_profissional']
     return new Map(dados.map(q=>[String(q.id),Object.fromEntries(campos.filter(c=>Object.hasOwn(q,c)).map(c=>[c,q[c]]))]))
   })().catch(erro=>{classificacaoPrincipalPendente=null;throw erro})
   return classificacaoPrincipalPendente

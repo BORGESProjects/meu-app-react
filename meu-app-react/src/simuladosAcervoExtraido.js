@@ -1,4 +1,5 @@
 import catalogo from './data/provasCompletas.json' with { type: 'json' }
+import {questaoIntegraPublicavel} from './elegibilidadeAcervoPublico.js'
 import { API_URL, fetchApi } from './api'
 import { supabase } from './supabaseClient'
 
@@ -77,7 +78,7 @@ export async function carregarQuestoesParaSimulados(manifesto, questoesJaCarrega
     resultados.push(...await Promise.allSettled(lotes.slice(inicio, inicio + 6).map(async lote => {
       const dados = await buscarLote(lote.arquivo, manifesto, signal)
       if (!Array.isArray(dados) || dados.length !== Number(lote.quantidade)) throw new Error(`Lote incompatível: ${lote.arquivo}`)
-      return dados.filter(questao => ids.has(String(questao.id)))
+      return dados.filter(questao => ids.has(String(questao.id)) && questaoIntegraPublicavel(questao))
     })))
   }
   const questoes = resultados.filter(item => item.status === 'fulfilled').flatMap(item => item.value)
