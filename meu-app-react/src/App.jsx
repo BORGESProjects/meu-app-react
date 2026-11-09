@@ -23,6 +23,7 @@ import { ESPECIFICAS_UEM } from './uem'
 import { questoesDaProva, listarProvasCompletas, gerarTreinoCpor } from './simulados'
 import { pertenceAoFoco, nomeFoco, ultimasTentativas } from './focoEstudo'
 import { useFocoEstudo } from './useFocoEstudo'
+import { criarEditaisOffline } from './editaisOffline'
 import TreinosFoco from './components/TreinosFoco'
 import { carregarQuestoesParaSimulados } from './simuladosAcervoExtraido'
 import TempoSimulado from './components/TempoSimulado'
@@ -165,6 +166,33 @@ export default function App() {
   const [questoesExtraidasEstado, setQuestoesExtraidasEstado] = useState({total: 0, carregando: false, mais: false})
   const carregarMaisExtraidas = useRef(null)
   const [session, setSession] = useState(null)
+  const idContaTreino = session?.user?.id
+  const metaEditalSelecionado = session?.user?.user_metadata?.ap_edital_selecionado
+  const metaEditaisFavoritos = session?.user?.user_metadata?.ap_edital_favoritos
+  const [editalRecomendadoConta, setEditalRecomendadoConta] = useState(null)
+  useEffect(() => {
+    if (abaAtiva !== 'treino' || !idContaTreino) return
+    let ativo = true
+    let preferencias = {}
+    try { preferencias = JSON.parse(localStorage.getItem(`ap-edital-preferencias:${idContaTreino}`) || '{}') || {} } catch { /* Usa as preferências da conta. */ }
+    const favoritos = Array.isArray(preferencias.favoritos) ? preferencias.favoritos : Array.isArray(metaEditaisFavoritos) ? metaEditaisFavoritos : []
+    const ids = [preferencias.selecionado, metaEditalSelecionado, ...favoritos].filter(id => typeof id === 'string' && id)
+    const carregar = async () => {
+      if (aplicativoNativo) {
+        const { rows } = await criarEditaisOffline({ client: supabase, userId: idContaTreino, storage: localStorage }).listar()
+        return rows
+      }
+      const { data, error } = await supabase.from('editais_usuario').select('id,titulo,materias').eq('user_id', idContaTreino).abortSignal(AbortSignal.timeout(12000))
+      if (error) throw error
+      return data || []
+    }
+    carregar().then(rows => {
+      if (!ativo) return
+      const edital = ids.map(id => rows.find(row => row.id === id)).find(Boolean) || (rows.length === 1 ? rows[0] : null)
+      setEditalRecomendadoConta({ conta: idContaTreino, edital })
+    }).catch(() => {})
+    return () => { ativo = false }
+  }, [abaAtiva, idContaTreino, metaEditalSelecionado, metaEditaisFavoritos])
   const [authReady, setAuthReady] = useState(false)
   const [isAdmin, setIsAdmin] = useState(false)
   const [checkingAdmin, setCheckingAdmin] = useState(false)
@@ -1249,7 +1277,7 @@ export default function App() {
     })
   }
   function planejarRevisaoTreino({ materia, conteudo }) {
-    setNovaTarefa(atual => ({ ...atual, dia: diaAtual || atual.dia, data: '', materia, atividade: `Revisar: ${conteudo}`, minutos: 30 }))
+    setNovaTarefa(atual => ({ ...atual, dia: diaAtual || atual.dia, data: '', materia, atividade: conteudo ? `Revisar: ${conteudo}` : 'Praticar questões', minutos: 30 }))
     setDiaCronograma('hoje')
     setAbaAtiva('tarefas')
   }
@@ -1325,7 +1353,7 @@ export default function App() {
       <main className="relative z-10 mx-auto min-w-0 max-w-5xl p-3 sm:p-6 md:p-8">
         {abaAtiva === 'treino' && <Suspense fallback={<p>Carregando treino…</p>}>
           {veioDaDemonstracao && <div className="mb-5"><TreinoDiario demo foco={focoEstudo} conta={session.user.id} onSalvar={salvarDiagnostico} onPraticar={praticarConteudoEdital} onEdital={() => setAbaAtiva('edital')} onAgendar={planejarRevisaoTreino} /></div>}
-          <TreinoDiario key={`${session.user.id}:${focoEstudo}`} foco={focoEstudo} conta={session.user.id} questoes={baseTreino} questoesDoFoco={questoesTreino} catalogoCarregando={carregandoAcervo || (acervoTreino === null && !erroAcervoTreino)} historico={historicoRespostas} edital={editalTreino} onSalvar={salvarDiagnostico} onPraticar={praticarConteudoEdital} onEdital={() => setAbaAtiva('edital')} onAgendar={planejarRevisaoTreino} />
+          <TreinoDiario key={`${session.user.id}:${focoEstudo}`} foco={focoEstudo} conta={session.user.id} questoes={baseTreino} questoesDoFoco={questoesTreino} catalogoCarregando={carregandoAcervo || (acervoTreino === null && !erroAcervoTreino)} historico={historicoRespostas} cadernos={cadernos} marcacoes={marcacoesPessoais} edital={editalTreino?.conta === idContaTreino ? editalTreino.edital : editalRecomendadoConta?.conta === idContaTreino ? editalRecomendadoConta.edital : null} onSalvar={salvarDiagnostico} onPraticar={praticarConteudoEdital} onEdital={() => setAbaAtiva('edital')} onAgendar={planejarRevisaoTreino} />
           {erroAcervoTreino && <p role="status" className="mx-auto mt-3 max-w-3xl text-sm text-amber-300">Algumas provas da nuvem podem estar indisponíveis. <button type="button" className="underline" onClick={() => { setAcervoTreino(null); setErroAcervoTreino(false) }}>Tentar carregar novamente</button></p>}
 
         </Suspense>}
@@ -1931,7 +1959,7 @@ export default function App() {
         {/* ABA: EDITAL VERTICALIZADO */}
         {abaAtiva === 'edital' && (
           <Suspense fallback={<p role="status">Carregando seu planejador de editais…</p>}>
-            <EditalPlanejador key={session.user.id} userId={session.user.id} historicoRespostas={historicoRespostas} indiceQuestoes={indiceCompleto} onPraticar={praticarConteudoEdital} onTreino={edital => { setEditalTreino(edital); setAbaAtiva('treino') }} mostrarCatalogoOficial />
+            <EditalPlanejador key={session.user.id} userId={session.user.id} historicoRespostas={historicoRespostas} indiceQuestoes={indiceCompleto} onPraticar={praticarConteudoEdital} onTreino={edital => { setEditalTreino({ conta: idContaTreino, edital }); setAbaAtiva('treino') }} mostrarCatalogoOficial />
           </Suspense>
         )}
 
