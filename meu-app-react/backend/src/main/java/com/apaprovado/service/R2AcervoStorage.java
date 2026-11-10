@@ -58,7 +58,10 @@ public class R2AcervoStorage {
     private static final long STORAGE_CACHE_TTL_MILLIS = 60_000L;
     private static final Duration URL_TTL = Duration.ofMinutes(30);
     private static final Pattern ALLOWED_KEY = Pattern.compile(
-        "(?:manifesto|visuais)\\.json|lotes/[A-Za-z0-9._-]+\\.json\\.gz|paginas/[A-Za-z0-9._-]+\\.webp"
+        "(?:manifesto|visuais)\\.json|lotes/[A-Za-z0-9._-]+\\.json\\.gz|paginas/[A-Za-z0-9._-]+\\.(?:webp|svg)"
+    );
+    private static final Pattern ACTIVE_SVG_CONTENT = Pattern.compile(
+        "(?is)<\\s*(?:script|foreignObject|iframe|object|embed)\\b|\\bon[a-z]+\\s*=|(?:href|src)\\s*=\\s*['\\\"]\\s*(?:https?:|//|data:|javascript:)|url\\(\\s*['\\\"]?\\s*(?:https?:|//|data:)"
     );
 
     private final String bucket;
@@ -234,6 +237,7 @@ public class R2AcervoStorage {
                 throw new ResponseStatusException(HttpStatus.PAYLOAD_TOO_LARGE, "Cada lote deve ter no máximo 3,8 MB.");
             }
             byte[] contents = preparedContents(file, key);
+            validateSvg(key, contents);
             incomingBytes = Math.addExact(incomingBytes, contents.length);
             pending.add(new PendingObject(file, key, 0L, contents));
         }
@@ -399,9 +403,21 @@ public class R2AcervoStorage {
 
     private static String contentTypeFor(String key, String supplied) {
         if (key.endsWith(".webp")) return "image/webp";
+        if (key.endsWith(".svg")) return "image/svg+xml; charset=utf-8";
         if (key.endsWith(".json.gz")) return "application/gzip";
         if (key.endsWith(".json")) return "application/json; charset=utf-8";
         return supplied == null || supplied.isBlank() ? "application/octet-stream" : supplied;
+    }
+
+    private static void validateSvg(String key, byte[] contents) {
+        if (!key.endsWith(".svg")) return;
+        if (contents.length > 1_000_000) {
+            throw new ResponseStatusException(HttpStatus.PAYLOAD_TOO_LARGE, "A imagem SVG excede o limite seguro de 1 MB.");
+        }
+        String svg = new String(contents, StandardCharsets.UTF_8);
+        if (!svg.stripLeading().startsWith("<svg") || ACTIVE_SVG_CONTENT.matcher(svg).find()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "A imagem SVG contém conteúdo não permitido.");
+        }
     }
 
     private static String decodeObjectKey(MultipartFile file) {

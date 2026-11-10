@@ -10,7 +10,7 @@ const MAX_BATCH_FILES = 100
 // O serviço gratuito do Render pode levar cerca de dois minutos para despertar.
 // Mantenha a consulta ativa por mais tempo que a inicialização observada.
 const STATUS_TIMEOUT_MS = 180000
-const KEY_ALLOWED = /^(?:manifesto|visuais)\.json$|^lotes\/[A-Za-z0-9._-]+\.json\.gz$|^paginas\/[A-Za-z0-9._-]+\.webp$/
+const KEY_ALLOWED = /^(?:manifesto|visuais)\.json$|^lotes\/[A-Za-z0-9._-]+\.json\.gz$|^paginas\/[A-Za-z0-9._-]+\.(?:webp|svg)$/
 
 const numero = valor => Number(valor || 0).toLocaleString('pt-BR')
 const gigabytes = bytes => `${(Number(bytes || 0) / 1_000_000_000).toLocaleString('pt-BR', {maximumFractionDigits: 2})} GB`
@@ -261,5 +261,4 @@ export default function AcervoR2Admin({isAdmin = false}) {
     {erro && <p role="alert" className="mt-4 rounded-xl border border-amber-300/30 bg-amber-950/25 px-3 py-2 text-sm leading-6 text-amber-100">{erro}</p>}
   </section>
 }
-
 
