@@ -1658,7 +1658,7 @@
     },
     "imagem_original": "/acervo/pmpr-soldado-2020/imagens/pmpr-2020-tirinha-calvin-haroldo.webp",
     "descricao_imagem": "Tirinha de Calvin e Haroldo citada no enunciado",
-    "pagina_imagem": 5,
+    "pagina_imagem": null,
     "extracao_visual_verificada": true,
     "identidade_visual": "eec1f2088939f996bd0a266d33065545490291d30df5e760f58b03493eac4095",
     "classificacao_revisada": true,
@@ -2306,7 +2306,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Raciocínio Matemático",
+    "materia": "Matemática",
     "conteudo": "Porcentagem e variação sucessiva",
     "dificuldade": "Fácil",
     "dificuldade_estimada": true,
@@ -2445,7 +2445,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Raciocínio Matemático"
   },
   {
     "id": "pmpr-2020-soldado-q17",
@@ -2458,7 +2459,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Raciocínio Matemático",
+    "materia": "Matemática",
     "conteudo": "Razão, taxa e conversão de unidades",
     "dificuldade": "Média",
     "dificuldade_estimada": true,
@@ -2597,7 +2598,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Raciocínio Matemático"
   },
   {
     "id": "pmpr-2020-soldado-q18",
@@ -2610,7 +2612,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Raciocínio Matemático",
+    "materia": "Matemática",
     "conteudo": "Média ponderada e tabela de frequências",
     "dificuldade": "Difícil",
     "dificuldade_estimada": true,
@@ -2732,7 +2734,7 @@
     },
     "imagem_original": "/acervo/pmpr-soldado-2020/imagens/pmpr-2020-tabela-formigas.webp",
     "descricao_imagem": "Tabela de comprimentos e quantidades de formigas",
-    "pagina_imagem": 6,
+    "pagina_imagem": null,
     "extracao_visual_verificada": true,
     "identidade_visual": "57f6a5f13c7bbb3292a0de9ff935661db5ae64d2efa3404beaf7f3c404a449c5",
     "classificacao_revisada": true,
@@ -2754,7 +2756,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Raciocínio Matemático"
   },
   {
     "id": "pmpr-2020-soldado-q19",
@@ -2767,7 +2770,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Raciocínio Matemático",
+    "materia": "Matemática",
     "conteudo": "Área do círculo e coroa circular",
     "dificuldade": "Difícil",
     "dificuldade_estimada": true,
@@ -2889,7 +2892,7 @@
     },
     "imagem_original": "/acervo/pmpr-soldado-2020/imagens/pmpr-2020-anel-irrigador.webp",
     "descricao_imagem": "Diagrama da região circular irrigada e dos raios de 13,5 m e 18 m",
-    "pagina_imagem": 6,
+    "pagina_imagem": null,
     "extracao_visual_verificada": true,
     "identidade_visual": "539083d6a7a6e8c45acdc2921fe444ac5ad183c8c848cfc58ea60f4f0dde6307",
     "classificacao_revisada": true,
@@ -2911,7 +2914,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Raciocínio Matemático"
   },
   {
     "id": "pmpr-2020-soldado-q20",
@@ -2924,7 +2928,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Raciocínio Matemático",
+    "materia": "Matemática",
     "conteudo": "Porcentagem e equações",
     "dificuldade": "Fácil",
     "dificuldade_estimada": true,
@@ -3063,7 +3067,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Raciocínio Matemático"
   },
   {
     "id": "pmpr-2020-soldado-q21",
@@ -3076,7 +3081,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Raciocínio Matemático",
+    "materia": "Matemática",
     "conteudo": "Leitura de tabela e gráfico de setores",
     "dificuldade": "Difícil",
     "dificuldade_estimada": true,
@@ -3198,7 +3203,7 @@
     },
     "imagem_original": "/acervo/pmpr-soldado-2020/imagens/pmpr-2020-tabela-grafico-cooperativas.webp",
     "descricao_imagem": "Tabela de capacidades e gráfico de setores das quatro cooperativas",
-    "pagina_imagem": 7,
+    "pagina_imagem": null,
     "extracao_visual_verificada": true,
     "identidade_visual": "99b913d45f4f1a400e2950417b1abb2597e625460160089b69dcfa21a2c734c1",
     "classificacao_revisada": true,
@@ -3220,7 +3225,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Raciocínio Matemático"
   },
   {
     "id": "pmpr-2020-soldado-q22",
@@ -3233,7 +3239,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Raciocínio Matemático",
+    "materia": "Matemática",
     "conteudo": "Geometria plana e Teorema de Pitágoras",
     "dificuldade": "Média",
     "dificuldade_estimada": true,
@@ -3355,7 +3361,7 @@
     },
     "imagem_original": "/acervo/pmpr-soldado-2020/imagens/pmpr-2020-corrimao-rampa.webp",
     "descricao_imagem": "Figura do corrimão instalado sobre a rampa, com medidas",
-    "pagina_imagem": 7,
+    "pagina_imagem": null,
     "extracao_visual_verificada": true,
     "identidade_visual": "a5e84d525a8d31902bb9de22fc0d468662271c7414d1bd86b85377b098237322",
     "classificacao_revisada": true,
@@ -3377,7 +3383,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Raciocínio Matemático"
   },
   {
     "id": "pmpr-2020-soldado-q23",
@@ -3390,7 +3397,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Raciocínio Matemático",
+    "materia": "Matemática",
     "conteudo": "Múltiplos comuns e contagem",
     "dificuldade": "Fácil",
     "dificuldade_estimada": true,
@@ -3529,7 +3536,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Raciocínio Matemático"
   },
   {
     "id": "pmpr-2020-soldado-q24",
@@ -3542,7 +3550,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Raciocínio Matemático",
+    "materia": "Matemática",
     "conteudo": "Perímetros e áreas de retângulos",
     "dificuldade": "Difícil",
     "dificuldade_estimada": true,
@@ -3664,7 +3672,7 @@
     },
     "imagem_original": "/acervo/pmpr-soldado-2020/imagens/pmpr-2020-ampliacao-plantio.webp",
     "descricao_imagem": "Figura da ampliação retangular de uma região de plantio",
-    "pagina_imagem": 7,
+    "pagina_imagem": null,
     "extracao_visual_verificada": true,
     "identidade_visual": "e69304ec6e46cabaaec407bc3ad52a0c914ec0cfd472cb2a873f001265f425cd",
     "classificacao_revisada": true,
@@ -3686,7 +3694,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Raciocínio Matemático"
   },
   {
     "id": "pmpr-2020-soldado-q25",
@@ -3699,7 +3708,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Raciocínio Matemático",
+    "materia": "Matemática",
     "conteudo": "Contagem de combinações",
     "dificuldade": "Difícil",
     "dificuldade_estimada": true,
@@ -3838,7 +3847,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Raciocínio Matemático"
   },
   {
     "id": "pmpr-2020-soldado-q26",
@@ -3851,7 +3861,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Raciocínio Matemático",
+    "materia": "Matemática",
     "conteudo": "Probabilidade e transferências entre urnas",
     "dificuldade": "Média",
     "dificuldade_estimada": true,
@@ -3973,7 +3983,7 @@
     },
     "imagem_original": "/acervo/pmpr-soldado-2020/imagens/pmpr-2020-urnas-bolas.webp",
     "descricao_imagem": "Diagrama das transferências de bolas entre as três urnas",
-    "pagina_imagem": 7,
+    "pagina_imagem": null,
     "extracao_visual_verificada": true,
     "identidade_visual": "d1f37b4de2d360580e5420d98b4740364b7489b7fc120771b752b71266f79e62",
     "classificacao_revisada": true,
@@ -3999,7 +4009,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Raciocínio Matemático"
   },
   {
     "id": "pmpr-2020-soldado-q27",
@@ -4012,7 +4023,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Raciocínio Matemático",
+    "materia": "Matemática",
     "conteudo": "Volume de cubo e deslocamento de líquido",
     "dificuldade": "Média",
     "dificuldade_estimada": true,
@@ -4151,7 +4162,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Raciocínio Matemático"
   },
   {
     "id": "pmpr-2020-soldado-q28",
@@ -7650,7 +7662,7 @@
     },
     "imagem_original": "/acervo/pmpr-soldado-2020/imagens/pmpr-2020-planilha-covid.webp",
     "descricao_imagem": "Planilha com casos de COVID-19 por região",
-    "pagina_imagem": 11,
+    "pagina_imagem": null,
     "extracao_visual_verificada": true,
     "identidade_visual": "3622ac856d2fccaa05fd2ba7a2b456065034b3936a850bd748952857f4a3e51c",
     "classificacao_revisada": true,
@@ -8605,7 +8617,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Estatuto da Criança e do Adolescente",
+    "materia": "Legislação e normas",
     "conteudo": "Ato infracional e medidas socioeducativas",
     "dificuldade": "Fácil",
     "dificuldade_estimada": true,
@@ -8744,7 +8756,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Estatuto da Criança e do Adolescente"
   },
   {
     "id": "pmpr-2020-soldado-q58",
@@ -8757,7 +8770,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Estatuto da Criança e do Adolescente",
+    "materia": "Legislação e normas",
     "conteudo": "Medidas aplicáveis aos pais ou responsáveis",
     "dificuldade": "Fácil",
     "dificuldade_estimada": true,
@@ -8896,7 +8909,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Estatuto da Criança e do Adolescente"
   },
   {
     "id": "pmpr-2020-soldado-q59",
@@ -8909,7 +8923,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Estatuto da Criança e do Adolescente",
+    "materia": "Legislação e normas",
     "conteudo": "Autorização para viagem de criança ou adolescente",
     "dificuldade": "Fácil",
     "dificuldade_estimada": true,
@@ -9048,7 +9062,8 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Estatuto da Criança e do Adolescente"
   },
   {
     "id": "pmpr-2020-soldado-q60",
@@ -9061,7 +9076,7 @@
     "concurso": "Soldado PMPR/CBMPR 2020",
     "cargo": "Soldado Policial Militar / Soldado Bombeiro Militar",
     "aplicacao": "2021 — prova objetiva definitiva",
-    "materia": "Estatuto da Criança e do Adolescente",
+    "materia": "Legislação e normas",
     "conteudo": "Conselho Tutelar: composição e atribuições",
     "dificuldade": "Fácil",
     "dificuldade_estimada": true,
@@ -9200,6 +9215,7 @@
     },
     "origem": "NC/UFPR — caderno definitivo PMPR/CBMPR Soldado 2020",
     "ano_concurso": 2020,
-    "ano_aplicacao": 2021
+    "ano_aplicacao": 2021,
+    "materia_original": "Estatuto da Criança e do Adolescente"
   }
 ]
