@@ -1,0 +1,514 @@
+[
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-5-q41",
+    "ano": 2024,
+    "numero": 41,
+    "numero_original": 41,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Sensoriamento Remoto",
+    "conteudo": "Correção geométrica de imagens e mapeamento",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "A realização da correção geométrica de imagens é motivada principalmente pela presença de distorções sistemáticas que são introduzidas durante a aquisição das imagens. Seu principal objetivo é eliminar esses erros sistemáticos que estão presentes nas imagens. O processo inicia-se com a transformação geométrica, que transforma as coordenadas de imagem bruta (linha e coluna) em coordenadas geográficas de referência (latitude e longitude). Essa é a etapa em que se eliminam as distorções existentes e se define o espaço geográfico a ser ocupado pela imagem corrigida. Essa primeira etapa da correção geométrica de imagens é denominada (Questão anulada no gabarito definitivo oficial.)",
+    "texto_apoio": "",
+    "opcoes": [
+      "interpolação.",
+      "registro de imagens.",
+      "reamostragem.",
+      "mapeamento inverso.",
+      "mapeamento direto."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": null,
+    "anulada": true,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 41,
+        "pagina": 13,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": null,
+        "anulada": true,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 41,
+          "resposta": null,
+          "anulada": true
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 13,
+    "paginas_origem": [
+      13
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 41,
+      "resposta": null,
+      "anulada": true
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 13; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": false,
+      "elegivel_para_correcao_automatica": false,
+      "apontamentos": [
+        "Questão anulada no gabarito definitivo oficial."
+      ]
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-5-q42",
+    "ano": 2024,
+    "numero": 42,
+    "numero_original": 42,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Geoinformação",
+    "conteudo": "Infraestrutura Nacional de Dados Espaciais e metadados",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "No âmbito do Poder Executivo federal, a Infraestrutura Nacional de Dados Espaciais (INDE) é definida como o conjunto integrado de tecnologias, políticas, mecanismos e procedimentos de coordenação e monitoramento, padrões e acordos para facilitar e ordenar a geração, o armazenamento, o acesso, o compartilhamento, a disseminação e o uso dos dados geoespaciais de origem federal, estadual, distrital e municipal. No contexto da infraestrutura nacional de dados espaciais, os metadados de informações geoespaciais caracterizam-se como",
+    "texto_apoio": "",
+    "opcoes": [
+      "conjunto de dados geoespaciais que possuem restrições de acesso devido a considerações de segurança ou confidencialidade, determinadas pelo órgão responsável pela produção.",
+      "conjunto de informações descritivas sobre os dados, incluindo as características do seu levantamento, produção, qualidade e estrutura de armazenamento, essenciais para promover a sua documentação, integração e disponibilização, bem como possibilitar a sua busca e exploração.",
+      "sistema de servidores de dados, distribuídos na rede mundial de computadores, capaz de reunir eletronicamente produtores, gestores e usuários de dados geoespaciais, com vistas ao armazenamento, compartilhamento e acesso a esses dados e aos serviços relacionados.",
+      "dados que se distinguem essencialmente pela componente espacial, que associa a cada entidade ou fenômeno uma localização na Terra, traduzida por sistema geodésico de referência, em dado instante ou período de tempo, podendo ser derivados, entre outras fontes, das tecnologias de levantamento, inclusive as associadas a sistemas globais de posicionamento apoiados por satélites, bem como de mapeamento ou de sensoriamento remoto.",
+      "informações geoespaciais que são coletadas por meio de levantamentos realizados a partir de aeronaves ou drones, proporcionando dados precisos sobre a superfície terrestre."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 42,
+        "pagina": 13,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 42,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 13,
+    "paginas_origem": [
+      13
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 42,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 13; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-5-q43",
+    "ano": 2024,
+    "numero": 43,
+    "numero_original": 43,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Sensoriamento Remoto",
+    "conteudo": "Distorções geométricas em imagens de satélite e sensores",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Figura reproduzida de: MACHADO, S. A. J. F. Modelos de correção geométrica para imagens HRV-SPOT. 1988. 234 f. Dissertação (Mestrado em Computação Aplicada) — Instituto Nacional de Pesquisas Espaciais (INPE), São José dos Campos, 1988. Adaptado. A Figura acima refere-se a um erro no sensor de imagem referente ao",
+    "texto_apoio": "",
+    "opcoes": [
+      "desalinhamento por rotação da Terra.",
+      "deslocamento entre barras de detetores.",
+      "deslocamento entre bandas.",
+      "deslocamento entre detetores.",
+      "deslocamento devido ao relevo."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 43,
+        "pagina": 14,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 43,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 14,
+    "paginas_origem": [
+      14
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 43,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 14; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [
+      {
+        "imagem": "/acervo/cpnu-2024-bloco-1-tarde-eixo-5-lote-1/imagens/cpnu-2024-bloco1-q43-deslocamento-detetor.png",
+        "texto": "Diagrama de deslocamento entre o sensor de imagem e a superfície terrestre, identificado pelas grandezas H, P e dy."
+      }
+    ],
+    "enunciado_antes_apoio": "Imagens de satélite têm se tornado uma ferramenta essencial em diversas áreas, incluindo monitoramento ambiental, planejamento urbano, agricultura e gestão de desastres. No entanto, ao analisar essas imagens, é importante considerar que elas não são uma representação perfeita da realidade. Uma das principais fontes de imperfeição são as distorções geométricas, que podem afetar a precisão e a interpretação das informações contidas nessas imagens. Essas distorções podem surgir de várias fontes, desde variações orbitais do satélite até distorções atmosféricas e erros nos sensores de imagem."
+  },
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-5-q44",
+    "ano": 2024,
+    "numero": 44,
+    "numero_original": 44,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Sensoriamento Remoto",
+    "conteudo": "Interação entre radiação eletromagnética e matéria",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "A interação entre as radiações eletromagnéticas (REM) e os constituintes da superfície terrestre é fundamental em diversas áreas, como detecção de recursos naturais, monitoramento ambiental e planejamento urbano. Essa interação é influenciada por propriedades espectrais dos materiais presentes, permitindo análise e interpretação das características do ambiente terrestre por meio de sensores remotos. A formação do arco-íris é um exemplo específico de um processo ótico de interação entre REM e os constituintes da superfície terrestre denominado",
+    "texto_apoio": "",
+    "opcoes": [
+      "ligação conjugada.",
+      "refração.",
+      "vibração molecular.",
+      "vibração iônica.",
+      "transferência de carga entre orbitais."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 44,
+        "pagina": 14,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 44,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 14,
+    "paginas_origem": [
+      14
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 44,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 14; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-5-q45",
+    "ano": 2024,
+    "numero": 45,
+    "numero_original": 45,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Geodésia",
+    "conteudo": "Posicionamento por Sistemas Globais de Navegação por Satélite (GNSS)",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "A adoção dos Sistemas Globais de Navegação por Satélite (GNSS) para condução de levantamentos geodésicos de alta precisão implica a determinação de coordenadas tridimensionais, por meio da recepção contínua de sinais emitidos por constelações de satélites em órbita. O princípio básico do posicionamento do GNSS é a",
+    "texto_apoio": "",
+    "opcoes": [
+      "triangulação entre dois satélites e a antena receptora.",
+      "determinação das coordenadas tridimensionais, a partir de uma única constelação de satélites.",
+      "resolução de um sistema linear envolvendo a medida de distância entre o receptor e pelo menos quatro satélites GNSS.",
+      "análise das efemérides transmitidas pelos satélites.",
+      "medição da altitude em relação ao nível do mar."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 45,
+        "pagina": 14,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 45,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 14,
+    "paginas_origem": [
+      14
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 45,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 14; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  }
+]
