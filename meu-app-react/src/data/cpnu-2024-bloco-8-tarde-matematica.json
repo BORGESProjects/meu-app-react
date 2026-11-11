@@ -1,0 +1,302 @@
+[
+  {
+    "id": "cpnu-2024-bloco-8-tarde-matematica-q16",
+    "ano": 2024,
+    "numero": 16,
+    "numero_original": 16,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Matemática",
+    "conteudo": "Vazão e conversão de unidades",
+    "dificuldade": "Fácil",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações e conceitos matemáticos exigidos pelo item",
+    "enunciado": "Uma bomba com vazão de 2 litros de água por segundo consegue encher uma determinada piscina, inicialmente vazia, em 4h10min. Quantas toneladas mede a massa de água contida nessa piscina, quando cheia?",
+    "texto_apoio": "",
+    "opcoes": [
+      "2,5",
+      "3,0",
+      "15,0",
+      "25,0",
+      "30,0"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 16,
+        "pagina": 5,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 16,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 5,
+    "paginas_origem": [
+      5
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 16,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação pela seção Matemática do caderno oficial e pela habilidade diretamente cobrada",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 5; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificacao_individual": true,
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-matematica-q17",
+    "ano": 2024,
+    "numero": 17,
+    "numero_original": 17,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Matemática",
+    "conteudo": "Porcentagem e variação percentual",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações e conceitos matemáticos exigidos pelo item",
+    "enunciado": "Em uma loja, o preço de um determinado produto sofreu um desconto de 20% e passou a ser R$ 36,00. Mais tarde, no entanto, viu-se que tal desconto havia sido dado por engano e que o correto era que fosse dado um aumento de 20% no preço original do produto. Se o engano não tivesse ocorrido, então, após o aumento, o preço do produto, em reais, seria",
+    "texto_apoio": "",
+    "opcoes": [
+      "76,00",
+      "54,00",
+      "51,84",
+      "50,40",
+      "36,40"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 17,
+        "pagina": 5,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 17,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 5,
+    "paginas_origem": [
+      5
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 17,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação pela seção Matemática do caderno oficial e pela habilidade diretamente cobrada",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 5; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificacao_individual": true,
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-matematica-q18",
+    "ano": 2024,
+    "numero": 18,
+    "numero_original": 18,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Matemática",
+    "conteudo": "Probabilidade e análise combinatória",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações e conceitos matemáticos exigidos pelo item",
+    "enunciado": "Um setor de uma empresa é formado por 11 funcionários, dos quais 4 são estagiários e 7 são efetivos. Um grupo de 5 funcionários foi formado a partir de um sorteio aleatório entre os funcionários desse setor. Qual é a probabilidade de o grupo formado possuir apenas um funcionário estagiário?",
+    "texto_apoio": "",
+    "opcoes": [
+      "1/4",
+      "1/5",
+      "4/11",
+      "1/22",
+      "10/33"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 18,
+        "pagina": 5,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 18,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 5,
+    "paginas_origem": [
+      5
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 18,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação pela seção Matemática do caderno oficial e pela habilidade diretamente cobrada",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 5; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificacao_individual": true,
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  }
+]
