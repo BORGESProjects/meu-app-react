@@ -1,0 +1,507 @@
+[
+  {
+    "id": "cpnu-2024-bloco-3-tarde-eixo-2-q16",
+    "ano": 2024,
+    "numero": 16,
+    "numero_original": 16,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 3, Ambiental, Agrário e Biológicas (tarde)",
+    "cargo": "Bloco 3 — Ambiental, Agrário e Biológicas",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Defesa Agropecuária",
+    "conteudo": "Programas de autocontrole na produção agropecuária",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "A Lei nº 14.515/2022, além de estabelecer um novo sistema de fiscalização para a produção agropecuária no país, cria o Programa de Incentivo à Conformidade em Defesa Agropecuária e o Programa de Vigilância em Defesa Agropecuária para Fronteiras Internacionais (Vigifronteiras). Um dos critérios fundamentais que os programas de autocontrole precisarão observar é:",
+    "texto_apoio": "",
+    "opcoes": [
+      "lotes de produtos não identificados para assegurar a segurança do produtor/fornecedor.",
+      "identificação dos responsáveis pela etapa de produção do produto para acionamento no caso da detecção de não conformidades.",
+      "marcas legíveis nos rótulos, com descrição do valor nutricional dos produtos e data de validade.",
+      "registros sistematizados e auditáveis do processo produtivo (desde a chegada da matéria-prima, dos ingredientes e dos insumos até a entrega do produto final).",
+      "designação do ministério responsável pela aprovação do produto."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 11 — Gabarito 1 — Bloco 3 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 3 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 16,
+        "pagina": 6,
+        "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+          "numero": 16,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-11-gabarito-1-bloco-3-tarde",
+    "documento_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "pagina": 6,
+    "paginas_origem": [
+      6
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+      "numero": 16,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 11 Gabarito 1, página 6; gabarito final oficial da tarde, Bloco 3",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 11 — Bloco 3 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-3-tarde-eixo-2-q17",
+    "ano": 2024,
+    "numero": 17,
+    "numero_original": 17,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 3, Ambiental, Agrário e Biológicas (tarde)",
+    "cargo": "Bloco 3 — Ambiental, Agrário e Biológicas",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Políticas Públicas",
+    "conteudo": "Programa de Aquisição de Alimentos (PAA)",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "O Programa de Aquisição de Alimentos (PAA), criado pelo art. 19 da Lei nº 10.696, de 2 de julho de 2003, é comumente citado como exemplo para assegurar a segurança alimentar atendida pela rede socioassistencial. As duas finalidades básicas do PAA são as seguintes:",
+    "texto_apoio": "",
+    "opcoes": [
+      "fortalecer circuitos locais e regionais de produção de alimentos; fomentar a extensão rural.",
+      "promover o acesso à alimentação; incentivar a agricultura familiar.",
+      "valorizar a biodiversidade; estimular a recuperação de áreas de preservação permanente (APP).",
+      "permitir acesso de agricultores familiares a tecnologias do agronegócio; estimular a exportação.",
+      "estimular o cooperativismo; equacionar relações de gênero no campo."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 11 — Gabarito 1 — Bloco 3 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 3 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 17,
+        "pagina": 6,
+        "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+          "numero": 17,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-11-gabarito-1-bloco-3-tarde",
+    "documento_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "pagina": 6,
+    "paginas_origem": [
+      6
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+      "numero": 17,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 11 Gabarito 1, página 6; gabarito final oficial da tarde, Bloco 3",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 11 — Bloco 3 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-3-tarde-eixo-2-q18",
+    "ano": 2024,
+    "numero": 18,
+    "numero_original": 18,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 3, Ambiental, Agrário e Biológicas (tarde)",
+    "cargo": "Bloco 3 — Ambiental, Agrário e Biológicas",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Gestão Territorial",
+    "conteudo": "Etnomapeamento e etnozoneamento",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "O etnomapeamento e o etnozoneamento são ferramentas para a gestão territorial e ambiental de terras indígenas, previstas pela Política Nacional de Gestão Territorial e Ambiental de Terras Indígenas (PNGATI). Essas ferramentas se caracterizam por serem",
+    "texto_apoio": "",
+    "opcoes": [
+      "ações participativas que fornecem bases de diálogo para a gestão territorial e ambiental das terras indígenas.",
+      "metodologias consagradas pela comunidade científica que dependem de softwares específicos para a sua aplicação.",
+      "ferramentas altamente subjetivas e de difícil sistematização, o que vem dificultando a adoção da PNGATI.",
+      "atividades que devem ser executadas por acadêmicos, sem que haja envolvimento com as comunidades indígenas.",
+      "atividades que correspondem a um conjunto de abordagens sociais, que excluem as características naturais de sua avaliação."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 11 — Gabarito 1 — Bloco 3 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 3 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 18,
+        "pagina": 6,
+        "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+          "numero": 18,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-11-gabarito-1-bloco-3-tarde",
+    "documento_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "pagina": 6,
+    "paginas_origem": [
+      6
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+      "numero": 18,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 11 Gabarito 1, página 6; gabarito final oficial da tarde, Bloco 3",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 11 — Bloco 3 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-3-tarde-eixo-2-q19",
+    "ano": 2024,
+    "numero": 19,
+    "numero_original": 19,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 3, Ambiental, Agrário e Biológicas (tarde)",
+    "cargo": "Bloco 3 — Ambiental, Agrário e Biológicas",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Ciência, Tecnologia e Inovação",
+    "conteudo": "Marco Legal de Ciência, Tecnologia e Inovação",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "O Marco Legal da Ciência, Tecnologia e Inovação — Lei nº 13.243/2016 — é resultado de um processo de cerca de cinco anos de discussões entre atores do Sistema Nacional de Inovação, nos âmbitos das comissões de Ciência e Tecnologia da Câmara e do Senado. Tais discussões tinham o objetivo de alterar pontos de leis concernentes ao tema, de modo a",
+    "texto_apoio": "",
+    "opcoes": [
+      "limitar o estabelecimento de mecanismos de incentivo à interação de Instituições Científica, Tecnológica e de Inovação com empresas.",
+      "reduzir obstáculos legais e burocráticos e conferir maior flexibilidade às instituições atuantes em Ciência, Tecnologia e Inovação.",
+      "bloquear o recebimento de remuneração pelas Instituições Científica, Tecnológica e de Inovação em parcerias público-privadas.",
+      "atribuir aos núcleos de inovação tecnológica a liberação do requerimento de proteção intelectual das produções conjuntas.",
+      "dificultar o compartilhamento ou a permissão para uso de laboratórios ou instalações."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 11 — Gabarito 1 — Bloco 3 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 3 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 19,
+        "pagina": 7,
+        "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+          "numero": 19,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-11-gabarito-1-bloco-3-tarde",
+    "documento_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+      "numero": 19,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 11 Gabarito 1, página 7; gabarito final oficial da tarde, Bloco 3",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 11 — Bloco 3 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-3-tarde-eixo-2-q20",
+    "ano": 2024,
+    "numero": 20,
+    "numero_original": 20,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 3, Ambiental, Agrário e Biológicas (tarde)",
+    "cargo": "Bloco 3 — Ambiental, Agrário e Biológicas",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Políticas Públicas",
+    "conteudo": "Implementação de políticas públicas",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Levando-se em conta a trajetória histórica e o amplo conhecimento acumulado sobre implementação de políticas públicas, atualmente existem diversos pressupostos que já foram alcançados ou ultrapassados por meio de vários estudos. Um desses pressupostos é que",
+    "texto_apoio": "",
+    "opcoes": [
+      "a formulação e a implementação não são fases distintas, mas sim processos decisórios contínuos que perpassam diferentes atores no que é possível chamar de cadeia decisória.",
+      "a implementação de serviços públicos não está associada à legitimidade dos governos e suas políticas públicas.",
+      "as políticas públicas são constituídas por uma única camada decisória e por um único ator regulador dessas políticas.",
+      "os estudos de implementação se limitam a investigar aspectos formais e normativos das políticas públicas.",
+      "os modelos de processos multi-level levam em conta apenas um nível hierárquico relacionado a uma cadeia decisória."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 11 — Gabarito 1 — Bloco 3 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 3 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 20,
+        "pagina": 7,
+        "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+          "numero": 20,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-11-gabarito-1-bloco-3-tarde",
+    "documento_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+      "numero": 20,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 11 Gabarito 1, página 7; gabarito final oficial da tarde, Bloco 3",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 11 — Bloco 3 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  }
+]
