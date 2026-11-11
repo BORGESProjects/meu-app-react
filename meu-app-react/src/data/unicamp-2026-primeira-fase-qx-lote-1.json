@@ -1,0 +1,517 @@
+[
+  {
+    "id": "unicamp-2026-fase-1-qx-q1",
+    "ano": 2026,
+    "numero": 1,
+    "numero_original": 1,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Inglês",
+    "conteudo": "Polissemia e sentido contextual",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Leia o texto 1 e as informações do texto 2.\n\nTexto 2 — UPSET\n\n1. noun [C] — an outcome that goes against what was considered to be the most likely result.\n2. adjective — unhappy, worried, angry, or disappointed because something unpleasant has happened.\n\nO texto 1 causou indignação nas redes sociais. Algumas pessoas comentaram: “Se eles estão upset, a gente tá happy!”. O mal-entendido se deve à polissemia, em inglês, da palavra “upset”. É correto afirmar que, no texto 1, “upset” é usada com o sentido da",
+    "texto_apoio": "A manchete e a fotografia do texto jornalístico são necessárias para identificar o sentido de “upset”.",
+    "opcoes": [
+      "primeira definição mostrada no texto 2 e, por isso, tem conotação sarcástica ao comparar as atrizes citadas.",
+      "segunda definição mostrada no texto 2 e, por isso, não assume conotação crítica.",
+      "primeira definição mostrada no texto 2 e, por isso, não desqualifica a vitória da atriz.",
+      "segunda definição mostrada no texto 2 e, por isso, estabelece uma hierarquia entre as atrizes citadas."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 1,
+        "pagina": 1,
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 1,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 1,
+    "paginas_origem": [
+      1
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 1,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 1; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [
+      {
+        "image": "/acervo/unicamp-2026-primeira-fase-qx-lote-1/imagens/unicamp-2026-qx-q1-texto-base.png",
+        "texto": "Recorte do texto jornalístico citado na questão 1, com a manchete sobre Fernanda Torres e o termo “upset”."
+      }
+    ],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q2",
+    "ano": 2026,
+    "numero": 2,
+    "numero_original": 2,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Inglês",
+    "conteudo": "Compreensão de texto e sequência narrativa",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Em um vídeo publicado no canal do YouTube do The New York Times, o diretor de “Ainda Estou Aqui” descreve cenas do filme. Apresenta-se, a seguir, a transcrição da fala do diretor.\n\n“30 minutes into the film, before any of these scenes, everything in the movie conveys a sense of normalcy. From this point onward, though, this frame revolves around subtraction: of light, as the drapes are shut, of sounds from the outside, of music. In this other one, we see the last intimacy moment between the couple, framed by the military officers, emphasizing a sense of suffocation in what was once a safe place: the family house. Then, we see the first of the only two close-ups in the entire film. We saved it for Eunice’s last glance at Rubens. From here on, we are with her. “I’m Still Here” becomes her film.”\n\nObserve os três quadros extraídos do filme e assinale a alternativa que apresenta a ordem em que foram descritos no texto.",
+    "texto_apoio": "Os quadros A, B e C do filme são indispensáveis para ordenar as cenas descritas.",
+    "opcoes": [
+      "Quadro A, Quadro C, Quadro B.",
+      "Quadro B, Quadro C, Quadro A.",
+      "Quadro C, Quadro B, Quadro A.",
+      "Quadro B, Quadro A, Quadro C."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 2,
+        "pagina": 1,
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 2,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 1,
+    "paginas_origem": [
+      1
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 2,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 1; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [
+      {
+        "image": "/acervo/unicamp-2026-primeira-fase-qx-lote-1/imagens/unicamp-2026-qx-q2-quadros.png",
+        "texto": "Três quadros do filme Ainda Estou Aqui, identificados como A, B e C, que devem ser ordenados conforme a descrição."
+      }
+    ],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q3",
+    "ano": 2026,
+    "numero": 3,
+    "numero_original": 3,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Inglês",
+    "conteudo": "Interpretação de tirinha",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Leia a tirinha a seguir.\n\nA tirinha, em seu sentido geral, faz uma crítica à",
+    "texto_apoio": "A tirinha é necessária para interpretar a crítica e os elementos visuais do enunciado.",
+    "opcoes": [
+      "injustiça de um personagem receber menos moedas do que o outro, na Wall Street.",
+      "diferença de status financeiro entre as pessoas que transitam pela Wall Street.",
+      "atitude das pessoas que circulam na Wall Street para as quais lidar com dinheiro é um jogo.",
+      "postura das pessoas que circulam na Wall Street que ignoram problemas e necessidades sociais."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 3,
+        "pagina": 1,
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 3,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 1,
+    "paginas_origem": [
+      1
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 3,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 1; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [
+      {
+        "image": "/acervo/unicamp-2026-primeira-fase-qx-lote-1/imagens/unicamp-2026-qx-q3-tirinha.png",
+        "texto": "Tirinha sobre Wall Street, dinheiro e doações a pessoas necessitadas."
+      }
+    ],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q4",
+    "ano": 2026,
+    "numero": 4,
+    "numero_original": 4,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Inglês",
+    "conteudo": "Compreensão de texto jornalístico",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Segundo o texto,",
+    "texto_apoio": "U.S. Inflation Mild Ahead of Expected Jump From Tariffs\n\nEconomists and policymakers are bracing for inflation to reaccelerate as companies adapt to the trade war.",
+    "opcoes": [
+      "o governo dos EUA está se preparando para um salto na inflação diante da guerra comercial de tarifas.",
+      "a inflação nos EUA se mantém moderada, mas economistas e legisladores estão se preparando diante da expectativa de alta das tarifas.",
+      "a inflação nos EUA deve se manter moderada, pois as empresas estão se adaptando ao aumento das tarifas.",
+      "as empresas dos EUA estão se adaptando à aceleração da inflação diante da guerra de tarifas estabelecida pelo governo."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 4,
+        "pagina": 2,
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 4,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 4,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 2; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q5",
+    "ano": 2026,
+    "numero": 5,
+    "numero_original": 5,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Inglês",
+    "conteudo": "Interpretação de texto e leitura de obra visual",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Apresenta-se, a seguir, uma citação (texto 1) que originou uma obra de arte (texto 2). Há também um parágrafo (texto 3) que descreve e explica essa obra.\n\nTexto 1 — “I do not always feel colored (…). I feel most colored when I am thrown against a sharp white background.”\n\nTexto 3 — The artist Glenn Ligon has stenciled the sentences over and over until the words dissolve into abstract patterns. He built on a text by Zora Neale Hurston, who describes leaving the protective black community of her childhood and suddenly confronting the issue of race. The smearing in the painting’s illegible words embody her confusion about this, something Ligon builds on: “Oil paint wants to spread out and smudge. After trying to make perfect letters, I realized that the smudging and disappearance of the letters was more interesting than trying to make perfect letters.”\n\nDe acordo com o texto 3, é correto afirmar que",
+    "texto_apoio": "A obra visual do texto 2 é necessária para relacionar o procedimento artístico descrito ao texto de Zora Neale Hurston.",
+    "opcoes": [
+      "a ilegibilidade em parte das imagens é intencional, pois reforça a invisibilização da identidade negra em contextos brancos, como sugere a autora do texto 1.",
+      "os efeitos da tinta usada por Glenn Ligon aludem à confusão desse artista quanto à sua própria identidade racial, semelhante ao que relata a autora do texto 1.",
+      "a repetição de frases nas imagens é proposital, pois representa a recusa de algumas pessoas em se verem como negras, como sugere a autora do texto 1.",
+      "os borrões em parte das imagens são um efeito da técnica usada por Glenn Ligon e aludem às vivências raciais da autora do texto 1."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 5,
+        "pagina": 2,
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 5,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 5,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 2; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [
+      {
+        "image": "/acervo/unicamp-2026-primeira-fase-qx-lote-1/imagens/unicamp-2026-qx-q5-obras.png",
+        "texto": "Duas obras de Glenn Ligon que repetem e borram trechos do texto de Zora Neale Hurston."
+      }
+    ],
+    "enunciado_antes_apoio": ""
+  }
+]
