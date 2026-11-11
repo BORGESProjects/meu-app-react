@@ -1,0 +1,428 @@
+[
+  {
+    "id": "unicamp-2026-fase-1-qx-q31",
+    "ano": 2026,
+    "numero": 31,
+    "numero_original": 31,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "História",
+    "conteudo": "Estado Novo e repercussão internacional",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Em 1937, um golpe de Estado instaurou o Estado Novo no Brasil, um regime autoritário. Diferentes leituras do golpe de Vargas foram publicadas no jornal The New York Times, ilustrando o impacto difuso daquele evento na imprensa. De um lado, escrevendo da Argentina, o chefe dos correspondentes na América Latina, John White, afirmou o caráter “pseudo-fascista” do movimento, registrando a atuação dos censores sobre o trabalho dos correspondentes internacionais que atuavam no Brasil. White destacava o apoio alemão ao novo regime brasileiro e os desafios de centralizar o poder nas mãos de Getúlio Vargas. De outro lado, Frank Garcia, correspondente do The New York Times, que atuava então no Brasil, comentou: “Eu posso dizer que, embora tenha havido censura, eu não tive dificuldades em enviar matérias ao The New York Times. Elas foram telegrafadas sem nenhum problema. Essa nova Constituição configura o Estado um tanto fascista, mas não inteiramente. É mais democrático que fascista. Na verdade, é nacionalista.”\n\nSobre a repercussão internacional do Golpe do Estado Novo no exterior, podemos afirmar que havia",
+    "texto_apoio": "",
+    "opcoes": [
+      "percepção unânime do pleno alinhamento ideológico do Brasil com governos fascistas.",
+      "condenação ao fascismo e sugestão de sanções econômicas em razão do apoio alemão a Vargas.",
+      "controvérsias e ambiguidades na caracterização ideológica do novo governo Vargas.",
+      "estratégias de resistência à censura imposta aos jornalistas que atuavam no Brasil."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 31,
+        "pagina": 11,
+        "paginas_origem": [
+          11
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 31,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 11,
+    "paginas_origem": [
+      11
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 31,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 11; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q32",
+    "ano": 2026,
+    "numero": 32,
+    "numero_original": 32,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Geografia",
+    "conteudo": "Globalização e entrada da China na OMC",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "“A OMC não será uma organização mundial de comércio até que a China seja um país-membro”, afirmou Mike Moore, diretor-geral da OMC. A assinatura de um acordo bilateral de comércio entre os Estados Unidos e a China teve uma repercussão positiva no mercado internacional, apesar da desconfiança de que a China poderá ter dificuldades para cumprir o prometido. “A China deu um passo grande em direção à OMC”, disse o presidente dos Estados Unidos, Bill Clinton. A União Europeia aprovou a assinatura do acordo. A adesão da China à OMC permitirá incluir no sistema comercial internacional a décima potência do planeta, que cresceu em média 9,6% ao ano desde 1980. O acordo será um teste importante para verificar se a economia chinesa aguentaria o impacto de sua incorporação à OMC e se continuaria com seu crescimento. Desde 1986, o país asiático busca ser aceito em um organismo de comércio internacional. Segundo nota chinesa, “ambas as partes estreitarão sua cooperação no seio da OMC para garantir no futuro o aumento de suas relações bilaterais e a prosperidade da economia mundial”.\n\nComparando as expectativas sobre o ingresso da China na Organização Mundial de Comércio (OMC) expressas no texto com o contexto atual, é correto afirmar que",
+    "texto_apoio": "",
+    "opcoes": [
+      "havia um otimismo em relação à expansão da globalização da economia mundial entre as décadas de 1990 e 2000.",
+      "a entrada da China na OMC interrompeu o deslocamento das indústrias norte-americana e europeia para a Ásia.",
+      "a guerra tarifária contemporânea revela o fracasso do modelo de desenvolvimento chinês dos anos 2000.",
+      "os compromissos assumidos pela China na entrada na OMC permitiram a consolidação dos direitos humanos no país."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 32,
+        "pagina": 11,
+        "paginas_origem": [
+          11
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 32,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 11,
+    "paginas_origem": [
+      11
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 32,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 11; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q33",
+    "ano": 2026,
+    "numero": 33,
+    "numero_original": 33,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "História",
+    "conteudo": "Ditadura militar, arte e denúncia política",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "As imagens fazem parte da coleção International Dateline Collection III, exposta em um desfile internacional organizado pela estilista brasileira Zuzu Angel, em Nova Iorque, no dia 13 de setembro de 1971.\n\nSobre as criações de Zuzu Angel para a produção das peças e organização do desfile, é correto afirmar que a",
+    "texto_apoio": "",
+    "opcoes": [
+      "utilização de um vestido de noiva, decorado com símbolos militares e desenhos infantis, amenizava a percepção internacional dos anos de chumbo do Brasil pós-AI-5.",
+      "escolha por desenhos infantis, associados aos motivos militares, expressa uma denúncia do desaparecimento de presos políticos.",
+      "banalização de elementos militares, em um desfile de moda, mostra uma alienação de parte da classe artística brasileira diante do regime militar.",
+      "opção pelos motivos militares remonta à valorização do nacionalismo e à adesão da estilista à política externa do Regime Militar."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 33,
+        "pagina": 12,
+        "paginas_origem": [
+          12
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 33,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 12,
+    "paginas_origem": [
+      12
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 33,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 12; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [
+      {
+        "imagem": "/acervo/unicamp-2026-primeira-fase-qx-lote-10/imagens/q33-quepe.png",
+        "texto": "Documento visual original da questão: desenho de quepe militar bordado em vestido."
+      },
+      {
+        "imagem": "/acervo/unicamp-2026-primeira-fase-qx-lote-10/imagens/q33-canhao.png",
+        "texto": "Documento visual original da questão: desenho de canhão bordado em vestido."
+      }
+    ],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q34",
+    "ano": 2026,
+    "numero": 34,
+    "numero_original": 34,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "História",
+    "conteudo": "Jus soli, jus sanguinis e cidadania",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Nas concepções de cidadania e nacionalidade em vigor a partir do século XIX, a filiação formal a um país é geralmente adquirida no nascimento, seja pelo jus soli (direito de solo) ou pelo jus sanguinis (direito de sangue). O jus soli atribui a nacionalidade com base no nascimento no território de um país; o jus sanguinis atribui às crianças a nacionalidade de seus pais. A dicotomia soli/sanguinis foi uma invenção do século XIX. Os impérios europeus do Antigo Regime atribuíam a pertença à comunidade com base em um ou outro princípio único de direito natural.\n\nConsiderando o texto e o mapa, assinale a alternativa correta.",
+    "texto_apoio": "",
+    "opcoes": [
+      "Filhos de estrangeiros nascidos em países europeus adquiriam a nacionalidade e a cidadania ao nascer, após o fim das revoluções burguesas.",
+      "As ex-colônias europeias nas Américas eram importantes destinos de imigrantes, o que influenciou suas definições de cidadania e nacionalidade.",
+      "Regimes populistas proibiram que os nascidos nos novos países reivindicassem cidadania europeia, após as independências americanas.",
+      "O jus sanguinis era utilizado nas colônias como um instrumento de controle pela Europa para dificultar o acesso à cidadania dos povos nativos."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 34,
+        "pagina": 12,
+        "paginas_origem": [
+          12
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 34,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 12,
+    "paginas_origem": [
+      12
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 34,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 12; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [
+      {
+        "imagem": "/acervo/unicamp-2026-primeira-fase-qx-lote-10/imagens/q34-mapa.png",
+        "texto": "Mapa original com a distribuição dos princípios de nacionalidade."
+      }
+    ],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  }
+]
