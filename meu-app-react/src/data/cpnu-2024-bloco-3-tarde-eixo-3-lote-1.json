@@ -1,0 +1,507 @@
+[
+  {
+    "id": "cpnu-2024-bloco-3-tarde-eixo-3-q21",
+    "ano": 2024,
+    "numero": 21,
+    "numero_original": 21,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 3, Ambiental, Agrário e Biológicas (tarde)",
+    "cargo": "Bloco 3 — Ambiental, Agrário e Biológicas",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Geodésia",
+    "conteudo": "Coordenadas geodésicas: longitude",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Os Sistemas de Referência Terrestres ou Geodésicos são utilizados para descrever as posições de objetos na superfície da Terra, possibilitando o desenvolvimento dos cálculos das suas coordenadas. As coordenadas que têm como referência os Sistemas de Referência Geodésicos são normalmente apresentadas em três formas: cartesianas, geodésicas e planas. No Sistema de Coordenadas Geodésicas, o ângulo que o meridiano geodésico passando por um ponto P da superfície terrestre forma com uma direção, contado do norte por leste, é o(a)",
+    "texto_apoio": "",
+    "opcoes": [
+      "Latitude geodésica",
+      "Longitude geodésica",
+      "Altitude geométrica",
+      "Azimute geodésico",
+      "Desvio da vertical"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 11 — Gabarito 1 — Bloco 3 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 3 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 21,
+        "pagina": 8,
+        "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+          "numero": 21,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-11-gabarito-1-bloco-3-tarde",
+    "documento_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "pagina": 8,
+    "paginas_origem": [
+      8
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+      "numero": 21,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 11 Gabarito 1, página 8; gabarito final oficial da tarde, Bloco 3",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 11 — Bloco 3 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-3-tarde-eixo-3-q22",
+    "ano": 2024,
+    "numero": 22,
+    "numero_original": 22,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 3, Ambiental, Agrário e Biológicas (tarde)",
+    "cargo": "Bloco 3 — Ambiental, Agrário e Biológicas",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Solos e Hidrologia",
+    "conteudo": "Água disponível no solo",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Os solos desempenham um papel fundamental na sustentação da vida na Terra, fornecendo suporte para a vegetação, filtragem da água, reciclagem de nutrientes e habitat para uma variedade de organismos. A grandeza característica do solo que reflete a quantidade máxima que pode ser obtida de um solo por drenagem natural, sob a ação exclusiva da gravidade, expressa em porcentagem de volume de solo saturado, é denominada",
+    "texto_apoio": "",
+    "opcoes": [
+      "retenção específica",
+      "coeficiente de permeabilidade",
+      "suprimento específico",
+      "velocidade de infiltração",
+      "porosidade"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 11 — Gabarito 1 — Bloco 3 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 3 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 22,
+        "pagina": 8,
+        "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+          "numero": 22,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-11-gabarito-1-bloco-3-tarde",
+    "documento_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "pagina": 8,
+    "paginas_origem": [
+      8
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+      "numero": 22,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 11 Gabarito 1, página 8; gabarito final oficial da tarde, Bloco 3",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 11 — Bloco 3 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-3-tarde-eixo-3-q23",
+    "ano": 2024,
+    "numero": 23,
+    "numero_original": 23,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 3, Ambiental, Agrário e Biológicas (tarde)",
+    "cargo": "Bloco 3 — Ambiental, Agrário e Biológicas",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Pedologia",
+    "conteudo": "Classificação brasileira de solos",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Considere o trecho abaixo da Embrapa Solos, que caracteriza o perfil de um determinado solo.\n\nSolos constituídos por material mineral, com horizonte B. Devido à heterogeneidade do material de origem, das formas de relevo e das condições climáticas, as características destes solos variam muito de um local para outro. São solos fortemente, até imperfeitamente, drenados, rasos a profundos, de cor bruna ou bruno-amarelada, e de alta a baixa saturação por bases e atividade química da fração coloidal.\n\nSIBCS - Sistema Brasileiro de Classificação de Solos: Conceito e Definição das Classes. Portal da Embrapa. Disponível em: https://www.embrapa.br/solos/sibcs/conceito-e-definicao-das-classes. Adaptado.\n\nO perfil de solo caracterizado no trecho acima é o",
+    "texto_apoio": "",
+    "opcoes": [
+      "vertissolo",
+      "cambissolo",
+      "planossolo",
+      "luvissolo",
+      "neossolo"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 11 — Gabarito 1 — Bloco 3 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 3 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 23,
+        "pagina": 8,
+        "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+          "numero": 23,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-11-gabarito-1-bloco-3-tarde",
+    "documento_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "pagina": 8,
+    "paginas_origem": [
+      8
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+      "numero": 23,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 11 Gabarito 1, página 8; gabarito final oficial da tarde, Bloco 3",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 11 — Bloco 3 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-3-tarde-eixo-3-q24",
+    "ano": 2024,
+    "numero": 24,
+    "numero_original": 24,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 3, Ambiental, Agrário e Biológicas (tarde)",
+    "cargo": "Bloco 3 — Ambiental, Agrário e Biológicas",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Topografia",
+    "conteudo": "Apoio geodésico altimétrico",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "O levantamento topográfico consiste na aplicação de métodos para determinar as coordenadas topográficas de pontos, conectando-os com os detalhes do terreno. Isso visa a representá-los em um plano com uma escala previamente estabelecida, assim como representar suas altitudes por meio de curvas de nível, com uma equidistância também predeterminada, e/ou pontos cotados. O conjunto de pontos materializados de referências de nível (RRNN), que proporciona o controle de posição altimétrica dos levantamentos topográficos e o seu referenciamento ao datum (origem) altimétrico do país, é denominado apoio",
+    "texto_apoio": "",
+    "opcoes": [
+      "topográfico altimétrico",
+      "topográfico planimétrico",
+      "geodésico altimétrico",
+      "geodésico planialtimétrico",
+      "geodésico planimétrico"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 11 — Gabarito 1 — Bloco 3 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 3 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 24,
+        "pagina": 8,
+        "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+          "numero": 24,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-11-gabarito-1-bloco-3-tarde",
+    "documento_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "pagina": 8,
+    "paginas_origem": [
+      8
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+      "numero": 24,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 11 Gabarito 1, página 8; gabarito final oficial da tarde, Bloco 3",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 11 — Bloco 3 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-3-tarde-eixo-3-q25",
+    "ano": 2024,
+    "numero": 25,
+    "numero_original": 25,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 3, Ambiental, Agrário e Biológicas (tarde)",
+    "cargo": "Bloco 3 — Ambiental, Agrário e Biológicas",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Meteorologia",
+    "conteudo": "Instrumentos meteorológicos: disdrômetro",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "A meteorologia é uma disciplina física que se baseia em medições obtidas por meio de instrumentação. Os instrumentos meteorológicos são dispositivos projetados para coletar dados sobre as condições atmosféricas em momentos específicos que, em conjunto, oferecem uma visão abrangente das condições meteorológicas. O instrumento meteorológico usado para medir a distribuição do tamanho da gota e a velocidade dos hidrometeoros (gota d’água, floco de neve, etc.) em queda é o",
+    "texto_apoio": "",
+    "opcoes": [
+      "anemoscópio",
+      "anemômetro",
+      "ceilômetro",
+      "disdrômetro",
+      "heliógrafo"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 11 — Gabarito 1 — Bloco 3 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 3 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 25,
+        "pagina": 8,
+        "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+          "numero": 25,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-11-gabarito-1-bloco-3-tarde",
+    "documento_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "arquivo_origem": "prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "pagina": 8,
+    "paginas_origem": [
+      8
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-11-gabarito-1-ambiental-agrario-e-biologicas-tarde.pdf",
+      "numero": 25,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 11 Gabarito 1, página 8; gabarito final oficial da tarde, Bloco 3",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 11 — Bloco 3 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  }
+]
