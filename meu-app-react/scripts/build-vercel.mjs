@@ -59,7 +59,9 @@ console.log(`Acervo estÃ¡tico preparado: ${questionFiles.length} lotes de questÃ
 // The historical archive lives outside the deployment, but newly added
 // Unicamp question visuals are local files referenced directly by these lots.
 // Copy them explicitly because the interrupted Vite public copy may skip them.
-const localVisualBatches = ['unicamp-2026-primeira-fase-qx-lote-1', 'unicamp-2026-primeira-fase-qx-lote-2', 'unicamp-2026-primeira-fase-qx-lote-3']
+const localVisualBatches = (await readdir(publicAcervo, { withFileTypes: true }))
+  .filter(entry => entry.isDirectory() && entry.name.startsWith('unicamp-2026-primeira-fase-qx-lote-'))
+  .map(entry => entry.name)
 for (const batch of localVisualBatches) {
   const imageSource = path.join(publicAcervo, batch, 'imagens')
   const imageDestination = path.join(distRoot, 'acervo', batch, 'imagens')
