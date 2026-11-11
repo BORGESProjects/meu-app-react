@@ -1,0 +1,107 @@
+[
+  {
+    "id": "unicamp-2026-fase-1-qx-q30",
+    "ano": 2026,
+    "numero": 30,
+    "numero_original": 30,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "História",
+    "conteudo": "Iluminismo e independência na América Espanhola",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Entre várias obras que devem formar este precioso presente que ofereço aos meus concidadãos, dei o primeiro lugar ao Contrato Social, escrito pelo cidadão de Genebra, Jean-Jacques Rousseau. Este homem imortal, que obteve a admiração de seu século e será o assombro de todas as idades, [...] ensinou que os povos aprenderam a procurar no pacto social a raiz e a única origem da obediência, não reconhecendo os seus chefes como emissários da divindade, enquanto não mostrassem as patentes do céu na qual eram destinados a imperar sobre seus semelhantes. [...] Como o autor teve a desgraça de delirar em matérias religiosas, suprimo o capítulo e as passagens principais onde delas tratou.\n\nMariano Moreno, tradutor de Rousseau para o espanhol, foi secretário do primeiro governo da Argentina entre os anos 1810 e 1811. No texto acima, ele",
+    "texto_apoio": "",
+    "opcoes": [
+      "critica a defesa que Rousseau faz da Igreja e dos governos absolutistas na obra O Contrato Social.",
+      "interfere na tradução e edição da obra de Rousseau conforme seus ideários políticos e ideológicos.",
+      "justifica a tradução da obra para difundir a ideia de obediência cívica ligada à religião católica e ao rei.",
+      "demonstra seu caráter conservador e a resistência ao pensamento liberal e iluminista na Argentina."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 30,
+        "pagina": 10,
+        "paginas_origem": [
+          10,
+          11
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 30,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 10,
+    "paginas_origem": [
+      10,
+      11
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 30,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, páginas 10–11; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  }
+]
