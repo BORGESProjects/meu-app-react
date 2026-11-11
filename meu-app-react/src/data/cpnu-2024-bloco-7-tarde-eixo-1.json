@@ -1,0 +1,504 @@
+[
+  {
+    "id": "cpnu-2024-bloco-7-tarde-eixo-1-q1",
+    "ano": 2024,
+    "numero": 1,
+    "numero_original": 1,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 7, Gestão Governamental e Administração Pública (tarde)",
+    "cargo": "Bloco 7 — Gestão Governamental e Administração Pública",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Gestão de Pessoas",
+    "conteudo": "Negociação e gestão de conflitos",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Um grupo de secretárias de uma organização que depende da mesma dotação orçamentária de escritório começou a barganhar entre si para saber quem iria adquirir novos equipamentos de informática e quem teria de continuar com o equipamento existente. Na decisão de quais interesses conflitantes seriam satisfeitos, as secretárias consideraram que os interesses do grupo são importantes, mas não merecem a desordem provocada por estilos mais assertivos. Assim sendo, as secretárias optaram pela abordagem da transigência na negociação, que",
+    "texto_apoio": "",
+    "opcoes": [
+      "promove os interesses de um membro do grupo à custa dos interesses dos outros, muitas vezes pelo recurso à autoridade.",
+      "permite que as outras partes satisfaçam seus interesses à custa dos interesses de um membro do grupo.",
+      "requer a permanência dos membros do grupo na neutralidade a todo custo ou a sua recusa em assumir um papel ativo nos procedimentos de resolução do conflito.",
+      "tenta satisfazer a todos mediante a consideração das diferenças e a busca de solução que resulte em ganho para todos os interessados.",
+      "procura a satisfação parcial de todos mediante a troca e o sacrifício, decidindo mais pela resolução aceitável do que pela resolução ótima."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 15 — Gabarito 1 — Bloco 7 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 7 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 1,
+        "pagina": 2,
+        "arquivo_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+          "numero": 1,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-15-gabarito-1-bloco-7-tarde",
+    "documento_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "arquivo_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+      "numero": 1,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela seção e pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 15 Gabarito 1, página 2; gabarito final oficial da tarde, Bloco 7",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 15 — Bloco 7 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  },
+  {
+    "id": "cpnu-2024-bloco-7-tarde-eixo-1-q2",
+    "ano": 2024,
+    "numero": 2,
+    "numero_original": 2,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 7, Gestão Governamental e Administração Pública (tarde)",
+    "cargo": "Bloco 7 — Gestão Governamental e Administração Pública",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Gestão Estratégica",
+    "conteudo": "Objetivos e resultados-chave (OKR)",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Uma empresa pública da área de desenvolvimento e inovação decidiu utilizar em seu planejamento a ferramenta para aumentar o foco e o engajamento através de objetivos e resultado-chave (OKR, na sigla em inglês) que representam os resultados mais importantes para o negócio e para os clientes. Nesse sentido, é relevante para toda a organização, porém monitorado pelo time de gestão de pessoas, o seguinte OKR:",
+    "texto_apoio": "",
+    "opcoes": [
+      "ampliar a interação com setor produtivo para superação de barreiras técnicas; aumento do número de demandas do setor produtivo.",
+      "aprimorar a gestão e governança com foco em políticas públicas; percentual de elaboração do orçamento participativo.",
+      "estruturar relacionamento com setor produtivo para pesquisa e desenvolvimento; aumento da captação de recursos para projetos de extensão tecnológica.",
+      "promover soluções para apoio à economia verde e descarbonização; quantidade de soluções entregues sobre quantidade das consultas.",
+      "tornar a autarquia mais atrativa para captar e reter servidores; relação entre quantidade de entradas de servidores versus saídas da autarquia."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": null,
+    "anulada": true,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 15 — Gabarito 1 — Bloco 7 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 7 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 2,
+        "pagina": 2,
+        "arquivo_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": null,
+        "anulada": true,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+          "numero": 2,
+          "resposta": null,
+          "anulada": true
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-15-gabarito-1-bloco-7-tarde",
+    "documento_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "arquivo_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+      "numero": 2,
+      "resposta": null,
+      "anulada": true
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela seção e pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 15 Gabarito 1, página 2; gabarito final oficial da tarde, Bloco 7",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": false,
+      "elegivel_para_correcao_automatica": false,
+      "apontamentos": [
+        "Questão anulada no gabarito definitivo oficial."
+      ]
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 15 — Bloco 7 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  },
+  {
+    "id": "cpnu-2024-bloco-7-tarde-eixo-1-q3",
+    "ano": 2024,
+    "numero": 3,
+    "numero_original": 3,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 7, Gestão Governamental e Administração Pública (tarde)",
+    "cargo": "Bloco 7 — Gestão Governamental e Administração Pública",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Saúde e Segurança do Trabalho",
+    "conteudo": "Fatores humanos na segurança do trabalho",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "O sucesso de um programa de segurança está diretamente relacionado a sua estruturação em comitês formados por especialistas, trabalhadores e gestores, com as finalidades de investigar os riscos e definir políticas e normas de segurança. Para cumprir tais finalidades, é necessário reconhecer que fatores como o trabalho em si, as condições de trabalho e a natureza do trabalhador influenciam na segurança e na saúde de trabalhadores. A esse respeito, fatores relacionados à natureza da pessoa trabalhadora estão exemplificados a seguir:",
+    "texto_apoio": "",
+    "opcoes": [
+      "manejo de substâncias tóxicas, contaminantes ou inflamáveis.",
+      "carência de equipamentos de proteção e/ou falhas de sinalização.",
+      "impulsividade, agressividades e dificuldade psicomotora ou perceptiva.",
+      "jornadas extensas, ruídos elevados ou iluminação inadequada.",
+      "máquinas mal projetadas ou equipamentos malconservados."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 15 — Gabarito 1 — Bloco 7 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 7 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 3,
+        "pagina": 2,
+        "arquivo_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+          "numero": 3,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-15-gabarito-1-bloco-7-tarde",
+    "documento_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "arquivo_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+      "numero": 3,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela seção e pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 15 Gabarito 1, página 2; gabarito final oficial da tarde, Bloco 7",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 15 — Bloco 7 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  },
+  {
+    "id": "cpnu-2024-bloco-7-tarde-eixo-1-q4",
+    "ano": 2024,
+    "numero": 4,
+    "numero_original": 4,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 7, Gestão Governamental e Administração Pública (tarde)",
+    "cargo": "Bloco 7 — Gestão Governamental e Administração Pública",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Gestão de Pessoas",
+    "conteudo": "Liderança transformacional",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "O fenômeno da liderança nas organizações é multidimensional e multifacetado, havendo diferenças entre as várias definições. Em determinada situação de trabalho, por exemplo, pode ocorrer de um líder constantemente pautar sua ação em elevar o seu moral, a motivação e o moral dos seus seguidores, em detrimento dos próprios interesses (seus e dos seguidores) para o bem da organização, dando atenção e aconselhamento individual, construindo uma resolução conjunta de problemas e tomada de decisão. O exemplo acima descreve uma liderança do tipo",
+    "texto_apoio": "",
+    "opcoes": [
+      "transformacional.",
+      "transacional.",
+      "carismática.",
+      "autocrática.",
+      "liberal."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 15 — Gabarito 1 — Bloco 7 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 7 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 4,
+        "pagina": 2,
+        "arquivo_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+          "numero": 4,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-15-gabarito-1-bloco-7-tarde",
+    "documento_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "arquivo_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+      "numero": 4,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela seção e pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 15 Gabarito 1, página 2; gabarito final oficial da tarde, Bloco 7",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 15 — Bloco 7 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  },
+  {
+    "id": "cpnu-2024-bloco-7-tarde-eixo-1-q5",
+    "ano": 2024,
+    "numero": 5,
+    "numero_original": 5,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 7, Gestão Governamental e Administração Pública (tarde)",
+    "cargo": "Bloco 7 — Gestão Governamental e Administração Pública",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Gestão de Pessoas",
+    "conteudo": "Educação corporativa e instrução programada",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Um ministério decidiu capacitar seus colaboradores por meio de trilhas de conhecimento. No ambiente virtual de aprendizagem foram organizados tematicamente textos, vídeos e podcasts, em uma sequência de passos estruturados a serem seguidos pelo colaborador. Após o estudo do material, o participante responde a questões autoadministráveis e recebe feedback imediato de forma a permitir a reavaliação do aprendizado. A estratégia de capacitação desenvolvida pela empresa baseia-se na noção de",
+    "texto_apoio": "",
+    "opcoes": [
+      "dinâmica de grupo.",
+      "instrução programada.",
+      "mentoria e orientação.",
+      "oficina de trabalho.",
+      "rotação de trabalho."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 15 — Gabarito 1 — Bloco 7 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 7 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 5,
+        "pagina": 2,
+        "arquivo_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+          "numero": 5,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-15-gabarito-1-bloco-7-tarde",
+    "documento_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "arquivo_origem": "prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-15-gabarito-1-gestao-governamental-e-administracao-publica-tarde.pdf",
+      "numero": 5,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela seção e pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 15 Gabarito 1, página 2; gabarito final oficial da tarde, Bloco 7",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 15 — Bloco 7 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  }
+]
