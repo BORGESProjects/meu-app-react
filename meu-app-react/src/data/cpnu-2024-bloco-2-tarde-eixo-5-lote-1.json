@@ -1,0 +1,507 @@
+[
+  {
+    "id": "cpnu-2024-bloco-2-tarde-eixo-5-q41",
+    "ano": 2024,
+    "numero": 41,
+    "numero_original": 41,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 2, Tecnologia, Dados e Informação (tarde)",
+    "cargo": "Bloco 2 — Tecnologia, Dados e Informação",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Ciência de Dados",
+    "conteudo": "Normalização robusta na presença de outliers",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Ao analisar dados de saúde da população brasileira em uma tarefa de classificação de risco para doenças coronarianas, um pesquisador percebeu que o algoritmo escolhido era muito sensível à diferença de ordem de grandeza das variáveis que tinha a seu dispor. Ele decidiu que era importante fazer o pré-processamento dos dados por meio de um algoritmo de normalização. Levando em consideração que os dados possuem outliers que podem afetar negativamente a normalização, qual técnica de normalização seria adequada?",
+    "texto_apoio": "",
+    "opcoes": [
+      "Distância de edição",
+      "Min-max",
+      "One-hot",
+      "PCA",
+      "Z-score"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 10 — Gabarito 1 — Bloco 2 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 2 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 41,
+        "pagina": 16,
+        "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+          "numero": 41,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-10-gabarito-1-bloco-2-tarde",
+    "documento_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "pagina": 16,
+    "paginas_origem": [
+      16
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+      "numero": 41,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 10 Gabarito 1, página 16; gabarito final oficial da tarde, Bloco 2",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 10 — Bloco 2 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-2-tarde-eixo-5-q42",
+    "ano": 2024,
+    "numero": 42,
+    "numero_original": 42,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 2, Tecnologia, Dados e Informação (tarde)",
+    "cargo": "Bloco 2 — Tecnologia, Dados e Informação",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Inteligência Artificial",
+    "conteudo": "Redes neurais e função de ativação ReLU",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Em um projeto de desenvolvimento de um sistema de visão computacional para identificar e classificar diferentes tipos de objetos em imagens de tráfego urbano, uma equipe de engenheiros optou por utilizar uma rede neural. Para garantir eficiência computacional e uma eficaz propagação do gradiente durante o treinamento do modelo, cada nó da rede foi implementado utilizando a função de ativação ReLU. A propriedade principal da função ReLU é",
+    "texto_apoio": "",
+    "opcoes": [
+      "subtrair o viés do nó do valor de entrada.",
+      "calcular o valor máximo entre a entrada e o valor do viés associado ao nó.",
+      "transformar a entrada de acordo com a curva logística.",
+      "transformar a entrada em um, se for positiva, e em zero, se for negativa.",
+      "transformar em zero os resultados negativos, mantendo os outros valores."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 10 — Gabarito 1 — Bloco 2 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 2 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 42,
+        "pagina": 16,
+        "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+          "numero": 42,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-10-gabarito-1-bloco-2-tarde",
+    "documento_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "pagina": 16,
+    "paginas_origem": [
+      16
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+      "numero": 42,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 10 Gabarito 1, página 16; gabarito final oficial da tarde, Bloco 2",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 10 — Bloco 2 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-2-tarde-eixo-5-q43",
+    "ano": 2024,
+    "numero": 43,
+    "numero_original": 43,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 2, Tecnologia, Dados e Informação (tarde)",
+    "cargo": "Bloco 2 — Tecnologia, Dados e Informação",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Visualização de Dados",
+    "conteudo": "Histograma e distribuição de frequências",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Um órgão governamental precisa analisar a distribuição da população por faixa salarial, a partir de dados individuais do imposto de renda anonimizados. Para isso, dividirá os salários em faixas, para gerar um gráfico que indique a quantidade de contribuintes cujo salário está dentro de cada uma dessas faixas. Para esse fim, a visualização gráfica mais adequada é o",
+    "texto_apoio": "",
+    "opcoes": [
+      "histograma",
+      "mapa de calor",
+      "gráfico de cascata",
+      "gráfico de dispersão",
+      "diagrama de caixa (boxplot)"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 10 — Gabarito 1 — Bloco 2 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 2 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 43,
+        "pagina": 16,
+        "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+          "numero": 43,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-10-gabarito-1-bloco-2-tarde",
+    "documento_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "pagina": 16,
+    "paginas_origem": [
+      16
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+      "numero": 43,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 10 Gabarito 1, página 16; gabarito final oficial da tarde, Bloco 2",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 10 — Bloco 2 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-2-tarde-eixo-5-q44",
+    "ano": 2024,
+    "numero": 44,
+    "numero_original": 44,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 2, Tecnologia, Dados e Informação (tarde)",
+    "cargo": "Bloco 2 — Tecnologia, Dados e Informação",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Banco de Dados",
+    "conteudo": "OLAP: drill down e slice",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Em um esforço para melhorar a análise e a tomada de decisão no setor agrícola, um órgão governamental brasileiro implementou um sistema OLAP para monitorar a produção agrícola nacional. O cubo OLAP foi estruturado para incluir as dimensões Tempo (Ano, Mês), Produto (Tipo de Cultura, Variedade) e Região (Estado, Cidade), com medidas de Área Plantada (hectares) e Produção (toneladas). Em um certo momento de sua análise, um analista estava vendo a produção total de soja do estado de Mato Grosso em 2023, mas decidiu que desejava ver apenas a produção da cidade de Sorriso, também em 2023. Considerando-se esse contexto, qual sequência de operações OLAP o analista deverá realizar para, a partir da visão em que estava, obter a visão desejada?",
+    "texto_apoio": "",
+    "opcoes": [
+      "Drill Down em Região de Estado para Cidade, Pivot em Cidade para Sorriso.",
+      "Drill Down em Região de Estado para Cidade, Slice em Cidade para Sorriso.",
+      "Pivot em Região de Estado para Cidade, Drill Down em Cidade para Sorriso.",
+      "Pivot em Região de Estado para Cidade, Slice em Cidade para Sorriso.",
+      "Slice em Região de Estado para Cidade, Drill Down em Cidade para Sorriso."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 10 — Gabarito 1 — Bloco 2 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 2 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 44,
+        "pagina": 16,
+        "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+          "numero": 44,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-10-gabarito-1-bloco-2-tarde",
+    "documento_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "pagina": 16,
+    "paginas_origem": [
+      16
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+      "numero": 44,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 10 Gabarito 1, página 16; gabarito final oficial da tarde, Bloco 2",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 10 — Bloco 2 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-2-tarde-eixo-5-q45",
+    "ano": 2024,
+    "numero": 45,
+    "numero_original": 45,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 2, Tecnologia, Dados e Informação (tarde)",
+    "cargo": "Bloco 2 — Tecnologia, Dados e Informação",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Matemática",
+    "conteudo": "Teoria dos conjuntos e princípio da inclusão-exclusão",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Um técnico fez três buscas em um banco de dados com 600 alunos cadastrados. Na primeira busca, identificou que 450 alunos cursaram a disciplina A; a segunda busca gerou a informação de que 300 alunos cursaram a disciplina B. E uma terceira busca identificou que 200 alunos cursaram as duas referidas disciplinas (A e B). Sabe-se que esse banco de dados não sofreu alterações quando as três buscas foram realizadas. A partir dessas informações, constata-se que o número de alunos que não cursaram nenhuma dessas duas disciplinas é igual a",
+    "texto_apoio": "",
+    "opcoes": [
+      "50",
+      "100",
+      "150",
+      "200",
+      "250"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 10 — Gabarito 1 — Bloco 2 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 2 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 45,
+        "pagina": 16,
+        "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+          "numero": 45,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-10-gabarito-1-bloco-2-tarde",
+    "documento_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "pagina": 16,
+    "paginas_origem": [
+      16
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+      "numero": 45,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 10 Gabarito 1, página 16; gabarito final oficial da tarde, Bloco 2",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 10 — Bloco 2 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  }
+]
