@@ -1,0 +1,326 @@
+[
+  {
+    "id": "unicamp-2026-fase-1-qx-q18",
+    "ano": 2026,
+    "numero": 18,
+    "numero_original": 18,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Geografia",
+    "conteudo": "Bacias hidrográficas e geopolítica da água",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Os conflitos entre Índia e Paquistão se acirraram em 2025, entre outros fatores, pela disputa de recursos hídricos na bacia hidrográfica do rio Indo. Em setembro de 1960, os dois países firmaram o Tratado das Águas do Indo, que regula o uso compartilhado das águas desse sistema fluvial. Ao longo dos anos, a Índia manifestou, em diferentes ocasiões, a intenção de se desvincular do acordo. Em resposta, o governo paquistanês declarou que qualquer tentativa de bloqueio hídrico seria considerada um ‘ato de guerra’.\n\nPara entender o conflito, é fundamental analisar o sentido do fluxo de drenagem na bacia hidrográfica do rio Indo, conforme mostrado pelo mapa.\n\nA partir da leitura do mapa e do texto, é correto afirmar que os afluentes",
+    "texto_apoio": "",
+    "opcoes": [
+      "são rios drenados para o interior do continente (endorreicos) e escoam em direção à jusante, onde se localizam áreas agrícolas do Paquistão. Por isso, eventuais represamentos pela Índia comprometeriam a economia paquistanesa.",
+      "são rios drenados para o oceano (exorreicos) situados na montante do território indiano. Isso permitiria ao Paquistão represar sua vazão e reduzir o abastecimento indiano destinado às atividades agropecuárias e industriais.",
+      "são rios drenados para o interior do continente (endorreicos) e correm em direção à jusante, comprometendo as atividades econômicas das áreas urbanizadas do Paquistão que dependem da vazão originada nos afluentes situados na Índia.",
+      "são rios drenados para o oceano (exorreicos) situados na montante do Paquistão. Isso permitiria à Índia controlar seu fluxo, afetando as atividades agrícolas paquistanesas e comprometendo a economia do Paquistão."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 18,
+        "pagina": 6,
+        "paginas_origem": [
+          6
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 18,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 6,
+    "paginas_origem": [
+      6
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 18,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 6; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [
+      {
+        "imagem": "/acervo/unicamp-2026-primeira-fase-qx-lote-5/imagens/unicamp-2026-qx-q18-bacia-indo.png",
+        "texto": "Mapa oficial da rede hidrográfica do rio Indo, países drenados, áreas de litígio e legenda."
+      }
+    ],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q19",
+    "ano": 2026,
+    "numero": 19,
+    "numero_original": 19,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Geografia",
+    "conteudo": "Oriente Médio e geopolítica contemporânea",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Historicamente, a região do Oriente Médio vive uma série de conflitos envolvendo alianças e disputas por interesses econômicos, geopolíticos e religiosos. Por exemplo, o chamado eixo da resistência é formado por um conjunto de países e grupos rebeldes sob influência do Irã. Esse eixo se define por confrontar forças militares ocidentais, como no caso dos Estados Unidos e de Israel. O mapa mostra a localização dos países e grupos sob influência do Irã.\n\nA partir dessas informações, assinale a alternativa que apresenta corretamente as disputas e as alianças do Irã com grupos étnicos, militares e religiosos dentro dos países indicados no mapa.",
+    "texto_apoio": "",
+    "opcoes": [
+      "Disputas: com a minoria sunita do islamismo (Iraque); com o Estado Islâmico (Síria). Alianças: com os Houthis (Iêmen); com o Hezbollah (Líbano).",
+      "Disputas: com os Houthis (Iêmen); com o Estado Islâmico (Síria). Alianças: com a minoria sunita do islamismo (Iraque); com o Hezbollah (Líbano).",
+      "Disputas: com a minoria sunita do islamismo (Iraque); com o Hezbollah (Líbano). Alianças: com os Houthis (Iêmen); com o Estado Islâmico (Síria).",
+      "Disputas: com os Houthis (Iêmen); com o Hezbollah (Líbano). Alianças: com a minoria sunita do islamismo (Iraque); com o Estado Islâmico (Síria)."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 19,
+        "pagina": 6,
+        "paginas_origem": [
+          6
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 19,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 6,
+    "paginas_origem": [
+      6
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 19,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 6; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [
+      {
+        "imagem": "/acervo/unicamp-2026-primeira-fase-qx-lote-5/imagens/unicamp-2026-qx-q19-influencia-ira.png",
+        "texto": "Mapa oficial dos países e grupos sob influência do Irã, com legenda."
+      }
+    ],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q20",
+    "ano": 2026,
+    "numero": 20,
+    "numero_original": 20,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Geografia",
+    "conteudo": "Agronegócio e especialização produtiva regional",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "O mapa apresenta frações do território brasileiro transformadas a partir da década de 1970 pela implementação de políticas de desenvolvimento. Três áreas limítrofes do Estado da Bahia, que até então não eram modernizadas, foram incorporadas a diferentes circuitos espaciais produtivos globalizados.\n\nConsiderando o texto e o mapa dos circuitos produtivos do agronegócio no Estado da Bahia, assinale a alternativa correta.",
+    "texto_apoio": "",
+    "opcoes": [
+      "A especialização produtiva regional favoreceu o uso intensivo de inovações técnico-científicas, promovendo seletividade espacial da modernização, o que gerou impactos nos mosaicos produtivos tradicionais.",
+      "Os enclaves de modernização regional promoveram a difusão de uma produção diversificada setorialmente, o que garantiu o espraiamento das inovações técnico-científicas para as demais localidades da região.",
+      "A especialização produtiva regional permitiu a cooperação das inovações técnico-científicas com os mosaicos produtivos tradicionais, o que restringiu maior conectividade espacial entre os estados limítrofes.",
+      "Os enclaves de modernização regional viabilizaram a dilatação das inovações técnico-científicas para setores produtivos não especializados, o que acarretou a eliminação da seletividade espacial produzida pela especialização."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 20,
+        "pagina": 7,
+        "paginas_origem": [
+          7
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 20,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 20,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 7; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [
+      {
+        "imagem": "/acervo/unicamp-2026-primeira-fase-qx-lote-5/imagens/unicamp-2026-qx-q20-agronegocio-bahia.png",
+        "texto": "Mapa oficial dos circuitos produtivos do agronegócio no estado da Bahia, com áreas identificadas e legenda."
+      }
+    ],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  }
+]
