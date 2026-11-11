@@ -1,0 +1,1487 @@
+[
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q01",
+    "ano": 2024,
+    "numero": 1,
+    "numero_original": 1,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Responsabilidade civil do Estado",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "O imprudente condutor do caminhão de uma empresa responsável pela coleta de lixo em vias públicas colidiu e causou danos ao veículo de um particular. A empresa alegou que estava desempenhando um serviço público insalubre e se recusou a ressarcir o motorista do veículo particular. Nessa situação, tendo em vista a responsabilidade civil da empresa,",
+    "texto_apoio": "",
+    "opcoes": [
+      "a insalubridade do serviço público prestado dispensa o ressarcimento de danos causados a terceiros.",
+      "a essencialidade do serviço público prestado dispensa o ressarcimento de danos causados a terceiros.",
+      "o ressarcimento de danos causados a terceiros por empresas prestadoras de serviços públicos depende de mútuo consentimento entre as partes.",
+      "o ressarcimento de danos causados a terceiros por empresas prestadoras de serviços públicos depende de autorização do Tribunal de Contas.",
+      "as pessoas jurídicas de direito privado prestadoras de serviços públicos responderão pelos danos que seus agentes, nessa qualidade, causarem a terceiros."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 1,
+        "pagina": 2,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 1,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 1,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 2; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q02",
+    "ano": 2024,
+    "numero": 2,
+    "numero_original": 2,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Mandado de segurança",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "Uma autoridade pública agiu, no desempenho de suas atribuições, de forma ilegal e com abuso de poder ao autuar uma empresa para compeli-la ao pagamento de um tributo indevido. Qual medida judicial é constitucionalmente assegurada para proteger o direito líquido e certo da empresa ao não recolhimento?",
+    "texto_apoio": "",
+    "opcoes": [
+      "Apelação",
+      "Habeas corpus",
+      "Mandado de segurança",
+      "Embargos de declaração",
+      "Agravo de instrumento"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 2,
+        "pagina": 2,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 2,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 2,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 2; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q03",
+    "ano": 2024,
+    "numero": 3,
+    "numero_original": 3,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Independência entre instâncias administrativa e penal",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "Um servidor público federal foi punido em um processo administrativo disciplinar com a pena de demissão, pela prática de corrupção. Posteriormente, ele foi absolvido na esfera penal, por insuficiência de provas, pelos mesmos fatos que ensejaram a punição no âmbito administrativo. Como fica a situação funcional do servidor?",
+    "texto_apoio": "",
+    "opcoes": [
+      "Ele terá direito à revisão do processo na esfera administrativa.",
+      "Ele terá direito a ser reintegrado.",
+      "Ele terá direito à aposentadoria proporcional.",
+      "Ele terá direito à indenização por danos materiais e morais.",
+      "Ele não terá direito à revisão do processo em razão do motivo da absolvição."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 3,
+        "pagina": 2,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 3,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 3,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 2; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q04",
+    "ano": 2024,
+    "numero": 4,
+    "numero_original": 4,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Anulação de atos administrativos",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "Ao analisar e deferir o pedido de licença para construção formulado por uma empresa, um servidor público praticou um ato ilegal. No âmbito da Administração Pública Federal, no que diz respeito à proteção dos direitos dos administradores e ao melhor cumprimento dos fins da administração, quando um ato praticado é ilegal, o(a)",
+    "texto_apoio": "",
+    "opcoes": [
+      "Tribunal de Contas pode revogar esse ato eivado de ilegalidade.",
+      "Poder Judiciário pode revogar esse ato ilegal.",
+      "Ministério Público deve pedir a revogação do ato ilegal perante o Poder Judiciário.",
+      "Administração Pública deve anular esse ato eivado de ilegalidade.",
+      "Administração Pública pode revogar esse ato ilegal."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 4,
+        "pagina": 2,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 4,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 4,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 2; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q05",
+    "ano": 2024,
+    "numero": 5,
+    "numero_original": 5,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Improbidade administrativa",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "Com o intuito de impressionar e favorecer a sua noiva, um servidor público integrante da banca de um concurso público revelou o teor e o gabarito de algumas questões desse concurso, do qual ela era candidata. Essa conduta",
+    "texto_apoio": "",
+    "opcoes": [
+      "não implica contrariedade aos princípios da administração pública.",
+      "deve ser submetida à análise do Tribunal de Contas.",
+      "constitui ato de improbidade administrativa, importando em enriquecimento ilícito.",
+      "constitui ato de improbidade administrativa que causa lesão ao erário.",
+      "constitui ato de improbidade administrativa que atenta contra os princípios da administração pública."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 5,
+        "pagina": 2,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 5,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 5,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 2; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q06",
+    "ano": 2024,
+    "numero": 6,
+    "numero_original": 6,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Direitos fundamentais e escravidão contemporânea",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "Considerado o texto acima, a contemporaneidade brasileira e o conjunto de direitos contidos no Título dos direitos e garantias fundamentais da Constituição Federal de 1988, constata-se que",
+    "texto_apoio": "No livro “Torto Arado”, de Itamar Vieira Junior, em sua orelha, lê-se: “...um dos grandes trunfos deste romance é a representação – com eloquência e humanidade – dos descendentes de escravizados africanos para os quais a Abolição significou muito pouco, visto que ainda sobrevivem em situação análoga à escravidão”.",
+    "opcoes": [
+      "ainda hoje há brasileiros descendentes de escravizados que não gozam do direito à liberdade e à dignidade preconizada no texto constitucional.",
+      "o direito à liberdade e à dignidade, hoje e sempre, foi amplo, geral e irrestrito.",
+      "a liberdade e a dignidade são direitos plenos e efetivos desde a promulgação da Lei Áurea.",
+      "ainda hoje não se pode reclamar o direito à liberdade e à dignidade.",
+      "no Brasil de hoje não se criminalizam práticas análogas à escravização."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 6,
+        "pagina": 2,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 6,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 6,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 2; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q07",
+    "ano": 2024,
+    "numero": 7,
+    "numero_original": 7,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Atos administrativos discricionários",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "No âmbito da Administração Pública, entende-se que ocorre o ato administrativo discricionário quando",
+    "texto_apoio": "",
+    "opcoes": [
+      "a Administração, diante do caso concreto, tem a possibilidade de apreciá-lo segundo critérios de oportunidade e conveniência e escolher uma dentre duas ou mais soluções, todas válidas para o direito.",
+      "os agentes públicos ou permissionários, diante do caso concreto, têm a possibilidade de apreciá-lo segundo critérios de oportunidade, diligência e eficiência e escolher várias dentre as soluções, todas válidas para o direito do consumidor.",
+      "os agentes públicos ou privados em nome da Administração, diante do caso concreto, têm a possibilidade de apreciá-lo segundo critérios de oportunidade e celeridade e escolher várias dentre as soluções, todas válidas para o direito tributário.",
+      "os agentes públicos ou concessionários, diante do caso concreto, têm a possibilidade de apreciá-lo segundo critérios de oportunidade e eficiência e escolher uma dentre as várias soluções, todas válidas para o direito privado.",
+      "os agentes públicos ou privados em nome da Administração, diante do caso concreto, têm a possibilidade de apreciá-lo segundo critérios de consciência, razoabilidade e pessoalidade e escolher várias dentre as soluções, todas válidas para o direito contratual."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 7,
+        "pagina": 3,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 7,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 7,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 3; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q08",
+    "ano": 2024,
+    "numero": 8,
+    "numero_original": 8,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Administração Pública na Constituição Federal",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "Segundo o art. 37 da Constituição Federal de 1988, “A Administração Pública Direta e Indireta de qualquer dos Poderes da União, dos Estados, do Distrito Federal e dos Municípios obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência”. Além disso, deverá obedecer ao seguinte:",
+    "texto_apoio": "",
+    "opcoes": [
+      "os cargos, empregos e funções públicas são acessíveis aos brasileiros que preencham os requisitos estabelecidos em lei, assim como aos estrangeiros e imigrantes indocumentados, na forma da lei.",
+      "a investidura em cargo ou emprego público depende de aprovação prévia em concurso público de provas ou de provas e títulos, de acordo com a natureza e a complexidade do cargo ou emprego, na forma prevista em lei, sem quaisquer ressalvas quanto às nomeações para cargo em comissão declarado em lei de livre nomeação e exoneração.",
+      "o prazo de validade do concurso público será de até dois anos, prorrogável uma vez, por igual período.",
+      "durante o prazo improrrogável previsto no edital de convocação, aquele aprovado em concurso público de provas ou de provas e títulos será convocado sem qualquer prioridade sobre novos concursados cotistas para assumir cargo ou emprego, na carreira.",
+      "a lei reservará percentual dos cargos e empregos públicos para as pessoas portadoras de deficiência, sendo ato discricionário e desvinculado de lei os critérios de sua admissão."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 8,
+        "pagina": 3,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 8,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 8,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 3; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q09",
+    "ano": 2024,
+    "numero": 9,
+    "numero_original": 9,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Administração direta e indireta",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "Existem entes da Administração Direta e entes da Administração Indireta. Nesse sentido, verifica-se o seguinte:",
+    "texto_apoio": "",
+    "opcoes": [
+      "Ministérios e empresas públicas integram a Administração Direta.",
+      "Senado Federal e autarquias integram a Administração Indireta.",
+      "Tribunal de Contas e Supremo Tribunal Federal integram a Administração Direta.",
+      "Câmara dos Deputados e fundações públicas federais integram a Administração Direta.",
+      "Tribunal Superior do Trabalho e sociedade de economia mista integram a Administração Indireta."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 9,
+        "pagina": 3,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 9,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 9,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 3; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q10",
+    "ano": 2024,
+    "numero": 10,
+    "numero_original": 10,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Direito à educação infantil",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "A Educação Infantil representa prerrogativa constitucional inafastável, que assegura às crianças de zero a cinco anos de idade a primeira etapa do processo de educação básica, mediante o atendimento em creche e o acesso à pré-escola. Nesse contexto, a Educação Infantil é um direito que",
+    "texto_apoio": "",
+    "opcoes": [
+      "depende de instrução normativa do Poder Judiciário pela disponibilidade de recursos públicos.",
+      "é obrigação exclusiva do Poder Executivo.",
+      "é assegurado por normas constitucionais de eficácia plena e aplicabilidade direta e imediata.",
+      "não pode ser imposto pelo Poder Judiciário ao gestor público, por ofensa ao princípio da separação de poderes.",
+      "não representa um dever, mas uma meta e como tal pode não ser alcançada pela Administração Pública."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 10,
+        "pagina": 3,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 10,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 10,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 3; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q11",
+    "ano": 2024,
+    "numero": 11,
+    "numero_original": 11,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Concurso público e transposição de cargos",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "Um funcionário de um determinado Estado pretende realizar transposição da situação jurídica de empregado público da Companhia Estadual de Eletricidade, uma sociedade de economia mista, para os quadros funcionais da Administração direta desse Estado como servidor efetivo e estatutário. No Estado em que desempenha suas funções, há lei recém-editada que autoriza a transposição, desde que a opção seja exercida no prazo de 6 meses de sua edição. A pretensão descrita, à luz da Constituição Federal de 1988, é",
+    "texto_apoio": "",
+    "opcoes": [
+      "legal, válida e eficaz, se exercida dentro do prazo mencionado pela lei.",
+      "legal, porém só será eficaz se houver necessidade extraordinária do Estado na transposição.",
+      "ilegal, por causar desequilíbrio financeiro ao Estado, onerando os cofres públicos.",
+      "inconstitucional, por permitir a transposição sem a prévia realização de concurso público.",
+      "constitucional, porque seria admissível a transposição entre o trabalho executado e a função pública a realizar."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 11,
+        "pagina": 3,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 11,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 11,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 3; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q12",
+    "ano": 2024,
+    "numero": 12,
+    "numero_original": 12,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Conselhos profissionais e regime de pessoal",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "Os Conselhos Profissionais, enquanto autarquias corporativas criadas por lei com outorga para o exercício de atividade típica do Estado, constituem-se em espécie sui generis de pessoa jurídica de direito público não estatal, com maior grau de autonomia administrativa e financeira. Eles têm natureza peculiar que justifica o afastamento de algumas das regras, normalmente, impostas às pessoas jurídicas de direito público. No que diz respeito à legislação aplicável aos Conselhos Profissionais, certo é que a",
+    "texto_apoio": "",
+    "opcoes": [
+      "legislação permite que contratem pessoas sob o regime celetista.",
+      "contratação por pessoa jurídica de direito público será sempre realizada pelo regime estatutário.",
+      "autonomia e a independência relativas das quais usufruem são pertinentes ao conceito de Administração indireta.",
+      "tutela administrativa e a supervisão ministerial são imposições a que estão sujeitas.",
+      "remuneração dos seus servidores será sempre fixada pelo Poder Executivo."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 12,
+        "pagina": 4,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 12,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 4,
+    "paginas_origem": [
+      4
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 12,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 4; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q13",
+    "ano": 2024,
+    "numero": 13,
+    "numero_original": 13,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Direito ao silêncio e não autoincriminação",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "Dentre os direitos e garantias fundamentais, há aquele de não produzir prova contra si mesmo. Esse direito admite restrição, desde que não seja afetado o núcleo essencial da garantia e a limitação decorra da ponderação com a efetivação de outros direitos constitucionais, respeitado o cânone da dignidade humana. Conclui-se, portanto, que o direito fundamental de não autoincriminar-se comporta a(o)",
+    "texto_apoio": "",
+    "opcoes": [
+      "valoração do investigado como se estivesse sendo objeto das provas.",
+      "possibilidade de não se manifestar, mas não de negar a prática da infração.",
+      "inviabilidade de se admitir a confissão como prova da autoria do delito.",
+      "informação ao preso sobre seus direitos, dentre os quais o de permanecer calado.",
+      "direito de se atribuir falsa identidade perante a autoridade policial."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 13,
+        "pagina": 4,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 13,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 4,
+    "paginas_origem": [
+      4
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 13,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 4; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q14",
+    "ano": 2024,
+    "numero": 14,
+    "numero_original": 14,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Teto remuneratório constitucional",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "Um servidor público vinculado ao Poder Judiciário do Estado W requereu o reconhecimento de atualização das verbas pertinentes ao seu cargo. Foi-lhe informado que não poderia ocorrer qualquer majoração, pois o total de sua remuneração não poderia superar o percebido pelo Chefe do Poder Executivo. Nos termos da Constituição Federal de 1988, a remuneração dos servidores públicos não poderá exceder o subsídio mensal do(s)",
+    "texto_apoio": "",
+    "opcoes": [
+      "Presidente da República",
+      "Ministros do Supremo Tribunal Federal",
+      "Integrantes do Senado Federal",
+      "Integrantes da Câmara dos Deputados",
+      "Integrantes do Tribunal de Contas da União"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 14,
+        "pagina": 4,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 14,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 4,
+    "paginas_origem": [
+      4
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 14,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 4; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-tarde-direito-q15",
+    "ano": 2024,
+    "numero": 15,
+    "numero_original": 15,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (tarde)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Noções de Direito",
+    "conteudo": "Perda da nacionalidade brasileira",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada na leitura normativa e na aplicação de conceitos jurídicos",
+    "enunciado": "Um cidadão mudou-se para o exterior, fixando seu domicílio em país integrante da comunidade europeia. Para exercer seus direitos políticos, requereu a naturalização, passando a ter duas nacionalidades, a originária, no caso, brasileira, e a derivada, do país onde exerce suas atividades. Nos termos da Constituição Federal de 1988, a aquisição de outra nacionalidade acarreta a",
+    "texto_apoio": "",
+    "opcoes": [
+      "suspensão da nacionalidade brasileira enquanto durar processo administrativo de aferição.",
+      "perda automática da nacionalidade brasileira.",
+      "perda da nacionalidade brasileira, caso haja pedido expresso nesse sentido.",
+      "manutenção da nacionalidade brasileira, caso haja decisão favorável do Ministério da Justiça.",
+      "manutenção da nacionalidade brasileira, caso a aquisição esteja condicionada ao exercício de direitos civis."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — tarde — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 15,
+        "pagina": 4,
+        "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+          "numero": 15,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-tarde-gabarito-1",
+    "documento_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "arquivo_origem": "prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "pagina": 4,
+    "paginas_origem": [
+      4
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-16-gabarito-1-nivel-intermediario-tarde.pdf",
+      "numero": 15,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação baseada na seção Noções de Direito do caderno oficial e no assunto diretamente cobrado",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 16 Gabarito 1, página 4; chave final oficial da tarde, Bloco 8",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  }
+]
