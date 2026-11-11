@@ -1,0 +1,1487 @@
+[
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q01",
+    "ano": 2024,
+    "numero": 1,
+    "numero_original": 1,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Argumentação e desenvolvimento científico",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "No desenvolvimento argumentativo do texto, os aspectos apontados como fomentadores do desenvolvimento científico e tecnológico são a",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "busca de melhor qualidade de vida e a incredulidade intelectual",
+      "crise de legitimação social e os investimentos públicos em ciência",
+      "curiosidade e a busca de solução dos problemas da humanidade",
+      "desigualdade e a desconfiança do cidadão comum no conhecimento científico",
+      "sabedoria dos pesquisadores e a utilização de métodos inovadores"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 1,
+        "pagina": 2,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 1,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 1,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q02",
+    "ano": 2024,
+    "numero": 2,
+    "numero_original": 2,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Estratégias argumentativas",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "O principal recurso argumentativo utilizado no texto para defender a importância da ciência e da tecnologia como estratégias de desenvolvimento é a",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "citação de depoimentos de pesquisadores e estudiosos sobre a produção científica atual.",
+      "descrição de iniciativas para o atendimento às necessidades econômicas da população brasileira.",
+      "enumeração de benefícios do avanço científico e tecnológico para a humanidade.",
+      "utilização de vocabulário técnico como garantia de maior confiabilidade acadêmica.",
+      "referência aos movimentos negacionistas como frutos da baixa legitimação social da ciência na atualidade."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 2,
+        "pagina": 3,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 2,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 2,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q03",
+    "ano": 2024,
+    "numero": 3,
+    "numero_original": 3,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Interpretação e organização temática",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "Na organização temática do texto, depois da referência à descrença do cidadão comum em relação ao conhecimento técnico e científico, desenvolve-se a ideia de que a(o)",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "criação de mais canais de comunicação e de melhores meios de transporte nos permite trabalhar menos e ter mais tempo para o lazer.",
+      "desigualdade social vem aumentando em países em desenvolvimento, apesar do avanço científico e tecnológico.",
+      "redução da mortalidade por doenças infecciosas tem como consequência o aumento da longevidade dos seres humanos.",
+      "empreendimento científico e tecnológico do ser humano é responsável por realizações, como o domínio do fogo.",
+      "surgimento da agricultura e da indústria modernas é fruto do desenvolvimento científico e tecnológico da humanidade."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 3,
+        "pagina": 3,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 3,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 3,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q04",
+    "ano": 2024,
+    "numero": 4,
+    "numero_original": 4,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Compreensão textual",
+    "dificuldade": "Fácil",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "De acordo com o texto, um problema crônico a ser enfrentado pela ciência e pela tecnologia nos países em desenvolvimento é a(o)",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "desigualdade social",
+      "mecanização do trabalho",
+      "redução da mortalidade",
+      "movimento antivacina",
+      "financiamento da pesquisa"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 4,
+        "pagina": 3,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 4,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 4,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q05",
+    "ano": 2024,
+    "numero": 5,
+    "numero_original": 5,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Coesão referencial",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "O referente do termo destacado em negrito está corretamente explicitado entre colchetes no seguinte trecho do",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "parágrafo 2 – “O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui.” [empreendimento científico e tecnológico]",
+      "parágrafo 3 – “ Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.” [desafios e aspirações humanas]",
+      "parágrafo 4 – “aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos” [conhecimento técnico e científico]",
+      "parágrafo 5 – “ Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil” [avanço científico e tecnológico]",
+      "parágrafo 5 – “Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.” [sociedade desigual dos países em desenvolvimento]"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 5,
+        "pagina": 3,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 5,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 5,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q06",
+    "ano": 2024,
+    "numero": 6,
+    "numero_original": 6,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Orações subordinadas e conjunção integrante",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "No trecho do parágrafo 4 “Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português ‘A Morte da Expertise ’, aborda a descrença do cidadão comum”, a palavra “que” exerce a mesma função da que está destacada em:",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "“a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar” (parágrafo 2)",
+      "“o principal responsável por tudo que a humanidade construiu até aqui” (parágrafo 2)",
+      "“Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação” (parágrafo 2)",
+      "“apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta” (parágrafo 4)",
+      "“problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas” (parágrafo 5)"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 6,
+        "pagina": 3,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 6,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 6,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q07",
+    "ano": 2024,
+    "numero": 7,
+    "numero_original": 7,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Adjetivos e modalização",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "O trecho do texto em que a presença do adjetivo destacado em negrito tem a função de expressar a opinião do autor é",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "“A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento” (parágrafo 1)",
+      "“passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas ” (parágrafo 2)",
+      "“Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer” (parágrafo 3)",
+      "“o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global ” (parágrafo 4)",
+      "“a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica.” (parágrafo 6)"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 7,
+        "pagina": 4,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 7,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 4,
+    "paginas_origem": [
+      4
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 7,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q08",
+    "ano": 2024,
+    "numero": 8,
+    "numero_original": 8,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Concordância verbal",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "A concordância do verbo destacado em negrito atende às exigências da norma-padrão da língua portuguesa em:",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "Ao considerar as melhorias na qualidade de vida da população, constata-se a importância do papel das pesquisas em ciência e tecnologia.",
+      "Nos últimos anos, criou-se inúmeros programas computacionais capazes de reproduzir o comportamento humano na realização de tarefas, como assistentes de voz, mecanismos de pesquisa e carros autônomos.",
+      "Para atender às demandas da humanidade, ampliou - -se as pesquisas relativas às doenças que resultam em maiores índices de mortalidade.",
+      "Para facilitar a interação entre turistas em viagens internacionais, precisam-se de novas tecnologias de tradução automática.",
+      "Quando se analisa os índices de mortalidade por dengue no Brasil, fica evidente que é necessário investir em esclarecimento da população por meio de campanhas educativas."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 8,
+        "pagina": 4,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 8,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 4,
+    "paginas_origem": [
+      4
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 8,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q09",
+    "ano": 2024,
+    "numero": 9,
+    "numero_original": 9,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Emprego do hífen",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "No trecho do parágrafo 4 “Vários fenômenos sociais recentes, como o movimento antivacinas ”, a palavra destacada em negrito é formada pelo prefixo “anti” e o substantivo “vacina”, sem emprego do hífen, segundo o Novo Acordo Ortográfico. De acordo com as regras de emprego do hífen, esse sinal gráfico foi utilizado corretamente, em todas as palavras, de acordo com a norma-padrão da língua portuguesa, em:",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "anti-concepcional, contra-ataque, pré-escolar",
+      "anti-inflamatório, auto-hipnose, micro-ondas",
+      "anti-social, semi-aberto, sem-terra",
+      "extra-oficial, auto-conhecimento, anti-caspa",
+      "pré-história, inter-racial, anti-depressivo"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 9,
+        "pagina": 4,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 9,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 4,
+    "paginas_origem": [
+      4
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 9,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q10",
+    "ano": 2024,
+    "numero": 10,
+    "numero_original": 10,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Conjunções conclusivas",
+    "dificuldade": "Fácil",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "No trecho do parágrafo 5 “É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar.”, a palavra destacada em negrito pode ser substituída, sem prejuízo do sentido, por",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "à medida que",
+      "no entanto",
+      "por conseguinte",
+      "porquanto",
+      "uma vez que"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 10,
+        "pagina": 4,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 10,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 4,
+    "paginas_origem": [
+      4
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 10,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q11",
+    "ano": 2024,
+    "numero": 11,
+    "numero_original": 11,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Relações semânticas e antonímia",
+    "dificuldade": "Fácil",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "No desenvolvimento do texto, estabelece-se uma relação de oposição de sentido entre os verbos",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "“anunciar” e “abordar” (parágrafo 4)",
+      "“aumentar” e “abundar” (parágrafo 5)",
+      "“corroborar” e “enfrentar” (parágrafo 4)",
+      "“limitar” e “impulsionar” (parágrafo 6)",
+      "“reduzir” e “separar” (parágrafo 3)"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 11,
+        "pagina": 4,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 11,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 4,
+    "paginas_origem": [
+      4
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 11,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q12",
+    "ano": 2024,
+    "numero": 12,
+    "numero_original": 12,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Emprego da vírgula",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "A vírgula está empregada de acordo com as exigências da norma-padrão da língua portuguesa em:",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "A formação de cientistas brasileiros que respeitem as características culturais e étnicas das diferentes regiões do país, deve ser prioridade das universidades públicas.",
+      "Com o objetivo de ajudar a entender os desafios atuais da sociedade brasileira, o governo deveria financiar pesquisas na área das ciências humanas e sociais.",
+      "É necessário criar grandes bancos de dados, que sejam municiados pelos estudos científicos para que os biomas brasileiros sejam preservados e contribuam para o crescimento sustentável.",
+      "É preciso criar em todas as áreas do conhecimento, projetos governamentais que possam produzir soluções para os grandes desafios atuais e futuros da sociedade brasileira.",
+      "O Brasil e os países em desenvolvimento, precisam implementar uma agenda que contribua para a preservação e a restauração da fauna e da flora dos ecossistemas nacionais."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 12,
+        "pagina": 4,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 12,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 4,
+    "paginas_origem": [
+      4
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 12,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q13",
+    "ano": 2024,
+    "numero": 13,
+    "numero_original": 13,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Concordância nominal",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "De acordo com as regras de concordância nominal da norma-padrão da língua portuguesa, a palavra destacada em negrito está empregada corretamente em:",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "As pesquisas para a cura de doenças e a busca de solução para os problemas ambientais estão vinculadas ao aumento das verbas do financiamento governamental.",
+      "A ampliação dos institutos de pesquisa e o fomento às universidades públicas são solicitadas constantemente pela comunidade científica nacional.",
+      "Nos países em desenvolvimento, o investimento governamental em alunos do ensino superior e a promoção de grupos de pesquisa são escassas se comparadas aos países desenvolvidos.",
+      "Os testes para avaliar a efetividade das vacinas e as publicações científicas sobre os efeitos da covid-19 foram financiadas por empresas farmacêuticas internacionais.",
+      "O vasto território brasileiro e a nossa incrível diversidade de biomas são decisivas para a produção de recursos naturais, o sequestro de carbono e a preservação da biodiversidade."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 13,
+        "pagina": 5,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 13,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 5,
+    "paginas_origem": [
+      5
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 13,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q14",
+    "ano": 2024,
+    "numero": 14,
+    "numero_original": 14,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Prefixos de negação",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "O grupo em que todas as palavras apresentam prefixo que expressa negação é",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "desconfiança, inferioridade, invasão",
+      "descrença, inconveniência, impaciência",
+      "desenvolvimento, descrição, infelicidade",
+      "desigualdade, indústria, infecção",
+      "despeito, descendência, imoralidade"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 14,
+        "pagina": 5,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 14,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 5,
+    "paginas_origem": [
+      5
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 14,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  },
+  {
+    "id": "cpnu-2024-bloco-8-manha-portugues-q15",
+    "ano": 2024,
+    "numero": 15,
+    "numero_original": 15,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 8, nível intermediário (manhã)",
+    "cargo": "Nível intermediário — Bloco 8",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Português",
+    "conteudo": "Pronomes relativos e emprego de onde",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial baseada nas operações de leitura e análise linguística exigidas",
+    "enunciado": "No trecho do parágrafo 5 “Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento”, a palavra “onde” está empregada de acordo com as exigências da norma-padrão da língua portuguesa. O mesmo acontece em:",
+    "texto_apoio": "A ciência e a tecnologia como estratégias de desenvolvimento\n\nUm dos principais motores do avanço da ciência é a curiosidade humana, descompromissada de resultados concretos e livre de qualquer tipo de tutela ou orientação. A produção científica movida simplesmente por essa curiosidade tem sido capaz de abrir novas fronteiras do conhecimento, de nos tornar mais sábios e de, no longo prazo, gerar valor e mais qualidade de vida para o ser humano.\n\nPor meio dos seus métodos e instrumentos, a ciência nos permite analisar o mundo ao redor e ver além do que os olhos podem enxergar. O empreendimento científico e tecnológico do ser humano ao longo de sua história é, sem dúvida alguma, o principal responsável por tudo que a humanidade construiu até aqui. Suas realizações estão presentes desde o domínio do fogo até as imensas potencialidades que derivam da moderna ciência da informação, passando pela domesticação dos animais, pelo surgimento da agricultura e da indústria modernas e, é claro, pela espetacular melhora da qualidade de vida de toda a humanidade no último século.\n\nAlém da curiosidade humana, outro motor importantíssimo do avanço científico é a solução de problemas que afligem a humanidade. Viver mais tempo e com mais saúde, trabalhar menos e ter mais tempo disponível para o lazer, reduzir as distâncias que nos separam de outros seres humanos – seja por meio de mais canais de comunicação ou de melhores meios de transporte – são alguns dos desafios e aspirações humanas para os quais, durante séculos, a ciência e a tecnologia têm contribuído. Elas são os fatores-chave para explicar a redução da mortalidade por várias doenças, como as doenças infecciosas, por exemplo, e o consequente aumento da longevidade dos seres humanos.\n\nApesar dos seus feitos extraordinários, a ciência e, principalmente, os investimentos públicos em ciência e tecnologia parecem enfrentar uma crise de legitimação social no mundo todo. Recentemente, Tim Nichols, um reconhecido pesquisador norte-americano, anunciou que seu livro The Death of Expertise, em português “A Morte da Expertise ”, aborda a descrença do cidadão comum no conhecimento técnico e científico e, mais do que isso, um certo orgulho da própria ignorância sobre vários temas complexos, especialmente sobre qualquer coisa relativa às políticas públicas. Vários fenômenos sociais recentes, como o movimento antivacinas ou mesmo a desconfiança sobre a fatalidade do aquecimento global, apesar de todas as evidências científicas em contrário, parecem corroborar que a análise de Nichols está correta.\n\nA despeito de a qualidade de vida de todos ter melhorado nos últimos séculos, em grande medida graças ao avanço científico e tecnológico, a desigualdade vem aumentando no período mais recente. Esse é um problema mundial, mas é mais agudo em países em desenvolvimento, como o Brasil, onde ainda abundam problemas crônicos do subdesenvolvimento, que vão desde o acesso à saúde e à educação de qualidade até questões ambientais e urbanas. É, portanto, nessa sociedade desigual, repleta de problemas, que a atividade científica e tecnológica precisa se desenvolver e se legitimar. Também é essa sociedade que decidirá, por meio dos seus representantes, o quanto dos seus recursos deverá ser alocado para a empreitada científica e tecnológica.\n\nPortanto, a relação entre ciência, tecnologia e sociedade é muito mais complexa do que a pergunta simplória sobre qual seria a utilidade prática da produção científica. Ela passa por uma série de questões, tais como de que forma a ciência e as novas tecnologias afetam a qualidade de vida das pessoas e como fazer com que seus efeitos sejam os melhores possíveis? Quais são as condições sociais que limitam ou impulsionam a atividade científica? Como ampliar o acesso da população aos benefícios gerados pelo conhecimento científico e tecnológico? Em que medida o progresso científico e tecnológico contribui para mitigar ou aprofundar as desigualdades socioeconômicas? Em face das novas tecnologias, cada vez mais capazes de substituir o ser humano nas suas atividades repetitivas, como será o trabalho no futuro? Essas são questões cruciais para a ciência e a tecnologia nos dias de hoje.",
+    "opcoes": [
+      "A inteligência artificial tem possibilitado a democratização de vários serviços, onde é necessário destacar o acesso igualitário à informação.",
+      "Os biomas brasileiros onde tem ocorrido o maior número de ameaças ambientais nos últimos anos são a Amazônia e o Pantanal.",
+      "Os cientistas devem ter maior preocupação com determinados grupos populacionais onde as pesquisas sobre habitação, água e saneamento sejam mais necessárias.",
+      "Os pesquisadores precisam desenvolver estudos aprofundados onde as principais doenças do país possam ser combatidas.",
+      "Vivemos em uma época onde as pessoas que negam a ciência se recusam a vacinar seus filhos."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Bloco 8 — manhã — caderno gabarito 1"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 8 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 15,
+        "pagina": 5,
+        "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+          "numero": 15,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-bloco-8-manha-gabarito-1",
+    "documento_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "arquivo_origem": "prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "pagina": 5,
+    "paginas_origem": [
+      5
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-8-gabarito-1-nivel-intermediario-manha.pdf",
+      "numero": 15,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação revisada a partir do enunciado, das alternativas e da matriz do caderno",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 8 Gabarito 1; gabarito final oficial da manhã; conferência visual das páginas 2–5",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Bloco 8 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024
+  }
+]
