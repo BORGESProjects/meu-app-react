@@ -38,6 +38,36 @@ const CONFIG_CRONOGRAMA_ID = 'config-cronograma-semanal-v1'
 const parametrosDeEntrada = new URLSearchParams(window.location.search)
 const controleComercialAtivo=import.meta.env.VITE_ACESSO_COMERCIAL_ATIVO==='true'
 const minutosPadraoPorDia = Object.fromEntries(DIAS_SEMANA.map((dia, indice) => [dia, indice < 5 ? 120 : 90]))
+async function carregarQuestoesSupabase() {
+  const tamanhoPagina = 500
+  const primeira = await supabase.from('questoes').select('*', {count: 'exact'})
+    .order('id', {ascending: false}).range(0, tamanhoPagina - 1)
+    .abortSignal(AbortSignal.timeout(30000))
+  if (primeira.error) throw primeira.error
+  const itens = [...(primeira.data || [])]
+  if (primeira.count == null) {
+    for (let inicio = tamanhoPagina; ; inicio += tamanhoPagina) {
+      const {data, error} = await supabase.from('questoes').select('*')
+        .order('id', {ascending: false}).range(inicio, inicio + tamanhoPagina - 1)
+        .abortSignal(AbortSignal.timeout(30000))
+      if (error) throw error
+      itens.push(...(data || []))
+      if (!data || data.length < tamanhoPagina) return itens
+    }
+  }
+  const inicios = []
+  for (let inicio = tamanhoPagina; inicio < primeira.count; inicio += tamanhoPagina) inicios.push(inicio)
+  for (let i = 0; i < inicios.length; i += 5) {
+    const paginas = await Promise.all(inicios.slice(i, i + 5).map(inicio =>
+      supabase.from('questoes').select('*').order('id', {ascending: false})
+        .range(inicio, inicio + tamanhoPagina - 1).abortSignal(AbortSignal.timeout(30000))))
+    for (const pagina of paginas) {
+      if (pagina.error) throw pagina.error
+      itens.push(...(pagina.data || []))
+    }
+  }
+  return itens
+}
 function dataLocalISO(data) {
   const ano = data.getFullYear(), mes = String(data.getMonth() + 1).padStart(2, '0'), dia = String(data.getDate()).padStart(2, '0')
   return `${ano}-${mes}-${dia}`
@@ -150,7 +180,7 @@ export default function App() {
   const campoEdicaoQuestao = useRef(null)
   const inicioRespostaQuestao = useRef(new Map())
   const [termoBusca, setTermoBusca] = useState(() => new URLSearchParams(window.location.search).get('questao') || '')
-  const [abaAtiva, setAbaAtiva] = useState(() => ['questoes','recebimentos','treino'].includes(parametrosDeEntrada.get('aba')) ? parametrosDeEntrada.get('aba') : 'questoes')
+  const [abaAtiva, setAbaAtiva] = useState(() => ['inicio','questoes','recebimentos','treino','simulados','desempenho','edital','redacao','tarefas','conta','cadastrar','importar','r2-upload'].includes(parametrosDeEntrada.get('aba')) ? parametrosDeEntrada.get('aba') : 'inicio')
   const veioDaDemonstracao = parametrosDeEntrada.get('demo') === '1'
   const [mostrarDemonstracao, setMostrarDemonstracao] = useState(veioDaDemonstracao && parametrosDeEntrada.get('salvar') !== '1')
   const [editalTreino, setEditalTreino] = useState(null)
@@ -326,11 +356,11 @@ export default function App() {
   }, [session?.user?.id])
 
   useEffect(() => {
-    if (!session?.user?.id || !progressoCarregado) return
+    if (!session?.user?.id) return
     buscarQuestoes(false)
     const controle = requisicaoAcervo
     return () => { controle.current++; processamentoAcervo.current?.cancelar() }
-  }, [session?.user?.id, progressoCarregado])
+  }, [session?.user?.id])
 
   useEffect(() => {
     let cancelled = false
@@ -391,11 +421,7 @@ export default function App() {
           if(!navigator.onLine || session?.offline) {setAvisoAcervoNativo('A cópia instalada está disponível. Reconecte sua conta para buscar novas questões.');return}
           try {
             const [bancoAtual,importadasAtuais]=await Promise.all([
-              (async()=>{const itens=[];for(let inicio=0;;inicio+=500){
-                const {data,error}=await supabase.from('questoes').select('*').order('id',{ascending:false}).range(inicio,inicio+499).abortSignal(AbortSignal.timeout(30000))
-                if(error)throw error
-                itens.push(...(data||[]));if(!data || data.length<500)return itens
-              }})(),
+              carregarQuestoesSupabase(),
               (async()=>{const r=await fetchApi(`${API_URL}/api/acervo`,{signal:AbortSignal.timeout(90000)});if(!r.ok)throw Error();const q=await r.json();if(!Array.isArray(q))throw Error();return q})(),
             ])
             await preparar([...instaladas,...bancoAtual,...importadasAtuais])
@@ -407,17 +433,7 @@ export default function App() {
       finally {if (requisicao === requisicaoAcervo.current) setCarregandoAcervo(false)}
       return
     }
-    const banco = tentarLeitura(async () => {
-      const todas = []
-      for (let inicio = 0; ; inicio += 500) {
-        const {data,error} = await supabase.from('questoes').select('*')
-          .order('id', { ascending: false }).range(inicio, inicio + 499)
-          .abortSignal(AbortSignal.timeout(30000))
-        if (error) throw error
-        todas.push(...(data || []))
-        if (!data || data.length < 500) return todas
-      }
-    })
+    const banco = tentarLeitura(carregarQuestoesSupabase)
     const importadas = tentarLeitura(async () => {
       const r = await fetchApi(`${API_URL}/api/acervo`, {signal:AbortSignal.timeout(90000)})
       if (!r.ok) throw new Error('Acervo indisponível')
@@ -1664,6 +1680,24 @@ export default function App() {
     setDiaCronograma('hoje')
     setAbaAtiva('tarefas')
   }
+  const nomeEstudante = String(session.user.user_metadata?.full_name || session.user.user_metadata?.name || session.user.email?.split('@')[0] || 'Estudante').split(/[\s._-]+/u)[0]
+  const atalhosEstudo = [
+    {id:'questoes', label:'Banco de questões', detalhe:'Filtre por prova, matéria e assunto', simbolo:'⌕'},
+    {id:'treino', label:'Treino de hoje', detalhe:'Pratique no seu ritmo', simbolo:'◉'},
+    {id:'simulados', label:'Simulados', detalhe:'Resolva provas com cronômetro', simbolo:'▤'},
+    {id:'desempenho', label:'Meu desempenho', detalhe:'Acompanhe sua evolução', simbolo:'▥'},
+    {id:'edital', label:'Edital', detalhe:'Organize matérias e conteúdos', simbolo:'▦'},
+    {id:'redacao', label:'Redação', detalhe:'Escreva e revise seus textos', simbolo:'✎'},
+    {id:'tarefas', label:'Cronograma semanal', detalhe:'Planeje uma semana flexível', simbolo:'◷'},
+  ]
+  const navegacaoEstudo = [
+    {id:'inicio',label:'Visão geral',simbolo:'⌂'},
+    ...atalhosEstudo.map(({id,label,simbolo})=>({id,label,simbolo})),
+    ...(isAdmin ? [{id:'cadastrar',label:'Cadastrar questões',simbolo:'＋'},{id:'importar',label:'Importar provas',simbolo:'⇧'},{id:'r2-upload',label:'Acervo na nuvem',simbolo:'☁'}] : []),
+    {id:'conta',label:'Minha conta',simbolo:'⚙'},
+  ]
+  const tarefasDeHoje = tarefasDoCronograma.filter(tarefa => tarefa.dataAgendada === hojeISO)
+  const simuladosConcluidos = historicoSimulados?.length || 0
   if (mostrarDemonstracao && (!authReady || !session)) return <main className="min-h-screen bg-slate-950 p-4 text-slate-100 sm:p-8">
     <Suspense fallback={<p>Carregando treino…</p>}><TreinoDiario demo onEntrar={() => {
       const url = new URL(window.location.href)
@@ -1703,37 +1737,32 @@ export default function App() {
   return (
     <div className="app-shell min-h-screen text-slate-100 font-sans selection:bg-indigo-500 selection:text-white">
       <span className="theme-watermark" aria-hidden="true"><i>⚕</i><i>⚖</i><i>⚙</i><i>⚛</i><i>&lt;/&gt;</i><i>🩺</i><i>✚</i><i>§</i><i>🏛</i><i>📐</i><i>⚒</i><i>⌨</i><i>⌘</i></span>
-      {/* Barra de Navegação Superior Refinada */}
-      <nav aria-label="Área de estudo" className="app-nav sticky top-0 z-50 flex flex-col items-stretch gap-3 border-b border-slate-800/80 bg-slate-950/80 px-3 py-3 backdrop-blur-xl xl:flex-row xl:items-center xl:justify-between md:px-6 md:py-3.5">
+      <header className="app-nav sticky top-0 z-50 flex items-center justify-between gap-3 border-b border-lime-300/10 bg-[#0b0e0a]/90 px-4 py-3 backdrop-blur-xl md:px-6">
         <div className="app-brand px-1 text-lg font-bold tracking-tight">
           <img src="/ap-monograma.png" alt="Logotipo AP Aprovado" className="app-brand-mark" />
           <span className="text-slate-100">AP Aprovado<small>SEU ESPAÇO DE ESTUDO</small></span>
         </div>
-        <SeletorAparencia />
-        {!aplicativoNativo && <a href="https://ap-aprovado.pages.dev/" className="self-start rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 hover:bg-slate-800 xl:self-auto">Página comercial</a>}
-        <div aria-label="Navegação principal" className="mobile-nav flex w-full min-w-0 items-center gap-1.5 overflow-x-auto pb-1 xl:w-auto xl:pb-0">
-          {[
-            { id: 'questoes', label: 'Questões' },
-            { id: 'treino', label: 'Treino de hoje' },
-            { id: 'simulados', label: 'Simulados' },
-            { id: 'desempenho', label: 'Desempenho' },
-            ...(isAdmin ? [{ id: 'cadastrar', label: 'Cadastrar' }, { id: 'importar', label: 'Importar PDF' }, { id: 'r2-upload', label: 'Migrar acervo R2' }] : []),
-            { id: 'edital', label: 'Edital' },
-            { id: 'redacao', label: 'Redação' },
-            { id: 'tarefas', label: 'Cronograma' },
-            { id: 'conta', label: 'Minha conta' }
-          ].map(tab => (
-            <button
-              key={tab.id}
-              aria-current={abaAtiva === tab.id ? "page" : undefined}
-              onClick={() => setAbaAtiva(tab.id)}
-              className={`nav-link shrink-0 whitespace-nowrap px-3 py-2 rounded-2xl text-xs md:text-sm font-medium transition-all duration-200 ${abaAtiva === tab.id ? 'bg-indigo-600 text-white' : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/80'}`}
-            >{tab.label}</button>
-          ))}
+        <div className="flex items-center gap-2 sm:gap-3">
+          <span className="hidden text-right sm:block"><span className="block text-xs font-semibold text-slate-200">{nomeEstudante}</span><span className="block text-[10px] text-slate-500">{nomeFoco(focoEstudo)}</span></span>
+          <SeletorAparencia />
+          {!aplicativoNativo && <a href="https://ap-aprovado.pages.dev/" className="hidden rounded-xl border border-slate-700 px-3 py-2 text-xs font-semibold text-slate-300 transition hover:border-lime-300/40 hover:text-lime-100 md:inline-flex">Página comercial</a>}
+          <button type="button" aria-label="Abrir minha conta" onClick={() => setAbaAtiva('conta')} className="grid h-10 w-10 place-items-center rounded-xl border border-lime-300/20 bg-lime-300/5 text-sm font-bold text-lime-100 transition hover:border-lime-200/50 hover:bg-lime-300/10">{nomeEstudante.slice(0,1).toUpperCase()}</button>
         </div>
-      </nav>
+      </header>
 
-      <main className="relative z-10 mx-auto min-w-0 max-w-5xl p-3 sm:p-6 md:p-8">
+      <div className="mx-auto flex min-h-[calc(100vh-4.5rem)] max-w-[1600px]">
+        <aside className="hidden w-64 shrink-0 border-r border-lime-300/10 bg-[#0b0e0a]/60 px-4 py-6 lg:sticky lg:top-[4.5rem] lg:flex lg:h-[calc(100vh-4.5rem)] lg:flex-col">
+          <div className="mb-6 px-3"><p className="text-[10px] font-bold uppercase tracking-[.22em] text-lime-200/60">Sua preparação</p><p className="mt-1 text-xs text-slate-500">Acesse seu espaço de estudo</p></div>
+          <nav aria-label="Navegação principal" className="flex flex-1 flex-col gap-1">
+            {navegacaoEstudo.map(item => <button key={item.id} type="button" aria-current={abaAtiva === item.id ? 'page' : undefined} onClick={() => setAbaAtiva(item.id)} className={`group flex items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm transition-all duration-200 ${abaAtiva === item.id ? 'border border-lime-300/20 bg-gradient-to-r from-lime-300/15 to-transparent text-lime-100 shadow-[inset_2px_0_0_#b7c982]' : 'border border-transparent text-slate-400 hover:bg-white/[.035] hover:text-slate-100'}`}><span className={`grid h-8 w-8 shrink-0 place-items-center rounded-lg text-base ${abaAtiva === item.id ? 'bg-lime-200/10 text-lime-100' : 'bg-slate-900 text-slate-500 group-hover:text-lime-100'}`} aria-hidden="true">{item.simbolo}</span><span>{item.label}</span></button>)}
+          </nav>
+          <div className="mt-6 rounded-2xl border border-lime-300/15 bg-gradient-to-br from-lime-300/[.08] to-transparent p-4"><p className="text-xs font-semibold text-lime-100">Foco atual</p><p className="mt-1 text-sm font-bold text-slate-100">{nomeFoco(focoEstudo)}</p><button type="button" onClick={() => setAbaAtiva('conta')} className="mt-3 text-xs font-semibold text-lime-200/80 transition hover:text-lime-100">Ajustar foco <span aria-hidden="true">→</span></button></div>
+        </aside>
+
+      <main className="relative z-10 min-w-0 flex-1 p-3 sm:p-5 md:p-8">
+        <nav aria-label="Navegação principal" className="-mx-3 mb-5 flex gap-2 overflow-x-auto border-b border-lime-300/10 bg-[#0b0e0a]/75 px-3 pb-3 pt-1 lg:hidden">
+          {navegacaoEstudo.map(item => <button key={item.id} type="button" aria-current={abaAtiva === item.id ? 'page' : undefined} onClick={() => setAbaAtiva(item.id)} className={`flex shrink-0 items-center gap-2 rounded-xl border px-3 py-2 text-xs font-semibold transition ${abaAtiva === item.id ? 'border-lime-200/30 bg-lime-200/10 text-lime-100' : 'border-slate-800 bg-slate-950/40 text-slate-400'}`}><span aria-hidden="true">{item.simbolo}</span>{item.id === 'questoes' ? 'Questões' : item.label}</button>)}
+        </nav>
         {abaAtiva === 'treino' && <Suspense fallback={<p>Carregando treino…</p>}>
           {veioDaDemonstracao && <div className="mb-5"><TreinoDiario demo foco={focoEstudo} conta={session.user.id} onSalvar={salvarDiagnostico} onPraticar={praticarConteudoEdital} onEdital={() => setAbaAtiva('edital')} onAgendar={planejarRevisaoTreino} /></div>}
           <TreinoDiario key={`${session.user.id}:${focoEstudo}`} foco={focoEstudo} conta={session.user.id} questoes={baseTreino} questoesDoFoco={questoesTreino} catalogoCarregando={carregandoAcervo || (acervoTreino === null && !erroAcervoTreino)} historico={historicoRespostas} cadernos={cadernos} marcacoes={marcacoesPessoais} edital={editalTreino?.conta === idContaTreino ? editalTreino.edital : editalRecomendadoConta?.conta === idContaTreino ? editalRecomendadoConta.edital : null} onSalvar={salvarDiagnostico} onPraticar={praticarConteudoEdital} onEdital={() => setAbaAtiva('edital')} onAgendar={planejarRevisaoTreino} />
@@ -1743,6 +1772,44 @@ export default function App() {
         <EstadoProgresso progresso={progresso} />
         {estudoPessoal.erro && <p role="status" className="mb-4 rounded-xl border border-amber-500/30 bg-amber-950/20 px-4 py-3 text-sm text-amber-200">{estudoPessoal.erro}</p>}
         <div key={abaAtiva} className="tab-transition">
+        {abaAtiva === 'inicio' && <div className="space-y-6 lg:space-y-8">
+          <section className="relative isolate overflow-hidden rounded-[2rem] border border-lime-200/15 bg-[radial-gradient(ellipse_at_85%_15%,rgba(171,196,111,.18),transparent_35%),linear-gradient(125deg,#20271a_0%,#131911_55%,#10130e_100%)] p-6 shadow-[0_24px_80px_rgba(0,0,0,.28)] sm:p-8 lg:p-10">
+            <div className="pointer-events-none absolute -right-20 -top-24 -z-10 h-80 w-80 rounded-full border border-lime-200/10 bg-lime-200/[.025] shadow-[0_0_100px_rgba(176,203,111,.08)]" />
+            <div className="pointer-events-none absolute -bottom-36 right-1/4 -z-10 h-64 w-64 rounded-full bg-amber-200/[.04] blur-3xl" />
+            <div className="relative grid gap-8 lg:grid-cols-[1.4fr_.6fr] lg:items-end">
+              <div className="max-w-2xl">
+                <p className="inline-flex items-center gap-2 rounded-full border border-lime-200/20 bg-black/20 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[.2em] text-lime-100/80"><span className="h-1.5 w-1.5 rounded-full bg-lime-300 shadow-[0_0_12px_#c5df83]" /> Seu próximo passo começa aqui</p>
+                <h1 className="mt-5 text-3xl font-black leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">Um plano claro.<br/><span className="bg-gradient-to-r from-lime-100 via-lime-300 to-amber-100 bg-clip-text text-transparent">Uma conquista de cada vez.</span></h1>
+                <p className="mt-4 max-w-xl text-sm leading-6 text-slate-300 sm:text-base">Olá, {nomeEstudante}. Continue sua preparação para <strong className="font-semibold text-lime-100">{nomeFoco(focoEstudo)}</strong> com prática direcionada, simulados e uma rotina que acompanha seu ritmo.</p>
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <button type="button" onClick={() => setAbaAtiva('questoes')} className="group inline-flex items-center gap-3 rounded-2xl bg-gradient-to-r from-lime-200 to-[#a9bd78] px-5 py-3 text-sm font-extrabold text-[#171c12] shadow-[0_10px_30px_rgba(173,197,120,.2)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(173,197,120,.3)]"><span>Começar a estudar</span><span className="transition group-hover:translate-x-1" aria-hidden="true">→</span></button>
+                  <button type="button" onClick={() => setAbaAtiva('simulados')} className="inline-flex items-center gap-2 rounded-2xl border border-white/15 bg-white/[.035] px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-lime-200/30 hover:bg-white/[.07]"><span aria-hidden="true">▤</span> Fazer um simulado</button>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-3 lg:pl-4">
+                <div className="rounded-2xl border border-white/10 bg-black/20 p-4 backdrop-blur-sm"><p className="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Banco disponível</p><p className="mt-2 text-2xl font-black tracking-tight text-white">{totalQuestoesCatalogo.toLocaleString('pt-BR')}</p><p className="mt-1 text-xs text-slate-400">questões para praticar</p></div>
+                <div className="rounded-2xl border border-white/10 bg-black/20 p-4 backdrop-blur-sm"><p className="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Seu aproveitamento</p><p className="mt-2 text-2xl font-black tracking-tight text-lime-200">{taxaAcertoGeral}%</p><p className="mt-1 text-xs text-slate-400">nas questões respondidas</p></div>
+                <div className="rounded-2xl border border-white/10 bg-black/20 p-4 backdrop-blur-sm"><p className="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Questões feitas</p><p className="mt-2 text-2xl font-black tracking-tight text-white">{totalQuestoesResolvidas.toLocaleString('pt-BR')}</p><p className="mt-1 text-xs text-slate-400">na sua jornada</p></div>
+                <div className="rounded-2xl border border-white/10 bg-black/20 p-4 backdrop-blur-sm"><p className="text-[10px] font-bold uppercase tracking-[.16em] text-slate-500">Simulados concluídos</p><p className="mt-2 text-2xl font-black tracking-tight text-white">{simuladosConcluidos.toLocaleString('pt-BR')}</p><p className="mt-1 text-xs text-slate-400">com seu histórico salvo</p></div>
+              </div>
+            </div>
+          </section>
+
+          <section aria-labelledby="atalhos-estudo-titulo">
+            <div className="mb-4 flex flex-wrap items-end justify-between gap-3"><div><p className="text-[10px] font-bold uppercase tracking-[.2em] text-lime-200/60">Seu espaço de preparação</p><h2 id="atalhos-estudo-titulo" className="mt-1 text-xl font-extrabold tracking-tight text-white sm:text-2xl">Escolha como avançar hoje</h2></div><span className="text-xs text-slate-500">{new Intl.DateTimeFormat('pt-BR',{weekday:'long',day:'numeric',month:'long'}).format(new Date())}</span></div>
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              {atalhosEstudo.map(atalho => <button key={atalho.id} type="button" onClick={() => setAbaAtiva(atalho.id)} className="group relative overflow-hidden rounded-2xl border border-lime-100/[.09] bg-gradient-to-br from-[#171c14] to-[#10130f] p-4 text-left shadow-[0_10px_35px_rgba(0,0,0,.14)] transition duration-200 hover:-translate-y-1 hover:border-lime-200/30 hover:shadow-[0_18px_40px_rgba(0,0,0,.3)] sm:p-5"><span className="pointer-events-none absolute -right-10 -top-12 h-32 w-32 rounded-full bg-lime-200/[.035] blur-2xl transition group-hover:bg-lime-200/[.09]"/><span className="relative flex items-start justify-between gap-4"><span className="grid h-11 w-11 place-items-center rounded-xl border border-lime-200/15 bg-lime-200/[.07] text-xl text-lime-100 transition group-hover:border-lime-100/30 group-hover:bg-lime-100/10">{atalho.simbolo}</span><span className="text-sm text-slate-600 transition group-hover:translate-x-1 group-hover:text-lime-100">↗</span></span><span className="relative mt-5 block text-sm font-bold text-slate-100">{atalho.label}</span><span className="relative mt-1 block text-xs leading-5 text-slate-500">{atalho.detalhe}</span><span className="relative mt-4 block h-px w-full bg-gradient-to-r from-lime-200/20 via-white/[.05] to-transparent"/><span className="relative mt-3 block text-[10px] font-bold uppercase tracking-[.16em] text-lime-100/60 transition group-hover:text-lime-100">Acessar <span aria-hidden="true">→</span></span></button>)}
+            </div>
+          </section>
+
+          <section className="grid gap-4 xl:grid-cols-[1.2fr_.8fr]">
+            <article className="rounded-3xl border border-lime-100/10 bg-[#121710]/90 p-5 sm:p-6">
+              <div className="flex items-start justify-between gap-4"><div><p className="text-[10px] font-bold uppercase tracking-[.2em] text-lime-200/60">Ritmo da semana</p><h2 className="mt-1 text-lg font-extrabold text-white">Seu plano, no seu tempo</h2></div><button type="button" onClick={() => setAbaAtiva('tarefas')} className="rounded-xl border border-lime-100/15 px-3 py-2 text-xs font-semibold text-lime-100 transition hover:bg-lime-100/[.06]">Abrir cronograma</button></div>
+              {tarefasDeHoje.length ? <div className="mt-5 space-y-2">{tarefasDeHoje.slice(0,3).map((tarefa,indice)=><div key={tarefa.id || indice} className="flex items-center gap-3 rounded-2xl border border-white/[.06] bg-black/15 p-3"><span className={`grid h-8 w-8 shrink-0 place-items-center rounded-full ${tarefa.concluida?'bg-lime-200/10 text-lime-100':'bg-white/[.04] text-slate-500'}`}>{tarefa.concluida?'✓':'○'}</span><span className="min-w-0 flex-1"><span className="block truncate text-sm font-semibold text-slate-200">{tarefa.materia || tarefa.atividade || 'Sessão de estudo'}</span><span className="mt-0.5 block truncate text-xs text-slate-500">{tarefa.atividade || 'Prática e revisão'}{tarefa.horario ? ` · ${tarefa.horario}` : ''}</span></span><span className="shrink-0 text-xs font-semibold text-lime-100/70">{formatarDuracaoPlanejada(tarefa.minutos)}</span></div>)}</div> : <div className="mt-5 rounded-2xl border border-dashed border-lime-100/15 bg-black/10 p-5"><p className="text-sm font-semibold text-slate-200">Sua agenda de hoje está livre.</p><p className="mt-1 text-xs leading-5 text-slate-500">Monte um plano flexível e ajuste as sessões conforme sua semana acontecer.</p><button type="button" onClick={() => setAbaAtiva('tarefas')} className="mt-4 text-xs font-bold text-lime-100 hover:text-lime-50">Planejar minha semana <span aria-hidden="true">→</span></button></div>}
+            </article>
+            <article className="relative overflow-hidden rounded-3xl border border-amber-100/10 bg-gradient-to-br from-[#201d15] to-[#13140f] p-5 sm:p-6"><span className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-amber-100/[.06] blur-3xl"/><p className="relative text-[10px] font-bold uppercase tracking-[.2em] text-amber-100/60">Consistência vence intensidade</p><h2 className="relative mt-2 max-w-sm text-xl font-extrabold leading-snug text-white">Cada sessão é um passo a mais rumo à aprovação.</h2><p className="relative mt-3 max-w-sm text-sm leading-6 text-slate-400">Pratique um pouco todos os dias, acompanhe seu desempenho e volte aos assuntos que merecem atenção.</p><button type="button" onClick={() => setAbaAtiva('desempenho')} className="relative mt-5 inline-flex items-center gap-2 text-sm font-bold text-amber-100 transition hover:gap-3">Ver minha evolução <span aria-hidden="true">→</span></button></article>
+          </section>
+        </div>}
         {abaAtiva === 'conta' && <Conta
           session={session}
           isAdmin={isAdmin}
@@ -2486,6 +2553,7 @@ export default function App() {
         </div>}
         </div>
       </main>
+      </div>
     </div>
   )
 }
