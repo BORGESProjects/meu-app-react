@@ -1680,7 +1680,7 @@ export default function App() {
     setDiaCronograma('hoje')
     setAbaAtiva('tarefas')
   }
-  const nomeEstudante = String(session.user.user_metadata?.full_name || session.user.user_metadata?.name || session.user.email?.split('@')[0] || 'Estudante').split(/[\s._-]+/u)[0]
+  const nomeEstudante = String(session?.user?.user_metadata?.full_name || session?.user?.user_metadata?.name || session?.user?.email?.split('@')[0] || 'Estudante').split(/[\s._-]+/u)[0]
   const atalhosEstudo = [
     {id:'questoes', label:'Banco de questões', detalhe:'Filtre por prova, matéria e assunto', simbolo:'⌕'},
     {id:'treino', label:'Treino de hoje', detalhe:'Pratique no seu ritmo', simbolo:'◉'},
