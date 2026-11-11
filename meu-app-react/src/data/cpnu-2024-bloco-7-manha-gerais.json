@@ -1498,5 +1498,505 @@
     "ano_concurso": 2024,
     "ano_aplicacao": 2024,
     "apoio": []
+  },
+  {
+    "id": "cpnu-2024-bloco-7-manha-conhecimentos-gerais-q16",
+    "ano": 2024,
+    "numero": 16,
+    "numero_original": 16,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 7, Gestão Governamental e Administração Pública (manhã)",
+    "cargo": "Bloco 7 — Gestão Governamental e Administração Pública",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Governo Digital",
+    "conteudo": "Princípios do Governo Digital e linguagem cidadã",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade normativa, conceitual e de interpretação exigida",
+    "enunciado": "Nos termos da Lei nº 14.129/2021, constituem princípios e diretrizes do Governo Digital e da eficiência pública, dentre outros, o dever do gestor público de prestar contas diretamente à população sobre a gestão dos recursos públicos, bem como o uso de linguagem",
+    "texto_apoio": "O prefeito de determinado município brasileiro realizou treinamento ofertado para lideranças locais com o intuito de melhorar os índices de satisfação dos cidadãos com os serviços prestados pelos órgãos públicos. Esse gestor pretende aplicar o padrão estabelecido pela Administração Federal, que passou a regular as atividades digitais implantadas em diversos setores públicos. Fonte: caderno oficial, p. 7.",
+    "opcoes": [
+      "compreensível a pessoas qualificadas.",
+      "técnica adequada a qualquer cidadão.",
+      "algorítmica sensível a qualquer cidadão.",
+      "clara e compreensível a qualquer cidadão.",
+      "popular, incluindo dialetos próprios a qualquer cidadão."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 7 — Gabarito 1 — Bloco 7 — manhã"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 7 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 16,
+        "pagina": 7,
+        "arquivo_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+          "numero": 16,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-7-gabarito-1-bloco-7-manha",
+    "documento_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+    "arquivo_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+      "numero": 16,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação individual pelo tema e disciplina diretamente cobrados, com base na seção Conhecimentos Gerais do caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 7 Gabarito 1, página 7; gabarito final oficial da manhã, Bloco 7",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 7 — Bloco 7 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  },
+  {
+    "id": "cpnu-2024-bloco-7-manha-conhecimentos-gerais-q17",
+    "ano": 2024,
+    "numero": 17,
+    "numero_original": 17,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 7, Gestão Governamental e Administração Pública (manhã)",
+    "cargo": "Bloco 7 — Gestão Governamental e Administração Pública",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Direito Administrativo",
+    "conteudo": "Concurso público e prazo de validade",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade normativa, conceitual e de interpretação exigida",
+    "enunciado": "A Administração Pública realizou um concurso para o provimento de cargos vagos. Cinco anos após a homologação, sem que houvesse nomeado e empossado os candidatos aprovados, resolveu realizar novo concurso. Indignados, os candidatos prejudicados apresentam recurso administrativo, cujo resultado deve se basear no seguinte:",
+    "texto_apoio": "",
+    "opcoes": [
+      "o prazo de validade do concurso público será de até dois anos, prorrogável uma vez, por igual período.",
+      "o prazo de validade do concurso público é indeterminado.",
+      "o prazo de validade do concurso público depende da autorização do Tribunal de Contas.",
+      "o prazo de validade do concurso deve ser submetido à consulta ao Poder Judiciário.",
+      "o prazo de validade do concurso depende de lei que o estabeleça."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 7 — Gabarito 1 — Bloco 7 — manhã"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 7 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 17,
+        "pagina": 7,
+        "arquivo_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+          "numero": 17,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-7-gabarito-1-bloco-7-manha",
+    "documento_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+    "arquivo_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+      "numero": 17,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação individual pelo tema e disciplina diretamente cobrados, com base na seção Conhecimentos Gerais do caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 7 Gabarito 1, página 7; gabarito final oficial da manhã, Bloco 7",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 7 — Bloco 7 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  },
+  {
+    "id": "cpnu-2024-bloco-7-manha-conhecimentos-gerais-q18",
+    "ano": 2024,
+    "numero": 18,
+    "numero_original": 18,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 7, Gestão Governamental e Administração Pública (manhã)",
+    "cargo": "Bloco 7 — Gestão Governamental e Administração Pública",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Economia",
+    "conteudo": "Funções econômicas do governo",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade normativa, conceitual e de interpretação exigida",
+    "enunciado": "Existem três funções básicas do governo que buscam mitigar as ineficiências dos mercados numa economia. O exercício dessas funções NÃO terá o seguinte resultado:",
+    "texto_apoio": "",
+    "opcoes": [
+      "aumento das assimetrias de informações.",
+      "estabilização de preços.",
+      "fornecimento de bens públicos.",
+      "redução das desigualdades de distribuição de renda.",
+      "regulação da oferta de monopólios naturais."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 7 — Gabarito 1 — Bloco 7 — manhã"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 7 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 18,
+        "pagina": 7,
+        "arquivo_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+          "numero": 18,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-7-gabarito-1-bloco-7-manha",
+    "documento_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+    "arquivo_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+      "numero": 18,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação individual pelo tema e disciplina diretamente cobrados, com base na seção Conhecimentos Gerais do caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 7 Gabarito 1, página 7; gabarito final oficial da manhã, Bloco 7",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 7 — Bloco 7 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  },
+  {
+    "id": "cpnu-2024-bloco-7-manha-conhecimentos-gerais-q19",
+    "ano": 2024,
+    "numero": 19,
+    "numero_original": 19,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 7, Gestão Governamental e Administração Pública (manhã)",
+    "cargo": "Bloco 7 — Gestão Governamental e Administração Pública",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Administração Financeira e Orçamentária",
+    "conteudo": "Orçamento público e previsão de receitas",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade normativa, conceitual e de interpretação exigida",
+    "enunciado": "Essa ferramenta",
+    "texto_apoio": "Orçamento público é o instrumento utilizado pelo Governo Federal para planejar a utilização do dinheiro arrecadado com os tributos. Fonte: caderno oficial, p. 7.",
+    "opcoes": [
+      "fixa as receitas que o Governo espera arrecadar, enquanto estima as despesas a serem efetuadas.",
+      "fixa tanto as receitas que o Governo espera arrecadar quanto as despesas a serem efetuadas.",
+      "estima tanto as receitas que o Governo espera arrecadar quanto as despesas a serem efetuadas.",
+      "estima as receitas que o Governo espera arrecadar, enquanto fixa as despesas a serem efetuadas.",
+      "estima às vezes e fixa às vezes as receitas, sem impor limites às despesas a serem efetuadas."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 7 — Gabarito 1 — Bloco 7 — manhã"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 7 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 19,
+        "pagina": 7,
+        "arquivo_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+          "numero": 19,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-7-gabarito-1-bloco-7-manha",
+    "documento_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+    "arquivo_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+      "numero": 19,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação individual pelo tema e disciplina diretamente cobrados, com base na seção Conhecimentos Gerais do caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 7 Gabarito 1, página 7; gabarito final oficial da manhã, Bloco 7",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 7 — Bloco 7 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  },
+  {
+    "id": "cpnu-2024-bloco-7-manha-conhecimentos-gerais-q20",
+    "ano": 2024,
+    "numero": 20,
+    "numero_original": 20,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 7, Gestão Governamental e Administração Pública (manhã)",
+    "cargo": "Bloco 7 — Gestão Governamental e Administração Pública",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Políticas Públicas",
+    "conteudo": "Execução orçamentária e gestão de políticas",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade normativa, conceitual e de interpretação exigida",
+    "enunciado": "As limitações à execução orçamentária ao longo do exercício",
+    "texto_apoio": "Um dos aspectos fundamentais para o êxito de uma política pública é a adequada alocação de recursos para seu financiamento, o que normalmente se refere à programação de créditos orçamentários e às condições para execução das despesas correspondentes. Fonte: caderno oficial, p. 7.",
+    "opcoes": [
+      "podem afetar a previsibilidade, mas nunca a tempestividade da disponibilidade de recursos.",
+      "podem afetar a tempestividade, mas nunca a previsibilidade da disponibilidade de recursos.",
+      "podem afetar a tempestividade e a previsibilidade da disponibilidade de recursos.",
+      "não afetam nem a tempestividade nem a previsibilidade de recursos.",
+      "não afetam a gestão de políticas públicas financiadas pelo orçamento."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 7 — Gabarito 1 — Bloco 7 — manhã"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 7 — manhã",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 20,
+        "pagina": 7,
+        "arquivo_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+          "numero": 20,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-7-gabarito-1-bloco-7-manha",
+    "documento_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+    "arquivo_origem": "prova-7-gabarito-1-gestao-governamental-e-administacao-publica-manha.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-manha.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/manha/prova-7-gabarito-1-gestao-governamental-e-administracao-publica-manha.pdf",
+      "numero": 20,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação individual pelo tema e disciplina diretamente cobrados, com base na seção Conhecimentos Gerais do caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 7 Gabarito 1, página 7; gabarito final oficial da manhã, Bloco 7",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 7 — Bloco 7 — manhã",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
   }
 ]

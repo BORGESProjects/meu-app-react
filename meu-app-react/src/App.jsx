@@ -457,7 +457,7 @@ export default function App() {
       const r = await fetch('/acervo/cpnu-2024-bloco-7-manha-gerais/questoes.json', {signal:AbortSignal.timeout(30000)})
       if (!r.ok) throw new Error('CPNU 2024, Bloco 7 — questões gerais da manhã indisponíveis')
       const data = await r.json()
-      if (!Array.isArray(data) || data.length !== 15 || data.some(q => q.opcoes?.length !== 5 || !q.gabarito_oficial?.verificada || Number(q.numero_original) < 1 || Number(q.numero_original) > 15)) throw new Error('Lote CPNU 2024, Bloco 7 da manhã incompleto')
+      if (!Array.isArray(data) || data.length !== 20 || data.some(q => q.opcoes?.length !== 5 || !q.gabarito_oficial?.verificada || Number(q.numero_original) < 1 || Number(q.numero_original) > 20)) throw new Error('Lote CPNU 2024, Bloco 7 da manhã incompleto')
       return data
     })
     const enemHistorico = tentarLeitura(async () => {
