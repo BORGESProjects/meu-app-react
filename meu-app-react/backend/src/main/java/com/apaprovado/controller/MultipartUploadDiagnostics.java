@@ -14,17 +14,19 @@ import java.util.Map;
 @RestControllerAdvice
 public class MultipartUploadDiagnostics {
     private static final Logger LOG = LoggerFactory.getLogger(MultipartUploadDiagnostics.class);
+    private static final long CONFIGURED_MAX_REQUEST_BYTES = 20L * 1024L * 1024L;
 
     @ExceptionHandler(MaxUploadSizeExceededException.class)
     public ResponseEntity<Map<String, String>> uploadTooLarge(
         MaxUploadSizeExceededException error,
         HttpServletRequest request
     ) {
-        long limit = error.getMaxUploadSize();
+        long reportedLimit = error.getMaxUploadSize();
+        long effectiveLimit = reportedLimit > 0 ? reportedLimit : CONFIGURED_MAX_REQUEST_BYTES;
         long contentLength = request.getContentLengthLong();
-        LOG.warn("Upload multipart recusado: limite={} bytes, requisicao={} bytes, rota={}",
-            limit, contentLength, request.getRequestURI());
-        String detail = "O lote excedeu o limite efetivo do servidor (" + limit + " bytes).";
+        LOG.warn("Upload multipart recusado: limiteEfetivo={} bytes, limiteReportado={} bytes, requisicao={} bytes, rota={}",
+            effectiveLimit, reportedLimit, contentLength, request.getRequestURI());
+        String detail = "O lote excedeu o limite efetivo do servidor (" + effectiveLimit + " bytes).";
         return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE).body(Map.of("detail", detail));
     }
 }
