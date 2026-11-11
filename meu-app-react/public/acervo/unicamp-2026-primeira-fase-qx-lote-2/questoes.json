@@ -1,0 +1,519 @@
+[
+  {
+    "id": "unicamp-2026-fase-1-qx-q6",
+    "ano": 2026,
+    "numero": 6,
+    "numero_original": 6,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Inglês",
+    "conteudo": "Compreensão de resumo científico",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Leia o resumo de um artigo científico.\n\nDe acordo com o resumo, é correto afirmar que",
+    "texto_apoio": "Incels: Masculinity in the Transition to Adulthood\n\nIncels are men who are members of an online community that experiences an unmet desire for sex and blame women for their struggle. Since 2019 there have been several mass murder attacks committed by Incels motivated by Incel ideology creating a threat of future violence. While the vast majority of Incels do not commit such attacks, researchers have begun to study Incels to prevent violence and uncover the true nature of this community. The study of Incels is incipient; therefore, more knowledge about interventions to address the struggles of involuntary celibacy is needed. This paper emphasizes the masculinity strain experienced by Incels who attempt to perform hegemonic masculinity as part of the transition to adulthood but fall short because of their lack of sexual activity. This work proposes the creation and implementation of Incel-specific, online therapeutic interventions and continued research directly with the Incel community to uncover the complexities of Incel experiences.",
+    "opcoes": [
+      "“Incel” é uma comunidade majoritariamente constituída por homens que culpam mulheres por questionarem sua masculinidade.",
+      "as pesquisas sobre a comunidade “Incel” ainda são escassas, por isso há a necessidade de mais estudos que definam teoricamente a abstinência sexual.",
+      "homens “Incel”, muitas vezes, tentam exercer uma masculinidade dominante que resulta em expectativas frustradas devido à inatividade sexual.",
+      "a pesquisa propõe práticas terapêuticas que integrem homens “Incel” a outros grupos sociais para melhor compreender as complexidades da masculinidade."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 6,
+        "pagina": 2,
+        "paginas_origem": [
+          2
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 6,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 6,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 2; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q7",
+    "ano": 2026,
+    "numero": 7,
+    "numero_original": 7,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Inglês",
+    "conteudo": "Compreensão de carta aberta",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Leia a carta a seguir.\n\nAssinale a alternativa correta em relação ao posicionamento do presidente de Harvard em sua carta.",
+    "texto_apoio": "Dear Members of the Harvard Community,\n\nFor years, the federal government’s grants to Harvard have helped lead to groundbreaking innovations. Recently, the federal government has threatened its partnerships over accusations of antisemitism on our campuses. A list of demands was issued, warning that Harvard must comply if we intend to “maintain our financial relationship with the government.” Most of these demands are unprecedented and represent direct governmental regulation of the “intellectual conditions” at Harvard.\n\nThey include requirements to audit the viewpoints of our students and faculty, and to “reduce their power” for their ideological views. We will not accept that. The University will not surrender its independence or relinquish its constitutional rights. No government should dictate what universities can teach and which areas of inquiry they can pursue.\n\nWe do not take our moral duties lightly and we have taken many steps to address and fight antisemitism on campus. However, this will not be achieved by assertions of power, unmoored from the law, to dictate how we operate.\n\nSincerely,\nAlan M. Garber\n(President of Harvard University)",
+    "opcoes": [
+      "As acusações de antissemitismo feitas à universidade são inconstitucionais, por isso Garber se recusa a aceitar as demandas propostas pelo governo.",
+      "As comparações entre as ideologias de professores e de alunos são sem precedentes, por isso Garber se nega a abrir mão da liberdade de expressão da comunidade.",
+      "As justificativas do governo para interromper o financiamento são falhas, por isso Garber se nega a tomar medidas para resolver os problemas apontados.",
+      "As demandas do governo são uma tentativa de controle da autonomia das universidades, por isso Garber se recusa a acatar as exigências impostas."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 7,
+        "pagina": 2,
+        "paginas_origem": [
+          2,
+          3
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 7,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 2,
+    "paginas_origem": [
+      2,
+      3
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 7,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 2-3; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q8",
+    "ano": 2026,
+    "numero": 8,
+    "numero_original": 8,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Física",
+    "conteudo": "Transferência de calor",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "A uniformidade da temperatura em um ambiente refrigerado depende, além do bom funcionamento do aparelho de ar condicionado, de uma instalação adequada, visando a uma transferência de calor eficiente. Isso pode ser verificado pelo instalador utilizando um termômetro de infravermelho para inspecionar diferentes áreas do recinto. Analise as afirmativas 1, 2, 3 e 4 sobre os mecanismos de transferência de calor: condução, convecção e radiação.\n\n1) A transferência de calor por condução térmica pode ocorrer tanto no vácuo quanto em um meio material.\n\n2) A taxa de condução de calor em uma barra não depende da diferença entre as temperaturas de suas extremidades.\n\n3) A convecção consiste no transporte de energia térmica de uma região para outra por meio do deslocamento de uma massa de fluido.\n\n4) A transferência de calor por radiação térmica pode ocorrer tanto no vácuo quanto em um meio material.\n\nAs afirmativas corretas são:",
+    "texto_apoio": "",
+    "opcoes": [
+      "1 e 2.",
+      "1 e 4.",
+      "2 e 3.",
+      "3 e 4."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 8,
+        "pagina": 3,
+        "paginas_origem": [
+          3
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 8,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 8,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 3; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q9",
+    "ano": 2026,
+    "numero": 9,
+    "numero_original": 9,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Física",
+    "conteudo": "Corrente elétrica e carga",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Uma bateria inicialmente carregada fornece uma corrente constante de i = 4 000 mA durante o tempo Δt = 1 hora, ficando descarregada no final desse processo. A carga elétrica Q, que circula por essa bateria nesse intervalo de tempo é",
+    "texto_apoio": "Texto para as questões 9, 10 e 11.\n\nAs baterias são fundamentais no mundo moderno, sendo a fonte de energia portátil que alimenta dispositivos como celulares e laptops, veículos elétricos e sistemas de armazenamento de energia renovável. Duas grandezas que caracterizam uma bateria é a sua capacidade de carga elétrica, expressa em miliampère-hora (mAh) e a energia que ela armazena, usualmente dada em watts-hora (Wh).",
+    "opcoes": [
+      "4 C.",
+      "4 000 C.",
+      "14 400 C.",
+      "14 400 000 C."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 9,
+        "pagina": 3,
+        "paginas_origem": [
+          3
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 9,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 9,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 3; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q10",
+    "ano": 2026,
+    "numero": 10,
+    "numero_original": 10,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Física",
+    "conteudo": "Circuitos elétricos e força eletromotriz",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "De forma simplificada, o comportamento de uma bateria pode ser modelado com uma fonte ideal de diferença de potencial elétrico U_b em série com um resistor de resistência R_b. Dessa maneira, o dispositivo que é alimentado pela bateria pode, muitas vezes, ser representado por um resistor de resistência R. Na situação exemplificada na figura, a diferença de potencial registrada pelo voltímetro é",
+    "texto_apoio": "Texto para as questões 9, 10 e 11.\n\nAs baterias são fundamentais no mundo moderno, sendo a fonte de energia portátil que alimenta dispositivos como celulares e laptops, veículos elétricos e sistemas de armazenamento de energia renovável. Duas grandezas que caracterizam uma bateria é a sua capacidade de carga elétrica, expressa em miliampère-hora (mAh) e a energia que ela armazena, usualmente dada em watts-hora (Wh).",
+    "opcoes": [
+      "0,6 V.",
+      "3,0 V.",
+      "3,6 V.",
+      "4,3 V."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 10,
+        "pagina": 3,
+        "paginas_origem": [
+          3
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 10,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 10,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, 1ª fase, prova Q e X, página 3; gabarito oficial Q e X",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [
+      {
+        "imagem": "/acervo/unicamp-2026-primeira-fase-qx-lote-2/imagens/unicamp-2026-qx-q10-circuito-bateria.png",
+        "texto": "Esquema de circuito com uma bateria de força eletromotriz 3,6 V e resistência interna de 1,2 Ω, ligada a um resistor de 6,0 Ω e a um voltímetro."
+      }
+    ],
+    "enunciado_antes_apoio": ""
+  }
+]

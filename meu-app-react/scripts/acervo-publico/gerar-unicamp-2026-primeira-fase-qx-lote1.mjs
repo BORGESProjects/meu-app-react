@@ -37,7 +37,7 @@ async function renderCrop(pageNumber, name, box, altText) {
     0, 0, crop.width, crop.height)
   const filename = `${name}.png`
   await writeFile(new URL(filename, imagesDir), crop.toBuffer('image/png'))
-  return { image: `/acervo/unicamp-2026-primeira-fase-qx-lote-1/imagens/${filename}`, texto: altText }
+  return { imagem: `/acervo/unicamp-2026-primeira-fase-qx-lote-1/imagens/${filename}`, texto: altText }
 }
 
 // Crop coordinates are measured from the page renders at 1.5× and scaled to 2.5×.
