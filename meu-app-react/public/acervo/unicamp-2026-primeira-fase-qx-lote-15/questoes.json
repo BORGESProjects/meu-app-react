@@ -1,0 +1,843 @@
+[
+  {
+    "id": "unicamp-2026-fase-1-qx-q51",
+    "ano": 2026,
+    "numero": 51,
+    "numero_original": 51,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Matemática",
+    "conteudo": "Inequações com módulo e números primos",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Considere o conjunto A = {x ∈ ℕ : |x − 5| ≥ 2 e |x − 11| ≤ 9}.\n\nQuantos números primos pertencem ao conjunto A?",
+    "texto_apoio": "",
+    "opcoes": [
+      "5.",
+      "6.",
+      "7.",
+      "8."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 51,
+        "pagina": 17,
+        "paginas_origem": [
+          17
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 51,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 17,
+    "paginas_origem": [
+      17
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 51,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, prova Q e X, página 17; gabarito oficial",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q52",
+    "ano": 2026,
+    "numero": 52,
+    "numero_original": 52,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Matemática",
+    "conteudo": "Sistemas lineares e problemas de contagem",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Em um jogo de videogame sobre guerra, cada jogador deve montar sua tropa escolhendo 100 combatentes. Ele tem à sua disposição dois tipos de combatentes, soldados e estrategistas, que possuem duas habilidades, astúcia e força, com as seguintes pontuações:\n\n• O soldado tem 30 pontos de astúcia e 70 pontos de força.\n• O estrategista tem 80 pontos de astúcia e 20 pontos de força.\n\nA força total da tropa é a soma das pontuações de força de cada um dos combatentes, e a astúcia total da tropa é a soma das pontuações de astúcia de cada um dos combatentes.\n\nPara montar uma tropa de modo a obter as mesmas pontuações de força total e de astúcia total, quantos soldados e quantos estrategistas devem ser escolhidos?",
+    "texto_apoio": "",
+    "opcoes": [
+      "70 soldados e 30 estrategistas.",
+      "60 soldados e 40 estrategistas.",
+      "50 soldados e 50 estrategistas.",
+      "40 soldados e 60 estrategistas."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 52,
+        "pagina": 17,
+        "paginas_origem": [
+          17
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 52,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 17,
+    "paginas_origem": [
+      17
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 52,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, prova Q e X, página 17; gabarito oficial",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q53",
+    "ano": 2026,
+    "numero": 53,
+    "numero_original": 53,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Matemática",
+    "conteudo": "Geometria plana e áreas de figuras",
+    "dificuldade": "Alta",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Na figura a seguir, ABCD é um quadrado com lado 6, e P, Q, R e S são pontos sobre os lados deste quadrado, em que AS = BQ = 2, PB = 3 e DR = 1.\n\nO valor da área sombreada é igual a",
+    "texto_apoio": "",
+    "opcoes": [
+      "11/3.",
+      "13/3.",
+      "15/4.",
+      "17/4."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 53,
+        "pagina": 17,
+        "paginas_origem": [
+          17
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 53,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 17,
+    "paginas_origem": [
+      17
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 53,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, prova Q e X, página 17; gabarito oficial",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [
+      {
+        "imagem": "/acervo/unicamp-2026-primeira-fase-qx-lote-15/imagens/q53-area-quadrado.png",
+        "texto": "Quadrado ABCD de lado 6; pontos P, Q, R e S e medidas indicadas, com a região triangular sombreada."
+      }
+    ],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q54",
+    "ano": 2026,
+    "numero": 54,
+    "numero_original": 54,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Português",
+    "conteudo": "Variação linguística e preconceito linguístico",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Considerando que consoantes mudas não são seguidas de uma vogal e levando em conta as duas pronúncias para “advogado” mencionadas no texto, as críticas reproduzidas no segundo parágrafo revelam",
+    "texto_apoio": "Mirian Goldenberg — antropóloga e professora da Universidade Federal do Rio de Janeiro, autora de “A Invenção de uma Bela Velhice” — fez um vídeo para o Instagram sobre sua coluna intitulada “No dia 1º de abril, quase caí no golpe do falso advogado”. No vídeo, confessou que quase morreu de vergonha por quase ter caído em um golpe no Dia da Mentira.\n\nFicou triste quando leu alguns dos comentários sobre o vídeo: “AdEvogado?”; “Não é adevogado que fala”; “A desinformada que fala adevogado aprendeu o que é golpe de verdade kkkk”; “Adevogado? Pode isso? Uma ‘intelequitual’ brasileira da linha de frente falando assim?”; “Um currículo e tanto e falando adevogado?”; “Chamou de adEvogado. Então não foi difícil entender por que caiu em golpe... Eu teria vergonha de falar adEvogado”; “A palavra ‘advogado’ se pronuncia ‘advo-gado’, com o ‘d’ mudo. A pronúncia adevogado é um erro de ortoépia”; “É advogado com ‘d’ mudo, estúpida!”\n\nA autora perguntou ao marido, que editou o vídeo, por que ele não lhe falou nada. Ele respondeu: “Porque eu acho bonitinho. Você é filha de advogado e tem dois irmãos advogados. Desde menina aprendeu a falar assim. Não é fácil falar ‘advogado’ com o ‘d’ mudo. Eu falo advogado com ‘i’: adivogado. Será que alguém consegue falar advogado com o ‘d’ mudo?” Da próxima vez que fizer uma denúncia importante, tentará falar advogado com o ‘d’ mudo. Será que vai conseguir?\n\n(Adaptado de GOLDENBERG, M. “É advogado com d mudo, estúpida!”. Folha de S.Paulo, 16/04/2025, p. B6. Acesso em 29/07/2025.)",
+    "opcoes": [
+      "preconceito linguístico, já que os comentários negativos foram motivados pelo fato de a autora ter um baixo nível de escolaridade.",
+      "desconhecimento linguístico, uma vez que a palavra “advogado” não é pronunciada com “d” mudo no português brasileiro.",
+      "negacionismo linguístico, pois os críticos não reconhecem que a pronúncia “adevogado” é a mais comum na norma culta.",
+      "correção linguística, porque só uma das duas pronúncias ocorre no português, enquanto a outra é um desvio fonético."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 54,
+        "pagina": 18,
+        "paginas_origem": [
+          18
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 54,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 18,
+    "paginas_origem": [
+      18
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 54,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, prova Q e X, página 18; gabarito oficial",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q55",
+    "ano": 2026,
+    "numero": 55,
+    "numero_original": 55,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Português",
+    "conteudo": "Variação linguística e identidade social",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Sobre a diferença que o texto estabelece entre Nós e nóix, podemos afirmar que está relacionada a uma distinção",
+    "texto_apoio": "Texto para as questões 55 e 56 — “A rua é nóix!” Sempre com letra minúscula, porque não é o Nós da totalidade, uma vez que não sabemos exatamente quem ou quantos somos, quem faz parte ou não, quem está dentro ou fora. Mas, se pegar para um, vai pegar pra geral. O nóix é sempre mais que um. Mesmo sozinho, na missão, existe algo para além da presença física do eu e do outro. Assumindo nossas ancestralidades, convivemos com os espíritos daqueles que já se foram. O nóix opera pela lógica dos bondes de galera, do lado A ou lado B. Quem é amigo fecha com a gente, quem é alemão rala. Porque o fechamento é o fundamento ético das ruas. Recebe-se quem chega de boa, na paz, mas, se vacila, vai. Com i e x, o nóix demarca um sotaque, um registro local, um lugar, o Pretuguês de Lélia Gonzalez. Desobedecendo à instituição da norma culta, o nóix — escrito ou falado — revela sua potência operando à margem da obediência à linguagem fonética dominante. O nóix é a potência da contaminação diferencial das diversidades de um povo em tempos e espaços múltiplos, que se repete numa atmosfera espectral que ultrapassa a lógica temporal predominante.\n\n(Adaptado de MORAES, M. J. D. “A rua é nóix”. Revista Cult, ed. 271, 1º jul. 2021.)",
+    "opcoes": [
+      "sociocultural, pois esses termos se referem a grupos demarcados distintamente: enquanto Nós é bem delimitado, nóix diz respeito a uma coletividade difusa, mas marcada por compartilhar vivências específicas.",
+      "gramatical, pois esses termos não pertencem à mesma classe de palavras: enquanto Nós é um pronome típico da norma culta, nóix é um substantivo popular que serve à expressão da diversidade.",
+      "histórica, pois esses termos caracterizam os indivíduos em função do seu passado: enquanto Nós abrange aqueles sem ancestralidade, nóix reúne os que assumem os ancestrais como parte de sua história.",
+      "política, pois esses termos revelam uma polarização na forma de se relacionar com o poder: enquanto Nós simboliza o apoio à opressão social, nóix caracteriza uma rejeição aos poderes instituídos."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 55,
+        "pagina": 18,
+        "paginas_origem": [
+          18
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 55,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 18,
+    "paginas_origem": [
+      18
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 55,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, prova Q e X, página 18; gabarito oficial",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q56",
+    "ano": 2026,
+    "numero": 56,
+    "numero_original": 56,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Português",
+    "conteudo": "Africanização do português brasileiro e identidade linguística",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Considerando esse texto, a menção ao “Pretuguês de Lélia Gonzalez” no artigo de Marcelo José Derzi Moraes, apresentado na questão anterior, ocorre pelo fato de nóix ser",
+    "texto_apoio": "Texto 1 — “A rua é nóix!”: o artigo de Marcelo José Derzi Moraes apresenta “nóix” como marca de um sotaque, registro local e lugar, associado ao Pretuguês de Lélia Gonzalez. O texto caracteriza o nóix como uma coletividade que assume ancestralidades, compartilha vivências e se coloca à margem da obediência à linguagem fonética dominante.\n\nTexto 2 — A partir das análises de Lélia Gonzalez — intelectual, professora universitária, mulher, negra e feminista — conseguimos compreender quão extensa é a introdução de palavras e termos de origens africanas na nossa língua. O Pretuguês é, então, parte da africanização da língua portuguesa brasileira. As pessoas negras escravizadas resistiam de inúmeras formas, lutando, fugindo, se organizando, mas também através da fala, no jeito de agir e na forma de viver que se enraizou na maneira de ser de todo o Brasil. E isso vem da ancestralidade, é o passar do conhecimento através do tempo e das relações de respeito pelo que veio antes, através do cântico antigo, da reza falada, da contação de história que os entrelaços linguísticos vão formando. Muitos vocábulos estão tão acomodados no nosso idioma que sequer paramos para pensar sua origem e seu significado. Mas são de origem africana, como dengo, quitanda, cafuné, muvuca, caçula e axé.\n\n(Adaptado de publicação de Mari Canuto no Instagram, acesso em 30/07/2025.)",
+    "opcoes": [
+      "um vocábulo introduzido no Brasil pelos africanos escravizados, da mesma forma que outras palavras de origem africana acomodadas na língua.",
+      "uma expressão identitária que serve para demarcar os negros brasileiros e segregá-los dos demais grupos étnico-raciais que compõem o país.",
+      "uma marca linguística associada a um grupo cujos ancestrais reúnem aqueles que contribuíram para a africanização do português brasileiro.",
+      "um traço dialetal característico dos sotaques urbanos brasileiros que são fortemente marcados pela presença de palavras africanas."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 56,
+        "pagina": 18,
+        "paginas_origem": [
+          18,
+          19
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 56,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 18,
+    "paginas_origem": [
+      18,
+      19
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 56,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, prova Q e X, páginas 18 e 19; gabarito oficial",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q57",
+    "ano": 2026,
+    "numero": 57,
+    "numero_original": 57,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Português",
+    "conteudo": "Coesão e relações semânticas",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "O texto a seguir é um trabalho da artista Santarosa Barreto apresentado na exposição “Histórias das mulheres: artistas depois de 2000”, realizada no MASP em 2019.\n\nNesse texto, observamos ocorrências de “que” com diferentes valores, entre eles o",
+    "texto_apoio": "(BARRETO, S. A luta. Ikrek Edições, 2019, reimpressão de 2024.)",
+    "opcoes": [
+      "explicativo, com o objetivo de listar justificativas que tentam suprimir, em favor de outros, uma dimensão pessoal da luta.",
+      "comparativo, com o objetivo de equiparar a luta motivada por convicções próprias e a luta instigada por quem está no poder.",
+      "condicional, com o objetivo de caracterizar a luta como uma condição para combater aqueles que a querem controlar.",
+      "causal, com o objetivo de reiterar as situações que levam alguém a desistir de promover a luta como forma de resistência individual."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 57,
+        "pagina": 19,
+        "paginas_origem": [
+          19
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 57,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 19,
+    "paginas_origem": [
+      19
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 57,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, prova Q e X, página 19; gabarito oficial",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [
+      {
+        "imagem": "/acervo/unicamp-2026-primeira-fase-qx-lote-15/imagens/q57-cartaz-luta.png",
+        "texto": "Cartaz da obra “A luta”, de Santarosa Barreto, com texto repetindo justificativas que deslegitimam a luta de outra pessoa."
+      }
+    ],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  },
+  {
+    "id": "unicamp-2026-fase-1-qx-q58",
+    "ano": 2026,
+    "numero": 58,
+    "numero_original": 58,
+    "modelo": "Q e X",
+    "banca": "UNICAMP",
+    "organizadora": "COMVEST",
+    "concurso": "Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "cargo": "Vestibular — Conhecimentos Gerais",
+    "aplicacao": "2025 — 1ª fase",
+    "materia": "Português",
+    "conteudo": "Gêneros digitais e linguagem verbo-visual",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade de leitura e interpretação",
+    "enunciado": "Considerando as informações do texto 1 e a imagem do texto 2, o texto 2 pode ser caracterizado como",
+    "texto_apoio": "Texto 1 — O image macro é o mais velho, o mais simples e o mais difundido tipo de meme, provavelmente pela facilidade de criação e difusão, além do inegável apelo visual que permite uma rápida apreensão do seu conteúdo. Ele corresponde a uma estrutura imagético-textual em frame¹ único que carrega uma qualidade icônica.\n\nPodemos caracterizar o image macro como um texto em caixa alta e em fonte branca, superposto a uma imagem — quase sempre para fins de humor. Esse jogo memético consiste tanto em adicionar o mesmo texto a várias imagens quanto em “remixar” uma mesma imagem com diferentes textos. Os image macros têm seus templates², bem como suas referências intertextuais extraídas de diversas fontes, como videoclipes, fotografias, desenhos, filmes, seriados, videogames, comerciais, notícias etc.\n\nUsando essa estrutura híbrida, os image macros tornam-se uma espécie de imagens-texto em que o imbricamento desses dois elementos ocorre sem subordinação da experiência visual nem da verbal — o pictórico complementa o discursivo em um processo de afetação recíproca.\n\n¹ Frame: quadro, moldura; imagem estática que, quando reproduzida em sequência com outras, resulta no efeito de movimento.\n² Template: modelo.\n\n(Adaptado de OLIVEIRA NETA, J. P. Por uma tipologia dos memes da internet. Entremeios, 13(2), 2017. Acesso em 02/06/2025.)\n\nTexto 2 — Meme conhecido como “Nazaré Confusa”, formado por vários quadros de uma personagem cercados por fórmulas e diagramas matemáticos. (Imagem disponível em https://pt.wikipedia.org/wiki/Nazar%C3%A9_Confusa. Acesso em 02/06/2025.)",
+    "opcoes": [
+      "um típico image macro, pois utiliza um único frame para fundir o visual e o verbal, além de adicionar um mesmo elemento textual a várias ocorrências de uma só imagem.",
+      "um meme composto por vários image macros, nos quais uma mesma imagem se subordina à linguagem textual matemática em um jogo pictórico de afetação recíproca.",
+      "uma experiência verbal e visual que se aproxima do image macro no que diz respeito à sua estrutura híbrida, mas se afasta desse tipo por não permitir a rápida apreensão do seu conteúdo.",
+      "uma peça memética que não reúne todos os elementos de um image macro, pois apresenta mais de um frame e adiciona conteúdos textuais diferentes a imagens distintas."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "Vestibular Unicamp 2026 — 1ª fase — prova Q e X"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "Vestibular Unicamp 2026 — 1ª fase",
+        "aplicacao": "2025",
+        "modelo": "Q e X",
+        "numero_original": 58,
+        "pagina": 19,
+        "paginas_origem": [
+          19
+        ],
+        "arquivo_origem": "f12026Q_X.pdf",
+        "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+        "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+          "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+          "numero": 58,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "unicamp-2026-fase-1-qx",
+    "documento_origem": "f12026Q_X.pdf",
+    "arquivo_origem": "f12026Q_X.pdf",
+    "pagina": 19,
+    "paginas_origem": [
+      19
+    ],
+    "fonte_pdf": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+    "fonte_gabarito": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.comvest.unicamp.br/vest2026/F1/Q_X-gabarito.pdf",
+      "pdf_url": "https://www.comvest.unicamp.br/vest2026/F1/f12026Q_X.pdf",
+      "numero": 58,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pela habilidade diretamente cobrada no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial COMVEST, Vestibular Unicamp 2026, prova Q e X, página 19; gabarito oficial",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito oficiais — Vestibular Unicamp 2026 — 1ª fase — prova Q e X",
+    "ano_concurso": 2026,
+    "ano_aplicacao": 2025,
+    "apoio": [
+      {
+        "imagem": "/acervo/unicamp-2026-primeira-fase-qx-lote-15/imagens/q58-meme-nazare.png",
+        "texto": "Meme “Nazaré Confusa”: sequência de quatro quadros da personagem com fórmulas e diagramas matemáticos sobrepostos."
+      }
+    ],
+    "enunciado_antes_apoio": "",
+    "opcoes_imagens": []
+  }
+]
