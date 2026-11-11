@@ -1,0 +1,312 @@
+[
+  {
+    "ano": 2025,
+    "modelo": "Caderno 1",
+    "banca": "UFMG",
+    "organizadora": "COPEVE/UFMG",
+    "concurso": "UFMG — Processo Seletivo Seriado 2025, 1ª Etapa",
+    "cargo": "Ciclo 2025–2027 — 1ª Etapa",
+    "aplicacao": "1ª Etapa do Processo Seletivo Seriado UFMG 2025",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade linguística e de interpretação exigida",
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "UFMG Seriado 2025 — 1ª Etapa — Caderno 1"
+    ],
+    "documento_id": "ufmg-seriado-2025-etapa1-caderno-1",
+    "documento_origem": "UFMG-Seriado-2025-Etapa1-Caderno-1.pdf",
+    "arquivo_origem": "UFMG-Seriado-2025-Etapa1-Caderno-1.pdf",
+    "fonte_pdf": "https://backend.copeve.ufmg.br/uploads/Caderno_1_SERIADO_UFMG_2025_a816686677.pdf",
+    "fonte_gabarito": "https://backend.copeve.ufmg.br/uploads/Gabarito_Final_Caderno_1_Seriado_2025_bfaa4e5b55.pdf",
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito finais oficiais — UFMG Seriado 2025 — 1ª Etapa, Caderno 1",
+    "ano_concurso": 2025,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "opcoes_imagens": [],
+    "id": "ufmg-seriado-2025-etapa1-caderno1-q3",
+    "numero": 3,
+    "numero_original": 3,
+    "materia": "Português",
+    "conteudo": "Concordância verbal e variação linguística",
+    "enunciado": "Em relação a esses trechos, avalie as afirmativas a seguir e assinale (V), diante das verdadeiras, ou (F), diante das falsas.\n\n(  ) As expressões em destaque exemplificam ausência de concordância verbal de número e de pessoa, respectivamente.\n(  ) A ausência de concordância produz um efeito estético que remete a um contexto social e cultural específico.\n(  ) As expressões em destaque exemplificam um fenômeno determinado pela informalidade do texto, produzido em linguagem coloquial.\n(  ) A ausência de concordância, desvio que contraria a gramática normativa padrão, induz a erros de compreensão do texto.\n\nA sequência correta é:",
+    "texto_apoio": "Trechos da canção “Principia”, de Emicida (2019); mantidos somente os segmentos em destaque necessários à análise: Trecho 1 — “todos entende”; Trecho 2 — “as menina”. Os trechos completos constam no caderno oficial.",
+    "opcoes": [
+      "F, V, V, F.",
+      "V, F, F, V.",
+      "V, V, F, F.",
+      "F, F, V, V."
+    ],
+    "resposta_correta": 0,
+    "pagina": 6,
+    "paginas_origem": [
+      6
+    ],
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://backend.copeve.ufmg.br/uploads/Gabarito_Final_Caderno_1_Seriado_2025_bfaa4e5b55.pdf",
+      "pdf_url": "https://backend.copeve.ufmg.br/uploads/Caderno_1_SERIADO_UFMG_2025_a816686677.pdf",
+      "numero": 3,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_evidencia": "Caderno 1 oficial da 1ª Etapa do Processo Seletivo Seriado UFMG 2025, páginas 6; gabarito final oficial do Caderno 1",
+    "origens_provas": [
+      {
+        "concurso": "UFMG — Processo Seletivo Seriado 2025, 1ª Etapa",
+        "aplicacao": "1ª Etapa — ciclo 2025–2027",
+        "modelo": "Caderno 1",
+        "numero_original": 3,
+        "pagina": 6,
+        "paginas_origem": [
+          6
+        ],
+        "arquivo_origem": "UFMG-Seriado-2025-Etapa1-Caderno-1.pdf",
+        "fonte_pdf": "https://backend.copeve.ufmg.br/uploads/Caderno_1_SERIADO_UFMG_2025_a816686677.pdf",
+        "fonte_gabarito": "https://backend.copeve.ufmg.br/uploads/Gabarito_Final_Caderno_1_Seriado_2025_bfaa4e5b55.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://backend.copeve.ufmg.br/uploads/Gabarito_Final_Caderno_1_Seriado_2025_bfaa4e5b55.pdf",
+          "pdf_url": "https://backend.copeve.ufmg.br/uploads/Caderno_1_SERIADO_UFMG_2025_a816686677.pdf",
+          "numero": 3,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ]
+  },
+  {
+    "ano": 2025,
+    "modelo": "Caderno 1",
+    "banca": "UFMG",
+    "organizadora": "COPEVE/UFMG",
+    "concurso": "UFMG — Processo Seletivo Seriado 2025, 1ª Etapa",
+    "cargo": "Ciclo 2025–2027 — 1ª Etapa",
+    "aplicacao": "1ª Etapa do Processo Seletivo Seriado UFMG 2025",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade linguística e de interpretação exigida",
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "UFMG Seriado 2025 — 1ª Etapa — Caderno 1"
+    ],
+    "documento_id": "ufmg-seriado-2025-etapa1-caderno-1",
+    "documento_origem": "UFMG-Seriado-2025-Etapa1-Caderno-1.pdf",
+    "arquivo_origem": "UFMG-Seriado-2025-Etapa1-Caderno-1.pdf",
+    "fonte_pdf": "https://backend.copeve.ufmg.br/uploads/Caderno_1_SERIADO_UFMG_2025_a816686677.pdf",
+    "fonte_gabarito": "https://backend.copeve.ufmg.br/uploads/Gabarito_Final_Caderno_1_Seriado_2025_bfaa4e5b55.pdf",
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito finais oficiais — UFMG Seriado 2025 — 1ª Etapa, Caderno 1",
+    "ano_concurso": 2025,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "opcoes_imagens": [],
+    "id": "ufmg-seriado-2025-etapa1-caderno1-q4",
+    "numero": 4,
+    "numero_original": 4,
+    "materia": "Português",
+    "conteudo": "Tipologia narrativa",
+    "enunciado": "São características da tipologia narrativa, expressas no TEXTO II:",
+    "texto_apoio": "Uma occasião, em vez de descermos, subimos a montanha, colhendo framboezas e parando a miudo para descansar. Passámos o hotel e caminhámos para deante, internando-nos no bosque, onde a luz do sol penetrava numa rendilhação luminosa. Cantavam os passarinhos; ouvia-se quasi a germinação das plantas. Sentámo-nos em umas pedras; ella, d. Anninha, a ler, eu a collecionar folhas e flores campestres. De repente sentimos estalar uns galhos e ouvimos rumor de vozes; voltámos a cabeça e esperámos atentas.\n\nALMEIDA, Júlia Lopes de. Memorias de Martha. Sorocaba: Casa Durski, 1899. Caderno oficial, p. 6.",
+    "opcoes": [
+      "Verbos no presente, que apresentam ideias e conceitos necessários para a compreensão da história.",
+      "Expressões qualificadoras, com a finalidade de caracterizar os lugares por onde andavam as personagens.",
+      "Verbos no imperativo e pronomes de segunda pessoa, que são formas comuns de expressar instruções.",
+      "Expressões temporais e verbos flexionados no pretérito, que indicam uma sucessão de acontecimentos."
+    ],
+    "resposta_correta": 3,
+    "pagina": 7,
+    "paginas_origem": [
+      6,
+      7
+    ],
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://backend.copeve.ufmg.br/uploads/Gabarito_Final_Caderno_1_Seriado_2025_bfaa4e5b55.pdf",
+      "pdf_url": "https://backend.copeve.ufmg.br/uploads/Caderno_1_SERIADO_UFMG_2025_a816686677.pdf",
+      "numero": 4,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_evidencia": "Caderno 1 oficial da 1ª Etapa do Processo Seletivo Seriado UFMG 2025, páginas 6 e 7; gabarito final oficial do Caderno 1",
+    "origens_provas": [
+      {
+        "concurso": "UFMG — Processo Seletivo Seriado 2025, 1ª Etapa",
+        "aplicacao": "1ª Etapa — ciclo 2025–2027",
+        "modelo": "Caderno 1",
+        "numero_original": 4,
+        "pagina": 7,
+        "paginas_origem": [
+          6,
+          7
+        ],
+        "arquivo_origem": "UFMG-Seriado-2025-Etapa1-Caderno-1.pdf",
+        "fonte_pdf": "https://backend.copeve.ufmg.br/uploads/Caderno_1_SERIADO_UFMG_2025_a816686677.pdf",
+        "fonte_gabarito": "https://backend.copeve.ufmg.br/uploads/Gabarito_Final_Caderno_1_Seriado_2025_bfaa4e5b55.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://backend.copeve.ufmg.br/uploads/Gabarito_Final_Caderno_1_Seriado_2025_bfaa4e5b55.pdf",
+          "pdf_url": "https://backend.copeve.ufmg.br/uploads/Caderno_1_SERIADO_UFMG_2025_a816686677.pdf",
+          "numero": 4,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ]
+  },
+  {
+    "ano": 2025,
+    "modelo": "Caderno 1",
+    "banca": "UFMG",
+    "organizadora": "COPEVE/UFMG",
+    "concurso": "UFMG — Processo Seletivo Seriado 2025, 1ª Etapa",
+    "cargo": "Ciclo 2025–2027 — 1ª Etapa",
+    "aplicacao": "1ª Etapa do Processo Seletivo Seriado UFMG 2025",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade linguística e de interpretação exigida",
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "UFMG Seriado 2025 — 1ª Etapa — Caderno 1"
+    ],
+    "documento_id": "ufmg-seriado-2025-etapa1-caderno-1",
+    "documento_origem": "UFMG-Seriado-2025-Etapa1-Caderno-1.pdf",
+    "arquivo_origem": "UFMG-Seriado-2025-Etapa1-Caderno-1.pdf",
+    "fonte_pdf": "https://backend.copeve.ufmg.br/uploads/Caderno_1_SERIADO_UFMG_2025_a816686677.pdf",
+    "fonte_gabarito": "https://backend.copeve.ufmg.br/uploads/Gabarito_Final_Caderno_1_Seriado_2025_bfaa4e5b55.pdf",
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno e gabarito finais oficiais — UFMG Seriado 2025 — 1ª Etapa, Caderno 1",
+    "ano_concurso": 2025,
+    "ano_aplicacao": 2025,
+    "apoio": [],
+    "opcoes_imagens": [],
+    "id": "ufmg-seriado-2025-etapa1-caderno1-q5",
+    "numero": 5,
+    "numero_original": 5,
+    "materia": "Português",
+    "conteudo": "Tempos verbais e aspecto",
+    "enunciado": "Em relação aos tempos verbais empregados no TEXTO II, avalie as afirmativas a seguir e assinale (V), diante das verdadeiras, ou (F), diante das falsas.\n\n(  ) O infinitivo em “a ler” e “a collecionar” indica ações futuras e pode ser substituído pelo futuro do presente, sem alteração de sentido.\n(  ) O pretérito perfeito em “voltámos a cabeça e esperámos atentas” indica ações concluídas, sequenciais no passado.\n(  ) O gerúndio dos verbos no trecho “colhendo framboezas e parando a miudo para descansar” expressa ações duradouras.\n(  ) O pretérito imperfeito em “Cantavam” e “ouvia-se” indica ações que estavam concluídas quando as personagens se sentaram.\n\nA sequência correta é:",
+    "texto_apoio": "Uma occasião, em vez de descermos, subimos a montanha, colhendo framboezas e parando a miudo para descansar. Passámos o hotel e caminhámos para deante, internando-nos no bosque, onde a luz do sol penetrava numa rendilhação luminosa. Cantavam os passarinhos; ouvia-se quasi a germinação das plantas. Sentámo-nos em umas pedras; ella, d. Anninha, a ler, eu a collecionar folhas e flores campestres. De repente sentimos estalar uns galhos e ouvimos rumor de vozes; voltámos a cabeça e esperámos atentas.\n\nALMEIDA, Júlia Lopes de. Memorias de Martha. Sorocaba: Casa Durski, 1899. Caderno oficial, p. 6.",
+    "opcoes": [
+      "V, V, F, F.",
+      "V, F, F, V.",
+      "F, V, V, F.",
+      "F, F, V, V."
+    ],
+    "resposta_correta": 2,
+    "pagina": 7,
+    "paginas_origem": [
+      6,
+      7
+    ],
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://backend.copeve.ufmg.br/uploads/Gabarito_Final_Caderno_1_Seriado_2025_bfaa4e5b55.pdf",
+      "pdf_url": "https://backend.copeve.ufmg.br/uploads/Caderno_1_SERIADO_UFMG_2025_a816686677.pdf",
+      "numero": 5,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_evidencia": "Caderno 1 oficial da 1ª Etapa do Processo Seletivo Seriado UFMG 2025, páginas 6 e 7; gabarito final oficial do Caderno 1",
+    "origens_provas": [
+      {
+        "concurso": "UFMG — Processo Seletivo Seriado 2025, 1ª Etapa",
+        "aplicacao": "1ª Etapa — ciclo 2025–2027",
+        "modelo": "Caderno 1",
+        "numero_original": 5,
+        "pagina": 7,
+        "paginas_origem": [
+          6,
+          7
+        ],
+        "arquivo_origem": "UFMG-Seriado-2025-Etapa1-Caderno-1.pdf",
+        "fonte_pdf": "https://backend.copeve.ufmg.br/uploads/Caderno_1_SERIADO_UFMG_2025_a816686677.pdf",
+        "fonte_gabarito": "https://backend.copeve.ufmg.br/uploads/Gabarito_Final_Caderno_1_Seriado_2025_bfaa4e5b55.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://backend.copeve.ufmg.br/uploads/Gabarito_Final_Caderno_1_Seriado_2025_bfaa4e5b55.pdf",
+          "pdf_url": "https://backend.copeve.ufmg.br/uploads/Caderno_1_SERIADO_UFMG_2025_a816686677.pdf",
+          "numero": 5,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ]
+  }
+]
