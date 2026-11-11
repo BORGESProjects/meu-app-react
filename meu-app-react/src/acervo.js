@@ -14,12 +14,13 @@ import cpnuBloco1TardeEixo2Lote1 from './data/cpnu-2024-bloco-1-tarde-eixo-2-lot
 import cpnuBloco1TardeEixo1Lote3 from './data/cpnu-2024-bloco-1-tarde-eixo-1-lote-3.json' with { type: 'json' }
 import cpnuBloco1TardeEixo3Lote1 from './data/cpnu-2024-bloco-1-tarde-eixo-3-lote-1.json' with { type: 'json' }
 import cpnuBloco1TardeEixo3Lote2 from './data/cpnu-2024-bloco-1-tarde-eixo-3-lote-2.json' with { type: 'json' }
+import cpnuBloco1TardeEixo4Lote1 from './data/cpnu-2024-bloco-1-tarde-eixo-4-lote-1.json' with { type: 'json' }
 import { BANCA_ASSIMILACAO, normalizarBanca, normalizarMateria } from './filtros.js'
 import {blocosValidos,temApoioEmBlocos,assinaturaVisualBlocos} from './blocosQuestao.js'
 import {problemasDeIntegridade,separarRodapeEditorial} from './qualidadeQuestao.js'
 import {normalizarMetadadosQuestao} from './origemQuestao.js'
 
-export const acervo = [...esa2025, ...enem2022, ...cporSimuladoTreineiro, ...pmprSoldado2020, ...cpnuBloco8Manha, ...cpnuBloco8TardeDireito, ...cpnuBloco8TardeMatematica, ...cpnuBloco8TardeRealidade, ...cpnuBloco7ManhaGerais, ...cpnuBloco7TardeEixo1, ...cpnuBloco1TardeEixo1Lote1, ...cpnuBloco1TardeEixo1Lote2, ...cpnuBloco1TardeEixo2Lote1, ...cpnuBloco1TardeEixo1Lote3, ...cpnuBloco1TardeEixo3Lote1, ...cpnuBloco1TardeEixo3Lote2]
+export const acervo = [...esa2025, ...enem2022, ...cporSimuladoTreineiro, ...pmprSoldado2020, ...cpnuBloco8Manha, ...cpnuBloco8TardeDireito, ...cpnuBloco8TardeMatematica, ...cpnuBloco8TardeRealidade, ...cpnuBloco7ManhaGerais, ...cpnuBloco7TardeEixo1, ...cpnuBloco1TardeEixo1Lote1, ...cpnuBloco1TardeEixo1Lote2, ...cpnuBloco1TardeEixo2Lote1, ...cpnuBloco1TardeEixo1Lote3, ...cpnuBloco1TardeEixo3Lote1, ...cpnuBloco1TardeEixo3Lote2, ...cpnuBloco1TardeEixo4Lote1]
 
 // Correções conferidas diretamente nas provas oficiais. Manter este mapa
 // pequeno e explícito evita tentar "adivinhar" alternativas danificadas pelo
