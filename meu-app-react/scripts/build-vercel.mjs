@@ -56,6 +56,19 @@ for (let offset = 0; offset < questionFiles.length; offset += 32) {
 }
 console.log(`Acervo estático preparado: ${questionFiles.length} lotes de questões.`)
 
+// The historical archive lives outside the deployment, but newly added
+// Unicamp question visuals are local files referenced directly by these lots.
+// Copy them explicitly because the interrupted Vite public copy may skip them.
+const localVisualBatches = ['unicamp-2026-primeira-fase-qx-lote-1', 'unicamp-2026-primeira-fase-qx-lote-2', 'unicamp-2026-primeira-fase-qx-lote-3']
+for (const batch of localVisualBatches) {
+  const imageSource = path.join(publicAcervo, batch, 'imagens')
+  const imageDestination = path.join(distRoot, 'acervo', batch, 'imagens')
+  await mkdir(imageDestination, { recursive: true })
+  for (const entry of await readdir(imageSource, { withFileTypes: true })) {
+    if (entry.isFile()) await copyFile(path.join(imageSource, entry.name), path.join(imageDestination, entry.name))
+  }
+}
+
 // Vercel is the question-bank app and future native-app prototype. The
 // commercial landing page and student portal are published separately on Pages.
 await copyFile(
