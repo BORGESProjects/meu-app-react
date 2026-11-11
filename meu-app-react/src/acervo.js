@@ -5,12 +5,13 @@ import pmprSoldado2020 from './data/pmpr-soldado-2020.json' with { type: 'json' 
 import cpnuBloco8Manha from './data/cpnu-2024-bloco-8-manha.json' with { type: 'json' }
 import cpnuBloco8TardeDireito from './data/cpnu-2024-bloco-8-tarde-direito.json' with { type: 'json' }
 import cpnuBloco8TardeMatematica from './data/cpnu-2024-bloco-8-tarde-matematica.json' with { type: 'json' }
+import cpnuBloco8TardeRealidade from './data/cpnu-2024-bloco-8-tarde-realidade-brasileira.json' with { type: 'json' }
 import { BANCA_ASSIMILACAO, normalizarBanca, normalizarMateria } from './filtros.js'
 import {blocosValidos,temApoioEmBlocos,assinaturaVisualBlocos} from './blocosQuestao.js'
 import {problemasDeIntegridade,separarRodapeEditorial} from './qualidadeQuestao.js'
 import {normalizarMetadadosQuestao} from './origemQuestao.js'
 
-export const acervo = [...esa2025, ...enem2022, ...cporSimuladoTreineiro, ...pmprSoldado2020, ...cpnuBloco8Manha, ...cpnuBloco8TardeDireito, ...cpnuBloco8TardeMatematica]
+export const acervo = [...esa2025, ...enem2022, ...cporSimuladoTreineiro, ...pmprSoldado2020, ...cpnuBloco8Manha, ...cpnuBloco8TardeDireito, ...cpnuBloco8TardeMatematica, ...cpnuBloco8TardeRealidade]
 
 // Correções conferidas diretamente nas provas oficiais. Manter este mapa
 // pequeno e explícito evita tentar "adivinhar" alternativas danificadas pelo

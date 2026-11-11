@@ -446,6 +446,13 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 15) throw new Error('Lote CPNU 2024, Bloco 8 de Matemática da tarde incompleto')
       return data
     })
+    const cpnu2024Bloco8TardeRealidade = tentarLeitura(async () => {
+      const r = await fetch('/acervo/cpnu-2024-bloco-8-tarde-realidade-brasileira/questoes.json', {signal:AbortSignal.timeout(30000)})
+      if (!r.ok) throw new Error('CPNU 2024, Bloco 8 — questões de Realidade Brasileira da tarde indisponíveis')
+      const data = await r.json()
+      if (!Array.isArray(data) || data.length !== 15 || data.some(q => q.materia !== 'Realidade Brasileira' || q.opcoes?.length !== 5 || !q.gabarito_oficial?.verificada)) throw new Error('Lote CPNU 2024, Bloco 8 de Realidade Brasileira da tarde incompleto')
+      return data
+    })
     const enemHistorico = tentarLeitura(async () => {
       const r = await fetch('/acervo/enem-2017-2021/questoes.json', {signal:AbortSignal.timeout(30000)})
       if (!r.ok) throw new Error('Edições históricas do ENEM indisponíveis')
@@ -705,10 +712,10 @@ export default function App() {
       if (!Array.isArray(data) || data.length !== 18) throw new Error('Lote de taxonomia incompleto')
       return data
     })
-    const fontes = ['banco de questões', 'questões importadas', 'CPNU 2024, Bloco 8 — prova da manhã', 'CPNU 2024, Bloco 8 — Direito da tarde', 'CPNU 2024, Bloco 8 — Matemática da tarde', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UFPR 2022', 'UFPR 2021', 'UFPR 2020', 'UFPR 2019', 'UTFPR 2026', 'UTFPR 2025', 'UTFPR 2024/1', 'UTFPR 2024/2', 'UTFPR 2023', 'IFPR 2024', 'IFPR 2023', 'IFPR 2020 completa', 'IFPR 2019 completa', 'UEM Verão 2025 completa', 'UEM Inverno 2025 completa', 'UEM 2019 a 2024 completa', 'PUC-PR 2024/2 Medicina', 'PUC-PR 2025/1 Medicina', 'PUC-PR 2025/2 Medicina', 'PF e PRF revisadas', 'questões revisadas do material de estudo', 'Modelos atômicos revisados', 'Taxonomia revisada', 'Microrganismos revisados', 'História antiga revisada', 'Introdução à Geografia revisada']
+    const fontes = ['banco de questões', 'questões importadas', 'CPNU 2024, Bloco 8 — prova da manhã', 'CPNU 2024, Bloco 8 — Direito da tarde', 'CPNU 2024, Bloco 8 — Matemática da tarde', 'CPNU 2024, Bloco 8 — Realidade Brasileira da tarde', 'ENEM 2017 a 2021', 'CFN 2020 a 2025', 'UFRGS 2025', 'UFRGS 2024', 'UFRGS 2023', 'UFRGS 2022', 'EsPCEx 2017 a 2026', 'UFPR 2025', 'UFPR 2024', 'UFPR 2023', 'UFPR 2022', 'UFPR 2021', 'UFPR 2020', 'UFPR 2019', 'UTFPR 2026', 'UTFPR 2025', 'UTFPR 2024/1', 'UTFPR 2024/2', 'UTFPR 2023', 'IFPR 2024', 'IFPR 2023', 'IFPR 2020 completa', 'IFPR 2019 completa', 'UEM Verão 2025 completa', 'UEM Inverno 2025 completa', 'UEM 2019 a 2024 completa', 'PUC-PR 2024/2 Medicina', 'PUC-PR 2025/1 Medicina', 'PUC-PR 2025/2 Medicina', 'PF e PRF revisadas', 'questões revisadas do material de estudo', 'Modelos atômicos revisados', 'Taxonomia revisada', 'Microrganismos revisados', 'História antiga revisada', 'Introdução à Geografia revisada']
     fontes.push(...catalogoLivros.map(lote => 'Material de estudo — ' + lote.materia))
     const leiturasLivros = catalogoLivros.map(lote => tentarLeitura(() => carregarLoteLivro(lote)))
-    const resultados = await carregarEmEtapas([banco,importadas,cpnu2024Bloco8Manha,cpnu2024Bloco8TardeDireito,cpnu2024Bloco8TardeMatematica,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2026,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,ifpr2020,ifpr2019,uem2025,uem2025Inverno,uemHistorico,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina,federaisRevisadas,teoremaRevisadas,modelosAtomicos,taxonomiaBiologia,microorganismosBiologia,historiaAntigaRevisada,geografiaIntroducaoRevisada,...leiturasLivros], estaticas => {
+    const resultados = await carregarEmEtapas([banco,importadas,cpnu2024Bloco8Manha,cpnu2024Bloco8TardeDireito,cpnu2024Bloco8TardeMatematica,cpnu2024Bloco8TardeRealidade,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2026,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,ifpr2020,ifpr2019,uem2025,uem2025Inverno,uemHistorico,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina,federaisRevisadas,teoremaRevisadas,modelosAtomicos,taxonomiaBiologia,microorganismosBiologia,historiaAntigaRevisada,geografiaIntroducaoRevisada,...leiturasLivros], estaticas => {
       if (requisicao !== requisicaoAcervo.current) return
       const parciais = estaticas.flatMap(r => r.status === 'fulfilled' && Array.isArray(r.value) ? r.value : [])
       void preparar(parciais).catch(() => { /* A etapa final confirma ou informa a falha. */ })
