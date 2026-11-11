@@ -65,8 +65,11 @@ const localVisualBatches = (await readdir(publicAcervo, { withFileTypes: true })
 for (const batch of localVisualBatches) {
   const imageSource = path.join(publicAcervo, batch, 'imagens')
   const imageDestination = path.join(distRoot, 'acervo', batch, 'imagens')
+  let entries
+  try { entries = await readdir(imageSource, { withFileTypes: true }) }
+  catch (error) { if (error.code === 'ENOENT') continue; throw error }
   await mkdir(imageDestination, { recursive: true })
-  for (const entry of await readdir(imageSource, { withFileTypes: true })) {
+  for (const entry of entries) {
     if (entry.isFile()) await copyFile(path.join(imageSource, entry.name), path.join(imageDestination, entry.name))
   }
 }
