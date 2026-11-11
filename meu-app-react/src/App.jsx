@@ -443,7 +443,7 @@ export default function App() {
       const r = await fetch('/acervo/cpnu-2024-bloco-8-tarde-matematica/questoes.json', {signal:AbortSignal.timeout(30000)})
       if (!r.ok) throw new Error('CPNU 2024, Bloco 8 — questões de Matemática da tarde indisponíveis')
       const data = await r.json()
-      if (!Array.isArray(data) || data.length !== 3) throw new Error('Lote CPNU 2024, Bloco 8 de Matemática da tarde incompleto')
+      if (!Array.isArray(data) || data.length !== 15) throw new Error('Lote CPNU 2024, Bloco 8 de Matemática da tarde incompleto')
       return data
     })
     const enemHistorico = tentarLeitura(async () => {
