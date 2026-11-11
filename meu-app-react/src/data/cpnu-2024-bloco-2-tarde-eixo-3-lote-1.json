@@ -1,0 +1,507 @@
+[
+  {
+    "id": "cpnu-2024-bloco-2-tarde-eixo-3-q21",
+    "ano": 2024,
+    "numero": 21,
+    "numero_original": 21,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 2, Tecnologia, Dados e Informação (tarde)",
+    "cargo": "Bloco 2 — Tecnologia, Dados e Informação",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Redes de Computadores",
+    "conteudo": "Endereçamento IPv6",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Ao enfrentar o desafio da escolha entre os protocolos IPv4 e IPv6, os projetistas de redes de computadores se deparam com uma decisão crucial que moldará a infraestrutura e o funcionamento das redes modernas. Essa escolha envolve uma análise detalhada das características, vantagens e desvantagens de cada protocolo, considerando não apenas as necessidades presentes, mas também as demandas futuras de uma paisagem digital em constante evolução. Há que se considerar questões referentes a compatibilidade, capacidade e custo, a fim de garantir uma transição suave e eficiente para o protocolo que melhor atenda às exigências presentes e futuras da infraestrutura de rede. Em um comparativo entre essas duas opções, o endereçamento IPv6",
+    "texto_apoio": "",
+    "opcoes": [
+      "amplia a margem de endereçamento de hosts, com um endereço estruturado em 128 bits.",
+      "demanda a configuração de definição de endereços manualmente por meio dos servidores DHCP.",
+      "elimina a necessidade do uso da pilha dupla de protocolos, por conta do campo “Limite de saltos” de seu cabeçalho.",
+      "oferece o método de endereçamento broadcast, no qual um pacote é entregue ao membro mais próximo de um grupo.",
+      "revela a necessidade premente do uso de Network Address Translation, opcional no protocolo IPv4."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 10 — Gabarito 1 — Bloco 2 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 2 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 21,
+        "pagina": 6,
+        "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+          "numero": 21,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-10-gabarito-1-bloco-2-tarde",
+    "documento_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "pagina": 6,
+    "paginas_origem": [
+      6
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+      "numero": 21,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 10 Gabarito 1, página 6; gabarito final oficial da tarde, Bloco 2",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 10 — Bloco 2 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-2-tarde-eixo-3-q22",
+    "ano": 2024,
+    "numero": 22,
+    "numero_original": 22,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 2, Tecnologia, Dados e Informação (tarde)",
+    "cargo": "Bloco 2 — Tecnologia, Dados e Informação",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Segurança da Informação",
+    "conteudo": "Autenticação biométrica e controle de acesso",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Um gestor de TI enfrenta desafios complexos ao decidir sobre os procedimentos de segurança relacionados à autenticação e ao controle de acesso aos sistemas. Essas escolhas impactam diretamente a integridade dos dados e a proteção contra ameaças cibernéticas. A seleção de métodos de autenticação adequados requer a compreensão das necessidades específicas da organização e das vulnerabilidades potenciais e uma análise criteriosa das funções dos usuários e dos recursos críticos do sistema. Ao enfrentar esses desafios com uma estratégia abrangente e sólida, o gestor pode garantir uma proteção consistente contra ameaças cibernéticas e manter a integridade dos sistemas da organização. O gestor de TI, em reunião com seus auxiliares e considerando a importância da autenticação e do controle de acesso, solicita sugestões e opiniões com corretas e relevantes justificativas sobre o emprego de tecnologias seguras para aplicações empresariais sensíveis. Qual sugestão o gestor de TI implementará?",
+    "texto_apoio": "",
+    "opcoes": [
+      "A autenticação por senhas, porque é uma forma simples e segura de proteger as informações.",
+      "A biometria, porque é uma forma de autenticação que utiliza características físicas únicas, como impressões digitais ou reconhecimento facial, aumentando a segurança do acesso.",
+      "O controle de acesso por cartões de proximidade, porque é uma tecnologia simples e de fácil utilização.",
+      "O controle de acesso baseado em função, porque permite que todos os usuários tenham acesso total aos recursos do sistema.",
+      "O controle de acesso discricionário, porque, uma vez que um usuário recebe permissão para acessar um objeto, ele pode conceder acesso a outros usuários conforme necessário."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 10 — Gabarito 1 — Bloco 2 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 2 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 22,
+        "pagina": 7,
+        "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+          "numero": 22,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-10-gabarito-1-bloco-2-tarde",
+    "documento_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+      "numero": 22,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 10 Gabarito 1, página 7; gabarito final oficial da tarde, Bloco 2",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 10 — Bloco 2 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-2-tarde-eixo-3-q23",
+    "ano": 2024,
+    "numero": 23,
+    "numero_original": 23,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 2, Tecnologia, Dados e Informação (tarde)",
+    "cargo": "Bloco 2 — Tecnologia, Dados e Informação",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Segurança da Informação",
+    "conteudo": "Irretratabilidade e não repúdio",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "As empresas enfrentam desafios ao decidir sobre a adoção de procedimentos relacionados à segurança de computadores. Isso envolve equilibrar a necessidade de proteger dados confidenciais e sistemas contra ameaças cibernéticas, enquanto garante a eficiência operacional e a acessibilidade para os usuários. A sociedade depende cada vez mais de redes de computadores e sistemas de informação disponíveis e seguros. As ameaças são as mais diversas, e alguns princípios de segurança da informação são utilizados pelos desenvolvedores de sistemas e gerentes de TI para minimizá-las. Dentre esses princípios, um dos mais importantes é o da irretratabilidade, que tem por objetivo",
+    "texto_apoio": "",
+    "opcoes": [
+      "alterar a informação ao longo da transmissão.",
+      "criptografar os dados em dispositivos de armazenamento físico.",
+      "evitar a negação da autoria da informação fornecida.",
+      "manter a informação à disposição do usuário sempre que necessário.",
+      "realizar a autenticação de dois fatores para acesso aos sistemas."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 10 — Gabarito 1 — Bloco 2 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 2 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 23,
+        "pagina": 7,
+        "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+          "numero": 23,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-10-gabarito-1-bloco-2-tarde",
+    "documento_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+      "numero": 23,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 10 Gabarito 1, página 7; gabarito final oficial da tarde, Bloco 2",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 10 — Bloco 2 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-2-tarde-eixo-3-q24",
+    "ano": 2024,
+    "numero": 24,
+    "numero_original": 24,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 2, Tecnologia, Dados e Informação (tarde)",
+    "cargo": "Bloco 2 — Tecnologia, Dados e Informação",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Sistemas Operacionais",
+    "conteudo": "Threads e compartilhamento de recursos",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Um projetista de sistema operacional pretende desenvolver um sistema multitarefa, no que concerne à criação de processos. Para isso, ele pretende que os seguintes requisitos sejam atendidos: I — a comunicação interprocessos deve ser eficiente; II — o processo de criação e destruição deve ser eficiente; III — deve ser permitido que os processos compartilhem um mesmo espaço de endereçamento e dados. Qual unidade de execução em sistemas operacionais atende aos requisitos apresentados?",
+    "texto_apoio": "",
+    "opcoes": [
+      "build().",
+      "fork().",
+      "ioctl().",
+      "malloc().",
+      "thread()."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 10 — Gabarito 1 — Bloco 2 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 2 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 24,
+        "pagina": 7,
+        "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+          "numero": 24,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-10-gabarito-1-bloco-2-tarde",
+    "documento_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+      "numero": 24,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 10 Gabarito 1, página 7; gabarito final oficial da tarde, Bloco 2",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 10 — Bloco 2 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-2-tarde-eixo-3-q25",
+    "ano": 2024,
+    "numero": 25,
+    "numero_original": 25,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 2, Tecnologia, Dados e Informação (tarde)",
+    "cargo": "Bloco 2 — Tecnologia, Dados e Informação",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Redes de Computadores",
+    "conteudo": "Protocolo UDP e comunicação não orientada a conexão",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Um dos desafios enfrentados por projetistas de redes de computadores é decidir entre os protocolos Transmission Control Protocol (TCP) e User Datagram Protocol (UDP) para diferentes aplicações e cenários de rede. A escolha envolve considerar cuidadosamente a natureza das transmissões de dados necessárias para cada aplicação. A seleção entre TCP e UDP exige uma análise minuciosa das exigências específicas da aplicação e das características da rede, garantindo uma escolha alinhada com os requisitos de desempenho e confiabilidade da infraestrutura de rede. No processo decisório, o projetista deve considerar que o protocolo UDP",
+    "texto_apoio": "",
+    "opcoes": [
+      "encapsula, no modelo Internet, o dado na camada de transporte em um cabeçalho chamado segmento.",
+      "garante, na transmissão, a entrega e a sequência de dados, com o suporte da camada de sessão.",
+      "implementa a conexão lógica ligando as aplicações no modo full-duplex, com reconhecimento ACK e NAK.",
+      "localiza-se, por ser mais simples, na camada de rede, enquanto o TCP, na camada de transporte.",
+      "revela-se um serviço não orientado a conexão, sem que haja uma vinculação lógica entre origem e destino."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 10 — Gabarito 1 — Bloco 2 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 2 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 25,
+        "pagina": 7,
+        "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+          "numero": 25,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-10-gabarito-1-bloco-2-tarde",
+    "documento_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "arquivo_origem": "prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-10-gabarito-1-tecnologia-dados-e-informacao-tarde.pdf",
+      "numero": 25,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 10 Gabarito 1, página 7; gabarito final oficial da tarde, Bloco 2",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 10 — Bloco 2 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  }
+]
