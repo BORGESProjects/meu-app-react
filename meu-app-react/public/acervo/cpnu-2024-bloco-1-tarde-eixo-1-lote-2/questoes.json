@@ -1,0 +1,502 @@
+[
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-1-q6",
+    "ano": 2024,
+    "numero": 6,
+    "numero_original": 6,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Administração Pública",
+    "conteudo": "Execução orçamentária",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Em junho de 2023, um órgão da estrutura de um determinado ministério recebeu um crédito orçamentário no valor de R$ 17 milhões, por meio de suplementação, para cumprir um acordo feito com o Ministério Público (MP). O acordo se referia à realização imediata de obras de recuperação de um edifício tombado, com estrutura arquitetônica ameaçada. O órgão não conseguiu preparar os projetos necessários para realizar a licitação antes do encerramento do exercício, portanto não empenhou o valor para a realização das obras. Para não perder os recursos, o órgão empenhou o valor para cobertura de outros contratos que estavam com empenhos insuficientes. Com isso, o órgão não cumpriu o programa de trabalho original, mas se comprometeu internamente a cumprir o acordo com o MP no exercício seguinte. Esse tipo de situação está compreendido no âmbito das atividades relativas a",
+    "texto_apoio": "",
+    "opcoes": [
+      "auditoria de gestão.",
+      "auditoria operacional.",
+      "tomada de contas especial.",
+      "controle da execução orçamentária.",
+      "avaliação da fidelidade funcional dos agentes públicos."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 6,
+        "pagina": 3,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 6,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 6,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 3; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  },
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-1-q7",
+    "ano": 2024,
+    "numero": 7,
+    "numero_original": 7,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Gestão de Riscos",
+    "conteudo": "Identificação de eventos de risco",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Um órgão da estrutura de um determinado ministério estava conduzindo a implantação da Política de Gestão de Riscos aprovada pelo seu Comitê de Governança, com base nas boas práticas de gestão de riscos aplicáveis às entidades públicas. Na etapa de identificação de eventos de risco, foi apontada a necessidade de identificar eventos capazes de impactar os objetivos de comunicação externa das informações financeiras da organização. Pelas suas características intrínsecas, uma técnica adequada para identificar esse tipo de evento é",
+    "texto_apoio": "",
+    "opcoes": [
+      "inventário de eventos.",
+      "análise de alçadas e limites.",
+      "análise de fluxos de processos.",
+      "proposição de indicadores preventivos de eventos.",
+      "realização de seminários e entrevistas com facilitadores."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 7,
+        "pagina": 3,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 4,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 7,
+          "resposta": "E",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 7,
+      "resposta": "E",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 3; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  },
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-1-q8",
+    "ano": 2024,
+    "numero": 8,
+    "numero_original": 8,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Direito de Acesso à Informação",
+    "conteudo": "Lei de Acesso à Informação: pedidos que exigem trabalho adicional",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Em janeiro de 2023, um órgão da estrutura de um determinado ministério recebeu um pedido de acesso a informação que requeria disponibilizar cópias com inteiro teor com dados sobre a execução dos contratos de prestação de serviço de vigilância armada em vigor no período de 2007 a 2014. Ocorre que houve um incêndio na área onde funcionava a Divisão de Gestão Documental e da Informação, que destruiu o acervo, incluindo os processos que continham os contratos em suporte físico. Dessa forma, para atender o pedido de acesso à informação, o órgão precisaria designar uma comissão para reconstituir os processos. Considerando-se que o órgão tem compromisso declarado com a transparência ativa e passiva e também as disposições da legislação aplicável, o referido pedido de acesso à informação",
+    "texto_apoio": "",
+    "opcoes": [
+      "deve ser atendido em até 180 dias, pela necessidade de levantamento das informações.",
+      "deve ser encaminhando à deliberação do ministério acerca do seu atendimento.",
+      "não é de atendimento obrigatório, pois exige trabalho adicional de processamento de informações indisponíveis.",
+      "pode ser atendido, desde que o motivo do pedido de acesso à informação seja considerado relevante.",
+      "tem atendimento facultativo se o requerente aceitar expressamente aguardar o prazo necessário para levantar as informações."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 8,
+        "pagina": 3,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 8,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 3,
+    "paginas_origem": [
+      3
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 8,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 3; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  },
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-1-q9",
+    "ano": 2024,
+    "numero": 9,
+    "numero_original": 9,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Planejamento Estratégico",
+    "conteudo": "Etapas da gestão estratégica",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "P e R trabalham na gerência operacional de uma empresa pública de tecnologia da informação que vem apresentando baixa eficiência em seus processos produtivos. Para melhorar a eficiência dos processos, o gerente da unidade pediu que eles organizassem as etapas fundamentais do processo de gestão estratégica, que são:",
+    "texto_apoio": "",
+    "opcoes": [
+      "desenvolvimento de produto, marketing, vendas e pós-venda.",
+      "análise, planejamento, implementação e monitoramento.",
+      "recrutamento, seleção, treinamento e desenvolvimento.",
+      "compra, produção, distribuição e contabilidade.",
+      "inovação, financiamento, aquisições e fusões."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 9,
+        "pagina": 4,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 9,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 4,
+    "paginas_origem": [
+      4
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 9,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 4; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  },
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-1-q10",
+    "ano": 2024,
+    "numero": 10,
+    "numero_original": 10,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Políticas Públicas",
+    "conteudo": "Articulação entre governos e parcerias público-privadas",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "As políticas públicas dos Estados contemporâneos são um dos ramos mais importantes do pensamento social da atualidade para a qualidade de vida em diversos níveis e em escalas geográficas distintas. Tais políticas serão mais bem-sucedidas quando, no nível da ação, a articulação entre as parcerias público-privadas e os governos locais, estaduais e federal seja",
+    "texto_apoio": "",
+    "opcoes": [
+      "flexível e adaptável.",
+      "pragmática e rígida.",
+      "objetiva e restritiva.",
+      "subjetiva e limitada.",
+      "hierárquica e finita."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 10,
+        "pagina": 4,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 10,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 4,
+    "paginas_origem": [
+      4
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 10,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 4; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": []
+  }
+]
