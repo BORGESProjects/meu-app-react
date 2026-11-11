@@ -5,7 +5,8 @@ import {supabase} from '../supabaseClient'
 // Small multipart batches stay below the hosting parser's effective request cap.
 // Oversized manifests are gzipped in transit and restored by the backend before
 // they are stored in R2 as ordinary JSON.
-const MAX_BATCH_BYTES = 700000
+// Keep the complete multipart body below the host's observed ~700 KB request cap.
+const MAX_BATCH_BYTES = 600000
 const MAX_BATCH_FILES = 100
 // O serviço gratuito do Render pode levar cerca de dois minutos para despertar.
 // Mantenha a consulta ativa por mais tempo que a inicialização observada.
