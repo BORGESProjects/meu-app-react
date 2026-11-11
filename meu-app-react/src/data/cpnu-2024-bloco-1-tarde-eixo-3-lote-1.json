@@ -1,0 +1,512 @@
+[
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-3-q21",
+    "ano": 2024,
+    "numero": 21,
+    "numero_original": 21,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Propriedade Intelectual e Biotecnologia",
+    "conteudo": "Patenteabilidade de micro-organismos transgênicos",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "A patente referida acima foi concedida, apesar do todo ou de parte dos seres vivos não serem patenteáveis. Isso só foi possível porque o pedido de patente é relativo a um",
+    "texto_apoio": "Durante seus primeiros anos, a empresa levantou recursos de subvenção para criar um protótipo do seu produto: uma linhagem bacteriana capaz de se ligar a metais pesados em solução, removendo esses elementos de efluentes rurais, domésticos, urbanos e industriais e águas em estações de tratamento; a partir do gene da proteína metalotioneína da ostra Crassostrea rhizophorae [...]. O resultado foi uma bactéria capaz de remover 90% dos metais em solução no laboratório. Em 2016 foi assinado acordo de cooperação técnico-científica e submetido ao INPI pedido de patenteamento da inovação.\n\nREBELO, M. “Bactéria que captura metais”. Bio Bureau, nov. 2020. Disponível em: https://biobureau.com.br/2020/11/22/bacteria_captura_metais/. Acesso em: 29 fev. 2024. Adaptado.",
+    "opcoes": [
+      "micro-organismo transgênico, apresentando novidade, atividade inventiva e aplicação industrial.",
+      "micro-organismo transgênico, caracterizando uma obra intelectual, artística e científica.",
+      "processo simplificado, indicando novos princípios e novo método comercial e contábil.",
+      "ser vivo artificial, caracterizando uma descoberta de teoria científica.",
+      "ser vivo artificial, apresentando um novo método terapêutico e de diagnóstico."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 0,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 21,
+        "pagina": 6,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 0,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 21,
+          "resposta": "A",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 6,
+    "paginas_origem": [
+      6
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 21,
+      "resposta": "A",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 6; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-3-q22",
+    "ano": 2024,
+    "numero": 22,
+    "numero_original": 22,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Energia e Sustentabilidade",
+    "conteudo": "Energia solar térmica e matriz energética residencial",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Considerando-se que se trata de uma tecnologia de geração de energia renovável que transforma irradiação solar direta em energia térmica e, subsequentemente, em energia elétrica, verifica-se que o aumento do uso dessa tecnologia contribui para a redução das mudanças climáticas porque vem substituindo principalmente o uso residencial de",
+    "texto_apoio": "",
+    "opcoes": [
+      "baterias de lítio",
+      "energia maremotriz",
+      "energia nuclear",
+      "gás liquefeito do petróleo - GLP",
+      "parafina"
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 3,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 22,
+        "pagina": 7,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 3,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 22,
+          "resposta": "D",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 22,
+      "resposta": "D",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 7; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [
+      {
+        "imagem": "/acervo/cpnu-2024-bloco-1-tarde-eixo-3-lote-1/imagens/cpnu-2024-bloco1-q22-grafico-energia-solar.png",
+        "texto": "Gráfico da evolução do uso da energia solar térmica no Brasil, por setor, entre 1970 e 2022. Fonte: Relatório Síntese do Balanço Energético Nacional 2023, ano-base 2022, EPE."
+      }
+    ],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-3-q23",
+    "ano": 2024,
+    "numero": 23,
+    "numero_original": 23,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Ecologia",
+    "conteudo": "Florações algais nocivas e poluição costeira",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "O relato acima refere-se a um episódio de Florações Algais Nocivas (FAN), ocorrido em fevereiro deste ano, no litoral de Pernambuco e Alagoas. Um dos fatores observados nas últimas décadas que contribuem para o aumento da intensidade desses fenômenos na região costeira é o(a)",
+    "texto_apoio": "Na oportunidade, foi informado que cerca de 200 pescadores apresentaram sintomas da intoxicação durante a maré vermelha. Alguns relatos dos pescadores foram feitos durante o encontro. Eles acreditam que o “Tingui” — forma como eles conhecem o fenômeno — foi mais forte do que em anos anteriores, visto que desde a década de 1940 episódios semelhantes ocorreram na região.\n\nNASCIMENTO, L. “Alagoas e PE têm mais de 400 casos de intoxicação da maré vermelha”. Agência Brasil, 3 fev. 2024. Disponível em: https://agenciabrasil.ebc.com.br/geral/noticia/2024-02/alagoas-e-pe-tem-mais-de-400-casos-de-intoxicacao-da-mare-vermelha. Acesso em: 8 mar. 2024.",
+    "opcoes": [
+      "aumento do nível do mar.",
+      "aumento do descarte de esgoto sem tratamento no litoral.",
+      "aumento da captação de água do mar para abastecimento humano.",
+      "manutenção da Circulação Termohalina dos oceanos.",
+      "instalação de usinas de ondas (ondomotriz)."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 1,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 23,
+        "pagina": 7,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 1,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 23,
+          "resposta": "B",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 23,
+      "resposta": "B",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 7; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-3-q24",
+    "ano": 2024,
+    "numero": 24,
+    "numero_original": 24,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Direito Ambiental",
+    "conteudo": "Princípio da precaução",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Os “Organismos Geneticamente Modificados” (OGM), também conhecidos como “Transgênicos”, são organismos que receberam, artificialmente, um gene de outro organismo. De acordo com a Embrapa (Empresa Brasileira de Pesquisa Agropecuária), utiliza-se tecnologia transgênica em cerca de 92% da soja hoje cultivada no Brasil, assim como em 90% do milho e 47% do algodão. Um dos argumentos usualmente utilizados por aqueles que são contrários ao uso dessa tecnologia é baseado no entendimento de que não há pesquisas científicas que demonstrem apropriadamente que transgênicos não causam impactos ambientais. Esse argumento está fundamentado no chamado Princípio da(o)",
+    "texto_apoio": "",
+    "opcoes": [
+      "sucumbência.",
+      "responsabilidade.",
+      "precaução.",
+      "poluidor-pagador.",
+      "contraditório."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 24,
+        "pagina": 7,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 24,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 7,
+    "paginas_origem": [
+      7
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 24,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 7; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  },
+  {
+    "id": "cpnu-2024-bloco-1-tarde-eixo-3-q25",
+    "ano": 2024,
+    "numero": 25,
+    "numero_original": 25,
+    "modelo": "Gabarito 1",
+    "banca": "CPNU",
+    "organizadora": "Fundação Cesgranrio",
+    "concurso": "CPNU 2024 — Bloco 1, Infraestrutura, Exatas e Engenharia (tarde)",
+    "cargo": "Bloco 1 — Infraestrutura, Exatas e Engenharia",
+    "aplicacao": "18/08/2024 — prova objetiva oficial",
+    "materia": "Energia e Sustentabilidade",
+    "conteudo": "Fontes renováveis e não renováveis de energia",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "dificuldade_metodo": "estimativa editorial pela complexidade conceitual e de interpretação exigida",
+    "enunciado": "Há um esforço mundial na prática de ações que contribuam para o desenvolvimento sustentável. A questão energética é um dos principais temas em discussão, estando na pauta o aumento da eficiência energética e o crescimento do uso de fontes renováveis de energia, em substituição às fontes não renováveis. São exemplos, respectivamente, de uma fonte renovável e de uma fonte não renovável de energia:",
+    "texto_apoio": "",
+    "opcoes": [
+      "fissão nuclear e biomassa.",
+      "carvão vegetal e hídrica.",
+      "biogás e carvão mineral.",
+      "gás natural e xisto.",
+      "biodiesel e marés."
+    ],
+    "rotulos_opcoes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "resposta_correta": 2,
+    "anulada": false,
+    "tipo_resposta": "alternativa",
+    "tipo": "objetiva",
+    "provas": [
+      "CPNU 2024 — Prova 9 — Gabarito 1 — Bloco 1 — tarde"
+    ],
+    "origens_provas": [
+      {
+        "concurso": "CPNU 2024 — Bloco 1 — tarde",
+        "aplicacao": "18/08/2024",
+        "modelo": "Gabarito 1",
+        "numero_original": 25,
+        "pagina": 8,
+        "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+        "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+        "resposta_correta": 2,
+        "anulada": false,
+        "gabarito_oficial": {
+          "verificada": true,
+          "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+          "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+          "numero": 25,
+          "resposta": "C",
+          "anulada": false
+        }
+      }
+    ],
+    "documento_id": "cpnu-2024-prova-9-gabarito-1-bloco-1-tarde",
+    "documento_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "arquivo_origem": "prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "pagina": 8,
+    "paginas_origem": [
+      8
+    ],
+    "fonte_pdf": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+    "fonte_gabarito": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+    "gabarito_oficial": {
+      "verificada": true,
+      "url": "https://www.gov.br/gestao/pt-br/concursonacional/gabaritos-finais/cpnu2024_gabaritosoficiais_todos-os-blocos-tarde.pdf",
+      "pdf_url": "https://www.gov.br/gestao/pt-br/concursonacional/caderno-de-provas/tarde/prova-9-gabarito-1-infraestrutura-exatas-e-engenharia-tarde.pdf",
+      "numero": 25,
+      "resposta": "C",
+      "anulada": false
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_confianca": 1,
+    "classificacao_metodo": "classificação editorial pelo conceito diretamente cobrado no caderno oficial",
+    "classificacao_evidencia": "Caderno oficial CPNU 2024, Prova 9 Gabarito 1, página 8; gabarito final oficial da tarde, Bloco 1",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "pendencias": [],
+      "fontes_verificadas": true,
+      "questao_completa": true
+    },
+    "elegibilidade": {
+      "elegivel_para_resolucao": true,
+      "elegivel_para_correcao_automatica": true,
+      "apontamentos": []
+    },
+    "origem": "Caderno oficial CPNU 2024 — Prova 9 — Bloco 1 — tarde",
+    "ano_concurso": 2024,
+    "ano_aplicacao": 2024,
+    "apoio": [],
+    "enunciado_antes_apoio": ""
+  }
+]
