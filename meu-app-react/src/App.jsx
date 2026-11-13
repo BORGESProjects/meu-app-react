@@ -1846,7 +1846,7 @@ export default function App() {
         {abaAtiva === 'r2-upload' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Preparando envio do acervo…</p>}><AcervoR2Uploader isAdmin={isAdmin} /></Suspense>}
         {abaAtiva === 'concursos' && <Suspense fallback={<p role="status">Carregando concursos…</p>}><Concursos onPraticar={praticarConcurso} /></Suspense>}
 
-        {/* ABA: BANCO DE QUESTÕES */}}
+        {/* ABA: BANCO DE QUESTÕES */}
         {abaAtiva === 'questoes' && (
           <div>
             {cadernoAtivoId && <div className="mb-5 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-indigo-400/30 bg-indigo-950/30 px-4 py-3">
