@@ -93,6 +93,7 @@ const Redacao = lazy(() => import('./components/Redacao'))
 const ImportarPdf = lazy(() => import('./components/ImportarPdf'))
 const AcervoR2Uploader = lazy(() => import('./components/AcervoR2Uploader'))
 const TreinoDiario = lazy(() => import('./components/TreinoDiario'))
+const Concursos = lazy(() => import('./components/Concursos'))
 const EditalPlanejador = lazy(() => import('./components/EditalPlanejador'))
 const QuestoesExtraidas = lazy(() => import('./components/QuestoesExtraidas'))
 const RecebimentosAdmin = lazy(() => import('./components/RecebimentosAdmin'))
@@ -180,7 +181,7 @@ export default function App() {
   const campoEdicaoQuestao = useRef(null)
   const inicioRespostaQuestao = useRef(new Map())
   const [termoBusca, setTermoBusca] = useState(() => new URLSearchParams(window.location.search).get('questao') || '')
-  const [abaAtiva, setAbaAtiva] = useState(() => ['inicio','questoes','recebimentos','treino','simulados','desempenho','edital','redacao','tarefas','conta','cadastrar','importar','r2-upload'].includes(parametrosDeEntrada.get('aba')) ? parametrosDeEntrada.get('aba') : 'inicio')
+  const [abaAtiva, setAbaAtiva] = useState(() => ['inicio','questoes','recebimentos','treino','simulados','desempenho','edital','redacao','tarefas','concursos','conta','cadastrar','importar','r2-upload'].includes(parametrosDeEntrada.get('aba')) ? parametrosDeEntrada.get('aba') : 'inicio')
   const veioDaDemonstracao = parametrosDeEntrada.get('demo') === '1'
   const [mostrarDemonstracao, setMostrarDemonstracao] = useState(veioDaDemonstracao && parametrosDeEntrada.get('salvar') !== '1')
   const [editalTreino, setEditalTreino] = useState(null)
@@ -1463,6 +1464,18 @@ export default function App() {
     setSomenteComentadas(false); setSomenteComImagem(false); setExcluirQuestaoEmCadernos(false)
   }
 
+  function praticarConcurso(concurso) {
+    limparFiltros()
+    const termos = concurso?.termosBusca || [concurso?.termoQuestao, concurso?.orgao].filter(Boolean)
+    const normalizarBusca = valor => String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR')
+    const termoDisponivel = termos.map(normalizarBusca).find(termo => termo && indiceCompleto.some(item => item.busca?.includes(termo)))
+    const banca = chaveCampoFiltro('banca', normalizarBanca(concurso?.banca, concurso?.orgao))
+    if (termoDisponivel) setTermoBusca(termoDisponivel)
+    else if (banca && indiceCompleto.some(item => item.banca === banca)) setFiltrosBanca([banca])
+    else setTermoBusca(concurso?.termoQuestao || concurso?.orgao || '')
+    setAbaAtiva('questoes')
+  }
+
   function inserirSimboloQuestao(simbolo) {
     const campo = campoEdicaoQuestao.current
     if (!campo) {
@@ -1689,6 +1702,7 @@ export default function App() {
     {id:'edital', label:'Edital', detalhe:'Organize matérias e conteúdos', simbolo:'▦'},
     {id:'redacao', label:'Redação', detalhe:'Escreva e revise seus textos', simbolo:'✎'},
     {id:'tarefas', label:'Cronograma semanal', detalhe:'Planeje uma semana flexível', simbolo:'◷'},
+    {id:'concursos', label:'Concursos', detalhe:'Editais, vagas e oportunidades', simbolo:'▣'},
   ]
   const navegacaoEstudo = [
     {id:'inicio',label:'Visão geral',simbolo:'⌂'},
@@ -1830,6 +1844,8 @@ export default function App() {
         {abaAtiva === 'recebimentos' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-lime-300">Carregando painel de recebimentos…</p>}><RecebimentosAdmin session={session}/></Suspense>}
         {abaAtiva === 'importar' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Carregando importador…</p>}><ImportarPdf onPublicado={buscarQuestoes} /></Suspense>}
         {abaAtiva === 'r2-upload' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Preparando envio do acervo…</p>}><AcervoR2Uploader isAdmin={isAdmin} /></Suspense>}
+        {abaAtiva === 'concursos' && <Suspense fallback={<p role="status">Carregando concursos…</p>}><Concursos onPraticar={praticarConcurso} /></Suspense>}
+
         {/* ABA: BANCO DE QUESTÕES */}
         {abaAtiva === 'questoes' && (
           <div>
