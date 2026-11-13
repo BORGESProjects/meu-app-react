@@ -1844,7 +1844,7 @@ export default function App() {
         {abaAtiva === 'recebimentos' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-lime-300">Carregando painel de recebimentos…</p>}><RecebimentosAdmin session={session}/></Suspense>}
         {abaAtiva === 'importar' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Carregando importador…</p>}><ImportarPdf onPublicado={buscarQuestoes} /></Suspense>}
         {abaAtiva === 'r2-upload' && isAdmin && <Suspense fallback={<p role="status" className="text-sm text-indigo-300">Preparando envio do acervo…</p>}><AcervoR2Uploader isAdmin={isAdmin} /></Suspense>}
-        {{abaAtiva === 'concursos' && <Suspense fallback={<p role="status">Carregando concursos…</p>}><Concursos onPraticar={praticarConcurso} /></Suspense>}
+        {abaAtiva === 'concursos' && <Suspense fallback={<p role="status">Carregando concursos…</p>}><Concursos onPraticar={praticarConcurso} /></Suspense>}
 
         {/* ABA: BANCO DE QUESTÕES */}}
         {abaAtiva === 'questoes' && (
