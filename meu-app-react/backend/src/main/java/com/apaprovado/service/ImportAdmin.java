@@ -10,23 +10,29 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.server.ResponseStatusException;
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.Locale;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class ImportAdmin {
     private final RestTemplate http;
     private final String url;
-    private final String email;
+    private final Set<String> emails;
     public ImportAdmin(RestTemplateBuilder builder, @Value("${app.supabase.url}") String url,
-                       @Value("${app.admin.email:}") String email) {
+                       @Value("${app.admin.emails:${app.admin.email:}}") String emails) {
         this.http = builder.setConnectTimeout(Duration.ofSeconds(8)).setReadTimeout(Duration.ofSeconds(15)).build();
         this.url = url.replaceAll("/+$", "");
-        this.email = email == null ? "" : email.trim().toLowerCase(Locale.ROOT);
+        this.emails = Arrays.stream(emails == null ? new String[0] : emails.split(","))
+            .map(email -> email.trim().toLowerCase(Locale.ROOT))
+            .filter(email -> !email.isBlank())
+            .collect(Collectors.toUnmodifiableSet());
     }
     public String require(String authorization, String publicKey) {
         if (authorization == null || !authorization.startsWith("Bearer ") || publicKey == null || publicKey.isBlank())
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Entre com sua conta de administrador.");
-        if (email.isBlank())
+        if (emails.isEmpty())
             throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "O e-mail administrador ainda não foi configurado.");
         HttpHeaders headers = new HttpHeaders();
         headers.set("Authorization", authorization);
@@ -36,7 +42,7 @@ public class ImportAdmin {
             // authority comes from Auth's server-verified user, never from request metadata.
             JsonNode user = http.exchange(url + "/auth/v1/user", HttpMethod.GET, new HttpEntity<>(headers), JsonNode.class).getBody();
             String emailConfirmadoEm = user == null ? "" : user.path("email_confirmed_at").asText("");
-            if (user == null || !email.equals(user.path("email").asText("").trim().toLowerCase(Locale.ROOT))
+            if (user == null || !emails.contains(user.path("email").asText("").trim().toLowerCase(Locale.ROOT))
                 || emailConfirmadoEm.isBlank()
                 || user.path("id").asText("").isBlank()
                 || user.path("is_anonymous").asBoolean(false))
