@@ -1467,7 +1467,7 @@ export default function App() {
   function praticarConcurso(concurso) {
     limparFiltros()
     const termos = concurso?.termosBusca || [concurso?.termoQuestao, concurso?.orgao].filter(Boolean)
-    const normalizarBusca = valor => String(valor || '').normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').toLocaleLowerCase('pt-BR')
+    const normalizarBusca = valor => String(valor || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR')
     const termoDisponivel = termos.map(normalizarBusca).find(termo => termo && indiceCompleto.some(item => item.busca?.includes(termo)))
     const banca = chaveCampoFiltro('banca', normalizarBanca(concurso?.banca, concurso?.orgao))
     if (termoDisponivel) setTermoBusca(termoDisponivel)
