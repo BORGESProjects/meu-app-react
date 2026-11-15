@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "status": "preparado localmente; publicação pendente",
+  "status": "publicado em produção",
   "source": "50 lotes extraídos do inventário dos 458 PDFs locais",
   "inputPdfs": 458,
   "extractedRecords": 3278,
@@ -203,5 +203,12 @@
     "visibleAfter": 21223,
     "netNewAfterExistingStaticDeduplication": 1682,
     "excludesLiveSupabaseAndApiSources": true
-  }
-}
+  },
+  "excludedItems": [
+    {
+      "exam": "UFPR 2018 — Música",
+      "questions": "1–8",
+      "reason": "dependem de exemplos sonoros; os áudios originais não estavam disponíveis e não foram reconstruídos."
+    }
+  ]
+}\n
