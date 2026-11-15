@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readdir } from 'node:fs/promises'
+import { copyFile, mkdir, readdir, readFile } from 'node:fs/promises'
 import { spawn } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
@@ -74,6 +74,29 @@ for (const batch of localVisualBatches) {
   }
 }
 
+// Copy only the visual assets referenced by the validated consolidated package.
+const consolidatedPackage = path.join(publicAcervo, 'pdfs-lote-458')
+const packageQuestionFile = path.join(consolidatedPackage, 'questoes.json')
+const packageQuestions = JSON.parse(await readFile(packageQuestionFile, 'utf8'))
+const visualRefs = new Set()
+const collectVisualRefs = value => {
+  if (typeof value === 'string') {
+    const match = value.trim().match(/^\/?(acervo\/.+\.(?:png|jpe?g|webp|gif|svg|avif))(?:[?#].*)?$/iu)
+    if (match) visualRefs.add(match[1])
+    return
+  }
+  if (Array.isArray(value)) { value.forEach(collectVisualRefs); return }
+  if (value && typeof value === 'object') Object.values(value).forEach(collectVisualRefs)
+}
+packageQuestions.forEach(collectVisualRefs)
+for (const visual of visualRefs) {
+  const source = path.join(publicRoot, visual)
+  const destination = path.join(distRoot, visual)
+  await mkdir(path.dirname(destination), {recursive: true})
+  await copyFile(source, destination)
+}
+await copyFile(path.join(consolidatedPackage, 'manifesto.json'), path.join(distRoot, 'acervo/pdfs-lote-458/manifesto.json'))
+console.log(`Visuais do lote consolidados: ${visualRefs.size} arquivos.`)
 // Vercel is the question-bank app and future native-app prototype. The
 // commercial landing page and student portal are published separately on Pages.
 await copyFile(

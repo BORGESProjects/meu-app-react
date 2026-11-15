@@ -1,0 +1,207 @@
+{
+  "version": 1,
+  "status": "preparado localmente; publicação pendente",
+  "source": "50 lotes extraídos do inventário dos 458 PDFs locais",
+  "inputPdfs": 458,
+  "extractedRecords": 3278,
+  "eligibleRecords": 3277,
+  "quarantinedRecords": 1,
+  "quarantineByExam": {
+    "Vestibular UFRGS 2019 — 4º dia": 1
+  },
+  "imageReferences": 1763,
+  "imageFilesMissing": 0,
+  "imageReconciliation": {
+    "reusedIdentical": 1728,
+    "copiedNew": 32,
+    "copiedVersioned": 3,
+    "bytesCopied": 5673664,
+    "files": [
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/d1eeabd9ec0ce483.png",
+        "to": "/acervo/pmam-saude-2022/imagens/d1eeabd9ec0ce483.png",
+        "sha256": "d1eeabd9ec0ce48382b5577afd9ad2350c832af12f3f90ca1314ad6727ddec38"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/95e6f4e75aa4f750.png",
+        "to": "/acervo/pmam-saude-2022/imagens/95e6f4e75aa4f750.png",
+        "sha256": "95e6f4e75aa4f7506f94efdd0672fd9c16d490eda657949838333b8af6b8f70d"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/26e24d9ffec7fefd.png",
+        "to": "/acervo/pmam-saude-2022/imagens/26e24d9ffec7fefd.png",
+        "sha256": "26e24d9ffec7fefd71aa3621ca67018c1abfa759a665394d90affbf7c10d09cc"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/76a57cda3fa74d04.png",
+        "to": "/acervo/pmam-saude-2022/imagens/76a57cda3fa74d04.png",
+        "sha256": "76a57cda3fa74d04d6e036cc5531eb8da4f53e5b35497929c25e33639230cb77"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/a1ac464776edd7aa.png",
+        "to": "/acervo/pmam-saude-2022/imagens/a1ac464776edd7aa.png",
+        "sha256": "a1ac464776edd7aa1bb3dadf222abc162e6c25b7d16b4ee4b2637164697d83d0"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/dd3d72cb20fdde79.png",
+        "to": "/acervo/pmam-saude-2022/imagens/dd3d72cb20fdde79.png",
+        "sha256": "dd3d72cb20fdde79aaf5fe5b357fae29d15334518f05e740e1f490e3f7546392"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/283f9d925681c874.png",
+        "to": "/acervo/pmam-saude-2022/imagens/283f9d925681c874.png",
+        "sha256": "283f9d925681c87409720e259030b193f030cf9efeb5b0e2f3345f1b8116f5b5"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/94629a7e3beec89c.png",
+        "to": "/acervo/pmam-saude-2022/imagens/94629a7e3beec89c.png",
+        "sha256": "94629a7e3beec89c22f2090ed150cdb93fcb53174fce003937a774d75e999643"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/1d6ff06da5ea44b1.png",
+        "to": "/acervo/pmam-saude-2022/imagens/1d6ff06da5ea44b1.png",
+        "sha256": "1d6ff06da5ea44b14bd4baead1f1d8a8be6d7b037300309e7d73b896bcd61444"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/722b29429e7232ee.png",
+        "to": "/acervo/pmam-saude-2022/imagens/722b29429e7232ee.png",
+        "sha256": "722b29429e7232eeea65dae8289d2258c9a6e562a562045127af9bb0ff18ee94"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/c3395eeae4e3da87.png",
+        "to": "/acervo/pmam-saude-2022/imagens/c3395eeae4e3da87.png",
+        "sha256": "c3395eeae4e3da87dffb7844830ae6fd2449fe8198f93fb603aeac18c7cc9134"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/e954a335f95c52b7.png",
+        "to": "/acervo/pmam-saude-2022/imagens/e954a335f95c52b7.png",
+        "sha256": "e954a335f95c52b7d3b6ede713d6257755b6547e12a2a3d0ba7d10a55260a54a"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/fb243bd9e5437b2c.png",
+        "to": "/acervo/pmam-saude-2022/imagens/fb243bd9e5437b2c.png",
+        "sha256": "fb243bd9e5437b2cfceec99f2648f8b2f412498084a7b295f0cba12f5093ea2b"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/62d44ce5b21ed22b.png",
+        "to": "/acervo/pmam-saude-2022/imagens/62d44ce5b21ed22b.png",
+        "sha256": "62d44ce5b21ed22b8c59102cc5fa2334f6b30e33636c40c4d9b2abd1ff27ffca"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/a4ce56a94b9245fd.png",
+        "to": "/acervo/pmam-saude-2022/imagens/a4ce56a94b9245fd.png",
+        "sha256": "a4ce56a94b9245fd67a12c377664e2c62b3014838c0a5f3e55bff5a4f61fbccb"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/60530d9d1c6d8271.png",
+        "to": "/acervo/pmam-saude-2022/imagens/60530d9d1c6d8271.png",
+        "sha256": "60530d9d1c6d8271347fd02c63cf34b426f3681bb3360720e48481ac515f7368"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/038b77f55ada6091.png",
+        "to": "/acervo/pmam-saude-2022/imagens/038b77f55ada6091.png",
+        "sha256": "038b77f55ada60918d74c55df79f95d335fe935b96e451424316540e792598c2"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/1060385c353291f1.png",
+        "to": "/acervo/pmam-saude-2022/imagens/1060385c353291f1.png",
+        "sha256": "1060385c353291f1925ce349e611fe67d545876b5247ebe40da0ca24e1ec8002"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/620b1cfacf95cbe1.png",
+        "to": "/acervo/pmam-saude-2022/imagens/620b1cfacf95cbe1.png",
+        "sha256": "620b1cfacf95cbe14d6e1ee50afadc7f777939222318044ecd75d773937745de"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/10a860120e7e2a78.png",
+        "to": "/acervo/pmam-saude-2022/imagens/10a860120e7e2a78.png",
+        "sha256": "10a860120e7e2a783b1348f1d225f44167c9cf8db04476aa4529dde5d990da77"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/56dfffde25245994.png",
+        "to": "/acervo/pmam-saude-2022/imagens/56dfffde25245994.png",
+        "sha256": "56dfffde252459940766e16b175eaef87697792bba88dfe2b0779a98f61cbdd5"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/99cad773f2687d84.png",
+        "to": "/acervo/pmam-saude-2022/imagens/99cad773f2687d84.png",
+        "sha256": "99cad773f2687d84733c25d6c33f4296d89bed38c3bca5e659d0463bcd89d838"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/1c448dc048798c13.png",
+        "to": "/acervo/pmam-saude-2022/imagens/1c448dc048798c13.png",
+        "sha256": "1c448dc048798c13cdd1f58b4b39673ae232d8e8caa6000e9a5455f176cf71bf"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/269c44b10626e0e4.png",
+        "to": "/acervo/pmam-saude-2022/imagens/269c44b10626e0e4.png",
+        "sha256": "269c44b10626e0e44b48c51667b98eb96b8a0e5cc749038ecd74fdb2d25cd9f4"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/abd1d703a06440a5.png",
+        "to": "/acervo/pmam-saude-2022/imagens/abd1d703a06440a5.png",
+        "sha256": "abd1d703a06440a5e231c672d865a946d0af2930713d7869b19c8b5eb2e6a397"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/9e3cd08d08a76aec.png",
+        "to": "/acervo/pmam-saude-2022/imagens/9e3cd08d08a76aec.png",
+        "sha256": "9e3cd08d08a76aec54a28e21389b757c13ad937a762364854858a870d684db0f"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/e5b80f4803017c74.png",
+        "to": "/acervo/pmam-saude-2022/imagens/e5b80f4803017c74.png",
+        "sha256": "e5b80f4803017c746f1a37f7bf4072e0abc3361ae584d2ce4e714b0cc1ce712c"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/efd7469b5f2c59f2.png",
+        "to": "/acervo/pmam-saude-2022/imagens/efd7469b5f2c59f2.png",
+        "sha256": "efd7469b5f2c59f29c72cefad923236810ec509be48329eb0090e808c67eb789"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/0526e1843430338e.png",
+        "to": "/acervo/pmam-saude-2022/imagens/0526e1843430338e.png",
+        "sha256": "0526e1843430338e2700b904fc0d1a2d2179ee6c62afe8d81fb04ef139486372"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/4b694fc46e44725e.png",
+        "to": "/acervo/pmam-saude-2022/imagens/4b694fc46e44725e.png",
+        "sha256": "4b694fc46e44725e09d6283ccae28d471f639e73499d5af3a08463c427ea6759"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/9da2c3466021f6f3.png",
+        "to": "/acervo/pmam-saude-2022/imagens/9da2c3466021f6f3.png",
+        "sha256": "9da2c3466021f6f3cb3fd2cd5e540ed19260f4412486f09c896e4c8258f4f6cc"
+      },
+      {
+        "from": "/acervo/pmam-saude-2022/imagens/95b8abfb0a5a82eb.png",
+        "to": "/acervo/pmam-saude-2022/imagens/95b8abfb0a5a82eb.png",
+        "sha256": "95b8abfb0a5a82ebfaf6e07ca5708eb87d84c2f087095aeb603491daa2cb6874"
+      },
+      {
+        "from": "/acervo/unicamp-2025-f2-dia2/imagens/unicamp-2025-cbs-q20-ciclo-da-agua.png",
+        "to": "/acervo/pdfs-lote-458/assets/unicamp-2025-f2-dia2/imagens/unicamp-2025-cbs-q20-ciclo-da-agua.png",
+        "sha256": "4c0ce9b3161c8367683467d1d5a2fef825d9ca8ab578420e8e53c8e25392c65f"
+      },
+      {
+        "from": "/acervo/unicamp-2025-f2-dia2/imagens/unicamp-2025-cet-q14-figura-a.png",
+        "to": "/acervo/pdfs-lote-458/assets/unicamp-2025-f2-dia2/imagens/unicamp-2025-cet-q14-figura-a.png",
+        "sha256": "7b80c8a2699effd6e25b352dad91323742415ab0853b9ee169c3035f7e116df4"
+      },
+      {
+        "from": "/acervo/unicamp-2025-f2-dia2/imagens/unicamp-2025-cet-q14-figura-b.png",
+        "to": "/acervo/pdfs-lote-458/assets/unicamp-2025-f2-dia2/imagens/unicamp-2025-cet-q14-figura-b.png",
+        "sha256": "4fb735ba840561fdaaa84d9ee32c638930bf91e54dd96ba4dac0193f4ac11a4c"
+      }
+    ]
+  },
+  "stagedIdsUnique": true,
+  "eligibleIdsUnique": true,
+  "recordsSha256": "ddbb1263a6aaa5720bba19c4a5fd2bee2e1902544e34f64b4dc4285cc911a763",
+  "staticOnlySimulation": {
+    "existingStaticRecords": 19844,
+    "visibleBefore": 19541,
+    "visibleAfter": 21223,
+    "netNewAfterExistingStaticDeduplication": 1682,
+    "excludesLiveSupabaseAndApiSources": true
+  }
+}

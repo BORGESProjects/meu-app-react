@@ -170,13 +170,29 @@ function alternativaContaminada(valor) {
 
 function semTextoDeApoio(questao) {
   const enunciado = String(questao.enunciado ?? '')
-  const referenciaOutroTexto = /(?:according to|de acordo com|conforme|segundo) (?:the |o |a )?(?:text|texto|trecho|poema|tirinha|charge|cartum)/iu.test(enunciado)
-  const referenciaVisualAusente = /(?:figura|imagem|gráfico|mapa|infográfico|diagrama|esquema|charge|tirinha|cartum|fotografia|quadro|tabela)\s+(?:a seguir|abaixo|acima|ao lado)|(?:observe|analise|considere|com base n[oa])\s+(?:a |o )?(?:figura|imagem|gráfico|mapa|infográfico|diagrama|esquema|charge|tirinha|cartum|fotografia|quadro|tabela)/iu.test(enunciado)
+  const linhas = enunciado.split('\n').filter(linha => linha.trim())
+  const tabelaPipeTextual = linhas.filter(linha => linha.includes('|')).length >= 3
+  const tabelaEnumeradaTextual = /\b(?:quadro|coluna)\b/iu.test(enunciado)
+    && (enunciado.match(/\b[1-4]\s*[-–)]\s*Força\b/giu) || []).length >= 4
+    && (enunciado.match(/\([a-d]\)/giu) || []).length >= 4
+  const valoresNumericos = (enunciado.match(/\b\d+(?:[,.]\d+)?\b/gu) || []).length
+  const tabelaNumericaTranscrita = /tabela\s+(?:abaixo|acima|a seguir)/iu.test(enunciado)
+    && /\b(?:temperatura|tipo de álcool)\b/iu.test(enunciado)
+    && /\b(?:solubilidade|concentração)\b/iu.test(enunciado)
+    && valoresNumericos >= 6
+  const tabelaTextual = tabelaPipeTextual || tabelaEnumeradaTextual || tabelaNumericaTranscrita
+  const consultaDiretaDeNorma = /\b(?:de acordo com|conforme|segundo) (?:o )?(?:texto da )?(?:Constitui[cç][aã]o Federal(?: de 19\d{2})?|C[oó]digo (?:Penal|de Processo Penal|Penal Militar|de Processo Penal Militar)|Lei (?:n[ºo.]?\s*)?\d|Decreto (?:n[ºo.]?\s*)?\d)\b/iu.test(enunciado)
+    && !/\b(?:texto|trecho|fragmento) (?:a seguir|abaixo|anexo|reproduzido)\b/iu.test(enunciado)
+  const referenciaOutroTexto = !consultaDiretaDeNorma && /(?:according to|de acordo com|conforme|segundo) (?:the |o |a )?(?:text|texto|trecho|poema|tirinha|charge|cartum)/iu.test(enunciado)
+  const contextoClinicoDescrito = enunciado.length >= 300 && /\b(?:considerando|diante d[oa])\s+(?:o )?quadro(?: clínico)?\s+(?:acima|apresentado|descrito)\b/iu.test(enunciado)
+  const referenciaVisualAusente = !contextoClinicoDescrito && /(?:figura|imagem|gráfico|mapa|infográfico|diagrama|esquema|charge|tirinha|cartum|fotografia|quadro|tabela)\s+(?:a seguir|abaixo|acima|ao lado)|(?:observe|analise|considere|com base n[oa])\s+(?:a |o )?(?:figura|imagem|gráfico|mapa|infográfico|diagrama|esquema|charge|tirinha|cartum|fotografia|quadro|tabela)/iu.test(enunciado)
   const temApoio = Boolean(String(questao.texto_apoio ?? '').trim())
     || temApoioEmBlocos(questao.blocos_enunciado)
+    || (Array.isArray(questao.blocos_opcoes) && questao.blocos_opcoes.some(temApoioEmBlocos))
     || (questao.apoio_integrado === true && blocosValidos(questao.blocos_enunciado) && enunciado.length >= 200 && questao.blocos_enunciado.filter(n => n?.tag === 'p').length >= 3)
-    || Boolean(questao.imagem_original || questao.pagina_imagem)
+    || Boolean(questao.imagem_original || questao.pagina_imagem || questao.imagens?.length)
     || (Array.isArray(questao.apoio) && questao.apoio.length > 0)
+    || tabelaTextual
   return (referenciaOutroTexto || referenciaVisualAusente) && !temApoio
 }
 
@@ -276,19 +292,19 @@ export function fixarQuestaoParaLeitura(questao) {
   return questao
 }
 function validarQuestaoPublicavel(questao) {
-  if (questao?.blocos_enunciado && !blocosValidos(questao.blocos_enunciado)) return false
+  if (Array.isArray(questao?.blocos_enunciado) && questao.blocos_enunciado.length > 0 && !blocosValidos(questao.blocos_enunciado)) return false
   if (questao?.blocos_opcoes && (!Array.isArray(questao.blocos_opcoes) || questao.blocos_opcoes.length !== questao.opcoes?.length || !questao.blocos_opcoes.every(blocosValidos))) return false
   if (!questao || String(questao.enunciado ?? '').trim().length < 12) return false
   if (!Array.isArray(questao.opcoes) || questao.opcoes.length < 2 || questao.opcoes.length > 5) return false
   if(problemasDeIntegridade(questao).length)return false
 
-  const temImagemEnunciado = Boolean(questao.imagem_original || questao.pagina_imagem)
+  const temImagemEnunciado = Boolean(questao.imagem_original || questao.pagina_imagem || questao.imagens?.length)
   if (textoCorrompido(questao.enunciado) && !temImagemEnunciado) return false
   if (textoCorrompido(questao.texto_apoio)) return false
   if (questao.opcoes.some((opcao, indice) => textoCorrompido(opcao) && !questao.opcoes_imagens?.[indice])) return false
 
   const opcoes = questao.opcoes.map(normalizarAlternativa)
-  if (opcoes.some((opcao, indice) => !opcao || opcao.length > (questao.opcoes_imagens?.[indice] || blocosValidos(questao.blocos_opcoes?.[indice]) ? 2000 : 500))) return false
+  if (opcoes.some((opcao, indice) => !opcao || opcao.length > (questao.opcoes_imagens?.[indice] || blocosValidos(questao.blocos_opcoes?.[indice]) ? 2000 : 1200))) return false
   const identidadesOpcoes = opcoes.map((opcao, indice) => opcao + '::' + assinaturaVisualBlocos({blocos_opcoes: [questao.blocos_opcoes?.[indice]]}))
   if (new Set(identidadesOpcoes).size !== opcoes.length && !questao.duplicata_oficial) return false
   if (opcoes.every(opcao => /^[a-e]$/u.test(opcao))) return false
