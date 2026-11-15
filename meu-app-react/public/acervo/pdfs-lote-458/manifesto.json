@@ -4,11 +4,8 @@
   "source": "50 lotes extraídos do inventário dos 458 PDFs locais",
   "inputPdfs": 458,
   "extractedRecords": 3278,
-  "eligibleRecords": 3277,
-  "quarantinedRecords": 1,
-  "quarantineByExam": {
-    "Vestibular UFRGS 2019 — 4º dia": 1
-  },
+  "eligibleRecords": 3278,
+  "quarantinedRecords": 0,
   "imageReferences": 1763,
   "imageFilesMissing": 0,
   "imageReconciliation": {
@@ -196,12 +193,12 @@
   },
   "stagedIdsUnique": true,
   "eligibleIdsUnique": true,
-  "recordsSha256": "ddbb1263a6aaa5720bba19c4a5fd2bee2e1902544e34f64b4dc4285cc911a763",
+  "recordsSha256": "5a9cf22f54b8b7a0fe7be1a3351781c9538c8915e5486abe58ed994100b08b03",
   "staticOnlySimulation": {
     "existingStaticRecords": 19844,
     "visibleBefore": 19541,
-    "visibleAfter": 21223,
-    "netNewAfterExistingStaticDeduplication": 1682,
+    "visibleAfter": 21224,
+    "netNewAfterExistingStaticDeduplication": 1683,
     "excludesLiveSupabaseAndApiSources": true
   },
   "excludedItems": [
@@ -210,5 +207,11 @@
       "questions": "1–8",
       "reason": "dependem de exemplos sonoros; os áudios originais não estavam disponíveis e não foram reconstruídos."
     }
+  ],
+  "resolvedReview": [
+    {
+      "id": "ufrgs-2019-dia4-q48",
+      "action": "Incluída após conferir enunciado e alternativas no caderno oficial e resposta no gabarito definitivo; questão textual sem dependência visual."
+    }
   ]
-}\n
+}

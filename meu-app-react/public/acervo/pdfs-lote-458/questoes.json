@@ -188560,6 +188560,62 @@
     }
   },
   {
+    "id": "ufrgs-2019-dia4-q48",
+    "ano": 2019,
+    "numero_original": 48,
+    "modelo": "4º dia",
+    "materia": "Matemática",
+    "conteudo": "Análise combinatória e princípio multiplicativo",
+    "banca": "UFRGS",
+    "concurso": "Vestibular UFRGS 2019 — 4º dia",
+    "dificuldade": "Média",
+    "dificuldade_estimada": true,
+    "enunciado": "Uma caixa contém 32 esferas numeradas de 1 a 32. O número de maneiras distintas de retirar 3 esferas da caixa, ordenadas como primeira, segunda e terceira, em que a esfera com o número 8 seja pelo menos a terceira a ser retirada é",
+    "opcoes": [
+      "27.",
+      "96.",
+      "2000.",
+      "2018.",
+      "2790."
+    ],
+    "resposta_correta": 4,
+    "anulada": false,
+    "origem": "UFRGS — Vestibular 2019 — 4º dia",
+    "fonte_dados": "https://www.ufrgs.br/coperse/wp-content/uploads/2022/04/HIS-MAT.pdf",
+    "fonte_gabarito": "https://vestibular.ufrgs.br/cv2019/gabaritos/",
+    "tipo_resposta": "multipla_escolha",
+    "fonte_pdf": "https://www.ufrgs.br/coperse/wp-content/uploads/2022/04/HIS-MAT.pdf",
+    "fonte_gabarito_url": "https://vestibular.ufrgs.br/cv2019/gabaritos/",
+    "resposta_letra": "E",
+    "origens_provas": [
+      {
+        "concurso": "Vestibular UFRGS 2019 — 4º dia",
+        "prova": "UFRGS — Vestibular 2019 — 4º dia",
+        "modelo": "4º dia",
+        "numero_original": 48,
+        "fonte_pdf": "https://www.ufrgs.br/coperse/wp-content/uploads/2022/04/HIS-MAT.pdf"
+      }
+    ],
+    "gabarito_oficial": {
+      "resposta": "E",
+      "definitivo": true,
+      "verificada": true,
+      "fonte": "https://vestibular.ufrgs.br/cv2019/gabaritos/"
+    },
+    "classificacao_revisada": true,
+    "classificacao_pendente": false,
+    "classificacao_evidencia": "Matéria e conteúdo conferidos com o enunciado da questão 48 e sua origem oficial UFRGS 2019.",
+    "integridade_profissional": {
+      "verificada_individualmente": true,
+      "apta_resolucao": true,
+      "gabarito_conferido_com_gabarito_oficial": true,
+      "enunciado_e_alternativas_conferidos_com_caderno_oficial": true,
+      "recortes_originais_preservados_e_conferidos_com_a_fonte": false,
+      "correcao_automatica": true,
+      "pendencias": []
+    }
+  },
+  {
     "id": "ufrgs-2019-dia4-q49",
     "ano": 2019,
     "numero_original": 49,
