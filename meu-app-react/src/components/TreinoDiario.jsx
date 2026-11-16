@@ -9,7 +9,6 @@ import EnunciadoQuestao from './EnunciadoQuestao'
 import AlternativaQuestao from './AlternativaQuestao'
 import FiltroMultiplo from './FiltroMultiplo'
 import { recomendarTreino } from '../treinoAdaptativo'
-import './TreinoDiario.css'
 
 const painel = 'rounded-3xl border border-slate-700 bg-slate-900/60 p-5 sm:p-7'
 const acao = 'inline-flex rounded-xl border border-indigo-500/60 px-4 py-3 text-sm font-semibold text-indigo-300 hover:bg-indigo-500/10 disabled:opacity-50'
