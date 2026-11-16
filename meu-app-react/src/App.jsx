@@ -40,33 +40,49 @@ const controleComercialAtivo=import.meta.env.VITE_ACESSO_COMERCIAL_ATIVO==='true
 const minutosPadraoPorDia = Object.fromEntries(DIAS_SEMANA.map((dia, indice) => [dia, indice < 5 ? 120 : 90]))
 async function carregarQuestoesSupabase() {
   const tamanhoPagina = 500
-  const primeira = await supabase.from('questoes').select('*', {count: 'exact'})
-    .order('id', {ascending: false}).range(0, tamanhoPagina - 1)
-    .abortSignal(AbortSignal.timeout(30000))
-  if (primeira.error) throw primeira.error
-  const itens = [...(primeira.data || [])]
-  if (primeira.count == null) {
-    for (let inicio = tamanhoPagina; ; inicio += tamanhoPagina) {
-      const {data, error} = await supabase.from('questoes').select('*')
-        .order('id', {ascending: false}).range(inicio, inicio + tamanhoPagina - 1)
-        .abortSignal(AbortSignal.timeout(30000))
-      if (error) throw error
-      itens.push(...(data || []))
-      if (!data || data.length < tamanhoPagina) return itens
+  const controle = new AbortController()
+  const limiteTotal = setTimeout(() => controle.abort(), 90000)
+  const consultar = async (inicio, fim, contar = false) => {
+    let ultimoErro
+    for (let tentativa = 0; tentativa < 2; tentativa++) {
+      if (controle.signal.aborted) throw new Error('A leitura do Supabase excedeu 90 segundos.')
+      try {
+        const consulta = supabase.from('questoes').select('*', contar ? {count: 'exact'} : undefined)
+          .order('id', {ascending: false}).range(inicio, fim)
+          .abortSignal(AbortSignal.any([controle.signal, AbortSignal.timeout(20000)]))
+        const resultado = await consulta
+        if (resultado.error) throw resultado.error
+        return resultado
+      } catch (erro) {
+        ultimoErro = erro
+        if (controle.signal.aborted) throw new Error('A leitura do Supabase excedeu 90 segundos.')
+      }
     }
+    const detalhe = ultimoErro?.message ? `: ${ultimoErro.message}` : ''
+    throw new Error(`Falha ao ler a página ${Math.floor(inicio / tamanhoPagina) + 1} do Supabase${detalhe}`)
   }
-  const inicios = []
-  for (let inicio = tamanhoPagina; inicio < primeira.count; inicio += tamanhoPagina) inicios.push(inicio)
-  for (let i = 0; i < inicios.length; i += 5) {
-    const paginas = await Promise.all(inicios.slice(i, i + 5).map(inicio =>
-      supabase.from('questoes').select('*').order('id', {ascending: false})
-        .range(inicio, inicio + tamanhoPagina - 1).abortSignal(AbortSignal.timeout(30000))))
-    for (const pagina of paginas) {
-      if (pagina.error) throw pagina.error
-      itens.push(...(pagina.data || []))
+
+  try {
+    const primeira = await consultar(0, tamanhoPagina - 1, true)
+    const itens = [...(primeira.data || [])]
+    if (primeira.count == null) {
+      for (let inicio = tamanhoPagina; ; inicio += tamanhoPagina) {
+        const pagina = await consultar(inicio, inicio + tamanhoPagina - 1)
+        itens.push(...(pagina.data || []))
+        if (!pagina.data || pagina.data.length < tamanhoPagina) return itens
+      }
     }
+    const inicios = []
+    for (let inicio = tamanhoPagina; inicio < primeira.count; inicio += tamanhoPagina) inicios.push(inicio)
+    for (let i = 0; i < inicios.length; i += 5) {
+      const paginas = await Promise.all(inicios.slice(i, i + 5).map(inicio =>
+        consultar(inicio, inicio + tamanhoPagina - 1)))
+      for (const pagina of paginas) itens.push(...(pagina.data || []))
+    }
+    return itens
+  } finally {
+    clearTimeout(limiteTotal)
   }
-  return itens
 }
 function dataLocalISO(data) {
   const ano = data.getFullYear(), mes = String(data.getMonth() + 1).padStart(2, '0'), dia = String(data.getDate()).padStart(2, '0')
@@ -1105,7 +1121,7 @@ export default function App() {
     try {
       await preparar(carregadas)
       if (requisicao !== requisicaoAcervo.current) return
-      setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [fontes[i]] : []))
+      setFalhasAcervo(resultados.flatMap((resultado,i) => resultado.status === 'rejected' ? [i === 0 && resultado.reason?.message ? `banco de questões — ${resultado.reason.message}` : fontes[i]] : []))
     } catch (erro) {
       if (erro.name !== 'AbortError' && requisicao === requisicaoAcervo.current) setFalhasAcervo(['organização do acervo'])
     } finally {
