@@ -53,15 +53,24 @@
 .edital-sinal-dado span{overflow-wrap:anywhere}
 .edital-study-signal .edital-praticar{justify-self:start;align-self:center}
 .edital-topicos{list-style:none;margin:0;padding:0}
-.edital-topicos>li{padding:16px 0;border-top:1px solid #303a27}
-.edital-topico{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;flex-wrap:wrap}
-.edital-planejador .edital-check{flex:1;min-width:min(100%,270px);flex-direction:row;align-items:flex-start;gap:12px;font-size:.92rem;font-weight:500;line-height:1.6;padding:8px 0;cursor:pointer}
-.edital-check input[type=checkbox]{appearance:auto;flex-shrink:0;width:20px;height:20px;margin-top:3px;accent-color:#91a94d;cursor:pointer}
-.edital-check span{overflow-wrap:anywhere}
+.edital-topicos>li{margin:12px 0;padding:14px;border:1px solid #303a27;border-radius:16px;background:linear-gradient(140deg,#151a12,#10140e);transition:border-color .18s ease,background .18s ease,transform .18s ease,box-shadow .18s ease}
+.edital-topicos>li:hover{border-color:#657b3d;box-shadow:0 8px 24px #0002;transform:translateY(-1px)}
+.edital-topico{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.edital-planejador .edital-check{flex:1;min-width:min(100%,270px);flex-direction:row;align-items:center;gap:11px;font-size:.92rem;font-weight:600;line-height:1.5;padding:5px 0;cursor:pointer}
+.edital-check input[type=checkbox]{appearance:none;flex-shrink:0;display:grid;place-content:center;width:22px;height:22px;margin:0;border:1.5px solid #68764e;border-radius:7px;background:#0c100d;cursor:pointer;transition:border-color .18s ease,background-color .18s ease,box-shadow .18s ease,transform .18s ease}
+.edital-check input[type=checkbox]:hover{border-color:#b1cb6d;box-shadow:0 0 0 4px #91a94d18}
+.edital-check input[type=checkbox]:checked{border-color:#b1cb6d;background:linear-gradient(135deg,#607637,#a4bd58);background-image:linear-gradient(135deg,#607637,#a4bd58),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m3 8 3.2 3.2L13 4.7' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-size:cover,13px;background-position:center;background-repeat:no-repeat;box-shadow:0 0 0 4px #91a94d20}
+.edital-check input[type=checkbox]:focus-visible{outline:2px solid var(--edital-olive-light);outline-offset:3px}
+.edital-check input[type=checkbox]:disabled{cursor:wait;opacity:.55}
+.edital-materia-simbolo{display:inline-grid!important;place-items:center;flex:0 0 34px;width:34px;height:34px;border:1px solid #586d39;border-radius:11px;background:linear-gradient(145deg,#29331f,#182016);color:#d5e8a0;font-size:.92rem;font-weight:800;box-shadow:inset 0 1px #ffffff12;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.edital-check:hover .edital-materia-simbolo{transform:translateY(-1px);border-color:#a6bf61}
+.edital-check-titulo{min-width:0;overflow-wrap:anywhere}
 .edital-concluido>.edital-topico .edital-check span{color:#86cba5}
 .edital-topico-acoes{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.edital-topico-acoes select{width:145px;font-size:.8rem}
-.edital-topico-acoes button{font-size:.75rem;padding:9px 11px}
+.edital-topico-acoes select{width:145px;min-height:42px;padding:8px 34px 8px 12px;border:1px solid #414d33;border-radius:13px;background:linear-gradient(145deg,#141a12,#0c100d);font-size:.8rem;transition:border-color .18s ease,box-shadow .18s ease}
+.edital-topico-acoes select:hover:not(:disabled){border-color:#91a94d;box-shadow:0 0 0 3px #91a94d18}
+.edital-topico-acoes button{font-size:.75rem;padding:9px 12px;border-radius:13px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.edital-topico-acoes button:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 5px 14px #0002}
 .edital-planejador button.edital-alta{color:#fcd34d;border-color:#7f642f}
 .edital-planejador .edital-nota{margin:10px 0 0 32px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.82rem}
 .edital-edicao{margin-top:18px;border:1px solid #39432e;border-radius:10px;padding:16px;background:#10140e}
@@ -85,7 +94,7 @@
 .edital-pdf-topico textarea{min-height:70px}
 .edital-pdf-avisos{border:1px solid #7f642f;color:#fcd34d;padding:14px;border-radius:10px;font-size:.85rem;line-height:1.6}
 .edital-pdf-avisos ul{padding-left:20px;list-style:disc}
-@media(max-width:700px){.edital-campos,.edital-filtros{grid-template-columns:minmax(0,1fr)}.edital-painel{padding:16px}.edital-topico{gap:8px}.edital-topico-acoes{width:100%;padding-left:32px}.edital-topico-acoes select{flex:1;min-width:120px}.edital-cabecalho{gap:12px}.edital-cabecalho>.edital-primario{width:100%}.edital-seletor{gap:6px}.edital-seletor>span{padding:0}.edital-materia-titulo>span:first-child{min-width:0}.edital-planejador .edital-nota{margin-left:0}.edital-edicao{padding:12px}}
+@media(max-width:700px){.edital-campos,.edital-filtros{grid-template-columns:minmax(0,1fr)}.edital-painel{padding:16px}.edital-topico{gap:10px}.edital-topico-acoes{width:100%;padding-left:0}.edital-topico-acoes select{flex:1;min-width:120px}.edital-topicos>li{padding:12px}.edital-check{gap:9px!important}.edital-materia-simbolo{flex-basis:31px;width:31px;height:31px}.edital-cabecalho{gap:12px}.edital-cabecalho>.edital-primario{width:100%}.edital-seletor{gap:6px}.edital-seletor>span{padding:0}.edital-materia-titulo>span:first-child{min-width:0}.edital-planejador .edital-nota{margin-left:0}.edital-edicao{padding:12px}}
 
 /* A aba Editais acompanha o tema multidisciplinar em qualquer modo de contraste. */
 :root[data-study-theme="multidisciplinar"] .edital-planejador{
@@ -262,3 +271,23 @@
 @media(prefers-reduced-motion:reduce) {
   :root[data-study-theme="classico"][data-color-mode="claro"] .edital-planejador button { transition:none; }
 }
+
+@media(prefers-reduced-motion:reduce){.edital-topicos>li,.edital-materia-simbolo,.edital-check input[type=checkbox],.edital-topico-acoes select,.edital-topico-acoes button{transition:none}.edital-topicos>li:hover,.edital-topico-acoes button:hover:not(:disabled){transform:none}}
+:root[data-study-theme="multidisciplinar"] .edital-topicos>li{background:linear-gradient(140deg,#16243a,#11182b);border-color:#354968}
+:root[data-study-theme="multidisciplinar"] .edital-topicos>li:hover{border-color:#71d8e5;box-shadow:0 8px 24px #07101f66}
+:root[data-study-theme="multidisciplinar"] .edital-check input[type=checkbox]{border-color:#587492;background-color:#101a2c}
+:root[data-study-theme="multidisciplinar"] .edital-check input[type=checkbox]:checked{border-color:#71d8e5;background-image:linear-gradient(135deg,#16a2b8,#7066d8),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m3 8 3.2 3.2L13 4.7' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");box-shadow:0 0 0 4px #71d8e51c}
+:root[data-study-theme="multidisciplinar"] .edital-materia-simbolo{border-color:#536b9a;background:linear-gradient(145deg,#253555,#1a2440);color:#c3d8ff}
+:root[data-study-theme="multidisciplinar"] .edital-topico-acoes select{border-color:#405878;background:linear-gradient(145deg,#17233b,#10182a)}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .edital-topicos>li{background:linear-gradient(140deg,#f2f5fa,#e9eef6);border-color:#d4dae5}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .edital-topicos>li:hover{border-color:#7d75bd;box-shadow:0 8px 20px #46557a1a}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .edital-check input[type=checkbox]{border-color:#8390a8;background-color:#f8f9fc}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .edital-check input[type=checkbox]:checked{border-color:#448e9d;background-image:linear-gradient(135deg,#248da3,#6866bb),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m3 8 3.2 3.2L13 4.7' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");box-shadow:0 0 0 4px #589cab20}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .edital-materia-simbolo{border-color:#b4bbd3;background:linear-gradient(145deg,#e6eaf4,#f7f7fb);color:#58548e}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .edital-topico-acoes select{border-color:#c0c9dc;background:linear-gradient(145deg,#f8f9fc,#e9eef6)}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-topicos>li{border-color:#cbd4bf;background:linear-gradient(140deg,#f1f4ed,#e7ede3)}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-topicos>li:hover{border-color:#80984f;box-shadow:0 8px 20px #33421f1a}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-check input[type=checkbox]{border-color:#83906e;background-color:#f8faf6}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-check input[type=checkbox]:checked{border-color:#71883e;background-image:linear-gradient(135deg,#607637,#91a94d),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m3 8 3.2 3.2L13 4.7' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");box-shadow:0 0 0 4px #91a94d20}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-materia-simbolo{border-color:#c3cfad;background:linear-gradient(145deg,#e5eadb,#f6f8f1);color:#526b2f}
+:root[data-study-theme="classico"][data-color-mode="claro"] .edital-topico-acoes select{border-color:#c4cfb5;background:linear-gradient(145deg,#f8faf6,#e9eee4)}
