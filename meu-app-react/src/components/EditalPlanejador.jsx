@@ -31,6 +31,21 @@ function materiasFiltro(materia) {
             : [normalizarMateria(materia)]
   return [...new Set(equivalencias.map(valor=>chaveCampoFiltro('materia',valor)).filter(Boolean))]
 }
+function simboloMateria(materia) {
+  const chave=chavePratica(materia)
+  if (chave.includes('matemat')) return '∑'
+  if (chave.includes('fisic')) return '⚛'
+  if (chave.includes('quimic')) return '⚗'
+  if (chave.includes('biolog')) return '🧬'
+  if (chave.includes('geograf')) return '🌎'
+  if (chave.includes('hist')) return '🏛'
+  if (chave.includes('portug') || chave.includes('literat')) return 'Aa'
+  if (chave.includes('ingles') || chave.includes('espanhol') || chave.includes('lingua')) return '文'
+  if (chave.includes('filosof')) return '◇'
+  if (chave.includes('sociolog')) return '◎'
+  if (chave.includes('direito')) return '⚖'
+  return '▤'
+}
 function estatisticaPratica(materia,topico,historico) {
   const materiaAlvo=chavePratica(materia),conteudoAlvo=chavePratica(topico)
   const itens=historico.filter(item=>{
@@ -345,7 +360,7 @@ export default function EditalPlanejador({userId, client = supabase, historicoRe
             <button className="edital-materia-titulo" aria-expanded={aberta} onClick={() => setAbertas({...abertas,[m.id]:!aberta})}><span>{aberta ? '▾' : '▸'} {m.nome}</span><span>{r.concluidos}/{r.total} · {r.percentual}%</span></button>
             <Progresso materias={[m]} />
             {aberta && <><p className="edital-ajuda">Marque o que já estudou. A disponibilidade vem do acervo carregado; seu desempenho considera as respostas registradas na conta. A incidência só aparece quando foi informada no próprio edital.</p><ol className="edital-topicos">{visiveis.map(t => {const pratica=estatisticaPratica(m.nome,t.titulo,historicoDaMateria);const incidencia=chavePratica(t.incidencia);const acervo=disponibilidade(m.nome,t.titulo);return <li key={t.id} className={t.status === 'concluido' ? 'edital-concluido' : ''}>
-            <div className="edital-topico"><label className="edital-check"><input type="checkbox" disabled={salvando} checked={t.status === 'concluido'} onChange={() => atualizar(m.id,t.id,{status:t.status === 'concluido' ? 'pendente' : 'concluido'})} /><span>{t.titulo}</span></label><div className="edital-topico-acoes"><select disabled={salvando} aria-label={`Etapa de ${t.titulo}`} value={t.status} onChange={e => atualizar(m.id,t.id,{status:e.target.value})}>{Object.entries(STATUS_EDITAL).map(([v,label]) => <option key={v} value={v}>{label}</option>)}</select><button className={t.prioridade === 'alta' ? 'edital-alta' : ''} aria-pressed={t.prioridade === 'alta'} disabled={salvando} title="Alternar prioridade" onClick={() => atualizar(m.id,t.id,{prioridade:t.prioridade === 'alta' ? 'normal' : 'alta'})}>{t.prioridade === 'alta' ? '★ Alta' : '☆ Prioridade'}</button><button disabled={salvando} onClick={() => setEditando({materiaId:m.id,...t})} aria-label={`Editar ${t.titulo}`}>Editar</button></div></div>
+            <div className="edital-topico"><label className="edital-check"><input type="checkbox" disabled={salvando} checked={t.status === 'concluido'} onChange={() => atualizar(m.id,t.id,{status:t.status === 'concluido' ? 'pendente' : 'concluido'})} /><span className="edital-materia-simbolo" aria-hidden="true">{simboloMateria(m.nome)}</span><span className="edital-check-titulo">{t.titulo}</span></label><div className="edital-topico-acoes"><select disabled={salvando} aria-label={`Etapa de ${t.titulo}`} value={t.status} onChange={e => atualizar(m.id,t.id,{status:e.target.value})}>{Object.entries(STATUS_EDITAL).map(([v,label]) => <option key={v} value={v}>{label}</option>)}</select><button className={t.prioridade === 'alta' ? 'edital-alta' : ''} aria-pressed={t.prioridade === 'alta'} disabled={salvando} title="Alternar prioridade" onClick={() => atualizar(m.id,t.id,{prioridade:t.prioridade === 'alta' ? 'normal' : 'alta'})}>{t.prioridade === 'alta' ? '★ Alta' : '☆ Prioridade'}</button><button disabled={salvando} onClick={() => setEditando({materiaId:m.id,...t})} aria-label={`Editar ${t.titulo}`}>Editar</button></div></div>
               <div className="edital-study-signal">
                 <div className="edital-sinal-dado"><strong>Questões disponíveis</strong><span>{acervo.porTopico ? `${acervo.porTopico} no grupo de conteúdo correspondente` : acervo.porMateria ? `${acervo.porMateria} nesta matéria; ainda não há uma correspondência específica confiável para este tópico` : 'Nenhuma questão identificada nesta matéria'}</span></div>
                 <div className="edital-sinal-dado"><strong>Seu desempenho</strong><span>{pratica.total ? `${pratica.total} respostas associadas · ${pratica.percentual}% de acerto${pratica.total<10?' · amostra ainda pequena':pratica.percentual<70?' · vale revisar este tópico':pratica.total>=20?' · bom desempenho recente':''}` : 'Nenhuma resposta registrada para este conteúdo ainda'}</span></div>
