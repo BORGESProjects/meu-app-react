@@ -9,6 +9,7 @@ import EnunciadoQuestao from './EnunciadoQuestao'
 import AlternativaQuestao from './AlternativaQuestao'
 import FiltroMultiplo from './FiltroMultiplo'
 import { recomendarTreino } from '../treinoAdaptativo'
+import './TreinoDiario.css'
 
 const painel = 'rounded-3xl border border-slate-700 bg-slate-900/60 p-5 sm:p-7'
 const acao = 'inline-flex rounded-xl border border-indigo-500/60 px-4 py-3 text-sm font-semibold text-indigo-300 hover:bg-indigo-500/10 disabled:opacity-50'
@@ -269,13 +270,13 @@ export default function TreinoDiario({ conta, questoes = semQuestoes, questoesDo
   const prioridadeEdital = erros.map(r => sessao?.vinculos?.[String(r.questaoId)]).find(Boolean)
   const salvo = completo && sessao.contaSalva === conta && Boolean(conta)
 
-  return <section className={`${painel} mx-auto max-w-3xl space-y-5`} aria-labelledby="treino-titulo">
-    <header>
+  return <section className={`${painel} daily-training mx-auto max-w-3xl space-y-5`} aria-labelledby="treino-titulo">
+    <header className="daily-training__header">
       <p className="text-xs font-bold uppercase tracking-widest text-indigo-300">{demo ? 'Amostra gratuita' : 'Prática orientada'}</p>
       <h1 id="treino-titulo" className="mt-2 text-2xl font-extrabold">{demo ? 'Experimente 10 questões' : 'Treino de hoje'}</h1>
       <p className="mt-2 text-sm text-slate-400">{demo ? 'Faça o treino antes de criar conta. Veja sua pontuação e as resoluções disponíveis ao terminar.' : `${nomeFoco(foco)} · escolha o que praticar e acompanhe o diagnóstico ao terminar.`}</p>
     </header>
-    {!demo && !sessao && <section className="space-y-3 rounded-2xl border border-indigo-500/40 bg-indigo-500/10 p-4 sm:p-5" aria-labelledby="titulo-treino-adaptativo">
+    {!demo && !sessao && <section className="daily-training__recommendation space-y-3 rounded-2xl border border-indigo-500/40 bg-indigo-500/10 p-4 sm:p-5" aria-labelledby="titulo-treino-adaptativo">
       <div>
         <h2 id="titulo-treino-adaptativo" className="text-lg font-bold">Seu próximo treino</h2>
         <p className="mt-1 text-sm text-slate-300">{editalRecomendado ? `Baseado no edital ${editalRecomendado.titulo} e nas suas respostas.` : 'Baseado no foco atual, nos filtros e nas suas respostas.'}</p>
@@ -284,16 +285,16 @@ export default function TreinoDiario({ conta, questoes = semQuestoes, questoesDo
         <ul className="flex flex-wrap gap-2 text-xs">{recomendacao.motivos.map(([motivo, total]) => <li key={motivo} className="rounded-full border border-indigo-400/30 px-3 py-1.5">{motivo} · {total}</li>)}</ul>
         <p className="text-xs text-slate-400">{recomendacao.selecionadas.length} questões, distribuídas entre os tópicos disponíveis.</p>
         <div className="flex flex-wrap gap-2">
-          <button type="button" className={acao} disabled={filtros !== filtrosAdiados} onClick={iniciarRecomendado}>Começar treino recomendado</button>
-          {onAgendar && recomendacao.selecionadas[0].questao.materia && <button type="button" className={acao} onClick={() => {
+          <button type="button" className={`${acao} daily-training__start daily-training__start--recommended`} disabled={filtros !== filtrosAdiados} onClick={iniciarRecomendado}>Começar treino recomendado</button>
+          {onAgendar && recomendacao.selecionadas[0].questao.materia && <button type="button" className={`${acao} daily-training__plan`} onClick={() => {
             const primeira = recomendacao.selecionadas[0]
             onAgendar(primeira.topico || primeira.questao)
           }}>Planejar no cronograma</button>}
         </div>
       </> : <p role="status" className="text-sm text-slate-400">{catalogoCarregando ? 'Carregando questões para montar a sugestão…' : 'Ainda não há questões suficientes para esta seleção. Ajuste os filtros ou escolha outro edital.'}</p>}
-      {onEdital && <button type="button" className="text-sm text-indigo-300 underline" onClick={onEdital}>{editalRecomendado ? 'Ver edital' : 'Vincular um edital'}</button>}
+      {onEdital && <button type="button" className="daily-training__notice-link text-sm text-indigo-300 underline" onClick={onEdital}>{editalRecomendado ? 'Ver edital' : 'Vincular um edital'}</button>}
     </section>}
-    {!sessao && <div className="flex flex-wrap items-end gap-3">
+    {!sessao && <div className="daily-training__builder flex flex-wrap items-end gap-3">
       {demo && <label className="min-w-0 flex-1 text-sm">Qual é seu foco?
         <select className="mt-2 block w-full rounded-xl border border-slate-700 bg-slate-950 p-3" value={perfilDemo} onChange={e => { setPerfilDemo(e.target.value); setDadosDemo(null); setAviso('') }}>
           <option value="">Escolha para ver a amostra</option>
@@ -314,7 +315,7 @@ export default function TreinoDiario({ conta, questoes = semQuestoes, questoesDo
             })}
           </select>
         </label>
-        <div className="space-y-2 sm:col-span-2" aria-label="Sugestões de filtros">
+        <div className="daily-training__quick-filters space-y-2 sm:col-span-2" aria-label="Sugestões de filtros">
           <p className="text-xs font-semibold text-slate-400">Filtros rápidos</p>
           <div className="flex flex-wrap gap-2">
             {[['', 'Todas'], ['instituicao', 'Bancas e instituições'], ['prova', 'Provas e cargos']].map(([tipo, nome]) => <button key={tipo} type="button" aria-pressed={tipoObjetivo === tipo} onClick={() => setTipoObjetivo(tipo)} className={`rounded-full border px-3 py-1.5 text-xs ${tipoObjetivo === tipo ? 'border-indigo-500 text-indigo-300' : 'border-slate-700 text-slate-300'}`}>{nome}</button>)}
@@ -325,13 +326,13 @@ export default function TreinoDiario({ conta, questoes = semQuestoes, questoesDo
         </div>
         {!opcoesFiltradas.length && (termosBusca.length > 0 || tipoObjetivo) && !catalogoCarregando && <p role="status" className="text-sm text-slate-400 sm:col-span-2">Nenhuma prova ou instituição encontrada com esses filtros.</p>}
         {catalogoCarregando && <p role="status" className="text-sm text-slate-400 sm:col-span-2">Carregando mais provas do acervo…</p>}
-        <fieldset className="rounded-2xl border border-slate-700 p-3 sm:col-span-2">
+        <fieldset className="daily-training__practice-modes rounded-2xl border border-slate-700 p-3 sm:col-span-2">
           <legend className="px-2 text-sm font-semibold">O que você quer praticar?</legend>
           <div className="flex flex-wrap gap-2">
             {modosTreino.map(([id, nome]) => <button key={id} type="button" aria-pressed={filtros.situacao === id} onClick={() => setFiltros(atual => ({ ...atual, situacao: id }))} className="rounded-full border border-slate-700 px-3 py-2 text-xs aria-pressed:border-indigo-500 aria-pressed:text-indigo-300">{nome}</button>)}
           </div>
         </fieldset>
-        <details onToggle={e => setDetalhar(e.currentTarget.open)} className="rounded-2xl border border-slate-700 p-4 sm:col-span-2">
+        <details onToggle={e => setDetalhar(e.currentTarget.open)} className="daily-training__more-filters rounded-2xl border border-slate-700 p-4 sm:col-span-2">
           <summary className="cursor-pointer text-sm font-semibold">Mais filtros {filtrosAtivos > 0 && `· ${filtrosAtivos} ativos`}</summary>
           {detalhar && <div className="mt-4 grid gap-4 sm:grid-cols-2">
             {camposDetalhe.map(([id, titulo, rotuloTodos]) => {
@@ -353,18 +354,18 @@ export default function TreinoDiario({ conta, questoes = semQuestoes, questoesDo
             </label>
           </div>}
         </details>
-        <label className="text-sm">Quantidade de questões
+        <label className="daily-training__quantity text-sm">Quantidade de questões
           <select className={campo} value={quantidade} onChange={e => setQuantidade(Number(e.target.value))}>
             {[5, 10, 15, 20, 30, 40].map(n => <option key={n} value={n}>{n}{n === 10 ? ' · padrão diário' : ''}</option>)}
           </select>
         </label>
-        <div className="self-end rounded-xl border border-slate-700 p-3 text-sm">
+        <div className="daily-training__availability self-end rounded-xl border border-slate-700 p-3 text-sm">
           <p role="status">{filtros !== filtrosAdiados ? 'Atualizando seleção…' : <><strong>{recorte.itens.length.toLocaleString('pt-BR')}</strong> questões corrigíveis nesta seleção</>}</p>
           {recorte.itens.length < quantidade && !catalogoCarregando && <p className="mt-1 text-xs text-slate-400">Reduza a quantidade ou retire algum filtro.</p>}
         </div>
         <button type="button" className="w-fit text-sm text-indigo-300 underline sm:col-span-2" onClick={() => { setFiltros(filtrosIniciais); setObjetivo(''); setTipoObjetivo(''); setBuscaObjetivo(''); setQuantidade(10); setAviso('') }}>Limpar filtros</button>
       </div>}
-      <button type="button" className={acao} disabled={demo ? base.length < 10 : recorte.itens.length < quantidade || filtros !== filtrosAdiados} onClick={iniciar}>Começar {totalPlanejado} questões</button>
+      <button type="button" className={`${acao} daily-training__start`} disabled={demo ? base.length < 10 : recorte.itens.length < quantidade || filtros !== filtrosAdiados} onClick={iniciar}>Começar {totalPlanejado} questões</button>
     </div>}
     {demoAtiva && !sessao && <p className="text-sm">{demoAtiva.nome}</p>}
     {demoAtiva?.url && base.length < 10 && (dadosDemo?.erro && dadosDemo.url === demoAtiva.url
