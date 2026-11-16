@@ -679,3 +679,31 @@ input, select, textarea { accent-color: #9aae5a; }
   border-color: #bd9b67;
   background: linear-gradient(125deg, #f0e6d3 0%, #eee9e2 56%, #e8eaf1 100%);
 }
+
+
+/* Harmoniza os componentes do painel inicial ao tema multidisciplinar. */
+:root[data-study-theme="multidisciplinar"] .app-shell .study-dashboard .study-hero{border-color:transparent;background:radial-gradient(ellipse at 85% 10%,#36d9ed28,transparent 32rem),linear-gradient(135deg,#111e38,#121127 75%) padding-box,linear-gradient(125deg,#71e9f0,#7667ff 48%,#e75cc8) border-box;box-shadow:0 18px 50px #0ac4df19}
+:root[data-study-theme="multidisciplinar"] .study-dashboard .study-theme-title-accent{background-image:linear-gradient(90deg,#91edf0,#a5a0ff 55%,#efa1dc)!important}
+:root[data-study-theme="multidisciplinar"] .study-dashboard .study-theme-accent{color:#a8eff2!important}
+:root[data-study-theme="multidisciplinar"] .study-dashboard [class~="text-lime-200/60"],:root[data-study-theme="multidisciplinar"] .study-dashboard [class~="text-lime-100/60"]{color:#93d8e7!important}
+:root[data-study-theme="multidisciplinar"] .study-dashboard-action{border-color:transparent;background:linear-gradient(#111a2c,#111a2c) padding-box,linear-gradient(135deg,#60dceda0,#6e5ed18c 52%,#e064c884) border-box}
+:root[data-study-theme="multidisciplinar"] .study-dashboard-action:hover{border-color:transparent;box-shadow:0 18px 40px #05081688,0 0 24px #4bd9ef20}
+:root[data-study-theme="multidisciplinar"] .study-dashboard-action>span.pointer-events-none{background-color:#52d4e922}
+:root[data-study-theme="multidisciplinar"] .study-dashboard-action>span.relative.mt-4{background-image:linear-gradient(90deg,#60dced66,#6e5ed155,#e064c833,transparent)}
+:root[data-study-theme="multidisciplinar"] .study-dashboard-icon{border-color:#6178a0;background:linear-gradient(140deg,#14354a,#282348);color:#b6f1f4}
+:root[data-study-theme="multidisciplinar"] .study-dashboard-weekly{border-color:transparent;background:linear-gradient(#111a2c,#111a2c) padding-box,linear-gradient(135deg,#60dceda0,#6e5ed18c 52%,#e064c884) border-box}
+:root[data-study-theme="multidisciplinar"] .study-dashboard-motivation{border-color:#6d60a5;background:radial-gradient(ellipse at 100% 0%,#743c9b45,transparent 60%),linear-gradient(135deg,#14253d,#211932)}
+:root[data-study-theme="multidisciplinar"] .study-dashboard-motivation>span{background:#52d4e922}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .app-shell .study-dashboard .study-hero{border-color:transparent;background:radial-gradient(ellipse at 85% 10%,#64dae52e,transparent 32rem),linear-gradient(135deg,#fff,#f7f5ff 75%) padding-box,linear-gradient(125deg,#44b9cd,#8476da 48%,#ca72bc) border-box;box-shadow:0 16px 44px #1a2a1b12}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard .study-hero h1,:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard .study-dashboard-section-heading h2,:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard .study-dashboard-motivation h2{color:#202b43!important}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard .study-theme-title-accent{background-image:linear-gradient(90deg,#277f91,#5d62aa 55%,#a64f8d)!important}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard .study-theme-accent{color:#4e5fa3!important}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard [class~="text-lime-200/60"],:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard [class~="text-lime-100/60"]{color:#52658d!important}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard-action,:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard-weekly{border-color:transparent;background:linear-gradient(#fff,#f9f8fc) padding-box,linear-gradient(135deg,#55bdcc,#9986da 52%,#d57abf) border-box}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard-action:hover{box-shadow:0 14px 30px #27354a1a}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard-icon{border-color:#b5c6dd;background:linear-gradient(140deg,#e7f6f8,#eee9f7);color:#4c69a4}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard-motivation{border-color:#d0c3df;background:radial-gradient(ellipse at 100% 0%,#eadcf280,transparent 60%),linear-gradient(135deg,#f3f7fb,#f8f3fa)}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard-motivation>span{background:#b694d52b}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard-action>span.pointer-events-none{background-color:#58bfcc24}
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .study-dashboard-action>span.relative.mt-4{background-image:linear-gradient(90deg,#54aebd66,#9585c866,#c277aa44,transparent)}
+
