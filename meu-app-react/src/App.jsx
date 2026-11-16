@@ -236,6 +236,7 @@ export default function App() {
   const totalQuestoesCatalogo = questoes.length + (questoesExtraidasTotal || 0)
   const processamentoAcervo = useRef(null)
   const [carregandoAcervo, setCarregandoAcervo] = useState(true)
+  const [carregandoAcervoCompleto, setCarregandoAcervoCompleto] = useState(true)
   const [falhasAcervo, setFalhasAcervo] = useState([])
   const [avisoAcervoNativo,setAvisoAcervoNativo] = useState('')
   const [limiteVisivel, setLimiteVisivel] = useState(40)
@@ -402,6 +403,7 @@ export default function App() {
   async function buscarQuestoes(atualizarNativo = true) {
     const requisicao = ++requisicaoAcervo.current
     setCarregandoAcervo(true)
+    setCarregandoAcervoCompleto(true)
     setFalhasAcervo([])
     setAvisoAcervoNativo('')
     processamentoAcervo.current ||= criarProcessadorAcervo()
@@ -418,6 +420,7 @@ export default function App() {
     if (aplicativoNativo) {
       try {
         const {questoes:instaladas} = await carregarAcervoInstalado();await preparar(instaladas)
+        if (requisicao === requisicaoAcervo.current) setCarregandoAcervo(false)
         if(atualizarNativo) {
           if(!navigator.onLine || session?.offline) {setAvisoAcervoNativo('A cópia instalada está disponível. Reconecte sua conta para buscar novas questões.');return}
           try {
@@ -431,7 +434,7 @@ export default function App() {
         }
       }
       catch(e) {if (e.name !== 'AbortError' && requisicao === requisicaoAcervo.current) setFalhasAcervo([e.message])}
-      finally {if (requisicao === requisicaoAcervo.current) setCarregandoAcervo(false)}
+      finally {if (requisicao === requisicaoAcervo.current) {setCarregandoAcervo(false);setCarregandoAcervoCompleto(false)}}
       return
     }
     const banco = tentarLeitura(carregarQuestoesSupabase)
@@ -1093,7 +1096,9 @@ export default function App() {
     const resultados = await carregarEmEtapas([banco,importadas,cpnu2024Bloco8Manha,cpnu2024Bloco8TardeDireito,cpnu2024Bloco8TardeMatematica,cpnu2024Bloco8TardeRealidade,cpnu2024Bloco7ManhaGerais,cpnu2024Bloco7TardeEixo1,cpnu2024Bloco1TardeEixo1Lote1,cpnu2024Bloco1TardeEixo1Lote2,cpnu2024Bloco1TardeEixo2Lote1,cpnu2024Bloco1TardeEixo1Lote3,cpnu2024Bloco1TardeEixo3Lote1,cpnu2024Bloco1TardeEixo3Lote2,cpnu2024Bloco1TardeEixo4Lote1,cpnu2024Bloco1TardeEixo4Lote2,cpnu2024Bloco1TardeEixo5Lote1,cpnu2024Bloco1TardeEixo5Lote2,cpnu2024Bloco2TardeEixo1Lote1,cpnu2024Bloco2TardeEixo1Lote2,cpnu2024Bloco2TardeEixo1Lote3,cpnu2024Bloco2TardeEixo1Lote4,cpnu2024Bloco2TardeEixo2Lote1,cpnu2024Bloco2TardeEixo3Lote1,cpnu2024Bloco2TardeEixo4Lote1,cpnu2024Bloco2TardeEixo4Lote2,cpnu2024Bloco2TardeEixo5Lote1,cpnu2024Bloco2TardeEixo5Lote2,cpnu2024Bloco3TardeEixo1Lote1,cpnu2024Bloco3TardeEixo1Lote2,cpnu2024Bloco3TardeEixo2Lote1,cpnu2024Bloco3TardeEixo2Lote2,cpnu2024Bloco3TardeEixo3Lote1,cpnu2024Bloco3TardeEixo3Lote2,cpnu2024Bloco3TardeEixo4Lote1,cpnu2024Bloco3TardeEixo4Lote2,cpnu2024Bloco3TardeEixo5Lote1,cpnu2024Bloco3TardeEixo5Lote2,cpnu2024Bloco3ReparosLote1,ufmgSeriado2025Caderno1Lote2,unicamp2026PrimeiraFaseQXLote1,unicamp2026PrimeiraFaseQXLote2,unicamp2026PrimeiraFaseQXLote3,unicamp2026PrimeiraFaseQXLote4,unicamp2026PrimeiraFaseQXLote5,unicamp2026PrimeiraFaseQXLote6,unicamp2026PrimeiraFaseQXLote7,unicamp2026PrimeiraFaseQXLote8,unicamp2026PrimeiraFaseQXLote9,unicamp2026PrimeiraFaseQXLote10,unicamp2026PrimeiraFaseQXLote11,unicamp2026PrimeiraFaseQXLote12,unicamp2026PrimeiraFaseQXLote13,unicamp2026PrimeiraFaseQXLote14,unicamp2026PrimeiraFaseQXLote15,unicamp2026PrimeiraFaseQXLote16,enemHistorico,cfnHistorico,ufrgs2025,ufrgs2024,ufrgs2023,ufrgs2022,espcexHistorico,ufpr2025,ufpr2024,ufpr2023,ufpr2022,ufpr2021,ufpr2020,ufpr2019,utfpr2026,utfpr2025,utfpr2024,utfpr2024Inverno,utfpr2023,ifpr2024,ifpr2023,ifpr2020,ifpr2019,uem2025,uem2025Inverno,uemHistorico,pucpr2024InvernoMedicina,pucpr2025VeraoMedicina,pucpr2025InvernoMedicina,federaisRevisadas,teoremaRevisadas,modelosAtomicos,taxonomiaBiologia,microorganismosBiologia,historiaAntigaRevisada,geografiaIntroducaoRevisada,cpor2021Revisadas,cpor2022Revisadas,cpor2023Revisadas,pacotePdfs458,...leiturasLivros], estaticas => {
       if (requisicao !== requisicaoAcervo.current) return
       const parciais = estaticas.flatMap(r => r.status === 'fulfilled' && Array.isArray(r.value) ? r.value : [])
-      void preparar(parciais).catch(() => { /* A etapa final confirma ou informa a falha. */ })
+      try { await preparar(parciais) }
+      catch { /* A etapa final confirma ou informa a falha. */ }
+      finally { if (requisicao === requisicaoAcervo.current) setCarregandoAcervo(false) }
     })
     if (requisicao !== requisicaoAcervo.current) return
     const carregadas = resultados.flatMap(resultado => resultado.status === 'fulfilled' && Array.isArray(resultado.value) ? resultado.value : [])
@@ -1104,7 +1109,7 @@ export default function App() {
     } catch (erro) {
       if (erro.name !== 'AbortError' && requisicao === requisicaoAcervo.current) setFalhasAcervo(['organização do acervo'])
     } finally {
-      if (requisicao === requisicaoAcervo.current) setCarregandoAcervo(false)
+      if (requisicao === requisicaoAcervo.current) {setCarregandoAcervo(false);setCarregandoAcervoCompleto(false)}
     }
   }
 
@@ -1866,8 +1871,9 @@ export default function App() {
               <p className="text-slate-400 text-sm mt-1">{temFiltrosAtivos
                 ? `${(questoesFiltradas.length + questoesExtraidasEstado.total).toLocaleString('pt-BR')} questão(ões) carregada(s) nesta busca.`
                 : 'Escolha os filtros abaixo para exibir as questões que deseja estudar.'}</p>
-{carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Carregando as demais questões… O total ainda pode aumentar.</p>}
-              {!carregandoAcervo && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Questões carregadas: {questoesDoFoco.length.toLocaleString('pt-BR')} neste foco.</p>}
+{carregandoAcervo && <p role="status" className="text-indigo-300 text-sm mt-2">Preparando as primeiras questões…</p>}
+              {!carregandoAcervo && carregandoAcervoCompleto && <p role="status" className="text-indigo-300 text-sm mt-2">Você já pode estudar; o restante do acervo está sendo atualizado em segundo plano.</p>}
+              {!carregandoAcervoCompleto && falhasAcervo.length === 0 && <p role="status" className="text-emerald-300 text-sm mt-2">Questões carregadas: {questoesDoFoco.length.toLocaleString('pt-BR')} neste foco.</p>}
               {aplicativoNativo && <div className="mt-3 text-sm"><button className="rounded-xl border border-indigo-500 px-4 py-2 text-indigo-200 disabled:opacity-50" disabled={carregandoAcervo} onClick={()=>buscarQuestoes(true)}>Atualizar questões online</button>{avisoAcervoNativo && <p role="status" className="mt-2 text-slate-300">{avisoAcervoNativo}</p>}</div>}
               {falhasAcervo.length > 0 && <div role="alert" className="text-amber-300 text-sm mt-2">Não foi possível carregar: {falhasAcervo.join(' e ')}. A lista pode estar incompleta. <button className="underline font-semibold" onClick={buscarQuestoes} disabled={carregandoAcervo}>Tentar carregar novamente</button></div>}
 </header>

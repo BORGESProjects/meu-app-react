@@ -9,11 +9,11 @@ export async function tentarLeitura(ler, esperar = ms => new Promise(resolve => 
   }
 }
 
-// As fontes estáticas não precisam esperar o servidor da API acordar.
-// A ordem original é mantida para a mesma precedência na deduplicação.
+// Mostra um primeiro conjunto de questões antes de esperar por todo o acervo.
+// As promessas já estão em andamento; o restante continua carregando em paralelo.
 export async function carregarEmEtapas(fontes, aoCarregarEstaticas) {
   const completo = Promise.allSettled(fontes)
-  const estaticas = await Promise.allSettled(fontes.slice(2))
-  aoCarregarEstaticas(estaticas)
+  const primeiraEtapa = await Promise.allSettled(fontes.slice(2, 14))
+  await aoCarregarEstaticas?.(primeiraEtapa)
   return completo
 }
