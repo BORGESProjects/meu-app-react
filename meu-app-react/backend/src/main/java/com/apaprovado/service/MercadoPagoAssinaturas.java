@@ -104,26 +104,73 @@ public class MercadoPagoAssinaturas {
     public Checkout criarCheckout(String email, String codigoPlano, String periodo, String modalidade) {
         String normalizedEmail = email == null ? "" : email.trim().toLowerCase(Locale.ROOT);
         if (!normalizedEmail.matches("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Informe um e-mail válido.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Informe um e-mail v�lido.");
         }
-        obterPlano(codigoPlano, periodo);
-        throw new ResponseStatusException(HttpStatus.GONE,
-            "O checkout mensal antigo foi desativado. Use o pagamento mensal com Pix, d\u00e9bito ou cr\u00e9dito.");
-
+        Plano plano = obterPlano(codigoPlano, periodo);
+        if (plano.meses() == 1) {
+            throw new ResponseStatusException(HttpStatus.GONE,
+                "Use o pagamento mensal, dispon�vel por Pix, d�bito ou cr�dito.");
+        }
+        if (!"card".equals(modalidade == null ? "" : modalidade.trim().toLowerCase(Locale.ROOT))) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST,
+                "Trimestral e anual est�o dispon�veis somente no cart�o de cr�dito.");
+        }
+        if (acesso.status(normalizedEmail).liberado()) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT,
+                "Voc� j� tem um per�odo de acesso ativo. Cancele a renova��o e aguarde o fim do per�odo antes de iniciar outro plano.");
+        }
+        if (returnUrl == null || !returnUrl.startsWith("https://")) {
+            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Checkout ainda n�o est� configurado.");
+        }
+        return criarCheckoutAvulso(normalizedEmail, plano, conta.accessToken());
     }
 
+    private Checkout criarCheckoutAvulso(String email, Plano plano, String accessToken) {
+        if (notificationUrl == null || !notificationUrl.startsWith("https://")) {
+            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Notifica��es seguras de pagamento ainda n�o est�o configuradas no servidor.");
+        }
+        BigDecimal valor = plano.valorTotal().multiply(new BigDecimal("1.10")).setScale(2, RoundingMode.HALF_UP);
+        String reference = "ap:" + plano.codigo() + ":" + plano.periodo() + ":card:" + UUID.randomUUID();
+        try {
+            Map<String, Object> item = Map.of("id", "ap-" + plano.codigo() + "-" + plano.periodo(),
+                "title", "AP Aprovado - " + plano.nome() + " � " + plano.periodoNome(),
+                "description", "Acesso por " + plano.meses() + " meses", "quantity", 1, "currency_id", "BRL", "unit_price", valor);
+            Map<String, Object> body = new HashMap<>();
+            body.put("items", List.of(item));
+            body.put("payer", Map.of("email", email));
+            body.put("external_reference", reference);
+            body.put("notification_url", notificationUrl);
+            body.put("back_urls", Map.of("success", returnUrl, "failure", returnUrl, "pending", returnUrl));
+            body.put("auto_return", "approved");
+            body.put("payment_methods", Map.of("excluded_payment_types", List.of(Map.of("id", "ticket"),
+                Map.of("id", "bank_transfer"), Map.of("id", "debit_card"), Map.of("id", "prepaid_card")), "installments", 12));
+            JsonNode response = mercadoPago.post().uri("/checkout/preferences")
+                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken)
+                .header("X-Idempotency-Key", UUID.randomUUID().toString()).body(body).retrieve().body(JsonNode.class);
+            String url = response == null ? "" : response.path("init_point").asText("");
+            String host = URI.create(url).getHost();
+            if (host == null || !url.startsWith("https://") || !Set.of("www.mercadopago.com.br", "mercadopago.com.br", "www.mercadopago.com", "mercadopago.com").contains(host)) throw new IllegalStateException();
+            acesso.registrarCheckoutAvulso("preference:" + response.path("id").asText(""), reference, email,
+                plano.codigo(), plano.periodo(), valor, "card");
+            return new Checkout("card", url, null, null, null);
+        } catch (ResponseStatusException erro) {
+            throw erro;
+        } catch (Exception erro) {
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "N�o foi poss�vel iniciar o pagamento agora. Confira a conex�o com o Mercado Pago e tente novamente.");
+        }
+    }
     public void cancelarAssinatura(String email) {
         String normalizedEmail = email == null ? "" : email.trim().toLowerCase();
         String subscriptionId = acesso.assinaturaAtivaParaCancelar(normalizedEmail);
         if (subscriptionId == null || subscriptionId.isBlank()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Não há assinatura ativa para cancelar.");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "N�o h� assinatura ativa para cancelar.");
         }
         JsonNode subscription = consultar("/preapproval/" + segmento(subscriptionId));
         var titular = acesso.checkout(subscriptionId);
         if (titular == null || !normalizedEmail.equalsIgnoreCase(titular.email())
                 || !titular.referencia().equals(subscription.path("external_reference").asText(""))
                 || !"authorized".equals(subscription.path("status").asText(""))) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "A assinatura não corresponde a uma renovação ativa desta conta.");
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "A assinatura n�o corresponde a uma renova��o ativa desta conta.");
         }
         try {
             mercadoPago.put().uri("/preapproval/" + segmento(subscriptionId))
@@ -131,7 +178,7 @@ public class MercadoPagoAssinaturas {
                 .body(Map.of("status", "canceled"))
                 .retrieve().body(JsonNode.class);
         } catch (Exception erro) {
-            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "O Mercado Pago não confirmou o cancelamento. Tente novamente.");
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "O Mercado Pago n�o confirmou o cancelamento. Tente novamente.");
         }
         acesso.registrarCancelamentoDoAssinante(subscriptionId, normalizedEmail);
     }
@@ -140,11 +187,11 @@ public class MercadoPagoAssinaturas {
             String assinatura, String requestId) {
         validarAssinatura(assinatura, requestId, dataId);
         if (evento == null || dataId == null || dataId.isBlank()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Notificação inválida.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Notifica��o inv�lida.");
         }
         String tipo = tipoQuery == null || tipoQuery.isBlank() ? evento.path("type").asText("") : tipoQuery;
         String eventId = evento.path("id").asText("");
-        if (eventId.isBlank()) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Notificação sem identificador.");
+        if (eventId.isBlank()) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Notifica��o sem identificador.");
 
         if ("payment".equals(tipo)) {
             receberPagamentoAvulso(eventId, dataId);
@@ -242,7 +289,7 @@ public class MercadoPagoAssinaturas {
         try {
             return OffsetDateTime.parse(chargedAt).plusMonths(meses).toInstant();
         } catch (Exception erro) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Fatura sem data de cobrança válida.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Fatura sem data de cobran�a v�lida.");
         }
     }
 
@@ -257,7 +304,7 @@ public class MercadoPagoAssinaturas {
             return mercadoPago.get().uri(path).header(HttpHeaders.AUTHORIZATION, "Bearer " + conta.accessToken())
                 .retrieve().body(JsonNode.class);
         } catch (Exception erro) {
-            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Não foi possível validar a notificação com o Mercado Pago.");
+            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "N�o foi poss�vel validar a notifica��o com o Mercado Pago.");
         }
     }
 
@@ -274,7 +321,7 @@ public class MercadoPagoAssinaturas {
 
     private Plano obterPlano(String codigo, String periodo) {
         Plano plano = planos.get(chave(codigo, periodo));
-        if (plano == null) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Plano ou frequência não reconhecidos.");
+        if (plano == null) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Plano ou frequ�ncia n�o reconhecidos.");
         return plano;
     }
 
@@ -282,7 +329,7 @@ public class MercadoPagoAssinaturas {
         try {
             BigDecimal total = new BigDecimal(valor);
             if (total.signum() <= 0 || total.scale() > 2) throw new NumberFormatException();
-            String nome = "premium".equals(codigo) ? "Premium" : "Básica";
+            String nome = "premium".equals(codigo) ? "Premium" : "B�sica";
             String nomePeriodo = switch (periodo) {
                 case "monthly" -> "Mensal";
                 case "quarterly" -> "Trimestral";
@@ -292,7 +339,7 @@ public class MercadoPagoAssinaturas {
             return new Plano(codigo, nome, periodo, nomePeriodo, total,
                 total.divide(BigDecimal.valueOf(meses), 2, RoundingMode.HALF_UP), meses);
         } catch (Exception erro) {
-            throw new IllegalStateException("Preço inválido para " + codigo + " / " + periodo + ".");
+            throw new IllegalStateException("Pre�o inv�lido para " + codigo + " / " + periodo + ".");
         }
     }
 
@@ -303,7 +350,7 @@ public class MercadoPagoAssinaturas {
             if (mensal.signum() <= 0 || fator.signum() <= 0 || fator.compareTo(BigDecimal.ONE) > 0) throw new NumberFormatException();
             return mensal.multiply(BigDecimal.valueOf(meses)).multiply(fator).setScale(2, RoundingMode.HALF_UP).toPlainString();
         } catch (Exception erro) {
-            throw new IllegalStateException("Desconto ou preço mensal inválido.");
+            throw new IllegalStateException("Desconto ou pre�o mensal inv�lido.");
         }
     }
 
@@ -311,10 +358,10 @@ public class MercadoPagoAssinaturas {
 
     private void validarAssinatura(String assinatura, String requestId, String dataId) {
         if (webhookSecret == null || webhookSecret.isBlank() || webhookSecret.length() < 32) {
-            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Webhook do Mercado Pago ainda não configurado.");
+            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Webhook do Mercado Pago ainda n�o configurado.");
         }
         if (assinatura == null || requestId == null || dataId == null) {
-            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Assinatura de notificação inválida.");
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Assinatura de notifica��o inv�lida.");
         }
         String ts = "", v1 = "";
         for (String part : assinatura.split(",")) {
@@ -323,7 +370,7 @@ public class MercadoPagoAssinaturas {
             if (pair.length == 2 && "v1".equals(pair[0])) v1 = pair[1];
         }
         if (ts.isBlank() || !v1.matches("[a-fA-F0-9]{64}")) {
-            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Assinatura de notificação inválida.");
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Assinatura de notifica��o inv�lida.");
         }
         String manifest = "id:" + dataId.toLowerCase() + ";request-id:" + requestId + ";ts:" + ts + ";";
         try {
@@ -332,19 +379,20 @@ public class MercadoPagoAssinaturas {
             byte[] expected = mac.doFinal(manifest.getBytes(StandardCharsets.UTF_8));
             byte[] received = java.util.HexFormat.of().parseHex(v1);
             if (!MessageDigest.isEqual(expected, received)) {
-                throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Assinatura de notificação inválida.");
+                throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Assinatura de notifica��o inv�lida.");
             }
         } catch (ResponseStatusException erro) {
             throw erro;
         } catch (Exception erro) {
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Não foi possível validar a notificação.");
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "N�o foi poss�vel validar a notifica��o.");
         }
     }
 
     private static String segmento(String value) {
         if (value == null || !value.matches("[A-Za-z0-9_-]{1,180}")) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Identificador de recurso inválido.");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Identificador de recurso inv�lido.");
         }
         return value;
     }
 }
+
