@@ -29,9 +29,10 @@ public class AcessoController {
     private final MercadoPagoConexao contaMercadoPago;
     private final ImportAdmin administrador;
     private final String retornoAdmin;
+    private final com.apaprovado.service.MercadoPagoCartao cartao;
 
     public AcessoController(AcessoComercial acessos, SupabaseSessionAuth sessoes, MercadoPagoAssinaturas mercadoPago,
-            MercadoPagoConexao contaMercadoPago, ImportAdmin administrador,
+            MercadoPagoConexao contaMercadoPago, ImportAdmin administrador, com.apaprovado.service.MercadoPagoCartao cartao,
             @Value("${app.payment.admin-return-url:https://ap-aprovado.pages.dev/aluno.html#recebimentos}") String retornoAdmin) {
         this.acessos = acessos;
         this.sessoes = sessoes;
@@ -39,6 +40,7 @@ public class AcessoController {
         this.contaMercadoPago = contaMercadoPago;
         this.administrador = administrador;
         this.retornoAdmin = retornoAdmin;
+        this.cartao = cartao;
     }
 
     public record CheckoutRequest(String plano, String ciclo, String modalidade) {}
@@ -103,6 +105,26 @@ public class AcessoController {
             request == null ? "" : request.ciclo(), request == null ? "" : request.modalidade());
     }
 
+    @GetMapping("/cartao/config")
+    public Map<String,String> configCartao() {
+        return cartao.configuracao();
+    }
+
+    @PostMapping("/cartao")
+    public Map<String,String> pagarCartao(@RequestBody com.apaprovado.service.MercadoPagoCartao.Pedido pedido,
+            @RequestHeader(value="Authorization", required=false) String authorization,
+            @RequestHeader(value="X-Supabase-Key", required=false) String publicKey) {
+        return cartao.pagar(emailConfirmado(authorization,publicKey),pedido);
+    }
+
+    @PostMapping("/mensal")
+    public com.apaprovado.service.MercadoPagoCartao.ResultadoMensal pagarMensal(
+            @RequestBody com.apaprovado.service.MercadoPagoCartao.PedidoMensal pedido,
+            @RequestHeader(value="Authorization", required=false) String authorization,
+            @RequestHeader(value="X-Supabase-Key", required=false) String publicKey) {
+        return cartao.pagarMensal(emailConfirmado(authorization,publicKey),pedido);
+    }
+
     @PostMapping("/cancelar")
     public Map<String, Boolean> cancelar(
             @RequestHeader(value="Authorization", required=false) String authorization,
@@ -112,10 +134,11 @@ public class AcessoController {
     }
 
     @GetMapping("/status")
-    public AcessoComercial.Status status(
+    public ResponseEntity<AcessoComercial.Status> status(
             @RequestHeader(value="Authorization", required=false) String authorization,
             @RequestHeader(value="X-Supabase-Key", required=false) String publicKey) {
-        return acessos.status(emailConfirmado(authorization, publicKey));
+        return ResponseEntity.ok().cacheControl(CacheControl.noStore())
+            .body(acessos.status(emailConfirmado(authorization, publicKey)));
     }
 
     @PostMapping("/webhook/mercado-pago")

@@ -32,18 +32,21 @@ public class MercadoPagoConexao {
     private final String clientSecret;
     private final String redirectUri;
     private final String chaveCriptografia;
+    private final String vendedorIdConfigurado;
 
     public MercadoPagoConexao(RestClient.Builder builder, JdbcTemplate jdbc,
             @Value("${app.payment.oauth.client-id:}") String clientId,
             @Value("${app.payment.oauth.client-secret:}") String clientSecret,
             @Value("${app.payment.oauth.redirect-uri:}") String redirectUri,
-            @Value("${app.payment.token-encryption-key:}") String chaveCriptografia) {
+            @Value("${app.payment.token-encryption-key:}") String chaveCriptografia,
+            @Value("${app.payment.merchant-id:}") String vendedorIdConfigurado) {
         this.mercadoPago = builder.baseUrl("https://api.mercadopago.com").build();
         this.jdbc = jdbc;
         this.clientId = clientId == null ? "" : clientId.trim();
         this.clientSecret = clientSecret == null ? "" : clientSecret.trim();
         this.redirectUri = redirectUri == null ? "" : redirectUri.trim();
         this.chaveCriptografia = chaveCriptografia == null ? "" : chaveCriptografia.trim();
+        this.vendedorIdConfigurado = vendedorIdConfigurado == null ? "" : vendedorIdConfigurado.trim();
     }
 
     public record Status(boolean conectado, String vendedorId, Instant tokenValidoAte) {}
@@ -103,6 +106,10 @@ public class MercadoPagoConexao {
             throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Conecte a conta recebedora do Mercado Pago na aba Recebimentos.");
         }
         Conta conta = contas.get(0);
+        if (!recebedorEsperado(conta.vendedorId())) {
+            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE,
+                "A conta recebedora conectada n\u00e3o corresponde \u00e0 conta autorizada para receber pagamentos.");
+        }
         if (conta.expiraEm().isAfter(Instant.now().plus(5, ChronoUnit.MINUTES))) {
             return descriptografar(conta.accessTokenCipher());
         }
@@ -120,8 +127,22 @@ public class MercadoPagoConexao {
 
     public Status status() {
         List<Status> linhas = jdbc.query("SELECT merchant_id,expires_at FROM public.mercado_pago_connection WHERE singleton=true",
-            (rs, row) -> new Status(true, rs.getString("merchant_id"), rs.getTimestamp("expires_at").toInstant()));
+            (rs, row) -> new Status(recebedorEsperado(rs.getString("merchant_id")), rs.getString("merchant_id"), rs.getTimestamp("expires_at").toInstant()));
         return linhas.isEmpty() ? new Status(false, null, null) : linhas.get(0);
+    }
+
+    public boolean recebedorValido(String id) {
+        return id != null && !id.isBlank() && recebedorEsperado(id.trim());
+    }
+
+    private boolean recebedorEsperado(String vendedorId) {
+        if (!vendedorIdConfigurado.isBlank())
+            return vendedorIdConfigurado.matches("[0-9]{1,30}") && vendedorIdConfigurado.equals(vendedorId);
+        List<String> conectados = jdbc.query("SELECT merchant_id FROM public.mercado_pago_connection WHERE singleton=true",
+            (rs, row) -> rs.getString("merchant_id"));
+        // Quando a variável de ambiente ainda n\u00e3o foi definida, a conta j\u00e1 vinculada
+        // funciona como trava: a reconex\u00e3o OAuth n\u00e3o pode substitu\u00ed-la.
+        return !conectados.isEmpty() && conectados.get(0).equals(vendedorId);
     }
 
     private JsonNode trocarToken(Map<String, Object> pedido) {
@@ -147,6 +168,16 @@ public class MercadoPagoConexao {
         if (refreshToken.isBlank()) refreshToken = refreshAnterior == null ? "" : refreshAnterior;
         if (refreshToken.isBlank()) {
             throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "O Mercado Pago não liberou a renovação automática da conexão. Autorize novamente com offline_access.");
+        }
+        if (!vendedorIdConfigurado.isBlank() && !vendedorIdConfigurado.equals(vendedorId)) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT,
+                "A autoriza\u00e7\u00e3o veio de uma conta Mercado Pago diferente da conta recebedora cadastrada no servidor.");
+        }
+        List<String> vendedorAnterior = jdbc.query("SELECT merchant_id FROM public.mercado_pago_connection WHERE singleton=true",
+            (rs, row) -> rs.getString("merchant_id"));
+        if (!vendedorAnterior.isEmpty() && !vendedorAnterior.get(0).equals(vendedorId)) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT,
+                "A conta recebedora j\u00e1 est\u00e1 vinculada e n\u00e3o pode ser substitu\u00edda por esta conex\u00e3o.");
         }
         Instant expiraEm = Instant.now().plusSeconds(segundos);
         jdbc.update("INSERT INTO public.mercado_pago_connection(singleton,merchant_id,access_token_cipher,refresh_token_cipher,expires_at,updated_at) "

@@ -53,8 +53,8 @@ public class MercadoPagoAssinaturas {
         this.webhookSecret = webhookSecret;
         this.returnUrl = returnUrl;
         this.notificationUrl = notificationUrl;
-        String basicaTrimestral = totalCiclo(basicaMensal, 3, descontoTrimestral);
-        String basicaAnual = totalCiclo(basicaMensal, 12, descontoAnual);
+        String basicaTrimestral = "23.70";
+        String basicaAnual = "82.80";
         String premiumTrimestral = totalCiclo(premiumMensal, 3, descontoTrimestral);
         String premiumAnual = totalCiclo(premiumMensal, 12, descontoAnual);
         this.planos = Map.of(
@@ -73,8 +73,8 @@ public class MercadoPagoAssinaturas {
     private record Plano(String codigo, String nome, String periodo, String periodoNome,
             BigDecimal valorTotal, BigDecimal valorMensal, int meses) {
         PlanoPublico publico() {
-            BigDecimal pix = meses == 1 ? valorTotal : valorTotal.multiply(new BigDecimal("0.90")).setScale(2, RoundingMode.HALF_UP);
-            BigDecimal cartao = meses == 1 ? valorTotal : valorTotal.multiply(new BigDecimal("1.10")).setScale(2, RoundingMode.HALF_UP);
+            BigDecimal pix = null;
+            BigDecimal cartao = valorTotal;
             return new PlanoPublico(codigo, nome, periodo, periodoNome, valorTotal, valorMensal, pix, cartao, meses);
         }
     }
@@ -89,7 +89,7 @@ public class MercadoPagoAssinaturas {
 
     public List<PlanoPublico> planosPublicos() {
         List<PlanoPublico> resposta = new ArrayList<>();
-        for (String codigo : List.of("basica", "premium")) {
+        for (String codigo : List.of("basica")) {
             for (String periodo : List.of("monthly", "quarterly", "annual")) {
                 resposta.add(obterPlano(codigo, periodo).publico());
             }
@@ -106,113 +106,10 @@ public class MercadoPagoAssinaturas {
         if (!normalizedEmail.matches("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$")) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Informe um e-mail válido.");
         }
-        Plano plano = obterPlano(codigoPlano, periodo);
-        String forma = modalidade == null ? "" : modalidade.trim().toLowerCase(Locale.ROOT);
-        if (plano.meses() == 1) forma = "subscription";
-        else if (!List.of("pix", "card").contains(forma)) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Escolha Pix à vista ou cartão para o plano trimestral/anual.");
-        }
-        if (acesso.status(normalizedEmail).liberado()) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT,
-                "Você já tem um período de acesso ativo. Cancele a renovação e aguarde o fim do período antes de iniciar outro plano.");
-        }
-        String accessToken = conta.accessToken();
-        if (returnUrl == null || !returnUrl.startsWith("https://")) {
-            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Checkout ainda não está configurado.");
-        }
+        obterPlano(codigoPlano, periodo);
+        throw new ResponseStatusException(HttpStatus.GONE,
+            "O checkout mensal antigo foi desativado. Use o pagamento mensal com Pix, d\u00e9bito ou cr\u00e9dito.");
 
-        if (plano.meses() > 1) return criarCheckoutAvulso(normalizedEmail, plano, forma, accessToken);
-
-        Map<String, Object> recurrence = Map.of("frequency", plano.meses(), "frequency_type", "months",
-            "transaction_amount", plano.valorTotal(), "currency_id", "BRL");
-        Map<String, Object> body = new HashMap<>();
-        body.put("reason", "AP Aprovado — " + plano.nome() + " · " + plano.periodoNome());
-        String reference = "ap:" + plano.codigo() + ":" + plano.periodo() + ":" + UUID.randomUUID();
-        body.put("external_reference", reference);
-        body.put("payer_email", normalizedEmail);
-        body.put("auto_recurring", recurrence);
-        body.put("back_url", returnUrl);
-        if (notificationUrl != null && notificationUrl.startsWith("https://")) body.put("notification_url", notificationUrl);
-        body.put("status", "pending");
-        final JsonNode response;
-        try {
-            response = mercadoPago.post().uri("/preapproval")
-                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken)
-                .body(body).retrieve().body(JsonNode.class);
-        } catch (Exception erro) {
-            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Não foi possível iniciar o checkout agora.");
-        }
-        String url = response == null ? "" : response.path("init_point").asText("");
-        String host;
-        try { host = URI.create(url).getHost(); } catch (Exception erro) { host = null; }
-        if (host == null || !url.startsWith("https://") || !java.util.Set.of("www.mercadopago.com.br", "mercadopago.com.br", "www.mercadopago.com", "mercadopago.com").contains(host)) {
-            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "O Mercado Pago não retornou o endereço do checkout.");
-        }
-        acesso.registrarCheckout(segmento(response.path("id").asText("")), reference, normalizedEmail,
-            plano.codigo(), plano.periodo(), plano.valorTotal());
-        return new Checkout("subscription", url, null, null, null);
-    }
-
-    private Checkout criarCheckoutAvulso(String email, Plano plano, String forma, String accessToken) {
-        if (notificationUrl == null || !notificationUrl.startsWith("https://")) {
-            throw new ResponseStatusException(HttpStatus.SERVICE_UNAVAILABLE, "Notificações seguras de pagamento ainda não estão configuradas no servidor.");
-        }
-        BigDecimal valor = forma.equals("pix")
-            ? plano.valorTotal().multiply(new BigDecimal("0.90")).setScale(2, RoundingMode.HALF_UP)
-            : plano.valorTotal().multiply(new BigDecimal("1.10")).setScale(2, RoundingMode.HALF_UP);
-        String reference = "ap:" + plano.codigo() + ":" + plano.periodo() + ":" + forma + ":" + UUID.randomUUID();
-        try {
-            JsonNode response;
-            if (forma.equals("pix")) {
-                Map<String, Object> body = Map.of("transaction_amount", valor, "description",
-                    "AP Aprovado — " + plano.nome() + " · " + plano.periodoNome(), "payment_method_id", "pix",
-                    "payer", Map.of("email", email), "external_reference", reference, "notification_url", notificationUrl);
-                response = mercadoPago.post().uri("/v1/payments")
-                    .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken)
-                    .header("X-Idempotency-Key", UUID.randomUUID().toString())
-                    .body(body).retrieve().body(JsonNode.class);
-                String qr = response == null ? "" : response.path("point_of_interaction").path("transaction_data").path("qr_code").asText("");
-                String qrBase64 = response == null ? "" : response.path("point_of_interaction").path("transaction_data").path("qr_code_base64").asText("");
-                String ticket = response == null ? "" : response.path("point_of_interaction").path("transaction_data").path("ticket_url").asText("");
-                if (qr.isBlank() || qrBase64.isBlank()) throw new IllegalStateException();
-                acesso.registrarCheckoutAvulso("payment:" + response.path("id").asText(""), reference, email,
-                    plano.codigo(), plano.periodo(), valor, "pix");
-                Instant expiraEm = null;
-                try { expiraEm = OffsetDateTime.parse(response.path("date_of_expiration").asText()).toInstant(); }
-                catch (Exception ignorado) { }
-                return new Checkout("pix", ticket, qr, qrBase64, expiraEm);
-            }
-
-            Map<String, Object> item = Map.of("id", "ap-" + plano.codigo() + "-" + plano.periodo(),
-                "title", "AP Aprovado — " + plano.nome() + " · " + plano.periodoNome(),
-                "description", "Acesso por " + plano.meses() + " meses", "quantity", 1, "currency_id", "BRL", "unit_price", valor);
-            Map<String, Object> body = new HashMap<>();
-            body.put("items", List.of(item));
-            body.put("payer", Map.of("email", email));
-            body.put("external_reference", reference);
-            body.put("notification_url", notificationUrl);
-            body.put("back_urls", Map.of("success", returnUrl, "failure", returnUrl, "pending", returnUrl));
-            body.put("auto_return", "approved");
-            body.put("payment_methods", Map.of("excluded_payment_types", List.of(
-                Map.of("id", "ticket"), Map.of("id", "bank_transfer"), Map.of("id", "debit_card"),
-                Map.of("id", "prepaid_card")), "installments", 12));
-            response = mercadoPago.post().uri("/checkout/preferences")
-                .header(HttpHeaders.AUTHORIZATION, "Bearer " + accessToken)
-                .header("X-Idempotency-Key", UUID.randomUUID().toString())
-                .body(body).retrieve().body(JsonNode.class);
-            String url = response == null ? "" : response.path("init_point").asText("");
-            String host = URI.create(url).getHost();
-            if (host == null || !url.startsWith("https://") || !Set.of("www.mercadopago.com.br", "mercadopago.com.br", "www.mercadopago.com", "mercadopago.com").contains(host)) {
-                throw new IllegalStateException();
-            }
-            acesso.registrarCheckoutAvulso("preference:" + response.path("id").asText(""), reference, email,
-                plano.codigo(), plano.periodo(), valor, "card");
-            return new Checkout("card", url, null, null, null);
-        } catch (ResponseStatusException erro) {
-            throw erro;
-        } catch (Exception erro) {
-            throw new ResponseStatusException(HttpStatus.BAD_GATEWAY, "Não foi possível iniciar o pagamento agora. Confira a conexão com o Mercado Pago e tente novamente.");
-        }
     }
 
     public void cancelarAssinatura(String email) {
@@ -309,9 +206,10 @@ public class MercadoPagoAssinaturas {
 
     private void receberPagamentoAvulso(String eventId, String paymentId) {
         JsonNode payment = consultar("/v1/payments/" + segmento(paymentId));
+        if (!conta.recebedorValido(payment.path("collector_id").asText(""))) return;
         String reference = payment.path("external_reference").asText("");
         var titular = acesso.checkoutPorReferencia(reference);
-        if (titular == null || !Set.of("pix", "card").contains(titular.modalidade())) return;
+        if (titular == null || !Set.of("pix", "card", "debit").contains(titular.modalidade())) return;
         String status = payment.path("status").asText("");
         String accessKey = "one-time:" + paymentId;
         if ("refunded".equals(status) || "charged_back".equals(status)) {
@@ -322,7 +220,8 @@ public class MercadoPagoAssinaturas {
         String methodId = payment.path("payment_method_id").asText("");
         String methodType = payment.path("payment_type_id").asText("");
         if (titular.modalidade().equals("pix") && !"pix".equals(methodId)) return;
-        if (titular.modalidade().equals("card") && !Set.of("credit_card", "account_money").contains(methodType)) return;
+        if (titular.modalidade().equals("card") && !"credit_card".equals(methodType)) return;
+        if (titular.modalidade().equals("debit") && !"debit_card".equals(methodType)) return;
         BigDecimal amount;
         try { amount = payment.path("transaction_amount").decimalValue(); }
         catch (Exception erro) { return; }
@@ -330,8 +229,9 @@ public class MercadoPagoAssinaturas {
         Instant paidAt;
         try { paidAt = OffsetDateTime.parse(payment.path("date_approved").asText()).toInstant(); }
         catch (Exception erro) { paidAt = Instant.now(); }
-        Instant validUntil = paidAt.atOffset(java.time.ZoneOffset.UTC).plusMonths(
-            "quarterly".equals(titular.ciclo()) ? 3 : 12).toInstant();
+        int meses = switch (titular.ciclo()) { case "monthly" -> 1; case "quarterly" -> 3; case "annual" -> 12; default -> 0; };
+        if (meses == 0) return;
+        Instant validUntil = paidAt.atOffset(java.time.ZoneOffset.UTC).plusMonths(meses).toInstant();
         acesso.registrarPagamentoConfirmado(eventId, accessKey, paymentId, titular.email(), titular.plano(),
             titular.ciclo(), amount, payment.path("currency_id").asText(""), titular.valor(), validUntil, paidAt);
     }
