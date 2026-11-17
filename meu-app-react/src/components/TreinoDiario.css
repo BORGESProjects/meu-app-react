@@ -184,3 +184,110 @@
   .daily-training *, .daily-training *::before, .daily-training *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
 
+
+
+/* The classic training palette stays olive; only the multidisciplinary theme uses cyan and violet. */
+:root[data-study-theme="classico"] .daily-training {
+  --training-text: #edf2e3;
+  --training-muted: #b4bea6;
+  --training-edge: #48553d;
+  --training-control: #11170f;
+  --training-blue: #c5d98b;
+  --training-purple: #dfc27a;
+  border-color: #586747;
+  background: linear-gradient(145deg, #171e14, #10160f 72%);
+}
+:root[data-study-theme="classico"] .daily-training__header { border-color: #58674788; }
+:root[data-study-theme="classico"] .daily-training__header > p:first-child { color: #d0e69a; }
+:root[data-study-theme="classico"] .daily-training__recommendation { border-color: #748454 !important; background: linear-gradient(120deg, #29331f, #1d291b 70%, #202b19) !important; box-shadow: inset 3px 0 #c5d98b, 0 10px 26px #080c0755; }
+:root[data-study-theme="classico"] .daily-training__recommendation h2 { color: #f0f4e7; }
+:root[data-study-theme="classico"] .daily-training__recommendation p { color: #c6cfb8; }
+:root[data-study-theme="classico"] .daily-training__recommendation li { border-color: #899b5c !important; background: #354326; color: #eef5d9; }
+:root[data-study-theme="classico"] .daily-training__quick-filters { border-color: #677a48; background: linear-gradient(120deg, #202d19, #192218 78%); }
+:root[data-study-theme="classico"] .daily-training__quick-filters > p { color: #d2e69a; }
+:root[data-study-theme="classico"] .daily-training__quick-filters button { border-color: #596b42; background: #202b1b; color: #e0e9cf; }
+:root[data-study-theme="classico"] .daily-training__quick-filters button:hover { border-color: #a0b66a; background: #2d3b22; }
+:root[data-study-theme="classico"] .daily-training__quick-filters button[aria-pressed="true"] { border-color: #c2d782; background: #46592a; color: #fff; box-shadow: 0 0 0 2px #c2d78233; }
+:root[data-study-theme="classico"] .daily-training__practice-modes { border-color: #77653d !important; background: linear-gradient(125deg, #302a1b, #202116 75%); }
+:root[data-study-theme="classico"] .daily-training__practice-modes legend { color: #e8d18e; }
+:root[data-study-theme="classico"] .daily-training__practice-modes button { border-color: #6a5835; background: #322b1d; color: #f0e4c0; }
+:root[data-study-theme="classico"] .daily-training__practice-modes button:hover { border-color: #c2a964; background: #423820; }
+:root[data-study-theme="classico"] .daily-training__practice-modes button[aria-pressed="true"] { border-color: #ddc06e; background: #5a4822; color: #fff9e8; box-shadow: 0 0 0 2px #ddc06e33; }
+:root[data-study-theme="classico"] .daily-training__more-filters { border-color: #627449 !important; background: linear-gradient(125deg, #20291a, #191f17 75%); }
+:root[data-study-theme="classico"] .daily-training__more-filters > summary,
+:root[data-study-theme="classico"] .daily-training__more-filters legend { color: #d3e5a0; }
+:root[data-study-theme="classico"] .daily-training__more-filters fieldset { border-color: #536541 !important; background: #171f15; }
+:root[data-study-theme="classico"] .daily-training__more-filters label { color: #e0e8d4; }
+:root[data-study-theme="classico"] .daily-training .daily-training__start { border-color: #c0d77b; background: linear-gradient(110deg, #748b3b, #a6b95f); color: #11170d; }
+:root[data-study-theme="classico"] .daily-training .daily-training__start--recommended { border-color: #dfc27a; background: linear-gradient(110deg, #76612c, #758b3f 65%, #647544); color: #fff9e7; }
+:root[data-study-theme="classico"] .daily-training .daily-training__plan { border-color: #728b50; background: #26351d; color: #d8e8ad; }
+:root[data-study-theme="classico"] .daily-training .daily-training__plan:hover { background: #354927; }
+:root[data-study-theme="classico"] .daily-training__notice-link { color: #d7c27d !important; }
+
+:root[data-study-theme="multidisciplinar"] .daily-training {
+  --training-text: #e9efff;
+  --training-muted: #aab8d2;
+  --training-edge: #465679;
+  --training-control: #10172a;
+  --training-blue: #6bd9ed;
+  --training-purple: #c1a6ff;
+  border-color: #617398;
+  background: linear-gradient(145deg, #111b30, #17152d 68%, #10212c);
+}
+:root[data-study-theme="multidisciplinar"] .daily-training__header { border-color: #52648799; }
+:root[data-study-theme="multidisciplinar"] .daily-training__recommendation { border-color: #7763bd !important; background: linear-gradient(120deg, #29234a, #192c43 70%, #153640) !important; }
+:root[data-study-theme="multidisciplinar"] .daily-training__quick-filters { border-color: #3a8394; background: linear-gradient(120deg, #102a3a, #17223a 78%); }
+:root[data-study-theme="multidisciplinar"] .daily-training__quick-filters > p { color: #83e5ed; }
+:root[data-study-theme="multidisciplinar"] .daily-training__quick-filters button { border-color: #416c88; background: #172d43; color: #d9f0f5; }
+:root[data-study-theme="multidisciplinar"] .daily-training__quick-filters button:hover { border-color: #70d4e2; background: #1d4150; }
+:root[data-study-theme="multidisciplinar"] .daily-training__quick-filters button[aria-pressed="true"] { border-color: #68d8e6; background: #1d6270; color: #fff; }
+:root[data-study-theme="multidisciplinar"] .daily-training__practice-modes { border-color: #69529c !important; background: linear-gradient(125deg, #211b35, #171d2c 75%); }
+:root[data-study-theme="multidisciplinar"] .daily-training__practice-modes legend { color: #d4c2ff; }
+:root[data-study-theme="multidisciplinar"] .daily-training__practice-modes button { border-color: #55477a; background: #29233e; color: #e4ddf5; }
+:root[data-study-theme="multidisciplinar"] .daily-training__practice-modes button:hover { border-color: #b39af2; background: #352b51; }
+:root[data-study-theme="multidisciplinar"] .daily-training__practice-modes button[aria-pressed="true"] { border-color: #b79bff; background: #57418a; color: #fff; }
+:root[data-study-theme="multidisciplinar"] .daily-training__more-filters { border-color: #416d91 !important; background: linear-gradient(125deg, #152b40, #171d33 75%); }
+:root[data-study-theme="multidisciplinar"] .daily-training__more-filters > summary { color: #a8dff1; }
+:root[data-study-theme="multidisciplinar"] .daily-training__more-filters fieldset { border-color: #3b597c !important; background: #142138; }
+:root[data-study-theme="multidisciplinar"] .daily-training__more-filters legend { color: #c1b3fa; }
+:root[data-study-theme="multidisciplinar"] .daily-training__more-filters label { color: #d5e0f2; }
+:root[data-study-theme="multidisciplinar"] .daily-training__quantity { border-color: #786344; background: linear-gradient(120deg, #30283a, #202137); color: #eadcff; }
+:root[data-study-theme="multidisciplinar"] .daily-training__quantity select { border-color: #625184 !important; background: #17182d !important; color: #f0eaff !important; }
+:root[data-study-theme="multidisciplinar"] .daily-training__availability { border-color: #397e94 !important; background: linear-gradient(120deg, #132c3d, #17243a); color: #c9eaf4; }
+:root[data-study-theme="multidisciplinar"] .daily-training__availability strong { color: #81e1ec; }
+:root[data-study-theme="multidisciplinar"] .daily-training .daily-training__start { border-color: #69dbea; background: linear-gradient(110deg, #177f9c, #4858b9 58%, #7950a7); color: #fff; }
+:root[data-study-theme="multidisciplinar"] .daily-training .daily-training__start--recommended { border-color: #b69aff; background: linear-gradient(110deg, #7350b8, #4c60b5 60%, #287e91); }
+:root[data-study-theme="multidisciplinar"] .daily-training .daily-training__plan { border-color: #547da8; background: #1b2e4b; color: #caeaff; }
+:root[data-study-theme="multidisciplinar"] .daily-training .daily-training__plan:hover { background: #263d62; }
+:root[data-study-theme="multidisciplinar"] .daily-training__notice-link { color: #d2bcff !important; }
+
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training { border-color: #b8c89b; background: linear-gradient(145deg, #f2f5ea, #e8eee1); }
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training__recommendation { border-color: #a9bd7e !important; background: linear-gradient(120deg, #e6edd8, #eef1e4) !important; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training__quick-filters { border-color: #a6b887; background: linear-gradient(120deg, #e6eddc, #eef1e6); }
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training__quick-filters > p { color: #526b32; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training__quick-filters button { border-color: #b5c49d; background: #f8faF3; color: #465735; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training__quick-filters button[aria-pressed="true"] { border-color: #788f49; background: #dce8c5; color: #34451f; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training__practice-modes { border-color: #c8b57b !important; background: linear-gradient(125deg, #f2ecd9, #f5f1e5); }
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training__practice-modes legend { color: #725c28; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training__practice-modes button { border-color: #d1c39a; background: #fffdf7; color: #62522f; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training__practice-modes button[aria-pressed="true"] { border-color: #aa8e43; background: #f2e7c6; color: #574315; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training__more-filters { border-color: #b3c39a !important; background: linear-gradient(125deg, #e9efe1, #eff2e8); }
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training__more-filters > summary,
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training__more-filters legend { color: #526b32; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training__more-filters fieldset { border-color: #c1cfad !important; background: #f7f9f2; }
+:root[data-study-theme="classico"][data-color-mode="claro"] .daily-training .daily-training__start { border-color: #788f49; background: linear-gradient(110deg, #778e44, #a3b86b); color: #17200f; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training { border-color: #b9c7df; background: linear-gradient(145deg, #edf4fa, #f0eef8 68%, #eaf4f6); }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__recommendation { border-color: #b3a6d7 !important; background: linear-gradient(120deg, #ece8f8, #e5f1f7 70%, #e3f3f2) !important; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__quick-filters { border-color: #a7cbd7; background: linear-gradient(120deg, #e2f3f6, #e9edf8 78%); }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__quick-filters > p { color: #246d83; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__quick-filters button { border-color: #aac5d4; background: #f8fbff; color: #405774; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__quick-filters button[aria-pressed="true"] { border-color: #448da5; background: #d8edf4; color: #285b77; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__practice-modes { border-color: #c4b4e2 !important; background: linear-gradient(125deg, #f0eafa, #eef1fa 75%); }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__practice-modes legend { color: #5d438a; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__practice-modes button { border-color: #c5b8db; background: #fbf9ff; color: #514366; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__practice-modes button[aria-pressed="true"] { border-color: #7655a7; background: #e5d9f5; color: #49316f; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__more-filters { border-color: #bdcbe0 !important; background: linear-gradient(125deg, #edf3fb, #f1f0f9 75%); }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__more-filters > summary,
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__more-filters legend { color: #4e5b93; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__more-filters fieldset { border-color: #cbd4e4 !important; background: #f8f9fd; }
+:root[data-study-theme="multidisciplinar"][data-color-mode="claro"] .daily-training__more-filters label { color: #394a64; }
