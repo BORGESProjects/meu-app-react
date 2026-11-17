@@ -99,6 +99,7 @@ class MercadoPagoAssinaturasTests {
     @Test void signedPixApprovalGrantsExactlyOneCycleAfterCheckingProviderData() throws Exception {
         var paidAt = OffsetDateTime.now().minusMinutes(1);
         when(account.accessToken()).thenReturn("fake-token");
+        when(account.recebedorValido(anyString())).thenReturn(true);
         when(access.checkoutPorReferencia(startsWith("ap:premium:quarterly:pix:"))).thenReturn(
             new AcessoComercial.TitularCheckout("ap:premium:quarterly:pix:test", "aluno@example.com", "premium", "quarterly", new BigDecimal("40.30"), "pix"));
         server.expect(requestTo("https://api.mercadopago.com/v1/payments/900"))
