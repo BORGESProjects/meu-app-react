@@ -37,19 +37,11 @@ class MercadoPagoAssinaturasTests {
             ("id:" + id + ";request-id:req;ts:123;").getBytes(StandardCharsets.UTF_8)));
     }
 
-    @Test void checkoutIsPendingAndBoundToAuthenticatedStudent() {
-        when(access.status("aluno@example.com")).thenReturn(new AcessoComercial.Status(false, null, false, null, null));
-        when(account.accessToken()).thenReturn("fake-token");
-        server.expect(requestTo("https://api.mercadopago.com/preapproval"))
-            .andExpect(method(HttpMethod.POST)).andExpect(header("Authorization", "Bearer fake-token"))
-            .andExpect(jsonPath("$.status").value("pending"))
-            .andExpect(jsonPath("$.auto_recurring.transaction_amount").value(19.90))
-            .andExpect(jsonPath("$.auto_recurring.frequency").value(1))
-            .andRespond(withSuccess("{\"id\":\"sub-1\",\"init_point\":\"https://www.mercadopago.com.br/subscriptions/checkout?preapproval_id=sub-1\"}", MediaType.APPLICATION_JSON));
-        assertTrue(service.criarCheckout("aluno@example.com", "premium", "monthly").url().startsWith("https://www.mercadopago.com.br/"));
-        verify(access).registrarCheckout(eq("sub-1"), startsWith("ap:premium:monthly:"), eq("aluno@example.com"),
-            eq("premium"), eq("monthly"), eq(new BigDecimal("19.90")));
-        server.verify();
+    @Test void legacyMonthlyCheckoutIsDisabledInFavorOfManualPaymentMethods() {
+        assertEquals(410, assertThrows(ResponseStatusException.class,
+            () -> service.criarCheckout("aluno@example.com", "premium", "monthly"))
+            .getStatusCode().value());
+        verifyNoInteractions(access, account);
     }
 
     @Test void rejectsUnsignedNotificationBeforeCallingProvider() throws Exception {
@@ -83,21 +75,11 @@ class MercadoPagoAssinaturasTests {
         server.verify();
     }
 
-    @Test void pixCheckoutUsesItsOwnAmountAndReturnsQrData() {
-        when(access.status("aluno@example.com")).thenReturn(new AcessoComercial.Status(false, null, false, null, null));
-        when(account.accessToken()).thenReturn("fake-token");
-        server.expect(requestTo("https://api.mercadopago.com/v1/payments"))
-            .andExpect(method(HttpMethod.POST)).andExpect(header("Authorization", "Bearer fake-token"))
-            .andExpect(header("X-Idempotency-Key", org.hamcrest.Matchers.not(org.hamcrest.Matchers.isEmptyOrNullString())))
-            .andExpect(jsonPath("$.payment_method_id").value("pix"))
-            .andExpect(jsonPath("$.transaction_amount").value(40.30))
-            .andRespond(withSuccess("{\"id\":\"900\",\"date_of_expiration\":\"2030-01-01T10:00:00.000-03:00\",\"point_of_interaction\":{\"transaction_data\":{\"qr_code\":\"pix-code\",\"qr_code_base64\":\"cXJwaWM=\",\"ticket_url\":\"https://www.mercadopago.com.br/pay/900\"}}}", MediaType.APPLICATION_JSON));
-        var checkout = service.criarCheckout("aluno@example.com", "premium", "quarterly", "pix");
-        assertEquals("pix", checkout.tipo());
-        assertEquals("pix-code", checkout.codigoPix());
-        verify(access).registrarCheckoutAvulso(eq("payment:900"), startsWith("ap:premium:quarterly:pix:"),
-            eq("aluno@example.com"), eq("premium"), eq("quarterly"), eq(new BigDecimal("40.30")), eq("pix"));
-        server.verify();
+    @Test void rejectsPixCheckoutForLongPlans() {
+        assertEquals(400, assertThrows(ResponseStatusException.class,
+            () -> service.criarCheckout("aluno@example.com", "premium", "quarterly", "pix"))
+            .getStatusCode().value());
+        verifyNoInteractions(access, account);
     }
 
     @Test void cardCheckoutUsesBasePricePlusTenPercent() {
