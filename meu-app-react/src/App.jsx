@@ -2476,7 +2476,15 @@ export default function App() {
                 <a href="#adicionar-sessao" className="rounded-xl border border-indigo-500/50 px-4 py-2 text-sm font-semibold text-indigo-300">+ Planejar sessão</a>
                 <button type="button" onClick={() => setAbaAtiva('treino')} className="rounded-xl border border-slate-700 px-4 py-2 text-sm font-semibold">Abrir treino de hoje</button>
               </div>
-              <progress className="mt-5 w-full accent-indigo-500" max={minutosPlanejados || 1} value={minutosConcluidos} aria-label="Tempo concluído na semana" />
+              <div className="mt-5 space-y-2">
+                <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 text-xs">
+                  <span className="font-semibold text-slate-300">Progresso da semana</span>
+                  <span className="font-medium tabular-nums text-slate-400">
+                    {minutosPlanejados > 0 ? `${Math.round(minutosConcluidos / minutosPlanejados * 100)}% concluído` : 'Sem sessões planejadas'}
+                  </span>
+                </div>
+                <progress className="weekly-study-progress" max={minutosPlanejados || 1} value={minutosConcluidos} aria-label="Tempo concluído na semana" />
+              </div>
               {proximaSessao && <button type="button" onClick={() => setDiaCronograma(proximaSessao.dataAgendada)} className="mt-3 block text-left text-sm text-indigo-300 hover:underline">
                 Próxima sessão: {proximaSessao.materia} · {dataISOParaLocal(proximaSessao.dataAgendada).toLocaleDateString('pt-BR')} {proximaSessao.horario}
               </button>}
