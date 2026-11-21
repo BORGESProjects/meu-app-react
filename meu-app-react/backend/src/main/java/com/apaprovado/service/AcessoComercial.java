@@ -77,7 +77,12 @@ public class AcessoComercial {
                 + "ORDER BY access_until DESC LIMIT 1",
             (rs, row) -> new Status(true, rs.getTimestamp("access_until").toInstant(),
                 "cancelled".equals(rs.getString("status")), rs.getString("plan_key"), rs.getString("billing_cycle")), email.trim());
-        return linhas.isEmpty() ? new Status(false, null, false, null, null) : linhas.get(0);
+        if (!linhas.isEmpty()) return linhas.get(0);
+        boolean autorizado = Boolean.TRUE.equals(jdbc.queryForObject(
+            "SELECT EXISTS (SELECT 1 FROM public.permissoes_software p JOIN auth.users u ON u.id=p.user_id "
+                + "WHERE p.email=lower(?) AND lower(u.email)=p.email AND u.email_confirmed_at IS NOT NULL AND NOT coalesce(u.is_anonymous,false))",
+            Boolean.class, email.trim()));
+        return new Status(autorizado, null, false, autorizado ? "software" : null, null);
     }
 
     public RelatorioRecebimentos listarRecebimentos() {

@@ -18,7 +18,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class EditalSecurityTests {
     @Test void httpRoutesRejectMissingLoginWith401() throws Exception {
         var repo=mock(EditalRepository.class);
-        var auth=new ImportAdmin(new RestTemplateBuilder(),"https://trusted.supabase.co","admin@example.com");
+        var sessions=new com.apaprovado.service.SupabaseSessionAuth(new RestTemplateBuilder(),"https://trusted.supabase.co");
+        var auth=new ImportAdmin(sessions,mock(org.springframework.jdbc.core.JdbcTemplate.class));
         var mvc=MockMvcBuilders.standaloneSetup(new EditalController(repo,auth)).build();
         mvc.perform(post("/api/editais").contentType(MediaType.APPLICATION_JSON).content("{}"))
             .andExpect(status().isUnauthorized());
